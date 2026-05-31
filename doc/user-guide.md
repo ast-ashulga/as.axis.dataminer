@@ -23,6 +23,7 @@ Practical walkthrough for running the Sisyphus pipeline end-to-end: from raw sou
 6. [Checking pipeline progress](#6-checking-pipeline-progress)
 7. [Idempotency: re-running phases safely](#7-idempotency-re-running-phases-safely)
 8. [Feature flags](#8-feature-flags)
+   - [LLM provider and model configuration](#8a-llm-provider-and-model-configuration)
 9. [Output directory layout](#9-output-directory-layout)
 10. [Troubleshooting](#10-troubleshooting)
 
@@ -33,8 +34,9 @@ Practical walkthrough for running the Sisyphus pipeline end-to-end: from raw sou
 | Requirement | Minimum | Notes |
 |---|---|---|
 | Python | 3.12 | Tested on CPython 3.12 |
-| Anthropic API key | — | Set `ANTHROPIC_API_KEY` in your environment |
-| OpenAI API key | — | Required for embeddings (Phase E); set `OPENAI_API_KEY` |
+| Anthropic API key | — | Required when using the `anthropic` provider (default); set `ANTHROPIC_API_KEY` in your environment |
+| Ollama | — | Alternative to Anthropic for Phases B–D; install from [ollama.com](https://ollama.com) and set `provider: ollama` in `config/models.yaml` — no API key needed |
+| OpenAI API key | — | Required for embeddings (Phase E only); set `OPENAI_API_KEY` |
 | Tesseract | 5.x | Only for scanned-PDF sources; install via `brew install tesseract` or your OS package manager |
 | Source files | — | PDFs, TXT, or TEI XML; see [§3](#3-before-you-start-register-your-source) |
 
@@ -143,20 +145,26 @@ If any OCR pages were flagged, review them before proceeding. Low-confidence pas
 
 ```bash
 sisyphus segment run-gilgamesh-20260601-143022 \
-    --tradition gilgamesh \
-    --model claude-opus-4-8
+    --tradition gilgamesh
 ```
 
 What it does:
 - Loads segmentation rules from `rules/segmentation/gilgamesh.yaml`
-- Calls Claude to divide the ingested text into bounded episodes following scholarly division boundaries
+- Calls the configured LLM to divide the ingested text into bounded episodes following scholarly division boundaries
 - Proposes candidate NAS addresses (`nms://gilgamesh/tablet-i/creation-of-enkidu`)
 - Applies the **methodology-fit gate**: if applying Propp, Bakhtin, or TMI raises epistemic or cultural concerns, the segment is flagged with `methodology_fit_warning: true` and a note for the reviewer
 - Writes `output/gilgamesh/nas-proposals.yaml` and `segmentation-report.yaml`
 
 **NAS address format:** `nms://{tradition}/{division}/{episode}[/{sub-episode}]`
 
-The Claude model for this phase defaults to `claude-opus-4-8` (highest quality for structural segmentation). Change only if cost is a constraint.
+The model defaults to `claude-opus-4-8` (highest quality for structural segmentation). Override via `--model` or `config/models.yaml`. To use Ollama instead of the Anthropic API:
+
+```bash
+sisyphus segment run-gilgamesh-20260601-143022 \
+    --tradition gilgamesh \
+    --provider ollama \
+    --model nemotron-3-super:cloud
+```
 
 ---
 
@@ -181,8 +189,16 @@ Once confirmed, addresses are written to `output/gilgamesh/nas-confirmed.yaml` a
 
 ```bash
 sisyphus generate-layer0 gilgamesh \
+    --locale en,ru
+```
+
+Override the model or provider if needed:
+
+```bash
+sisyphus generate-layer0 gilgamesh \
     --locale en,ru \
-    --model claude-sonnet-4-6
+    --provider ollama \
+    --model llama3.1:8b
 ```
 
 What it does:
@@ -201,8 +217,16 @@ What it does:
 
 ```bash
 sisyphus annotate gilgamesh \
+    --tracks propp,bakhtin,tmi
+```
+
+Override the model or provider if needed:
+
+```bash
+sisyphus annotate gilgamesh \
     --tracks propp,bakhtin,tmi \
-    --model claude-sonnet-4-6
+    --provider ollama \
+    --model llama3.1:8b
 ```
 
 Active tracks: `propp`, `bakhtin`, `tmi`. The `campbell` track is currently blocked pending a product decision (`campbell_track` feature flag is `false`).
@@ -340,6 +364,34 @@ To temporarily enable a flag for local testing, override via environment variabl
 
 ---
 
+## 8a. LLM provider and model configuration
+
+Phases B, C, and D use a configurable LLM. The defaults live in `config/models.yaml`:
+
+```yaml
+provider: anthropic          # anthropic | ollama
+ollama_base_url: http://localhost:11434
+
+models:
+  segment: claude-opus-4-8
+  generate_layer0: claude-sonnet-4-6
+  annotate: claude-sonnet-4-6
+```
+
+**Resolution order (highest wins):** `--model` / `--provider` CLI flag → `config/models.yaml` → built-in default
+
+To switch the entire pipeline to Ollama, set `provider: ollama` in `config/models.yaml` and update the model names to the Ollama model tags you have pulled locally. Per-command overrides still work:
+
+```bash
+# One-off override — does not change config/models.yaml
+sisyphus segment run-abc --tradition gilgamesh \
+    --provider ollama --model nemotron-3-super:cloud
+```
+
+**Phase E (embeddings) is not affected.** It uses the OpenAI SDK for `text-embedding-*` models, which is a separate configuration concern and does not route through the Ollama Anthropic-compatible endpoint.
+
+---
+
 ## 9. Output directory layout
 
 ```
@@ -372,7 +424,10 @@ output/{tradition}/
 Both paths are required and must exist before Phase A runs. Check that you placed the source file in `sources/` and that the manifest path is correct.
 
 **Phase B fails with API error**
-Check that `ANTHROPIC_API_KEY` is set. For long source texts, the segmenter makes multiple API calls; transient errors are retried automatically. If failures persist, check the Anthropic status page.
+If using the `anthropic` provider, check that `ANTHROPIC_API_KEY` is set. If using `ollama`, verify Ollama is running (`ollama list`) and that the model name in `config/models.yaml` (or `--model`) matches an available local model. Transient errors do not abort the run — the phase writes an empty proposals file and prints a warning; re-run when the issue is resolved.
+
+**`Unknown provider` error**
+The `--provider` option only accepts `anthropic` or `ollama`. Check for typos in the CLI flag or in `config/models.yaml`.
 
 **`confirm-nas` refuses to run — "no proposals found"**
 Phase B must complete successfully before the confirm-nas gate. Check `output/{tradition}/pipeline-reports/segmentation-report.yaml` for errors.

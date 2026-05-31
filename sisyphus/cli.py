@@ -11,7 +11,7 @@ from typing import Annotated, Optional
 import typer
 from rich.console import Console
 
-from sisyphus import __version__
+from sisyphus import __version__, llm
 
 app = typer.Typer(
     name="sisyphus",
@@ -70,12 +70,14 @@ def ingest(
 def segment(
     run_id: Annotated[str, typer.Argument(help="Run ID from the ingest phase.")],
     tradition: Annotated[str, typer.Option(help="Tradition identifier (e.g. gilgamesh).")] = "",
-    model: Annotated[str, typer.Option(help="Claude model to use.")] = "claude-opus-4-8",
+    model: Annotated[Optional[str], typer.Option(help="Model name (overrides config).")] = None,
+    provider: Annotated[Optional[str], typer.Option(help="LLM provider: anthropic | ollama.")] = None,
 ) -> None:
     """Phase B: Segment ingested text into episodes and propose NAS addresses."""
     from sisyphus.phases.phase_b import run_segment
 
-    run_segment(run_id=run_id, tradition=tradition, model=model, console=console)
+    resolved_model = llm.resolve_model("segment", model)
+    run_segment(run_id=run_id, tradition=tradition, model=resolved_model, console=console, provider=provider)
 
 
 # ---------------------------------------------------------------------------
@@ -103,7 +105,8 @@ def confirm_nas(
 def generate_layer0(
     tradition: Annotated[str, typer.Argument(help="Tradition identifier.")],
     locale: Annotated[str, typer.Option(help="Comma-separated locales (e.g. en,ru).")] = "en",
-    model: Annotated[str, typer.Option(help="Claude model to use.")] = "claude-sonnet-4-6",
+    model: Annotated[Optional[str], typer.Option(help="Model name (overrides config).")] = None,
+    provider: Annotated[Optional[str], typer.Option(help="LLM provider: anthropic | ollama.")] = None,
     grounding_threshold: Annotated[
         float, typer.Option(help="Max fraction of uncited factual sentences (default 0).")
     ] = 0.0,
@@ -115,9 +118,10 @@ def generate_layer0(
     run_generate_layer0(
         tradition=tradition,
         locales=locales,
-        model=model,
+        model=llm.resolve_model("generate_layer0", model),
         grounding_threshold=grounding_threshold,
         console=console,
+        provider=provider,
     )
 
 
@@ -132,14 +136,21 @@ def annotate(
     tracks: Annotated[
         str, typer.Option(help="Comma-separated annotation tracks (propp,bakhtin,tmi).")
     ] = "propp,bakhtin,tmi",
-    model: Annotated[str, typer.Option(help="Claude model to use.")] = "claude-sonnet-4-6",
+    model: Annotated[Optional[str], typer.Option(help="Model name (overrides config).")] = None,
+    provider: Annotated[Optional[str], typer.Option(help="LLM provider: anthropic | ollama.")] = None,
 ) -> None:
     """Phase D: Generate structural annotation candidates for active tracks."""
     active_tracks = [t.strip() for t in tracks.split(",") if t.strip()]
 
     from sisyphus.phases.phase_d import run_annotate
 
-    run_annotate(tradition=tradition, tracks=active_tracks, model=model, console=console)
+    run_annotate(
+        tradition=tradition,
+        tracks=active_tracks,
+        model=llm.resolve_model("annotate", model),
+        console=console,
+        provider=provider,
+    )
 
 
 # ---------------------------------------------------------------------------

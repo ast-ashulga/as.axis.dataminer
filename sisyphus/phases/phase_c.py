@@ -13,6 +13,8 @@ from pathlib import Path
 import anthropic
 from rich.console import Console
 
+from sisyphus import llm
+
 from sisyphus.io.workspace import (
     fragments_dir,
     load_passage_text,
@@ -54,6 +56,7 @@ def run_generate_layer0(
     model: str,
     grounding_threshold: float,
     console: Console,
+    provider: str | None = None,
 ) -> None:
     confirmed_path = nas_confirmed_path(tradition)
     if not confirmed_path.exists():
@@ -79,7 +82,7 @@ def run_generate_layer0(
         f"locales={locales}  model={model}  grounding_threshold={grounding_threshold}"
     )
 
-    client = anthropic.Anthropic()
+    client = llm.make_client(provider)
     errors: list[dict] = []
     total_generated = 0
     total_rejected = 0

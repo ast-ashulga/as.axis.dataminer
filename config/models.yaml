@@ -1,0 +1,13 @@
+# LLM provider configuration
+# provider: anthropic | ollama
+provider: anthropic
+
+# Ollama-specific settings (used when provider: ollama)
+ollama_base_url: http://localhost:11434
+
+# Default model per phase.
+# CLI --model overrides these; omit a key to keep the built-in default.
+models:
+  segment: claude-opus-4-8
+  generate_layer0: claude-sonnet-4-6
+  annotate: claude-sonnet-4-6

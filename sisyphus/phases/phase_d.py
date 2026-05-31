@@ -15,6 +15,8 @@ from pathlib import Path
 import anthropic
 from rich.console import Console
 
+from sisyphus import llm
+
 from sisyphus.flags import get_flag
 from sisyphus.io.workspace import (
     annotation_candidates_dir,
@@ -76,6 +78,7 @@ def run_annotate(
     tracks: list[str],
     model: str,
     console: Console,
+    provider: str | None = None,
 ) -> None:
     # Guard: campbell_track must be false
     if "campbell" in tracks and not get_flag("campbell_track"):
@@ -105,7 +108,7 @@ def run_annotate(
         f"tracks={tracks}  model={model}"
     )
 
-    client = anthropic.Anthropic()
+    client = llm.make_client(provider)
     errors_path = pipeline_errors_path(tradition)
     existing_errors: list[dict] = []
     if errors_path.exists():

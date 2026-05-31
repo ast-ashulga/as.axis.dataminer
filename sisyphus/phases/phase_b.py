@@ -15,6 +15,8 @@ from pathlib import Path
 import anthropic
 from rich.console import Console
 
+from sisyphus import llm
+
 from sisyphus.io.workspace import (
     ingested_dir,
     nas_confirmed_path,
@@ -70,6 +72,7 @@ def run_segment(
     tradition: str,
     model: str,
     console: Console,
+    provider: str | None = None,
 ) -> None:
     """Run Phase B segmentation against an ingested run."""
     # Resolve tradition from workspace manifest if not provided
@@ -126,8 +129,9 @@ def run_segment(
     # Call AI agent to segment the text
     console.print(f"  Calling {model} to segment text ({len(full_text)} chars)…")
 
+    client = llm.make_client(provider)
     try:
-        segments = _call_segmentation_agent(full_text, rules, tradition, model, prompt_config)
+        segments = _call_segmentation_agent(client, full_text, rules, tradition, model, prompt_config)
     except Exception as exc:
         console.print(f"[red]Segmentation agent failed: {exc}[/red]")
         console.print("[yellow]Writing empty proposals file — re-run when API is available.[/yellow]")
@@ -222,14 +226,13 @@ def run_segment(
 
 
 def _call_segmentation_agent(
+    client: anthropic.Anthropic,
     text: str,
     rules: dict,
     tradition: str,
     model: str,
     prompt_config: dict,
 ) -> list[dict]:
-    """Call Claude to segment the text. Returns a list of segment dicts."""
-    client = anthropic.Anthropic()
 
     system = SEGMENTATION_SYSTEM_PROMPT
     tradition_preamble = prompt_config.get("tradition_preamble", "")
