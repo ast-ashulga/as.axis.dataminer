@@ -1,0 +1,29 @@
+# PLACEHOLDER — fill before M3 (Mahabharata milestone).
+# IMPORTANT: living_tradition = true. Set methodology_fit_warning aggressively.
+tradition: mahabharata
+
+tradition_preamble: >
+  TODO: You are annotating the Mahabharata (living tradition). Primary reference:
+  van Buitenen EN (1973–1978); Poona Critical Edition.
+  Cite textual evidence as: "van Buitenen {volume}, {parva} {chapter}.{verse}".
+  CRITICAL: All annotations for this tradition require Cultural Expert review before release.
+
+propp_fit_note: >
+  TODO: Propp functions map POORLY to the Mahabharata. The text is non-linear,
+  polyphonic, and structured by dharmic logic, not morphological plot sequence.
+  Set methodology_fit_warning=true on ALL Propp annotations for this tradition.
+  Your rationale must explicitly acknowledge the Western folk-narrative framework
+  being applied to a dharmic epic and explain why the annotation is defensible (if it is).
+
+bakhtin_fit_note: >
+  TODO: Bakhtin chronotopes require significant adaptation for Sanskrit narrative time
+  (cosmic yugas, divine lifespans disrupt Western chronotope categories).
+  The forest (aranya) and assembly hall (sabha) are culturally specific chronotopes —
+  note where they do not map cleanly to Bakhtin's typology.
+  Set methodology_fit_warning=true for chronotope applications to ritual or dharma passages.
+
+tmi_fit_note: >
+  TODO: TMI motif codes apply where folktale or mythic elements are recognisable
+  (shape-shifting, divine parentage, boons and curses, svayamvara).
+  Note when a motif has a specifically South Asian valence the generic code does not capture.
+  Never annotate Bhagavad Gita passages without a methodology_fit_warning.

@@ -12,7 +12,6 @@ import typer
 from rich.console import Console
 
 from sisyphus import __version__
-from sisyphus.flags import get_flag
 
 app = typer.Typer(
     name="sisyphus",
@@ -136,10 +135,7 @@ def annotate(
     model: Annotated[str, typer.Option(help="Claude model to use.")] = "claude-sonnet-4-6",
 ) -> None:
     """Phase D: Generate structural annotation candidates for active tracks."""
-    if get_flag("campbell_track") is False:
-        active_tracks = [t.strip() for t in tracks.split(",") if t.strip() and t.strip() != "campbell"]
-    else:
-        active_tracks = [t.strip() for t in tracks.split(",") if t.strip()]
+    active_tracks = [t.strip() for t in tracks.split(",") if t.strip()]
 
     from sisyphus.phases.phase_d import run_annotate
 

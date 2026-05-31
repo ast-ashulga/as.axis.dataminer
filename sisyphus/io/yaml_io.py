@@ -21,10 +21,16 @@ def _prepare(obj: Any) -> Any:
     Uses mode="json" on Pydantic models so that StrEnum fields become plain strings
     and datetimes become ISO-format strings in one pass.  User-defined _-prefixed keys
     (e.g. _sisyphus_version) are preserved; only Python dunder names (__…__) are dropped.
+
+    ClassVar `_sisyphus_version` on *File / report models is injected back into the
+    dict here because Pydantic v2 excludes ClassVar attributes from model_dump().
     """
     if hasattr(obj, "model_dump"):
-        # mode="json" converts StrEnum → str, datetime → isoformat, etc.
-        return _prepare(obj.model_dump(mode="json"))
+        d = _prepare(obj.model_dump(mode="json"))
+        version = getattr(type(obj), "_sisyphus_version", None)
+        if version is not None:
+            d["_sisyphus_version"] = version
+        return d
     if isinstance(obj, dict):
         return {
             k: _prepare(v)

@@ -1,0 +1,17 @@
+# PLACEHOLDER — fill before M2 (Iliad milestone).
+tradition: iliad
+
+tradition_preamble: >
+  TODO: The source text is the Iliad, Homer's Greek epic (c. 8th century BCE,
+  oral-formulaic tradition). Scholarly authority: West 1998 (Perseus), Murray/Wyatt (Loeb 1999).
+  Divisions follow the traditional 24-book (rhapsody) structure.
+  Use kebab-case slugs: book-i, book-ii, …, book-xxiv.
+  Episode slugs should follow narrative logic (aristeia, council, catalogue) not line counts.
+  NAS prefix: nms://iliad
+
+epistemic_framing: >
+  TODO: Book divisions are ancient but not authorial; episode boundaries should follow
+  narrative logic, not mechanically follow book ends.
+  Lacunae are rare in manuscript tradition — note textual variants and athetised lines instead.
+  Western structural frameworks apply with moderate fit.
+  Set methodology_fit_warning=true where framework-genre mismatch is epistemically significant.

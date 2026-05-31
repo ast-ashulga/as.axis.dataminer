@@ -1,0 +1,20 @@
+# PLACEHOLDER — fill before M3 (Mahabharata milestone).
+# IMPORTANT: living_tradition = true. public_release = false until Cultural Expert review.
+tradition: mahabharata
+
+tradition_preamble: >
+  TODO: The source text is the Mahabharata, a living Sanskrit epic tradition.
+  Primary text: GRETIL Sanskrit corpus; Poona Critical Edition.
+  Reference translation: van Buitenen EN (1973–1978).
+  Divisions follow the 18-parva (book) structure + Harivamsa.
+  Use kebab-case slugs: adi-parva, sabha-parva, vana-parva, etc.
+  NAS prefix: nms://mahabharata
+  CRITICAL: This is scripture for living communities. Apply methodology-fit gate aggressively.
+
+epistemic_framing: >
+  TODO: The Mahabharata exists in multiple recensions (Poona Critical Edition, Southern,
+  Northern). Segment against the Critical Edition as canonical base; note major variants.
+  Do NOT treat the text as a closed literary artifact — it is living scripture.
+  Set methodology_fit_warning=true for any Western structural framework applied to
+  dharma-narrative, ritual, or Bhagavad Gita passages.
+  Use granularity=interpolation for passages absent from the Critical Edition.

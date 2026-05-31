@@ -19,9 +19,9 @@ from sisyphus.flags import get_flag
 from sisyphus.io.workspace import (
     annotation_candidates_dir,
     annotation_report_path,
+    load_passage_text,
     nas_confirmed_path,
     pipeline_errors_path,
-    segmented_dir,
 )
 from sisyphus.io.yaml_io import read_yaml, write_yaml
 from sisyphus.schema import (
@@ -34,6 +34,7 @@ from sisyphus.schema import (
 )
 
 _RULES_DIR = Path(__file__).parent.parent.parent / "rules" / "tracks"
+_PROMPTS_DIR = Path(__file__).parent.parent.parent / "prompts" / "phase-d"
 
 ANNOTATION_SYSTEM = """\
 You are a structural annotation specialist for the Mnemosyne Engine.
@@ -93,6 +94,12 @@ def run_annotate(
     confirmed_data = read_yaml(confirmed_path)
     entries = confirmed_data.get("entries", [])
 
+    # Load tradition-specific prompt config (optional; falls back gracefully)
+    prompt_config: dict = {}
+    prompt_path = _PROMPTS_DIR / f"{tradition}.yaml"
+    if prompt_path.exists():
+        prompt_config = read_yaml(prompt_path)
+
     console.print(
         f"[bold]Phase D — Annotation[/bold]  tradition={tradition}  "
         f"tracks={tracks}  model={model}"
@@ -135,7 +142,7 @@ def run_annotate(
                     console.print(f"  [dim]Skip (exists):[/dim] {nas} [{track}]")
                     continue
 
-            passage_text = _load_passage_text(tradition, division, episode)
+            passage_text = load_passage_text(division, episode)
             fit_warning = entry.get("methodology_fit_warning", False)
             fit_note = entry.get("methodology_fit_note", "")
 
@@ -152,6 +159,7 @@ def run_annotate(
                     passage_text=passage_text,
                     fit_warning=fit_warning,
                     fit_note=fit_note,
+                    prompt_config=prompt_config,
                 )
             except Exception as exc:
                 new_errors.append({
@@ -233,14 +241,6 @@ def _format_framework(rules: dict, track: str) -> str:
     return "\n".join(lines) or "(no framework definitions loaded)"
 
 
-def _load_passage_text(tradition: str, division: str, episode: str) -> str | None:
-    from sisyphus.io.workspace import _ROOT
-    candidates = list((_ROOT / "workspace").glob(f"*/segmented/{division}/{episode}.txt"))
-    if candidates:
-        return candidates[-1].read_text(encoding="utf-8")
-    return None
-
-
 def _call_annotation_agent(
     client: anthropic.Anthropic,
     model: str,
@@ -251,11 +251,18 @@ def _call_annotation_agent(
     passage_text: str | None,
     fit_warning: bool,
     fit_note: str,
+    prompt_config: dict,
 ) -> list[dict]:
     system = ANNOTATION_SYSTEM.format(
         track_label=track_label,
         framework_definitions=framework_defs,
     )
+    tradition_preamble = prompt_config.get("tradition_preamble", "")
+    if tradition_preamble:
+        system += f"\n\nTradition context:\n{tradition_preamble}"
+    track_fit_note = prompt_config.get(f"{track}_fit_note", "")
+    if track_fit_note:
+        system += f"\n\n{track_label} framework notes for this tradition:\n{track_fit_note}"
 
     passage_section = f"Source passage:\n{passage_text}\n\n" if passage_text else ""
     fit_section = (

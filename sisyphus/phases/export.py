@@ -14,10 +14,9 @@ from pathlib import Path
 from rich.console import Console
 
 from sisyphus.io.workspace import output_dir
+from sisyphus.io.workspace import _ROOT
 from sisyphus.io.yaml_io import read_yaml, write_yaml
 from sisyphus.phases.validate import run_validate
-
-_ROOT = Path(__file__).parent.parent.parent
 
 
 def run_export(tradition: str, format: str, console: Console) -> None:

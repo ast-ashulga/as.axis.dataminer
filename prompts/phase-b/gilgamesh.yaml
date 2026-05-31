@@ -1,0 +1,19 @@
+tradition: gilgamesh
+manuscript_layer: sbv
+
+tradition_preamble: >
+  The source text is the Epic of Gilgamesh, Standard Babylonian Version (SBV),
+  composed in Akkadian (c. 13th–7th century BCE).
+  Scholarly authority: Andrew George, The Babylonian Gilgamesh Epic (OUP, 2003).
+  The text is organised into 11 canonical tablets (SB I–XI) plus Tablet XII appendix.
+  Use kebab-case Roman-numeral slugs for divisions: tablet-i, tablet-ii, …, tablet-xi, tablet-xii.
+  NAS prefix: nms://gilgamesh
+
+epistemic_framing: >
+  This text is heavily fragmentary — many passages are damaged or missing entirely.
+  Address every lacuna as a discrete NAS unit with granularity=lacuna and a descriptive
+  episode slug (e.g. nms://gilgamesh/tablet-v/lacuna-cedar-forest-gap).
+  Use hedged language in methodology_fit_note for damaged or reconstructed passages.
+  Western structural frameworks (Propp, Bakhtin, TMI) apply with moderate fit to
+  Sumero-Akkadian epic; set methodology_fit_warning=true only where the mismatch
+  is epistemically significant, not as a blanket precaution.

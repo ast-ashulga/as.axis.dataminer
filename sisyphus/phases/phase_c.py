@@ -6,7 +6,6 @@ with inline NAS citations, runs grounding validation, writes candidate content r
 
 from __future__ import annotations
 
-import hashlib
 import re
 from datetime import UTC, datetime
 from pathlib import Path
@@ -16,20 +15,17 @@ from rich.console import Console
 
 from sisyphus.io.workspace import (
     fragments_dir,
+    load_passage_text,
     nas_confirmed_path,
     pipeline_errors_path,
-    pipeline_reports_dir,
 )
 from sisyphus.io.yaml_io import read_yaml, write_yaml
 from sisyphus.schema import (
     ConfidenceTier,
     ContentRecord,
-    FragmentFile,
     FragmentRecord,
     Layer,
     ManuscriptLayer,
-    PipelineError,
-    PipelineErrorsFile,
     Status,
 )
 
@@ -105,7 +101,7 @@ def run_generate_layer0(
             continue
 
         # Load segmented passage text if available (best-effort; may be absent)
-        passage_text = _load_passage_text(tradition, division, episode)
+        passage_text = load_passage_text(division, episode)
 
         frag_path = fragments_dir(tradition, division) / f"{episode}.yaml"
         existing_content: list[dict] = []
@@ -263,16 +259,6 @@ def _validate_grounding(
     if uncited_fraction > threshold:
         return uncited
     return []
-
-
-def _load_passage_text(tradition: str, division: str, episode: str) -> str | None:
-    from sisyphus.io.workspace import _ROOT
-    seg_path = _ROOT / "workspace"
-    # Look for any run's segmented text for this division/episode
-    candidates = list(seg_path.glob(f"*/segmented/{division}/{episode}.txt"))
-    if candidates:
-        return candidates[-1].read_text(encoding="utf-8")
-    return None
 
 
 def _upsert_fragment_file(

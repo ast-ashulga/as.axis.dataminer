@@ -87,3 +87,11 @@ def pipeline_errors_path(tradition: str) -> Path:
 
 def review_queue_path(tradition: str) -> Path:
     return pipeline_reports_dir(tradition) / "review-queue.yaml"
+
+
+def load_passage_text(division: str, episode: str) -> str | None:
+    """Return segmented passage text for a division/episode, or None if not yet segmented."""
+    candidates = list((_ROOT / "workspace").glob(f"*/segmented/{division}/{episode}.txt"))
+    if candidates:
+        return candidates[-1].read_text(encoding="utf-8")
+    return None

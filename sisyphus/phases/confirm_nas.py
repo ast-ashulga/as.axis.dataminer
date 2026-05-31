@@ -19,6 +19,7 @@ from rich.prompt import Prompt
 from sisyphus.io.workspace import nas_confirmed_path, nas_proposals_path, nas_revisions_path
 from sisyphus.io.yaml_io import read_yaml, write_yaml
 from sisyphus.schema import (
+    NAS_PATTERN,
     NASAddress,
     NASConfirmedEntry,
     NASConfirmedFile,
@@ -27,8 +28,6 @@ from sisyphus.schema import (
     NASRevision,
     NASRevisionsFile,
 )
-
-_NAS_RE = __import__("re").compile(r"^nms://[a-z0-9-]+(/[a-z0-9-]+){1,3}$")
 
 
 def run_confirm_nas(tradition: str, reviewer: str, console: Console) -> None:
@@ -128,7 +127,7 @@ def run_confirm_nas(tradition: str, reviewer: str, console: Console) -> None:
                     console.print("[yellow]Provide the new address: r nms://…[/yellow]")
                     continue
                 new_nas = parts[1].strip()
-                if not _NAS_RE.match(new_nas):
+                if not NAS_PATTERN.match(new_nas):
                     console.print(f"[red]Invalid NAS format: {new_nas}[/red]")
                     continue
                 now = datetime.now(UTC)

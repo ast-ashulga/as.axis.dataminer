@@ -11,7 +11,7 @@ Key invariants enforced here (not just documented):
 import re
 from datetime import datetime
 from enum import StrEnum
-from typing import Annotated, Literal
+from typing import Annotated, ClassVar, Literal
 
 from pydantic import BaseModel, Field, field_validator, model_validator
 
@@ -163,9 +163,7 @@ class FragmentRecord(BaseModel):
 class FragmentFile(BaseModel):
     """Top-level fragment YAML file (fragments/{division}/{episode}.yaml)."""
 
-    _sisyphus_version: str = "0.1"
-    _generated_at: datetime | None = None
-    _pipeline_run_id: str | None = None
+    _sisyphus_version: ClassVar[str] = "0.1"
 
     fragment: FragmentRecord
     content: list[ContentRecord] = Field(default_factory=list)
@@ -212,7 +210,7 @@ class AnnotationCandidate(BaseModel):
 class AnnotationFile(BaseModel):
     """annotation-candidates/{division}/{episode}.{track}.yaml"""
 
-    _sisyphus_version: str = "0.1"
+    _sisyphus_version: ClassVar[str] = "0.1"
     nas: NASAddress
     track: AnnotationTrack
     annotations: list[AnnotationCandidate] = Field(default_factory=list)
@@ -246,7 +244,7 @@ class NASProposal(BaseModel):
 class NASProposalsFile(BaseModel):
     """output/{tradition}/nas-proposals.yaml"""
 
-    _sisyphus_version: str = "0.1"
+    _sisyphus_version: ClassVar[str] = "0.1"
     tradition_id: str
     proposals: list[NASProposal] = Field(default_factory=list)
 
@@ -265,7 +263,7 @@ class NASConfirmedEntry(BaseModel):
 class NASConfirmedFile(BaseModel):
     """output/{tradition}/nas-confirmed.yaml"""
 
-    _sisyphus_version: str = "0.1"
+    _sisyphus_version: ClassVar[str] = "0.1"
     tradition_id: str
     entries: list[NASConfirmedEntry] = Field(default_factory=list)
 
@@ -282,7 +280,7 @@ class NASRevision(BaseModel):
 class NASRevisionsFile(BaseModel):
     """output/{tradition}/nas-revisions.yaml"""
 
-    _sisyphus_version: str = "0.1"
+    _sisyphus_version: ClassVar[str] = "0.1"
     tradition_id: str
     revisions: list[NASRevision] = Field(default_factory=list)
 
@@ -307,7 +305,7 @@ class ArtifactRecord(BaseModel):
 class ArtifactsFile(BaseModel):
     """artifacts/{division}/{episode}.artifacts.yaml"""
 
-    _sisyphus_version: str = "0.1"
+    _sisyphus_version: ClassVar[str] = "0.1"
     nas: NASAddress
     artifacts: list[ArtifactRecord] = Field(default_factory=list)
 
@@ -336,7 +334,7 @@ class TranslationEntry(BaseModel):
 class TraditionManifest(BaseModel):
     """output/{tradition}/manifest.yaml"""
 
-    _sisyphus_version: str = "0.1"
+    _sisyphus_version: ClassVar[str] = "0.1"
     tradition: str
     manuscript_layer: ManuscriptLayer | None = None
     living_tradition: bool = False
@@ -401,7 +399,7 @@ class ReviewDecisionsFile(BaseModel):
 
 
 class IngestionReport(BaseModel):
-    _sisyphus_version: str = "0.1"
+    _sisyphus_version: ClassVar[str] = "0.1"
     run_id: str
     source_file: str
     source_type: str
@@ -415,7 +413,7 @@ class IngestionReport(BaseModel):
 
 
 class SegmentationReport(BaseModel):
-    _sisyphus_version: str = "0.1"
+    _sisyphus_version: ClassVar[str] = "0.1"
     run_id: str
     tradition_id: str
     segment_count: int = 0
@@ -427,7 +425,7 @@ class SegmentationReport(BaseModel):
 
 
 class AnnotationReport(BaseModel):
-    _sisyphus_version: str = "0.1"
+    _sisyphus_version: ClassVar[str] = "0.1"
     run_id: str
     tradition_id: str
     tracks: dict[str, int] = Field(default_factory=dict)  # track -> candidate count

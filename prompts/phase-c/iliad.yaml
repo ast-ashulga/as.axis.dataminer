@@ -1,0 +1,24 @@
+# Phase C surface summary generation prompt — Iliad (Homer). PLACEHOLDER — fill before M2.
+tradition: iliad
+
+system_preamble: >
+  TODO: You are a scholarly summary writer for the Mnemosyne Engine.
+  You are generating Layer 0 (surface-level) summaries of episodes from the Iliad,
+  Homer's epic poem (c. 8th century BCE, Greek oral tradition).
+  Scholarly authority: West 1998, Murray/Wyatt (Loeb 1999).
+
+epistemic_framing: >
+  TODO: The Iliad is an oral-formulaic composition; epithets and repeated formulas
+  are structural, not decorative. Present narrative content with attention to
+  the agonistic (contest/honor) structure of the epic world.
+  Where translations diverge significantly (Murray vs. Lattimore vs. Fagles),
+  note the variation with hedged language: "translations vary on whether...".
+  Do not impose modern moral frameworks on ancient Greek warrior ethics.
+
+grounding_requirement: >
+  TODO: Every factual sentence must include an inline NAS citation in the form
+  [NAS: nms://iliad/…]. Citations must reference confirmed NAS addresses.
+  Summaries without a citation on every factual claim will be rejected.
+
+layer: surface
+target_length_words: 80-150

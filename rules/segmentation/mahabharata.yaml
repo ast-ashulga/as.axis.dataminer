@@ -1,0 +1,145 @@
+# Segmentation rules for the Mahabharata.
+# NAS taxonomy follows fragment-graph-design.md §1.
+# PLACEHOLDER — requires Cultural Expert review before M3.
+# IMPORTANT: living_tradition = true. Do not release output without formal Cultural Expert sign-off.
+tradition: mahabharata
+nas_prefix: "nms://mahabharata"
+
+# Base text: Poona Critical Edition (Bhandarkar Oriental Research Institute).
+# Reference translation: van Buitenen EN (1973–1978), volumes 1–3.
+# Sanskrit GRETIL corpus for Layer 3 (layer_3_original flag = false until post-M2).
+
+divisions:
+  - name: adi-parva
+    episodes:
+      - origins-and-cosmology
+      - birth-of-bhishma
+      - bhishmas-vow
+      - birth-of-karna
+      - education-at-dronas
+      - tournament-at-hastinapura
+      - lac-house-conspiracy
+      - birth-of-draupadi
+      - draupadi-svayamvara
+      - pandavas-revealed
+  - name: sabha-parva
+    episodes:
+      - indraprastha-founding
+      - maya-builds-the-hall
+      - rajasuya-sacrifice
+      - dice-game-first
+      - draupadi-disrobing
+      - second-dice-game
+      - exile-announced
+  - name: vana-parva
+    episodes:
+      - forest-exile-begins
+      - draupadi-and-dharma
+      - arjunas-quest-for-weapons
+      - arjuna-and-indra
+      - arjuna-and-shiva
+      - nala-and-damayanti
+      - yaksha-questions
+      - karna-and-indra
+  - name: virata-parva
+    episodes:
+      - disguises-at-viratas-court
+      - kichaka-episode
+      - cattle-raid
+      - arjuna-reveals-himself
+  - name: udyoga-parva
+    episodes:
+      - war-preparations
+      - krishnas-peace-mission
+      - krishna-at-hastinapura
+      - sanjaya-returns
+      - karnas-birth-secret
+      - karnas-conversation-with-krishna
+  - name: bhishma-parva
+    episodes:
+      - armies-arrayed
+      - bhagavad-gita
+      - day-one-battle
+      - days-two-to-nine
+      - day-ten-bhishma-falls
+  - name: drona-parva
+    episodes:
+      - drona-as-commander
+      - abhimanyu-in-chakravyuha
+      - death-of-abhimanyu
+      - arjunas-oath
+      - death-of-jayadratha
+      - night-battle
+      - death-of-drona
+  - name: karna-parva
+    episodes:
+      - karna-as-commander
+      - duel-karna-arjuna
+      - death-of-karna
+  - name: shalya-parva
+    episodes:
+      - shalya-as-commander
+      - death-of-shalya
+      - duel-bhima-duryodhana
+      - end-of-war
+  - name: sauptika-parva
+    episodes:
+      - ashvattamas-night-raid
+      - ashvattamas-curse
+  - name: stri-parva
+    episodes:
+      - gandhari-laments
+      - dhritarashtra-laments
+      - women-at-battlefield
+  - name: shanti-parva
+    episodes:
+      - bhishmas-teachings-rajadharma
+      - bhishmas-teachings-moksha
+      - bhishmas-teachings-on-krishna
+  - name: anushasana-parva
+    episodes:
+      - bhishma-on-dharma
+      - dana-dharma
+      - bhishmas-death
+  - name: ashvamedhika-parva
+    episodes:
+      - horse-sacrifice
+      - arjunas-campaign
+      - anugita
+  - name: ashramavasika-parva
+    episodes:
+      - dhritarashtra-retires
+      - pandavas-visit-forest
+      - death-in-forest-fire
+  - name: mausala-parva
+    episodes:
+      - destruction-of-yadavas
+      - krishnas-death
+      - balarama-departs
+  - name: mahaprasthanika-parva
+    episodes:
+      - pandavas-great-journey
+      - deaths-on-the-journey
+  - name: svargarohana-parva
+    episodes:
+      - yudhishthira-in-hell
+      - pandavas-ascend-to-heaven
+
+# Granularity: episode (default), sub-episode, verse-range, lacuna, interpolation
+default_granularity: episode
+
+# Signals used to identify parva and episode boundaries in raw text
+# TODO: tune for specific translation and GRETIL corpus structure before M3
+boundary_signals:
+  parva: ["Parva", "PARVA", "Book "]
+  episode_keywords:
+    bhagavad-gita: ["Gita", "Arjuna", "Krishna", "yoga", "dharma", "battlefield"]
+    draupadi-disrobing: ["Draupadi", "disrobe", "Duhshasana", "Bhima"]
+    dice-game-first: ["dice", "Shakuni", "Yudhishthira", "lost"]
+    death-of-abhimanyu: ["Abhimanyu", "chakravyuha", "surrounded"]
+    bhishmas-death: ["Bhishma", "bed of arrows", "sun", "uttarayana"]
+    krishnas-death: ["Krishna", "hunter", "arrow", "foot"]
+
+# Lacuna and interpolation markers
+# The Poona CE marks interpolations with brackets; Southern/Northern recension additions
+lacuna_markers: ["[CE lacuna]", "[interpolation]", "[Southern recension]", "[Northern recension]", "[corrupt]"]

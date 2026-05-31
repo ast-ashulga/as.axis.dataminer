@@ -1,0 +1,141 @@
+# Segmentation rules for the Iliad (Homer).
+# NAS taxonomy follows fragment-graph-design.md §1.
+# PLACEHOLDER — episode list is scholarly standard; boundary_signals need tuning for M2.
+tradition: iliad
+nas_prefix: "nms://iliad"
+
+divisions:
+  - name: book-i
+    episodes:
+      - chryses-ransom
+      - plague-of-apollo
+      - quarrel-agamemnon-achilles
+      - thetis-plea-to-zeus
+  - name: book-ii
+    episodes:
+      - dream-of-agamemnon
+      - test-of-the-army
+      - catalogue-of-ships
+      - catalogue-of-trojans
+  - name: book-iii
+    episodes:
+      - teichoskopia
+      - duel-paris-menelaos
+      - aphrodite-rescues-paris
+  - name: book-iv
+    episodes:
+      - breaking-of-the-truce
+      - pandarus-arrow
+      - agamemnon-inspection
+  - name: book-v
+    episodes:
+      - diomedes-aristeia
+      - wounding-of-aphrodite
+      - wounding-of-ares
+  - name: book-vi
+    episodes:
+      - glaucus-diomedes-exchange
+      - hector-in-troy
+      - hector-andromache-farewell
+  - name: book-vii
+    episodes:
+      - ajax-hector-duel
+      - burial-truce
+      - achaean-wall
+  - name: book-viii
+    episodes:
+      - zeus-weighs-fates
+      - trojan-advance
+      - trojan-night-camp
+  - name: book-ix
+    episodes:
+      - embassy-to-achilles
+      - phoenix-speech
+      - achilles-refusal
+  - name: book-x
+    episodes:
+      - doloneia
+  - name: book-xi
+    episodes:
+      - agamemnon-aristeia
+      - wounding-of-leaders
+      - patroclus-sent-to-nestor
+  - name: book-xii
+    episodes:
+      - trojan-assault-on-wall
+      - hector-breaks-gate
+  - name: book-xiii
+    episodes:
+      - poseidon-rallies-achaeans
+      - battle-at-ships
+  - name: book-xiv
+    episodes:
+      - deception-of-zeus
+      - wounding-of-zeus
+  - name: book-xv
+    episodes:
+      - zeus-awakes
+      - apollo-rebuilds-trojans
+      - trojan-advance-to-ships
+  - name: book-xvi
+    episodes:
+      - patroclus-plea
+      - patroclus-aristeia
+      - death-of-sarpedon
+      - death-of-patroclus
+  - name: book-xvii
+    episodes:
+      - battle-over-patroclus-body
+      - menelaos-aristeia
+  - name: book-xviii
+    episodes:
+      - achilles-grief
+      - thetis-to-hephaestus
+      - shield-of-achilles
+  - name: book-xix
+    episodes:
+      - reconciliation-with-agamemnon
+      - arming-of-achilles
+  - name: book-xx
+    episodes:
+      - gods-enter-battle
+      - achilles-vs-aeneas
+      - achilles-vs-hector-first-encounter
+  - name: book-xxi
+    episodes:
+      - battle-at-scamander
+      - achilles-vs-xanthos
+      - battle-of-gods
+  - name: book-xxii
+    episodes:
+      - priam-pleads-with-hector
+      - death-of-hector
+      - defilement-of-hector
+  - name: book-xxiii
+    episodes:
+      - ghost-of-patroclus
+      - funeral-of-patroclus
+      - funeral-games
+  - name: book-xxiv
+    episodes:
+      - ransom-of-hector
+      - priam-and-achilles
+      - burial-of-hector
+
+# Granularity: episode (default), sub-episode, verse-range, lacuna
+default_granularity: episode
+
+# Signals used to identify division and episode boundaries in raw text
+# TODO: tune for specific translation(s) used (Murray/Wyatt, Lattimore, or Perseus Greek)
+boundary_signals:
+  book: ["Book ", "BOOK ", "Rhapsody "]
+  episode_keywords:
+    catalogue-of-ships: ["Boeotians", "ships", "leaders"]
+    embassy-to-achilles: ["Phoenix", "Ajax", "Odysseus", "embassy"]
+    death-of-patroclus: ["Patroclus", "Hector", "struck", "fell"]
+    shield-of-achilles: ["shield", "Hephaestus", "forged", "wrought"]
+    death-of-hector: ["Hector", "Achilles", "spear", "killed"]
+    ransom-of-hector: ["Priam", "ransom", "twelve days"]
+
+# Lacuna patterns: rare in the Iliad manuscript tradition; note textual variants instead
+lacuna_markers: ["[lacuna]", "[corrupt]", "[disputed]", "[athetised]"]

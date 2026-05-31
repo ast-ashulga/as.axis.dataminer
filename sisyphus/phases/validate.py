@@ -52,9 +52,11 @@ def run_validate(tradition: str, console: Console) -> list[str]:
 
     # 2. Fragment files
     frag_root = out / "fragments"
+    frag_files: list = []
     candidate_count = 0
     if frag_root.exists():
-        for frag_path in frag_root.glob("**/*.yaml"):
+        frag_files = list(frag_root.glob("**/*.yaml"))
+        for frag_path in frag_files:
             frag_errors, frag_candidates = _validate_fragment_file(
                 frag_path, confirmed_nas
             )
@@ -63,9 +65,11 @@ def run_validate(tradition: str, console: Console) -> list[str]:
 
     # 3. Annotation candidate files
     ann_root = out / "annotation-candidates"
+    ann_files: list = []
     ann_candidate_count = 0
     if ann_root.exists():
-        for ann_path in ann_root.glob("**/*.yaml"):
+        ann_files = list(ann_root.glob("**/*.yaml"))
+        for ann_path in ann_files:
             ann_errors, ann_candidates = _validate_annotation_file(ann_path, confirmed_nas)
             errors.extend(ann_errors)
             ann_candidate_count += ann_candidates
@@ -86,8 +90,8 @@ def run_validate(tradition: str, console: Console) -> list[str]:
     table.add_column("Result")
 
     table.add_row("Confirmed NAS entries", str(len(confirmed_nas)))
-    table.add_row("Fragment files checked", str(len(list(frag_root.glob("**/*.yaml"))) if frag_root.exists() else 0))
-    table.add_row("Annotation files checked", str(len(list(ann_root.glob("**/*.yaml"))) if ann_root.exists() else 0))
+    table.add_row("Fragment files checked", str(len(frag_files)))
+    table.add_row("Annotation files checked", str(len(ann_files)))
     table.add_row("Unreviewed candidates", str(total_candidates))
     table.add_row("Errors", f"[red]{len(errors)}[/red]" if errors else "[green]0[/green]")
 

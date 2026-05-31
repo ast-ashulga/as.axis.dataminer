@@ -1,0 +1,24 @@
+# PLACEHOLDER — fill before M2 (Iliad milestone).
+tradition: iliad
+
+tradition_preamble: >
+  TODO: You are annotating the Iliad (Homer). Scholarly authority: West 1998, Murray/Wyatt (Loeb 1999).
+  Cite textual evidence as: "Murray/Wyatt {book}.{line}" e.g. "Murray/Wyatt 1.1".
+
+propp_fit_note: >
+  TODO: Propp functions apply with moderate fit to Iliadic narrative.
+  Aristeia sequences map broadly to functions VIII–XIV (struggle → victory).
+  Embassy and council scenes map to preparation functions I–VII.
+  The Iliad lacks Propp's resolution functions (return, wedding) — note this structural absence.
+  Do not set methodology_fit_warning=true automatically; evaluate per passage.
+
+bakhtin_fit_note: >
+  TODO: Bakhtin chronotopes apply well to the Iliad.
+  The battlefield is a threshold chronotope (life/death boundary).
+  Olympian scenes introduce an encounter chronotope (cosmic vs. human time).
+  Homeric similes operate as idyllic chronotopes (peacetime intrusions into war).
+
+tmi_fit_note: >
+  TODO: TMI motif codes are identifiable throughout (divine intervention A182,
+  disguise K1800, recognition H0, hospitality P320).
+  Note when a motif has specifically Greek valence the generic code does not capture.

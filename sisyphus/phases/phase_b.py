@@ -10,14 +10,11 @@ from __future__ import annotations
 
 import json
 import re
-import uuid
-from datetime import UTC, datetime
 from pathlib import Path
 
 import anthropic
 from rich.console import Console
 
-from sisyphus.flags import get_flag
 from sisyphus.io.workspace import (
     ingested_dir,
     nas_confirmed_path,
@@ -27,13 +24,14 @@ from sisyphus.io.workspace import (
 )
 from sisyphus.io.yaml_io import read_yaml, write_yaml
 from sisyphus.schema import (
+    NAS_PATTERN,
     NASProposal,
     NASProposalsFile,
     SegmentationReport,
 )
 
 _RULES_DIR = Path(__file__).parent.parent.parent / "rules" / "segmentation"
-_NAS_PATTERN = re.compile(r"^nms://[a-z0-9-]+(/[a-z0-9-]+){1,3}$")
+_PROMPTS_DIR = Path(__file__).parent.parent.parent / "prompts" / "phase-b"
 
 SEGMENTATION_SYSTEM_PROMPT = """\
 You are a scholar-apprentice segmenter for the Mnemosyne Engine data pipeline.
@@ -93,6 +91,13 @@ def run_segment(
         return
 
     rules = read_yaml(rules_path)
+
+    # Load tradition-specific prompt config (optional; falls back gracefully)
+    prompt_config: dict = {}
+    prompt_path = _PROMPTS_DIR / f"{tradition}.yaml"
+    if prompt_path.exists():
+        prompt_config = read_yaml(prompt_path)
+
     console.print(f"[bold]Phase B — Segmentation[/bold]  run={run_id}  tradition={tradition}  model={model}")
 
     # Load ingested text
@@ -122,7 +127,7 @@ def run_segment(
     console.print(f"  Calling {model} to segment text ({len(full_text)} chars)…")
 
     try:
-        segments = _call_segmentation_agent(full_text, rules, tradition, model)
+        segments = _call_segmentation_agent(full_text, rules, tradition, model, prompt_config)
     except Exception as exc:
         console.print(f"[red]Segmentation agent failed: {exc}[/red]")
         console.print("[yellow]Writing empty proposals file — re-run when API is available.[/yellow]")
@@ -136,7 +141,7 @@ def run_segment(
 
     for seg in segments:
         nas = seg.get("proposed_nas", "")
-        if not nas or not _NAS_PATTERN.match(nas):
+        if not nas or not NAS_PATTERN.match(nas):
             console.print(f"[yellow]⚠[/yellow] Skipping invalid NAS: '{nas}'")
             continue
 
@@ -221,9 +226,18 @@ def _call_segmentation_agent(
     rules: dict,
     tradition: str,
     model: str,
+    prompt_config: dict,
 ) -> list[dict]:
     """Call Claude to segment the text. Returns a list of segment dicts."""
     client = anthropic.Anthropic()
+
+    system = SEGMENTATION_SYSTEM_PROMPT
+    tradition_preamble = prompt_config.get("tradition_preamble", "")
+    if tradition_preamble:
+        system += f"\n\nTradition context:\n{tradition_preamble}"
+    epistemic_framing = prompt_config.get("epistemic_framing", "")
+    if epistemic_framing:
+        system += f"\n\nEpistemic framing:\n{epistemic_framing}"
 
     divisions_yaml = "\n".join(
         f"- {d['name']}: {', '.join(d['episodes'])}"
@@ -251,7 +265,7 @@ Return a JSON array of segment objects as specified in your instructions.
     response = client.messages.create(
         model=model,
         max_tokens=8192,
-        system=SEGMENTATION_SYSTEM_PROMPT,
+        system=system,
         messages=[{"role": "user", "content": user_message}],
     )
 

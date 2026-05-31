@@ -140,6 +140,29 @@ class TestEnumSerialisation:
 # Idempotency: write twice, assert no duplicates
 # ---------------------------------------------------------------------------
 
+class TestVersionStampViaModelDump:
+    """_sisyphus_version must survive when writing a *File / report model instance directly."""
+
+    def test_nas_proposals_file_version_survives(self, tmp_path: Path):
+        from sisyphus.schema import NASProposalsFile
+
+        p = tmp_path / "nas-proposals.yaml"
+        write_yaml(p, NASProposalsFile(tradition_id="gilgamesh"))
+        back = read_yaml(p)
+        assert back.get("_sisyphus_version") == "0.1", (
+            "NASProposalsFile written via write_yaml must include _sisyphus_version — "
+            "Pydantic v2 ClassVar injection in yaml_io is broken"
+        )
+
+    def test_ingestion_report_version_survives(self, tmp_path: Path):
+        from sisyphus.schema import IngestionReport
+
+        p = tmp_path / "report.yaml"
+        write_yaml(p, IngestionReport(run_id="x", source_file="f.pdf", source_type="txt"))
+        back = read_yaml(p)
+        assert back.get("_sisyphus_version") == "0.1"
+
+
 class TestIdempotency:
     def test_write_twice_does_not_duplicate_content(self, tmp_path: Path):
         p = tmp_path / "fragment.yaml"
