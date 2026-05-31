@@ -1,0 +1,80 @@
+# Segmentation rules for the Gilgamesh Standard Babylonian Version (SBV).
+# NAS taxonomy follows fragment-graph-design.md §1.
+tradition: gilgamesh
+manuscript_layer: sbv
+nas_prefix: "nms://gilgamesh"
+
+divisions:
+  - name: tablet-i
+    episodes:
+      - gilgamesh-of-uruk
+      - creation-of-enkidu
+      - shamhat-and-enkidu
+  - name: tablet-ii
+    episodes:
+      - enkidu-comes-to-uruk
+      - wrestling
+      - friendship
+  - name: tablet-iii
+    episodes:
+      - elders-counsel
+      - ninsun-prayer
+      - departure
+  - name: tablet-iv
+    episodes:
+      - cedar-forest-journey
+      - dream-sequence
+  - name: tablet-v
+    episodes:
+      - battle-with-humbaba
+      - cedar-felling
+  - name: tablet-vi
+    episodes:
+      - ishtar-proposal
+      - bull-of-heaven
+      - enkidus-curse
+  - name: tablet-vii
+    episodes:
+      - enkidus-dream
+      - enkidus-lament
+      - enkidus-death
+  - name: tablet-viii
+    episodes:
+      - lament-for-enkidu
+      - funeral-rites
+  - name: tablet-ix
+    episodes:
+      - gilgamesh-wandering
+      - scorpion-people
+      - garden-of-gems
+  - name: tablet-x
+    episodes:
+      - siduri-and-gilgamesh
+      - urshanabi-crossing
+      - waters-of-death
+  - name: tablet-xi
+    episodes:
+      - utnapishtim-meeting
+      - flood-narrative
+      - sleep-challenge
+      - plant-of-immortality
+      - return-to-uruk
+  - name: tablet-xii
+    episodes:
+      - descent-for-pukku
+
+# Granularity: episode (default), sub-episode, verse-range, lacuna
+default_granularity: episode
+
+# Signals used to identify division and episode boundaries in raw text
+boundary_signals:
+  tablet: ["[TABLET ", "tablet ", "TABLET "]
+  episode_keywords:
+    gilgamesh-of-uruk: ["surpassing all kings", "two-thirds divine"]
+    creation-of-enkidu: ["Aruru", "clay", "Enkidu"]
+    flood-narrative: ["flood", "Utnapishtim", "boat", "raven", "dove"]
+    sleep-challenge: ["sleep", "seven days", "bread"]
+    plant-of-immortality: ["plant", "bottom of the sea", "serpent"]
+
+# Lacuna patterns: mark damaged passages
+lacuna_markers: ["...","[broken]","[gap]","[lacuna]","[damaged]"]

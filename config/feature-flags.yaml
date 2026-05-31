@@ -1,0 +1,11 @@
+# All feature flags default to false (P-06).
+# Never change these here — override via environment or explicit CLI flag only.
+
+# Phase F: automated parallel detection (deferred post-M2; requires ≥2 confirmed traditions)
+parallel_detection_pipeline: false
+
+# Layer 3 original-language fragments (ingested but not served to users)
+layer_3_original: false
+
+# Campbell monomyth annotation track (unscoped; separate product decision required)
+campbell_track: false

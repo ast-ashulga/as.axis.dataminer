@@ -1,0 +1,33 @@
+# Bakhtin Chronotope track specification.
+# Source: Mikhail Bakhtin, "Forms of Time and of the Chronotope in the Novel" (1937/1981).
+track: bakhtin
+label: "Bakhtin Chronotopes"
+
+chronotopes:
+  - code: BAKHTIN-ROAD
+    label: "Road / Journey Chronotope"
+    description: "Time and space fused in the motion of travel; chance encounters on the road; the road as site of meeting and revelation."
+  - code: BAKHTIN-CASTLE
+    label: "Castle / Palace Chronotope"
+    description: "Historic time saturates a place; legends and traditions cling to the walls; power and lineage made concrete in stone."
+  - code: BAKHTIN-THRESHOLD
+    label: "Threshold Chronotope"
+    description: "Crisis and liminal moment; the decisive turning point in which time is suspended at the boundary between states."
+  - code: BAKHTIN-IDYLL
+    label: "Idyllic / Rural Chronotope"
+    description: "Cyclical time tied to nature and the seasons; bounded community; unity of place and generation."
+  - code: BAKHTIN-UNDERWORLD
+    label: "Underworld / Netherworld Chronotope"
+    description: "Time suspended or inverted; movement through the boundary of death; encounter with the dead."
+  - code: BAKHTIN-DIVINE
+    label: "Divine / Cosmic Chronotope"
+    description: "Mythic time that encompasses human time; the council of gods; cosmological perspective on human events."
+  - code: BAKHTIN-HEROIC-BODY
+    label: "Heroic Body Chronotope"
+    description: "The hero's body as a site where the narrative of the world is inscribed; physical feats as time-space markers."
+
+methodology_fit_concerns:
+  - pattern: "living_tradition"
+    note: "Bakhtin's chronotope framework was developed in the context of the European novel. Applying it to living religious texts requires acknowledgment of the category transfer."
+  - pattern: "oral tradition"
+    note: "Bakhtin focused on written novelistic form. Oral epic traditions encode time and space differently; formulaic repetition and ring composition are distinct chronotopic strategies."

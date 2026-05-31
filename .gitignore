@@ -136,6 +136,15 @@ celerybeat.pid
 *.aof
 *.pid
 
+# Sisyphus
+.venv/
+workspace/
+output/
+export-*.tar.gz
+sources/*.pdf
+sources/*.txt
+sources/*.xml
+
 # RabbitMQ
 mnesia/
 rabbitmq/

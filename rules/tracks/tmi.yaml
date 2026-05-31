@@ -1,0 +1,61 @@
+# Thompson Motif-Index (TMI) track specification.
+# Source: Stith Thompson, Motif-Index of Folk-Literature (1955–1958).
+track: tmi
+label: "Thompson Motif-Index"
+
+# Selected motifs most relevant for Phase 1 traditions
+representative_motifs:
+  - code: TMI-A1010
+    label: "Deluge"
+    category: A (Mythological Motifs)
+    description: "Inundation of the earth. The great flood."
+  - code: TMI-A1021
+    label: "Escape from deluge in boat (ark)"
+    category: A
+    description: "Hero escapes the flood in a boat."
+  - code: TMI-A1022
+    label: "Escape from deluge on mountain"
+    category: A
+    description: "Hero escapes the flood by climbing a mountain."
+  - code: TMI-B450
+    label: "Helpful bird"
+    category: B (Animals)
+    description: "Bird sent to discover whether floodwaters have receded."
+  - code: TMI-D1346
+    label: "Magic plant gives immortality"
+    category: D (Magic)
+    description: "Plant of immortality; consumed or held for future use."
+  - code: TMI-D1840
+    label: "Magic invulnerability"
+    category: D
+    description: "Hero rendered immune to harm."
+  - code: TMI-F10
+    label: "Journey to heaven"
+    category: F (Marvels)
+    description: "Journey to divine realm."
+  - code: TMI-F80
+    label: "Journey to land of dead"
+    category: F
+    description: "Journey to the underworld / land of the dead."
+  - code: TMI-F110
+    label: "Journey to earthly paradise"
+    category: F
+    description: "Journey to paradise at the ends of the earth."
+  - code: TMI-H900
+    label: "Tasks and quests"
+    category: H (Tests)
+    description: "Hero is assigned a task or quest as a condition."
+  - code: TMI-Q2
+    label: "Kind and unkind"
+    category: Q (Rewards and Punishments)
+    description: "Contrasting treatment of kind and unkind characters."
+
+note: >
+  Phase 1 uses a representative subset of the Motif-Index. The annotation agent
+  should propose the most specific applicable motif code. If no entry exists in
+  this representative list, the agent should propose the TMI code from the full
+  index (Thompson 1955-1958) and note that the code is not in the representative subset.
+
+methodology_fit_concerns:
+  - pattern: "living_tradition"
+    note: "TMI was compiled primarily from European and Near Eastern folk traditions. Applying it to a living religious tradition requires acknowledging that emic categories may not map to etic motif codes."

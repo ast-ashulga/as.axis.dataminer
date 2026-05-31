@@ -1,0 +1,111 @@
+# Propp Morphology of the Folktale — track specification.
+# Source: Vladimir Propp, Morphology of the Folktale (1928/1958).
+# Active tracks in Phase 1: propp, bakhtin, tmi.
+track: propp
+label: "Propp Morphology"
+
+functions:
+  - code: PROPP-1
+    label: "Absentation"
+    description: "A family member leaves the home or is absent."
+  - code: PROPP-2
+    label: "Interdiction"
+    description: "A prohibition or command is issued to the hero."
+  - code: PROPP-3
+    label: "Violation"
+    description: "The prohibition is violated."
+  - code: PROPP-4
+    label: "Reconnaissance"
+    description: "The villain tries to obtain information about the victim."
+  - code: PROPP-5
+    label: "Delivery"
+    description: "The villain receives information about the victim."
+  - code: PROPP-6
+    label: "Trickery"
+    description: "The villain attempts to deceive the victim."
+  - code: PROPP-7
+    label: "Complicity"
+    description: "The victim is deceived or submits."
+  - code: PROPP-8
+    label: "Villainy / Lack"
+    description: "The villain causes harm, or a lack is identified."
+  - code: PROPP-9
+    label: "Mediation"
+    description: "The misfortune becomes known; the hero is called or dispatched."
+  - code: PROPP-10
+    label: "Beginning Counter-Action"
+    description: "The seeker agrees or decides to act."
+  - code: PROPP-11
+    label: "Departure"
+    description: "The hero leaves home."
+  - code: PROPP-12
+    label: "First Function of Donor"
+    description: "The hero is tested and receives a magical agent."
+  - code: PROPP-13
+    label: "Hero's Reaction"
+    description: "The hero reacts to the actions of the future donor."
+  - code: PROPP-14
+    label: "Provision / Receipt of Magical Agent"
+    description: "The magical agent is received."
+  - code: PROPP-15
+    label: "Spatial Translocation"
+    description: "The hero is led to another realm."
+  - code: PROPP-16
+    label: "Struggle"
+    description: "The hero and the villain join in direct combat."
+  - code: PROPP-17
+    label: "Branding"
+    description: "The hero is branded or marked."
+  - code: PROPP-18
+    label: "Victory"
+    description: "The villain is defeated."
+  - code: PROPP-19
+    label: "Liquidation"
+    description: "The initial misfortune or lack is liquidated."
+  - code: PROPP-20
+    label: "Return"
+    description: "The hero returns."
+  - code: PROPP-21
+    label: "Pursuit"
+    description: "The hero is pursued."
+  - code: PROPP-22
+    label: "Rescue"
+    description: "The hero is rescued from pursuit."
+  - code: PROPP-23
+    label: "Unrecognized Arrival"
+    description: "The hero, unrecognized, arrives home or in another kingdom."
+  - code: PROPP-24
+    label: "Unfounded Claims"
+    description: "A false hero presents unfounded claims."
+  - code: PROPP-25
+    label: "Difficult Task"
+    description: "A difficult task is proposed to the hero."
+  - code: PROPP-26
+    label: "Solution"
+    description: "The task is resolved."
+  - code: PROPP-27
+    label: "Recognition"
+    description: "The hero is recognized."
+  - code: PROPP-28
+    label: "Exposure"
+    description: "The false hero is exposed."
+  - code: PROPP-29
+    label: "Transfiguration"
+    description: "The hero is given a new appearance."
+  - code: PROPP-30
+    label: "Punishment"
+    description: "The villain is punished."
+  - code: PROPP-31
+    label: "Wedding"
+    description: "The hero is married and ascends the throne."
+
+# Methodology-fit warnings: traditions/passage types that trigger the gate.
+methodology_fit_concerns:
+  - pattern: "non-linear narrative"
+    note: "Propp's morphology applies to linear quest narratives. Non-linear deliberative or cosmological texts may not fit."
+  - pattern: "collective divine action"
+    note: "Propp's Villainy/Lack requires an individual villain. Collective divine action stretches the framework."
+  - pattern: "dharmic deliberation"
+    note: "Propp functions were derived from Russian fairy tales (linear quest, single protagonist). Dharmic deliberation in the Mahabharata is a structurally distinct form."
+  - pattern: "living_tradition"
+    note: "Applying Propp's secular European framework to a living religious tradition requires explicit acknowledgment of the etic/emic distinction."
