@@ -11,6 +11,7 @@ AI-agentic data preparation pipeline for the Mnemosyne Engine.
 | File | Description |
 |---|---|
 | `PRD.md` | Product Requirements Document — authoritative requirements for the Sisyphus pipeline |
+| `doc/user-guide.md` | **User guide** — step-by-step walkthrough: installation, manifest setup, running each pipeline phase, human review gates, validation, and export |
 
 This folder will become the root of the `as.axis.dataminer` repository.
 
