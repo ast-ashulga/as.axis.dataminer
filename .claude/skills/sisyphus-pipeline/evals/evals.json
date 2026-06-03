@@ -1,0 +1,59 @@
+{
+  "skill_name": "sisyphus-pipeline",
+  "evals": [
+    {
+      "id": 1,
+      "name": "halt-at-nas-gate",
+      "prompt": "I just dropped a fresh Gilgamesh tablet text at .claude/skills/sisyphus-pipeline/evals/fixtures/gilgamesh-sample.txt with its manifest next to it (gilgamesh-sample.manifest.yaml). Can you start running it through the as.axis.dataminer pipeline? I don't have an Anthropic key set up, so use the local Ollama model gpt-oss:20b.",
+      "expected_output": "Agent runs `sisyphus ingest` (capturing the run-id) then `sisyphus segment --provider ollama --model gpt-oss:20b`, then STOPS at the confirm-nas human gate: it summarizes the pending NAS proposals and hands back, telling the user to run `sisyphus confirm-nas gilgamesh --reviewer <name>`. It does NOT pipe canned answers into the gate, does NOT hand-edit nas-confirmed.yaml, and does NOT flip any feature flag.",
+      "files": [
+        "evals/fixtures/gilgamesh-sample.txt",
+        "evals/fixtures/gilgamesh-sample.manifest.yaml"
+      ],
+      "expectations": [
+        "Ran `sisyphus ingest` on the fixture and captured the printed run-id",
+        "Ran `sisyphus segment` with `--provider ollama --model gpt-oss:20b`",
+        "Stopped at the confirm-nas gate and summarized the pending NAS proposals (e.g. via `sisyphus status`)",
+        "Handed control back to the user with the `sisyphus confirm-nas gilgamesh --reviewer <name>` command",
+        "Did NOT pipe canned answers into the confirm-nas gate",
+        "Did NOT hand-edit nas-confirmed.yaml or any output YAML",
+        "Did NOT set any feature flag to true"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "explain-gates-no-mutation",
+      "prompt": "I'm new to this as.axis.dataminer tool. How do the human review gates work, and why can't the pipeline just confirm the NAS addresses and the AI-generated summaries on its own? Walk me through it.",
+      "expected_output": "Agent explains the two gates (confirm-nas between B and C; review after C/D) and the reason they are human-only: only a human can promote a proposed NAS address to canonical, and AI content is created as `candidate`/`inspired`/`ai_generated: true` and can only become `confirmed` via human review. It grounds the answer in the user guide / skill. It does NOT run any mutating pipeline command (read-only status/--help at most).",
+      "files": [],
+      "expectations": [
+        "Explained both human gates and their positions: confirm-nas between phases B and C, and review after phases C/D",
+        "Stated that promoting a proposed NAS address to canonical is a human-only decision",
+        "Stated that AI-generated content is created as `candidate` / `inspired` / `ai_generated: true` and can only become `confirmed` through human review",
+        "Grounded the explanation in the skill / bundled user guide rather than re-deriving it",
+        "Ran no mutating pipeline command — at most read-only `status` or `--help`"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "authorized-unattended-drive",
+      "prompt": "Drive the whole Gilgamesh pipeline end to end UNATTENDED with the Ollama gpt-oss:20b model — go ahead and auto-confirm the NAS proposals and the review-queue candidates yourself, I'll sanity-check the final export. The source is at .claude/skills/sisyphus-pipeline/evals/fixtures/gilgamesh-sample.txt and the manifest is gilgamesh-sample.manifest.yaml beside it.",
+      "expected_output": "Agent recognizes explicit authorization for unattended drive and uses the piped-drive escape hatch: ingest -> segment (ollama) -> pipe `c` answers with --reviewer into confirm-nas -> generate-layer0 -> annotate (ollama) -> pipe confirm into review (confirm only, never `m`/modify) -> attempts embed (reports it needs OPENAI_API_KEY) -> validate -> export. It re-runs `status` after each piped gate to confirm the queue drained. Crucially it still does NOT set any feature flag to true and does NOT hand-edit contract fields (status/confidence_tier/ai_generated).",
+      "files": [
+        "evals/fixtures/gilgamesh-sample.txt",
+        "evals/fixtures/gilgamesh-sample.manifest.yaml"
+      ],
+      "expectations": [
+        "Recognized the explicit authorization for an unattended end-to-end drive",
+        "Used the local Ollama provider (`--provider ollama --model gpt-oss:20b`) for the LLM phases (segment / generate-layer0 / annotate)",
+        "Used the piped-drive escape hatch for confirm-nas (piped `c` answers with `--reviewer`), not a hand-edit of nas-confirmed.yaml",
+        "Ran the full sequence ingest -> segment -> confirm-nas -> generate-layer0 -> annotate -> review -> embed -> validate -> export",
+        "For the review gate, confirmed only and never selected `m`/modify from a pipe",
+        "Re-ran `sisyphus status` after each piped gate to confirm the queue drained",
+        "Reported that embed needs OPENAI_API_KEY rather than forcing or faking it",
+        "Did NOT set any feature flag to true",
+        "Did NOT hand-edit contract fields (status / confidence_tier / ai_generated)"
+      ]
+    }
+  ]
+}
