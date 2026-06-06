@@ -9,7 +9,7 @@ The table below is the authoritative copyright status record per PRD §Appendix 
 |---|---|---|---|---|
 | Thompson 1930 (*The Epic of Gilgamesh*) | Scanned PDF | EN | Public domain (d. 1941 → expired) | **Acquire immediately** |
 | George 2003 (*The Babylonian Gilgamesh Epic*) | Digital PDF | EN | In copyright — OUP | Scholaria layer only; obtain OUP permission or cite only (O-B) |
-| Diakonoff 1961 | PDF | RU | In copyright — d. 1999 → ~2069 | **Not public domain.** Seek rights-holder permission or defer (O-C) |
+| Diakonoff 1961 | PDF | RU | In copyright — d. 1999 → ~2069 | **No license.** Seek rights-holder permission or defer (O-C) |
 | ORACC BLMS project | TEI XML | Akkadian | Open access | Ingest for Layer 3 (flag `layer_3_original = false`) |
 | ETCSL 1.8.1.x | TXT | Sumerian | Open access | Ingest for `nms://bilgames/` corpus |
 | Genesis 6–9 KJV | TXT | EN | Public domain | Flood parallel |

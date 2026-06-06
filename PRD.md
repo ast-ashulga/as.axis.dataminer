@@ -477,7 +477,7 @@ translations:
     author: "Igor Diakonoff"
     year: 1961
     locale: ru
-    license: in-copyright   # Diakonoff d.1999 → life+70 ≈ protected to ~2069; NOT public domain. See O-C
+    license: in-copyright   # No licanse
     layer: translated
     source_file: null
 ```
