@@ -33,18 +33,20 @@ from sisyphus.schema import (
 
 _PROMPTS_DIR = Path(__file__).parent.parent.parent / "prompts" / "phase-c"
 _NAS_CITATION_RE = re.compile(r"\[NAS: (nms://[a-z0-9-]+(?:/[a-z0-9-]+){1,3})\]")
-_SENTENCE_RE = re.compile(r"[A-Z][^.!?]*[.!?]")
+_SENTENCE_RE = re.compile(r"[A-ZА-ЯЁ][^.!?]*[.!?]")
 
 LAYER0_SYSTEM = """\
 You are a scholarly summary writer for the Mnemosyne Engine.
 Generate a concise Layer 0 (surface-level) summary of the given epic passage.
 
 Requirements:
-1. Every factual sentence must include at least one inline NAS citation: [NAS: nms://tradition/…]
+1. Every sentence — including concluding or synthesis sentences — must include at least one inline NAS citation: [NAS: nms://tradition/…]
 2. Citations must reference the confirmed NAS address provided for this segment.
 3. Use hedged language for damaged passages or scholarly reconstructions.
 4. Write in clear academic prose, {locale_instruction}.
 5. Length: 80–150 words.
+
+CRITICAL: Do not write any sentence, including "Таким образом / Thus / Therefore" summary sentences, without a [NAS: …] citation. Every single sentence must end with or contain a citation.
 
 Return ONLY the summary text. No headers, no markdown, no explanation.
 """
@@ -225,6 +227,10 @@ def _generate_summary(
     if epistemic_framing:
         system = system + f"\n\nEpistemic framing:\n{epistemic_framing}"
 
+    grounding_requirement = prompt_config.get("grounding_requirement", "")
+    if grounding_requirement:
+        system = system + f"\n\nGrounding requirement:\n{grounding_requirement}"
+
     passage_section = (
         f"Source passage:\n{passage_text}\n\n" if passage_text else ""
     )
@@ -252,11 +258,13 @@ def _validate_grounding(
     threshold: float,
 ) -> list[str]:
     """Return uncited factual sentences that violate grounding. Empty = passes."""
-    sentences = _SENTENCE_RE.findall(summary)
+    # Replace citation markers with a placeholder so [NAS: ...] doesn't produce
+    # false sentence starts (the N in NAS is uppercase Latin and trips _SENTENCE_RE).
+    text = _NAS_CITATION_RE.sub("[CITED]", summary)
+    sentences = _SENTENCE_RE.findall(text)
     uncited: list[str] = []
     for sentence in sentences:
-        has_citation = bool(_NAS_CITATION_RE.search(sentence))
-        if not has_citation:
+        if "[CITED]" not in sentence:
             uncited.append(sentence[:80])
     if not sentences:
         return []
