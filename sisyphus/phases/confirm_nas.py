@@ -88,7 +88,7 @@ def run_confirm_nas(tradition: str, reviewer: str, console: Console) -> None:
         console.print(Panel(panel_content, title=f"Proposal {i}/{len(pending)}", border_style="blue"))
 
         while True:
-            answer = Prompt.ask("[c/r/d/q]").strip().lower()
+            answer = Prompt.ask(r"\[c/r/d/q]").strip().lower()
 
             if answer == "q":
                 _save(
