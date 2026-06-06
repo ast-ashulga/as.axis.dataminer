@@ -265,14 +265,23 @@ Source text (segment this into episode-level NAS-addressed passages):
 Return a JSON array of segment objects as specified in your instructions.
 """
 
-    response = client.messages.create(
+    with client.messages.stream(
         model=model,
-        max_tokens=8192,
+        max_tokens=80000,
         system=system,
         messages=[{"role": "user", "content": user_message}],
-    )
+    ) as stream:
+        response = stream.get_final_message()
 
-    raw = response.content[0].text.strip()
+    text_block = next((b for b in response.content if hasattr(b, "text")), None)
+    if text_block is None:
+        block_types = [type(b).__name__ for b in response.content]
+        raise RuntimeError(
+            f"No text block in response (got: {block_types}). "
+            "The model may have exhausted its token budget on reasoning. "
+            "Try a non-thinking model or increase max_tokens further."
+        )
+    raw = text_block.text.strip()
     # Extract JSON array (handle markdown code fences)
     if raw.startswith("```"):
         raw = re.sub(r"^```[a-z]*\n?", "", raw)

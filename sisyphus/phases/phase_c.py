@@ -242,7 +242,8 @@ def _generate_summary(
         system=system,
         messages=[{"role": "user", "content": user_message}],
     )
-    return response.content[0].text.strip()
+    text_block = next(b for b in response.content if hasattr(b, "text"))
+    return text_block.text.strip()
 
 
 def _validate_grounding(

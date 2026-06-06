@@ -290,7 +290,8 @@ def _call_annotation_agent(
         messages=[{"role": "user", "content": user_message}],
     )
 
-    raw = response.content[0].text.strip()
+    text_block = next(b for b in response.content if hasattr(b, "text"))
+    raw = text_block.text.strip()
     if raw.startswith("```"):
         raw = re.sub(r"^```[a-z]*\n?", "", raw)
         raw = re.sub(r"\n?```$", "", raw)

@@ -8,6 +8,12 @@ ollama_base_url: http://localhost:11434
 # Default model per phase.
 # CLI --model overrides these; omit a key to keep the built-in default.
 models:
-  segment: claude-opus-4-8
+  segment: claude-sonnet-4-6
   generate_layer0: claude-sonnet-4-6
   annotate: claude-sonnet-4-6
+
+# Ollama alternative (switch provider above to use):
+# models:
+#   segment: minimax-m3:cloud
+#   generate_layer0: minimax-m3:cloud
+#   annotate: minimax-m3:cloud
