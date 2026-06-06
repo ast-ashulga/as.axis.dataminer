@@ -190,6 +190,7 @@ def run_annotate(
                         methodology_fit_warning=ann.get("methodology_fit_warning", False),
                         methodology_fit_note=ann.get("methodology_fit_note"),
                         ai_generated=True,
+                        generated_by_model=model,
                     )
                     validated.append(candidate.model_dump(mode="python", exclude_none=True))
                     if ann.get("methodology_fit_warning"):

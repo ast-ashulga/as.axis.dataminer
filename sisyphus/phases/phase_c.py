@@ -180,6 +180,7 @@ def run_generate_layer0(
                 reviewed_by=None,
                 reviewed_at=None,
                 grounding_citations=citations,
+                generated_by_model=model,
             )
             existing_content.append(content_record.model_dump(mode="python"))
             total_generated += 1

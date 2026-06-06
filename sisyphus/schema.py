@@ -97,6 +97,9 @@ class ContentRecord(BaseModel):
     # NAS citations for grounding validation (Phase C)
     grounding_citations: list[str] = Field(default_factory=list)
 
+    # Model that generated this record (populated by phases C/D)
+    generated_by_model: str | None = None
+
     @model_validator(mode="after")
     def enforce_ai_invariants(self) -> "ContentRecord":
         if self.ai_generated:
@@ -187,6 +190,7 @@ class AnnotationCandidate(BaseModel):
     methodology_fit_warning: bool = False
     methodology_fit_note: str | None = None
     ai_generated: bool = True
+    generated_by_model: str | None = None
 
     @model_validator(mode="after")
     def validate_confirmed_tier(self) -> "AnnotationCandidate":
