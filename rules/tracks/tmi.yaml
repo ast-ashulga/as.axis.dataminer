@@ -49,6 +49,38 @@ representative_motifs:
     label: "Kind and unkind"
     category: Q (Rewards and Punishments)
     description: "Contrasting treatment of kind and unkind characters."
+  - code: TMI-H1376.3
+    label: "Quest for immortality"
+    category: H (Tests)
+    description: "Hero undertakes quest to find or obtain immortality."
+  - code: TMI-F567.2
+    label: "Wild man"
+    category: F (Marvels)
+    description: "Man raised apart from civilization, living among animals; untamed and superhuman."
+  - code: TMI-B601.7
+    label: "Woman civilizes wild man"
+    category: B (Animals)
+    description: "A woman (harlot or sacred prostitute) draws a wild man into civilization through sexual encounter."
+  - code: TMI-D965.1
+    label: "Plant of rejuvenation"
+    category: D (Magic)
+    description: "A plant that restores youth or grants immortality; kept at the bottom of the sea."
+  - code: TMI-B176.1
+    label: "Serpent steals magic plant"
+    category: B (Animals)
+    description: "A serpent steals the magic plant of rejuvenation from the hero while he sleeps."
+  - code: TMI-D1810
+    label: "Magic knowledge through dreams"
+    category: D (Magic)
+    description: "Divine or prophetic knowledge conveyed to a hero through a dream sequence."
+  - code: TMI-T91
+    label: "Refusal of divine lover"
+    category: T (Sex)
+    description: "Hero refuses the amorous advances of a goddess or supernatural woman."
+  - code: TMI-A1335
+    label: "Origin of death"
+    category: A (Mythological Motifs)
+    description: "Myth explaining why humans must die; death as the lot of mortals vs. immortality of gods."
 
 note: >
   Phase 1 uses a representative subset of the Motif-Index. The annotation agent

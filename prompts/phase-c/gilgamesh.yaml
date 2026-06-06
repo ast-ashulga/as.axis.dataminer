@@ -17,9 +17,12 @@ epistemic_framing: >
   "the text suggests", "scholars reconstruct", "the passage is damaged but appears to".
 
 grounding_requirement: >
-  Every factual sentence must include an inline NAS citation in the form [NAS: nms://gilgamesh/…].
+  Every sentence — including sentences that contain or introduce a direct quote — must include
+  an inline NAS citation in the form [NAS: nms://gilgamesh/…].
+  Do not write direct quotations from the source text as standalone sentences without a citation.
+  If you quote the text, attach [NAS: nms://gilgamesh/…] to the same sentence.
   Citations must reference confirmed NAS addresses for this tradition.
-  Summaries without a citation on every factual claim will be rejected by the grounding validator.
+  Summaries without a citation on every sentence will be rejected by the grounding validator.
 
 layer: surface
 target_length_words: 80-150

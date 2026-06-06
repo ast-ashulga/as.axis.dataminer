@@ -21,7 +21,7 @@ from sisyphus.flags import get_flag
 from sisyphus.io.workspace import (
     annotation_candidates_dir,
     annotation_report_path,
-    load_passage_text,
+    load_all_passage_texts,
     nas_confirmed_path,
     pipeline_errors_path,
 )
@@ -145,7 +145,13 @@ def run_annotate(
                     console.print(f"  [dim]Skip (exists):[/dim] {nas} [{track}]")
                     continue
 
-            passage_text = load_passage_text(division, episode)
+            passage_texts = load_all_passage_texts(division, episode)
+            if len(passage_texts) == 1:
+                passage_text: str | None = passage_texts[0][1]
+            elif passage_texts:
+                passage_text = "\n\n".join(f"[{label}]\n{text}" for label, text in passage_texts)
+            else:
+                passage_text = None
             fit_warning = entry.get("methodology_fit_warning", False)
             fit_note = entry.get("methodology_fit_note", "")
 

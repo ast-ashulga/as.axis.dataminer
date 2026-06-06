@@ -95,3 +95,25 @@ def load_passage_text(division: str, episode: str) -> str | None:
     if candidates:
         return candidates[-1].read_text(encoding="utf-8")
     return None
+
+
+def load_all_passage_texts(division: str, episode: str) -> list[tuple[str, str]]:
+    """Return all passage texts as (source_label, text) pairs for a division/episode.
+
+    Source label is the translation_id from the run's manifest, falling back to the run_id.
+    Sorted by run path for determinism.
+    """
+    import re as _re
+
+    results = []
+    for txt_path in sorted((_ROOT / "workspace").glob(f"*/segmented/{division}/{episode}.txt")):
+        run_dir = txt_path.parents[2]
+        manifest_file = run_dir / "ingested" / "manifest.yaml"
+        label = run_dir.name
+        if manifest_file.exists():
+            raw = manifest_file.read_text(encoding="utf-8")
+            m = _re.search(r"^translation_id:\s*(.+)$", raw, _re.MULTILINE)
+            if m:
+                label = m.group(1).strip().strip('"').strip("'")
+        results.append((label, txt_path.read_text(encoding="utf-8")))
+    return results

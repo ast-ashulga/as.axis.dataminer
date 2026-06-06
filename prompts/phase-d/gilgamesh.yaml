@@ -3,9 +3,13 @@ scholarly_authority: "George 2003 — Andrew George, The Babylonian Gilgamesh Ep
 
 tradition_preamble: >
   You are annotating the Epic of Gilgamesh (Standard Babylonian Version).
-  Scholarly authority: George 2003.
-  When citing textual evidence use the format: "George 2003, SB {tablet} {line}"
-  e.g. "George 2003, SB XI 195". For Old Babylonian passages: "OB {tablet} {line}".
+  Comparative scholarly authority: George 2003 (Andrew George, The Babylonian Gilgamesh Epic, OUP).
+  The source passages provided come from translation sources (e.g. Gumilev 1919, Dyakonov 1961,
+  Thompson 1928). When citing textual evidence, reference the specific source translation shown
+  in the passage label, e.g. "Gumilev 1919, Tablet XI" or "Dyakonov 1961, Tablet I".
+  When cross-referencing with the scholarly edition for line-level precision, use:
+  "George 2003, SB {tablet} {line}" — but only when the philological detail is genuinely
+  available and relevant, not as a default citation for every annotation.
 
 propp_fit_note: >
   Propp functions apply with moderate fit to Gilgamesh. The morphology is broadly

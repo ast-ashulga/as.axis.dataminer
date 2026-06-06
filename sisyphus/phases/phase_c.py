@@ -17,7 +17,7 @@ from sisyphus import llm
 
 from sisyphus.io.workspace import (
     fragments_dir,
-    load_passage_text,
+    load_all_passage_texts,
     nas_confirmed_path,
     pipeline_errors_path,
 )
@@ -44,7 +44,7 @@ Requirements:
 2. Citations must reference the confirmed NAS address provided for this segment.
 3. Use hedged language for damaged passages or scholarly reconstructions.
 4. Write in clear academic prose, {locale_instruction}.
-5. Length: 80–150 words.
+5. Length: {target_length} words.
 
 CRITICAL: Do not write any sentence, including "Таким образом / Thus / Therefore" summary sentences, without a [NAS: …] citation. Every single sentence must end with or contain a citation.
 
@@ -105,8 +105,8 @@ def run_generate_layer0(
         if not division or not episode:
             continue
 
-        # Load segmented passage text if available (best-effort; may be absent)
-        passage_text = load_passage_text(division, episode)
+        # Load all segmented passage texts (deterministic; labelled by translation_id)
+        passage_texts = load_all_passage_texts(division, episode)
 
         frag_path = fragments_dir(tradition, division) / f"{episode}.yaml"
         existing_content: list[dict] = []
@@ -130,43 +130,53 @@ def run_generate_layer0(
 
             console.print(f"  Generating: {nas} [{locale}]…")
 
-            try:
-                summary = _generate_summary(
-                    client=client,
-                    model=model,
-                    nas=nas,
-                    locale=locale,
-                    passage_text=passage_text,
-                    prompt_config=prompt_config,
-                )
-            except Exception as exc:
-                error = {
-                    "phase": "C",
-                    "run_id": "phase-c",
-                    "nas": nas,
-                    "error_type": "generation_failure",
-                    "message": str(exc),
-                    "timestamp": datetime.now(UTC).isoformat(),
-                }
-                errors.append(error)
-                total_rejected += 1
-                console.print(f"  [red]✗ Generation failed for {nas} [{locale}]: {exc}[/red]")
-                continue
-
-            # Grounding validation
-            grounding_errors = _validate_grounding(summary, [nas], grounding_threshold)
-            if grounding_errors:
+            summary: str | None = None
+            grounding_errors: list[str] = []
+            max_attempts = 3
+            for attempt in range(1, max_attempts + 1):
+                try:
+                    candidate = _generate_summary(
+                        client=client,
+                        model=model,
+                        nas=nas,
+                        locale=locale,
+                        passage_texts=passage_texts,
+                        prompt_config=prompt_config,
+                    )
+                except Exception as exc:
+                    error = {
+                        "phase": "C",
+                        "run_id": "phase-c",
+                        "nas": nas,
+                        "error_type": "generation_failure",
+                        "message": str(exc),
+                        "timestamp": datetime.now(UTC).isoformat(),
+                    }
+                    errors.append(error)
+                    total_rejected += 1
+                    console.print(f"  [red]✗ Generation failed for {nas} [{locale}]: {exc}[/red]")
+                    break
+                grounding_errors = _validate_grounding(candidate, [nas], grounding_threshold)
+                if not grounding_errors:
+                    summary = candidate
+                    break
+                if attempt < max_attempts:
+                    console.print(f"  [yellow]↻ Grounding retry {attempt}/{max_attempts - 1}: {nas} [{locale}][/yellow]")
+            else:
+                # All attempts exhausted
                 error = {
                     "phase": "C",
                     "run_id": "phase-c",
                     "nas": nas,
                     "error_type": "grounding_validation_failure",
-                    "message": f"[{locale}] Uncited sentences: {grounding_errors}",
+                    "message": f"[{locale}] Uncited sentences after {max_attempts} attempts: {grounding_errors}",
                     "timestamp": datetime.now(UTC).isoformat(),
                 }
                 errors.append(error)
                 total_rejected += 1
-                console.print(f"  [red]✗ Grounding failed for {nas} [{locale}][/red]")
+                console.print(f"  [red]✗ Grounding failed after {max_attempts} attempts: {nas} [{locale}][/red]")
+
+            if summary is None:
                 continue
 
             # Extract citations from the summary
@@ -213,7 +223,7 @@ def _generate_summary(
     model: str,
     nas: str,
     locale: str,
-    passage_text: str | None,
+    passage_texts: list[tuple[str, str]],
     prompt_config: dict,
 ) -> str:
     locale_instruction = {
@@ -221,19 +231,29 @@ def _generate_summary(
         "ru": "in Russian",
     }.get(locale, f"in locale '{locale}'")
 
-    system = LAYER0_SYSTEM.format(locale_instruction=locale_instruction)
+    target_length = str(prompt_config.get("target_length_words", "80–150"))
+    base_system = LAYER0_SYSTEM.format(
+        locale_instruction=locale_instruction,
+        target_length=target_length,
+    )
+    system_preamble = prompt_config.get("system_preamble", "")
+    system = f"{system_preamble}\n\n{base_system}" if system_preamble else base_system
 
     epistemic_framing = prompt_config.get("epistemic_framing", "")
     if epistemic_framing:
-        system = system + f"\n\nEpistemic framing:\n{epistemic_framing}"
+        system += f"\n\nEpistemic framing:\n{epistemic_framing}"
 
     grounding_requirement = prompt_config.get("grounding_requirement", "")
     if grounding_requirement:
-        system = system + f"\n\nGrounding requirement:\n{grounding_requirement}"
+        system += f"\n\nGrounding requirement:\n{grounding_requirement}"
 
-    passage_section = (
-        f"Source passage:\n{passage_text}\n\n" if passage_text else ""
-    )
+    if len(passage_texts) == 1:
+        passage_section = f"Source passage [{passage_texts[0][0]}]:\n{passage_texts[0][1]}\n\n"
+    elif passage_texts:
+        parts = "\n\n".join(f"[{label}]\n{text}" for label, text in passage_texts)
+        passage_section = f"Source passages (multiple translations):\n\n{parts}\n\n"
+    else:
+        passage_section = ""
 
     user_message = (
         f"NAS address for this segment: {nas}\n\n"
@@ -252,19 +272,25 @@ def _generate_summary(
     return text_block.text.strip()
 
 
+_BARE_NAS_RE = re.compile(r"NAS: nms://[a-z0-9-]+(?:/[a-z0-9-]+){1,3}\]?")
+_CITED_MARKER = "\x00cited\x00"  # non-alphabetic; invisible to _SENTENCE_RE
+
+
 def _validate_grounding(
     summary: str,
     valid_nas: list[str],
     threshold: float,
 ) -> list[str]:
     """Return uncited factual sentences that violate grounding. Empty = passes."""
-    # Replace citation markers with a placeholder so [NAS: ...] doesn't produce
-    # false sentence starts (the N in NAS is uppercase Latin and trips _SENTENCE_RE).
-    text = _NAS_CITATION_RE.sub("[CITED]", summary)
+    # Normalize citations: replace both well-formed [NAS: ...] and bare NAS: ...
+    # (model sometimes omits the opening bracket) with a non-alphabetic placeholder
+    # so neither form trips _SENTENCE_RE or produces false CITED]. sentence starts.
+    text = _NAS_CITATION_RE.sub(_CITED_MARKER, summary)
+    text = _BARE_NAS_RE.sub(_CITED_MARKER, text)
     sentences = _SENTENCE_RE.findall(text)
     uncited: list[str] = []
     for sentence in sentences:
-        if "[CITED]" not in sentence:
+        if _CITED_MARKER not in sentence:
             uncited.append(sentence[:80])
     if not sentences:
         return []
