@@ -24,5 +24,11 @@ grounding_requirement: >
   Citations must reference confirmed NAS addresses for this tradition.
   Summaries without a citation on every sentence will be rejected by the grounding validator.
 
+  IMPORTANT: Do not reference translator names, translation editions, or source labels
+  (e.g. "Dyakonov", "Gumilev", "Thompson", "dyakonov-1961") anywhere in the summary body.
+  The summary must describe the epic content and its structure, not the translators' renderings.
+  Formulaic repetition, catalogue structures, and narrative conventions are properties of the
+  ancient source text, not of any modern translation — always frame them as such.
+
 layer: surface
 target_length_words: 80-150
