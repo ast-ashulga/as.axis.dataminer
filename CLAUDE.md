@@ -14,7 +14,28 @@ Raw materials (PDF/TXT/images) + Metadata manifest (YAML)
   → PostgreSQL Fragment Graph
 ```
 
-**Status**: PRD complete; implementation not yet started. The authoritative requirements are in `PRD.md`.
+**Status**: Implementation complete (M1 Gilgamesh). The authoritative requirements are in `PRD.md`.
+
+## Development
+
+```bash
+# Install (with dev + OCR extras)
+pip install -e ".[dev,ocr]"
+
+# Run all tests
+pytest tests/
+
+# Run a single test file
+pytest tests/test_schema_invariants.py
+
+# Run a single test by name
+pytest tests/test_schema_invariants.py -k test_nas_address_format
+
+# Run with coverage
+pytest tests/ --cov=sisyphus
+```
+
+Requires `.env` with `ANTHROPIC_API_KEY` and `OPENAI_API_KEY` for live phase runs. Tests are offline — no API keys needed.
 
 ## Technology Stack
 
@@ -52,7 +73,7 @@ Active annotation tracks in Phase 1: `propp`, `bakhtin`, `tmi`. Campbell is unsc
 
 ```bash
 sisyphus ingest <source-file> --manifest <manifest.yaml>
-sisyphus segment <run-id> [--tradition gilgamesh] [--model claude-opus-4-8]
+sisyphus segment <run-id> [--tradition gilgamesh] [--model claude-opus-4-8] [--provider anthropic|ollama]
 sisyphus confirm-nas <tradition>
 sisyphus generate-layer0 <tradition> [--locale en,ru] [--model claude-sonnet-4-6]
 sisyphus annotate <tradition> [--tracks propp,bakhtin,tmi] [--model claude-sonnet-4-6]
@@ -79,7 +100,7 @@ The output contract is the product. Any change that breaks it is a breaking chan
 
 ## Feature Flags
 
-All feature flags are defined in `config/feature-flags.yaml` and all default to `false`. This is a hard requirement (P-06). Flags include:
+All feature flags are defined in `config/feature-flags.yaml` and all default to `false`. This is a hard requirement (P-06). The flag loader (`sisyphus/flags.py`) caches values in-process; call `reset_cache()` between tests that modify flags. Flags include:
 
 - `parallel_detection_pipeline` — Phase F; deferred post-M2
 - `layer_3_original` — Layer 3 original-language fragments; ingested but not served
@@ -121,7 +142,11 @@ The **methodology-fit gate** (Phase B) evaluates framework-tradition compatibili
 
 Mahabharata-specific: `living_tradition: true` in manifest, `public_release: false` until Cultural Expert formal review, Campbell track blocked at framework level.
 
-## Workspace Layout (Planned)
+## LLM Configuration
+
+Default provider and models per phase are in `config/models.yaml`. CLI flags `--model` and `--provider` override the config for that invocation. Phase E (embeddings) always uses the OpenAI SDK (`text-embedding-3-small`) regardless of provider setting — there is no Anthropic-compatible embedding endpoint.
+
+## Workspace Layout
 
 ```
 config/feature-flags.yaml     # all flags, all false by default
