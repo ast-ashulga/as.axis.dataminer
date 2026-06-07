@@ -59,7 +59,7 @@ and explain whether and how the annotation is still defensible.
 
 Return ONLY a JSON array of annotation objects:
 [
-  {
+  {{
     "code": "PROPP-15",
     "label": "Spatial Translocation",
     "proposed_tier": "reconstructed",
@@ -67,7 +67,7 @@ Return ONLY a JSON array of annotation objects:
     "evidence_citations": ["George 2003, SB XI 195"],
     "methodology_fit_warning": false,
     "methodology_fit_note": null
-  }
+  }}
 ]
 If no annotations apply, return an empty array: []
 """
@@ -291,7 +291,7 @@ def _call_annotation_agent(
 
     response = client.messages.create(
         model=model,
-        max_tokens=2048,
+        max_tokens=4096,
         system=system,
         messages=[{"role": "user", "content": user_message}],
     )

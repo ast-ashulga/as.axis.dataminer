@@ -17,16 +17,22 @@ propp_fit_note: >
   does not map cleanly to all 31 functions — annotate what is present, not what is absent.
   Enkidu's creation and civilisation arc maps to functions I–VII.
   The quest for immortality maps to functions IX–XIV (departure, tests, struggle).
-  Set methodology_fit_warning=true when a mapping is forced rather than natural.
+  IMPORTANT: whenever you write a methodology_fit_note, you MUST also set
+  methodology_fit_warning=true in the same annotation object. Never write a note
+  without the warning flag.
 
 bakhtin_fit_note: >
   Bakhtin chronotopes apply well to Gilgamesh. The wilderness (Enkidu's domain),
   the city of Uruk, the Cedar Forest, and the Waters of Death are distinct
   spatial-temporal zones with clear chronotopic character.
   The threshold chronotope is especially prominent at underworld crossings and gates.
+  IMPORTANT: whenever you write a methodology_fit_note, you MUST also set
+  methodology_fit_warning=true in the same annotation object.
 
 tmi_fit_note: >
   TMI motif codes apply throughout. Key motifs: flood narrative (A1010), wild-man
   tamed by woman (B601.7 / F567.2), quest for immortality (H1376.3), plant of
   immortality stolen by serpent (D965.1 / B176.1).
-  Always cite a George 2003 line reference alongside the TMI code in evidence_citations.
+  Always cite the source translation alongside the TMI code in evidence_citations.
+  IMPORTANT: whenever you write a methodology_fit_note, you MUST also set
+  methodology_fit_warning=true in the same annotation object.

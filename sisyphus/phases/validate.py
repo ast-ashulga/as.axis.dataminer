@@ -147,7 +147,9 @@ def _validate_fragment_file(
                 errors.append(
                     f"{path.name}: AI-generated content has forbidden tier 'documented'"
                 )
-            if layer == "surface" and tier != ConfidenceTier.inspired:
+            # 'inspired' is required at creation; confirmed summaries may be promoted
+            # to 'reconstructed' by the review gate — only check candidates.
+            if layer == "surface" and status == Status.candidate and tier != ConfidenceTier.inspired:
                 errors.append(
                     f"{path.name}: AI-generated surface content must have tier 'inspired', got '{tier}'"
                 )

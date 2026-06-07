@@ -203,11 +203,12 @@ class AnnotationCandidate(BaseModel):
         return self
 
     @model_validator(mode="after")
-    def fit_note_requires_warning(self) -> "AnnotationCandidate":
-        if self.methodology_fit_note and not self.methodology_fit_warning:
-            raise ValueError(
-                "methodology_fit_note requires methodology_fit_warning=true"
-            )
+    def fit_note_implies_warning(self) -> "AnnotationCandidate":
+        # Auto-coerce: a non-null note always implies the warning flag.
+        # The model inconsistently omits the flag when writing a note; enforce the
+        # invariant at the schema boundary rather than silently dropping the annotation.
+        if self.methodology_fit_note:
+            self.methodology_fit_warning = True
         return self
 
 
