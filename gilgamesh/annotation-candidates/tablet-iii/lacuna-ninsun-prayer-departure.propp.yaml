@@ -1,0 +1,28 @@
+_sisyphus_version: '0.1'
+nas: nms://gilgamesh/tablet-iii/lacuna-ninsun-prayer-departure
+track: propp
+annotations:
+- code: PROPP-9
+  label: Mediation
+  proposed_tier: contested
+  status: confirmed
+  rationale: Ninsun's prayer to Shamash, attested in SBV Tablet III, functions as a mediation episode in which the misfortune or lack (Humbaba's threat, Gilgamesh's dangerous quest) is formally acknowledged and divine intercession is sought. This maps to PROPP-9 in that the hero's mission is recognized and sanctioned by a higher authority. However, the passage is explicitly absent from this witness, making any annotation here a reconstruction from the tradition rather than from the present text. Methodology fit is accordingly weak.
+  evidence_citations:
+  - George 2003, SB III (Ninsun prayer episode, lines 1–50 approx.)
+  - George 2003, SB III 49–55 (Ninsun addresses Shamash on behalf of Gilgamesh)
+  methodology_fit_warning: true
+  methodology_fit_note: The segment is explicitly lacunose in this witness. Annotation is inferred entirely from the Standard Babylonian tradition as documented in George 2003, not from any textual evidence in the present source. Applying Propp to an absent episode risks circular reconstruction; this annotation should be treated as a tradition-level placeholder rather than a text-level finding.
+  ai_generated: true
+  generated_by_model: claude-sonnet-4-6
+- code: PROPP-11
+  label: Departure
+  proposed_tier: contested
+  status: confirmed
+  rationale: The formal departure from Uruk, in which Gilgamesh and Enkidu leave the city for the Cedar Forest, is a structurally clear instance of PROPP-11 in the Gilgamesh tradition. SBV Tablet III concludes with the heroes setting out after receiving the elders' blessing and Ninsun's intercession. This function is well-attested in the broader textual tradition but is absent from the present witness, which transitions directly from the elders' counsel to Tablet IV material. Annotation is based on the reconstructed tradition, not this source text.
+  evidence_citations:
+  - George 2003, SB III (departure lines, end of tablet)
+  - George 2003, SB IV 1–10 (heroes underway, confirming prior departure)
+  methodology_fit_warning: true
+  methodology_fit_note: As with PROPP-9 above, the lacuna is explicitly flagged in the segment metadata. The departure episode cannot be cited from this source text. The annotation is defensible only as a tradition-level reconstruction corroborated by George 2003 and is included here to preserve morphological continuity in the annotation sequence, not as a claim about this witness.
+  ai_generated: true
+  generated_by_model: claude-sonnet-4-6

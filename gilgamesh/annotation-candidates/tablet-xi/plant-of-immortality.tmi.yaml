@@ -1,0 +1,61 @@
+_sisyphus_version: '0.1'
+nas: nms://gilgamesh/tablet-xi/plant-of-immortality
+track: tmi
+annotations:
+- code: TMI-D965.1
+  label: Plant of rejuvenation
+  proposed_tier: reconstructed
+  status: confirmed
+  rationale: The passage describes Gilgamesh retrieving a plant from the bottom of the sea (the ocean floor, reached by tying stones to his feet) that is explicitly named 'old man becomes young' and is said to grant the 'breath of life.' This corresponds precisely to the motif of a plant of rejuvenation kept at the bottom of the sea. The plant's properties are directly articulated by Gilgamesh in his speech to the ferryman.
+  evidence_citations:
+  - "Gumilev 1919, Tablet XI: 'Имя его — «старик становится юным». Я его съем в Уруке и юношей стану'"
+  - George 2003, SB XI 296–297
+  methodology_fit_warning: false
+  ai_generated: true
+  generated_by_model: claude-sonnet-4-6
+- code: TMI-B176.1
+  label: Serpent steals magic plant
+  proposed_tier: reconstructed
+  status: confirmed
+  rationale: While Gilgamesh bathes in a cool-water well, a serpent smells the plant, creeps up, and carries it away. This is the defining mythological moment explaining why humans lack immortality, and it maps directly onto the motif of the serpent stealing the magic rejuvenating plant from the hero. The theft is the pivotal narrative loss that renders Gilgamesh's quest ultimately futile.
+  evidence_citations:
+  - "Gumilev 1919, Tablet XI: 'Змея услыхала запах растенья, / Подползла и растенье утащила'"
+  - George 2003, SB XI 305–307
+  methodology_fit_warning: false
+  ai_generated: true
+  generated_by_model: claude-sonnet-4-6
+- code: TMI-H1376.3
+  label: Quest for immortality
+  proposed_tier: reconstructed
+  status: confirmed
+  rationale: The entire episode is framed as Gilgamesh's quest for a means of transcending human mortality. His retrieval of the plant, his stated intention to share it with the citizens of Uruk, and his lament after its theft all confirm that this passage is the culminating—and failed—moment of that quest. The motif is not merely implied but explicitly articulated in Gilgamesh's speeches.
+  evidence_citations:
+  - "Gumilev 1919, Tablet XI: 'Из за него человек получает дыханье жизни'"
+  - George 2003, SB XI 279–308
+  methodology_fit_warning: false
+  ai_generated: true
+  generated_by_model: claude-sonnet-4-6
+- code: TMI-A1335
+  label: Origin of death
+  proposed_tier: reconstructed
+  status: confirmed
+  rationale: "The serpent's theft of the plant functions etiologically: it explains why humans are mortal and why the snake alone can shed its skin and renew itself. Gilgamesh's lament ('For whom did my hands endure hardship?') underscores the irrevocable loss of immortality for humankind. This motif is widely recognized by scholars as embedded in the Tablet XI plant episode as a mythological explanation for human death."
+  evidence_citations:
+  - "Gumilev 1919, Tablet XI: 'Для кого, о Ур-Эа, мои руки терпели усталость? / Для кого я растратил кровь из сердца?'"
+  - George 2003, SB XI 308–314
+  methodology_fit_warning: true
+  methodology_fit_note: The etiological reading (origin of death) is analytically inferred rather than explicit in the text itself; the passage foregrounds personal loss rather than a cosmological statement about mortality. The annotation is nonetheless defensible given the broader narrative context of SB Tablet XI and the scholarly consensus (George 2003, pp. 503–504), but it should be flagged as interpretive.
+  ai_generated: true
+  generated_by_model: claude-sonnet-4-6
+- code: TMI-D1346
+  label: Magic plant gives immortality
+  proposed_tier: contested
+  status: confirmed
+  rationale: The plant retrieved by Gilgamesh is described as conferring the 'breath of life' and causing an old man to become young. While the passage emphasizes rejuvenation rather than strict immortality, the convergence of these properties with the broader quest for eternal life makes TMI-D1346 applicable alongside TMI-D965.1. The 'contested' tier is appropriate because the text is ambiguous about whether the plant grants immortality per se or merely youth restoration.
+  evidence_citations:
+  - "Gumilev 1919, Tablet XI: 'растенье это весьма знаменито, / Из за него человек получает дыханье жизни'"
+  - George 2003, SB XI 280–282
+  methodology_fit_warning: true
+  methodology_fit_note: There is genuine scholarly debate about whether the plant grants immortality or only rejuvenation (see George 2003, p. 502). The TMI-D1346 code assumes immortality as the primary property; its application here is contested because the Akkadian text (šammu šīmtu, 'plant of destiny' or 'plant of heartbeat') does not unambiguously specify immortality. The annotation remains defensible as a functional parallel but should not be treated as a primary classification.
+  ai_generated: true
+  generated_by_model: claude-sonnet-4-6

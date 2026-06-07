@@ -1,0 +1,38 @@
+_sisyphus_version: '0.1'
+nas: nms://gilgamesh/tablet-v/cedar-felling
+track: bakhtin
+annotations:
+- code: BAKHTIN-ROAD
+  label: Road / Journey Chronotope
+  proposed_tier: reconstructed
+  status: confirmed
+  rationale: The conclusion of the cedar-felling episode is oriented toward the return journey — the heroes plan to transport the felled cedar timber to the Euphrates and thence back toward Uruk. The passage fuses spatial displacement (Cedar Forest to the river bank to the city) with narrative momentum, and the road back is the implicit structure organizing the heroes' actions after victory. The command 'На берег Евфрата доставим кедры' signals that the Cedar Forest episode is now a completed waypoint in the larger journey chronotope that structures Tablets IV–V.
+  evidence_citations:
+  - Dyakonov 1961, Tablet V
+  - George 2003, SB V (late lines, cedar transport)
+  methodology_fit_warning: false
+  ai_generated: true
+  generated_by_model: claude-sonnet-4-6
+- code: BAKHTIN-HEROIC-BODY
+  label: Heroic Body Chronotope
+  proposed_tier: reconstructed
+  status: confirmed
+  rationale: The opening line — 'Гильгамеш деревья рубит, Энкиду пни корчует' — inscribes the heroes' physical labor directly onto the landscape, marking time-space through bodily action. The division of tasks (Gilgamesh cuts, Enkidu uproots stumps) defines the two bodies as complementary instruments of world-transformation. The instruction to hang the battle-axe at the belt reinforces the hero's body as the locus of martial and temporal identity. This is a paradigmatic instance of the heroic body chronotope where physical feat functions as a time-space marker.
+  evidence_citations:
+  - Dyakonov 1961, Tablet V
+  - George 2003, SB V 295–310 (approximate cedar-felling action lines)
+  methodology_fit_warning: false
+  ai_generated: true
+  generated_by_model: claude-sonnet-4-6
+- code: BAKHTIN-THRESHOLD
+  label: Threshold Chronotope
+  proposed_tier: contested
+  status: confirmed
+  rationale: "Enkidu's words — 'Друг мой, Гильгамеш! Мы кедр убили' — mark a liminal moment: the killing of Humbaba and the felling of the sacred cedar are complete, but the heroes have not yet departed the forbidden zone. This is a threshold between the transgressive act in the Cedar Forest and the return to the human world; the ritual libation to Shamash ('Возлей перед Шамашем возлиянье') signals an attempt to re-sanctify and cross back over the boundary. The application is contested because the passage does not dramatize the crisis of crossing — it moves quickly toward practical logistics — so the threshold quality is implicit rather than foregrounded."
+  evidence_citations:
+  - Dyakonov 1961, Tablet V
+  - George 2003, SB V (post-Humbaba section)
+  methodology_fit_warning: true
+  methodology_fit_note: The threshold chronotope is most defensible here as a secondary, background quality. The text's primary energy is directed toward post-battle action and departure logistics rather than sustained liminal crisis. Annotators should treat this as a transitional or implicit threshold rather than a fully realized chronotopic instance.
+  ai_generated: true
+  generated_by_model: claude-sonnet-4-6

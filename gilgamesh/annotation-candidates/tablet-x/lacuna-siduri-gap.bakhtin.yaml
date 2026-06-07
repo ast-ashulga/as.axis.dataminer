@@ -1,0 +1,28 @@
+_sisyphus_version: '0.1'
+nas: nms://gilgamesh/tablet-x/lacuna-siduri-gap
+track: bakhtin
+annotations:
+- code: BAKHTIN-THRESHOLD
+  label: Threshold Chronotope
+  proposed_tier: contested
+  status: confirmed
+  rationale: "The lacuna falls at a structurally pivotal moment: Gilgamesh stands at Siduri's gate, threatening to break it down, suspended between his wandering grief and the knowledge she may provide toward the Waters of Death. The threshold is both literal (the tavern-keeper's door) and existential — the encounter with Siduri marks a decisive liminal boundary in Gilgamesh's journey from hero to seeker of immortality. Because the content of the gap is unknown, the specific dramatic articulation of the threshold moment cannot be confirmed, making the annotation contested."
+  evidence_citations:
+  - George 2003, SB X (fragmentary), tavern-keeper episode
+  - George 2003, SB X 1–21 (threat to the door, preamble to Siduri's speech)
+  methodology_fit_warning: true
+  methodology_fit_note: 'This is a lacuna — the passage is physically absent, not merely damaged. Annotating a textual gap raises a significant methodology-fit concern: the Bakhtin framework operates on narrative content, and no content is available to analyze directly. The annotation is defensible only inferentially, drawing on the structural logic of the surrounding text (the threat to the door preceding the lacuna, the resumed dialogue following it) and the established scholarly reconstruction of this episode. Any chronotopic character attributed to this gap is reconstructed from context, not from the missing lines themselves. Confidence is therefore contested rather than reconstructed.'
+  ai_generated: true
+  generated_by_model: claude-sonnet-4-6
+- code: BAKHTIN-ROAD
+  label: Road / Journey Chronotope
+  proposed_tier: contested
+  status: confirmed
+  rationale: "The tavern-keeper Siduri's dwelling on the shores at the edge of the world is a classic road-chronotope waystation: a site of chance encounter where the traveling hero meets a figure who redirects or reorients the journey. Gilgamesh has arrived here in motion, grief-driven, and the encounter with Siduri is structurally the kind of revelatory meeting-on-the-road that Bakhtin associates with the road chronotope. The lacuna disrupts our ability to confirm how this encounter was framed in the missing lines, rendering the annotation contested."
+  evidence_citations:
+  - George 2003, SB X, Siduri episode broadly
+  - George 2003, SB X 1–80 (reconstructed sequence of Gilgamesh's arrival and Siduri's counsel)
+  methodology_fit_warning: true
+  methodology_fit_note: As with the threshold annotation, the road-chronotope inference is derived from the structural position of the lacuna rather than from analyzable text. The surrounding narrative context strongly supports this reading, but the annotation remains inferential. Scholars such as George (2003) have reconstructed the general flow of the episode, and that reconstruction grounds the annotation, but direct textual evidence from within the gap is definitionally unavailable.
+  ai_generated: true
+  generated_by_model: claude-sonnet-4-6

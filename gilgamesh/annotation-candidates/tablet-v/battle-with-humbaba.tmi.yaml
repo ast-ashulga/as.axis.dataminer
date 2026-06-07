@@ -1,0 +1,40 @@
+_sisyphus_version: '0.1'
+nas: nms://gilgamesh/tablet-v/battle-with-humbaba
+track: tmi
+annotations:
+- code: TMI-H900
+  label: Tasks and quests
+  proposed_tier: reconstructed
+  status: confirmed
+  rationale: "The battle with Humbaba represents the culmination of a heroic quest/task assigned to Gilgamesh and Enkidu: the slaying of the guardian of the Cedar Forest. The heroes' journey to the forest and their confrontation with Humbaba constitutes a classic quest structure, with the defeat of the monster as the required condition. Both translations frame the encounter as a deliberate, goal-oriented combat mission rather than an accidental encounter."
+  evidence_citations:
+  - "Gumilev 1919, Tablet V: 'Ринулись оба героя, состязаясь в отваге'"
+  - "Dyakonov 1961, Tablet V: 'Сразили они наземь стража, Хумбабу'"
+  - George 2003, SB V 1–130
+  methodology_fit_warning: false
+  ai_generated: true
+  generated_by_model: claude-sonnet-4-6
+- code: TMI-D1840
+  label: Magic invulnerability
+  proposed_tier: contested
+  status: confirmed
+  rationale: The passage in Dyakonov refers to Humbaba's 'razbitye luchi' (разбитые лучи — broken rays/auras), referencing his seven divine 'terrifying radiances' (melammu/puluḫtu). These supernatural auras functioned as a form of magical protection or invulnerability for Humbaba. The heroes' ability to overcome this protection is narratively significant, though the motif applies more strictly to Humbaba than to the heroes themselves, making this a contested application of the code.
+  evidence_citations:
+  - "Dyakonov 1961, Tablet V: 'Разбитые лучи Хумбабы. Когда их всех семерых убил он'"
+  - George 2003, SB V 88–90 (the seven splendours/terrors of Humbaba)
+  methodology_fit_warning: true
+  methodology_fit_note: The TMI-D1840 code is designed for hero invulnerability rather than monster-guardian auras. Applying it to Humbaba's melammu requires analogical extension of the framework category, which introduces a methodology-fit concern. The annotation remains defensible insofar as the 'luchi' (radiances) function structurally as a magical protective force that must be neutralised before the monster can be slain.
+  ai_generated: true
+  generated_by_model: claude-sonnet-4-6
+- code: TMI-Q2
+  label: Kind and unkind
+  proposed_tier: contested
+  status: confirmed
+  rationale: "The passage hints at a moral-cosmological contrast: Humbaba is portrayed as a divinely appointed guardian whose authority was recognised by Lebanon and Mount Saria, yet he is slain. The destruction of the cedar forest guardian and the cedars themselves ('S nim vmeste ubil Enkidu lesa i kedry') suggests a transgressive act against a divinely sanctioned order. This inverts the TMI-Q2 structure — the 'unkind' act (slaying the guardian, felling the sacred forest) is performed by the heroes — making this a contested and methodologically complex application."
+  evidence_citations:
+  - "Dyakonov 1961, Tablet V: 'Чье слово чтили Ливан и Сариа'"
+  - "Dyakonov 1961, Tablet V: 'С ним вместе убил Энкиду леса и кедры'"
+  methodology_fit_warning: true
+  methodology_fit_note: TMI-Q2 traditionally contrasts kind versus unkind human characters and their differential outcomes. Applying it to the ambiguous moral register of the Humbaba episode — where the heroes' transgression is celebrated yet ultimately contributes to divine punishment — stretches the motif beyond its typical scope. The annotation is defensible as a structural parallel but should be treated as contested.
+  ai_generated: true
+  generated_by_model: claude-sonnet-4-6

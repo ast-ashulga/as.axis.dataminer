@@ -1,0 +1,53 @@
+_sisyphus_version: '0.1'
+nas: nms://gilgamesh/tablet-viii/lament-for-enkidu
+track: propp
+annotations:
+- code: PROPP-1
+  label: Absentation
+  proposed_tier: reconstructed
+  status: confirmed
+  rationale: "Enkidu's death constitutes a permanent absentation — the departure of a key companion from the living world and from Gilgamesh's side. Both translators render Enkidu's dying words and final stillness as a definitive leaving: 'я ныне бессилен... и лежу, и больше не встану' (Gumilev 1919, Tablet VIII) and 'стал ты темен и меня не слышишь' (Dyakonov 1961, Tablet VIII). While Propp's function typically concerns a family member leaving home, the structural role here — a companion's permanent removal triggering the hero's subsequent quest — is functionally analogous and well-attested in comparative Propp applications to non-fairy-tale epics."
+  evidence_citations:
+  - "Gumilev 1919, Tablet VIII: 'я ныне бессилен... и лежу, и больше не встану'"
+  - "Dyakonov 1961, Tablet VIII: 'стал ты темен и меня не слышишь'"
+  - George 2003, SB VIII
+  methodology_fit_warning: true
+  methodology_fit_note: Propp's Absentation normally concerns a living family member physically departing. Applying it to death stretches the function's original scope, though the structural consequence — the hero's world is disrupted by loss, motivating the subsequent quest — is morphologically parallel. The fit is defensible but not natural.
+  ai_generated: true
+  generated_by_model: claude-sonnet-4-6
+- code: PROPP-8
+  label: Villainy / Lack
+  proposed_tier: reconstructed
+  status: confirmed
+  rationale: "Enkidu's death establishes the central Lack that drives Gilgamesh's subsequent quest for immortality. The passage explicitly names the agent of harm: 'Демон алой у меня его отнял!' (Dyakonov 1961, Tablet VIII), identifying a villainous force responsible for the loss. Gilgamesh's grief — tearing his garments, discarding royal insignia, lamenting publicly — registers the magnitude of the lack. This is the morphological wound that the remainder of the epic attempts, and ultimately fails, to liquidate."
+  evidence_citations:
+  - "Dyakonov 1961, Tablet VIII: 'Демон алой у меня его отнял!'"
+  - "Gumilev 1919, Tablet VIII: 'Рвал одежду свою, проливал обильные слезы, Сбросил царские знаки, скорбя о его кончине'"
+  - George 2003, SB VIII
+  methodology_fit_warning: false
+  ai_generated: true
+  generated_by_model: claude-sonnet-4-6
+- code: PROPP-9
+  label: Mediation
+  proposed_tier: contested
+  status: confirmed
+  rationale: Gilgamesh's public lament — addressed explicitly to the elders and men of Uruk ('Внимайте же мне, мужи, внимайте, / Внимайте, старейшины огражденного Урука!', Dyakonov 1961, Tablet VIII) — functions as a formal proclamation of misfortune to the community, structurally analogous to the mediation moment in which the hero's loss becomes socially acknowledged and the call to counter-action is framed. However, there is no external dispatcher or herald in this passage; Gilgamesh himself performs the announcement, which makes the mapping to PROPP-9 partial and contested.
+  evidence_citations:
+  - "Dyakonov 1961, Tablet VIII: 'Внимайте же мне, мужи, внимайте, / Внимайте, старейшины огражденного Урука!'"
+  - "Gumilev 1919, Tablet VIII: 'И над другом своим Гильгамеш заплакал'"
+  methodology_fit_warning: true
+  methodology_fit_note: Propp's Mediation presupposes a third party who announces misfortune and dispatches the hero. Here Gilgamesh both suffers the loss and proclaims it, collapsing PROPP-9 and PROPP-10 into a single self-directed act. The annotation is structurally suggestive but methodologically strained; 'contested' tier is appropriate.
+  ai_generated: true
+  generated_by_model: claude-sonnet-4-6
+- code: PROPP-17
+  label: Branding
+  proposed_tier: contested
+  status: confirmed
+  rationale: "Gilgamesh's visible transformation through grief — tearing his clothing, loosening his hair, discarding his royal emblems — functions structurally as a marking that distinguishes him from his prior kingly state and signals his entry into a liminal condition. Both translators emphasize the physical self-transformation: 'Рвал одежду свою... Сбросил царские знаки' (Gumilev 1919, Tablet VIII) and 'Словно кудель, раздирает власы он, / Словно скверну, срывает одежду' (Dyakonov 1961, Tablet VIII). This self-branding through mourning rites prepares the narrative for Gilgamesh's departure and quest, paralleling the hero's marking before translocation."
+  evidence_citations:
+  - "Gumilev 1919, Tablet VIII: 'Рвал одежду свою, проливал обильные слезы, Сбросил царские знаки'"
+  - "Dyakonov 1961, Tablet VIII: 'Словно кудель, раздирает власы он, / Словно скверну, срывает одежду'"
+  methodology_fit_warning: true
+  methodology_fit_note: Propp's Branding typically involves an external mark conferred upon the hero by another character. Here the marking is self-inflicted through ritual mourning. The structural function — hero is visibly distinguished and changed by the pivotal event — is analogous, but the inversion of agency makes this a contested application.
+  ai_generated: true
+  generated_by_model: claude-sonnet-4-6

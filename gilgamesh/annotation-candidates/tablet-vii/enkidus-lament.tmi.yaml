@@ -1,0 +1,48 @@
+_sisyphus_version: '0.1'
+nas: nms://gilgamesh/tablet-vii/enkidus-lament
+track: tmi
+annotations:
+- code: TMI-F80
+  label: Journey to land of dead
+  proposed_tier: reconstructed
+  status: confirmed
+  rationale: "Enkidu's dream vision constitutes a detailed journey to the underworld — the 'House of Dust' (Дом праха), described as the dwelling of Irkalla, from which no one returns. The passage enumerates the characteristics of the land of the dead with exceptional specificity: darkness, dust as food, clay as sustenance, winged garments, and the presence of Ereshkigal enthroned. This is not a literal bodily descent but an oneiric journey, which nonetheless maps onto the canonical TMI-F80 pattern of a living individual witnessing the realm of the dead."
+  evidence_citations:
+  - Dyakonov 1961, Tablet VII ('В дом, откуда вошедший никогда не выходит')
+  - George 2003, SB VII 179–196
+  methodology_fit_warning: false
+  ai_generated: true
+  generated_by_model: claude-sonnet-4-6
+- code: TMI-D1810
+  label: Magic knowledge through dreams
+  proposed_tier: reconstructed
+  status: confirmed
+  rationale: Enkidu receives prophetic, divinely sanctioned knowledge of the underworld through a dream sequence. The content of the dream — including the winged demon, the transformation into a bird, and the vision of the House of Dust — serves as a revelation of his imminent fate and the nature of death. Gilgamesh explicitly acknowledges the dream's significance ('Драгоценен твой сон, хоть много в нем страха'), reinforcing its status as a meaningful, knowledge-conveying vision rather than mere narrative imagery.
+  evidence_citations:
+  - Dyakonov 1961, Tablet VII ('Слушай, друг мой! Сон я видел ночью')
+  - George 2003, SB VII 155–165
+  methodology_fit_warning: false
+  ai_generated: true
+  generated_by_model: claude-sonnet-4-6
+- code: TMI-A1335
+  label: Origin of death
+  proposed_tier: reconstructed
+  status: confirmed
+  rationale: "Shamash's response to Gilgamesh's plea contains a direct articulation of the irreversibility of mortal fate: 'Слово, что сказано, бог не изменит... Судьба людская проходит — ничто не останется в мире.' This passage encodes the mythological principle that death is the irrevocable lot of humankind, contrasted with divine permanence — a structural statement about the origin and nature of human mortality. The juxtaposition of Gilgamesh's futile prayers with Shamash's cosmic decree underscores the myth-aetiological dimension of the episode."
+  evidence_citations:
+  - Dyakonov 1961, Tablet VII ('Жребий, что брошен, не вернет, не отменит, / Судьба людская проходит')
+  - George 2003, SB VII 133–141
+  methodology_fit_warning: false
+  ai_generated: true
+  generated_by_model: claude-sonnet-4-6
+- code: TMI-Q2
+  label: Kind and unkind
+  proposed_tier: contested
+  status: confirmed
+  rationale: This code applies in a limited and contested manner. Enkidu's lament touches on the contrast between his own fate — dying in bed, stripped of the warrior's death he might have deserved — and the fates of kings and heroes in the House of Dust. The Gumilev passage captures his bitterness at being 'cursed' and dying ignobly ('как того, что в сраженье утратил отвагу'), while the Dyakonov passage presents him witnessing the undifferentiated equality of the dead. TMI-Q2 is only weakly applicable here; the full kind/unkind contrast is more explicit in other sections of the epic (the cedar forest episodes or the Utnapishtim narrative). The fit is genuinely debatable.
+  evidence_citations:
+  - Gumilev 1919, Tablet VII ('Вот боюсь я борьбы и не выйду в поле, / Друг мой, тот, кто боится, проклят!')
+  methodology_fit_warning: true
+  methodology_fit_note: TMI-Q2 is a weak fit for this passage. The motif of contrasting fates is present but not structurally central to this episode; the annotation is defensible only as a minor thematic resonance rather than a primary motif instantiation. Confidence is accordingly reduced to 'contested'.
+  ai_generated: true
+  generated_by_model: claude-sonnet-4-6

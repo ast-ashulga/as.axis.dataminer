@@ -1,0 +1,16 @@
+_sisyphus_version: '0.1'
+nas: nms://gilgamesh/tablet-iv/lacuna-dream-sequence
+track: tmi
+annotations:
+- code: TMI-D1810
+  label: Magic knowledge through dreams
+  proposed_tier: contested
+  status: confirmed
+  rationale: "The dream-sequence of SBV Tablet IV, in which Gilgamesh receives a series of prophetic dreams interpreted by Enkidu during the journey to the Cedar Forest, is the canonical locus for TMI-D1810 in the Gilgamesh tradition. However, the source passage explicitly acknowledges a lacuna or scribal omission relative to George 2003's reconstruction, meaning the annotated motif is inferred from the standard SBV text rather than attested in this specific source document. The annotation is philologically defensible given the strength of the SBV reconstruction, but the absence of textual evidence in the presented passage means it cannot be treated as directly demonstrated here. The methodology-fit concern is significant: annotating a motif from a known lacuna risks conflating the reconstructed tradition with the source under analysis."
+  evidence_citations:
+  - George 2003, SB IV 1–232 (reconstructed dream sequence, multiple dreams and Enkidu interpretations)
+  - Thompson 1928, Tablet IV (fragmentary; dream episodes partially preserved)
+  methodology_fit_warning: true
+  methodology_fit_note: "The source passage is explicitly a lacuna or omission relative to SBV Tablet IV as reconstructed by George 2003. Annotating TMI-D1810 here relies entirely on the external scholarly reconstruction rather than evidence present in the source text itself. This creates a category error risk: the annotation documents the tradition, not this passage. The 'contested' tier is warranted because the motif cannot be verified against the supplied text, and any annotation is effectively an assertion about the SBV archetype rather than about this document. Annotators should flag this record as requiring a separate lacuna-reconstruction annotation track rather than standard TMI application."
+  ai_generated: true
+  generated_by_model: claude-sonnet-4-6

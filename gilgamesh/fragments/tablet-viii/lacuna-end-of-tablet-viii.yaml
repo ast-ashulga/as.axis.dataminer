@@ -1,0 +1,29 @@
+_sisyphus_version: '0.1'
+_generated_at: '2026-06-06T10:49:34.848333+00:00'
+_pipeline_run_id: phase-c
+fragment:
+  nas: nms://gilgamesh/tablet-viii/lacuna-end-of-tablet-viii
+  parent_nas: nms://gilgamesh/tablet-viii
+  tradition_id: gilgamesh
+  confidence_tier: reconstructed
+  available_layers:
+  - surface
+  methodology_fit_warning: false
+content:
+- locale: ru
+  layer: surface
+  body: 'Конец таблички VIII в данном источнике обрывается на середине фразы, описывающей пастуха и охотника, обитающего среди зверей [NAS: nms://gilgamesh/tablet-viii/lacuna-end-of-tablet-viii]. Остаток речи божества, а также любое завершающее содержание, связанное с погребальными обрядами, засвидетельствованное в стандартной вавилонской версии таблички VIII, в данном свидетеле отсутствует [NAS: nms://gilgamesh/tablet-viii/lacuna-end-of-tablet-viii]. Текст, по всей видимости, содержал дальнейшее описание траурных церемоний по Энкиду, однако лакуна не позволяет восстановить это содержание с достаточной степенью уверенности [NAS: nms://gilgamesh/tablet-viii/lacuna-end-of-tablet-viii].'
+  status: confirmed
+  confidence_tier: reconstructed
+  ai_generated: true
+  reviewed_by:
+  reviewed_at:
+  translation_id:
+  translation_author:
+  translation_year:
+  translation_license:
+  grounding_citations:
+  - nms://gilgamesh/tablet-viii/lacuna-end-of-tablet-viii
+  - nms://gilgamesh/tablet-viii/lacuna-end-of-tablet-viii
+  - nms://gilgamesh/tablet-viii/lacuna-end-of-tablet-viii
+  generated_by_model: claude-sonnet-4-6

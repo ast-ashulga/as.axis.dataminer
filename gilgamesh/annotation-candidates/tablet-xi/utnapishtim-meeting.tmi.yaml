@@ -1,0 +1,53 @@
+_sisyphus_version: '0.1'
+nas: nms://gilgamesh/tablet-xi/utnapishtim-meeting
+track: tmi
+annotations:
+- code: TMI-F110
+  label: Journey to earthly paradise
+  proposed_tier: reconstructed
+  status: confirmed
+  rationale: Gilgamesh has journeyed to the ends of the earth to reach Utnapishtim, who dwells in a remote, paradisiacal realm beyond the waters of death. The passage opens with Gilgamesh's direct address to Utnapishtim upon arrival, marking the culmination of this journey to an otherworldly location at the edge of the mortal world. The hero's astonishment that Utnapishtim appears physically ordinary underscores the extraordinary, semi-divine nature of the place and its sole immortal inhabitant.
+  evidence_citations:
+  - Gumilev 1919, Tablet XI (opening address)
+  - Dyakonov 1961, Tablet XI (opening address)
+  - George 2003, SB XI 1–6
+  methodology_fit_warning: false
+  ai_generated: true
+  generated_by_model: claude-sonnet-4-6
+- code: TMI-H1376.3
+  label: Quest for immortality
+  proposed_tier: reconstructed
+  status: confirmed
+  rationale: Gilgamesh's climactic question — 'How did you, having survived, enter the assembly of the gods and find life there?' (Dyakonov 1961) — makes explicit that his entire journey has been motivated by the quest to understand and obtain immortality. The fact that he traveled to reach this singular immortal human is the defining act of the quest narrative. Utnapishtim's answer will constitute the knowledge Gilgamesh sought.
+  evidence_citations:
+  - "Dyakonov 1961, Tablet XI: 'Скажи, как ты, выжив, в собранье богов был принят и жизнь обрел в нем?'"
+  - "Gumilev 1919, Tablet XI: 'Почему ж ты так вознесен, добыл жизнь в собранье бессмертных?'"
+  - George 2003, SB XI 6
+  methodology_fit_warning: false
+  ai_generated: true
+  generated_by_model: claude-sonnet-4-6
+- code: TMI-A1335
+  label: Origin of death
+  proposed_tier: contested
+  status: confirmed
+  rationale: Gilgamesh's question implicitly probes the boundary between mortal and immortal existence — why Utnapishtim alone among humans was granted eternal life while all others must die. This segment introduces the thematic axis around which Utnapishtim's subsequent flood narrative will turn, namely the divine assembly's decision about who lives and who dies. The application is contested here because this particular excerpt is only the framing question, not yet the mythological explanation itself; the motif is more fully instantiated in the flood narrative that follows.
+  evidence_citations:
+  - "Gumilev 1919, Tablet XI: 'добыл жизнь в собранье бессмертных'"
+  - "Dyakonov 1961, Tablet XI: 'в собранье богов был принят и жизнь обрел в нем'"
+  - George 2003, SB XI 6
+  methodology_fit_warning: true
+  methodology_fit_note: The motif of the origin of death is latent in Gilgamesh's question rather than explicitly narrated in this excerpt. The annotation is defensible as a thematic frame but should be marked contested since the explanatory myth has not yet been delivered at this textual moment.
+  ai_generated: true
+  generated_by_model: claude-sonnet-4-6
+- code: TMI-Q2
+  label: Kind and unkind
+  proposed_tier: contested
+  status: confirmed
+  rationale: "Gilgamesh's observation that Utnapishtim appears physically no different from an ordinary mortal ('Не чуден ты ростом — таков, как и я, ты') sets up an implicit contrast: an outwardly ordinary man has been granted immortality by the gods, while Gilgamesh — who is two-thirds divine — remains subject to death. This contrast anticipates the moral and narrative logic of the broader tradition in which Utnapishtim's virtue (faithfulness to Ea's instruction) distinguished him from the rest of humanity. The application is contested because the contrasting figure (doomed humanity) is not directly present in this excerpt."
+  evidence_citations:
+  - "Dyakonov 1961, Tablet XI: 'Не чуден ты ростом — таков, как и я, ты'"
+  - "Gumilev 1919, Tablet XI: 'Твой облик не страшен, ты мне подобен'"
+  methodology_fit_warning: true
+  methodology_fit_note: TMI-Q2 is most naturally applied to narrative episodes with two characters explicitly contrasted in their fates within the same scene. Here the contrast is implicit and retrospective, making this a contested but not unreasonable application.
+  ai_generated: true
+  generated_by_model: claude-sonnet-4-6

@@ -1,0 +1,31 @@
+_sisyphus_version: '0.1'
+_generated_at: '2026-06-06T10:49:55.289426+00:00'
+_pipeline_run_id: phase-c
+fragment:
+  nas: nms://gilgamesh/tablet-xi/utnapishtim-meeting
+  parent_nas: nms://gilgamesh/tablet-xi
+  tradition_id: gilgamesh
+  confidence_tier: reconstructed
+  available_layers:
+  - surface
+  methodology_fit_warning: false
+content:
+- locale: ru
+  layer: surface
+  body: 'В одиннадцатой таблице эпоса Гильгамеш обращается к Ут-напиштиму, выражая удивление от встречи с ним [NAS: nms://gilgamesh/tablet-xi/utnapishtim-meeting]. Герой констатирует, что облик Ут-напиштима ничем не отличается от облика обычного смертного человека — он не выглядит ни устрашающим, ни сверхъестественным [NAS: nms://gilgamesh/tablet-xi/utnapishtim-meeting]. Гильгамеш замечает, что Ут-напиштим подобен ему самому и даже спит, как все люди, лёжа на спине [NAS: nms://gilgamesh/tablet-xi/utnapishtim-meeting]. На этом основании герой задаёт центральный вопрос встречи: каким образом Ут-напиштим был принят в собрание богов и обрёл бессмертие [NAS: nms://gilgamesh/tablet-xi/utnapishtim-meeting]. Таким образом, данный фрагмент задаёт нарративную рамку для последующего рассказа Ут-напиштима о потопе и даровании ему вечной жизни [NAS: nms://gilgamesh/tablet-xi/utnapishtim-meeting].'
+  status: confirmed
+  confidence_tier: reconstructed
+  ai_generated: true
+  reviewed_by:
+  reviewed_at:
+  translation_id:
+  translation_author:
+  translation_year:
+  translation_license:
+  grounding_citations:
+  - nms://gilgamesh/tablet-xi/utnapishtim-meeting
+  - nms://gilgamesh/tablet-xi/utnapishtim-meeting
+  - nms://gilgamesh/tablet-xi/utnapishtim-meeting
+  - nms://gilgamesh/tablet-xi/utnapishtim-meeting
+  - nms://gilgamesh/tablet-xi/utnapishtim-meeting
+  generated_by_model: claude-sonnet-4-6

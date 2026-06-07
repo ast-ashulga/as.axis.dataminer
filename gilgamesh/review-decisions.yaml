@@ -1,0 +1,3982 @@
+tradition_id: gilgamesh
+decisions:
+- audit_id: 7121f481-ad9c-4b5f-bcd6-fae86d706cec
+  timestamp: '2026-06-06T14:34:53.955022+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-i/creation-of-enkidu
+  track: bakhtin
+  code: BAKHTIN-HEROIC-BODY
+  confidence_tier_assigned: reconstructed
+  review_note: Clean framework fit; no methodology concern. Confirmed reconstructed.
+- audit_id: f5b16360-d949-42c3-987b-95806c19c86e
+  timestamp: '2026-06-06T14:34:53.955190+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-i/creation-of-enkidu
+  track: bakhtin
+  code: BAKHTIN-ROAD
+  confidence_tier_assigned: contested
+  review_note: 'AI-proposed tier maintained: contested annotation with methodology fit warning. Confirmed per Cultural Domain Expert Rule 3.'
+- audit_id: 7d42b0d6-24ef-4fe9-9c45-be4ef516debb
+  timestamp: '2026-06-06T14:34:53.961859+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-i/creation-of-enkidu
+  track: propp
+  code: PROPP-8
+  confidence_tier_assigned: contested
+  review_note: 'Note-prose override: methodology_fit_note names a more conservative tier than the proposed_tier field. Downgraded per Cultural Domain Expert Rule 0.'
+- audit_id: 2e55f04d-e2de-4618-b453-a059cbd63f59
+  timestamp: '2026-06-06T14:34:53.961872+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-i/creation-of-enkidu
+  track: propp
+  code: PROPP-4
+  confidence_tier_assigned: contested
+  review_note: Role inversion or subordinate chronotope detected in methodology_fit_note (Type C/D). Downgraded to contested per Cultural Domain Expert Rule 2.
+- audit_id: 2ffcbd02-5a0a-4fed-a428-a8627dbb2cae
+  timestamp: '2026-06-06T14:34:53.961881+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-i/creation-of-enkidu
+  track: propp
+  code: PROPP-5
+  confidence_tier_assigned: contested
+  review_note: Role inversion or subordinate chronotope detected in methodology_fit_note (Type C/D). Downgraded to contested per Cultural Domain Expert Rule 2.
+- audit_id: 0f4abf67-9672-40dc-bfa8-f8143ac3d9bd
+  timestamp: '2026-06-06T14:34:53.961890+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-i/creation-of-enkidu
+  track: propp
+  code: PROPP-9
+  confidence_tier_assigned: reconstructed
+  review_note: Clean framework fit; no methodology concern. Confirmed reconstructed.
+- audit_id: 37f0ba8f-d75a-48bc-978b-fcb20ae98c36
+  timestamp: '2026-06-06T14:34:53.968422+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-i/creation-of-enkidu
+  track: tmi
+  code: TMI-F567.2
+  confidence_tier_assigned: reconstructed
+  review_note: Clean framework fit; no methodology concern. Confirmed reconstructed.
+- audit_id: f16fc555-9389-4957-8136-8b53ea11c630
+  timestamp: '2026-06-06T14:34:53.968435+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-i/creation-of-enkidu
+  track: tmi
+  code: TMI-H900
+  confidence_tier_assigned: contested
+  review_note: 'AI-proposed tier maintained: contested annotation with methodology fit warning. Confirmed per Cultural Domain Expert Rule 3.'
+- audit_id: 546a9a96-916e-4614-8ccd-823e355bf85d
+  timestamp: '2026-06-06T14:34:53.968442+00:00'
+  reviewer: Mnemosyne
+  action: rejected
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-i/creation-of-enkidu
+  track: tmi
+  code: TMI-Q2
+  confidence_tier_assigned:
+  review_note: "TMI-Q2 is structurally inapplicable to this segment: the motif requires explicit contrasting outcomes, which lie beyond this fragment's boundaries. Confirmed rejection per Cultural Domain Expert review (2026-06-06)."
+- audit_id: c6ca7395-6ba1-4f07-8a50-325385e0f023
+  timestamp: '2026-06-06T14:34:53.972457+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-i/gilgamesh-of-uruk
+  track: bakhtin
+  code: BAKHTIN-THRESHOLD
+  confidence_tier_assigned: contested
+  review_note: 'AI-proposed tier maintained: contested annotation with methodology fit warning. Confirmed per Cultural Domain Expert Rule 3.'
+- audit_id: 33c92d57-db89-4567-8a20-1ec5b29f1734
+  timestamp: '2026-06-06T14:34:53.977561+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-i/gilgamesh-of-uruk
+  track: propp
+  code: PROPP-8
+  confidence_tier_assigned: contested
+  review_note: 'Note-prose override: methodology_fit_note names a more conservative tier than the proposed_tier field. Downgraded per Cultural Domain Expert Rule 0.'
+- audit_id: 02e1898b-95f1-4666-8b4a-836efaa9f21f
+  timestamp: '2026-06-06T14:34:53.977575+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-i/gilgamesh-of-uruk
+  track: propp
+  code: PROPP-9
+  confidence_tier_assigned: reconstructed
+  review_note: Clean framework fit; no methodology concern. Confirmed reconstructed.
+- audit_id: 2362904f-6a33-454b-a50e-c17e7db5129e
+  timestamp: '2026-06-06T14:34:53.977594+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-i/gilgamesh-of-uruk
+  track: propp
+  code: PROPP-10
+  confidence_tier_assigned: reconstructed
+  review_note: Methodology warning reflects etic/emic disclosure or non-standard role relabeling (Type A/B); structural function is present. Confirmed reconstructed per Cultural Domain Expert Rule 2.
+- audit_id: f5fba0b7-2326-4261-9f28-a63e23db4545
+  timestamp: '2026-06-06T14:34:53.986960+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-i/gilgamesh-of-uruk
+  track: tmi
+  code: TMI-A1010
+  confidence_tier_assigned: reconstructed
+  review_note: Clean framework fit; no methodology concern. Confirmed reconstructed.
+- audit_id: 72254fc8-30b4-42d8-b18a-25f5c8410400
+  timestamp: '2026-06-06T14:34:53.986987+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-i/gilgamesh-of-uruk
+  track: tmi
+  code: TMI-F567.2
+  confidence_tier_assigned: reconstructed
+  review_note: Methodology warning reflects etic/emic disclosure or non-standard role relabeling (Type A/B); structural function is present. Confirmed reconstructed per Cultural Domain Expert Rule 2.
+- audit_id: 2b7e2d45-979f-482b-af37-c77e16d7430d
+  timestamp: '2026-06-06T14:34:53.987001+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-i/gilgamesh-of-uruk
+  track: tmi
+  code: TMI-H900
+  confidence_tier_assigned: reconstructed
+  review_note: Methodology warning reflects etic/emic disclosure or non-standard role relabeling (Type A/B); structural function is present. Confirmed reconstructed per Cultural Domain Expert Rule 2.
+- audit_id: 138bd52b-7543-479a-b7c5-615f55edf9b7
+  timestamp: '2026-06-06T14:34:53.987012+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-i/gilgamesh-of-uruk
+  track: tmi
+  code: TMI-H1376.3
+  confidence_tier_assigned: reconstructed
+  review_note: Methodology warning reflects etic/emic disclosure or non-standard role relabeling (Type A/B); structural function is present. Confirmed reconstructed per Cultural Domain Expert Rule 2.
+- audit_id: 6d9ef702-64d1-40a0-8ad7-ae6de65017f5
+  timestamp: '2026-06-06T14:34:53.987018+00:00'
+  reviewer: Mnemosyne
+  action: rejected
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-i/gilgamesh-of-uruk
+  track: tmi
+  code: TMI-D1840
+  confidence_tier_assigned:
+  review_note: TMI-D1840 contradicts the epic's central thesis of Gilgamesh's mortality. Confirmed rejection per Cultural Domain Expert review (2026-06-06).
+- audit_id: bb0ba66a-778f-4783-adac-e46e6a1d3967
+  timestamp: '2026-06-06T14:34:53.987032+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-i/gilgamesh-of-uruk
+  track: tmi
+  code: TMI-A1335
+  confidence_tier_assigned: reconstructed
+  review_note: Methodology warning reflects etic/emic disclosure or non-standard role relabeling (Type A/B); structural function is present. Confirmed reconstructed per Cultural Domain Expert Rule 2.
+- audit_id: 9f5e899d-98ac-4ebd-9e3c-37b0f5d40027
+  timestamp: '2026-06-06T14:34:53.996077+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-i/shamhat-and-enkidu
+  track: bakhtin
+  code: BAKHTIN-ROAD
+  confidence_tier_assigned: reconstructed
+  review_note: Clean framework fit; no methodology concern. Confirmed reconstructed.
+- audit_id: edfc190c-e831-4de9-afdb-32fc4c92f264
+  timestamp: '2026-06-06T14:34:53.996088+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-i/shamhat-and-enkidu
+  track: bakhtin
+  code: BAKHTIN-THRESHOLD
+  confidence_tier_assigned: reconstructed
+  review_note: Clean framework fit; no methodology concern. Confirmed reconstructed.
+- audit_id: e81352e1-1590-4c3f-96bd-0626c3945c4f
+  timestamp: '2026-06-06T14:34:53.996094+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-i/shamhat-and-enkidu
+  track: bakhtin
+  code: BAKHTIN-IDYLL
+  confidence_tier_assigned: contested
+  review_note: 'AI-proposed tier maintained: contested annotation with methodology fit warning. Confirmed per Cultural Domain Expert Rule 3.'
+- audit_id: 5c7d38fa-5d4e-4891-b76c-72dc8fb71edc
+  timestamp: '2026-06-06T14:34:53.996101+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-i/shamhat-and-enkidu
+  track: bakhtin
+  code: BAKHTIN-HEROIC-BODY
+  confidence_tier_assigned: reconstructed
+  review_note: Clean framework fit; no methodology concern. Confirmed reconstructed.
+- audit_id: 0ef713c6-8229-463b-b729-abca62f759d9
+  timestamp: '2026-06-06T14:34:54.004957+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-i/shamhat-and-enkidu
+  track: propp
+  code: PROPP-2
+  confidence_tier_assigned: reconstructed
+  review_note: Methodology warning reflects etic/emic disclosure or non-standard role relabeling (Type A/B); structural function is present. Confirmed reconstructed per Cultural Domain Expert Rule 2.
+- audit_id: 5f2048ea-83c4-4a77-8bef-026d510316a5
+  timestamp: '2026-06-06T14:34:54.004974+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-i/shamhat-and-enkidu
+  track: propp
+  code: PROPP-6
+  confidence_tier_assigned: contested
+  review_note: Role inversion or subordinate chronotope detected in methodology_fit_note (Type C/D). Downgraded to contested per Cultural Domain Expert Rule 2.
+- audit_id: 6eeed3d4-40fe-459f-a62d-10f458ff7c62
+  timestamp: '2026-06-06T14:34:54.004982+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-i/shamhat-and-enkidu
+  track: propp
+  code: PROPP-7
+  confidence_tier_assigned: contested
+  review_note: Villain-centric Propp function applied with non-standard role assignment (role inversion not acknowledged in proposed_tier). Downgraded to contested per Cultural Domain Expert Rule 1.
+- audit_id: a427d615-8a1f-4e5d-8ee7-50f18859df24
+  timestamp: '2026-06-06T14:34:54.004989+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-i/shamhat-and-enkidu
+  track: propp
+  code: PROPP-8
+  confidence_tier_assigned: reconstructed
+  review_note: Clean framework fit; no methodology concern. Confirmed reconstructed.
+- audit_id: eaaa68d1-7b7b-4eed-a8a3-9871871ec70f
+  timestamp: '2026-06-06T14:34:54.004995+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-i/shamhat-and-enkidu
+  track: propp
+  code: PROPP-9
+  confidence_tier_assigned: reconstructed
+  review_note: Clean framework fit; no methodology concern. Confirmed reconstructed.
+- audit_id: 4264cfad-861d-4fef-819b-28281ac14d2d
+  timestamp: '2026-06-06T14:34:54.005000+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-i/shamhat-and-enkidu
+  track: propp
+  code: PROPP-10
+  confidence_tier_assigned: reconstructed
+  review_note: Clean framework fit; no methodology concern. Confirmed reconstructed.
+- audit_id: 57c9a6d1-73d7-4e65-80eb-de8af6bc05b4
+  timestamp: '2026-06-06T14:34:54.013435+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-i/shamhat-and-enkidu
+  track: tmi
+  code: TMI-F567.2
+  confidence_tier_assigned: reconstructed
+  review_note: Clean framework fit; no methodology concern. Confirmed reconstructed.
+- audit_id: 59e60a00-69d1-42c6-a0b8-ceb2b1c2f451
+  timestamp: '2026-06-06T14:34:54.013445+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-i/shamhat-and-enkidu
+  track: tmi
+  code: TMI-B601.7
+  confidence_tier_assigned: reconstructed
+  review_note: Clean framework fit; no methodology concern. Confirmed reconstructed.
+- audit_id: f5a49202-4e65-4d46-b790-01af61ccda52
+  timestamp: '2026-06-06T14:34:54.013451+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-i/shamhat-and-enkidu
+  track: tmi
+  code: TMI-H900
+  confidence_tier_assigned: contested
+  review_note: 'AI-proposed tier maintained: contested annotation with methodology fit warning. Confirmed per Cultural Domain Expert Rule 3.'
+- audit_id: 78e563e0-24d2-471f-8541-b97c9552c601
+  timestamp: '2026-06-06T14:34:54.013456+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-i/shamhat-and-enkidu
+  track: tmi
+  code: TMI-A1335
+  confidence_tier_assigned: contested
+  review_note: 'AI-proposed tier maintained: contested annotation with methodology fit warning. Confirmed per Cultural Domain Expert Rule 3.'
+- audit_id: 000c87a4-5168-4429-ba88-7f3668cc34bd
+  timestamp: '2026-06-06T14:34:54.022440+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-ii/enkidu-comes-to-uruk
+  track: bakhtin
+  code: BAKHTIN-ROAD
+  confidence_tier_assigned: reconstructed
+  review_note: Clean framework fit; no methodology concern. Confirmed reconstructed.
+- audit_id: 890b8cf8-a7ee-4212-9bbe-e4f1f95d6a2b
+  timestamp: '2026-06-06T14:34:54.022451+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-ii/enkidu-comes-to-uruk
+  track: bakhtin
+  code: BAKHTIN-CASTLE
+  confidence_tier_assigned: reconstructed
+  review_note: Clean framework fit; no methodology concern. Confirmed reconstructed.
+- audit_id: 638860c1-6b09-401b-846d-982908b934ba
+  timestamp: '2026-06-06T14:34:54.022458+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-ii/enkidu-comes-to-uruk
+  track: bakhtin
+  code: BAKHTIN-IDYLL
+  confidence_tier_assigned: reconstructed
+  review_note: Clean framework fit; no methodology concern. Confirmed reconstructed.
+- audit_id: 0a9a33db-5970-4b9c-9a8e-ec5d6c9b0664
+  timestamp: '2026-06-06T14:34:54.022464+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-ii/enkidu-comes-to-uruk
+  track: bakhtin
+  code: BAKHTIN-THRESHOLD
+  confidence_tier_assigned: reconstructed
+  review_note: Clean framework fit; no methodology concern. Confirmed reconstructed.
+- audit_id: fd1ab278-2c41-4d13-8503-033b6aa4d1e9
+  timestamp: '2026-06-06T14:34:54.022470+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-ii/enkidu-comes-to-uruk
+  track: bakhtin
+  code: BAKHTIN-DIVINE
+  confidence_tier_assigned: contested
+  review_note: 'AI-proposed tier maintained: contested annotation with methodology fit warning. Confirmed per Cultural Domain Expert Rule 3.'
+- audit_id: cca67de2-92b5-479d-9637-4da2d9211017
+  timestamp: '2026-06-06T14:34:54.022475+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-ii/enkidu-comes-to-uruk
+  track: bakhtin
+  code: BAKHTIN-HEROIC-BODY
+  confidence_tier_assigned: reconstructed
+  review_note: Clean framework fit; no methodology concern. Confirmed reconstructed.
+- audit_id: 9b2c9cad-242f-495d-9e5c-73eee60e592f
+  timestamp: '2026-06-06T14:34:54.035126+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-ii/enkidu-comes-to-uruk
+  track: propp
+  code: PROPP-15
+  confidence_tier_assigned: reconstructed
+  review_note: Methodology warning reflects etic/emic disclosure or non-standard role relabeling (Type A/B); structural function is present. Confirmed reconstructed per Cultural Domain Expert Rule 2.
+- audit_id: e4756e85-6552-4ea3-83c3-7e22ee9d6592
+  timestamp: '2026-06-06T14:34:54.035149+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-ii/enkidu-comes-to-uruk
+  track: propp
+  code: PROPP-12
+  confidence_tier_assigned: reconstructed
+  review_note: Methodology warning reflects etic/emic disclosure or non-standard role relabeling (Type A/B); structural function is present. Confirmed reconstructed per Cultural Domain Expert Rule 2.
+- audit_id: a13f76e5-cb0f-4e02-ae54-545348f1c2c1
+  timestamp: '2026-06-06T14:34:54.035157+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-ii/enkidu-comes-to-uruk
+  track: propp
+  code: PROPP-13
+  confidence_tier_assigned: reconstructed
+  review_note: Clean framework fit; no methodology concern. Confirmed reconstructed.
+- audit_id: 7562060e-a109-47be-9045-ca79e53052eb
+  timestamp: '2026-06-06T14:34:54.035168+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-ii/enkidu-comes-to-uruk
+  track: propp
+  code: PROPP-14
+  confidence_tier_assigned: reconstructed
+  review_note: Methodology warning reflects etic/emic disclosure or non-standard role relabeling (Type A/B); structural function is present. Confirmed reconstructed per Cultural Domain Expert Rule 2.
+- audit_id: c3966f19-2de5-4bf7-92bb-53ee3aabd76f
+  timestamp: '2026-06-06T14:34:54.035174+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-ii/enkidu-comes-to-uruk
+  track: propp
+  code: PROPP-9
+  confidence_tier_assigned: reconstructed
+  review_note: Clean framework fit; no methodology concern. Confirmed reconstructed.
+- audit_id: 5a076fbb-276b-46a9-aa8e-0ece15f46767
+  timestamp: '2026-06-06T14:34:54.035179+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-ii/enkidu-comes-to-uruk
+  track: propp
+  code: PROPP-8
+  confidence_tier_assigned: contested
+  review_note: 'AI-proposed tier maintained: contested annotation with methodology fit warning. Confirmed per Cultural Domain Expert Rule 3.'
+- audit_id: 412a551a-1030-4359-ac5a-431b4d9079e6
+  timestamp: '2026-06-06T14:34:54.035185+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-ii/enkidu-comes-to-uruk
+  track: propp
+  code: PROPP-16
+  confidence_tier_assigned: contested
+  review_note: 'Note-prose override: methodology_fit_note names a more conservative tier than the proposed_tier field. Downgraded per Cultural Domain Expert Rule 0.'
+- audit_id: 47bff927-a879-4dd1-b804-a0a77f5320c5
+  timestamp: '2026-06-06T14:34:54.035191+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-ii/enkidu-comes-to-uruk
+  track: propp
+  code: PROPP-31
+  confidence_tier_assigned: contested
+  review_note: 'AI-proposed tier maintained: contested annotation with methodology fit warning. Confirmed per Cultural Domain Expert Rule 3.'
+- audit_id: 42b02c42-77c7-4948-b866-ebe59a659a1c
+  timestamp: '2026-06-06T14:34:54.046420+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-ii/enkidu-comes-to-uruk
+  track: tmi
+  code: TMI-F567.2
+  confidence_tier_assigned: reconstructed
+  review_note: Clean framework fit; no methodology concern. Confirmed reconstructed.
+- audit_id: b1caedef-64bd-4ab0-89f5-c8339ef79220
+  timestamp: '2026-06-06T14:34:54.046432+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-ii/enkidu-comes-to-uruk
+  track: tmi
+  code: TMI-B601.7
+  confidence_tier_assigned: reconstructed
+  review_note: Clean framework fit; no methodology concern. Confirmed reconstructed.
+- audit_id: b17bb2e0-1496-4409-b9d3-b50035aeceb1
+  timestamp: '2026-06-06T14:34:54.046437+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-ii/enkidu-comes-to-uruk
+  track: tmi
+  code: TMI-D1810
+  confidence_tier_assigned: reconstructed
+  review_note: Clean framework fit; no methodology concern. Confirmed reconstructed.
+- audit_id: 821139fb-0abb-42a0-b7d7-bfbe33965c11
+  timestamp: '2026-06-06T14:34:54.046443+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-ii/enkidu-comes-to-uruk
+  track: tmi
+  code: TMI-H900
+  confidence_tier_assigned: contested
+  review_note: 'AI-proposed tier maintained: contested annotation with methodology fit warning. Confirmed per Cultural Domain Expert Rule 3.'
+- audit_id: 68a30db4-77ca-48db-a129-b73feba33992
+  timestamp: '2026-06-06T14:34:54.046448+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-ii/enkidu-comes-to-uruk
+  track: tmi
+  code: TMI-Q2
+  confidence_tier_assigned: contested
+  review_note: 'AI-proposed tier maintained: contested annotation with methodology fit warning. Confirmed per Cultural Domain Expert Rule 3.'
+- audit_id: 4d575f9d-3886-4c10-8857-c9ad5fd9d36a
+  timestamp: '2026-06-06T14:34:54.052217+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-ii/friendship
+  track: bakhtin
+  code: BAKHTIN-ROAD
+  confidence_tier_assigned: reconstructed
+  review_note: Methodology warning reflects etic/emic disclosure or non-standard role relabeling (Type A/B); structural function is present. Confirmed reconstructed per Cultural Domain Expert Rule 2.
+- audit_id: be838fb2-da57-46f0-b20f-fb4434b14aed
+  timestamp: '2026-06-06T14:34:54.052227+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-ii/friendship
+  track: bakhtin
+  code: BAKHTIN-HEROIC-BODY
+  confidence_tier_assigned: contested
+  review_note: 'AI-proposed tier maintained: contested annotation with methodology fit warning. Confirmed per Cultural Domain Expert Rule 3.'
+- audit_id: d2a46813-5476-4690-83ba-8ad867970817
+  timestamp: '2026-06-06T14:34:54.058726+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-ii/friendship
+  track: propp
+  code: PROPP-9
+  confidence_tier_assigned: reconstructed
+  review_note: Clean framework fit; no methodology concern. Confirmed reconstructed.
+- audit_id: 8a09bbe7-86b5-44ff-9f9a-2eb65538ddb8
+  timestamp: '2026-06-06T14:34:54.058734+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-ii/friendship
+  track: propp
+  code: PROPP-10
+  confidence_tier_assigned: reconstructed
+  review_note: Clean framework fit; no methodology concern. Confirmed reconstructed.
+- audit_id: ad1b399c-2604-43d9-8143-723b4497e5e2
+  timestamp: '2026-06-06T14:34:54.058741+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-ii/friendship
+  track: propp
+  code: PROPP-4
+  confidence_tier_assigned: contested
+  review_note: 'AI-proposed tier maintained: contested annotation with methodology fit warning. Confirmed per Cultural Domain Expert Rule 3.'
+- audit_id: a21270f6-8c37-457b-a0b0-d118e8686495
+  timestamp: '2026-06-06T14:34:54.058749+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-ii/friendship
+  track: propp
+  code: PROPP-2
+  confidence_tier_assigned: contested
+  review_note: 'AI-proposed tier maintained: contested annotation with methodology fit warning. Confirmed per Cultural Domain Expert Rule 3.'
+- audit_id: f65650d7-add4-4b81-97c6-a98a9d975270
+  timestamp: '2026-06-06T14:34:54.058756+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-ii/friendship
+  track: propp
+  code: PROPP-3
+  confidence_tier_assigned: contested
+  review_note: 'AI-proposed tier maintained: contested annotation with methodology fit warning. Confirmed per Cultural Domain Expert Rule 3.'
+- audit_id: dbcd0d54-2b43-4970-b925-4d0acadbefd7
+  timestamp: '2026-06-06T14:34:54.065997+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-ii/friendship
+  track: tmi
+  code: TMI-H900
+  confidence_tier_assigned: reconstructed
+  review_note: Clean framework fit; no methodology concern. Confirmed reconstructed.
+- audit_id: 140816cd-6307-4b7d-984d-96aebeb9e2b8
+  timestamp: '2026-06-06T14:34:54.066006+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-ii/friendship
+  track: tmi
+  code: TMI-A1335
+  confidence_tier_assigned: reconstructed
+  review_note: Clean framework fit; no methodology concern. Confirmed reconstructed.
+- audit_id: 27b8a39b-afba-4207-acc3-b413a5f2264d
+  timestamp: '2026-06-06T14:34:54.066011+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-ii/friendship
+  track: tmi
+  code: TMI-Q2
+  confidence_tier_assigned: contested
+  review_note: 'AI-proposed tier maintained: contested annotation with methodology fit warning. Confirmed per Cultural Domain Expert Rule 3.'
+- audit_id: f885a101-1a4d-42a3-aafc-0209ff5c0858
+  timestamp: '2026-06-06T14:34:54.066025+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-ii/friendship
+  track: tmi
+  code: TMI-F567.2
+  confidence_tier_assigned: reconstructed
+  review_note: Methodology warning reflects etic/emic disclosure or non-standard role relabeling (Type A/B); structural function is present. Confirmed reconstructed per Cultural Domain Expert Rule 2.
+- audit_id: 614713fa-a50b-4281-80d6-a689b51f815b
+  timestamp: '2026-06-06T14:34:54.071108+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-ii/wrestling
+  track: bakhtin
+  code: BAKHTIN-THRESHOLD
+  confidence_tier_assigned: reconstructed
+  review_note: Clean framework fit; no methodology concern. Confirmed reconstructed.
+- audit_id: adc0beea-52f7-4ee4-9bc5-67ea7d731f18
+  timestamp: '2026-06-06T14:34:54.071116+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-ii/wrestling
+  track: bakhtin
+  code: BAKHTIN-DIVINE
+  confidence_tier_assigned: contested
+  review_note: 'AI-proposed tier maintained: contested annotation with methodology fit warning. Confirmed per Cultural Domain Expert Rule 3.'
+- audit_id: b7001522-27e3-42d8-b9eb-28013adb63ae
+  timestamp: '2026-06-06T14:34:54.076272+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-ii/wrestling
+  track: propp
+  code: PROPP-16
+  confidence_tier_assigned: reconstructed
+  review_note: Methodology warning reflects etic/emic disclosure or non-standard role relabeling (Type A/B); structural function is present. Confirmed reconstructed per Cultural Domain Expert Rule 2.
+- audit_id: cc58a822-f61f-4fcf-a0df-82e7c5a9fa38
+  timestamp: '2026-06-06T14:34:54.076279+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-ii/wrestling
+  track: propp
+  code: PROPP-18
+  confidence_tier_assigned: contested
+  review_note: 'Note-prose override: methodology_fit_note names a more conservative tier than the proposed_tier field. Downgraded per Cultural Domain Expert Rule 0.'
+- audit_id: f9eb981d-3a96-4231-a777-e745394d94d1
+  timestamp: '2026-06-06T14:34:54.076285+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-ii/wrestling
+  track: propp
+  code: PROPP-27
+  confidence_tier_assigned: contested
+  review_note: 'AI-proposed tier maintained: contested annotation with methodology fit warning. Confirmed per Cultural Domain Expert Rule 3.'
+- audit_id: 30db8dc9-ef80-45a7-b30a-4a78ff7f8eea
+  timestamp: '2026-06-06T14:34:54.083495+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-ii/wrestling
+  track: tmi
+  code: TMI-H900
+  confidence_tier_assigned: contested
+  review_note: 'AI-proposed tier maintained: contested annotation with methodology fit warning. Confirmed per Cultural Domain Expert Rule 3.'
+- audit_id: 50e1445b-9618-4181-9b61-ad36f0746f3a
+  timestamp: '2026-06-06T14:34:54.083503+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-ii/wrestling
+  track: tmi
+  code: TMI-Q2
+  confidence_tier_assigned: contested
+  review_note: 'AI-proposed tier maintained: contested annotation with methodology fit warning. Confirmed per Cultural Domain Expert Rule 3.'
+- audit_id: 9759daf9-b138-49e3-8724-03bea466b866
+  timestamp: '2026-06-06T14:34:54.083511+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-ii/wrestling
+  track: tmi
+  code: TMI-F567.2
+  confidence_tier_assigned: reconstructed
+  review_note: Clean framework fit; no methodology concern. Confirmed reconstructed.
+- audit_id: 18fc8a42-d7d9-40c5-95f9-cd2e846b9b26
+  timestamp: '2026-06-06T14:34:54.083526+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-ii/wrestling
+  track: tmi
+  code: TMI-B601.7
+  confidence_tier_assigned: reconstructed
+  review_note: Methodology warning reflects etic/emic disclosure or non-standard role relabeling (Type A/B); structural function is present. Confirmed reconstructed per Cultural Domain Expert Rule 2.
+- audit_id: 75ba6499-19f1-456a-a4cc-092dd5f0eba6
+  timestamp: '2026-06-06T14:34:54.090306+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-iii/elders-counsel
+  track: bakhtin
+  code: BAKHTIN-ROAD
+  confidence_tier_assigned: reconstructed
+  review_note: Clean framework fit; no methodology concern. Confirmed reconstructed.
+- audit_id: b8a50a51-14af-4c45-b5ce-d80d240842b2
+  timestamp: '2026-06-06T14:34:54.090316+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-iii/elders-counsel
+  track: bakhtin
+  code: BAKHTIN-THRESHOLD
+  confidence_tier_assigned: reconstructed
+  review_note: Clean framework fit; no methodology concern. Confirmed reconstructed.
+- audit_id: 2a3d409d-decf-4c14-b1df-23fdf09eb955
+  timestamp: '2026-06-06T14:34:54.090322+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-iii/elders-counsel
+  track: bakhtin
+  code: BAKHTIN-IDYLL
+  confidence_tier_assigned: contested
+  review_note: 'AI-proposed tier maintained: contested annotation with methodology fit warning. Confirmed per Cultural Domain Expert Rule 3.'
+- audit_id: aeb341c9-df57-485f-9dbc-f1e59e4e8714
+  timestamp: '2026-06-06T14:34:54.096425+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-iii/elders-counsel
+  track: propp
+  code: PROPP-2
+  confidence_tier_assigned: contested
+  review_note: Role inversion or subordinate chronotope detected in methodology_fit_note (Type C/D). Downgraded to contested per Cultural Domain Expert Rule 2.
+- audit_id: efa9a92a-2cb7-45f5-8848-fbcb00483fd4
+  timestamp: '2026-06-06T14:34:54.096435+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-iii/elders-counsel
+  track: propp
+  code: PROPP-9
+  confidence_tier_assigned: reconstructed
+  review_note: Clean framework fit; no methodology concern. Confirmed reconstructed.
+- audit_id: a15aeb18-c2d4-4127-a4ce-54cb69e055bb
+  timestamp: '2026-06-06T14:34:54.096441+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-iii/elders-counsel
+  track: propp
+  code: PROPP-10
+  confidence_tier_assigned: reconstructed
+  review_note: Clean framework fit; no methodology concern. Confirmed reconstructed.
+- audit_id: 986634d7-e7fc-45e5-81fd-3d4df5b7d55f
+  timestamp: '2026-06-06T14:34:54.096453+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-iii/elders-counsel
+  track: propp
+  code: PROPP-11
+  confidence_tier_assigned: reconstructed
+  review_note: Methodology warning reflects etic/emic disclosure or non-standard role relabeling (Type A/B); structural function is present. Confirmed reconstructed per Cultural Domain Expert Rule 2.
+- audit_id: c2e62719-0b8a-46be-9ba9-2a46e0d33310
+  timestamp: '2026-06-06T14:34:54.103252+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-iii/elders-counsel
+  track: tmi
+  code: TMI-H900
+  confidence_tier_assigned: reconstructed
+  review_note: Clean framework fit; no methodology concern. Confirmed reconstructed.
+- audit_id: 4df13cb4-c63c-417b-a76f-1f658b0dcbe5
+  timestamp: '2026-06-06T14:34:54.103261+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-iii/elders-counsel
+  track: tmi
+  code: TMI-Q2
+  confidence_tier_assigned: contested
+  review_note: 'AI-proposed tier maintained: contested annotation with methodology fit warning. Confirmed per Cultural Domain Expert Rule 3.'
+- audit_id: cfd3a16c-63d0-49fd-860c-f3fa1d55067b
+  timestamp: '2026-06-06T14:34:54.103267+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-iii/elders-counsel
+  track: tmi
+  code: TMI-F567.2
+  confidence_tier_assigned: reconstructed
+  review_note: Clean framework fit; no methodology concern. Confirmed reconstructed.
+- audit_id: fa4fd0cb-780b-45cf-b571-374e3e4530c1
+  timestamp: '2026-06-06T14:34:54.103272+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-iii/elders-counsel
+  track: tmi
+  code: TMI-D1810
+  confidence_tier_assigned: contested
+  review_note: 'AI-proposed tier maintained: contested annotation with methodology fit warning. Confirmed per Cultural Domain Expert Rule 3.'
+- audit_id: 68cc0810-d68a-4ca0-ac84-f9f392d7a00b
+  timestamp: '2026-06-06T14:34:54.109388+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-iii/lacuna-ninsun-prayer-departure
+  track: propp
+  code: PROPP-9
+  confidence_tier_assigned: contested
+  review_note: 'AI-proposed tier maintained: contested annotation with methodology fit warning. Confirmed per Cultural Domain Expert Rule 3.'
+- audit_id: a6783d13-de46-4774-9164-d2bffa0f3c2c
+  timestamp: '2026-06-06T14:34:54.109399+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-iii/lacuna-ninsun-prayer-departure
+  track: propp
+  code: PROPP-11
+  confidence_tier_assigned: contested
+  review_note: 'AI-proposed tier maintained: contested annotation with methodology fit warning. Confirmed per Cultural Domain Expert Rule 3.'
+- audit_id: 3dc4f81c-6150-404c-b398-f073e934af0f
+  timestamp: '2026-06-06T14:34:54.113422+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-iv/cedar-forest-journey
+  track: bakhtin
+  code: BAKHTIN-DIVINE
+  confidence_tier_assigned: contested
+  review_note: 'AI-proposed tier maintained: contested annotation with methodology fit warning. Confirmed per Cultural Domain Expert Rule 3.'
+- audit_id: e12e8440-d221-46da-b84e-5a288e236302
+  timestamp: '2026-06-06T14:34:54.120561+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-iv/cedar-forest-journey
+  track: propp
+  code: PROPP-2
+  confidence_tier_assigned: contested
+  review_note: 'AI-proposed tier maintained: contested annotation with methodology fit warning. Confirmed per Cultural Domain Expert Rule 3.'
+- audit_id: de8df6da-df7b-4a11-ab1b-ce4d1a40b6cc
+  timestamp: '2026-06-06T14:34:54.120573+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-iv/cedar-forest-journey
+  track: propp
+  code: PROPP-3
+  confidence_tier_assigned: reconstructed
+  review_note: Clean framework fit; no methodology concern. Confirmed reconstructed.
+- audit_id: 9ea578f6-94b2-4e54-8e10-112d848f7f9b
+  timestamp: '2026-06-06T14:34:54.120579+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-iv/cedar-forest-journey
+  track: propp
+  code: PROPP-11
+  confidence_tier_assigned: reconstructed
+  review_note: Clean framework fit; no methodology concern. Confirmed reconstructed.
+- audit_id: 12d4dc95-59c2-4c20-8820-50fe10283771
+  timestamp: '2026-06-06T14:34:54.120585+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-iv/cedar-forest-journey
+  track: propp
+  code: PROPP-8
+  confidence_tier_assigned: contested
+  review_note: 'Note-prose override: methodology_fit_note names a more conservative tier than the proposed_tier field. Downgraded per Cultural Domain Expert Rule 0.'
+- audit_id: f78785c0-d409-434c-95f5-1bbe0c3e9ad6
+  timestamp: '2026-06-06T14:34:54.120590+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-iv/cedar-forest-journey
+  track: propp
+  code: PROPP-9
+  confidence_tier_assigned: contested
+  review_note: 'AI-proposed tier maintained: contested annotation with methodology fit warning. Confirmed per Cultural Domain Expert Rule 3.'
+- audit_id: 9970f905-c3ef-47cf-aeab-ba9e8aa32f46
+  timestamp: '2026-06-06T14:34:54.120595+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-iv/cedar-forest-journey
+  track: propp
+  code: PROPP-10
+  confidence_tier_assigned: reconstructed
+  review_note: Clean framework fit; no methodology concern. Confirmed reconstructed.
+- audit_id: cc2d17d6-2f34-4909-ada4-304ac2dc21b6
+  timestamp: '2026-06-06T14:34:54.130460+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-iv/cedar-forest-journey
+  track: tmi
+  code: TMI-H900
+  confidence_tier_assigned: reconstructed
+  review_note: Clean framework fit; no methodology concern. Confirmed reconstructed.
+- audit_id: ea704b73-e9a0-4fcf-b475-a8afd783c992
+  timestamp: '2026-06-06T14:34:54.130471+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-iv/cedar-forest-journey
+  track: tmi
+  code: TMI-F567.2
+  confidence_tier_assigned: reconstructed
+  review_note: Clean framework fit; no methodology concern. Confirmed reconstructed.
+- audit_id: 9b25ec6d-f18f-4af5-b4b7-eff2a5045c77
+  timestamp: '2026-06-06T14:34:54.130477+00:00'
+  reviewer: Mnemosyne
+  action: rejected
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-iv/cedar-forest-journey
+  track: tmi
+  code: TMI-D1840
+  confidence_tier_assigned:
+  review_note: "TMI-D1840 rejected on philological grounds: the Dyakonov 'зелье' (unguent) in SBV Tablet IV is most plausibly a rendering of an exhortation passage, not a supernatural invulnerability mechanism. No cuneiform parallel establishes an Enkidu battle-preparation unguent conferring protection from death; SBV IV is lacunose at the relevant point (George 2003). The translation is interpretive and does not warrant TMI-D1840. Case A correction per Cultural Domain Expert follow-up review (2026-06-06)."
+- audit_id: 0c5fbdc8-ec8f-4285-8e9a-653a04a89dc6
+  timestamp: '2026-06-06T14:34:54.130484+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-iv/cedar-forest-journey
+  track: tmi
+  code: TMI-A1335
+  confidence_tier_assigned: contested
+  review_note: 'AI-proposed tier maintained: contested annotation with methodology fit warning. Confirmed per Cultural Domain Expert Rule 3.'
+- audit_id: eebddd05-27fb-4e56-bd00-959b5a95705a
+  timestamp: '2026-06-06T14:34:54.130489+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-iv/cedar-forest-journey
+  track: tmi
+  code: TMI-Q2
+  confidence_tier_assigned: contested
+  review_note: 'AI-proposed tier maintained: contested annotation with methodology fit warning. Confirmed per Cultural Domain Expert Rule 3.'
+- audit_id: f512a219-cea4-4302-a1b1-16bac0ce2973
+  timestamp: '2026-06-06T14:34:54.138111+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-iv/lacuna-dream-sequence
+  track: bakhtin
+  code: BAKHTIN-ROAD
+  confidence_tier_assigned: reconstructed
+  review_note: Methodology warning reflects etic/emic disclosure or non-standard role relabeling (Type A/B); structural function is present. Confirmed reconstructed per Cultural Domain Expert Rule 2.
+- audit_id: 3a371a14-b67e-4bf5-8d54-7356743d123b
+  timestamp: '2026-06-06T14:34:54.138118+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-iv/lacuna-dream-sequence
+  track: bakhtin
+  code: BAKHTIN-THRESHOLD
+  confidence_tier_assigned: contested
+  review_note: 'AI-proposed tier maintained: contested annotation with methodology fit warning. Confirmed per Cultural Domain Expert Rule 3.'
+- audit_id: a9aac453-d4ea-471e-8ea0-3fb94ddc4e2e
+  timestamp: '2026-06-06T14:34:54.138123+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-iv/lacuna-dream-sequence
+  track: bakhtin
+  code: BAKHTIN-DIVINE
+  confidence_tier_assigned: contested
+  review_note: 'AI-proposed tier maintained: contested annotation with methodology fit warning. Confirmed per Cultural Domain Expert Rule 3.'
+- audit_id: 87bbfc72-4db2-4703-8a67-08cd83098a12
+  timestamp: '2026-06-06T14:34:54.143750+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-iv/lacuna-dream-sequence
+  track: propp
+  code: PROPP-12
+  confidence_tier_assigned: contested
+  review_note: 'AI-proposed tier maintained: contested annotation with methodology fit warning. Confirmed per Cultural Domain Expert Rule 3.'
+- audit_id: 283a253f-d6a6-49e8-8a12-9627a5fd8764
+  timestamp: '2026-06-06T14:34:54.143757+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-iv/lacuna-dream-sequence
+  track: propp
+  code: PROPP-13
+  confidence_tier_assigned: contested
+  review_note: 'AI-proposed tier maintained: contested annotation with methodology fit warning. Confirmed per Cultural Domain Expert Rule 3.'
+- audit_id: db4c84ae-514e-4821-b6a3-e3cb43e9b0fb
+  timestamp: '2026-06-06T14:34:54.147420+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-iv/lacuna-dream-sequence
+  track: tmi
+  code: TMI-D1810
+  confidence_tier_assigned: contested
+  review_note: 'AI-proposed tier maintained: contested annotation with methodology fit warning. Confirmed per Cultural Domain Expert Rule 3.'
+- audit_id: eb0a2c7f-995c-4a6d-b1b9-bd146aed04ad
+  timestamp: '2026-06-06T14:34:54.151517+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-ix/garden-of-gems
+  track: bakhtin
+  code: BAKHTIN-DIVINE
+  confidence_tier_assigned: contested
+  review_note: Role inversion or subordinate chronotope detected in methodology_fit_note (Type C/D). Downgraded to contested per Cultural Domain Expert Rule 2.
+- audit_id: a9e9b57e-3906-4c40-9c36-b1c9181b3270
+  timestamp: '2026-06-06T14:34:54.151524+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-ix/garden-of-gems
+  track: bakhtin
+  code: BAKHTIN-HEROIC-BODY
+  confidence_tier_assigned: contested
+  review_note: 'AI-proposed tier maintained: contested annotation with methodology fit warning. Confirmed per Cultural Domain Expert Rule 3.'
+- audit_id: e9ae2cf1-a576-4dde-90c4-945228abc38e
+  timestamp: '2026-06-06T14:34:54.156242+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-ix/garden-of-gems
+  track: propp
+  code: PROPP-13
+  confidence_tier_assigned: contested
+  review_note: 'Note-prose override: methodology_fit_note names a more conservative tier than the proposed_tier field. Downgraded per Cultural Domain Expert Rule 0.'
+- audit_id: 2dd00340-1086-4413-ae7e-41c162616f6a
+  timestamp: '2026-06-06T14:34:54.156249+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-ix/garden-of-gems
+  track: propp
+  code: PROPP-13
+  confidence_tier_assigned: contested
+  review_note: 'AI-proposed tier maintained: contested annotation with methodology fit warning. Confirmed per Cultural Domain Expert Rule 3.'
+- audit_id: d2c402b3-7438-4b49-86e2-8ed805cf16cc
+  timestamp: '2026-06-06T14:34:54.163413+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-ix/garden-of-gems
+  track: tmi
+  code: TMI-F110
+  confidence_tier_assigned: reconstructed
+  review_note: Clean framework fit; no methodology concern. Confirmed reconstructed.
+- audit_id: 118f97e6-c3ec-459b-a2c1-f9eaa079c49d
+  timestamp: '2026-06-06T14:34:54.163420+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-ix/garden-of-gems
+  track: tmi
+  code: TMI-F10
+  confidence_tier_assigned: contested
+  review_note: 'AI-proposed tier maintained: contested annotation with methodology fit warning. Confirmed per Cultural Domain Expert Rule 3.'
+- audit_id: a77d4a46-4561-4f4e-a988-9e2b3f6e1910
+  timestamp: '2026-06-06T14:34:54.163426+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-ix/garden-of-gems
+  track: tmi
+  code: TMI-H1376.3
+  confidence_tier_assigned: reconstructed
+  review_note: Clean framework fit; no methodology concern. Confirmed reconstructed.
+- audit_id: db2dc7b9-eb75-4c37-bd0a-1a08b7678794
+  timestamp: '2026-06-06T14:34:54.163432+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-ix/garden-of-gems
+  track: tmi
+  code: TMI-D1810
+  confidence_tier_assigned: contested
+  review_note: 'AI-proposed tier maintained: contested annotation with methodology fit warning. Confirmed per Cultural Domain Expert Rule 3.'
+- audit_id: ed7d64ca-1e3b-4933-ab93-d06bca743681
+  timestamp: '2026-06-06T14:34:54.163437+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-ix/garden-of-gems
+  track: tmi
+  code: TMI-D1346
+  confidence_tier_assigned: contested
+  review_note: 'AI-proposed tier maintained: contested annotation with methodology fit warning. Confirmed per Cultural Domain Expert Rule 3.'
+- audit_id: 52c58b07-79f2-4850-b845-980b23a19624
+  timestamp: '2026-06-06T14:34:54.170595+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-ix/gilgamesh-wandering
+  track: bakhtin
+  code: BAKHTIN-ROAD
+  confidence_tier_assigned: reconstructed
+  review_note: Clean framework fit; no methodology concern. Confirmed reconstructed.
+- audit_id: 99f5964f-197c-416c-b4cd-509b574e233c
+  timestamp: '2026-06-06T14:34:54.170605+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-ix/gilgamesh-wandering
+  track: bakhtin
+  code: BAKHTIN-THRESHOLD
+  confidence_tier_assigned: reconstructed
+  review_note: Clean framework fit; no methodology concern. Confirmed reconstructed.
+- audit_id: 37f625ff-a2cf-48c5-9fd2-3216a47c7119
+  timestamp: '2026-06-06T14:34:54.170612+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-ix/gilgamesh-wandering
+  track: bakhtin
+  code: BAKHTIN-DIVINE
+  confidence_tier_assigned: contested
+  review_note: 'Note-prose override: methodology_fit_note names a more conservative tier than the proposed_tier field. Downgraded per Cultural Domain Expert Rule 0.'
+- audit_id: 9837a5b3-de19-4c02-ac80-2aaae6f430b9
+  timestamp: '2026-06-06T14:34:54.174773+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-ix/gilgamesh-wandering
+  track: propp
+  code: PROPP-13
+  confidence_tier_assigned: contested
+  review_note: 'AI-proposed tier maintained: contested annotation with methodology fit warning. Confirmed per Cultural Domain Expert Rule 3.'
+- audit_id: 7347c680-b7cf-487b-8dca-eac7f3555b17
+  timestamp: '2026-06-06T14:34:54.180233+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-ix/gilgamesh-wandering
+  track: tmi
+  code: TMI-H1376.3
+  confidence_tier_assigned: reconstructed
+  review_note: Clean framework fit; no methodology concern. Confirmed reconstructed.
+- audit_id: 5faf8df2-f4dc-4e32-b75f-f396e47f8255
+  timestamp: '2026-06-06T14:34:54.180244+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-ix/gilgamesh-wandering
+  track: tmi
+  code: TMI-A1335
+  confidence_tier_assigned: reconstructed
+  review_note: Clean framework fit; no methodology concern. Confirmed reconstructed.
+- audit_id: 4ef26d4b-2aaa-4592-90e4-2274f958e6ee
+  timestamp: '2026-06-06T14:34:54.180250+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-ix/gilgamesh-wandering
+  track: tmi
+  code: TMI-F110
+  confidence_tier_assigned: contested
+  review_note: 'AI-proposed tier maintained: contested annotation with methodology fit warning. Confirmed per Cultural Domain Expert Rule 3.'
+- audit_id: b5660be7-6048-4b34-b3ff-1c337814b55d
+  timestamp: '2026-06-06T14:34:54.180256+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-ix/gilgamesh-wandering
+  track: tmi
+  code: TMI-D1810
+  confidence_tier_assigned: contested
+  review_note: 'AI-proposed tier maintained: contested annotation with methodology fit warning. Confirmed per Cultural Domain Expert Rule 3.'
+- audit_id: 148d10ca-c855-49b0-884d-2477d72a214a
+  timestamp: '2026-06-06T14:34:54.188587+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-ix/scorpion-people
+  track: bakhtin
+  code: BAKHTIN-THRESHOLD
+  confidence_tier_assigned: reconstructed
+  review_note: Clean framework fit; no methodology concern. Confirmed reconstructed.
+- audit_id: b21be24f-dacc-4da4-9ccd-eb1c4f3a4c8a
+  timestamp: '2026-06-06T14:34:54.188599+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-ix/scorpion-people
+  track: bakhtin
+  code: BAKHTIN-UNDERWORLD
+  confidence_tier_assigned: reconstructed
+  review_note: Clean framework fit; no methodology concern. Confirmed reconstructed.
+- audit_id: 3ac338de-e75f-48c0-a0e0-6ee6e6a4832d
+  timestamp: '2026-06-06T14:34:54.188605+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-ix/scorpion-people
+  track: bakhtin
+  code: BAKHTIN-ROAD
+  confidence_tier_assigned: reconstructed
+  review_note: Clean framework fit; no methodology concern. Confirmed reconstructed.
+- audit_id: 81c30a5a-6cc6-45d3-a6c3-220fb2ca135e
+  timestamp: '2026-06-06T14:34:54.188611+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-ix/scorpion-people
+  track: bakhtin
+  code: BAKHTIN-DIVINE
+  confidence_tier_assigned: reconstructed
+  review_note: Clean framework fit; no methodology concern. Confirmed reconstructed.
+- audit_id: d4983c0f-95c7-476d-b9a4-92fe8d48f8e0
+  timestamp: '2026-06-06T14:34:54.188617+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-ix/scorpion-people
+  track: bakhtin
+  code: BAKHTIN-HEROIC-BODY
+  confidence_tier_assigned: contested
+  review_note: 'AI-proposed tier maintained: contested annotation with methodology fit warning. Confirmed per Cultural Domain Expert Rule 3.'
+- audit_id: 2faa5ab2-97cd-4ae1-8a9b-ebf988e896de
+  timestamp: '2026-06-06T14:34:54.198214+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-ix/scorpion-people
+  track: propp
+  code: PROPP-11
+  confidence_tier_assigned: reconstructed
+  review_note: Methodology warning reflects etic/emic disclosure or non-standard role relabeling (Type A/B); structural function is present. Confirmed reconstructed per Cultural Domain Expert Rule 2.
+- audit_id: 81261a5a-6d51-4caf-8e01-24064ae72213
+  timestamp: '2026-06-06T14:34:54.198225+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-ix/scorpion-people
+  track: propp
+  code: PROPP-12
+  confidence_tier_assigned: contested
+  review_note: 'AI-proposed tier maintained: contested annotation with methodology fit warning. Confirmed per Cultural Domain Expert Rule 3.'
+- audit_id: b9201d2a-2f06-4ca2-b85b-2bf9d913610c
+  timestamp: '2026-06-06T14:34:54.198232+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-ix/scorpion-people
+  track: propp
+  code: PROPP-13
+  confidence_tier_assigned: reconstructed
+  review_note: Clean framework fit; no methodology concern. Confirmed reconstructed.
+- audit_id: 7affa41b-4d25-48ef-9681-96aa006cd96c
+  timestamp: '2026-06-06T14:34:54.198238+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-ix/scorpion-people
+  track: propp
+  code: PROPP-15
+  confidence_tier_assigned: reconstructed
+  review_note: Clean framework fit; no methodology concern. Confirmed reconstructed.
+- audit_id: 371a8c4a-3ce8-4509-9f88-ef56a88039ad
+  timestamp: '2026-06-06T14:34:54.198243+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-ix/scorpion-people
+  track: propp
+  code: PROPP-9
+  confidence_tier_assigned: contested
+  review_note: 'AI-proposed tier maintained: contested annotation with methodology fit warning. Confirmed per Cultural Domain Expert Rule 3.'
+- audit_id: b9e77dae-93dc-4448-8dcc-11953056e6f1
+  timestamp: '2026-06-06T14:34:54.207867+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-ix/scorpion-people
+  track: tmi
+  code: TMI-F10
+  confidence_tier_assigned: contested
+  review_note: 'AI-proposed tier maintained: contested annotation with methodology fit warning. Confirmed per Cultural Domain Expert Rule 3.'
+- audit_id: d3e2a752-8fb4-423d-92fe-205a39e97544
+  timestamp: '2026-06-06T14:34:54.207877+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-ix/scorpion-people
+  track: tmi
+  code: TMI-F110
+  confidence_tier_assigned: reconstructed
+  review_note: Clean framework fit; no methodology concern. Confirmed reconstructed.
+- audit_id: e3035cf4-cc3d-49f8-9d2f-ffe5a85af233
+  timestamp: '2026-06-06T14:34:54.207882+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-ix/scorpion-people
+  track: tmi
+  code: TMI-H1376.3
+  confidence_tier_assigned: reconstructed
+  review_note: Clean framework fit; no methodology concern. Confirmed reconstructed.
+- audit_id: 2555f362-0934-4681-9fb2-8a4cef4c6bdc
+  timestamp: '2026-06-06T14:34:54.207887+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-ix/scorpion-people
+  track: tmi
+  code: TMI-H900
+  confidence_tier_assigned: reconstructed
+  review_note: Clean framework fit; no methodology concern. Confirmed reconstructed.
+- audit_id: 69e92df5-e7ba-4cfc-b258-f572696ab97d
+  timestamp: '2026-06-06T14:34:54.207892+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-ix/scorpion-people
+  track: tmi
+  code: TMI-A1335
+  confidence_tier_assigned: contested
+  review_note: 'AI-proposed tier maintained: contested annotation with methodology fit warning. Confirmed per Cultural Domain Expert Rule 3.'
+- audit_id: 478def38-d092-4bfb-8eb0-6efae6b9bcf5
+  timestamp: '2026-06-06T14:34:54.207896+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-ix/scorpion-people
+  track: tmi
+  code: TMI-D1810
+  confidence_tier_assigned: contested
+  review_note: 'AI-proposed tier maintained: contested annotation with methodology fit warning. Confirmed per Cultural Domain Expert Rule 3.'
+- audit_id: 8c85179f-7392-4524-ac1c-160b8621a004
+  timestamp: '2026-06-06T14:34:54.215567+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-v/battle-with-humbaba
+  track: bakhtin
+  code: BAKHTIN-HEROIC-BODY
+  confidence_tier_assigned: reconstructed
+  review_note: Clean framework fit; no methodology concern. Confirmed reconstructed.
+- audit_id: 043496a8-95a6-4914-95a1-5304c034e1cf
+  timestamp: '2026-06-06T14:34:54.215577+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-v/battle-with-humbaba
+  track: bakhtin
+  code: BAKHTIN-THRESHOLD
+  confidence_tier_assigned: reconstructed
+  review_note: Clean framework fit; no methodology concern. Confirmed reconstructed.
+- audit_id: 47faed68-18d7-4257-a24a-98b2300ff73e
+  timestamp: '2026-06-06T14:34:54.215582+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-v/battle-with-humbaba
+  track: bakhtin
+  code: BAKHTIN-DIVINE
+  confidence_tier_assigned: contested
+  review_note: 'AI-proposed tier maintained: contested annotation with methodology fit warning. Confirmed per Cultural Domain Expert Rule 3.'
+- audit_id: cd95e395-0a62-4b41-914b-7020144a0caa
+  timestamp: '2026-06-06T14:34:54.221637+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-v/battle-with-humbaba
+  track: propp
+  code: PROPP-18
+  confidence_tier_assigned: reconstructed
+  review_note: Clean framework fit; no methodology concern. Confirmed reconstructed.
+- audit_id: 90a7f1e4-773f-4185-94a8-7e2c4819b025
+  timestamp: '2026-06-06T14:34:54.221646+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-v/battle-with-humbaba
+  track: propp
+  code: PROPP-14
+  confidence_tier_assigned: contested
+  review_note: 'AI-proposed tier maintained: contested annotation with methodology fit warning. Confirmed per Cultural Domain Expert Rule 3.'
+- audit_id: e5c64404-1a8f-453c-b8ea-eb6712042e2a
+  timestamp: '2026-06-06T14:34:54.221651+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-v/battle-with-humbaba
+  track: propp
+  code: PROPP-17
+  confidence_tier_assigned: contested
+  review_note: 'AI-proposed tier maintained: contested annotation with methodology fit warning. Confirmed per Cultural Domain Expert Rule 3.'
+- audit_id: d43e1f91-015c-49a3-bb00-c428822ce9c2
+  timestamp: '2026-06-06T14:34:54.227420+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-v/battle-with-humbaba
+  track: tmi
+  code: TMI-H900
+  confidence_tier_assigned: reconstructed
+  review_note: Clean framework fit; no methodology concern. Confirmed reconstructed.
+- audit_id: cbc9015c-0341-4ac8-8c25-2ea8673a0495
+  timestamp: '2026-06-06T14:34:54.227431+00:00'
+  reviewer: Mnemosyne
+  action: rejected
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-v/battle-with-humbaba
+  track: tmi
+  code: TMI-D1840
+  confidence_tier_assigned:
+  review_note: TMI-D1840 contradicts the epic's central thesis of Gilgamesh's mortality. Confirmed rejection per Cultural Domain Expert review (2026-06-06).
+- audit_id: 02a29d16-a373-413c-affb-cfc69eea766c
+  timestamp: '2026-06-06T14:34:54.227438+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-v/battle-with-humbaba
+  track: tmi
+  code: TMI-Q2
+  confidence_tier_assigned: contested
+  review_note: 'AI-proposed tier maintained: contested annotation with methodology fit warning. Confirmed per Cultural Domain Expert Rule 3.'
+- audit_id: eb7c8bb8-cd0e-4232-afea-c1114592953b
+  timestamp: '2026-06-06T14:34:54.233135+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-v/cedar-felling
+  track: bakhtin
+  code: BAKHTIN-ROAD
+  confidence_tier_assigned: reconstructed
+  review_note: Clean framework fit; no methodology concern. Confirmed reconstructed.
+- audit_id: 964fed63-1b96-4c25-bca8-61b26238a24e
+  timestamp: '2026-06-06T14:34:54.233144+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-v/cedar-felling
+  track: bakhtin
+  code: BAKHTIN-HEROIC-BODY
+  confidence_tier_assigned: reconstructed
+  review_note: Clean framework fit; no methodology concern. Confirmed reconstructed.
+- audit_id: 89602fa0-bde3-4b69-a505-526cb71f3d18
+  timestamp: '2026-06-06T14:34:54.233149+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-v/cedar-felling
+  track: bakhtin
+  code: BAKHTIN-THRESHOLD
+  confidence_tier_assigned: contested
+  review_note: 'AI-proposed tier maintained: contested annotation with methodology fit warning. Confirmed per Cultural Domain Expert Rule 3.'
+- audit_id: 8750af2e-fdca-49ab-91b5-badfc8fbe5cc
+  timestamp: '2026-06-06T14:34:54.238991+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-v/cedar-felling
+  track: propp
+  code: PROPP-18
+  confidence_tier_assigned: reconstructed
+  review_note: Methodology warning reflects etic/emic disclosure or non-standard role relabeling (Type A/B); structural function is present. Confirmed reconstructed per Cultural Domain Expert Rule 2.
+- audit_id: 78dfe0b7-7de7-4318-b7ba-4de54aae3918
+  timestamp: '2026-06-06T14:34:54.239009+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-v/cedar-felling
+  track: propp
+  code: PROPP-19
+  confidence_tier_assigned: reconstructed
+  review_note: Methodology warning reflects etic/emic disclosure or non-standard role relabeling (Type A/B); structural function is present. Confirmed reconstructed per Cultural Domain Expert Rule 2.
+- audit_id: 88674afd-3d66-40df-8ed5-0946ab55bb90
+  timestamp: '2026-06-06T14:34:54.239016+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-v/cedar-felling
+  track: propp
+  code: PROPP-20
+  confidence_tier_assigned: reconstructed
+  review_note: Clean framework fit; no methodology concern. Confirmed reconstructed.
+- audit_id: f1d9f807-e279-4791-97e9-b477e3fabfc0
+  timestamp: '2026-06-06T14:34:54.242597+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-v/cedar-felling
+  track: tmi
+  code: TMI-Q2
+  confidence_tier_assigned: contested
+  review_note: 'AI-proposed tier maintained: contested annotation with methodology fit warning. Confirmed per Cultural Domain Expert Rule 3.'
+- audit_id: f14a41d8-c2d9-4261-bd1d-dfd34823a55c
+  timestamp: '2026-06-06T14:34:54.248314+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-vi/bull-of-heaven
+  track: bakhtin
+  code: BAKHTIN-DIVINE
+  confidence_tier_assigned: reconstructed
+  review_note: Clean framework fit; no methodology concern. Confirmed reconstructed.
+- audit_id: 101e6ad8-a14f-4961-978b-36abe51bcdb7
+  timestamp: '2026-06-06T14:34:54.248324+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-vi/bull-of-heaven
+  track: bakhtin
+  code: BAKHTIN-THRESHOLD
+  confidence_tier_assigned: reconstructed
+  review_note: Clean framework fit; no methodology concern. Confirmed reconstructed.
+- audit_id: fd142e1e-de64-4981-9018-127a8282d2a9
+  timestamp: '2026-06-06T14:34:54.248330+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-vi/bull-of-heaven
+  track: bakhtin
+  code: BAKHTIN-HEROIC-BODY
+  confidence_tier_assigned: reconstructed
+  review_note: Clean framework fit; no methodology concern. Confirmed reconstructed.
+- audit_id: 38eea8e6-f2b0-4f40-87e5-95eebe962965
+  timestamp: '2026-06-06T14:34:54.248335+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-vi/bull-of-heaven
+  track: bakhtin
+  code: BAKHTIN-CASTLE
+  confidence_tier_assigned: contested
+  review_note: 'AI-proposed tier maintained: contested annotation with methodology fit warning. Confirmed per Cultural Domain Expert Rule 3.'
+- audit_id: 4f382454-6ea7-4329-a6bd-e45c1434b573
+  timestamp: '2026-06-06T14:34:54.256882+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-vi/bull-of-heaven
+  track: propp
+  code: PROPP-8
+  confidence_tier_assigned: reconstructed
+  review_note: Methodology warning reflects etic/emic disclosure or non-standard role relabeling (Type A/B); structural function is present. Confirmed reconstructed per Cultural Domain Expert Rule 2.
+- audit_id: e470f39c-097d-43cf-a5f4-a970d1a53b49
+  timestamp: '2026-06-06T14:34:54.256893+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-vi/bull-of-heaven
+  track: propp
+  code: PROPP-16
+  confidence_tier_assigned: reconstructed
+  review_note: Clean framework fit; no methodology concern. Confirmed reconstructed.
+- audit_id: 1826b2d9-66af-4b04-9cba-77dfc68228ea
+  timestamp: '2026-06-06T14:34:54.256898+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-vi/bull-of-heaven
+  track: propp
+  code: PROPP-18
+  confidence_tier_assigned: reconstructed
+  review_note: Clean framework fit; no methodology concern. Confirmed reconstructed.
+- audit_id: 67bcd022-5ed8-46b6-9a53-ee4ea671f485
+  timestamp: '2026-06-06T14:34:54.256903+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-vi/bull-of-heaven
+  track: propp
+  code: PROPP-27
+  confidence_tier_assigned: contested
+  review_note: 'AI-proposed tier maintained: contested annotation with methodology fit warning. Confirmed per Cultural Domain Expert Rule 3.'
+- audit_id: 2f92f3e5-09f0-4799-a071-3c6b8ca281f6
+  timestamp: '2026-06-06T14:34:54.256908+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-vi/bull-of-heaven
+  track: propp
+  code: PROPP-30
+  confidence_tier_assigned: contested
+  review_note: 'AI-proposed tier maintained: contested annotation with methodology fit warning. Confirmed per Cultural Domain Expert Rule 3.'
+- audit_id: d3ae1a4f-1b2d-48c9-8f9a-4308ab47b05e
+  timestamp: '2026-06-06T14:34:54.266316+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-vi/bull-of-heaven
+  track: tmi
+  code: TMI-T91
+  confidence_tier_assigned: reconstructed
+  review_note: Clean framework fit; no methodology concern. Confirmed reconstructed.
+- audit_id: 1a21a0d5-b61b-4a58-a6af-d3bd1d35937b
+  timestamp: '2026-06-06T14:34:54.266328+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-vi/bull-of-heaven
+  track: tmi
+  code: TMI-F10
+  confidence_tier_assigned: contested
+  review_note: 'Note-prose override: methodology_fit_note names a more conservative tier than the proposed_tier field. Downgraded per Cultural Domain Expert Rule 0.'
+- audit_id: c84bb04b-6a4f-4c71-9c5b-64b0bac294ac
+  timestamp: '2026-06-06T14:34:54.266333+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-vi/bull-of-heaven
+  track: tmi
+  code: TMI-H900
+  confidence_tier_assigned: contested
+  review_note: 'Note-prose override: methodology_fit_note names a more conservative tier than the proposed_tier field. Downgraded per Cultural Domain Expert Rule 0.'
+- audit_id: f6d0e2c1-3802-48a9-b99b-b2e1cf7115ad
+  timestamp: '2026-06-06T14:34:54.266338+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-vi/bull-of-heaven
+  track: tmi
+  code: TMI-A1335
+  confidence_tier_assigned: contested
+  review_note: 'AI-proposed tier maintained: contested annotation with methodology fit warning. Confirmed per Cultural Domain Expert Rule 3.'
+- audit_id: 3683da84-d138-4ec8-bc95-ffe90b563d4f
+  timestamp: '2026-06-06T14:34:54.266345+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-vi/bull-of-heaven
+  track: tmi
+  code: TMI-Q2
+  confidence_tier_assigned: contested
+  review_note: 'AI-proposed tier maintained: contested annotation with methodology fit warning. Confirmed per Cultural Domain Expert Rule 3.'
+- audit_id: 4f5c0b49-b6d2-400f-83f8-082a0013fd64
+  timestamp: '2026-06-06T14:34:54.275335+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-vi/enkidus-curse
+  track: bakhtin
+  code: BAKHTIN-THRESHOLD
+  confidence_tier_assigned: reconstructed
+  review_note: Clean framework fit; no methodology concern. Confirmed reconstructed.
+- audit_id: f6e425f1-493c-400e-88d0-0be72a4c2cb0
+  timestamp: '2026-06-06T14:34:54.275345+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-vi/enkidus-curse
+  track: bakhtin
+  code: BAKHTIN-CASTLE
+  confidence_tier_assigned: reconstructed
+  review_note: Clean framework fit; no methodology concern. Confirmed reconstructed.
+- audit_id: 094c87a9-5511-4a85-b440-21af7caa2518
+  timestamp: '2026-06-06T14:34:54.275352+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-vi/enkidus-curse
+  track: bakhtin
+  code: BAKHTIN-ROAD
+  confidence_tier_assigned: reconstructed
+  review_note: Clean framework fit; no methodology concern. Confirmed reconstructed.
+- audit_id: ccd8d2b7-bd69-4c17-8401-5ae50c654d45
+  timestamp: '2026-06-06T14:34:54.275357+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-vi/enkidus-curse
+  track: bakhtin
+  code: BAKHTIN-HEROIC-BODY
+  confidence_tier_assigned: reconstructed
+  review_note: Clean framework fit; no methodology concern. Confirmed reconstructed.
+- audit_id: fda58300-88e0-4db5-ac00-c17cb9ea2bff
+  timestamp: '2026-06-06T14:34:54.275362+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-vi/enkidus-curse
+  track: bakhtin
+  code: BAKHTIN-UNDERWORLD
+  confidence_tier_assigned: contested
+  review_note: 'AI-proposed tier maintained: contested annotation with methodology fit warning. Confirmed per Cultural Domain Expert Rule 3.'
+- audit_id: 60575c43-1c9f-45d0-9e66-21a0754b31b2
+  timestamp: '2026-06-06T14:34:54.283647+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-vi/enkidus-curse
+  track: propp
+  code: PROPP-3
+  confidence_tier_assigned: contested
+  review_note: 'AI-proposed tier maintained: contested annotation with methodology fit warning. Confirmed per Cultural Domain Expert Rule 3.'
+- audit_id: c48ba946-99cf-4dcd-a889-2266565e6256
+  timestamp: '2026-06-06T14:34:54.283659+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-vi/enkidus-curse
+  track: propp
+  code: PROPP-8
+  confidence_tier_assigned: contested
+  review_note: 'AI-proposed tier maintained: contested annotation with methodology fit warning. Confirmed per Cultural Domain Expert Rule 3.'
+- audit_id: fcaf17b5-282e-4d96-a8d4-6374d0af46c3
+  timestamp: '2026-06-06T14:34:54.283670+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-vi/enkidus-curse
+  track: propp
+  code: PROPP-19
+  confidence_tier_assigned: reconstructed
+  review_note: Clean framework fit; no methodology concern. Confirmed reconstructed.
+- audit_id: e504e81a-00c7-4def-9d4b-13369702ca3c
+  timestamp: '2026-06-06T14:34:54.283675+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-vi/enkidus-curse
+  track: propp
+  code: PROPP-20
+  confidence_tier_assigned: reconstructed
+  review_note: Clean framework fit; no methodology concern. Confirmed reconstructed.
+- audit_id: 792f6e16-4ad3-4e0e-af72-f156db91ae63
+  timestamp: '2026-06-06T14:34:54.283684+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-vi/enkidus-curse
+  track: propp
+  code: PROPP-9
+  confidence_tier_assigned: contested
+  review_note: 'AI-proposed tier maintained: contested annotation with methodology fit warning. Confirmed per Cultural Domain Expert Rule 3.'
+- audit_id: a2870829-6aaf-40d2-8527-39872566a023
+  timestamp: '2026-06-06T14:34:54.290697+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-vi/enkidus-curse
+  track: tmi
+  code: TMI-T91
+  confidence_tier_assigned: reconstructed
+  review_note: Clean framework fit; no methodology concern. Confirmed reconstructed.
+- audit_id: b5a361e2-f1d7-4346-99b2-c4cd7e4e461e
+  timestamp: '2026-06-06T14:34:54.290708+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-vi/enkidus-curse
+  track: tmi
+  code: TMI-D1810
+  confidence_tier_assigned: reconstructed
+  review_note: Clean framework fit; no methodology concern. Confirmed reconstructed.
+- audit_id: 37d2095f-7f76-4a4b-9635-4e4939d5bbc9
+  timestamp: '2026-06-06T14:34:54.290713+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-vi/enkidus-curse
+  track: tmi
+  code: TMI-Q2
+  confidence_tier_assigned: contested
+  review_note: 'AI-proposed tier maintained: contested annotation with methodology fit warning. Confirmed per Cultural Domain Expert Rule 3.'
+- audit_id: 23677c04-d77b-4972-aa80-82d1e676f5ab
+  timestamp: '2026-06-06T14:34:54.294506+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-vi/ishtar-proposal
+  track: bakhtin
+  code: BAKHTIN-IDYLL
+  confidence_tier_assigned: contested
+  review_note: 'AI-proposed tier maintained: contested annotation with methodology fit warning. Confirmed per Cultural Domain Expert Rule 3.'
+- audit_id: 828ee348-ab7e-46bf-97f3-53ad63814206
+  timestamp: '2026-06-06T14:34:54.300206+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-vi/ishtar-proposal
+  track: propp
+  code: PROPP-6
+  confidence_tier_assigned: contested
+  review_note: 'AI-proposed tier maintained: contested annotation with methodology fit warning. Confirmed per Cultural Domain Expert Rule 3.'
+- audit_id: b33ef4e3-7707-4c27-9f8f-2a9e861d1dc7
+  timestamp: '2026-06-06T14:34:54.300216+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-vi/ishtar-proposal
+  track: propp
+  code: PROPP-7
+  confidence_tier_assigned: contested
+  review_note: 'AI-proposed tier maintained: contested annotation with methodology fit warning. Confirmed per Cultural Domain Expert Rule 3.'
+- audit_id: d5264a90-23f9-4432-8529-f525bbdddc88
+  timestamp: '2026-06-06T14:34:54.300223+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-vi/ishtar-proposal
+  track: propp
+  code: PROPP-8
+  confidence_tier_assigned: reconstructed
+  review_note: Clean framework fit; no methodology concern. Confirmed reconstructed.
+- audit_id: b549268b-7e0d-4e65-b3e0-2d80ba3a0730
+  timestamp: '2026-06-06T14:34:54.300229+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-vi/ishtar-proposal
+  track: propp
+  code: PROPP-10
+  confidence_tier_assigned: reconstructed
+  review_note: Clean framework fit; no methodology concern. Confirmed reconstructed.
+- audit_id: f52c2d39-d75a-4e48-9a45-b99c6ea1ec93
+  timestamp: '2026-06-06T14:34:54.306912+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-vi/ishtar-proposal
+  track: tmi
+  code: TMI-T91
+  confidence_tier_assigned: reconstructed
+  review_note: Clean framework fit; no methodology concern. Confirmed reconstructed.
+- audit_id: 2030a946-cb5e-4262-ad56-9776796d847e
+  timestamp: '2026-06-06T14:34:54.306920+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-vi/ishtar-proposal
+  track: tmi
+  code: TMI-Q2
+  confidence_tier_assigned: contested
+  review_note: 'AI-proposed tier maintained: contested annotation with methodology fit warning. Confirmed per Cultural Domain Expert Rule 3.'
+- audit_id: 946f3bcc-2c39-4025-9e2a-c88853b5c3e4
+  timestamp: '2026-06-06T14:34:54.306926+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-vi/ishtar-proposal
+  track: tmi
+  code: TMI-A1335
+  confidence_tier_assigned: contested
+  review_note: 'AI-proposed tier maintained: contested annotation with methodology fit warning. Confirmed per Cultural Domain Expert Rule 3.'
+- audit_id: 2b96a3a2-6215-4b5e-a41e-03e267287417
+  timestamp: '2026-06-06T14:34:54.312133+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-vii/enkidus-death
+  track: bakhtin
+  code: BAKHTIN-THRESHOLD
+  confidence_tier_assigned: reconstructed
+  review_note: Clean framework fit; no methodology concern. Confirmed reconstructed.
+- audit_id: f08a58eb-2389-4329-bcdd-ec4fd3f4d1ec
+  timestamp: '2026-06-06T14:34:54.312144+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-vii/enkidus-death
+  track: bakhtin
+  code: BAKHTIN-HEROIC-BODY
+  confidence_tier_assigned: contested
+  review_note: 'Note-prose override: methodology_fit_note names a more conservative tier than the proposed_tier field. Downgraded per Cultural Domain Expert Rule 0.'
+- audit_id: d3eb3145-19dc-48ac-8593-1be27d0b7ee7
+  timestamp: '2026-06-06T14:34:54.316430+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-vii/enkidus-death
+  track: propp
+  code: PROPP-8
+  confidence_tier_assigned: reconstructed
+  review_note: Methodology warning reflects etic/emic disclosure or non-standard role relabeling (Type A/B); structural function is present. Confirmed reconstructed per Cultural Domain Expert Rule 2.
+- audit_id: 0daea241-999a-47b3-92ba-808957e2001b
+  timestamp: '2026-06-06T14:34:54.316444+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-vii/enkidus-death
+  track: propp
+  code: PROPP-9
+  confidence_tier_assigned: contested
+  review_note: 'AI-proposed tier maintained: contested annotation with methodology fit warning. Confirmed per Cultural Domain Expert Rule 3.'
+- audit_id: 57bad6f9-196f-4253-b6ab-f9dd029b9838
+  timestamp: '2026-06-06T14:34:54.321482+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-vii/enkidus-death
+  track: tmi
+  code: TMI-A1335
+  confidence_tier_assigned: reconstructed
+  review_note: Clean framework fit; no methodology concern. Confirmed reconstructed.
+- audit_id: 821950a4-659a-4ef7-b8d0-ffb138c8b406
+  timestamp: '2026-06-06T14:34:54.321499+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-vii/enkidus-death
+  track: tmi
+  code: TMI-D1810
+  confidence_tier_assigned: reconstructed
+  review_note: Methodology warning reflects etic/emic disclosure or non-standard role relabeling (Type A/B); structural function is present. Confirmed reconstructed per Cultural Domain Expert Rule 2.
+- audit_id: 3188f711-dcd8-493a-8e57-4a45564b038a
+  timestamp: '2026-06-06T14:34:54.321505+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-vii/enkidus-death
+  track: tmi
+  code: TMI-F80
+  confidence_tier_assigned: contested
+  review_note: 'AI-proposed tier maintained: contested annotation with methodology fit warning. Confirmed per Cultural Domain Expert Rule 3.'
+- audit_id: 73a63fe4-7dc7-41e1-8308-d0dbcd9287d9
+  timestamp: '2026-06-06T14:34:54.325320+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-vii/enkidus-dream
+  track: bakhtin
+  code: BAKHTIN-CASTLE
+  confidence_tier_assigned: contested
+  review_note: 'AI-proposed tier maintained: contested annotation with methodology fit warning. Confirmed per Cultural Domain Expert Rule 3.'
+- audit_id: c1dc8214-3c38-43fe-84f2-0e52b93cdffd
+  timestamp: '2026-06-06T14:34:54.331603+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-vii/enkidus-dream
+  track: propp
+  code: PROPP-8
+  confidence_tier_assigned: reconstructed
+  review_note: Methodology warning reflects etic/emic disclosure or non-standard role relabeling (Type A/B); structural function is present. Confirmed reconstructed per Cultural Domain Expert Rule 2.
+- audit_id: 767f6b62-dacd-4b39-8c85-aa8ff846756b
+  timestamp: '2026-06-06T14:34:54.331624+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-vii/enkidus-dream
+  track: propp
+  code: PROPP-9
+  confidence_tier_assigned: contested
+  review_note: Role inversion or subordinate chronotope detected in methodology_fit_note (Type C/D). Downgraded to contested per Cultural Domain Expert Rule 2.
+- audit_id: 744ff06b-7bb3-425b-8f9a-233a61368ee4
+  timestamp: '2026-06-06T14:34:54.331630+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-vii/enkidus-dream
+  track: propp
+  code: PROPP-10
+  confidence_tier_assigned: contested
+  review_note: 'AI-proposed tier maintained: contested annotation with methodology fit warning. Confirmed per Cultural Domain Expert Rule 3.'
+- audit_id: e89c66c3-65e6-42f7-8b0f-4aeda9846efb
+  timestamp: '2026-06-06T14:34:54.331636+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-vii/enkidus-dream
+  track: propp
+  code: PROPP-3
+  confidence_tier_assigned: contested
+  review_note: 'AI-proposed tier maintained: contested annotation with methodology fit warning. Confirmed per Cultural Domain Expert Rule 3.'
+- audit_id: 53adb6da-f12d-4a98-9cc7-0b8ef276955e
+  timestamp: '2026-06-06T14:34:54.339502+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-vii/enkidus-dream
+  track: tmi
+  code: TMI-D1810
+  confidence_tier_assigned: reconstructed
+  review_note: Clean framework fit; no methodology concern. Confirmed reconstructed.
+- audit_id: 28c5d90c-ceea-4c36-976f-e16ad25f5243
+  timestamp: '2026-06-06T14:34:54.339511+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-vii/enkidus-dream
+  track: tmi
+  code: TMI-A1335
+  confidence_tier_assigned: reconstructed
+  review_note: Clean framework fit; no methodology concern. Confirmed reconstructed.
+- audit_id: f692512d-8675-4a84-acbd-0c3d6705f943
+  timestamp: '2026-06-06T14:34:54.339517+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-vii/enkidus-dream
+  track: tmi
+  code: TMI-Q2
+  confidence_tier_assigned: contested
+  review_note: 'AI-proposed tier maintained: contested annotation with methodology fit warning. Confirmed per Cultural Domain Expert Rule 3.'
+- audit_id: 2eb9fd28-5b5c-48d1-ad27-30f1950237f6
+  timestamp: '2026-06-06T14:34:54.339522+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-vii/enkidus-dream
+  track: tmi
+  code: TMI-F80
+  confidence_tier_assigned: contested
+  review_note: 'AI-proposed tier maintained: contested annotation with methodology fit warning. Confirmed per Cultural Domain Expert Rule 3.'
+- audit_id: b970a65c-ee85-4a46-86b2-3d3fc0e12a8c
+  timestamp: '2026-06-06T14:34:54.346976+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-vii/enkidus-lament
+  track: bakhtin
+  code: BAKHTIN-THRESHOLD
+  confidence_tier_assigned: reconstructed
+  review_note: Clean framework fit; no methodology concern. Confirmed reconstructed.
+- audit_id: 98bde45d-cec6-43ec-906f-ca99ec96be7f
+  timestamp: '2026-06-06T14:34:54.346984+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-vii/enkidus-lament
+  track: bakhtin
+  code: BAKHTIN-UNDERWORLD
+  confidence_tier_assigned: reconstructed
+  review_note: Clean framework fit; no methodology concern. Confirmed reconstructed.
+- audit_id: 1bc3a95c-475c-4a3e-9825-64af5d8abf49
+  timestamp: '2026-06-06T14:34:54.346991+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-vii/enkidus-lament
+  track: bakhtin
+  code: BAKHTIN-DIVINE
+  confidence_tier_assigned: reconstructed
+  review_note: Clean framework fit; no methodology concern. Confirmed reconstructed.
+- audit_id: 692c5f3f-1670-4d2d-a08e-2bc13e3eac4c
+  timestamp: '2026-06-06T14:34:54.346998+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-vii/enkidus-lament
+  track: bakhtin
+  code: BAKHTIN-HEROIC-BODY
+  confidence_tier_assigned: contested
+  review_note: 'AI-proposed tier maintained: contested annotation with methodology fit warning. Confirmed per Cultural Domain Expert Rule 3.'
+- audit_id: ccd97180-c991-4c9e-adc6-b55729ad51cd
+  timestamp: '2026-06-06T14:34:54.355907+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-vii/enkidus-lament
+  track: propp
+  code: PROPP-8
+  confidence_tier_assigned: reconstructed
+  review_note: Clean framework fit; no methodology concern. Confirmed reconstructed.
+- audit_id: 1e33d1ff-4262-4e74-8e5e-467729f8de6c
+  timestamp: '2026-06-06T14:34:54.355915+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-vii/enkidus-lament
+  track: propp
+  code: PROPP-1
+  confidence_tier_assigned: contested
+  review_note: 'AI-proposed tier maintained: contested annotation with methodology fit warning. Confirmed per Cultural Domain Expert Rule 3.'
+- audit_id: 7ab36ae8-8b14-4589-b307-feadd711737a
+  timestamp: '2026-06-06T14:34:54.355921+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-vii/enkidus-lament
+  track: propp
+  code: PROPP-9
+  confidence_tier_assigned: reconstructed
+  review_note: Clean framework fit; no methodology concern. Confirmed reconstructed.
+- audit_id: da7b85a6-1d16-4841-900a-b4b6bb6b511d
+  timestamp: '2026-06-06T14:34:54.355926+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-vii/enkidus-lament
+  track: propp
+  code: PROPP-10
+  confidence_tier_assigned: reconstructed
+  review_note: Clean framework fit; no methodology concern. Confirmed reconstructed.
+- audit_id: 0b5a2bb0-1893-4b4f-a7bd-147ca0339867
+  timestamp: '2026-06-06T14:34:54.355932+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-vii/enkidus-lament
+  track: propp
+  code: PROPP-15
+  confidence_tier_assigned: contested
+  review_note: 'AI-proposed tier maintained: contested annotation with methodology fit warning. Confirmed per Cultural Domain Expert Rule 3.'
+- audit_id: c9422c8c-d441-4a73-90b7-e6208dcb44dd
+  timestamp: '2026-06-06T14:34:54.363711+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-vii/enkidus-lament
+  track: tmi
+  code: TMI-F80
+  confidence_tier_assigned: reconstructed
+  review_note: Clean framework fit; no methodology concern. Confirmed reconstructed.
+- audit_id: 3b30e783-ac84-4391-8a6b-e6b60de6ffcc
+  timestamp: '2026-06-06T14:34:54.363721+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-vii/enkidus-lament
+  track: tmi
+  code: TMI-D1810
+  confidence_tier_assigned: reconstructed
+  review_note: Clean framework fit; no methodology concern. Confirmed reconstructed.
+- audit_id: 75bc1098-66ae-4481-9170-c995b1b75acc
+  timestamp: '2026-06-06T14:34:54.363728+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-vii/enkidus-lament
+  track: tmi
+  code: TMI-A1335
+  confidence_tier_assigned: reconstructed
+  review_note: Clean framework fit; no methodology concern. Confirmed reconstructed.
+- audit_id: 1b09ef84-da50-41cd-a539-e0d439e3ea84
+  timestamp: '2026-06-06T14:34:54.363734+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-vii/enkidus-lament
+  track: tmi
+  code: TMI-Q2
+  confidence_tier_assigned: contested
+  review_note: 'AI-proposed tier maintained: contested annotation with methodology fit warning. Confirmed per Cultural Domain Expert Rule 3.'
+- audit_id: 79b08e9c-c687-411e-80b8-f2d7f094efd3
+  timestamp: '2026-06-06T14:34:54.368256+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-viii/funeral-rites
+  track: bakhtin
+  code: BAKHTIN-DIVINE
+  confidence_tier_assigned: contested
+  review_note: 'AI-proposed tier maintained: contested annotation with methodology fit warning. Confirmed per Cultural Domain Expert Rule 3.'
+- audit_id: 2d9b9fe5-ebc3-46d9-abce-711bdd2cf027
+  timestamp: '2026-06-06T14:34:54.373535+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-viii/funeral-rites
+  track: propp
+  code: PROPP-8
+  confidence_tier_assigned: reconstructed
+  review_note: Clean framework fit; no methodology concern. Confirmed reconstructed.
+- audit_id: 12b6485f-d26a-4768-84c5-f6d1dbd4295f
+  timestamp: '2026-06-06T14:34:54.373544+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-viii/funeral-rites
+  track: propp
+  code: PROPP-9
+  confidence_tier_assigned: reconstructed
+  review_note: Clean framework fit; no methodology concern. Confirmed reconstructed.
+- audit_id: a3d1ffed-4d70-4832-9307-cbca495bec97
+  timestamp: '2026-06-06T14:34:54.373558+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-viii/funeral-rites
+  track: propp
+  code: PROPP-10
+  confidence_tier_assigned: reconstructed
+  review_note: Methodology warning reflects etic/emic disclosure or non-standard role relabeling (Type A/B); structural function is present. Confirmed reconstructed per Cultural Domain Expert Rule 2.
+- audit_id: 7a0dcba1-9a6d-4e44-aa93-66e09f73987b
+  timestamp: '2026-06-06T14:34:54.373564+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-viii/funeral-rites
+  track: propp
+  code: PROPP-17
+  confidence_tier_assigned: contested
+  review_note: 'AI-proposed tier maintained: contested annotation with methodology fit warning. Confirmed per Cultural Domain Expert Rule 3.'
+- audit_id: c3318903-d5eb-4323-bc7e-1062e6bcb2a9
+  timestamp: '2026-06-06T14:34:54.380299+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-viii/funeral-rites
+  track: tmi
+  code: TMI-A1335
+  confidence_tier_assigned: reconstructed
+  review_note: Clean framework fit; no methodology concern. Confirmed reconstructed.
+- audit_id: b0711227-f1df-42ee-925e-30ef249f6065
+  timestamp: '2026-06-06T14:34:54.380306+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-viii/funeral-rites
+  track: tmi
+  code: TMI-H1376.3
+  confidence_tier_assigned: reconstructed
+  review_note: Clean framework fit; no methodology concern. Confirmed reconstructed.
+- audit_id: ffe391ab-7585-4f9d-8ae2-f0a8fb407ed6
+  timestamp: '2026-06-06T14:34:54.380311+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-viii/funeral-rites
+  track: tmi
+  code: TMI-Q2
+  confidence_tier_assigned: contested
+  review_note: 'AI-proposed tier maintained: contested annotation with methodology fit warning. Confirmed per Cultural Domain Expert Rule 3.'
+- audit_id: ba7e9c28-db5b-4a25-85dd-7e552cec6ba1
+  timestamp: '2026-06-06T14:34:54.380316+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-viii/funeral-rites
+  track: tmi
+  code: TMI-D1810
+  confidence_tier_assigned: contested
+  review_note: 'AI-proposed tier maintained: contested annotation with methodology fit warning. Confirmed per Cultural Domain Expert Rule 3.'
+- audit_id: 131fc43a-12e3-4c0d-bae6-9df5c1e627bc
+  timestamp: '2026-06-06T14:34:54.386859+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-viii/lacuna-end-of-tablet-viii
+  track: bakhtin
+  code: BAKHTIN-THRESHOLD
+  confidence_tier_assigned: contested
+  review_note: 'AI-proposed tier maintained: contested annotation with methodology fit warning. Confirmed per Cultural Domain Expert Rule 3.'
+- audit_id: 7382d857-99d5-4661-bd11-b574dd771f20
+  timestamp: '2026-06-06T14:34:54.386867+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-viii/lacuna-end-of-tablet-viii
+  track: bakhtin
+  code: BAKHTIN-IDYLL
+  confidence_tier_assigned: contested
+  review_note: 'AI-proposed tier maintained: contested annotation with methodology fit warning. Confirmed per Cultural Domain Expert Rule 3.'
+- audit_id: 5fe731a8-ddec-4cd9-aae7-b7c5b9088692
+  timestamp: '2026-06-06T14:34:54.386872+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-viii/lacuna-end-of-tablet-viii
+  track: bakhtin
+  code: BAKHTIN-UNDERWORLD
+  confidence_tier_assigned: contested
+  review_note: 'AI-proposed tier maintained: contested annotation with methodology fit warning. Confirmed per Cultural Domain Expert Rule 3.'
+- audit_id: 2159f10f-1913-425a-b312-9676185d3456
+  timestamp: '2026-06-06T14:34:54.393084+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-viii/lament-for-enkidu
+  track: bakhtin
+  code: BAKHTIN-IDYLL
+  confidence_tier_assigned: contested
+  review_note: 'AI-proposed tier maintained: contested annotation with methodology fit warning. Confirmed per Cultural Domain Expert Rule 3.'
+- audit_id: aeadebbe-54c6-4856-9d76-cc54212d9b3d
+  timestamp: '2026-06-06T14:34:54.393091+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-viii/lament-for-enkidu
+  track: bakhtin
+  code: BAKHTIN-HEROIC-BODY
+  confidence_tier_assigned: reconstructed
+  review_note: Clean framework fit; no methodology concern. Confirmed reconstructed.
+- audit_id: 265c4cf8-4228-4a47-8ce5-706f06cb2133
+  timestamp: '2026-06-06T14:34:54.399400+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-viii/lament-for-enkidu
+  track: propp
+  code: PROPP-1
+  confidence_tier_assigned: reconstructed
+  review_note: Methodology warning reflects etic/emic disclosure or non-standard role relabeling (Type A/B); structural function is present. Confirmed reconstructed per Cultural Domain Expert Rule 2.
+- audit_id: a14e32bf-bada-4996-b8f4-5f1261547e14
+  timestamp: '2026-06-06T14:34:54.399410+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-viii/lament-for-enkidu
+  track: propp
+  code: PROPP-8
+  confidence_tier_assigned: reconstructed
+  review_note: Clean framework fit; no methodology concern. Confirmed reconstructed.
+- audit_id: 1c8f9d7f-f8ed-4c58-880c-92c72590b415
+  timestamp: '2026-06-06T14:34:54.399416+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-viii/lament-for-enkidu
+  track: propp
+  code: PROPP-9
+  confidence_tier_assigned: contested
+  review_note: 'AI-proposed tier maintained: contested annotation with methodology fit warning. Confirmed per Cultural Domain Expert Rule 3.'
+- audit_id: 76818d8a-3dbd-4257-b33f-49544ff4c3c7
+  timestamp: '2026-06-06T14:34:54.399423+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-viii/lament-for-enkidu
+  track: propp
+  code: PROPP-17
+  confidence_tier_assigned: contested
+  review_note: 'AI-proposed tier maintained: contested annotation with methodology fit warning. Confirmed per Cultural Domain Expert Rule 3.'
+- audit_id: 8375878d-a40b-418b-8cd9-a774b89e0735
+  timestamp: '2026-06-06T14:34:54.406959+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-viii/lament-for-enkidu
+  track: tmi
+  code: TMI-Q2
+  confidence_tier_assigned: contested
+  review_note: 'AI-proposed tier maintained: contested annotation with methodology fit warning. Confirmed per Cultural Domain Expert Rule 3.'
+- audit_id: cd65a175-f615-4e3b-8aa5-0eedb83b2644
+  timestamp: '2026-06-06T14:34:54.406967+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-viii/lament-for-enkidu
+  track: tmi
+  code: TMI-A1335
+  confidence_tier_assigned: reconstructed
+  review_note: Clean framework fit; no methodology concern. Confirmed reconstructed.
+- audit_id: ddfa0367-5388-483d-bdf2-9a31cd978af5
+  timestamp: '2026-06-06T14:34:54.406973+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-viii/lament-for-enkidu
+  track: tmi
+  code: TMI-F567.2
+  confidence_tier_assigned: reconstructed
+  review_note: Clean framework fit; no methodology concern. Confirmed reconstructed.
+- audit_id: acb9873e-b0e7-4b68-a7bb-5a7f408060c2
+  timestamp: '2026-06-06T14:34:54.406986+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-viii/lament-for-enkidu
+  track: tmi
+  code: TMI-H1376.3
+  confidence_tier_assigned: reconstructed
+  review_note: Methodology warning reflects etic/emic disclosure or non-standard role relabeling (Type A/B); structural function is present. Confirmed reconstructed per Cultural Domain Expert Rule 2.
+- audit_id: 444ac4ae-5ba5-4efd-b6b5-eeaba6d0832f
+  timestamp: '2026-06-06T14:34:54.412767+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-x/lacuna-siduri-gap
+  track: bakhtin
+  code: BAKHTIN-THRESHOLD
+  confidence_tier_assigned: contested
+  review_note: 'AI-proposed tier maintained: contested annotation with methodology fit warning. Confirmed per Cultural Domain Expert Rule 3.'
+- audit_id: d5075547-0d71-49a2-9b36-148a7fbaa3a7
+  timestamp: '2026-06-06T14:34:54.412778+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-x/lacuna-siduri-gap
+  track: bakhtin
+  code: BAKHTIN-ROAD
+  confidence_tier_assigned: contested
+  review_note: 'AI-proposed tier maintained: contested annotation with methodology fit warning. Confirmed per Cultural Domain Expert Rule 3.'
+- audit_id: 962d44c4-70f0-4690-86fe-f288e5b331cc
+  timestamp: '2026-06-06T14:34:54.417313+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-x/lacuna-siduri-gap
+  track: propp
+  code: PROPP-12
+  confidence_tier_assigned: contested
+  review_note: 'AI-proposed tier maintained: contested annotation with methodology fit warning. Confirmed per Cultural Domain Expert Rule 3.'
+- audit_id: d489cdf5-b4e4-4fda-9737-a02562df2e55
+  timestamp: '2026-06-06T14:34:54.417321+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-x/lacuna-siduri-gap
+  track: propp
+  code: PROPP-13
+  confidence_tier_assigned: contested
+  review_note: 'AI-proposed tier maintained: contested annotation with methodology fit warning. Confirmed per Cultural Domain Expert Rule 3.'
+- audit_id: 4bcc91c1-84f6-4b2a-ae5e-83645c246ee6
+  timestamp: '2026-06-06T14:34:54.423019+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-x/lacuna-siduri-gap
+  track: tmi
+  code: TMI-H900
+  confidence_tier_assigned: contested
+  review_note: 'AI-proposed tier maintained: contested annotation with methodology fit warning. Confirmed per Cultural Domain Expert Rule 3.'
+- audit_id: cfb9348a-8708-421c-8100-905e04df0f79
+  timestamp: '2026-06-06T14:34:54.423037+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-x/lacuna-siduri-gap
+  track: tmi
+  code: TMI-H1376.3
+  confidence_tier_assigned: reconstructed
+  review_note: Methodology warning reflects etic/emic disclosure or non-standard role relabeling (Type A/B); structural function is present. Confirmed reconstructed per Cultural Domain Expert Rule 2.
+- audit_id: bdd73388-2a15-4a2e-b585-901324d01cc9
+  timestamp: '2026-06-06T14:34:54.423043+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-x/lacuna-siduri-gap
+  track: tmi
+  code: TMI-T91
+  confidence_tier_assigned: contested
+  review_note: 'AI-proposed tier maintained: contested annotation with methodology fit warning. Confirmed per Cultural Domain Expert Rule 3.'
+- audit_id: b1d5b1dd-280e-423f-b76f-017a7ac7724f
+  timestamp: '2026-06-06T14:34:54.431293+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-x/siduri-and-gilgamesh
+  track: bakhtin
+  code: BAKHTIN-ROAD
+  confidence_tier_assigned: reconstructed
+  review_note: Clean framework fit; no methodology concern. Confirmed reconstructed.
+- audit_id: bd66d4b8-fea4-4522-9354-9ba95da6f23d
+  timestamp: '2026-06-06T14:34:54.431302+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-x/siduri-and-gilgamesh
+  track: bakhtin
+  code: BAKHTIN-THRESHOLD
+  confidence_tier_assigned: reconstructed
+  review_note: Clean framework fit; no methodology concern. Confirmed reconstructed.
+- audit_id: 5365bdb3-a2fe-4ce6-af6e-233e446dd261
+  timestamp: '2026-06-06T14:34:54.431323+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-x/siduri-and-gilgamesh
+  track: bakhtin
+  code: BAKHTIN-UNDERWORLD
+  confidence_tier_assigned: reconstructed
+  review_note: Methodology warning reflects etic/emic disclosure or non-standard role relabeling (Type A/B); structural function is present. Confirmed reconstructed per Cultural Domain Expert Rule 2.
+- audit_id: a9fedaf8-7c76-4fce-83ab-287b8a8db37d
+  timestamp: '2026-06-06T14:34:54.431330+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-x/siduri-and-gilgamesh
+  track: bakhtin
+  code: BAKHTIN-HEROIC-BODY
+  confidence_tier_assigned: reconstructed
+  review_note: Clean framework fit; no methodology concern. Confirmed reconstructed.
+- audit_id: 1f0bb1d1-1537-4227-8716-e6e48e65dfc9
+  timestamp: '2026-06-06T14:34:54.431335+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-x/siduri-and-gilgamesh
+  track: bakhtin
+  code: BAKHTIN-IDYLL
+  confidence_tier_assigned: contested
+  review_note: 'AI-proposed tier maintained: contested annotation with methodology fit warning. Confirmed per Cultural Domain Expert Rule 3.'
+- audit_id: 4f9924ae-be98-4751-ab0c-19885a172ccd
+  timestamp: '2026-06-06T14:34:54.445320+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-x/siduri-and-gilgamesh
+  track: propp
+  code: PROPP-8
+  confidence_tier_assigned: reconstructed
+  review_note: Methodology warning reflects etic/emic disclosure or non-standard role relabeling (Type A/B); structural function is present. Confirmed reconstructed per Cultural Domain Expert Rule 2.
+- audit_id: afdb1da3-350f-4e14-8b71-c3556aa7b392
+  timestamp: '2026-06-06T14:34:54.445331+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-x/siduri-and-gilgamesh
+  track: propp
+  code: PROPP-9
+  confidence_tier_assigned: contested
+  review_note: 'AI-proposed tier maintained: contested annotation with methodology fit warning. Confirmed per Cultural Domain Expert Rule 3.'
+- audit_id: a47d8500-ffe0-445f-95c3-9a9d649ed86a
+  timestamp: '2026-06-06T14:34:54.445339+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-x/siduri-and-gilgamesh
+  track: propp
+  code: PROPP-12
+  confidence_tier_assigned: reconstructed
+  review_note: Clean framework fit; no methodology concern. Confirmed reconstructed.
+- audit_id: d81d5222-7b8a-4f42-ac19-26bb3bf07bec
+  timestamp: '2026-06-06T14:34:54.445345+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-x/siduri-and-gilgamesh
+  track: propp
+  code: PROPP-13
+  confidence_tier_assigned: reconstructed
+  review_note: Clean framework fit; no methodology concern. Confirmed reconstructed.
+- audit_id: 2379802d-b485-4223-8be9-3180c24769a6
+  timestamp: '2026-06-06T14:34:54.445350+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-x/siduri-and-gilgamesh
+  track: propp
+  code: PROPP-14
+  confidence_tier_assigned: contested
+  review_note: 'AI-proposed tier maintained: contested annotation with methodology fit warning. Confirmed per Cultural Domain Expert Rule 3.'
+- audit_id: df008626-1133-45ea-8574-94383f9ca18d
+  timestamp: '2026-06-06T14:34:54.445368+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-x/siduri-and-gilgamesh
+  track: propp
+  code: PROPP-15
+  confidence_tier_assigned: reconstructed
+  review_note: Methodology warning reflects etic/emic disclosure or non-standard role relabeling (Type A/B); structural function is present. Confirmed reconstructed per Cultural Domain Expert Rule 2.
+- audit_id: 324a686c-1034-4ab1-a108-6d252264a36a
+  timestamp: '2026-06-06T14:34:54.445373+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-x/siduri-and-gilgamesh
+  track: propp
+  code: PROPP-10
+  confidence_tier_assigned: reconstructed
+  review_note: Clean framework fit; no methodology concern. Confirmed reconstructed.
+- audit_id: f3bdf04c-b1a7-485c-8be9-02e0e7b05cb7
+  timestamp: '2026-06-06T14:34:54.457314+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-x/siduri-and-gilgamesh
+  track: tmi
+  code: TMI-H1376.3
+  confidence_tier_assigned: reconstructed
+  review_note: Clean framework fit; no methodology concern. Confirmed reconstructed.
+- audit_id: e8de2989-ee81-48f0-b716-421aeacb1a2d
+  timestamp: '2026-06-06T14:34:54.457324+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-x/siduri-and-gilgamesh
+  track: tmi
+  code: TMI-A1335
+  confidence_tier_assigned: reconstructed
+  review_note: Clean framework fit; no methodology concern. Confirmed reconstructed.
+- audit_id: 1a283a50-3bc5-4fd9-ba2c-6f678be9e0a7
+  timestamp: '2026-06-06T14:34:54.457331+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-x/siduri-and-gilgamesh
+  track: tmi
+  code: TMI-F80
+  confidence_tier_assigned: contested
+  review_note: 'Note-prose override: methodology_fit_note names a more conservative tier than the proposed_tier field. Downgraded per Cultural Domain Expert Rule 0.'
+- audit_id: 32b1ecd6-bef4-43e4-9b35-d33493ead0d2
+  timestamp: '2026-06-06T14:34:54.457336+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-x/siduri-and-gilgamesh
+  track: tmi
+  code: TMI-F110
+  confidence_tier_assigned: contested
+  review_note: 'AI-proposed tier maintained: contested annotation with methodology fit warning. Confirmed per Cultural Domain Expert Rule 3.'
+- audit_id: b57f0016-d37c-424f-9ae2-022477e8ea69
+  timestamp: '2026-06-06T14:34:54.457341+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-x/siduri-and-gilgamesh
+  track: tmi
+  code: TMI-Q2
+  confidence_tier_assigned: contested
+  review_note: 'AI-proposed tier maintained: contested annotation with methodology fit warning. Confirmed per Cultural Domain Expert Rule 3.'
+- audit_id: 7118aed7-b044-41f6-8e52-54eb6d8e7d34
+  timestamp: '2026-06-06T14:34:54.457346+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-x/siduri-and-gilgamesh
+  track: tmi
+  code: TMI-H900
+  confidence_tier_assigned: reconstructed
+  review_note: Clean framework fit; no methodology concern. Confirmed reconstructed.
+- audit_id: f9c7825b-9d4f-47ff-afcd-501f1a2fc093
+  timestamp: '2026-06-06T14:34:54.465646+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-x/urshanabi-crossing
+  track: bakhtin
+  code: BAKHTIN-ROAD
+  confidence_tier_assigned: reconstructed
+  review_note: Clean framework fit; no methodology concern. Confirmed reconstructed.
+- audit_id: f40f14fc-61a1-45d0-a502-a720d7e2baea
+  timestamp: '2026-06-06T14:34:54.465656+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-x/urshanabi-crossing
+  track: bakhtin
+  code: BAKHTIN-THRESHOLD
+  confidence_tier_assigned: reconstructed
+  review_note: Clean framework fit; no methodology concern. Confirmed reconstructed.
+- audit_id: 2eb6b9a8-f391-4b7c-b7d7-fc3566557699
+  timestamp: '2026-06-06T14:34:54.465662+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-x/urshanabi-crossing
+  track: bakhtin
+  code: BAKHTIN-UNDERWORLD
+  confidence_tier_assigned: contested
+  review_note: 'AI-proposed tier maintained: contested annotation with methodology fit warning. Confirmed per Cultural Domain Expert Rule 3.'
+- audit_id: 047b901a-ff25-4848-b193-d569f514d317
+  timestamp: '2026-06-06T14:34:54.465668+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-x/urshanabi-crossing
+  track: bakhtin
+  code: BAKHTIN-HEROIC-BODY
+  confidence_tier_assigned: reconstructed
+  review_note: Clean framework fit; no methodology concern. Confirmed reconstructed.
+- audit_id: 4e8b13bf-f70d-41b9-96fc-82de82d9049d
+  timestamp: '2026-06-06T14:34:54.474240+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-x/urshanabi-crossing
+  track: propp
+  code: PROPP-10
+  confidence_tier_assigned: reconstructed
+  review_note: Methodology warning reflects etic/emic disclosure or non-standard role relabeling (Type A/B); structural function is present. Confirmed reconstructed per Cultural Domain Expert Rule 2.
+- audit_id: 10fb6b30-255a-480c-b73e-2bc449216fb1
+  timestamp: '2026-06-06T14:34:54.474251+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-x/urshanabi-crossing
+  track: propp
+  code: PROPP-12
+  confidence_tier_assigned: contested
+  review_note: 'Note-prose override: methodology_fit_note names a more conservative tier than the proposed_tier field. Downgraded per Cultural Domain Expert Rule 0.'
+- audit_id: 2f8d75b1-b6b1-4f4b-8301-c4a849077ccb
+  timestamp: '2026-06-06T14:34:54.474258+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-x/urshanabi-crossing
+  track: propp
+  code: PROPP-13
+  confidence_tier_assigned: reconstructed
+  review_note: Clean framework fit; no methodology concern. Confirmed reconstructed.
+- audit_id: 11886172-6441-46b5-be05-a1d3a2d3c63b
+  timestamp: '2026-06-06T14:34:54.474268+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-x/urshanabi-crossing
+  track: propp
+  code: PROPP-14
+  confidence_tier_assigned: contested
+  review_note: Role inversion or subordinate chronotope detected in methodology_fit_note (Type C/D). Downgraded to contested per Cultural Domain Expert Rule 2.
+- audit_id: 7655ec2b-7d95-4c24-992c-4fa3e30b2cb2
+  timestamp: '2026-06-06T14:34:54.474274+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-x/urshanabi-crossing
+  track: propp
+  code: PROPP-15
+  confidence_tier_assigned: reconstructed
+  review_note: Clean framework fit; no methodology concern. Confirmed reconstructed.
+- audit_id: b4832941-7436-4762-8839-508be9bf9767
+  timestamp: '2026-06-06T14:34:54.483262+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-x/urshanabi-crossing
+  track: tmi
+  code: TMI-H900
+  confidence_tier_assigned: reconstructed
+  review_note: Clean framework fit; no methodology concern. Confirmed reconstructed.
+- audit_id: ebf49985-c9aa-4dc7-8734-ef922d2dc574
+  timestamp: '2026-06-06T14:34:54.483272+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-x/urshanabi-crossing
+  track: tmi
+  code: TMI-H1376.3
+  confidence_tier_assigned: reconstructed
+  review_note: Clean framework fit; no methodology concern. Confirmed reconstructed.
+- audit_id: 9204d6d4-55e1-4ea9-b693-76a8a0491c50
+  timestamp: '2026-06-06T14:34:54.483289+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-x/urshanabi-crossing
+  track: tmi
+  code: TMI-F80
+  confidence_tier_assigned: reconstructed
+  review_note: Methodology warning reflects etic/emic disclosure or non-standard role relabeling (Type A/B); structural function is present. Confirmed reconstructed per Cultural Domain Expert Rule 2.
+- audit_id: a8c54018-2ff2-4943-ae5f-1a6dd7ecb004
+  timestamp: '2026-06-06T14:34:54.483294+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-x/urshanabi-crossing
+  track: tmi
+  code: TMI-F110
+  confidence_tier_assigned: contested
+  review_note: 'AI-proposed tier maintained: contested annotation with methodology fit warning. Confirmed per Cultural Domain Expert Rule 3.'
+- audit_id: 78b3179c-d3f4-4c95-9aa1-d3ab1ae44610
+  timestamp: '2026-06-06T14:34:54.483300+00:00'
+  reviewer: Mnemosyne
+  action: rejected
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-x/urshanabi-crossing
+  track: tmi
+  code: TMI-D1840
+  confidence_tier_assigned:
+  review_note: TMI-D1840 contradicts the epic's central thesis of Gilgamesh's mortality. Confirmed rejection per Cultural Domain Expert review (2026-06-06).
+- audit_id: 8a7c3e44-26a8-4e78-a671-f4dbd6c6213b
+  timestamp: '2026-06-06T14:34:54.492656+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-x/waters-of-death
+  track: bakhtin
+  code: BAKHTIN-ROAD
+  confidence_tier_assigned: reconstructed
+  review_note: Clean framework fit; no methodology concern. Confirmed reconstructed.
+- audit_id: 43b51771-99ab-4f90-91ac-f463b3b0571f
+  timestamp: '2026-06-06T14:34:54.492666+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-x/waters-of-death
+  track: bakhtin
+  code: BAKHTIN-THRESHOLD
+  confidence_tier_assigned: reconstructed
+  review_note: Clean framework fit; no methodology concern. Confirmed reconstructed.
+- audit_id: b347fc29-475d-4a46-bb31-6d851e45b950
+  timestamp: '2026-06-06T14:34:54.492671+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-x/waters-of-death
+  track: bakhtin
+  code: BAKHTIN-UNDERWORLD
+  confidence_tier_assigned: contested
+  review_note: 'AI-proposed tier maintained: contested annotation with methodology fit warning. Confirmed per Cultural Domain Expert Rule 3.'
+- audit_id: 9e0c1270-8260-4216-8301-d6cf122d7145
+  timestamp: '2026-06-06T14:34:54.492677+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-x/waters-of-death
+  track: bakhtin
+  code: BAKHTIN-DIVINE
+  confidence_tier_assigned: reconstructed
+  review_note: Clean framework fit; no methodology concern. Confirmed reconstructed.
+- audit_id: 85f7eaf4-2003-44f5-9bf3-dd5b218d7247
+  timestamp: '2026-06-06T14:34:54.492682+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-x/waters-of-death
+  track: bakhtin
+  code: BAKHTIN-HEROIC-BODY
+  confidence_tier_assigned: reconstructed
+  review_note: Clean framework fit; no methodology concern. Confirmed reconstructed.
+- audit_id: d02d216c-df8f-4064-a8ca-fea13e5f3f70
+  timestamp: '2026-06-06T14:34:54.502027+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-x/waters-of-death
+  track: propp
+  code: PROPP-15
+  confidence_tier_assigned: reconstructed
+  review_note: Clean framework fit; no methodology concern. Confirmed reconstructed.
+- audit_id: c14840ce-b854-4868-8d24-7ea735d19aff
+  timestamp: '2026-06-06T14:34:54.502037+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-x/waters-of-death
+  track: propp
+  code: PROPP-9
+  confidence_tier_assigned: contested
+  review_note: 'Note-prose override: methodology_fit_note names a more conservative tier than the proposed_tier field. Downgraded per Cultural Domain Expert Rule 0.'
+- audit_id: 56f39431-2f06-4b28-8ddd-ab2559c03bb0
+  timestamp: '2026-06-06T14:34:54.502042+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-x/waters-of-death
+  track: propp
+  code: PROPP-12
+  confidence_tier_assigned: reconstructed
+  review_note: Clean framework fit; no methodology concern. Confirmed reconstructed.
+- audit_id: 1e4ebab6-1ffa-408b-a945-54ac894ada84
+  timestamp: '2026-06-06T14:34:54.502048+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-x/waters-of-death
+  track: propp
+  code: PROPP-13
+  confidence_tier_assigned: reconstructed
+  review_note: Clean framework fit; no methodology concern. Confirmed reconstructed.
+- audit_id: 16e81fca-2e0c-4be6-8811-92859c694395
+  timestamp: '2026-06-06T14:34:54.502052+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-x/waters-of-death
+  track: propp
+  code: PROPP-8
+  confidence_tier_assigned: contested
+  review_note: 'AI-proposed tier maintained: contested annotation with methodology fit warning. Confirmed per Cultural Domain Expert Rule 3.'
+- audit_id: 741777d3-a5bc-4cc9-a143-624175fe835d
+  timestamp: '2026-06-06T14:34:54.511741+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-x/waters-of-death
+  track: tmi
+  code: TMI-H1376.3
+  confidence_tier_assigned: reconstructed
+  review_note: Clean framework fit; no methodology concern. Confirmed reconstructed.
+- audit_id: fe091010-eaf1-4b96-9451-30ba1a898817
+  timestamp: '2026-06-06T14:34:54.511753+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-x/waters-of-death
+  track: tmi
+  code: TMI-A1335
+  confidence_tier_assigned: reconstructed
+  review_note: Clean framework fit; no methodology concern. Confirmed reconstructed.
+- audit_id: dbccc140-eebe-4b6d-9cf2-b3be7bf150f0
+  timestamp: '2026-06-06T14:34:54.511759+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-x/waters-of-death
+  track: tmi
+  code: TMI-F110
+  confidence_tier_assigned: contested
+  review_note: 'AI-proposed tier maintained: contested annotation with methodology fit warning. Confirmed per Cultural Domain Expert Rule 3.'
+- audit_id: c626ada1-bb66-4c27-a869-9ada33b66304
+  timestamp: '2026-06-06T14:34:54.511765+00:00'
+  reviewer: Mnemosyne
+  action: rejected
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-x/waters-of-death
+  track: tmi
+  code: TMI-D1840
+  confidence_tier_assigned:
+  review_note: TMI-D1840 contradicts the epic's central thesis of Gilgamesh's mortality. Confirmed rejection per Cultural Domain Expert review (2026-06-06).
+- audit_id: 5c885c3e-4562-4cd5-98d1-dd7ad8e5c7b0
+  timestamp: '2026-06-06T14:34:54.511770+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-x/waters-of-death
+  track: tmi
+  code: TMI-H900
+  confidence_tier_assigned: reconstructed
+  review_note: Clean framework fit; no methodology concern. Confirmed reconstructed.
+- audit_id: 9350b4f0-693b-425b-81d9-93fd1fc3f3fc
+  timestamp: '2026-06-06T14:34:54.511776+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-x/waters-of-death
+  track: tmi
+  code: TMI-Q2
+  confidence_tier_assigned: contested
+  review_note: 'AI-proposed tier maintained: contested annotation with methodology fit warning. Confirmed per Cultural Domain Expert Rule 3.'
+- audit_id: eb82bcb7-5aa9-41ec-ab30-3f04aa5cf4b3
+  timestamp: '2026-06-06T14:34:54.519072+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-xi/flood-narrative
+  track: bakhtin
+  code: BAKHTIN-ROAD
+  confidence_tier_assigned: contested
+  review_note: 'AI-proposed tier maintained: contested annotation with methodology fit warning. Confirmed per Cultural Domain Expert Rule 3.'
+- audit_id: 277f6d8f-fcf0-49c9-85c2-5a8f14a5af8a
+  timestamp: '2026-06-06T14:34:54.519082+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-xi/flood-narrative
+  track: bakhtin
+  code: BAKHTIN-IDYLL
+  confidence_tier_assigned: contested
+  review_note: 'AI-proposed tier maintained: contested annotation with methodology fit warning. Confirmed per Cultural Domain Expert Rule 3.'
+- audit_id: bac17ca3-2b24-40ad-90f1-6b85da996303
+  timestamp: '2026-06-06T14:34:54.530865+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-xi/flood-narrative
+  track: propp
+  code: PROPP-6
+  confidence_tier_assigned: contested
+  review_note: Role inversion or subordinate chronotope detected in methodology_fit_note (Type C/D). Downgraded to contested per Cultural Domain Expert Rule 2.
+- audit_id: 6e03404a-eb61-4db8-9757-59bfd990d1e5
+  timestamp: '2026-06-06T14:34:54.530884+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-xi/flood-narrative
+  track: propp
+  code: PROPP-2
+  confidence_tier_assigned: reconstructed
+  review_note: Methodology warning reflects etic/emic disclosure or non-standard role relabeling (Type A/B); structural function is present. Confirmed reconstructed per Cultural Domain Expert Rule 2.
+- audit_id: d5824bbf-91aa-46dc-95db-6e361b455df5
+  timestamp: '2026-06-06T14:34:54.530897+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-xi/flood-narrative
+  track: propp
+  code: PROPP-8
+  confidence_tier_assigned: reconstructed
+  review_note: Methodology warning reflects etic/emic disclosure or non-standard role relabeling (Type A/B); structural function is present. Confirmed reconstructed per Cultural Domain Expert Rule 2.
+- audit_id: 0150a7ff-e0be-4926-9bce-4db18b0627c3
+  timestamp: '2026-06-06T14:34:54.530904+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-xi/flood-narrative
+  track: propp
+  code: PROPP-11
+  confidence_tier_assigned: reconstructed
+  review_note: Clean framework fit; no methodology concern. Confirmed reconstructed.
+- audit_id: 565e8656-0b98-473f-900c-9d79ad1f91d9
+  timestamp: '2026-06-06T14:34:54.530910+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-xi/flood-narrative
+  track: propp
+  code: PROPP-16
+  confidence_tier_assigned: contested
+  review_note: 'AI-proposed tier maintained: contested annotation with methodology fit warning. Confirmed per Cultural Domain Expert Rule 3.'
+- audit_id: a4baae5e-86c0-45fc-8c65-5babe079eeb1
+  timestamp: '2026-06-06T14:34:54.530915+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-xi/flood-narrative
+  track: propp
+  code: PROPP-18
+  confidence_tier_assigned: contested
+  review_note: 'AI-proposed tier maintained: contested annotation with methodology fit warning. Confirmed per Cultural Domain Expert Rule 3.'
+- audit_id: 8d0b924c-ecea-4372-a962-c244d9689828
+  timestamp: '2026-06-06T14:34:54.530921+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-xi/flood-narrative
+  track: propp
+  code: PROPP-19
+  confidence_tier_assigned: reconstructed
+  review_note: Clean framework fit; no methodology concern. Confirmed reconstructed.
+- audit_id: 18978fb1-c183-451d-9049-528cf440b4cc
+  timestamp: '2026-06-06T14:34:54.530926+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-xi/flood-narrative
+  track: propp
+  code: PROPP-30
+  confidence_tier_assigned: contested
+  review_note: 'AI-proposed tier maintained: contested annotation with methodology fit warning. Confirmed per Cultural Domain Expert Rule 3.'
+- audit_id: 37defe54-832d-4792-a44d-1c7dcc0ebdda
+  timestamp: '2026-06-06T14:34:54.530930+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-xi/flood-narrative
+  track: propp
+  code: PROPP-31
+  confidence_tier_assigned: contested
+  review_note: 'AI-proposed tier maintained: contested annotation with methodology fit warning. Confirmed per Cultural Domain Expert Rule 3.'
+- audit_id: edaa19bb-5b41-49ad-a6d4-04412112c70a
+  timestamp: '2026-06-06T14:34:54.545108+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-xi/flood-narrative
+  track: tmi
+  code: TMI-A1010
+  confidence_tier_assigned: reconstructed
+  review_note: Clean framework fit; no methodology concern. Confirmed reconstructed.
+- audit_id: 0b23c97d-cd80-46a2-8d52-877bca14587f
+  timestamp: '2026-06-06T14:34:54.545120+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-xi/flood-narrative
+  track: tmi
+  code: TMI-A1021
+  confidence_tier_assigned: reconstructed
+  review_note: Clean framework fit; no methodology concern. Confirmed reconstructed.
+- audit_id: 946b4360-4ae3-407b-b65c-bb79fac740c9
+  timestamp: '2026-06-06T14:34:54.545126+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-xi/flood-narrative
+  track: tmi
+  code: TMI-B450
+  confidence_tier_assigned: reconstructed
+  review_note: Clean framework fit; no methodology concern. Confirmed reconstructed.
+- audit_id: 35e5e5ee-ba12-48b4-8e3a-80866642af2a
+  timestamp: '2026-06-06T14:34:54.545132+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-xi/flood-narrative
+  track: tmi
+  code: TMI-A1022
+  confidence_tier_assigned: contested
+  review_note: 'Note-prose override: methodology_fit_note names a more conservative tier than the proposed_tier field. Downgraded per Cultural Domain Expert Rule 0.'
+- audit_id: 6e03844d-3110-4126-8698-fa189029d168
+  timestamp: '2026-06-06T14:34:54.545149+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-xi/flood-narrative
+  track: tmi
+  code: TMI-D1810
+  confidence_tier_assigned: contested
+  review_note: Role inversion or subordinate chronotope detected in methodology_fit_note (Type C/D). Downgraded to contested per Cultural Domain Expert Rule 2.
+- audit_id: f60366da-a4d8-4a1b-ac83-37569b7f0863
+  timestamp: '2026-06-06T14:34:54.545155+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-xi/flood-narrative
+  track: tmi
+  code: TMI-A1335
+  confidence_tier_assigned: contested
+  review_note: 'AI-proposed tier maintained: contested annotation with methodology fit warning. Confirmed per Cultural Domain Expert Rule 3.'
+- audit_id: b3d25513-bcd3-448b-a9ab-28f5bb989b2e
+  timestamp: '2026-06-06T14:34:54.545160+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-xi/flood-narrative
+  track: tmi
+  code: TMI-H1376.3
+  confidence_tier_assigned: reconstructed
+  review_note: Clean framework fit; no methodology concern. Confirmed reconstructed.
+- audit_id: 4c9b4f5f-d45d-494d-a1c1-f86e8e552791
+  timestamp: '2026-06-06T14:34:54.555196+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-xi/lacuna-end-of-plant-and-return
+  track: bakhtin
+  code: BAKHTIN-ROAD
+  confidence_tier_assigned: reconstructed
+  review_note: Methodology warning reflects etic/emic disclosure or non-standard role relabeling (Type A/B); structural function is present. Confirmed reconstructed per Cultural Domain Expert Rule 2.
+- audit_id: 6177c65f-4f90-4526-8d4d-edeaace0bf89
+  timestamp: '2026-06-06T14:34:54.555208+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-xi/lacuna-end-of-plant-and-return
+  track: bakhtin
+  code: BAKHTIN-THRESHOLD
+  confidence_tier_assigned: contested
+  review_note: 'AI-proposed tier maintained: contested annotation with methodology fit warning. Confirmed per Cultural Domain Expert Rule 3.'
+- audit_id: cccd2460-4e7b-4419-b4ba-4ec40659c5d3
+  timestamp: '2026-06-06T14:34:54.555221+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-xi/lacuna-end-of-plant-and-return
+  track: bakhtin
+  code: BAKHTIN-CASTLE
+  confidence_tier_assigned: reconstructed
+  review_note: Methodology warning reflects etic/emic disclosure or non-standard role relabeling (Type A/B); structural function is present. Confirmed reconstructed per Cultural Domain Expert Rule 2.
+- audit_id: 5253b4cd-d34f-4633-8e33-8547c6193391
+  timestamp: '2026-06-06T14:34:54.555227+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-xi/lacuna-end-of-plant-and-return
+  track: bakhtin
+  code: BAKHTIN-UNDERWORLD
+  confidence_tier_assigned: contested
+  review_note: 'AI-proposed tier maintained: contested annotation with methodology fit warning. Confirmed per Cultural Domain Expert Rule 3.'
+- audit_id: 2c2c6a7e-f2db-40c2-9361-8207207742c0
+  timestamp: '2026-06-06T14:34:54.563618+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-xi/lacuna-end-of-plant-and-return
+  track: propp
+  code: PROPP-19
+  confidence_tier_assigned: contested
+  review_note: 'AI-proposed tier maintained: contested annotation with methodology fit warning. Confirmed per Cultural Domain Expert Rule 3.'
+- audit_id: 043b4b79-564c-42fb-99a2-4902ce6c449a
+  timestamp: '2026-06-06T14:34:54.563631+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-xi/lacuna-end-of-plant-and-return
+  track: propp
+  code: PROPP-8
+  confidence_tier_assigned: contested
+  review_note: 'AI-proposed tier maintained: contested annotation with methodology fit warning. Confirmed per Cultural Domain Expert Rule 3.'
+- audit_id: 25989ed2-a53a-48d4-9b40-28d436b3b401
+  timestamp: '2026-06-06T14:34:54.563640+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-xi/lacuna-end-of-plant-and-return
+  track: propp
+  code: PROPP-20
+  confidence_tier_assigned: reconstructed
+  review_note: Clean framework fit; no methodology concern. Confirmed reconstructed.
+- audit_id: 74317b6f-0ac0-4691-91f1-544a2a0e3b63
+  timestamp: '2026-06-06T14:34:54.563658+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-xi/lacuna-end-of-plant-and-return
+  track: propp
+  code: PROPP-23
+  confidence_tier_assigned: contested
+  review_note: 'AI-proposed tier maintained: contested annotation with methodology fit warning. Confirmed per Cultural Domain Expert Rule 3.'
+- audit_id: b622280d-2ba1-4d1a-ad68-6b9bc8a314f7
+  timestamp: '2026-06-06T14:34:54.572313+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-xi/lacuna-end-of-plant-and-return
+  track: tmi
+  code: TMI-D965.1
+  confidence_tier_assigned: reconstructed
+  review_note: Methodology warning reflects etic/emic disclosure or non-standard role relabeling (Type A/B); structural function is present. Confirmed reconstructed per Cultural Domain Expert Rule 2.
+- audit_id: bc986396-71c6-4b55-9522-3865e8b4f702
+  timestamp: '2026-06-06T14:34:54.572335+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-xi/lacuna-end-of-plant-and-return
+  track: tmi
+  code: TMI-B176.1
+  confidence_tier_assigned: reconstructed
+  review_note: Methodology warning reflects etic/emic disclosure or non-standard role relabeling (Type A/B); structural function is present. Confirmed reconstructed per Cultural Domain Expert Rule 2.
+- audit_id: e7dc336b-eed6-45bc-9412-c1c3c53559e9
+  timestamp: '2026-06-06T14:34:54.572341+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-xi/lacuna-end-of-plant-and-return
+  track: tmi
+  code: TMI-A1335
+  confidence_tier_assigned: contested
+  review_note: 'AI-proposed tier maintained: contested annotation with methodology fit warning. Confirmed per Cultural Domain Expert Rule 3.'
+- audit_id: c8da02d1-1319-4549-9460-661626a445bc
+  timestamp: '2026-06-06T14:34:54.572354+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-xi/lacuna-end-of-plant-and-return
+  track: tmi
+  code: TMI-H1376.3
+  confidence_tier_assigned: reconstructed
+  review_note: Methodology warning reflects etic/emic disclosure or non-standard role relabeling (Type A/B); structural function is present. Confirmed reconstructed per Cultural Domain Expert Rule 2.
+- audit_id: 02845826-cb02-4743-a351-2d96075a175a
+  timestamp: '2026-06-06T14:34:54.580363+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-xi/plant-of-immortality
+  track: bakhtin
+  code: BAKHTIN-UNDERWORLD
+  confidence_tier_assigned: reconstructed
+  review_note: Clean framework fit; no methodology concern. Confirmed reconstructed.
+- audit_id: 669f7250-c146-40e1-9758-43f5f7ee9d66
+  timestamp: '2026-06-06T14:34:54.580374+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-xi/plant-of-immortality
+  track: bakhtin
+  code: BAKHTIN-THRESHOLD
+  confidence_tier_assigned: reconstructed
+  review_note: Clean framework fit; no methodology concern. Confirmed reconstructed.
+- audit_id: bf74ef83-1f72-4255-bd6c-490d3dc564e7
+  timestamp: '2026-06-06T14:34:54.580380+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-xi/plant-of-immortality
+  track: bakhtin
+  code: BAKHTIN-ROAD
+  confidence_tier_assigned: reconstructed
+  review_note: Clean framework fit; no methodology concern. Confirmed reconstructed.
+- audit_id: 4bd5342b-cab5-4b1c-8c8d-d656d2c43980
+  timestamp: '2026-06-06T14:34:54.580386+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-xi/plant-of-immortality
+  track: bakhtin
+  code: BAKHTIN-HEROIC-BODY
+  confidence_tier_assigned: contested
+  review_note: 'AI-proposed tier maintained: contested annotation with methodology fit warning. Confirmed per Cultural Domain Expert Rule 3.'
+- audit_id: 72ba1d2d-23c7-4ba1-8a18-222aa6d949f4
+  timestamp: '2026-06-06T14:34:54.586588+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-xi/plant-of-immortality
+  track: propp
+  code: PROPP-8
+  confidence_tier_assigned: contested
+  review_note: 'Note-prose override: methodology_fit_note names a more conservative tier than the proposed_tier field. Downgraded per Cultural Domain Expert Rule 0.'
+- audit_id: 7736ab73-8964-469e-96a9-d68f9ad84658
+  timestamp: '2026-06-06T14:34:54.586596+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-xi/plant-of-immortality
+  track: propp
+  code: PROPP-19
+  confidence_tier_assigned: contested
+  review_note: 'AI-proposed tier maintained: contested annotation with methodology fit warning. Confirmed per Cultural Domain Expert Rule 3.'
+- audit_id: aca82ebc-9a48-4ced-8372-9c4cc4e4bdde
+  timestamp: '2026-06-06T14:34:54.586603+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-xi/plant-of-immortality
+  track: propp
+  code: PROPP-20
+  confidence_tier_assigned: reconstructed
+  review_note: Clean framework fit; no methodology concern. Confirmed reconstructed.
+- audit_id: 9b303fc0-07d8-4c41-9d54-aef8e14c0bfa
+  timestamp: '2026-06-06T14:34:54.593755+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-xi/plant-of-immortality
+  track: tmi
+  code: TMI-D965.1
+  confidence_tier_assigned: reconstructed
+  review_note: Clean framework fit; no methodology concern. Confirmed reconstructed.
+- audit_id: 75c6299c-e9b5-41ef-a7ff-62bb2448f1ce
+  timestamp: '2026-06-06T14:34:54.593763+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-xi/plant-of-immortality
+  track: tmi
+  code: TMI-B176.1
+  confidence_tier_assigned: reconstructed
+  review_note: Clean framework fit; no methodology concern. Confirmed reconstructed.
+- audit_id: cfef1970-6b51-4de8-a3ee-e6958e86626b
+  timestamp: '2026-06-06T14:34:54.593769+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-xi/plant-of-immortality
+  track: tmi
+  code: TMI-H1376.3
+  confidence_tier_assigned: reconstructed
+  review_note: Clean framework fit; no methodology concern. Confirmed reconstructed.
+- audit_id: 05da1f5f-2771-4732-abae-2dfb88470711
+  timestamp: '2026-06-06T14:34:54.593787+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-xi/plant-of-immortality
+  track: tmi
+  code: TMI-A1335
+  confidence_tier_assigned: reconstructed
+  review_note: Methodology warning reflects etic/emic disclosure or non-standard role relabeling (Type A/B); structural function is present. Confirmed reconstructed per Cultural Domain Expert Rule 2.
+- audit_id: b199148a-7745-4a6f-9a90-b2baf07bf406
+  timestamp: '2026-06-06T14:34:54.593792+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-xi/plant-of-immortality
+  track: tmi
+  code: TMI-D1346
+  confidence_tier_assigned: contested
+  review_note: 'AI-proposed tier maintained: contested annotation with methodology fit warning. Confirmed per Cultural Domain Expert Rule 3.'
+- audit_id: 8bc901da-d46b-4138-af96-d9272568e96d
+  timestamp: '2026-06-06T14:34:54.601627+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-xi/sleep-challenge
+  track: bakhtin
+  code: BAKHTIN-THRESHOLD
+  confidence_tier_assigned: reconstructed
+  review_note: Clean framework fit; no methodology concern. Confirmed reconstructed.
+- audit_id: 6b6dbd05-d6bb-43d0-8c8b-2fd4664b2caf
+  timestamp: '2026-06-06T14:34:54.601635+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-xi/sleep-challenge
+  track: bakhtin
+  code: BAKHTIN-UNDERWORLD
+  confidence_tier_assigned: contested
+  review_note: 'AI-proposed tier maintained: contested annotation with methodology fit warning. Confirmed per Cultural Domain Expert Rule 3.'
+- audit_id: 189ecbd5-050e-4ffe-b157-2009d9b4a23e
+  timestamp: '2026-06-06T14:34:54.601641+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-xi/sleep-challenge
+  track: bakhtin
+  code: BAKHTIN-ROAD
+  confidence_tier_assigned: reconstructed
+  review_note: Clean framework fit; no methodology concern. Confirmed reconstructed.
+- audit_id: 72d1b5b9-c335-456e-b7c1-e6246ce49367
+  timestamp: '2026-06-06T14:34:54.601647+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-xi/sleep-challenge
+  track: bakhtin
+  code: BAKHTIN-HEROIC-BODY
+  confidence_tier_assigned: reconstructed
+  review_note: Clean framework fit; no methodology concern. Confirmed reconstructed.
+- audit_id: 68ac26aa-90a5-4bae-958f-98abc8fafbbf
+  timestamp: '2026-06-06T14:34:54.611863+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-xi/sleep-challenge
+  track: propp
+  code: PROPP-25
+  confidence_tier_assigned: contested
+  review_note: 'Note-prose override: methodology_fit_note names a more conservative tier than the proposed_tier field. Downgraded per Cultural Domain Expert Rule 0.'
+- audit_id: 240032ce-5e04-4f5d-a0bd-d274fcdbe55d
+  timestamp: '2026-06-06T14:34:54.611873+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-xi/sleep-challenge
+  track: propp
+  code: PROPP-26
+  confidence_tier_assigned: contested
+  review_note: 'AI-proposed tier maintained: contested annotation with methodology fit warning. Confirmed per Cultural Domain Expert Rule 3.'
+- audit_id: 667f2793-0d6f-4bba-bfa4-6f4bca12b919
+  timestamp: '2026-06-06T14:34:54.611880+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-xi/sleep-challenge
+  track: propp
+  code: PROPP-12
+  confidence_tier_assigned: reconstructed
+  review_note: Clean framework fit; no methodology concern. Confirmed reconstructed.
+- audit_id: b07debe1-b210-4975-9656-b5cc2cf73703
+  timestamp: '2026-06-06T14:34:54.611886+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-xi/sleep-challenge
+  track: propp
+  code: PROPP-14
+  confidence_tier_assigned: reconstructed
+  review_note: Clean framework fit; no methodology concern. Confirmed reconstructed.
+- audit_id: aaf7e054-e603-4ba9-87d2-bde678929278
+  timestamp: '2026-06-06T14:34:54.611891+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-xi/sleep-challenge
+  track: propp
+  code: PROPP-29
+  confidence_tier_assigned: reconstructed
+  review_note: Clean framework fit; no methodology concern. Confirmed reconstructed.
+- audit_id: 963c2c7b-7b3a-4878-a0d4-c1cb2a307723
+  timestamp: '2026-06-06T14:34:54.611896+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-xi/sleep-challenge
+  track: propp
+  code: PROPP-20
+  confidence_tier_assigned: reconstructed
+  review_note: Clean framework fit; no methodology concern. Confirmed reconstructed.
+- audit_id: e33a81ee-2392-448f-bc42-06587c8e0fa3
+  timestamp: '2026-06-06T14:34:54.611900+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-xi/sleep-challenge
+  track: propp
+  code: PROPP-8
+  confidence_tier_assigned: contested
+  review_note: 'AI-proposed tier maintained: contested annotation with methodology fit warning. Confirmed per Cultural Domain Expert Rule 3.'
+- audit_id: c1069fc5-4e9d-422f-8af4-2414e3e2670a
+  timestamp: '2026-06-06T14:34:54.622459+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-xi/sleep-challenge
+  track: tmi
+  code: TMI-H1376.3
+  confidence_tier_assigned: reconstructed
+  review_note: Clean framework fit; no methodology concern. Confirmed reconstructed.
+- audit_id: a1d52f48-59a2-40bc-b4e7-655c455a1698
+  timestamp: '2026-06-06T14:34:54.622469+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-xi/sleep-challenge
+  track: tmi
+  code: TMI-H900
+  confidence_tier_assigned: reconstructed
+  review_note: Clean framework fit; no methodology concern. Confirmed reconstructed.
+- audit_id: 45b1f1f0-385c-49fb-9f12-0a9bf531820d
+  timestamp: '2026-06-06T14:34:54.622475+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-xi/sleep-challenge
+  track: tmi
+  code: TMI-D1810
+  confidence_tier_assigned: contested
+  review_note: 'AI-proposed tier maintained: contested annotation with methodology fit warning. Confirmed per Cultural Domain Expert Rule 3.'
+- audit_id: aae359c4-bf12-4c40-8151-16b2940c3dab
+  timestamp: '2026-06-06T14:34:54.622480+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-xi/sleep-challenge
+  track: tmi
+  code: TMI-A1335
+  confidence_tier_assigned: reconstructed
+  review_note: Clean framework fit; no methodology concern. Confirmed reconstructed.
+- audit_id: 9844a130-cd4a-4234-ae37-5cbbe0643720
+  timestamp: '2026-06-06T14:34:54.622485+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-xi/sleep-challenge
+  track: tmi
+  code: TMI-D965.1
+  confidence_tier_assigned: reconstructed
+  review_note: Clean framework fit; no methodology concern. Confirmed reconstructed.
+- audit_id: 18a94123-7398-49e4-b02a-0bd9626e449b
+  timestamp: '2026-06-06T14:34:54.622490+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-xi/sleep-challenge
+  track: tmi
+  code: TMI-Q2
+  confidence_tier_assigned: contested
+  review_note: 'AI-proposed tier maintained: contested annotation with methodology fit warning. Confirmed per Cultural Domain Expert Rule 3.'
+- audit_id: 4c6993a8-e3b3-485d-9821-c9b9b6d2b370
+  timestamp: '2026-06-06T14:34:54.630669+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-xi/utnapishtim-meeting
+  track: bakhtin
+  code: BAKHTIN-THRESHOLD
+  confidence_tier_assigned: reconstructed
+  review_note: Clean framework fit; no methodology concern. Confirmed reconstructed.
+- audit_id: 657c7dfe-eec7-48f1-9a79-fb8a92f1abb3
+  timestamp: '2026-06-06T14:34:54.630681+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-xi/utnapishtim-meeting
+  track: bakhtin
+  code: BAKHTIN-DIVINE
+  confidence_tier_assigned: reconstructed
+  review_note: Clean framework fit; no methodology concern. Confirmed reconstructed.
+- audit_id: 2dae7467-fcc2-4561-b2fa-77a21e973a2f
+  timestamp: '2026-06-06T14:34:54.630687+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-xi/utnapishtim-meeting
+  track: bakhtin
+  code: BAKHTIN-ROAD
+  confidence_tier_assigned: contested
+  review_note: 'AI-proposed tier maintained: contested annotation with methodology fit warning. Confirmed per Cultural Domain Expert Rule 3.'
+- audit_id: 95253760-aa78-4d0c-b072-89cf77b9fcd3
+  timestamp: '2026-06-06T14:34:54.630693+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-xi/utnapishtim-meeting
+  track: bakhtin
+  code: BAKHTIN-HEROIC-BODY
+  confidence_tier_assigned: contested
+  review_note: 'AI-proposed tier maintained: contested annotation with methodology fit warning. Confirmed per Cultural Domain Expert Rule 3.'
+- audit_id: ab1d6417-d1bc-468e-ba71-d83b2a6f1eb5
+  timestamp: '2026-06-06T14:34:54.637239+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-xi/utnapishtim-meeting
+  track: propp
+  code: PROPP-9
+  confidence_tier_assigned: contested
+  review_note: 'AI-proposed tier maintained: contested annotation with methodology fit warning. Confirmed per Cultural Domain Expert Rule 3.'
+- audit_id: ad8e7783-90bd-4dea-8fd7-2dcdcffd0bc0
+  timestamp: '2026-06-06T14:34:54.637250+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-xi/utnapishtim-meeting
+  track: propp
+  code: PROPP-8
+  confidence_tier_assigned: reconstructed
+  review_note: Clean framework fit; no methodology concern. Confirmed reconstructed.
+- audit_id: 86786f6a-28a6-4022-b2ad-cb52cd828e70
+  timestamp: '2026-06-06T14:34:54.637256+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-xi/utnapishtim-meeting
+  track: propp
+  code: PROPP-12
+  confidence_tier_assigned: contested
+  review_note: 'AI-proposed tier maintained: contested annotation with methodology fit warning. Confirmed per Cultural Domain Expert Rule 3.'
+- audit_id: e1c97a69-d5bb-49c8-a96a-2ebb29138776
+  timestamp: '2026-06-06T14:34:54.644051+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-xi/utnapishtim-meeting
+  track: tmi
+  code: TMI-F110
+  confidence_tier_assigned: reconstructed
+  review_note: Clean framework fit; no methodology concern. Confirmed reconstructed.
+- audit_id: 909b15e5-69bd-44c0-b131-59903a4e0ca2
+  timestamp: '2026-06-06T14:34:54.644059+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-xi/utnapishtim-meeting
+  track: tmi
+  code: TMI-H1376.3
+  confidence_tier_assigned: reconstructed
+  review_note: Clean framework fit; no methodology concern. Confirmed reconstructed.
+- audit_id: bb18e152-256a-4889-b678-e41e2a2bf127
+  timestamp: '2026-06-06T14:34:54.644065+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-xi/utnapishtim-meeting
+  track: tmi
+  code: TMI-A1335
+  confidence_tier_assigned: contested
+  review_note: 'AI-proposed tier maintained: contested annotation with methodology fit warning. Confirmed per Cultural Domain Expert Rule 3.'
+- audit_id: 62b2b98f-352b-4c12-9159-2dcde0685619
+  timestamp: '2026-06-06T14:34:54.644070+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-xi/utnapishtim-meeting
+  track: tmi
+  code: TMI-Q2
+  confidence_tier_assigned: contested
+  review_note: 'AI-proposed tier maintained: contested annotation with methodology fit warning. Confirmed per Cultural Domain Expert Rule 3.'
+- audit_id: c749be51-c2c8-4af0-b025-e596d19ef9ee
+  timestamp: '2026-06-06T14:34:54.649501+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: summary
+  nas: nms://gilgamesh/tablet-i/creation-of-enkidu
+  track:
+  code:
+  confidence_tier_assigned: reconstructed
+  review_note: 'Layer 0 surface summary: faithfully reconstructs narrative content from the source text. Confirmed reconstructed per Cultural Domain Expert Rule 4 (Mnemosyne review, 2026-06-06).'
+- audit_id: 2f675229-82b2-49bb-a3bb-767c07cc9c3b
+  timestamp: '2026-06-06T14:34:54.653236+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: summary
+  nas: nms://gilgamesh/tablet-i/gilgamesh-of-uruk
+  track:
+  code:
+  confidence_tier_assigned: reconstructed
+  review_note: 'Layer 0 surface summary: faithfully reconstructs narrative content from the source text. Confirmed reconstructed per Cultural Domain Expert Rule 4 (Mnemosyne review, 2026-06-06).'
+- audit_id: 139c6aa2-bd2e-4693-b426-8f5ed2432876
+  timestamp: '2026-06-06T14:34:54.656783+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: summary
+  nas: nms://gilgamesh/tablet-i/shamhat-and-enkidu
+  track:
+  code:
+  confidence_tier_assigned: reconstructed
+  review_note: 'Layer 0 surface summary: faithfully reconstructs narrative content from the source text. Confirmed reconstructed per Cultural Domain Expert Rule 4 (Mnemosyne review, 2026-06-06).'
+- audit_id: c2c67fe8-5fba-4bca-b980-2d8f33412d35
+  timestamp: '2026-06-06T14:34:54.660284+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: summary
+  nas: nms://gilgamesh/tablet-ii/enkidu-comes-to-uruk
+  track:
+  code:
+  confidence_tier_assigned: reconstructed
+  review_note: 'Layer 0 surface summary: faithfully reconstructs narrative content from the source text. Confirmed reconstructed per Cultural Domain Expert Rule 4 (Mnemosyne review, 2026-06-06).'
+- audit_id: 35381946-fd41-4d5c-ba37-76582fee7712
+  timestamp: '2026-06-06T14:34:54.663853+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: summary
+  nas: nms://gilgamesh/tablet-ii/friendship
+  track:
+  code:
+  confidence_tier_assigned: reconstructed
+  review_note: 'Layer 0 surface summary: faithfully reconstructs narrative content from the source text. Confirmed reconstructed per Cultural Domain Expert Rule 4 (Mnemosyne review, 2026-06-06).'
+- audit_id: b714178d-22de-4a00-bec7-3fcd91c41cd7
+  timestamp: '2026-06-06T14:34:54.667075+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: summary
+  nas: nms://gilgamesh/tablet-ii/wrestling
+  track:
+  code:
+  confidence_tier_assigned: reconstructed
+  review_note: 'Layer 0 surface summary: faithfully reconstructs narrative content from the source text. Confirmed reconstructed per Cultural Domain Expert Rule 4 (Mnemosyne review, 2026-06-06).'
+- audit_id: 440e8948-c40c-4622-bb62-7f1f781e20fc
+  timestamp: '2026-06-06T14:34:54.670406+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: summary
+  nas: nms://gilgamesh/tablet-iii/elders-counsel
+  track:
+  code:
+  confidence_tier_assigned: reconstructed
+  review_note: 'Layer 0 surface summary: faithfully reconstructs narrative content from the source text. Confirmed reconstructed per Cultural Domain Expert Rule 4 (Mnemosyne review, 2026-06-06).'
+- audit_id: 7c0329a9-1685-4a0b-976e-61f7719e4ca6
+  timestamp: '2026-06-06T14:34:54.673728+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: summary
+  nas: nms://gilgamesh/tablet-iii/lacuna-ninsun-prayer-departure
+  track:
+  code:
+  confidence_tier_assigned: reconstructed
+  review_note: 'Layer 0 surface summary: faithfully reconstructs narrative content from the source text. Confirmed reconstructed per Cultural Domain Expert Rule 4 (Mnemosyne review, 2026-06-06).'
+- audit_id: 1f554ec9-8f7c-484a-a693-e13d28e92ce2
+  timestamp: '2026-06-06T14:34:54.676933+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: summary
+  nas: nms://gilgamesh/tablet-iv/cedar-forest-journey
+  track:
+  code:
+  confidence_tier_assigned: reconstructed
+  review_note: 'Layer 0 surface summary: faithfully reconstructs narrative content from the source text. Confirmed reconstructed per Cultural Domain Expert Rule 4 (Mnemosyne review, 2026-06-06).'
+- audit_id: 1c1aa620-3566-47fd-a18d-5aec3e336949
+  timestamp: '2026-06-06T14:34:54.680283+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: summary
+  nas: nms://gilgamesh/tablet-iv/lacuna-dream-sequence
+  track:
+  code:
+  confidence_tier_assigned: reconstructed
+  review_note: 'Layer 0 surface summary: faithfully reconstructs narrative content from the source text. Confirmed reconstructed per Cultural Domain Expert Rule 4 (Mnemosyne review, 2026-06-06).'
+- audit_id: c65d60fd-154d-4703-8aef-0fd1649db334
+  timestamp: '2026-06-06T14:34:54.683614+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: summary
+  nas: nms://gilgamesh/tablet-ix/garden-of-gems
+  track:
+  code:
+  confidence_tier_assigned: reconstructed
+  review_note: 'Layer 0 surface summary: faithfully reconstructs narrative content from the source text. Confirmed reconstructed per Cultural Domain Expert Rule 4 (Mnemosyne review, 2026-06-06).'
+- audit_id: b5fefb76-431c-4ff6-9559-625e8e91c6d8
+  timestamp: '2026-06-06T14:34:54.687149+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: summary
+  nas: nms://gilgamesh/tablet-ix/gilgamesh-wandering
+  track:
+  code:
+  confidence_tier_assigned: reconstructed
+  review_note: 'Layer 0 surface summary: faithfully reconstructs narrative content from the source text. Confirmed reconstructed per Cultural Domain Expert Rule 4 (Mnemosyne review, 2026-06-06).'
+- audit_id: bbac3e6f-522e-4cdd-b66a-9535633c1ae3
+  timestamp: '2026-06-06T14:34:54.690771+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: summary
+  nas: nms://gilgamesh/tablet-ix/scorpion-people
+  track:
+  code:
+  confidence_tier_assigned: reconstructed
+  review_note: 'Layer 0 surface summary: faithfully reconstructs narrative content from the source text. Confirmed reconstructed per Cultural Domain Expert Rule 4 (Mnemosyne review, 2026-06-06).'
+- audit_id: b662133d-c9d8-4e57-8710-19ed0a43900e
+  timestamp: '2026-06-06T14:34:54.694396+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: summary
+  nas: nms://gilgamesh/tablet-v/battle-with-humbaba
+  track:
+  code:
+  confidence_tier_assigned: reconstructed
+  review_note: 'Layer 0 surface summary: faithfully reconstructs narrative content from the source text. Confirmed reconstructed per Cultural Domain Expert Rule 4 (Mnemosyne review, 2026-06-06).'
+- audit_id: 832e95b6-2354-4c6c-962e-86831c6c9565
+  timestamp: '2026-06-06T14:34:54.697992+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: summary
+  nas: nms://gilgamesh/tablet-v/cedar-felling
+  track:
+  code:
+  confidence_tier_assigned: reconstructed
+  review_note: 'Layer 0 surface summary: faithfully reconstructs narrative content from the source text. Confirmed reconstructed per Cultural Domain Expert Rule 4 (Mnemosyne review, 2026-06-06).'
+- audit_id: 59631268-6e81-43f0-b505-067dc27ef98e
+  timestamp: '2026-06-06T14:34:54.701589+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: summary
+  nas: nms://gilgamesh/tablet-vi/bull-of-heaven
+  track:
+  code:
+  confidence_tier_assigned: reconstructed
+  review_note: 'Layer 0 surface summary: faithfully reconstructs narrative content from the source text. Confirmed reconstructed per Cultural Domain Expert Rule 4 (Mnemosyne review, 2026-06-06).'
+- audit_id: 442625d5-9ae0-4e03-ba36-eb97d6a08bb2
+  timestamp: '2026-06-06T14:34:54.705110+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: summary
+  nas: nms://gilgamesh/tablet-vi/enkidus-curse
+  track:
+  code:
+  confidence_tier_assigned: reconstructed
+  review_note: 'Layer 0 surface summary: faithfully reconstructs narrative content from the source text. Confirmed reconstructed per Cultural Domain Expert Rule 4 (Mnemosyne review, 2026-06-06).'
+- audit_id: 9f6d30e3-9182-4ada-96d6-ec71d4d7b12b
+  timestamp: '2026-06-06T14:34:54.708592+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: summary
+  nas: nms://gilgamesh/tablet-vi/ishtar-proposal
+  track:
+  code:
+  confidence_tier_assigned: reconstructed
+  review_note: 'Layer 0 surface summary: faithfully reconstructs narrative content from the source text. Confirmed reconstructed per Cultural Domain Expert Rule 4 (Mnemosyne review, 2026-06-06).'
+- audit_id: 95c26cd2-33b7-4270-a1d7-560416e57d94
+  timestamp: '2026-06-06T14:34:54.712033+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: summary
+  nas: nms://gilgamesh/tablet-vii/enkidus-death
+  track:
+  code:
+  confidence_tier_assigned: reconstructed
+  review_note: 'Layer 0 surface summary: faithfully reconstructs narrative content from the source text. Confirmed reconstructed per Cultural Domain Expert Rule 4 (Mnemosyne review, 2026-06-06).'
+- audit_id: c52b8d4d-8b3c-4e07-b373-c70eae39b433
+  timestamp: '2026-06-06T14:34:54.715479+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: summary
+  nas: nms://gilgamesh/tablet-vii/enkidus-dream
+  track:
+  code:
+  confidence_tier_assigned: reconstructed
+  review_note: 'Layer 0 surface summary: faithfully reconstructs narrative content from the source text. Confirmed reconstructed per Cultural Domain Expert Rule 4 (Mnemosyne review, 2026-06-06).'
+- audit_id: d302a5d5-06de-45c9-b503-4889f57fe16b
+  timestamp: '2026-06-06T14:34:54.719223+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: summary
+  nas: nms://gilgamesh/tablet-vii/enkidus-lament
+  track:
+  code:
+  confidence_tier_assigned: reconstructed
+  review_note: 'Layer 0 surface summary: faithfully reconstructs narrative content from the source text. Confirmed reconstructed per Cultural Domain Expert Rule 4 (Mnemosyne review, 2026-06-06).'
+- audit_id: 85f02d4e-ff76-4076-8d9e-aafdfc2741a9
+  timestamp: '2026-06-06T14:34:54.723748+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: summary
+  nas: nms://gilgamesh/tablet-viii/funeral-rites
+  track:
+  code:
+  confidence_tier_assigned: reconstructed
+  review_note: 'Layer 0 surface summary: faithfully reconstructs narrative content from the source text. Confirmed reconstructed per Cultural Domain Expert Rule 4 (Mnemosyne review, 2026-06-06).'
+- audit_id: fd999a5c-00a6-48f3-a42c-eaba4ef15119
+  timestamp: '2026-06-06T14:34:54.727159+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: summary
+  nas: nms://gilgamesh/tablet-viii/lacuna-end-of-tablet-viii
+  track:
+  code:
+  confidence_tier_assigned: reconstructed
+  review_note: 'Layer 0 surface summary: faithfully reconstructs narrative content from the source text. Confirmed reconstructed per Cultural Domain Expert Rule 4 (Mnemosyne review, 2026-06-06).'
+- audit_id: 8655b83b-bc8d-45bd-a500-00d59d8bf684
+  timestamp: '2026-06-06T14:34:54.730376+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: summary
+  nas: nms://gilgamesh/tablet-viii/lament-for-enkidu
+  track:
+  code:
+  confidence_tier_assigned: reconstructed
+  review_note: 'Layer 0 surface summary: faithfully reconstructs narrative content from the source text. Confirmed reconstructed per Cultural Domain Expert Rule 4 (Mnemosyne review, 2026-06-06).'
+- audit_id: 33de1e9f-c830-4883-94a2-fb112090de16
+  timestamp: '2026-06-06T14:34:54.733641+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: summary
+  nas: nms://gilgamesh/tablet-x/lacuna-siduri-gap
+  track:
+  code:
+  confidence_tier_assigned: reconstructed
+  review_note: 'Layer 0 surface summary: faithfully reconstructs narrative content from the source text. Confirmed reconstructed per Cultural Domain Expert Rule 4 (Mnemosyne review, 2026-06-06).'
+- audit_id: 0ce93714-c865-4400-b52a-de97e0717cdf
+  timestamp: '2026-06-06T14:34:54.737043+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: summary
+  nas: nms://gilgamesh/tablet-x/siduri-and-gilgamesh
+  track:
+  code:
+  confidence_tier_assigned: reconstructed
+  review_note: 'Layer 0 surface summary: faithfully reconstructs narrative content from the source text. Confirmed reconstructed per Cultural Domain Expert Rule 4 (Mnemosyne review, 2026-06-06).'
+- audit_id: 0e2df022-5a83-4c1c-9c30-6a470d8495d5
+  timestamp: '2026-06-06T14:34:54.740524+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: summary
+  nas: nms://gilgamesh/tablet-x/urshanabi-crossing
+  track:
+  code:
+  confidence_tier_assigned: reconstructed
+  review_note: 'Layer 0 surface summary: faithfully reconstructs narrative content from the source text. Confirmed reconstructed per Cultural Domain Expert Rule 4 (Mnemosyne review, 2026-06-06).'
+- audit_id: 8e054c0a-ae77-43f8-a99e-7b8ee125f117
+  timestamp: '2026-06-06T14:34:54.744244+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: summary
+  nas: nms://gilgamesh/tablet-x/waters-of-death
+  track:
+  code:
+  confidence_tier_assigned: reconstructed
+  review_note: 'Layer 0 surface summary: faithfully reconstructs narrative content from the source text. Confirmed reconstructed per Cultural Domain Expert Rule 4 (Mnemosyne review, 2026-06-06).'
+- audit_id: c9794639-81b4-4880-965e-c2d05741516a
+  timestamp: '2026-06-06T14:34:54.747838+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: summary
+  nas: nms://gilgamesh/tablet-xi/flood-narrative
+  track:
+  code:
+  confidence_tier_assigned: reconstructed
+  review_note: 'Layer 0 surface summary: faithfully reconstructs narrative content from the source text. Confirmed reconstructed per Cultural Domain Expert Rule 4 (Mnemosyne review, 2026-06-06).'
+- audit_id: 5532c81c-6423-493a-84f4-d0be84cedd7f
+  timestamp: '2026-06-06T14:34:54.751184+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: summary
+  nas: nms://gilgamesh/tablet-xi/lacuna-end-of-plant-and-return
+  track:
+  code:
+  confidence_tier_assigned: reconstructed
+  review_note: 'Layer 0 surface summary: faithfully reconstructs narrative content from the source text. Confirmed reconstructed per Cultural Domain Expert Rule 4 (Mnemosyne review, 2026-06-06).'
+- audit_id: 04fbf96c-570d-4e76-89b5-2fc200d2bfd4
+  timestamp: '2026-06-06T14:34:54.754528+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: summary
+  nas: nms://gilgamesh/tablet-xi/plant-of-immortality
+  track:
+  code:
+  confidence_tier_assigned: reconstructed
+  review_note: 'Layer 0 surface summary: faithfully reconstructs narrative content from the source text. Confirmed reconstructed per Cultural Domain Expert Rule 4 (Mnemosyne review, 2026-06-06).'
+- audit_id: fb81b841-62e7-4408-b3d3-747bd4e565d3
+  timestamp: '2026-06-06T14:34:54.758147+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: summary
+  nas: nms://gilgamesh/tablet-xi/sleep-challenge
+  track:
+  code:
+  confidence_tier_assigned: reconstructed
+  review_note: 'Layer 0 surface summary: faithfully reconstructs narrative content from the source text. Confirmed reconstructed per Cultural Domain Expert Rule 4 (Mnemosyne review, 2026-06-06).'
+- audit_id: cc88db50-45ba-448a-9a17-e0c237281361
+  timestamp: '2026-06-06T14:34:54.761769+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: summary
+  nas: nms://gilgamesh/tablet-xi/utnapishtim-meeting
+  track:
+  code:
+  confidence_tier_assigned: reconstructed
+  review_note: 'Layer 0 surface summary: faithfully reconstructs narrative content from the source text. Confirmed reconstructed per Cultural Domain Expert Rule 4 (Mnemosyne review, 2026-06-06).'
+- audit_id: 63cce812-4dcc-45a2-a02c-a6846f8aae94
+  timestamp: '2026-06-06T14:37:54.636416+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-v/battle-with-humbaba
+  track: tmi
+  code: TMI-D1840
+  confidence_tier_assigned: contested
+  review_note: "Reinstatement of prior rejected decision. Humbaba melammu carve-out per Cultural Domain Expert: Humbaba's seven divine radiances (melammu/puluḫtu, SBV V 88-90, George 2003) function as protective force that must be neutralized before Humbaba can be killed — structurally analogous to magical invulnerability. Analogical extension of TMI-D1840 to guardian entities is defensible at 'contested'. Blanket rejection rule applied to Gilgamesh's composition; does not apply here. methodology_fit_warning preserved. Case B correction per Cultural Domain Expert follow-up review (2026-06-06)."
+- audit_id: d5ecab2e-bfcf-4f8f-8e16-9f53443eeffa
+  timestamp: '2026-06-06T14:37:54.636704+00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: annotation
+  nas: nms://gilgamesh/tablet-x/urshanabi-crossing
+  track: tmi
+  code: TMI-D1840
+  confidence_tier_assigned: contested
+  review_note: Reinstatement of prior rejected decision. Subject is Urshanabi, not Gilgamesh; Gilgamesh-mortality rejection rule is inapplicable. The urshanabi stone beings (ūrātu, SBV X 92-96, George 2003) rendered Urshanabi capable of navigating the Waters of Death — a protection-from-death mechanism that satisfies TMI-D1840's structural core, though via object rather than bodily constitution. methodology_fit_warning preserved. Case C correction per Cultural Domain Expert follow-up review (2026-06-06).

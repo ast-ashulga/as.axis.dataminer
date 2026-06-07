@@ -1,0 +1,47 @@
+_sisyphus_version: '0.1'
+nas: nms://gilgamesh/tablet-xi/lacuna-end-of-plant-and-return
+track: propp
+annotations:
+- code: PROPP-19
+  label: Liquidation
+  proposed_tier: contested
+  status: confirmed
+  rationale: The plant-of-immortality episode, attested in canonical SBV Tablet XI (George 2003, SB XI 266–289), represents a partial liquidation of the initial lack (immortality sought by Gilgamesh after Enkidu's death). However, because the plant is immediately stolen by the serpent before Gilgamesh can use it, the liquidation is structurally incomplete — the lack is only momentarily resolved and then re-imposed. The lacuna in this witness means this function can only be inferred from the canonical tradition rather than read directly from the provided source text, making the annotation reconstructed at best and contested given the narrative's failure to complete the function.
+  evidence_citations:
+  - George 2003, SB XI 266–289
+  methodology_fit_warning: true
+  methodology_fit_note: "The source passage is absent due to lacuna; annotation is inferential based on canonical SBV attestation (George 2003), not the provided witness. Propp's PROPP-19 requires genuine narrative resolution of the initial lack, which does not occur in the Gilgamesh tradition — the plant is lost and immortality is never achieved. This is a significant methodology-fit issue: the function is structurally present but thematically negated, which falls outside Propp's morphological expectation of successful liquidation. The annotation is therefore contested rather than reconstructed."
+  ai_generated: true
+  generated_by_model: claude-sonnet-4-6
+- code: PROPP-8
+  label: Villainy / Lack
+  proposed_tier: contested
+  status: confirmed
+  rationale: The serpent's theft of the plant of immortality (canonical SBV Tablet XI, George 2003, SB XI 287–289) constitutes a villainous act that reinstates the original lack — Gilgamesh is deprived of the means to overcome death just as he had obtained them. This maps to PROPP-8 as a secondary or re-emergent villainy within the narrative arc. The function is absent from the provided witness due to lacuna and must be reconstructed from the canonical tradition. The serpent as 'villain' is an unusual Proppian mapping in a non-folktale epic context.
+  evidence_citations:
+  - George 2003, SB XI 287–289
+  methodology_fit_warning: true
+  methodology_fit_note: The serpent episode is not present in this witness; annotation is entirely reconstructed from canonical SBV tradition. The Propp morphology framework assumes a single dominant villain (Propp's 'Villain' sphere), but in Gilgamesh the adversarial roles are distributed (Humbaba, the Bull of Heaven, the serpent, death itself). Applying PROPP-8 to the serpent risks over-systematising what is a motif-level episode rather than a structurally villain-defined function. This annotation is contested accordingly.
+  ai_generated: true
+  generated_by_model: claude-sonnet-4-6
+- code: PROPP-20
+  label: Return
+  proposed_tier: reconstructed
+  status: confirmed
+  rationale: The return journey to Uruk is a well-attested element of canonical SBV Tablet XI, in which Gilgamesh and Urshanabi travel back to Uruk and Gilgamesh gestures to the city walls as a monument to his enduring legacy (George 2003, SB XI 322–328). This maps clearly to PROPP-20, the hero's return home following the quest. Although absent from this witness due to lacuna, the function is structurally unambiguous in the canonical tradition and represents one of the cleaner Propp-to-Gilgamesh correspondences in the closing tablet.
+  evidence_citations:
+  - George 2003, SB XI 322–328
+  methodology_fit_warning: false
+  ai_generated: true
+  generated_by_model: claude-sonnet-4-6
+- code: PROPP-23
+  label: Unrecognized Arrival
+  proposed_tier: contested
+  status: confirmed
+  rationale: Gilgamesh's return to Uruk carries a latent resonance with PROPP-23 in that he returns transformed by grief and the quest, yet without the immortality that would have marked a triumphant homecoming. His identity as a successful hero-seeker is in some sense unrecognised by the narrative outcome — he arrives as a man who failed to secure immortality. However, this is a thematic rather than structural application of PROPP-23, which conventionally requires literal non-recognition by characters within the story world. No such episode is attested in canonical SBV Tablet XI.
+  evidence_citations:
+  - George 2003, SB XI 322–328
+  methodology_fit_warning: true
+  methodology_fit_note: This annotation is highly contested. PROPP-23 is being applied in a thematic-metaphorical sense rather than its literal structural sense (a character fails to recognise the returning hero). The Gilgamesh tradition does not include a conventional unrecognised-arrival episode at the return to Uruk. The application is methodologically strained and included here only to flag interpretive potential; scholars using this annotation should treat it with significant caution. The lacuna in this witness further compounds the problem by making even inferential reconstruction uncertain.
+  ai_generated: true
+  generated_by_model: claude-sonnet-4-6

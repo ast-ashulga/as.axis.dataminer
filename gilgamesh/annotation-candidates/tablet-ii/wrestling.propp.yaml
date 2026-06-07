@@ -1,0 +1,40 @@
+_sisyphus_version: '0.1'
+nas: nms://gilgamesh/tablet-ii/wrestling
+track: propp
+annotations:
+- code: PROPP-16
+  label: Struggle
+  proposed_tier: reconstructed
+  status: confirmed
+  rationale: The passage describes the direct physical combat between Gilgamesh and Enkidu at the threshold of the bridal chamber and on the wide road — a wrestling match that constitutes the central confrontational encounter between the two figures. The text explicitly depicts them grappling, shaking walls, and struggling until Gilgamesh forces Enkidu's knee to the ground, fulfilling the morphological function of hero-villain (or hero-adversary) direct combat. While Enkidu is not a conventional villain in Propp's schema, this wrestling episode is structurally analogous to the Struggle function, serving as the decisive test of strength that precedes the formation of their bond. The methodology_fit_warning is warranted because Enkidu functions simultaneously as adversary and future companion, not a true villain.
+  evidence_citations:
+  - Dyakonov 1961, Tablet II
+  - George 2003, SB II 193–220
+  methodology_fit_warning: true
+  methodology_fit_note: Enkidu does not map cleanly onto the Proppian villain role. He is a temporary adversary who becomes the hero's companion, making PROPP-16 applicable in a structural sense but imperfect in a character-function sense. The annotation remains defensible as the episode is the single most explicit agonistic confrontation in the epic prior to any quest.
+  ai_generated: true
+  generated_by_model: claude-sonnet-4-6
+- code: PROPP-18
+  label: Victory
+  proposed_tier: contested
+  status: confirmed
+  rationale: Gilgamesh prevails in the wrestling match — 'he forced his knee to the ground' ('Преклонил Гильгамеш на землю колено') — which constitutes a resolution of the struggle in the hero's favour. Enkidu's subsequent speech acknowledging Gilgamesh's singular divine appointment ('Эллиль над людьми судил тебе царство') confirms the defeat and concedes Gilgamesh's supremacy, functioning narratively as the adversary's acknowledgement of the hero's victory. The victory does not liquidate a traditional villainy but establishes the hero's dominance, a prerequisite for the partnership and subsequent quest.
+  evidence_citations:
+  - Dyakonov 1961, Tablet II
+  - George 2003, SB II 215–223
+  methodology_fit_warning: true
+  methodology_fit_note: "As with PROPP-16, the 'villain' defeated here is the hero's future ally, not an antagonist in the traditional Proppian sense. The victory function is structurally present but the social logic differs: defeat here produces fraternal bond rather than restoration of a victim. Annotation is contested but defensible."
+  ai_generated: true
+  generated_by_model: claude-sonnet-4-6
+- code: PROPP-27
+  label: Recognition
+  proposed_tier: contested
+  status: confirmed
+  rationale: Enkidu's final speech — praising Gilgamesh's divine birth from the wild cow Ninsun and his elevation above all men by Enlil — functions as a public recognition of the hero's true identity, nature, and legitimacy. This is not a recognition scene in the classic Proppian sense (hero returning from disguise), but structurally it marks the moment when the 'other' acknowledges who the hero truly is, which aligns with the Recognition function's narrative purpose. The speech cites both genealogical identity ('Буйволица Ограды, Нинсун') and cosmological mandate ('Эллиль над людьми судил тебе царство'), reinforcing the hero's status.
+  evidence_citations:
+  - Dyakonov 1961, Tablet II
+  - George 2003, SB II 218–223
+  methodology_fit_warning: true
+  methodology_fit_note: "PROPP-27 classically involves recognition after disguised or unrecognized arrival, which does not apply here. The mapping is forced: Gilgamesh was never unrecognized. This annotation is proposed as 'contested' and should be treated as a structural resonance rather than a precise morphological match."
+  ai_generated: true
+  generated_by_model: claude-sonnet-4-6

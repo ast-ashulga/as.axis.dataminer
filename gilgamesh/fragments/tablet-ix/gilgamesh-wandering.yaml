@@ -1,0 +1,32 @@
+_sisyphus_version: '0.1'
+_generated_at: '2026-06-06T10:49:55.232631+00:00'
+_pipeline_run_id: phase-c
+fragment:
+  nas: nms://gilgamesh/tablet-ix/gilgamesh-wandering
+  parent_nas: nms://gilgamesh/tablet-ix
+  tradition_id: gilgamesh
+  confidence_tier: reconstructed
+  available_layers:
+  - surface
+  methodology_fit_warning: false
+content:
+- locale: ru
+  layer: surface
+  body: 'Девятая таблица открывается изображением Гильгамеша, охваченного горем после гибели Энкиду: он горько оплакивает друга и бежит в пустыню [NAS: nms://gilgamesh/tablet-ix/gilgamesh-wandering]. Страх собственной смерти побуждает героя предпринять путь к Утнапишти, сыну Убар-Туту, в надежде обрести бессмертие или его тайну [NAS: nms://gilgamesh/tablet-ix/gilgamesh-wandering]. Достигнув горных перевалов ночью, Гильгамеш встречает львов и, согласно тексту, испытывает страх [NAS: nms://gilgamesh/tablet-ix/gilgamesh-wandering]. Герой возносит молитвы богу луны Сину и прочим богам с просьбой о защите [NAS: nms://gilgamesh/tablet-ix/gilgamesh-wandering]. Перевод Дьяконова указывает, что после пробуждения Гильгамеш видит резвящихся львов и вступает с ними в схватку, поражая их топором и мечом [NAS: nms://gilgamesh/tablet-ix/gilgamesh-wandering]. Таким образом, эпизод представляет героя в состоянии экзистенциального кризиса, движимого страхом смертности [NAS: nms://gilgamesh/tablet-ix/gilgamesh-wandering].'
+  status: confirmed
+  confidence_tier: reconstructed
+  ai_generated: true
+  reviewed_by:
+  reviewed_at:
+  translation_id:
+  translation_author:
+  translation_year:
+  translation_license:
+  grounding_citations:
+  - nms://gilgamesh/tablet-ix/gilgamesh-wandering
+  - nms://gilgamesh/tablet-ix/gilgamesh-wandering
+  - nms://gilgamesh/tablet-ix/gilgamesh-wandering
+  - nms://gilgamesh/tablet-ix/gilgamesh-wandering
+  - nms://gilgamesh/tablet-ix/gilgamesh-wandering
+  - nms://gilgamesh/tablet-ix/gilgamesh-wandering
+  generated_by_model: claude-sonnet-4-6

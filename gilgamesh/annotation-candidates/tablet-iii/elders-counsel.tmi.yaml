@@ -1,0 +1,49 @@
+_sisyphus_version: '0.1'
+nas: nms://gilgamesh/tablet-iii/elders-counsel
+track: tmi
+annotations:
+- code: TMI-H900
+  label: Tasks and quests
+  proposed_tier: reconstructed
+  status: confirmed
+  rationale: The elders formally acknowledge and sanction Gilgamesh's quest against Humbaba, framing the expedition to the Cedar Forest as a heroic task undertaken under communal charge. The council's blessing and the explicit assignment of protective duties to Enkidu constitute a social ratification of the quest condition. The elders' final injunction — 'we entrust the king to you in council; when you return, you shall entrust the king back to us' — functions as a formal commissioning of the task.
+  evidence_citations:
+  - Dyakonov 1961, Tablet III ('Старейшины его благословляют / На дорогу Гильгамешу дают советы')
+  - George 2003, SB III (elders' speech commissioning the expedition to the Cedar Forest)
+  methodology_fit_warning: false
+  ai_generated: true
+  generated_by_model: claude-sonnet-4-6
+- code: TMI-Q2
+  label: Kind and unkind
+  proposed_tier: contested
+  status: confirmed
+  rationale: This code is only partially applicable here. The elders' contrasting attitudes — concern for Gilgamesh's safe return versus implicit acknowledgment that Humbaba is a destructive adversary — suggest a moral polarity between the civilized, communally-responsible heroes and the monstrous guardian. However, TMI-Q2 more typically involves two characters receiving differentiated rewards based on virtue, rather than a hero-versus-monster framing. Application is debatable and the fit is weak.
+  evidence_citations:
+  - Gumilev 1919, Tablet III ('Против тебя Хумбаба, хранитель кедра')
+  methodology_fit_warning: true
+  methodology_fit_note: TMI-Q2 is a weak fit here because the passage does not narrate differential treatment of kind versus unkind characters; rather, it contrasts communal virtue with a monstrous antagonist in absentia. The annotation is only defensible at a thematic level and should not be treated as a primary structural label for this segment.
+  ai_generated: true
+  generated_by_model: claude-sonnet-4-6
+- code: TMI-F567.2
+  label: Wild man
+  proposed_tier: reconstructed
+  status: confirmed
+  rationale: Enkidu is referenced in both translations as the liminal figure who uniquely knows the roads to the Cedar Forest — knowledge rooted in his origin as a wild man raised among animals. The elders' directive that 'Enkidu goes before you; he knows the way to the cedar forest' implicitly draws on his pre-civilized, wilderness expertise. His role as guide and protector in this passage is a narrative residue of his wild-man character established in earlier tablets.
+  evidence_citations:
+  - Dyakonov 1961, Tablet III ('Пускай Энкиду идет пред тобою, / Он знает дорогу к кедровому лесу')
+  - George 2003, SB I 102–106 (Enkidu's origin among wild animals in the steppe)
+  methodology_fit_warning: false
+  ai_generated: true
+  generated_by_model: claude-sonnet-4-6
+- code: TMI-D1810
+  label: Magic knowledge through dreams
+  proposed_tier: contested
+  status: confirmed
+  rationale: The Gumilev passage references Gilgamesh's mother Ninsun as one 'to whom secrets are known' ('которой ведомы тайны'), and the journey to her palace is explicitly motivated by her oracular and interpretive authority. While this passage itself does not depict a dream sequence, it is the narrative hinge leading to Ninsun's ritual prayer and dream-interpretation function attested in Tablet III. The code applies prospectively to the segment's narrative function rather than its direct content, making this application contested.
+  evidence_citations:
+  - Gumilev 1919, Tablet III ('К матери моей, которой ведомы тайны')
+  - George 2003, SB III (Ninsun's prayer to Shamash and her adoption of Enkidu)
+  methodology_fit_warning: true
+  methodology_fit_note: This annotation is contested because TMI-D1810 strictly applies to the communication of prophetic knowledge via dreams, and the dream episode itself does not occur within this segment. The reference to Ninsun's secret knowledge is an anticipatory narrative marker rather than a direct instance of the motif. The annotation is defensible only as a structural foreshadowing note.
+  ai_generated: true
+  generated_by_model: claude-sonnet-4-6

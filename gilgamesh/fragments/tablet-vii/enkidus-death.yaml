@@ -1,0 +1,31 @@
+_sisyphus_version: '0.1'
+_generated_at: '2026-06-06T10:49:34.834449+00:00'
+_pipeline_run_id: phase-c
+fragment:
+  nas: nms://gilgamesh/tablet-vii/enkidus-death
+  parent_nas: nms://gilgamesh/tablet-vii
+  tradition_id: gilgamesh
+  confidence_tier: reconstructed
+  available_layers:
+  - surface
+  methodology_fit_warning: false
+content:
+- locale: ru
+  layer: surface
+  body: 'Согласно данному фрагменту Седьмой таблицы, Энкиду видит тревожный сон, после которого его силы иссякают [NAS: nms://gilgamesh/tablet-vii/enkidus-death]. Текст поэтапно отсчитывает двенадцать дней болезни, в течение которых герой лежит на ложе, а его недуг неуклонно усиливается [NAS: nms://gilgamesh/tablet-vii/enkidus-death]. На двенадцатый день Энкиду приподнимается и обращается к Гильгамешу с горькими словами [NAS: nms://gilgamesh/tablet-vii/enkidus-death]. В своей речи, согласно тексту, умирающий герой говорит о страхе перед сражением, который некогда испытывал, и о том, что друг поддерживал его в бою [NAS: nms://gilgamesh/tablet-vii/enkidus-death]. Завершает фрагмент риторический вопрос о равной смертности обоих героев, подчёркивающий универсальность человеческого удела [NAS: nms://gilgamesh/tablet-vii/enkidus-death].'
+  status: confirmed
+  confidence_tier: reconstructed
+  ai_generated: true
+  reviewed_by:
+  reviewed_at:
+  translation_id:
+  translation_author:
+  translation_year:
+  translation_license:
+  grounding_citations:
+  - nms://gilgamesh/tablet-vii/enkidus-death
+  - nms://gilgamesh/tablet-vii/enkidus-death
+  - nms://gilgamesh/tablet-vii/enkidus-death
+  - nms://gilgamesh/tablet-vii/enkidus-death
+  - nms://gilgamesh/tablet-vii/enkidus-death
+  generated_by_model: claude-sonnet-4-6

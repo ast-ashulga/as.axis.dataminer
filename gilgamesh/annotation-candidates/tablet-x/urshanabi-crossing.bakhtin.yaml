@@ -1,0 +1,53 @@
+_sisyphus_version: '0.1'
+nas: nms://gilgamesh/tablet-x/urshanabi-crossing
+track: bakhtin
+annotations:
+- code: BAKHTIN-ROAD
+  label: Road / Journey Chronotope
+  proposed_tier: reconstructed
+  status: confirmed
+  rationale: "The crossing to Utnapishtim is quintessentially a road/journey chronotope: time and space are fused in the motion of travel across the Waters of Death, and the encounter with Urshanabi on the riverbank is precisely the type of chance meeting on the road that Bakhtin identifies as the defining event of this chronotope. The compressed journey — 'путь шести недель за три дня совершили' (Dyakonov 1961, Tablet X) — makes the fusion of temporal and spatial dimensions explicit. The road here is not metaphorical but a literal path through an impossible geography, and the meeting with the ferryman triggers the revelation of the route to the immortal."
+  evidence_citations:
+  - "Gumilev 1919, Tablet X: 'Далеким путем от восхода солнца'"
+  - "Dyakonov 1961, Tablet X: 'Путь шести недель за три дня совершили'"
+  - George 2003, SB X 75–90
+  methodology_fit_warning: false
+  ai_generated: true
+  generated_by_model: claude-sonnet-4-6
+- code: BAKHTIN-THRESHOLD
+  label: Threshold Chronotope
+  proposed_tier: reconstructed
+  status: confirmed
+  rationale: "The moment Urshanabi's boat enters the Waters of Death constitutes a classic threshold chronotope: it is a liminal boundary between the living world and the realm associated with death, where ordinary time is suspended and normal physical rules are inverted (the poles must not touch the water, the hands must not graze its surface). The injunction 'да не коснутся руки твоей воды смерти' (Gumilev 1919, Tablet X) encodes the threshold as a physically dangerous boundary that must be navigated with ritual precision. Gilgamesh's act of raising his garment as a sail after exhausting the poles marks the moment of crisis-at-the-boundary that is central to the threshold chronotope."
+  evidence_citations:
+  - "Gumilev 1919, Tablet X: 'Ур-Эа вступил в воды смерти' and 'да не коснутся руки твоей воды смерти'"
+  - "Dyakonov 1961, Tablet X: 'И вступил Уршанаби в воды смерти'"
+  - George 2003, SB X 160–175
+  methodology_fit_warning: false
+  ai_generated: true
+  generated_by_model: claude-sonnet-4-6
+- code: BAKHTIN-UNDERWORLD
+  label: Underworld / Netherworld Chronotope
+  proposed_tier: contested
+  status: confirmed
+  rationale: 'The Waters of Death (mê mūti) function as an underworld-adjacent chronotope: time is distorted (a six-week journey completed in three days), and passage through them constitutes a boundary-crossing into a zone associated with death and the suspension of mortal time. However, this annotation is contested because the Waters of Death in Tablet X are not the Underworld proper (kur/ereṣ matem) as encountered in Tablet XII; Utnapishtim lives beyond them in a space that is neither fully living nor dead. The underworld chronotope therefore applies partially and by extension rather than fully, and annotators should note the distinction between the Waters as liminal passage and the Underworld as destination.'
+  evidence_citations:
+  - "Dyakonov 1961, Tablet X: 'Как одолев воды смерти, / Как переправлюсь чрез широкое море?'"
+  - "Gumilev 1919, Tablet X: 'Ур-Эа вступил в воды смерти'"
+  - George 2003, SB X 85–90 (mê mūti as distinct from kur)
+  methodology_fit_warning: true
+  methodology_fit_note: The Waters of Death are not identical to the Mesopotamian Underworld (Ereṣ matem) and applying the Underworld chronotope risks conflating two distinct cosmological zones. The annotation is defensible as a partial or analogical application — the mê mūti share the key chronotopic features of suspended time and death-boundary crossing — but should not be read as claiming the crossing equals a katabasis in the strict sense. Confidence is therefore reduced to 'contested'.
+  ai_generated: true
+  generated_by_model: claude-sonnet-4-6
+- code: BAKHTIN-HEROIC-BODY
+  label: Heroic Body Chronotope
+  proposed_tier: reconstructed
+  status: confirmed
+  rationale: "Gilgamesh's body becomes the primary instrument and measure of the narrative at several key moments in this passage: he cuts 120 poles with his own axe, breaks them one by one with his arms while punting, and finally strips his own garment to raise as a mast. The exhausting of 120 poles — each strike a unit of time-space — inscribes the journey's difficulty directly onto the hero's physical exertion. The Gumilev translation makes this body-as-narrative especially vivid: 'Жердь изломал Гильгамеш, одну, и вторую, и третью, / Сто двадцать жердей всего изломал он, / Снял Гильгамеш свою одежду, / Своими руками поставил мачту' (Gumilev 1919, Tablet X)."
+  evidence_citations:
+  - "Gumilev 1919, Tablet X: 'Жердь изломал Гильгамеш, одну, и вторую и третью, сто двадцать жердей всего изломал он'"
+  - "Dyakonov 1961, Tablet X: 'Сто двадцать шестов по пятнадцати сажен'"
+  - George 2003, SB X 160–180
+  methodology_fit_warning: false
+  ai_generated: true
+  generated_by_model: claude-sonnet-4-6

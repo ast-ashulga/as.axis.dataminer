@@ -1,0 +1,39 @@
+_sisyphus_version: '0.1'
+nas: nms://gilgamesh/tablet-v/battle-with-humbaba
+track: propp
+annotations:
+- code: PROPP-18
+  label: Victory
+  proposed_tier: reconstructed
+  status: confirmed
+  rationale: "The villain is decisively defeated: Gumilev records Gilgamesh shaking (brandishing) the severed head of Humbaba ('Гильгамеш потрясает головою Хумбабы'), and Dyakonov describes Humbaba falling on the third blow, his body going still, and all seven of his radiance-auras subsequently slain ('Когда их всех семерых убил он'). The cosmic resonance — cedars groaning for two leagues around — underscores the totality of the victory. This satisfies the Proppian Victory function as the moment the antagonist is overcome and rendered powerless."
+  evidence_citations:
+  - Gumilev 1919, Tablet V
+  - Dyakonov 1961, Tablet V
+  - George 2003, SB V
+  methodology_fit_warning: false
+  ai_generated: true
+  generated_by_model: claude-sonnet-4-6
+- code: PROPP-14
+  label: Provision / Receipt of Magical Agent
+  proposed_tier: contested
+  status: confirmed
+  rationale: Dyakonov describes Gilgamesh and Enkidu stripping Humbaba's body of his war-net and a massive seven-talent dagger ('Боевую сеть и кинжал в семь талантов... снял с его тела'), and the unlocking of the secret dwelling of the Anunnaki ('Жилище Ануннаков тайное открыл он'). These spoils — especially the supernaturally potent weapons and the revealed hidden sanctuary — function analogously to the acquisition of a magical agent following the defeat of a donor-antagonist. The mapping is contested because the objects are war-trophies rather than gifts from a helper-donor; Propp's function normally involves a donor who tests and then bestows, whereas here acquisition follows violence.
+  evidence_citations:
+  - Dyakonov 1961, Tablet V
+  methodology_fit_warning: true
+  methodology_fit_note: The acquisition of Humbaba's arms and the revelation of the Anunnaki dwelling approximate PROPP-14 structurally (hero gains a supernaturally significant object or access), but the donor-gift dynamic is absent; the objects are seized by conquest. The annotation is retained as 'contested' because the structural parallel is real even if the mechanism differs from the folkloric template.
+  ai_generated: true
+  generated_by_model: claude-sonnet-4-6
+- code: PROPP-17
+  label: Branding
+  proposed_tier: contested
+  status: confirmed
+  rationale: In Gumilev's version, Enkidu's fate aids the heroes twice during the battle ('Дважды судьба помогла Эабани'), and the act of Gilgamesh wielding Humbaba's severed head can be read as a marking event — the hero is distinguished by the trophy of his deed. More concretely, the cosmic trembling of the cedar forest for two leagues (Dyakonov) marks the landscape itself as transformed by the heroes' action, leaving a permanent sign. The mapping is admittedly oblique; Proppian branding typically involves a physical wound or mark on the hero's body, which the text does not explicitly record here.
+  evidence_citations:
+  - Gumilev 1919, Tablet V
+  - Dyakonov 1961, Tablet V
+  methodology_fit_warning: true
+  methodology_fit_note: PROPP-17 is applied cautiously and rated 'contested' because no explicit bodily marking of the hero is recorded in this passage. The annotation rests on the symbolic 'marking' of the hero through possession of the villain's head and the landscape transformation, which is a structurally analogous but not textually identical phenomenon.
+  ai_generated: true
+  generated_by_model: claude-sonnet-4-6

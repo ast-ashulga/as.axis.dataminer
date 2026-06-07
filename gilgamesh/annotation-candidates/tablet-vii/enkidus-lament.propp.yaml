@@ -1,0 +1,60 @@
+_sisyphus_version: '0.1'
+nas: nms://gilgamesh/tablet-vii/enkidus-lament
+track: propp
+annotations:
+- code: PROPP-8
+  label: Villainy / Lack
+  proposed_tier: reconstructed
+  status: confirmed
+  rationale: Enkidu's illness and impending death constitute the central 'villainy' or 'lack' of this passage — a harm visited upon a key figure that disrupts the heroic world. The divine curse referenced by Enkidu ('проклял меня бог какой-то свирепый') and the twelve days of illness establish a condition of irreversible loss. This maps to PROPP-8 as the harm is enacted by supernatural agency (the gods who decreed Enkidu's death) and is the precipitating misfortune driving Gilgamesh's subsequent quest for immortality. The fit is moderately natural, though the harm is distributed across divine decree rather than a discrete villain action.
+  evidence_citations:
+  - Gumilev 1919, Tablet VII ('Всех двенадцать дней оставляет болезнь Эабани в постели')
+  - George 2003, SB VII 1–60
+  methodology_fit_warning: false
+  ai_generated: true
+  generated_by_model: claude-sonnet-4-6
+- code: PROPP-1
+  label: Absentation
+  proposed_tier: contested
+  status: confirmed
+  rationale: "Enkidu's death — foreshadowed throughout this tablet and made explicit through the dream of the House of Dust — functions structurally as an absentation: a central figure is permanently removed from the heroic household. Dyakonov's rendition of the underworld vision culminates in Ereshkigal's scribe declaring 'Смерть уже взяла того человека,' confirming Enkidu's imminent departure from the living world. However, applying PROPP-1 here is contested because Propp's absentation typically refers to a living character's physical departure at the narrative's opening, not to death mid-narrative; the mapping is structural rather than literal."
+  evidence_citations:
+  - Dyakonov 1961, Tablet VII ('Смерть уже взяла того человека!')
+  - George 2003, SB VII 180–200
+  methodology_fit_warning: true
+  methodology_fit_note: Propp's absentation is defined as a living family member leaving home, typically at the story's outset. Applying it to a death-vision mid-narrative is a structural analogy rather than a direct mapping, and should be treated as contested. The function is defensible insofar as Enkidu's removal from the heroic community is the structural trigger for Gilgamesh's subsequent quest (Tablets VIII–XI), mirroring the narrative role of absentation.
+  ai_generated: true
+  generated_by_model: claude-sonnet-4-6
+- code: PROPP-9
+  label: Mediation
+  proposed_tier: reconstructed
+  status: confirmed
+  rationale: "The misfortune (Enkidu's fatal illness and divine condemnation) is made known to Gilgamesh directly through Enkidu's own voice: 'Он зовет тогда Гильгамеша, говорит прекрасному другу.' This communication of suffering — reinforced by Enkidu's recounting of the underworld dream — serves the mediatory function of making the lack fully visible to the hero and spurring him toward action. Gilgamesh's immediate emotional response ('сразу жарко заплакал') and his vow to intercede with the gods confirm that the misfortune has been formally registered and transmitted."
+  evidence_citations:
+  - Gumilev 1919, Tablet VII ('Он зовет тогда Гильгамеша, говорит прекрасному другу')
+  - Dyakonov 1961, Tablet VII ('Услыхал Гильгамеш слово друга, Энкиду, побежали его слезы')
+  methodology_fit_warning: false
+  ai_generated: true
+  generated_by_model: claude-sonnet-4-6
+- code: PROPP-10
+  label: Beginning Counter-Action
+  proposed_tier: reconstructed
+  status: confirmed
+  rationale: Gilgamesh's declaration that he will pray to the great gods — Anu, Enlil, and Shamash — and adorn their statues with gold represents an active decision to counter the misfortune. 'А теперь помолюсь я богам великим, / Милость взыскуя, обращусь к твоему богу!' is a formal, willed resolve to act against the doom. This aligns with PROPP-10 as the seeker's agreement to undertake counter-action, even though the gods' response via Shamash immediately forecloses the specific avenue Gilgamesh proposes, setting the stage for the broader quest that follows in subsequent tablets.
+  evidence_citations:
+  - Dyakonov 1961, Tablet VII ('А теперь помолюсь я богам великим, / Милость взыскуя, обращусь к твоему богу!')
+  methodology_fit_warning: false
+  ai_generated: true
+  generated_by_model: claude-sonnet-4-6
+- code: PROPP-15
+  label: Spatial Translocation
+  proposed_tier: contested
+  status: confirmed
+  rationale: "Enkidu's dream describes his journey to the House of Dust / realm of Ereshkigal — a classic 'other realm' in Proppian terms. The passage provides an extended, topographically detailed account of this translocation: 'Взглянул и увел меня в дом мрака, жилище Иркаллы, / В дом, откуда вошедший никогда не выходит.' This is structurally analogous to PROPP-15, where the hero is conveyed to another realm. The mapping is contested, however, because it occurs within a dream-vision rather than as a literal narrative journey, and because it is Enkidu (not the primary hero Gilgamesh) who is translocated — though Enkidu functions as a proxy figure whose fate drives the main hero's subsequent spatial translocation."
+  evidence_citations:
+  - Dyakonov 1961, Tablet VII ('Взглянул и увел меня в дом мрака, жилище Иркаллы')
+  - George 2003, SB VII 155–165
+  methodology_fit_warning: true
+  methodology_fit_note: The translocation occurs within a dream narrative recounted by Enkidu, not as a literal journey by the primary hero. Propp's framework assumes physical movement of the hero to another realm. Applying this function to a dream-vision account by a secondary figure (Enkidu) is a structural analogy; the annotation remains defensible because the underworld vision is presented with full narrative elaboration and functions as a foreshadowing/surrogate for Gilgamesh's own later boundary-crossing.
+  ai_generated: true
+  generated_by_model: claude-sonnet-4-6

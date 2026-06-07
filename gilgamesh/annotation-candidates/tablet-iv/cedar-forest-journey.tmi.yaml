@@ -1,0 +1,64 @@
+_sisyphus_version: '0.1'
+nas: nms://gilgamesh/tablet-iv/cedar-forest-journey
+track: tmi
+annotations:
+- code: TMI-H900
+  label: Tasks and quests
+  proposed_tier: reconstructed
+  status: confirmed
+  rationale: The passage depicts Gilgamesh and Enkidu undertaking the journey to the Cedar Forest to confront Humbaba, a quest explicitly framed as a dangerous mission assigned by heroic ambition and divine sanction. Gilgamesh frames the enterprise as a test of courage and a means of securing lasting fame, fitting the TMI-H900 pattern of a hero assigned or self-imposing a perilous task. The quest structure is reinforced by the repeated encouragement and the explicit goal of 'nарубим кедра' (felling the cedar).
+  evidence_citations:
+  - "Gumilev 1919, Tablet IV: 'Вот Гильгамеш с Эабани в поле, / Вместе идут они к лесу Хумбабы'"
+  - "Dyakonov 1961, Tablet IV: 'Прежде чем мы нарубим кедра'"
+  - George 2003, SB IV (Cedar Forest journey, general)
+  methodology_fit_warning: false
+  ai_generated: true
+  generated_by_model: claude-sonnet-4-6
+- code: TMI-F567.2
+  label: Wild man
+  proposed_tier: reconstructed
+  status: confirmed
+  rationale: Enkidu (Эабани) is explicitly described in this passage as one 'who was born in the wilderness' ('Ты родился в пустыни'), and his fear and physical debilitation upon approaching the Cedar Forest are presented as residual traits of his untamed origin. His hesitation, trembling, and weeping contrast with Gilgamesh's civilized heroic resolve, marking the tension between his wild nature and his partially civilized state. This motif echoes his earlier characterization in Tablets I–II as a wild man raised among animals.
+  evidence_citations:
+  - "Gumilev 1919, Tablet IV: 'Он родился в пустыне и боится пустыни'"
+  - "Dyakonov 1961, Tablet IV: 'Ослабеет тело, онемеют мои руки'"
+  - George 2003, SB IV 1–40 (Enkidu's weakness before the forest)
+  methodology_fit_warning: false
+  ai_generated: true
+  generated_by_model: claude-sonnet-4-6
+- code: TMI-D1840
+  label: Magic invulnerability
+  proposed_tier: contested
+  status: rejected
+  rationale: Gilgamesh invokes Enkidu's battlefield invulnerability as a counter to his fear, suggesting a tradition in which Enkidu possesses a form of supernatural hardiness ('Натирался ты зельем и смерти не страшишься' — 'You rubbed yourself with an unguent and did not fear death'). This reference to a protective substance or ritual that renders the hero resistant to death in combat aligns with TMI-D1840. However, the motif is only obliquely present here and the 'зелье' (unguent/herb) may refer to mundane battle preparation rather than magic, making the application contested.
+  evidence_citations:
+  - "Dyakonov 1961, Tablet IV: 'Натирался ты зельем и смерти не страшишься'"
+  - George 2003, SB IV (Gilgamesh's exhortation to Enkidu)
+  methodology_fit_warning: true
+  methodology_fit_note: The reference to 'зелье' (unguent) in the Dyakonov translation may be a loose rendering and does not correspond to a well-established philological detail of invulnerability in the standard cuneiform text. The TMI-D1840 annotation is therefore tentative and should be treated as contested pending verification against the Akkadian source.
+  ai_generated: true
+  generated_by_model: claude-sonnet-4-6
+- code: TMI-A1335
+  label: Origin of death
+  proposed_tier: contested
+  status: confirmed
+  rationale: "Gilgamesh's exhortation 'Забудь о смерти,-- достигнешь жизни!' ('Forget death — you will reach life!') and the paired phrase in Gumilev ('Твое сердце хотело битвы: забудь про смерть и не бойся!') gesture toward the epic's overarching thematic concern with the mortality of humans versus the immortality of gods, which is the subject of TMI-A1335. However, in this specific passage the motif is thematically implicit rather than narratively enacted — death is not explained or originated here but alluded to as the unavoidable mortal condition. The annotation is therefore contested as a thematic resonance rather than a direct instantiation."
+  evidence_citations:
+  - "Gumilev 1919, Tablet IV: 'Твое сердце хотело битвы: забудь про смерть и не бойся!'"
+  - "Dyakonov 1961, Tablet IV: 'Забудь о смерти,-- достигнешь жизни!'"
+  methodology_fit_warning: true
+  methodology_fit_note: TMI-A1335 is most properly applied to the Tablet X–XI sections where Gilgamesh explicitly confronts Enkidu's death and the divine decree separating mortal and immortal lots. Applying it to Tablet IV is a thematic extension rather than a structural match, and analysts should note the risk of over-extending the motif beyond its narrative instantiation.
+  ai_generated: true
+  generated_by_model: claude-sonnet-4-6
+- code: TMI-Q2
+  label: Kind and unkind
+  proposed_tier: contested
+  status: confirmed
+  rationale: The contrasting characterization of Gilgamesh as courageous and resolute versus Enkidu as fearful and physically weakened in this passage evokes a kind/unkind or brave/cowardly contrast used to distinguish heroic worth. Gilgamesh explicitly shames Enkidu's hesitation while affirming his own resolve. However, TMI-Q2 is most classically applied to social or moral contrasts between two characters treated differently by fate or a supernatural agent, rather than to internal psychological contrast between two heroes; the fit is therefore contested.
+  evidence_citations:
+  - "Gumilev 1919, Tablet IV: 'Друг мой, как малый ребенок, ты плачешь'"
+  - "Dyakonov 1961, Tablet IV: 'Друг мой, ужели мы будем так жалки?'"
+  methodology_fit_warning: true
+  methodology_fit_note: TMI-Q2 is structurally designed for contrasting pairs judged by an external agent. Its application here to an internal heroic dynamic is a secondary or analogical use, and the annotation should be marked contested to flag this methodological stretch.
+  ai_generated: true
+  generated_by_model: claude-sonnet-4-6

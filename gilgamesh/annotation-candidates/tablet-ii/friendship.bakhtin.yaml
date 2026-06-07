@@ -1,0 +1,27 @@
+_sisyphus_version: '0.1'
+nas: nms://gilgamesh/tablet-ii/friendship
+track: bakhtin
+annotations:
+- code: BAKHTIN-ROAD
+  label: Road / Journey Chronotope
+  proposed_tier: reconstructed
+  status: confirmed
+  rationale: "The proposed journey to the Cedar Forest is articulated as a spatial-temporal project — 'далеко есть горы Ливана' — in which motion through dangerous space is fused with the heroes' fate and the generation of heroic reputation. The road to the forest is explicitly characterised as perilous and transformative ('тяжек и путь к тому лесу'), establishing the journey as a site of potential encounter and revelation rather than mere transit. The chronotope is prospective here: the road exists as a narrative force even before it is taken."
+  evidence_citations:
+  - "Dyakonov 1961, Tablet II: 'Друг мой, далеко есть горы Ливана'"
+  - "Dyakonov 1961, Tablet II: 'Люди молвят -- тяжек и путь к тому лесу'"
+  methodology_fit_warning: true
+  methodology_fit_note: A mild methodology-fit concern arises because the road is invoked prospectively — it exists in speech-act, not in narrative action. Bakhtin's road chronotope is most fully realised in the actual traversal of space-time. Applying it to a proposed journey is defensible but slightly displaced from the canonical form; hence 'reconstructed' is appropriate rather than a higher-confidence tier.
+  ai_generated: true
+  generated_by_model: claude-sonnet-4-6
+- code: BAKHTIN-HEROIC-BODY
+  label: Heroic Body Chronotope
+  proposed_tier: contested
+  status: confirmed
+  rationale: "Gilgamesh's speech projects his body as the instrument and memorial of heroic time: 'Если паду я - оставлю имя: Гильгамеш принял бой со свирепым Хумбабой!' The hero's potential death and the preservation of his name through physical combat inscribe his body as the site where narrative time and world-historical meaning converge. However, since the feat is anticipated rather than performed, the heroic body chronotope is here prospective and rhetorical rather than enacted, making the annotation contested."
+  evidence_citations:
+  - "Dyakonov 1961, Tablet II: 'Если паду я - оставлю имя: Гильгамеш принял бой со свирепым Хумбабой!'"
+  methodology_fit_warning: true
+  methodology_fit_note: The heroic body chronotope is most fully realised in scenes of physical action and combat. Here it operates as a rhetorical self-construction — Gilgamesh performing his own epic legacy in speech. This displacement from physical event to anticipatory narration introduces a legitimate methodological concern, justifying the 'contested' tier.
+  ai_generated: true
+  generated_by_model: claude-sonnet-4-6

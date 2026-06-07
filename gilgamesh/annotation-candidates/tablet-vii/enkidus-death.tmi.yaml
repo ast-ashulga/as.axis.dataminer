@@ -1,0 +1,39 @@
+_sisyphus_version: '0.1'
+nas: nms://gilgamesh/tablet-vii/enkidus-death
+track: tmi
+annotations:
+- code: TMI-A1335
+  label: Origin of death
+  proposed_tier: reconstructed
+  status: confirmed
+  rationale: Enkidu's dying lament — 'I and you — are we not equally mortal?' — directly articulates the theme of human mortality as the shared, inescapable condition of humankind, contrasted implicitly with divine immortality. This passage dramatizes the existential recognition of death as the lot of mortals, which the broader epic will then thematize through Gilgamesh's subsequent quest. The rhetorical question functions as a mythological statement about the nature of human existence rather than merely a personal complaint.
+  evidence_citations:
+  - Dyakonov 1961, Tablet VII
+  - George 2003, SB VII 135–145
+  methodology_fit_warning: false
+  ai_generated: true
+  generated_by_model: claude-sonnet-4-6
+- code: TMI-D1810
+  label: Magic knowledge through dreams
+  proposed_tier: reconstructed
+  status: confirmed
+  rationale: The passage opens with Enkidu experiencing an 'unexplained dream' ('сон необъясненный') that precedes and apparently precipitates his loss of strength and physical decline. In the broader Tablet VII context, Enkidu's dreams contain prophetic content (visions of the underworld and divine judgment), and the motif of divinely conveyed knowledge through dream is explicitly operative here even if the dream's content is only alluded to in this excerpt. The dream functions as a threshold event marking his transition toward death.
+  evidence_citations:
+  - Dyakonov 1961, Tablet VII
+  - George 2003, SB VII 1–10
+  methodology_fit_warning: true
+  methodology_fit_note: The specific dream content is not rendered in this passage excerpt, making full confirmation of the prophetic/divine knowledge dimension dependent on surrounding tablets. The annotation is defensible given the established scholarly consensus about SB Tablet VII's dream sequence, but the evidence within this isolated passage alone is incomplete.
+  ai_generated: true
+  generated_by_model: claude-sonnet-4-6
+- code: TMI-F80
+  label: Journey to land of dead
+  proposed_tier: contested
+  status: confirmed
+  rationale: While Enkidu does not physically journey to the underworld in this passage, his twelve-day deathbed vigil and the 'unexplained dream' he experiences are preparatory to his crossing the threshold of death, and in the Standard Babylonian tradition this passage anticipates the underworld vision dreams of Tablet VII. The motif of the land of the dead is present proleptically; however, applying F80 directly to a deathbed scene rather than an active journey is a methodological stretch.
+  evidence_citations:
+  - Dyakonov 1961, Tablet VII
+  - George 2003, SB VII 1–60
+  methodology_fit_warning: true
+  methodology_fit_note: TMI-F80 strictly denotes an active narrative journey to the underworld undertaken by a living hero. Applying it to Enkidu's dying process and dream-visions is a loose fit; the annotation is contested because the passage depicts approach to death rather than a completed journey. A stronger application of F80 belongs to the Gilgamesh–Enkidu dialogue in Tablet XII, where Enkidu's shade returns from the underworld.
+  ai_generated: true
+  generated_by_model: claude-sonnet-4-6

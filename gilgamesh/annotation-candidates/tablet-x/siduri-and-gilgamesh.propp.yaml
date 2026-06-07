@@ -1,0 +1,88 @@
+_sisyphus_version: '0.1'
+nas: nms://gilgamesh/tablet-x/siduri-and-gilgamesh
+track: propp
+annotations:
+- code: PROPP-8
+  label: Villainy / Lack
+  proposed_tier: reconstructed
+  status: confirmed
+  rationale: Enkidu's death constitutes the foundational lack that drives Gilgamesh's entire quest. Gilgamesh explicitly names this loss as the source of his anguish and the motivation for his journey, lamenting that his companion has become earth. The lack is not only the loss of Enkidu but also Gilgamesh's resulting existential lack of immortality or assurance against death. This dual lack — of the companion and of eternal life — is precisely articulated in both translations.
+  evidence_citations:
+  - "Dyakonov 1961, Tablet X: 'Энкиду, друг мой любимый, стал землею! Так же, как он, и я не лягу ль, Чтоб не встать во веки веков?'"
+  - "Gumilev 1919, Tablet X: 'Эабани, брат мой, пантера пустыни, Ныне судьба его совершилась, Не такой же ль и я, не случится ль со мной того же?'"
+  - George 2003, SB X 40–72
+  methodology_fit_warning: true
+  methodology_fit_note: In the Propp scheme, Villainy/Lack typically inaugurates the tale and is distinct from the hero's backstory narrated mid-journey. Here the lack is retrospectively reported by the hero to the donor figure (Siduri), rather than structurally placed at the narrative's opening. The function is present but displaced, which is characteristic of the Gilgamesh epic's non-linear structure and represents a moderate methodology-fit concern. The annotation remains defensible because the lack functionally motivates all subsequent quest actions.
+  ai_generated: true
+  generated_by_model: claude-sonnet-4-6
+- code: PROPP-9
+  label: Mediation
+  proposed_tier: contested
+  status: confirmed
+  rationale: "Siduri's role at the tavern partially fulfills the mediation function: she becomes the figure through whom the hero's misfortune is acknowledged and the path forward (to Utnapishtim via Urshanabi) is named. However, Siduri does not strictly 'dispatch' the hero — she first tries to dissuade him and offers a carpe diem counsel. The mediation is thus ambivalent and only partially operative, making this annotation contested."
+  evidence_citations:
+  - "Gumilev 1919, Tablet X: 'Есть, Гильгамеш, Ур-Эа, лодочник Ут-напиштима... Пусть он лицо твое увидит! Можешь, — плыви с ними; нельзя, — возвращайся!'"
+  - "Dyakonov 1961, Tablet X: 'Есть, Гильгамеш, Уршанаби, корабельщик Утнапишти... Найди его и с ним повидайся'"
+  methodology_fit_warning: true
+  methodology_fit_note: Siduri occupies an ambiguous structural role that does not map cleanly onto the mediator function. She simultaneously serves as a potential donor figure (providing information and direction) and as a discourager. The Propp framework does not readily accommodate this functional ambivalence, and the mediation is conditional rather than authoritative, which weakens the fit.
+  ai_generated: true
+  generated_by_model: claude-sonnet-4-6
+- code: PROPP-12
+  label: First Function of Donor
+  proposed_tier: reconstructed
+  status: confirmed
+  rationale: Siduri acts as a donor figure who tests or evaluates Gilgamesh before providing guidance. She initially closes her doors and questions him, assessing his identity and purpose — a classic gatekeeping behaviour consistent with the donor's first function. Her interrogation ('Почему твое сердце бьется, взор опущен' / 'Почему идешь ты путем далеким') constitutes the testing moment before she ultimately provides directional information.
+  evidence_citations:
+  - "Dyakonov 1961, Tablet X: 'Зачем ты пришел, хочу узнать я, Куда путь твой лежит, хочу узнать я!'"
+  - "Gumilev 1919, Tablet X: 'Увидала его Сабеянка, двери закрыла, Двери закрыла, заложила засовом'"
+  - George 2003, SB X 1–25
+  methodology_fit_warning: false
+  ai_generated: true
+  generated_by_model: claude-sonnet-4-6
+- code: PROPP-13
+  label: Hero's Reaction
+  proposed_tier: reconstructed
+  status: confirmed
+  rationale: Gilgamesh reacts to the donor's (Siduri's) challenge by neither retreating nor immediately complying, but by asserting himself forcefully and then revealing his identity and grief. His narrative of Enkidu's death and his own existential fear constitutes an emotional and rhetorical response to the donor's testing, fulfilling the hero's reaction function. In both translations he answers her interrogation with a full account of his losses and his quest's purpose.
+  evidence_citations:
+  - "Dyakonov 1961, Tablet X: 'Я - Гильгамеш, убивший стража леса... Энкиду, друг мой, которого так любил я... Устрашился я смерти, не найти мне жизни!'"
+  - "Gumilev 1919, Tablet X: 'Гильгамеш задумал войти в эти двери, Поднял голову, отцепил секиру... Укажи, Сабеянка, мне путь к Ут-напиштиму'"
+  methodology_fit_warning: false
+  ai_generated: true
+  generated_by_model: claude-sonnet-4-6
+- code: PROPP-14
+  label: Provision / Receipt of Magical Agent
+  proposed_tier: contested
+  status: confirmed
+  rationale: 'Siduri provides Gilgamesh not with a magical object but with crucial navigational information: the existence and location of Urshanabi the ferryman, who is the means of crossing the waters of death. In many oral epic traditions, information about the route or the agent of crossing functions structurally as a magical agent. However, this is a significantly attenuated instance — no object is transferred, only knowledge — making the annotation contested.'
+  evidence_citations:
+  - "Gumilev 1919, Tablet X: 'Есть, Гильгамеш, Ур-Эа, лодочник Ут-напиштима, С ними «братья каменьев», в лесу он сбирает травы, Пусть он лицо твое увидит!'"
+  - "Dyakonov 1961, Tablet X: 'Есть, Гильгамеш, Уршанаби, корабельщик Утнапишти, У него есть идолы, в лесу он ловит змея; Найди его и с ним повидайся'"
+  methodology_fit_warning: true
+  methodology_fit_note: The Propp framework envisions a tangible magical agent (a sword, a horse, a talisman). Here the 'agent' is directional information about a person who can facilitate further spatial translocation. The substitution of knowledge for object is common in non-European epic traditions but represents a genuine stretch of the framework's original intent. The annotation is defensible by analogy with donor scenes in other traditions but should be treated as contested.
+  ai_generated: true
+  generated_by_model: claude-sonnet-4-6
+- code: PROPP-15
+  label: Spatial Translocation
+  proposed_tier: reconstructed
+  status: confirmed
+  rationale: The entire scene with Siduri is a threshold moment preparing Gilgamesh's passage to the realm of Utnapishtim across the Waters of Death — a liminal, otherworldly space. Siduri's directions to Urshanabi explicitly set up the translocation. The waters of death ('воды смерти') function as the boundary between the mortal world and the immortal realm, making this passage structurally equivalent to the hero being guided to another realm.
+  evidence_citations:
+  - "Gumilev 1919, Tablet X: 'Глубоки воды смерти, заградившие подступы!'"
+  - "Dyakonov 1961, Tablet X: 'Глубоки воды смерти, что ее преграждают'"
+  - George 2003, SB X 75–90
+  methodology_fit_warning: true
+  methodology_fit_note: The translocation is anticipated and directed here but not yet executed within this passage — the actual crossing occurs in subsequent tablet sections. Applying PROPP-15 to this segment is therefore prospective rather than descriptive of completed action. The annotation is defensible as marking the structural setup for translocation, but readers should note that the function is initiated rather than fulfilled here.
+  ai_generated: true
+  generated_by_model: claude-sonnet-4-6
+- code: PROPP-10
+  label: Beginning Counter-Action
+  proposed_tier: reconstructed
+  status: confirmed
+  rationale: Despite Siduri's explicit warning that immortality cannot be found and her counsel to accept mortal pleasures, Gilgamesh unambiguously decides to continue his quest and presses her for the route to Utnapishtim. This resolute refusal to abandon the quest and the explicit request for directions constitutes the hero's decision to act against the misfortune (fear of death, loss of Enkidu). Both translations render this as a clear volitional moment.
+  evidence_citations:
+  - "Gumilev 1919, Tablet X: 'Укажи, Сабеянка, мне путь к Ут-напиштиму... Если возможно, поплыву через море, Если нельзя, отправлюсь полем'"
+  - "Dyakonov 1961, Tablet X: 'Теперь, хозяйка,- где путь к Утнапишти? Каков его признак,- дай его мне ты... Если возможно - переправлюсь морем, Если нельзя - побегу пустыней!'"
+  methodology_fit_warning: false
+  ai_generated: true
+  generated_by_model: claude-sonnet-4-6

@@ -1,0 +1,53 @@
+_sisyphus_version: '0.1'
+nas: nms://gilgamesh/tablet-ix/gilgamesh-wandering
+track: tmi
+annotations:
+- code: TMI-H1376.3
+  label: Quest for immortality
+  proposed_tier: reconstructed
+  status: confirmed
+  rationale: "Gilgamesh explicitly articulates his terror of death following Enkidu's demise and undertakes a journey to find Utnapishtim, the sole mortal granted immortality by the gods. The quest motivation is stated directly: 'I shall die! Am I not like Enkidu?' Both translations confirm the hero's flight from death and his purposeful journey toward Utnapishtim as a quest for the secret of eternal life. This is the clearest instantiation of the immortality quest motif in the epic's structural arc."
+  evidence_citations:
+  - "Gumilev 1919, Tablet IX: 'К мощи Ут-напиштима, сына Убара-Туту, / Путь я предпринял, иду поспешно'"
+  - "Dyakonov 1961, Tablet IX: 'Под власть Утнапишти, сына Убар-Туту, / Путь я предпринял, иду поспешно'"
+  - George 2003, SB IX 1–6
+  methodology_fit_warning: false
+  ai_generated: true
+  generated_by_model: claude-sonnet-4-6
+- code: TMI-A1335
+  label: Origin of death
+  proposed_tier: reconstructed
+  status: confirmed
+  rationale: Gilgamesh's lament—'And shall I not die as Enkidu did?'—reflects the epic's sustained meditation on the asymmetry between mortal and divine existence, a core mythological theme explaining why humans must die. His grief crystallises the moment of existential confrontation with human mortality as a fixed condition, contrasted implicitly with divine immortality. This passage functions as a narrative articulation of the mortal lot, a motif that underlies the entire ninth tablet's opening movement.
+  evidence_citations:
+  - "Gumilev 1919, Tablet IX: 'Я умру! Не такой же ль и я, как Эабани?'"
+  - "Dyakonov 1961, Tablet IX: 'И я не так ли умру, как Энкиду?'"
+  - George 2003, SB IX 3
+  methodology_fit_warning: false
+  ai_generated: true
+  generated_by_model: claude-sonnet-4-6
+- code: TMI-F110
+  label: Journey to earthly paradise
+  proposed_tier: contested
+  status: confirmed
+  rationale: The journey to Utnapishtim at the ends of the earth—crossing mountain passes at night, traversing lion-haunted terrain—is cognate with the journey-to-earthly-paradise motif, as Utnapishtim dwells at the mouth of the rivers in a remote paradisiacal location. However, the destination is more precisely a liminal threshold realm than a conventional paradise, and the motif in Tablet IX is only incipient; the full journey is elaborated in later tablets. Application here is defensible but partial, warranting a contested tier.
+  evidence_citations:
+  - "Gumilev 1919, Tablet IX: 'К мощи Ут-напиштима... Путь я предпринял'"
+  - "Dyakonov 1961, Tablet IX: 'Под власть Утнапишти... Путь я предпринял'"
+  - George 2003, SB IX 1–6
+  methodology_fit_warning: true
+  methodology_fit_note: The TMI-F110 paradise journey motif fits the overall arc of Tablet IX–XI better than this specific opening passage; applying it here risks conflating narrative destination with the journey's initiation phase. The annotation is nonetheless defensible as marking the moment of departure toward that destination.
+  ai_generated: true
+  generated_by_model: claude-sonnet-4-6
+- code: TMI-D1810
+  label: Magic knowledge through dreams
+  proposed_tier: contested
+  status: confirmed
+  rationale: The Gumilev translation notes that Gilgamesh 'lay down on the earth and was frightened by a terrible dream,' implying a dream vision at the mountain pass—a recurrent device in the epic whereby divine or prophetic content is communicated to the hero nocturnally. However, the content of this specific dream is not elaborated in either translation provided, making full TMI-D1810 application uncertain. The Dyakonov version replaces the dream with a waking vision of lions, further complicating the textual basis. The annotation remains contested due to this translational divergence.
+  evidence_citations:
+  - "Gumilev 1919, Tablet IX: 'Лег он на землю, и страшными сном был испуган'"
+  - George 2003, SB IX 10–15
+  methodology_fit_warning: true
+  methodology_fit_note: "The two source translations diverge significantly at this point: Gumilev introduces a frightening dream, while Dyakonov describes a waking encounter with lions. This translational discrepancy means the dream motif cannot be confidently assigned without direct recourse to the Akkadian source, limiting the annotation's reliability."
+  ai_generated: true
+  generated_by_model: claude-sonnet-4-6

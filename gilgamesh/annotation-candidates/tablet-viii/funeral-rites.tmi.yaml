@@ -1,0 +1,48 @@
+_sisyphus_version: '0.1'
+nas: nms://gilgamesh/tablet-viii/funeral-rites
+track: tmi
+annotations:
+- code: TMI-A1335
+  label: Origin of death
+  proposed_tier: reconstructed
+  status: confirmed
+  rationale: The divine voice (Эллиль) speaks from heaven to declare that death is the appointed lot of mortals — 'Издревле, Гильгамеш, назначено людям' — framing human mortality as a primordial decree. This directly encodes the mythological motif explaining why humans die while gods do not, triggered by Gilgamesh's confrontation with Enkidu's death. The passage draws the structural opposition between mortal fate and divine permanence that underlies the entire quest narrative to follow.
+  evidence_citations:
+  - Dyakonov 1961, Tablet VIII ('Издревле, Гильгамеш, назначено людям')
+  - George 2003, SB VIII 86–91
+  methodology_fit_warning: false
+  ai_generated: true
+  generated_by_model: claude-sonnet-4-6
+- code: TMI-H1376.3
+  label: Quest for immortality
+  proposed_tier: reconstructed
+  status: confirmed
+  rationale: "Gilgamesh's lament over Enkidu explicitly crystallises his terror of death and foreshadows the quest narrative: 'И боюсь теперь смерти, и бегу в пустынное поле… И не лягу ли я, как он, чтоб вовек не подняться?' This fear-of-death declaration functions as the motivational seed of the immortality quest that will dominate Tablets IX–XI. The motif is incipient here rather than fully enacted, but the passage serves as the quest's narrative origin point."
+  evidence_citations:
+  - Gumilev 1919, Tablet VIII ('И боюсь теперь смерти, и бегу в пустынное поле')
+  - George 2003, SB VIII 56–61
+  methodology_fit_warning: false
+  ai_generated: true
+  generated_by_model: claude-sonnet-4-6
+- code: TMI-Q2
+  label: Kind and unkind
+  proposed_tier: contested
+  status: confirmed
+  rationale: The passage juxtaposes Gilgamesh's exemplary devotion to Enkidu — six days of mourning, commissioning a magnificent funerary statue, elaborate offerings — against the implicit norm of ordinary human behaviour described by the divine decree. While the Q2 motif typically operates across two characters contrasted within a single narrative episode, here the contrast is between the hero's extraordinary grief-observance and the mundane lot of farmers and shepherds declared by Ellil. The fit is partial and the application is debatable.
+  evidence_citations:
+  - Dyakonov 1961, Tablet VIII ('Веселым людям скорбный обряд поручил я'; 'Земледелец пашет землю, урожай собирает')
+  methodology_fit_warning: true
+  methodology_fit_note: TMI-Q2 is primarily designed for folktale structures contrasting two characters (kind/unkind siblings, etc.). Applied to epic lamentation and divine decree, the motif maps only loosely. The annotation captures a real structural contrast but the framework was not designed for this use case; confidence is accordingly reduced to 'contested'.
+  ai_generated: true
+  generated_by_model: claude-sonnet-4-6
+- code: TMI-D1810
+  label: Magic knowledge through dreams
+  proposed_tier: contested
+  status: confirmed
+  rationale: The sudden divine voice from heaven — 'Внезапно с неба призыв раздался' — delivering knowledge about the ordained nature of human mortality to Gilgamesh has structural affinity with the motif of supernaturally conveyed prophetic or cosmological knowledge. However, the passage presents this as a waking divine address (Ellil speaking) rather than a dream vision per se, making the TMI-D1810 code an imperfect fit. The motif is more fully instantiated in Tablet VII (Enkidu's dream) and the application here is at best peripheral.
+  evidence_citations:
+  - Dyakonov 1961, Tablet VIII ('Эллиль услышал уст его слово / Внезапно с неба призыв раздался')
+  methodology_fit_warning: true
+  methodology_fit_note: TMI-D1810 specifies knowledge conveyed through dreams; this passage presents a waking divine proclamation. The annotation is included only to flag the structural parallel to dream-revelation sequences elsewhere in the epic, and is marked 'contested' because the mode of transmission differs from the motif's core definition.
+  ai_generated: true
+  generated_by_model: claude-sonnet-4-6

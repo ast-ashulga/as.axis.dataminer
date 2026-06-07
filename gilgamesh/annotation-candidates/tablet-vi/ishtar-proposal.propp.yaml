@@ -1,0 +1,54 @@
+_sisyphus_version: '0.1'
+nas: nms://gilgamesh/tablet-vi/ishtar-proposal
+track: propp
+annotations:
+- code: PROPP-6
+  label: Trickery
+  proposed_tier: contested
+  status: confirmed
+  rationale: Ishtar's elaborate proposal to Gilgamesh — offering a golden chariot, tribute from kings, and miraculous fertility of herds — functions as a form of enticement or deceptive seduction. She presents herself and the union as wholly beneficial, concealing the pattern of destruction she has visited upon previous lovers. This maps loosely to the villain's attempt to deceive the hero, though Ishtar is not a conventional Proppian villain and the 'trickery' is seductive rather than conspiratorial, which creates a methodological tension.
+  evidence_citations:
+  - "Gumilev 1919, Tablet VI: 'Ну, Гильгамеш, отныне ты мой любовник! / Твоим вожделеньем я хочу насладиться'"
+  - "Dyakonov 1961, Tablet VI: 'Давай, Гильгамеш, будь мне супругом, / Зрелость тела в дар подари мне!'"
+  - George 2003, SB VI 6–21
+  methodology_fit_warning: true
+  methodology_fit_note: Ishtar does not fit cleanly into the Proppian villain role across the epic as a whole; her function here is closer to a donor-adversary hybrid. The trickery is implicit (concealment of her destructive history) rather than explicit deception, making this mapping contested rather than reconstructed with confidence.
+  ai_generated: true
+  generated_by_model: claude-sonnet-4-6
+- code: PROPP-7
+  label: Complicity
+  proposed_tier: contested
+  status: confirmed
+  rationale: "PROPP-7 would require the hero to be deceived or to submit to the villain's overtures. Here the function is conspicuously inverted: Gilgamesh explicitly refuses and deconstructs the deception rather than succumbing to it. The absence of complicity is structurally significant and suggests the narrative deliberately subverts this expected morphological step. Annotation is included to flag the structural gap rather than to assert the function's presence."
+  evidence_citations:
+  - "Gumilev 1919, Tablet VI: 'Сохрани для себя свои богатства'"
+  - "Dyakonov 1961, Tablet VI: 'Но в жены себе тебя не возьму я!'"
+  methodology_fit_warning: true
+  methodology_fit_note: "This is a structural inversion of PROPP-7: the hero actively resists rather than submitting. Annotating the negation of a Propp function is methodologically unusual but defensible as a marker of the epic's distinctive literary self-consciousness. Confidence is contested because the function is negated, not instantiated."
+  ai_generated: true
+  generated_by_model: claude-sonnet-4-6
+- code: PROPP-8
+  label: Villainy / Lack
+  proposed_tier: reconstructed
+  status: confirmed
+  rationale: Gilgamesh's lengthy catalogue of Ishtar's former lovers — Tammuz, the shepherd, Ishullanu, the lion, the horse — documents a pattern of harm inflicted by the goddess on those who entered into union with her. This recitation functions narratively to establish Ishtar as a source of villainy and to identify the lack (of a trustworthy divine patron or safe union) that motivates subsequent events, including Ishtar's vengeful dispatch of the Bull of Heaven. The harm to prior victims is cited explicitly as evidence of ongoing villainy.
+  evidence_citations:
+  - "Gumilev 1919, Tablet VI: 'Любовнику юности первой твоей, Таммузу, / На годы и годы назначила ты стенанья!'"
+  - "Gumilev 1919, Tablet VI: 'Ты избила его, превратила в гиену'"
+  - "Dyakonov 1961, Tablet VI: 'Давай перечислю, с кем ты блудила!'"
+  - George 2003, SB VI 42–79
+  methodology_fit_warning: false
+  ai_generated: true
+  generated_by_model: claude-sonnet-4-6
+- code: PROPP-10
+  label: Beginning Counter-Action
+  proposed_tier: reconstructed
+  status: confirmed
+  rationale: "Gilgamesh's explicit, sustained refusal of Ishtar's proposal constitutes a decisive act of counter-action: he resolves not to submit to the threat posed by the goddess and articulates this resolution at length. This is the moment at which the hero actively moves against the force of villainy rather than remaining passive. The counter-action here sets in motion the chain of events (Ishtar's wrath, the Bull of Heaven) that drives the remainder of Tablet VI."
+  evidence_citations:
+  - "Gumilev 1919, Tablet VI: 'Гильгамеш отверзает уста и вещает, / К владычице Иштар обращает слово'"
+  - "Dyakonov 1961, Tablet VI: 'Гильгамеш уста открыл и молвит, вещает он государыне Иштар'"
+  - George 2003, SB VI 22–79
+  methodology_fit_warning: false
+  ai_generated: true
+  generated_by_model: claude-sonnet-4-6

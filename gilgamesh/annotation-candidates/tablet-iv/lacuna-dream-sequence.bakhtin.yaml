@@ -1,0 +1,40 @@
+_sisyphus_version: '0.1'
+nas: nms://gilgamesh/tablet-iv/lacuna-dream-sequence
+track: bakhtin
+annotations:
+- code: BAKHTIN-ROAD
+  label: Road / Journey Chronotope
+  proposed_tier: reconstructed
+  status: confirmed
+  rationale: "The dream-sequence episode of SBV Tablet IV is structurally embedded within the journey to the Cedar Forest, one of the most paradigmatic road chronotopes in ancient epic: time and space are fused in the forward motion of Gilgamesh and Enkidu's travel, punctuated by nocturnal camp-stops at which prophetic dreams erupt. Each dream station marks a temporal-spatial node along the route, making the road itself the generative site of revelation. Because the source passage is a lacuna rather than translated text, this annotation is necessarily reconstructed from the SBV framework as established by George 2003."
+  evidence_citations:
+  - George 2003, SB IV 1–200 (reconstructed dream sequence)
+  - George 2003, SB IV 81–91 (camp-stop and dream interpretation frame)
+  methodology_fit_warning: true
+  methodology_fit_note: 'Significant methodology-fit concern: the source passage is explicitly identified as absent — a lacuna, scribal omission, or condensed translation — meaning there is no analyzable text in this source. Any chronotopic annotation is therefore applied to the reconstructed SBV content as known from George 2003, not to the source document itself. This risks annotating a scholarly reconstruction rather than a witnessed passage, which exceeds the normal scope of this framework. The annotation is defensible only as a projection from the canonical SBV onto the gap, and must be clearly flagged as such.'
+  ai_generated: true
+  generated_by_model: claude-sonnet-4-6
+- code: BAKHTIN-THRESHOLD
+  label: Threshold Chronotope
+  proposed_tier: contested
+  status: confirmed
+  rationale: "The dream episodes of Tablet IV function as threshold moments: Gilgamesh stands repeatedly at the boundary between waking and prophetic sleep, between courage and terror, and between the known world and the Cedar Forest domain of Humbaba. Each dream interpretation by Enkidu reframes the omen as a sign of crossing over into a new state. The threshold character is contested here because (a) the source text is absent, and (b) Bakhtin's threshold chronotope emphasizes suspended biographical time at a crisis point, whereas the Tablet IV dreams are iterative rather than singular — a pattern that somewhat diffuses the threshold's definitional sharpness."
+  evidence_citations:
+  - George 2003, SB IV (dream series, reconstructed)
+  - George 2003, SB IV 102–116 (Enkidu's reinterpretation of ill omen as favorable)
+  methodology_fit_warning: true
+  methodology_fit_note: "Doubly contested application: first, the passage is a lacuna so no source text is analyzed; second, the iterative, serial structure of the Tablet IV dreams (five dreams, each interpreted) distributes the threshold moment across multiple instances rather than concentrating it at a single biographical crisis, which creates tension with Bakhtin's formulation of the threshold as a unique, suspended liminal instant. The annotation is proposed as 'contested' to reflect both the textual and theoretical uncertainties."
+  ai_generated: true
+  generated_by_model: claude-sonnet-4-6
+- code: BAKHTIN-DIVINE
+  label: Divine / Cosmic Chronotope
+  proposed_tier: contested
+  status: confirmed
+  rationale: "The prophetic dreams of Tablet IV introduce a cosmological perspective: divine or cosmic forces communicate through Gilgamesh's sleeping mind, embedding his heroic journey within a mythic temporal frame that exceeds ordinary human time. The dream-content — mountains falling, thunderbirds, celestial combat imagery — positions the Cedar Forest expedition within a cosmological narrative overseen by powers beyond the human actors. This annotation is contested because the dreams are mediated through the hero's subjective experience rather than presenting an explicit divine council or cosmic viewpoint in the Bakhtinian sense."
+  evidence_citations:
+  - George 2003, SB IV 83–100 (mountain-dream with Shamash imagery)
+  - George 2003, SB IV (thunderbird / Anzu dream, fragmentary)
+  methodology_fit_warning: true
+  methodology_fit_note: The lacuna status of this passage in the source text means the annotation draws entirely on George 2003's reconstruction. Additionally, Bakhtin's Divine/Cosmic chronotope was not formulated with ancient Near Eastern dream-omens in mind; its application here requires analogical extension from Greek epic (divine councils, cosmic overviews) to Mesopotamian oneiromancy, which introduces a methodology-fit concern regarding cultural translation of the framework.
+  ai_generated: true
+  generated_by_model: claude-sonnet-4-6

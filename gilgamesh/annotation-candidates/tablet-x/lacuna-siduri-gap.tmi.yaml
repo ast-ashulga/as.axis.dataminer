@@ -1,0 +1,40 @@
+_sisyphus_version: '0.1'
+nas: nms://gilgamesh/tablet-x/lacuna-siduri-gap
+track: tmi
+annotations:
+- code: TMI-H900
+  label: Tasks and quests
+  proposed_tier: contested
+  status: confirmed
+  rationale: The lacuna occurs at a structurally pivotal moment in Tablet X where Gilgamesh arrives at the tavern of Siduri seeking directions to Uta-napishti as part of his quest for immortality. Although the lacuna obscures the precise content of Siduri's initial response, the surrounding dialogue firmly establishes the quest frame. However, because the missing text may have contained significant narrative content—including conditions, refusals, or redirections—the precise instantiation of TMI-H900 (assignment of a task or quest condition) within this gap cannot be confirmed, making the annotation contested.
+  evidence_citations:
+  - Dyakonov 1961, Tablet X (lacuna marked between Gilgamesh's threat and Siduri's resumptive speech)
+  - George 2003, SB X (Siduri episode, fragmentary)
+  methodology_fit_warning: true
+  methodology_fit_note: 'Annotating a lacuna raises a fundamental methodology-fit concern: the TMI framework requires textual evidence to anchor motif identification, and a missing passage cannot supply that evidence. Any annotation applied here is necessarily inferential, reconstructed from surrounding context rather than from the content of the gap itself. The annotation is defensible only insofar as the quest frame is established by the extant surrounding lines, not by anything demonstrably present within the lacuna.'
+  ai_generated: true
+  generated_by_model: claude-sonnet-4-6
+- code: TMI-H1376.3
+  label: Quest for immortality
+  proposed_tier: reconstructed
+  status: confirmed
+  rationale: The Siduri episode in Tablet X is embedded within Gilgamesh's overarching quest for immortality following Enkidu's death. The lacuna falls within a dialogue that, in all extant parallel witnesses, concerns Gilgamesh's grief-driven journey and his demand for knowledge of how to reach Uta-napishti. The quest-for-immortality motif is robustly attested in the lines immediately preceding and following the gap, making its presence across the lacuna contextually secure even if textually unverifiable at the exact missing lines.
+  evidence_citations:
+  - Dyakonov 1961, Tablet X (framing context surrounding the lacuna)
+  - George 2003, SB X 1–21 (Gilgamesh's arrival at the tavern and statement of purpose)
+  methodology_fit_warning: true
+  methodology_fit_note: "Because this annotation is applied to a lacuna rather than extant text, it relies on narrative inference from surrounding lines. The methodology-fit concern is real but manageable: TMI-H1376.3 is so thoroughly established by the passage's extant envelope that its presence across the gap is a reasonable scholarly reconstruction, not a speculative imposition. The annotation should nonetheless be flagged as reconstructed-from-context, not from the missing text itself."
+  ai_generated: true
+  generated_by_model: claude-sonnet-4-6
+- code: TMI-T91
+  label: Refusal of divine lover
+  proposed_tier: contested
+  status: confirmed
+  rationale: Some reconstructions of the Siduri episode, drawing on Old Babylonian parallels (notably the Meissner tablet), suggest that Siduri's initial response may have included elements of divine or semi-divine feminine counsel that parallels the Ishtar-refusal dynamic annotated under TMI-T91 elsewhere in the epic. However, Siduri is more consistently characterized as an alewife-goddess offering wisdom than as a lover making advances, and the lacuna makes it impossible to confirm whether any such dynamic was present in the missing lines of the SBV tradition.
+  evidence_citations:
+  - Dyakonov 1961, Tablet X (lacuna; Siduri's role as divine tavern-keeper)
+  - George 2003, SB X and OB Meissner tablet (comparative reconstruction)
+  methodology_fit_warning: true
+  methodology_fit_note: "The application of TMI-T91 to a lacuna is doubly contested: first, because Siduri's role does not straightforwardly map onto the 'refused divine lover' archetype even in extant text; second, because the missing passage cannot be read directly. This annotation is presented as a speculative flag for scholars working on lacuna reconstruction, not as a confident motif identification. The methodology-fit concern is severe, and this annotation should be treated as a research prompt rather than a finding."
+  ai_generated: true
+  generated_by_model: claude-sonnet-4-6

@@ -1,0 +1,32 @@
+_sisyphus_version: '0.1'
+_generated_at: '2026-06-06T10:49:55.301052+00:00'
+_pipeline_run_id: phase-c
+fragment:
+  nas: nms://gilgamesh/tablet-xi/sleep-challenge
+  parent_nas: nms://gilgamesh/tablet-xi
+  tradition_id: gilgamesh
+  confidence_tier: reconstructed
+  available_layers:
+  - surface
+  methodology_fit_warning: false
+content:
+- locale: ru
+  layer: surface
+  body: 'Ут-напишти бросает Гильгамешу вызов: не спать шесть дней и семь ночей, намекая, что неспособность победить сон свидетельствует о невозможности обрести бессмертие [NAS: nms://gilgamesh/tablet-xi/sleep-challenge]. Однако едва герой садится на землю, сон немедленно овладевает им — в обоих переводах он уподобляется буре или пустынной мгле [NAS: nms://gilgamesh/tablet-xi/sleep-challenge]. Супруга Ут-напишти предлагает разбудить Гильгамеша, однако Ут-напишти, по всей видимости, скептически отзывается о человеческой природе и велит ей печь хлебы у изголовья спящего, отмечая прошедшие дни [NAS: nms://gilgamesh/tablet-xi/sleep-challenge]. Семь хлебов фиксируют семь дней сна: их последовательное разложение служит неопровержимым вещественным доказательством [NAS: nms://gilgamesh/tablet-xi/sleep-challenge]. Проснувшись, Гильгамеш утверждает, что спал лишь мгновение, но хлебы опровергают его слова [NAS: nms://gilgamesh/tablet-xi/sleep-challenge]. Герой признаёт своё поражение, восклицая, что смерть преследует его повсюду [NAS: nms://gilgamesh/tablet-xi/sleep-challenge].'
+  status: confirmed
+  confidence_tier: reconstructed
+  ai_generated: true
+  reviewed_by:
+  reviewed_at:
+  translation_id:
+  translation_author:
+  translation_year:
+  translation_license:
+  grounding_citations:
+  - nms://gilgamesh/tablet-xi/sleep-challenge
+  - nms://gilgamesh/tablet-xi/sleep-challenge
+  - nms://gilgamesh/tablet-xi/sleep-challenge
+  - nms://gilgamesh/tablet-xi/sleep-challenge
+  - nms://gilgamesh/tablet-xi/sleep-challenge
+  - nms://gilgamesh/tablet-xi/sleep-challenge
+  generated_by_model: claude-sonnet-4-6

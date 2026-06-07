@@ -1,0 +1,49 @@
+_sisyphus_version: '0.1'
+nas: nms://gilgamesh/tablet-xi/lacuna-end-of-plant-and-return
+track: bakhtin
+annotations:
+- code: BAKHTIN-ROAD
+  label: Road / Journey Chronotope
+  proposed_tier: reconstructed
+  status: confirmed
+  rationale: 'The return-to-Uruk episode, absent from this witness but attested in the canonical SBV, constitutes a classic road chronotope: Gilgamesh and Urshanabi travel back through the wilderness zones toward the city, and the journey itself carries narrative weight as the culmination of the entire epic quest. The road back is where Gilgamesh loses the plant to the serpent — a chance encounter of devastating consequence that fuses spatial motion with catastrophic temporal reversal. Since the passage is lacunose, this annotation is necessarily reconstructed from parallel witnesses rather than the present text.'
+  evidence_citations:
+  - George 2003, SB XI 281–307 (plant-discovery and serpent-theft sequence, attested in canonical edition but absent from this witness)
+  methodology_fit_warning: true
+  methodology_fit_note: "Significant methodology-fit concern: the source text ends abruptly mid-sentence and the annotated episodes are entirely absent from this witness. All chronotopic annotation here is extrapolated from the canonical SBV as reconstructed by George (2003), not from the present lacunose source. The annotation describes the textual tradition rather than the document at hand. Confidence is accordingly limited; 'reconstructed' is the only defensible tier."
+  ai_generated: true
+  generated_by_model: claude-sonnet-4-6
+- code: BAKHTIN-THRESHOLD
+  label: Threshold Chronotope
+  proposed_tier: contested
+  status: confirmed
+  rationale: "The moment of the serpent's theft of the plant of immortality — reconstructed from canonical SBV XI — functions as a supreme threshold chronotope: time is suspended at the boundary between the possibility of restored youth and its permanent loss. Gilgamesh stands at the liminal divide between mortal and potentially renewed life, and the theft forecloses that crossing irrevocably. The threshold here is not a spatial gate but an existential boundary. Because this episode is wholly absent from the present witness, application is contested rather than merely reconstructed."
+  evidence_citations:
+  - George 2003, SB XI 289–300 (serpent's theft and Gilgamesh's lament, canonical reconstruction)
+  methodology_fit_warning: true
+  methodology_fit_note: The threshold annotation is contested because (a) the episode is lacunose in this witness entirely, and (b) whether Bakhtin's threshold concept fully maps onto this mythological loss-of-immortality moment rather than a literal spatial threshold is itself debatable — Bakhtin's own examples emphasize crisis at a physical liminal space, and extending it to the serpent-theft requires interpretive latitude. Both the textual absence and the conceptual stretch warrant 'contested' tier.
+  ai_generated: true
+  generated_by_model: claude-sonnet-4-6
+- code: BAKHTIN-CASTLE
+  label: Castle / Palace Chronotope
+  proposed_tier: reconstructed
+  status: confirmed
+  rationale: "The return-to-Uruk episode, reconstructed from canonical SBV XI 323–328, closes the epic with Gilgamesh directing Urshanabi to observe the walls of Uruk — the city whose stonework embodies dynastic time, historical memory, and the permanence of civilizational achievement that outlasts the individual hero. The walls of Uruk function as a castle/palace chronotope: legendary and historical time are made concrete in their masonry, and the hero's identity is ultimately anchored not in immortality but in the enduring monument. This is absent from the present witness but is the canonical closing movement of SBV Tablet XI."
+  evidence_citations:
+  - George 2003, SB XI 323–328 (Uruk wall-viewing closure, canonical SBV frame)
+  - George 2003, SB I 9–23 (opening wall-description frame, establishing the chronotopic significance of Uruk's walls across the epic)
+  methodology_fit_warning: true
+  methodology_fit_note: As with all annotations in this segment, the castle/palace chronotope is applied to material entirely absent from this lacunose witness and must be reconstructed from canonical SBV attestation. The annotation is methodologically valid as a description of the tradition but cannot be grounded in this specific document.
+  ai_generated: true
+  generated_by_model: claude-sonnet-4-6
+- code: BAKHTIN-UNDERWORLD
+  label: Underworld / Netherworld Chronotope
+  proposed_tier: contested
+  status: confirmed
+  rationale: "Tablet XII (the descent-for-pukku episode), likewise absent from this witness, is the most explicit underworld chronotope in the Gilgamesh tradition: Enkidu descends into the realm of the dead, time is inverted or suspended, and Gilgamesh receives a ghostly report of the netherworld's conditions from his friend's shade. This constitutes a textbook instance of Bakhtin's underworld chronotope — movement across the death boundary and encounter with the dead. The annotation is contested because Tablet XII's status as integral to the SBV is itself a matter of scholarly debate (it may be a later Akkadian translation of a Sumerian source appended to the canonical eleven-tablet composition)."
+  evidence_citations:
+  - George 2003, SB XII (Tablet XII full reconstruction and discussion of its compositional status, pp. 47–54 and 733–735)
+  methodology_fit_warning: true
+  methodology_fit_note: "Double contestation applies here: (1) Tablet XII is absent from this witness entirely, requiring full extrapolation from the canonical edition; (2) Tablet XII's integration into the SBV is contested by George and others who view it as a secondary appendage rather than an original compositional element. Annotating it as part of this source tradition's chronotopic repertoire is defensible at the level of the textual tradition but not attributable to this specific witness."
+  ai_generated: true
+  generated_by_model: claude-sonnet-4-6

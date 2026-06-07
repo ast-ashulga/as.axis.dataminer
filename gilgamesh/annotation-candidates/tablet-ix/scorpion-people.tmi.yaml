@@ -1,0 +1,75 @@
+_sisyphus_version: '0.1'
+nas: nms://gilgamesh/tablet-ix/scorpion-people
+track: tmi
+annotations:
+- code: TMI-F10
+  label: Journey to heaven
+  proposed_tier: contested
+  status: confirmed
+  rationale: The passage describes Gilgamesh's approach to Mount Mashu, whose peaks touch the vault of heaven ('Наверху металла небес достигают' / 'Головы их касался свод небесный'). The road of Shamash through the mountain is a liminal cosmic pathway between the mortal world and divine/celestial realms, making TMI-F10 applicable, though the journey is more precisely a transit through a cosmic underworld tunnel than a straightforward ascent to heaven. The code is therefore contested since the destination is Utnapishtim at the ends of the earth rather than a heavenly realm proper.
+  evidence_citations:
+  - "Dyakonov 1961, Tablet IX: 'Наверху металла небес достигают'"
+  - "Gumilev 1919, Tablet IX: 'Головы их касался свод небесный'"
+  - George 2003, SB IX 38–40
+  methodology_fit_warning: true
+  methodology_fit_note: The TMI-F10 code presupposes a journey upward to a divine realm, whereas the road of Shamash through Mashu leads horizontally or downward through darkness before emerging at an earthly paradise. The fit is approximate; TMI-F110 (Journey to earthly paradise) may be more precise for the ultimate destination.
+  ai_generated: true
+  generated_by_model: claude-sonnet-4-6
+- code: TMI-F110
+  label: Journey to earthly paradise
+  proposed_tier: reconstructed
+  status: confirmed
+  rationale: Gilgamesh explicitly states his destination is Utnapishtim, the flood survivor who was granted eternal life and dwells at the ends of the earth — a classic earthly paradise motif. The Scorpion-man's warning that no mortal has ever traversed this path reinforces the extraordinary, paradise-boundary nature of the journey. This is the strongest applicable TMI code for the overarching narrative function of the scene.
+  evidence_citations:
+  - "Gumilev 1919, Tablet IX: 'К Утнапиштим, отцу моему, иду я поспешно, К тому, кто, выжив, в собранье богов был принят и жизнь обрел в нем!'"
+  - "Dyakonov 1961, Tablet IX: 'К Утнапишти, отцу моему, иду я поспешно'"
+  - George 2003, SB IX 77–79
+  methodology_fit_warning: false
+  ai_generated: true
+  generated_by_model: claude-sonnet-4-6
+- code: TMI-H1376.3
+  label: Quest for immortality
+  proposed_tier: reconstructed
+  status: confirmed
+  rationale: "The passage is a pivotal moment in Gilgamesh's quest for immortality: he explicitly tells the Scorpion-man that he travels to Utnapishtim to learn the secret of life and death ('Я спрошу у него о жизни и смерти!'). His grief over Enkidu's death and terror of his own mortality are stated as the direct motivations, making TMI-H1376.3 the primary quest motif operative in the scene."
+  evidence_citations:
+  - "Dyakonov 1961, Tablet IX: 'Устрашился я смерти, не найти мне жизни... Я спрошу у него о жизни и смерти!'"
+  - "Gumilev 1919, Tablet IX: 'Знаешь ли ты, где Ут-напиштим, мой отец, обитает, Он, возросший в собранье богов и вечную жизнь обретший?'"
+  - George 2003, SB IX 1–6, 77–79
+  methodology_fit_warning: false
+  ai_generated: true
+  generated_by_model: claude-sonnet-4-6
+- code: TMI-H900
+  label: Tasks and quests
+  proposed_tier: reconstructed
+  status: confirmed
+  rationale: The Scorpion-man effectively sets out the conditions and impossibility of the road through Mashu as a barrier to Gilgamesh's quest, functioning as a threshold guardian who defines the task's extreme difficulty. His warning — that no one has ever passed through this mountain — frames the passage as a formal quest threshold test, consistent with TMI-H900's broader category of hero assigned impossible or dangerous quest conditions.
+  evidence_citations:
+  - "Dyakonov 1961, Tablet IX: 'Никогда, Гильгамеш, не бывало дороги, Не ходил никто еще ходом горным'"
+  - "Gumilev 1919, Tablet IX: 'Нет никого, Гильгамеш, кто прошел бы такою дорогой'"
+  - George 2003, SB IX 87–96
+  methodology_fit_warning: false
+  ai_generated: true
+  generated_by_model: claude-sonnet-4-6
+- code: TMI-A1335
+  label: Origin of death
+  proposed_tier: contested
+  status: confirmed
+  rationale: Gilgamesh's lament over Enkidu — 'Его постигла судьба человека!' and his fear that he too will 'lie down never to rise again' — encapsulates the mythic theme of the mortal human condition versus divine immortality. The contrast between Utnapishtim's exceptional immortality and the universal human fate of death is explicitly articulated, reflecting the TMI-A1335 motif of why humans must die. However, this passage presents the existential consequence rather than an aetiological origin narrative proper, making the code contested.
+  evidence_citations:
+  - "Dyakonov 1961, Tablet IX: 'Его постигла судьба человека!... Так же, как он, и я не лягу ль, Чтоб не встать во веки веков?'"
+  - George 2003, SB IX 3–6
+  methodology_fit_warning: true
+  methodology_fit_note: TMI-A1335 is typically applied to aetiological myths explaining the origin of death as an institution. Here the motif appears as a lived existential crisis rather than a cosmogonic explanation. The application is defensible as a thematic resonance but should not be treated as a full structural match.
+  ai_generated: true
+  generated_by_model: claude-sonnet-4-6
+- code: TMI-D1810
+  label: Magic knowledge through dreams
+  proposed_tier: contested
+  status: confirmed
+  rationale: This code does not directly apply to the Tablet IX Scorpion-man scene itself, which involves a waking encounter rather than dream revelation. Including it would be a category error. Annotation excluded.
+  evidence_citations: []
+  methodology_fit_warning: true
+  methodology_fit_note: Code considered and rejected as inapplicable to this specific passage. Retained in output as a negative annotation for methodological transparency.
+  ai_generated: true
+  generated_by_model: claude-sonnet-4-6

@@ -1,0 +1,366 @@
+_sisyphus_version: '0.1'
+tradition_id: gilgamesh
+proposals:
+- proposed_nas: nms://gilgamesh/tablet-i/gilgamesh-of-uruk
+  parent_nas: nms://gilgamesh/tablet-i
+  tradition_id: gilgamesh
+  division: tablet-i
+  episode: gilgamesh-of-uruk
+  granularity: episode
+  status: confirmed
+  revised_nas:
+  collision_detected: false
+  methodology_fit_warning: false
+  methodology_fit_note:
+- proposed_nas: nms://gilgamesh/tablet-i/creation-of-enkidu
+  parent_nas: nms://gilgamesh/tablet-i
+  tradition_id: gilgamesh
+  division: tablet-i
+  episode: creation-of-enkidu
+  granularity: episode
+  status: confirmed
+  revised_nas:
+  collision_detected: false
+  methodology_fit_warning: false
+  methodology_fit_note:
+- proposed_nas: nms://gilgamesh/tablet-i/shamhat-and-enkidu
+  parent_nas: nms://gilgamesh/tablet-i
+  tradition_id: gilgamesh
+  division: tablet-i
+  episode: shamhat-and-enkidu
+  granularity: episode
+  status: confirmed
+  revised_nas:
+  collision_detected: false
+  methodology_fit_warning: false
+  methodology_fit_note:
+- proposed_nas: nms://gilgamesh/tablet-ii/enkidu-comes-to-uruk
+  parent_nas: nms://gilgamesh/tablet-ii
+  tradition_id: gilgamesh
+  division: tablet-ii
+  episode: enkidu-comes-to-uruk
+  granularity: episode
+  status: confirmed
+  revised_nas:
+  collision_detected: false
+  methodology_fit_warning: false
+  methodology_fit_note:
+- proposed_nas: nms://gilgamesh/tablet-ii/wrestling
+  parent_nas: nms://gilgamesh/tablet-ii
+  tradition_id: gilgamesh
+  division: tablet-ii
+  episode: wrestling
+  granularity: episode
+  status: confirmed
+  revised_nas:
+  collision_detected: false
+  methodology_fit_warning: false
+  methodology_fit_note:
+- proposed_nas: nms://gilgamesh/tablet-ii/friendship
+  parent_nas: nms://gilgamesh/tablet-ii
+  tradition_id: gilgamesh
+  division: tablet-ii
+  episode: friendship
+  granularity: episode
+  status: confirmed
+  revised_nas:
+  collision_detected: false
+  methodology_fit_warning: false
+  methodology_fit_note:
+- proposed_nas: nms://gilgamesh/tablet-iii/elders-counsel
+  parent_nas: nms://gilgamesh/tablet-iii
+  tradition_id: gilgamesh
+  division: tablet-iii
+  episode: elders-counsel
+  granularity: episode
+  status: confirmed
+  revised_nas:
+  collision_detected: false
+  methodology_fit_warning: true
+  methodology_fit_note: The tablet-iii material as preserved in this Russian translation is substantially abbreviated relative to the SBV exemplars studied by George (2003). Episodes for ninsun-prayer and departure are absent or conflated; applying Propp's function taxonomy to this truncated witness risks misattributing narrative absence to structural design rather than textual lacuna. The warning is epistemic, not cultural.
+- proposed_nas: nms://gilgamesh/tablet-iii/lacuna-ninsun-prayer-departure
+  parent_nas: nms://gilgamesh/tablet-iii
+  tradition_id: gilgamesh
+  division: tablet-iii
+  episode: lacuna-ninsun-prayer-departure
+  granularity: lacuna
+  status: confirmed
+  revised_nas:
+  collision_detected: false
+  methodology_fit_warning: true
+  methodology_fit_note: This lacuna covers two canonical SBV episodes (ninsun-prayer and departure). The absence renders Proppian donor-function and departure-function analysis speculative for this witness. Bakhtin's concept of dialogism likewise cannot be applied to unattested speech acts. Hedged interpretation is required.
+- proposed_nas: nms://gilgamesh/tablet-iv/cedar-forest-journey
+  parent_nas: nms://gilgamesh/tablet-iv
+  tradition_id: gilgamesh
+  division: tablet-iv
+  episode: cedar-forest-journey
+  granularity: episode
+  status: confirmed
+  revised_nas:
+  collision_detected: false
+  methodology_fit_warning: true
+  methodology_fit_note: The dream-sequence episode canonical to SBV tablet IV (the series of ominous dreams on the journey) is entirely absent from this witness. What is presented appears to be a condensed version of the journey dialogue. Structural analysis using Propp or TMI should be applied cautiously, with explicit acknowledgment that the dream-sequence sub-episode is unattested here.
+- proposed_nas: nms://gilgamesh/tablet-iv/lacuna-dream-sequence
+  parent_nas: nms://gilgamesh/tablet-iv
+  tradition_id: gilgamesh
+  division: tablet-iv
+  episode: lacuna-dream-sequence
+  granularity: lacuna
+  status: confirmed
+  revised_nas:
+  collision_detected: false
+  methodology_fit_warning: true
+  methodology_fit_note: Absence of the dream-sequence materially affects TMI motif indexing (e.g., D1810, prophetic dreams) and Proppian function assignment. Any structural claims for this division must be explicitly hedged against this gap.
+- proposed_nas: nms://gilgamesh/tablet-v/battle-with-humbaba
+  parent_nas: nms://gilgamesh/tablet-v
+  tradition_id: gilgamesh
+  division: tablet-v
+  episode: battle-with-humbaba
+  granularity: episode
+  status: confirmed
+  revised_nas:
+  collision_detected: false
+  methodology_fit_warning: false
+  methodology_fit_note:
+- proposed_nas: nms://gilgamesh/tablet-v/cedar-felling
+  parent_nas: nms://gilgamesh/tablet-v
+  tradition_id: gilgamesh
+  division: tablet-v
+  episode: cedar-felling
+  granularity: episode
+  status: confirmed
+  revised_nas:
+  collision_detected: false
+  methodology_fit_warning: false
+  methodology_fit_note:
+- proposed_nas: nms://gilgamesh/tablet-vi/ishtar-proposal
+  parent_nas: nms://gilgamesh/tablet-vi
+  tradition_id: gilgamesh
+  division: tablet-vi
+  episode: ishtar-proposal
+  granularity: episode
+  status: confirmed
+  revised_nas:
+  collision_detected: false
+  methodology_fit_warning: false
+  methodology_fit_note:
+- proposed_nas: nms://gilgamesh/tablet-vi/bull-of-heaven
+  parent_nas: nms://gilgamesh/tablet-vi
+  tradition_id: gilgamesh
+  division: tablet-vi
+  episode: bull-of-heaven
+  granularity: episode
+  status: confirmed
+  revised_nas:
+  collision_detected: false
+  methodology_fit_warning: false
+  methodology_fit_note:
+- proposed_nas: nms://gilgamesh/tablet-vi/enkidus-curse
+  parent_nas: nms://gilgamesh/tablet-vi
+  tradition_id: gilgamesh
+  division: tablet-vi
+  episode: enkidus-curse
+  granularity: episode
+  status: confirmed
+  revised_nas:
+  collision_detected: false
+  methodology_fit_warning: false
+  methodology_fit_note:
+- proposed_nas: nms://gilgamesh/tablet-vii/enkidus-dream
+  parent_nas: nms://gilgamesh/tablet-vii
+  tradition_id: gilgamesh
+  division: tablet-vii
+  episode: enkidus-dream
+  granularity: episode
+  status: confirmed
+  revised_nas:
+  collision_detected: false
+  methodology_fit_warning: false
+  methodology_fit_note:
+- proposed_nas: nms://gilgamesh/tablet-vii/enkidus-lament
+  parent_nas: nms://gilgamesh/tablet-vii
+  tradition_id: gilgamesh
+  division: tablet-vii
+  episode: enkidus-lament
+  granularity: episode
+  status: confirmed
+  revised_nas:
+  collision_detected: false
+  methodology_fit_warning: true
+  methodology_fit_note: The underworld vision passage contains partially reconstructed or elliptical text in this witness (the transition '"...Мы с тобою вместе все труды делили' suggests a gap). TMI motif F81 (descent to underworld) applies with moderate confidence, but the fragmentary state of this sub-episode warrants hedged application of any structural taxonomy.
+- proposed_nas: nms://gilgamesh/tablet-vii/enkidus-death
+  parent_nas: nms://gilgamesh/tablet-vii
+  tradition_id: gilgamesh
+  division: tablet-vii
+  episode: enkidus-death
+  granularity: episode
+  status: confirmed
+  revised_nas:
+  collision_detected: false
+  methodology_fit_warning: false
+  methodology_fit_note:
+- proposed_nas: nms://gilgamesh/tablet-viii/lament-for-enkidu
+  parent_nas: nms://gilgamesh/tablet-viii
+  tradition_id: gilgamesh
+  division: tablet-viii
+  episode: lament-for-enkidu
+  granularity: episode
+  status: confirmed
+  revised_nas:
+  collision_detected: false
+  methodology_fit_warning: false
+  methodology_fit_note:
+- proposed_nas: nms://gilgamesh/tablet-viii/funeral-rites
+  parent_nas: nms://gilgamesh/tablet-viii
+  tradition_id: gilgamesh
+  division: tablet-viii
+  episode: funeral-rites
+  granularity: episode
+  status: confirmed
+  revised_nas:
+  collision_detected: false
+  methodology_fit_warning: true
+  methodology_fit_note: The funeral-rites passage ends abruptly mid-sentence in this source text ('Пастух и охотник со зверем обитает,'), suggesting a lacuna or truncation at the tablet boundary. The following lacuna segment captures this gap. Proppian and Bakhtinian analysis of the speech from heaven should be flagged as potentially incomplete.
+- proposed_nas: nms://gilgamesh/tablet-viii/lacuna-end-of-tablet-viii
+  parent_nas: nms://gilgamesh/tablet-viii
+  tradition_id: gilgamesh
+  division: tablet-viii
+  episode: lacuna-end-of-tablet-viii
+  granularity: lacuna
+  status: confirmed
+  revised_nas:
+  collision_detected: false
+  methodology_fit_warning: true
+  methodology_fit_note: Incomplete passage; structural and motif analysis for the concluding portion of tablet VIII cannot be reliably applied to this witness.
+- proposed_nas: nms://gilgamesh/tablet-ix/gilgamesh-wandering
+  parent_nas: nms://gilgamesh/tablet-ix
+  tradition_id: gilgamesh
+  division: tablet-ix
+  episode: gilgamesh-wandering
+  granularity: episode
+  status: confirmed
+  revised_nas:
+  collision_detected: false
+  methodology_fit_warning: false
+  methodology_fit_note:
+- proposed_nas: nms://gilgamesh/tablet-ix/scorpion-people
+  parent_nas: nms://gilgamesh/tablet-ix
+  tradition_id: gilgamesh
+  division: tablet-ix
+  episode: scorpion-people
+  granularity: episode
+  status: confirmed
+  revised_nas:
+  collision_detected: false
+  methodology_fit_warning: false
+  methodology_fit_note:
+- proposed_nas: nms://gilgamesh/tablet-ix/garden-of-gems
+  parent_nas: nms://gilgamesh/tablet-ix
+  tradition_id: gilgamesh
+  division: tablet-ix
+  episode: garden-of-gems
+  granularity: episode
+  status: confirmed
+  revised_nas:
+  collision_detected: false
+  methodology_fit_warning: false
+  methodology_fit_note:
+- proposed_nas: nms://gilgamesh/tablet-x/siduri-and-gilgamesh
+  parent_nas: nms://gilgamesh/tablet-x
+  tradition_id: gilgamesh
+  division: tablet-x
+  episode: siduri-and-gilgamesh
+  granularity: episode
+  status: confirmed
+  revised_nas:
+  collision_detected: false
+  methodology_fit_warning: false
+  methodology_fit_note:
+- proposed_nas: nms://gilgamesh/tablet-x/lacuna-siduri-gap
+  parent_nas: nms://gilgamesh/tablet-x
+  tradition_id: gilgamesh
+  division: tablet-x
+  episode: lacuna-siduri-gap
+  granularity: lacuna
+  status: confirmed
+  revised_nas:
+  collision_detected: false
+  methodology_fit_warning: true
+  methodology_fit_note: The marked lacuna ('...') in the source text at this point interrupts the dialogue sequence. Bakhtinian dialogic analysis of the Siduri encounter is necessarily incomplete; the missing speech act cannot be reconstructed without additional manuscript evidence.
+- proposed_nas: nms://gilgamesh/tablet-x/urshanabi-crossing
+  parent_nas: nms://gilgamesh/tablet-x
+  tradition_id: gilgamesh
+  division: tablet-x
+  episode: urshanabi-crossing
+  granularity: episode
+  status: confirmed
+  revised_nas:
+  collision_detected: false
+  methodology_fit_warning: false
+  methodology_fit_note:
+- proposed_nas: nms://gilgamesh/tablet-x/waters-of-death
+  parent_nas: nms://gilgamesh/tablet-x
+  tradition_id: gilgamesh
+  division: tablet-x
+  episode: waters-of-death
+  granularity: episode
+  status: confirmed
+  revised_nas:
+  collision_detected: false
+  methodology_fit_warning: false
+  methodology_fit_note:
+- proposed_nas: nms://gilgamesh/tablet-xi/utnapishtim-meeting
+  parent_nas: nms://gilgamesh/tablet-xi
+  tradition_id: gilgamesh
+  division: tablet-xi
+  episode: utnapishtim-meeting
+  granularity: episode
+  status: confirmed
+  revised_nas:
+  collision_detected: false
+  methodology_fit_warning: false
+  methodology_fit_note:
+- proposed_nas: nms://gilgamesh/tablet-xi/flood-narrative
+  parent_nas: nms://gilgamesh/tablet-xi
+  tradition_id: gilgamesh
+  division: tablet-xi
+  episode: flood-narrative
+  granularity: episode
+  status: confirmed
+  revised_nas:
+  collision_detected: false
+  methodology_fit_warning: true
+  methodology_fit_note: The flood narrative is among the most comparatively studied passages in ancient Near Eastern literature, with direct parallels to the Atrahasis Epic and biblical Genesis. Applying TMI motif A1010 (deluge) and Propp's donor/task functions is structurally productive but must acknowledge the inter-traditional intertextuality. Bakhtinian heteroglossia is particularly apt for this passage given its embedded-narrative framing (Utnapishtim's first-person account within Gilgamesh's quest), though the category was developed for novelistic discourse and its application to oral-derived epic should be explicitly hedged.
+- proposed_nas: nms://gilgamesh/tablet-xi/sleep-challenge
+  parent_nas: nms://gilgamesh/tablet-xi
+  tradition_id: gilgamesh
+  division: tablet-xi
+  episode: sleep-challenge
+  granularity: episode
+  status: confirmed
+  revised_nas:
+  collision_detected: false
+  methodology_fit_warning: false
+  methodology_fit_note:
+- proposed_nas: nms://gilgamesh/tablet-xi/plant-of-immortality
+  parent_nas: nms://gilgamesh/tablet-xi
+  tradition_id: gilgamesh
+  division: tablet-xi
+  episode: plant-of-immortality
+  granularity: episode
+  status: confirmed
+  revised_nas:
+  collision_detected: false
+  methodology_fit_warning: true
+  methodology_fit_note: The source text breaks off mid-sentence here ('Пока не дойде'), indicating a lacuna or truncation at the end of the manuscript layer as presented. The canonical plant-of-immortality episode — including Utnapishtim's wife's revelation of the plant, Gilgamesh's diving to retrieve it, and the serpent's theft — is not represented in the extant passage. Structural analysis of this episode must rely on SBV parallels rather than this witness.
+- proposed_nas: nms://gilgamesh/tablet-xi/lacuna-end-of-plant-and-return
+  parent_nas: nms://gilgamesh/tablet-xi
+  tradition_id: gilgamesh
+  division: tablet-xi
+  episode: lacuna-end-of-plant-and-return
+  granularity: lacuna
+  status: confirmed
+  revised_nas:
+  collision_detected: false
+  methodology_fit_warning: true
+  methodology_fit_note: The abrupt truncation of the source text prevents any structural, motif-index, or dialogic analysis of the plant-of-immortality and return-to-uruk episodes from this witness. All analytical claims for these episodes must draw exclusively on other SBV manuscripts. The methodological fit warning is raised here as an epistemic necessity, not a cultural one.

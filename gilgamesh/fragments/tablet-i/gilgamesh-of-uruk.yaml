@@ -1,0 +1,31 @@
+_sisyphus_version: '0.1'
+_generated_at: '2026-06-06T10:49:34.755157+00:00'
+_pipeline_run_id: phase-c
+fragment:
+  nas: nms://gilgamesh/tablet-i/gilgamesh-of-uruk
+  parent_nas: nms://gilgamesh/tablet-i
+  tradition_id: gilgamesh
+  confidence_tier: reconstructed
+  available_layers:
+  - surface
+  methodology_fit_warning: false
+content:
+- locale: ru
+  layer: surface
+  body: 'Первая таблица эпоса открывается восхвалением Гильгамеша как существа, «на две трети бога и на одну — человека», обладающего несравненной мудростью и видевшего «всё до края вселенной» [NAS: nms://gilgamesh/tablet-i/gilgamesh-of-uruk]. Ему приписывается строительство великой стены Урука и священного храма Эаны, кирпичи которой, согласно тексту, были заложены семью мудрецами [NAS: nms://gilgamesh/tablet-i/gilgamesh-of-uruk]. Вместе с тем жители Урука жалуются на тираническое поведение царя: он не оставляет сына отцу и невесты жениху, днём и ночью притесняя подданных [NAS: nms://gilgamesh/tablet-i/gilgamesh-of-uruk]. Их мольбы достигают богов, которые обращаются к богине Аруру с просьбой создать Гильгамешу равного соперника, дабы город мог обрести покой [NAS: nms://gilgamesh/tablet-i/gilgamesh-of-uruk]. Таким образом, пассаж одновременно прославляет героя и обозначает нарративный импульс к появлению Энкиду [NAS: nms://gilgamesh/tablet-i/gilgamesh-of-uruk].'
+  status: confirmed
+  confidence_tier: reconstructed
+  ai_generated: true
+  reviewed_by:
+  reviewed_at:
+  translation_id:
+  translation_author:
+  translation_year:
+  translation_license:
+  grounding_citations:
+  - nms://gilgamesh/tablet-i/gilgamesh-of-uruk
+  - nms://gilgamesh/tablet-i/gilgamesh-of-uruk
+  - nms://gilgamesh/tablet-i/gilgamesh-of-uruk
+  - nms://gilgamesh/tablet-i/gilgamesh-of-uruk
+  - nms://gilgamesh/tablet-i/gilgamesh-of-uruk
+  generated_by_model: claude-sonnet-4-6

@@ -1,0 +1,32 @@
+_sisyphus_version: '0.1'
+_generated_at: '2026-06-06T10:49:34.820237+00:00'
+_pipeline_run_id: phase-c
+fragment:
+  nas: nms://gilgamesh/tablet-vi/enkidus-curse
+  parent_nas: nms://gilgamesh/tablet-vi
+  tradition_id: gilgamesh
+  confidence_tier: reconstructed
+  available_layers:
+  - surface
+  methodology_fit_warning: false
+content:
+- locale: ru
+  layer: surface
+  body: 'Иштар поднимается на стену Урука и, охваченная скорбью, произносит проклятие против Гильгамеша, убившего Небесного быка [NAS: nms://gilgamesh/tablet-vi/enkidus-curse]. Энкиду, услышав её слова, вырывает часть тела быка и бросает её в лицо богине, сопровождая этот жест дерзкими угрозами [NAS: nms://gilgamesh/tablet-vi/enkidus-curse]. В ответ Иштар созывает блудниц и плакальщиц, чтобы оплакать поверженного быка [NAS: nms://gilgamesh/tablet-vi/enkidus-curse]. Гильгамеш тем временем собирает ремесленников и хвастается рогами быка, украшенными лазуритом, которые он посвящает своему богу Лугальбанде [NAS: nms://gilgamesh/tablet-vi/enkidus-curse]. Герои триумфально шествуют по улицам Урука, а Гильгамеш провозглашает своё и Энкиду величие перед горожанами [NAS: nms://gilgamesh/tablet-vi/enkidus-curse]. Эпизод завершается пиром во дворце, после которого Энкиду засыпает и видит сон, толкование которого он намеревается сообщить другу [NAS: nms://gilgamesh/tablet-vi/enkidus-curse].'
+  status: confirmed
+  confidence_tier: reconstructed
+  ai_generated: true
+  reviewed_by:
+  reviewed_at:
+  translation_id:
+  translation_author:
+  translation_year:
+  translation_license:
+  grounding_citations:
+  - nms://gilgamesh/tablet-vi/enkidus-curse
+  - nms://gilgamesh/tablet-vi/enkidus-curse
+  - nms://gilgamesh/tablet-vi/enkidus-curse
+  - nms://gilgamesh/tablet-vi/enkidus-curse
+  - nms://gilgamesh/tablet-vi/enkidus-curse
+  - nms://gilgamesh/tablet-vi/enkidus-curse
+  generated_by_model: claude-sonnet-4-6

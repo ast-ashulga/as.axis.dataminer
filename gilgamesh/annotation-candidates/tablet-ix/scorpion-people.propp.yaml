@@ -1,0 +1,63 @@
+_sisyphus_version: '0.1'
+nas: nms://gilgamesh/tablet-ix/scorpion-people
+track: propp
+annotations:
+- code: PROPP-11
+  label: Departure
+  proposed_tier: reconstructed
+  status: confirmed
+  rationale: Gilgamesh arrives at Mount Mashu and, after his exchange with the Scorpion-people, is granted passage through the mountain gate and sets off along the Road of Shamash. This marks the formal departure into a liminal, otherworldly realm — the hero leaves the known world behind. The Scorpion-man's permission ('Ворота гор для тебя открыты') constitutes the threshold crossing that initiates the hero's journey into darkness.
+  evidence_citations:
+  - "Dyakonov 1961, Tablet IX: 'Ворота гор для тебя открыты' / 'Гильгамеш, когда услышал это, Человеку-скорпиону был послушен, По дороге Шамаша стопы он направил'"
+  - "Gumilev 1919, Tablet IX: 'Но иди, Гильгамеш, не медли в горных воротах'"
+  - George 2003, SB IX 136–138
+  methodology_fit_warning: true
+  methodology_fit_note: This is a secondary departure — Gilgamesh's primary departure from Uruk occurred earlier. Propp's morphology envisions a single departure (PROPP-11), but the Gilgamesh narrative stages multiple threshold crossings. The Mashu gate crossing functions structurally as a departure into a supernatural realm and is annotated as such, though it is more precisely a liminal threshold event than a domestic departure in the Proppian sense.
+  ai_generated: true
+  generated_by_model: claude-sonnet-4-6
+- code: PROPP-12
+  label: First Function of Donor
+  proposed_tier: contested
+  status: confirmed
+  rationale: The Scorpion-people function as threshold guardians who test Gilgamesh by interrogating his identity, origin, and purpose before granting or denying passage. In both translations, the Scorpion-man questions Gilgamesh — 'Зачем ты пришел, хочу узнать я' (Dyakonov) — probing his worthiness. This interrogation constitutes the donor's test prior to the provision of access (the magical or spatial gift of passage through the mountain).
+  evidence_citations:
+  - "Dyakonov 1961, Tablet IX: 'Почему идешь ты путем далеким, Какою дорогой меня достиг ты... Зачем ты пришел, хочу узнать я'"
+  - George 2003, SB IX 77–80
+  methodology_fit_warning: true
+  methodology_fit_note: "The Scorpion-people are not a donor in the conventional Proppian sense — they do not bestow a magical object or agent. Their 'gift' is information and permission to pass. The fit is partial: they test and then grant access, which aligns structurally with PROPP-12 but lacks the material magical agent typical of the function. Annotated as 'contested' accordingly."
+  ai_generated: true
+  generated_by_model: claude-sonnet-4-6
+- code: PROPP-13
+  label: Hero's Reaction
+  proposed_tier: reconstructed
+  status: confirmed
+  rationale: Gilgamesh responds to the Scorpion-people's challenge by composing himself despite his fear, then delivering a full and honest account of his grief, his motivation (Enkidu's death and fear of his own mortality), and his destination (Utnapishtim). This forthright, courageous response — 'В тоске моей плоти, в печали сердца... вперед пойду я!' — demonstrates the hero's correct reaction to the donor's test, which in Propp's scheme determines whether the hero will succeed.
+  evidence_citations:
+  - "Dyakonov 1961, Tablet IX: 'Он собрал свои мысли и склонился пред ними' / 'В тоске моей плоти, в печали сердца, И в жар и в стужу, в темноте и во мраке, Во вздохах и плаче, - вперед пойду я!'"
+  - "Gumilev 1919, Tablet IX: 'Он собрал свои мысли и склонился пред ними'"
+  methodology_fit_warning: false
+  ai_generated: true
+  generated_by_model: claude-sonnet-4-6
+- code: PROPP-15
+  label: Spatial Translocation
+  proposed_tier: reconstructed
+  status: confirmed
+  rationale: Once the Scorpion-man opens the mountain gate, Gilgamesh is directed along the Road of Shamash — a cosmic, supernatural path through total darkness beneath Mount Mashu. This passage constitutes a spatial translocation from the mortal world into an otherworldly domain, structurally analogous to Propp's function of the hero being conveyed to another realm. The twelve-league underground journey through impenetrable darkness ('На двенадцать поприщ простирается внутрь он') marks an unambiguous transition between cosmological zones.
+  evidence_citations:
+  - "Dyakonov 1961, Tablet IX: 'По дороге Шамаша стопы он направил' / 'На двенадцать поприщ простирается внутрь он: Темнота густа, не видно света'"
+  - "Gumilev 1919, Tablet IX: 'Мрак там глубок, и нет там света Ни при выходе солнца, ни при его возвращенье'"
+  - George 2003, SB IX 139–170
+  methodology_fit_warning: false
+  ai_generated: true
+  generated_by_model: claude-sonnet-4-6
+- code: PROPP-9
+  label: Mediation
+  proposed_tier: contested
+  status: confirmed
+  rationale: "Within Gilgamesh's speech to the Scorpion-man, the hero recounts the misfortune that has set him in motion: Enkidu's death and his own terror of mortality. This retrospective narration functions as an embedded mediation moment — the articulation of the lack ('Устрашился я смерти, не найти мне жизни') that drives the quest. Gilgamesh's declaration to the Scorpion-man of his intention to seek Utnapishtim echoes the mediation function by re-stating the driving lack at the threshold of the journey's most dangerous phase."
+  evidence_citations:
+  - "Dyakonov 1961, Tablet IX: 'Устрашился я смерти, не найти мне жизни: Мысль о герое не дает мне покоя!' / 'К Утнапишти, отцу моему, иду я поспешно'"
+  methodology_fit_warning: true
+  methodology_fit_note: PROPP-9 technically belongs to the initial movement of the narrative and has already been established earlier in the epic. Its appearance here is retrospective and embedded in dialogue rather than a new narrative event. It is annotated as 'contested' because while the thematic function (articulating the lack that motivates the quest) is present, it is a recapitulation rather than a structurally new instantiation of mediation.
+  ai_generated: true
+  generated_by_model: claude-sonnet-4-6

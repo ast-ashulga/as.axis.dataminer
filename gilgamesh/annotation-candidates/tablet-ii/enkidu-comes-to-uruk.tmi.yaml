@@ -1,0 +1,60 @@
+_sisyphus_version: '0.1'
+nas: nms://gilgamesh/tablet-ii/enkidu-comes-to-uruk
+track: tmi
+annotations:
+- code: TMI-F567.2
+  label: Wild man
+  proposed_tier: reconstructed
+  status: confirmed
+  rationale: Enkidu is explicitly described as a being raised apart from civilization, living among animals, having suckled animal milk and lacking knowledge of bread or beer. The pастухи (shepherds) identify him as 'порожденье степи' (offspring of the steppe) and remark on his animal-like origins. His superhuman physical strength and untamed nature prior to civilizing contact are consistent markers of the wild-man motif.
+  evidence_citations:
+  - Dyakonov 1961, Tablet II ('То, верно, Энкиду, порожденье степи... Молоко звериное сосал он!')
+  - George 2003, SB I 105–108
+  methodology_fit_warning: false
+  ai_generated: true
+  generated_by_model: claude-sonnet-4-6
+- code: TMI-B601.7
+  label: Woman civilizes wild man
+  proposed_tier: reconstructed
+  status: confirmed
+  rationale: The harlot (блудница) takes Enkidu by the hand, leads him to the shepherd's camp, teaches him to eat bread and drink beer, and anoints him with oil so that he 'resembles men.' This sequence of civilizing acts — dressing him, teaching human food customs, integrating him into human society — directly instantiates the motif of a woman drawing a wild man into civilization. The Dyakonov passage records these steps in sequential narrative detail.
+  evidence_citations:
+  - Dyakonov 1961, Tablet II ('За руку взяв, повела, как ребенка... Умастился елеем, уподобился людям, Одеждой оделся, стал похож на мужа')
+  - George 2003, SB II 37–51
+  methodology_fit_warning: false
+  ai_generated: true
+  generated_by_model: claude-sonnet-4-6
+- code: TMI-D1810
+  label: Magic knowledge through dreams
+  proposed_tier: reconstructed
+  status: confirmed
+  rationale: Gilgamesh recounts to his mother Ninsun a prophetic dream in which a star-like man falls upon him with the force of Anu's army; the dream is interpreted by the divine mother as a prophecy of the future companion Enkidu. The dream thus functions as a divinely conveyed foreknowledge of events, matching the TMI definition of prophetic or divine knowledge transmitted through a dream sequence. The Gumilev passage records both the dream and its authoritative maternal interpretation.
+  evidence_citations:
+  - Gumilev 1919, Tablet II ('Гильгамеш в Уруке во сне тебя видел; Пробудился и матери сон рассказал он')
+  - George 2003, SB I 245–270
+  methodology_fit_warning: false
+  ai_generated: true
+  generated_by_model: claude-sonnet-4-6
+- code: TMI-H900
+  label: Tasks and quests
+  proposed_tier: contested
+  status: confirmed
+  rationale: "The harlot's instruction to Enkidu to accompany her to Uruk and meet Gilgamesh functions structurally as an assigned mission or quest condition, framing Enkidu's journey as purposive rather than incidental. However, this is only a partial fit: TMI-H900 typically involves a formal task assignment by an authority figure with explicit stakes, whereas here the 'quest' is more a narrative redirection guided by the harlot's persuasion. The application is therefore contested."
+  evidence_citations:
+  - Gumilev 1919, Tablet II ('Эабани с блудницей в Урук вступают')
+  methodology_fit_warning: true
+  methodology_fit_note: The assignment of H900 is debatable because Enkidu's journey to Uruk lacks the formal quest-assignment structure the motif presupposes. The harlot's persuasion is closer to a narrative catalyst than a true task-setting episode; annotators should treat this as a structural parallel rather than a direct instantiation.
+  ai_generated: true
+  generated_by_model: claude-sonnet-4-6
+- code: TMI-Q2
+  label: Kind and unkind
+  proposed_tier: contested
+  status: confirmed
+  rationale: The segment implicitly contrasts Enkidu's transformation through the harlot's kindness — being clothed, fed, integrated — against Gilgamesh's initial role as a potential adversary whose rights of first night (брачный покой) Enkidu blocks. The eventual sitting 'как братья' (as brothers) suggests the resolution of this contrast through mutual recognition of worth. However, TMI-Q2 more strictly applies to tales that explicitly moralize contrasting treatment of kind vs. unkind characters, making this a loose fit.
+  evidence_citations:
+  - Gumilev 1919, Tablet II ('И садятся они, как братья, рядом')
+  - Dyakonov 1961, Tablet II ('В брачный покой Энкиду дверь заградил ногою')
+  methodology_fit_warning: true
+  methodology_fit_note: TMI-Q2 is primarily associated with folk-tale structures where moral contrast is explicit and didactic. Its application here is structurally suggestive but not a robust fit; the motif is better understood as a background pattern rather than a dominant narrative feature of this tablet segment.
+  ai_generated: true
+  generated_by_model: claude-sonnet-4-6

@@ -1,0 +1,31 @@
+_sisyphus_version: '0.1'
+_generated_at: '2026-06-06T10:49:55.276372+00:00'
+_pipeline_run_id: phase-c
+fragment:
+  nas: nms://gilgamesh/tablet-x/urshanabi-crossing
+  parent_nas: nms://gilgamesh/tablet-x
+  tradition_id: gilgamesh
+  confidence_tier: reconstructed
+  available_layers:
+  - surface
+  methodology_fit_warning: false
+content:
+- locale: ru
+  layer: surface
+  body: 'Гильгамеш, услышав слова таверщицы, направляется к берегу, где встречает перевозчика Уршанаби [NAS: nms://gilgamesh/tablet-x/urshanabi-crossing]. В ходе встречи герой, согласно тексту, в приступе ярости уничтожает «каменных идолов» — особых талисманов, охранявших Уршанаби от прикосновения вод смерти [NAS: nms://gilgamesh/tablet-x/urshanabi-crossing]. Уршанаби объясняет, что без этих защитных предметов переправа крайне затруднена, и повелевает Гильгамешу срубить сто двадцать шестов длиной около пятнадцати саженей каждый [NAS: nms://gilgamesh/tablet-x/urshanabi-crossing]. Гильгамеш исполняет это приказание, после чего оба вступают на судно и отправляются в плавание [NAS: nms://gilgamesh/tablet-x/urshanabi-crossing]. Путь, рассчитанный на шесть недель, они преодолевают за три дня, достигая вод смерти, где шесты поочерёдно ломаются и Гильгамеш, по всей видимости, использует собственную одежду в качестве паруса [NAS: nms://gilgamesh/tablet-x/urshanabi-crossing].'
+  status: confirmed
+  confidence_tier: reconstructed
+  ai_generated: true
+  reviewed_by:
+  reviewed_at:
+  translation_id:
+  translation_author:
+  translation_year:
+  translation_license:
+  grounding_citations:
+  - nms://gilgamesh/tablet-x/urshanabi-crossing
+  - nms://gilgamesh/tablet-x/urshanabi-crossing
+  - nms://gilgamesh/tablet-x/urshanabi-crossing
+  - nms://gilgamesh/tablet-x/urshanabi-crossing
+  - nms://gilgamesh/tablet-x/urshanabi-crossing
+  generated_by_model: claude-sonnet-4-6

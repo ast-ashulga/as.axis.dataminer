@@ -1,0 +1,31 @@
+_sisyphus_version: '0.1'
+_generated_at: '2026-06-06T10:49:34.774302+00:00'
+_pipeline_run_id: phase-c
+fragment:
+  nas: nms://gilgamesh/tablet-ii/wrestling
+  parent_nas: nms://gilgamesh/tablet-ii
+  tradition_id: gilgamesh
+  confidence_tier: reconstructed
+  available_layers:
+  - surface
+  methodology_fit_warning: false
+content:
+- locale: ru
+  layer: surface
+  body: 'Данный фрагмент описывает поединок между Гильгамешем и Энкиду, разворачивающийся у дверей брачного покоя и продолжающийся на улице [NAS: nms://gilgamesh/tablet-ii/wrestling]. В ходе борьбы сени обрушиваются, а стена содрогается от мощи сражающихся [NAS: nms://gilgamesh/tablet-ii/wrestling]. Текст сообщает, что Гильгамеш преклоняет колено, смиряя свой гнев, — что может указывать на его частичное поражение или на добровольное прекращение схватки [NAS: nms://gilgamesh/tablet-ii/wrestling]. После того как страсти утихают, Энкиду обращается к Гильгамешу с речью, признавая его богоизбранность и царское достоинство [NAS: nms://gilgamesh/tablet-ii/wrestling]. Энкиду называет мать Гильгамеша «буйволицей Ограды» — богиню Нинсун — и указывает, что Эллиль даровал Гильгамешу владычество над людьми [NAS: nms://gilgamesh/tablet-ii/wrestling].'
+  status: confirmed
+  confidence_tier: reconstructed
+  ai_generated: true
+  reviewed_by:
+  reviewed_at:
+  translation_id:
+  translation_author:
+  translation_year:
+  translation_license:
+  grounding_citations:
+  - nms://gilgamesh/tablet-ii/wrestling
+  - nms://gilgamesh/tablet-ii/wrestling
+  - nms://gilgamesh/tablet-ii/wrestling
+  - nms://gilgamesh/tablet-ii/wrestling
+  - nms://gilgamesh/tablet-ii/wrestling
+  generated_by_model: claude-sonnet-4-6

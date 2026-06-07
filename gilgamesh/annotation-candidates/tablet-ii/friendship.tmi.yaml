@@ -1,0 +1,49 @@
+_sisyphus_version: '0.1'
+nas: nms://gilgamesh/tablet-ii/friendship
+track: tmi
+annotations:
+- code: TMI-H900
+  label: Tasks and quests
+  proposed_tier: reconstructed
+  status: confirmed
+  rationale: "Gilgamesh proposes the expedition to the Cedar Forest as a heroic quest with a defined objective: to slay the guardian Humbaba and win eternal fame. The quest is framed as a voluntary undertaking but operates structurally as a condition of heroic identity — Gilgamesh must accomplish it to justify his existence as a great king. This is a classic instantiation of the quest-assignment motif, even if the 'assigner' is Gilgamesh himself rather than an external authority."
+  evidence_citations:
+  - "Dyakonov 1961, Tablet II: 'Давай его вместе убьем мы с тобою, / И все, что есть злого, изгоним из мира!'"
+  - George 2003, SB III 1–10
+  methodology_fit_warning: false
+  ai_generated: true
+  generated_by_model: claude-sonnet-4-6
+- code: TMI-A1335
+  label: Origin of death
+  proposed_tier: reconstructed
+  status: confirmed
+  rationale: "Gilgamesh articulates a mythological axiom distinguishing mortal and divine existence: only the gods dwell with the Sun eternally, while human years are counted and all human action is as wind. This reflects the Mesopotamian cosmological assumption that death is the immutable lot of mortals, foundational to the epic's thematic arc. The speech is not yet a quest for immortality but a philosophical reckoning with its impossibility, which aligns with the etiological function of TMI-A1335."
+  evidence_citations:
+  - "Dyakonov 1961, Tablet II: 'Только боги с Солнцем пребудут вечно, / А человек -- сочтены его годы, / Что б он ни делал,-- все ветер!'"
+  - George 2003, SB II 233–238
+  methodology_fit_warning: false
+  ai_generated: true
+  generated_by_model: claude-sonnet-4-6
+- code: TMI-Q2
+  label: Kind and unkind
+  proposed_tier: contested
+  status: confirmed
+  rationale: The passage establishes a contrast between Gilgamesh's courage and resolve and Enkidu's fearful hesitation, which carries a mild evaluative valence — the brave hero is implicitly valorized over the fearful companion. However, this is not a strict Kind/Unkind contrast in the fairy-tale sense; both characters are sympathetically portrayed and the dynamic is more psychological than moral. Applying TMI-Q2 here is defensible only as a loose structural parallel and should be treated as contested.
+  evidence_citations:
+  - "Dyakonov 1961, Tablet II: 'Ты и сейчас боишься смерти, / Где ж она, сила твоей отваги?'"
+  methodology_fit_warning: true
+  methodology_fit_note: TMI-Q2 is typically calibrated to folk-tale reward/punishment structures involving two characters differentiated by moral behavior. The Gilgamesh-Enkidu dynamic here is a heroic dialogue about courage versus fear rather than a moral opposition with narrative consequences; the fit is partial at best and the annotation should be treated as contested.
+  ai_generated: true
+  generated_by_model: claude-sonnet-4-6
+- code: TMI-F567.2
+  label: Wild man
+  proposed_tier: reconstructed
+  status: confirmed
+  rationale: "Enkidu's residual wild-man identity is implicitly present in this passage: his idle restlessness ('без дела сижу, пропадает сила') reflects his difficulty integrating into civilized heroic society and the atrophying of the primal strength that defined him in Tablet I. His fear of Humbaba and the forest also echoes his former liminal status between wild and civilized worlds. While the wild-man motif is most explicitly instantiated in Tablet I, its continuation here as a psychological residue is analytically relevant."
+  evidence_citations:
+  - "Dyakonov 1961, Tablet II: 'Без дела сижу, пропадает сила'"
+  - George 2003, SB I 101–200 (Enkidu's origin among animals)
+  methodology_fit_warning: true
+  methodology_fit_note: TMI-F567.2 is most directly applicable to Tablet I where Enkidu lives among animals. Its application to Tablet II is extrapolative, tracing residual characterization rather than an explicit narrative instantiation; the annotation is defensible as 'reconstructed' but analysts should note it is a secondary activation of the motif.
+  ai_generated: true
+  generated_by_model: claude-sonnet-4-6

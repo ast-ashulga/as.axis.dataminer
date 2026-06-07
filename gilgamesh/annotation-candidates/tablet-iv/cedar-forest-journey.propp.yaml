@@ -1,0 +1,70 @@
+_sisyphus_version: '0.1'
+nas: nms://gilgamesh/tablet-iv/cedar-forest-journey
+track: propp
+annotations:
+- code: PROPP-2
+  label: Interdiction
+  proposed_tier: contested
+  status: confirmed
+  rationale: The people of Uruk and then Enkidu himself attempt to prevent Gilgamesh from departing toward the Cedar Forest, functioning as a prohibition against the hero's journey. The crowd blocks the gates and Enkidu bars the field-gates, constituting a collective command/restraint issued against the hero's intended action. However, this is an inverted form — the interdiction comes not from a superior authority but from the hero's own people and companion, making the mapping somewhat forced relative to Propp's standard formulation.
+  evidence_citations:
+  - "Gumilev 1919, Tablet IV: 'Не пускает уйти царя Гильгамеша' (repeated); 'Запер ворота, ведущие в поле, / Выйти из них не дает Гильгамешу'"
+  methodology_fit_warning: true
+  methodology_fit_note: The interdiction here is collective and socially motivated rather than issued by a donor-figure or elder authority figure as Propp envisages. The function is recognizable but structurally inverted; confidence is accordingly reduced to 'contested'.
+  ai_generated: true
+  generated_by_model: claude-sonnet-4-6
+- code: PROPP-3
+  label: Violation
+  proposed_tier: reconstructed
+  status: confirmed
+  rationale: "Gilgamesh explicitly breaks through the prohibition: he leaps upon the crowd 'like a wild aurochs,' knocks down those blocking his exit, and forces his way out. The violation is deliberate and physically enacted, matching Propp's function of the hero transgressing the interdiction. The narrative consequence — the departure toward the Cedar Forest — confirms that the violation is structurally complete."
+  evidence_citations:
+  - "Gumilev 1919, Tablet IV: 'Но он прыгнул на них, как дикий буйвол, / Опрокинул людей, заградивших выход'"
+  methodology_fit_warning: false
+  ai_generated: true
+  generated_by_model: claude-sonnet-4-6
+- code: PROPP-11
+  label: Departure
+  proposed_tier: reconstructed
+  status: confirmed
+  rationale: After overcoming both popular resistance and Enkidu's reluctance, Gilgamesh and Enkidu set out together toward the Cedar Forest of Humbaba. The passage explicitly marks the transition from the urban world of Uruk to the open field and then toward the mountain and forest, fulfilling the morphological function of the hero leaving his home domain. Both translations confirm the spatial and narrative transition.
+  evidence_citations:
+  - "Gumilev 1919, Tablet IV: 'Вот Гильгамеш с Эабани в поле, / Вместе идут они к лесу Хумбабы'"
+  - "Dyakonov 1961, Tablet IV: 'Если бы в лес мы с тобою спустились'"
+  methodology_fit_warning: false
+  ai_generated: true
+  generated_by_model: claude-sonnet-4-6
+- code: PROPP-8
+  label: Villainy / Lack
+  proposed_tier: contested
+  status: confirmed
+  rationale: Enkidu's description of Humbaba — whose voice is a storm, whose breath is death, and whose very presence causes 'weakness' (nemoch') to overcome all who enter the cedar forest — constitutes a narrative articulation of the threat or lack that motivates the quest. The identification of Humbaba as the divinely appointed guardian who causes harm defines the villain-function structurally, even if the full harm has not yet been enacted in this tablet.
+  evidence_citations:
+  - "Gumilev 1919, Tablet IV: 'Предназначил Хумбабу, чей голос, как буря... / И всех, кто в чащу его приходит, / Кто входит под кедры, постигает немочь'"
+  - George 2003, SB IV (general reference to Humbaba as divinely appointed guardian)
+  methodology_fit_warning: true
+  methodology_fit_note: The 'villainy' here is prospective rather than accomplished — Humbaba has not yet acted against the heroes in this segment. The function is structurally present as a narrative motivation for the quest (the lack of access to cedar, the threat to the world), but it does not conform cleanly to Propp's formulation of villainy as a completed harmful act. Rated 'reconstructed' rather than 'contested' because the motivational logic is unambiguous even if the temporal form differs.
+  ai_generated: true
+  generated_by_model: claude-sonnet-4-6
+- code: PROPP-9
+  label: Mediation
+  proposed_tier: contested
+  status: confirmed
+  rationale: Enkidu's fearful description of Humbaba's power and the danger of the Cedar Forest functions as a moment of mediation in which the misfortune/threat becomes clearly articulated and the stakes of the counter-action are made explicit to both heroes. This is a weak form of the function — it is not a third-party dispatcher but the companion himself who voices the peril — yet it serves the morphological role of making the challenge known so that the counter-action can be consciously chosen.
+  evidence_citations:
+  - "Gumilev 1919, Tablet IV: 'Отверзает уста, говорит Гильгамешу: / «Чтоб хранить невредимыми кедры... / Предназначил Хумбабу»'"
+  methodology_fit_warning: true
+  methodology_fit_note: Propp's Mediation typically involves a separate figure (a herald, a crying parent) who summons the hero. Here the companion/quasi-donor performs this role, collapsing functions in a way characteristic of non-folktale epics. The annotation is defensible as a functional analog but the fit is weak enough to warrant 'contested'.
+  ai_generated: true
+  generated_by_model: claude-sonnet-4-6
+- code: PROPP-10
+  label: Beginning Counter-Action
+  proposed_tier: reconstructed
+  status: confirmed
+  rationale: "Gilgamesh's repeated exhortations to Enkidu culminate in a clear declaration of resolve: he offers to go alone if necessary, reframes the quest in terms of eternal fame, and explicitly calls on Enkidu to abandon fear and join him. This constitutes the hero's conscious decision to act against the identified threat, which is the core of Propp's function. The rhetorical structure — dismissal of fear, appeal to glory, restatement of collective strength — is consistent across both translations."
+  evidence_citations:
+  - "Gumilev 1919, Tablet IV: 'Твое сердце хотело битвы: забудь про смерть и не бойся! / Человек осторожный, решительный, сильный / Сохраняет себя в сраженье'"
+  - "Dyakonov 1961, Tablet IV: 'Забудь о смерти,-- достигнешь жизни! / Человек осторожный и неустрашимый, / Идя впереди, себя сохранил бы и товарища спас бы'"
+  methodology_fit_warning: false
+  ai_generated: true
+  generated_by_model: claude-sonnet-4-6

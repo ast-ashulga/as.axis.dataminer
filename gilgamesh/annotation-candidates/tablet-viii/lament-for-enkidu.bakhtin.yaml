@@ -1,0 +1,28 @@
+_sisyphus_version: '0.1'
+nas: nms://gilgamesh/tablet-viii/lament-for-enkidu
+track: bakhtin
+annotations:
+- code: BAKHTIN-IDYLL
+  label: Idyllic / Rural Chronotope
+  proposed_tier: contested
+  status: confirmed
+  rationale: "The lament calls upon nature — rivers, mountains, forests, animals — to mourn Enkidu, invoking a world of cyclical natural time now disrupted by his death. Dyakonov's extended catalogue ('Да плачут медведи, гиены, барсы и тигры, / Козероги и рыси, львы и туры, / Олени и антилопы, скот и тварь степная') and the reference to Enkidu's origins among wild animals and steppes ('Молоком своим тебя звери взрастили / И скот в степи на пастбищах дальних') align with idyllic chronotopic elements: the unity of a living being with the natural community and cyclical life. However, the idyll here is elegized rather than inhabited, and Enkidu's wilderness origin is constructed as a point of contrast with urban Uruk, complicating a clean idyllic reading."
+  evidence_citations:
+  - "Dyakonov 1961, Tablet VIII: 'Молоком своим тебя звери взрастили'; 'Да плачут медведи, гиены, барсы и тигры...'"
+  - "Gumilev 1919, Tablet VIII: 'Тот, кто берег зверей пустыни, / Тот, кто играл у воды со стадом'"
+  methodology_fit_warning: true
+  methodology_fit_note: This annotation is contested because the idyllic chronotope is invoked only in elegiac retrospect — the natural community mourns its lost member rather than sustaining ongoing cyclical life. The application is defensible as a disrupted or negated idyll, but scholars may reasonably dispute whether this constitutes an operative idyllic chronotope or merely its thematic shadow.
+  ai_generated: true
+  generated_by_model: claude-sonnet-4-6
+- code: BAKHTIN-HEROIC-BODY
+  label: Heroic Body Chronotope
+  proposed_tier: reconstructed
+  status: confirmed
+  rationale: "Enkidu's body in death becomes the primary spatial-temporal site of the narrative: Gilgamesh physically interacts with the corpse — covering it, touching the still heart, tearing his garments — and the body registers the transition from heroic life to death. The body's stillness ('он головы поднять не может', 'сердце не бьется') is the time-space marker that anchors the entire lament. Furthermore, the living Enkidu's body is recalled through his heroic deeds — slaying Humbaba, killing the Bull of Heaven — which are inscribed on the body as narrative markers. Gilgamesh's own body enacts grief through animal-metaphor violence: 'как рыкающий лев, он рванулся' / 'Точно львица, чьи львята — в ловушке, / Мечется грозно взад и вперед он'."
+  evidence_citations:
+  - "Gumilev 1919, Tablet VIII: 'Сердца коснулся его Гильгамеша, и сердце не билось'; 'Как рыкающий лев, он рванулся на друга'"
+  - "Dyakonov 1961, Tablet VIII: 'Тронул он сердце - оно не бьется'; 'Точно львица, чьи львята - в ловушке, / Мечется грозно взад и вперед он'"
+  - George 2003, SB VIII 57–62
+  methodology_fit_warning: false
+  ai_generated: true
+  generated_by_model: claude-sonnet-4-6

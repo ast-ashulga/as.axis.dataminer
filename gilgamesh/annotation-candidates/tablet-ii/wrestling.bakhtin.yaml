@@ -1,0 +1,27 @@
+_sisyphus_version: '0.1'
+nas: nms://gilgamesh/tablet-ii/wrestling
+track: bakhtin
+annotations:
+- code: BAKHTIN-THRESHOLD
+  label: Threshold Chronotope
+  proposed_tier: reconstructed
+  status: confirmed
+  rationale: "The fight begins explicitly at the doors of the bridal chamber ('в двери брачного покоя'), a liminal architectural boundary that in Bakhtinian terms materialises the crisis moment. The threshold here is doubly charged: it is simultaneously the physical doorway and the narrative turning point at which Gilgamesh and Enkidu's antagonism transforms into recognition and friendship. The moment Gilgamesh kneels and 'smirils his anger' is precisely the suspended, decisive instant the threshold chronotope describes — time pauses at the boundary between enmity and alliance."
+  evidence_citations:
+  - Dyakonov 1961, Tablet II
+  - George 2003, SB II 104–106
+  methodology_fit_warning: false
+  ai_generated: true
+  generated_by_model: claude-sonnet-4-6
+- code: BAKHTIN-DIVINE
+  label: Divine / Cosmic Chronotope
+  proposed_tier: contested
+  status: confirmed
+  rationale: "Enkidu's closing lines invoke Ninsun as the divine wild-cow and cite Enlil's cosmic decree granting Gilgamesh kingship over humanity. This briefly opens a cosmological frame within an otherwise earthly combat scene: the gods' mythic time intrudes upon the human moment of physical contest and determines its meaning. However, the invocation is brief and secondary to the threshold/heroic-body action, and no actual divine assembly or cosmic perspective is dramatised, making this a marginal rather than dominant chronotope for the segment."
+  evidence_citations:
+  - Dyakonov 1961, Tablet II
+  - George 2003, SB II 112–116
+  methodology_fit_warning: true
+  methodology_fit_note: The divine chronotope is present only as a rhetorical reference within Enkidu's speech rather than as a fully dramatised cosmological scene. Applying BAKHTIN-DIVINE to reported divine decree rather than enacted divine council is a methodological stretch; 'contested' tier is appropriate.
+  ai_generated: true
+  generated_by_model: claude-sonnet-4-6

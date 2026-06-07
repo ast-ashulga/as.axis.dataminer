@@ -1,0 +1,11 @@
+run_id: run-gilgamesh-20260606-070459
+source_file: sources/gilgamesh/epos-o-gilgameshe-ran-dyakonov-s-akkadskogo-1961.txt
+source_type: txt
+word_count: 8205
+page_count: 1
+ocr_applied: false
+ocr_confidence_mean:
+ocr_confidence_min:
+flagged_pages: []
+errors: []
+_sisyphus_version: '0.1'

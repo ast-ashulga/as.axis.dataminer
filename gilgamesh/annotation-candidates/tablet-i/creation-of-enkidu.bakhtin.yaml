@@ -1,0 +1,30 @@
+_sisyphus_version: '0.1'
+nas: nms://gilgamesh/tablet-i/creation-of-enkidu
+track: bakhtin
+annotations:
+- code: BAKHTIN-HEROIC-BODY
+  label: Heroic Body Chronotope
+  proposed_tier: reconstructed
+  status: confirmed
+  rationale: "Enkidu's body is explicitly the medium through which his narrative identity and cosmological status are established: his hair-covered form, his woman-like locks dense as ripe grain, and his strength compared to the host of Anu inscribe the world onto his physique before he has performed a single deed. The hunter's fear is triggered entirely by the body's visible power, and the father's counsel to Gilgamesh likewise frames Enkidu's threat through bodily attributes. The body here functions as a chronotopic marker — its description locates Enkidu at the boundary between divine creation and wild nature."
+  evidence_citations:
+  - "Gumilev 1919, Tablet I: 'В волосах его тело, он носит, как женщины, косу, / Пряди кудрей ниспадают, подобно спелым колосьям'"
+  - "Dyakonov 1961, Tablet I: 'Шерстью покрыто все его тело, / Подобно женщине, волосы носит, / Пряди волос как хлеба густые'"
+  - "Gumilev 1919, Tablet I: 'Велика его сила, как воинство Ану'"
+  - George 2003, SB I 105–108
+  methodology_fit_warning: false
+  ai_generated: true
+  generated_by_model: claude-sonnet-4-6
+- code: BAKHTIN-ROAD
+  label: Road / Journey Chronotope
+  proposed_tier: contested
+  status: confirmed
+  rationale: "The hunter's journey from the watering hole to his father's house, and then from his home to Uruk to stand before Gilgamesh, carries the structural logic of the road chronotope: travel as the mechanism by which information, crisis, and encounter are transmitted across space and time. The road brings the wild world of Enkidu into contact with the royal world of Gilgamesh through the mediation of the hunter's body in motion. However, the journey is brief and instrumental rather than richly developed as a zone of revelation in its own right, making this application somewhat marginal."
+  evidence_citations:
+  - "Gumilev 1919, Tablet I: 'Отцовскому слову внимает охотник, / Пускается в путь, шаги замедляет в Уруке, / Приходит на пир, говорит Гильгамешу'"
+  - "Dyakonov 1961, Tablet I: 'Охотник отправился к Гильгамешу, / Пустился в путь, стопы обратил к Уруку, / Пред лицом Гильгамеша промолвил слово'"
+  - George 2003, SB I 140–145
+  methodology_fit_warning: true
+  methodology_fit_note: The road chronotope is proposed here at 'contested' tier because the journey is narratively compressed and functions primarily as a plot conveyance rather than a developed chronotopic space. Bakhtin's road chronotope typically requires the road itself to be a site of meaningful encounter or revelation; here the meaningful encounters occur at the watering hole and at Uruk's court, with the road as connective tissue only. Annotation is still defensible as a minor or embedded chronotope.
+  ai_generated: true
+  generated_by_model: claude-sonnet-4-6

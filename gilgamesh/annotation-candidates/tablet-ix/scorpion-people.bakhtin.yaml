@@ -1,0 +1,65 @@
+_sisyphus_version: '0.1'
+nas: nms://gilgamesh/tablet-ix/scorpion-people
+track: bakhtin
+annotations:
+- code: BAKHTIN-THRESHOLD
+  label: Threshold Chronotope
+  proposed_tier: reconstructed
+  status: confirmed
+  rationale: "The gate of Mount Mashu is the paradigmatic threshold of the epic: Gilgamesh stands at the boundary between the human world and the underworld tunnel of the sun, between mortal life and the quest for immortality. Time is suspended — the Scorpion-people exist precisely to mark the liminal hinge of solar time (sunrise/sunset), and Gilgamesh's passage through the gate is the decisive turning point of his journey. Both translations render this suspension explicitly: the gate is opened and closed with the sun's passage, and Gilgamesh must choose to cross into absolute darkness. The interrogation by the Scorpion-man enacts the threshold drama: identity is tested ('на две трети он бог, на одну — человек он!' — Dyakonov 1961, Tablet IX), the crossing is warned against, and permission is finally granted."
+  evidence_citations:
+  - "Gumilev 1919, Tablet IX: 'Но иди, Гильгамеш, не медли в горных воротах'"
+  - "Dyakonov 1961, Tablet IX: 'Ворота гор для тебя открыты'"
+  - George 2003, SB IX 76–79
+  methodology_fit_warning: false
+  ai_generated: true
+  generated_by_model: claude-sonnet-4-6
+- code: BAKHTIN-UNDERWORLD
+  label: Underworld / Netherworld Chronotope
+  proposed_tier: reconstructed
+  status: confirmed
+  rationale: "The tunnel of Mount Mashu through which the sun travels at night is a spatial-temporal zone where ordinary time is inverted or suspended: 'Мрак там глубок, и нет там света / Ни при выходе солнца, ни при его возвращенье' (Gumilev 1919, Tablet IX). The tunnel is structurally equivalent to the underworld — it is where the sun passes through death each night, and entry by a living human is presented as irreversible ('Ты войдешь и больше оттуда не выйдешь!' — Dyakonov 1961, Tablet IX). The Scorpion-people's bodies themselves span heaven and the netherworld ('внизу их грудь доходила до ада' — Gumilev 1919, Tablet IX), literalising the vertical axis of this chronotope. Gilgamesh's motivation — the death of Enkidu and fear of his own death — grounds the netherworld chronotope in the epic's grief narrative."
+  evidence_citations:
+  - "Gumilev 1919, Tablet IX: 'И внизу их грудь доходила до ада'"
+  - "Dyakonov 1961, Tablet IX: 'Темнота густа, не видно света'"
+  - "Dyakonov 1961, Tablet IX: 'Ты войдешь и больше оттуда не выйдешь!'"
+  - George 2003, SB IX 45–47
+  methodology_fit_warning: false
+  ai_generated: true
+  generated_by_model: claude-sonnet-4-6
+- code: BAKHTIN-ROAD
+  label: Road / Journey Chronotope
+  proposed_tier: reconstructed
+  status: confirmed
+  rationale: "The passage is saturated with the road chronotope: Gilgamesh arrives at Mashu after traversing wilderness and rivers ('Реки переплыл, где трудна переправа' — Dyakonov 1961, Tablet IX), and the encounter with the Scorpion-people is precisely the chance meeting that the road chronotope predicts — strangers converging at a nodal point of travel who reveal information and transform the hero's trajectory. The twelve-league tunnel — 'дорога Шамаша' — is itself a compressed spatial-temporal corridor fusing movement with cosmological time. The road here is not metaphorical but ontological: it is the literal path of the sun through the mountain of the world."
+  evidence_citations:
+  - "Dyakonov 1961, Tablet IX: 'Дальней дорогой бегу в пустыне' and 'Реки переплыл, где трудна переправа'"
+  - "Dyakonov 1961, Tablet IX: 'По дороге Шамаша стопы он направил'"
+  - "Gumilev 1919, Tablet IX: 'Нет никого, Гильгамеш, кто прошел бы такою дорогой'"
+  methodology_fit_warning: false
+  ai_generated: true
+  generated_by_model: claude-sonnet-4-6
+- code: BAKHTIN-DIVINE
+  label: Divine / Cosmic Chronotope
+  proposed_tier: reconstructed
+  status: confirmed
+  rationale: "The Scorpion-people inhabit a cosmic register that exceeds human scale: their heads touch the vault of heaven and their chests reach the underworld, making them figures of mythic time that encompasses both cosmological poles. The gate they guard regulates the daily solar cycle — a function that belongs to mythic, not historical, time. Gilgamesh's destination, Utnapishtim, 'принятый в собранье богов' (Dyakonov 1961, Tablet IX), further anchors this passage in the divine chronotope: the council of gods and the granting of eternal life represent the cosmological frame within which the hero's mortal crisis is judged. The identification of Gilgamesh as two-thirds divine also places him at the intersection of divine and human temporalities."
+  evidence_citations:
+  - "Gumilev 1919, Tablet IX: 'Головы их касался свод небесный, / И внизу их грудь доходила до ада'"
+  - "Dyakonov 1961, Tablet IX: 'К тому, кто, выжив, в собранье богов был принят и жизнь обрел в нем!'"
+  - George 2003, SB IX 40–47
+  methodology_fit_warning: false
+  ai_generated: true
+  generated_by_model: claude-sonnet-4-6
+- code: BAKHTIN-HEROIC-BODY
+  label: Heroic Body Chronotope
+  proposed_tier: contested
+  status: confirmed
+  rationale: "The Scorpion-man's immediate recognition of Gilgamesh's body as divine — 'плоть богов — его тело!' (Dyakonov 1961, Tablet IX) and the fractional calculation of his divine/human composition — instantiates the heroic body chronotope: Gilgamesh's physical form is a text that the cosmic gatekeepers read to locate him in the narrative of the world. However, the body itself is not the primary agent of action in this passage; it is assessed rather than deployed. The application is therefore defensible but secondary to the threshold and road chronotopes, and the annotation is contested because Bakhtin's heroic body formulation was developed for Greek romance contexts where the body's feats mark time-space transitions more actively."
+  evidence_citations:
+  - "Gumilev 1919, Tablet IX: 'Тот, кто подходит к нам, тело его, как тело бога'"
+  - "Dyakonov 1961, Tablet IX: 'На две трети он бог, на одну - человек он!'"
+  methodology_fit_warning: true
+  methodology_fit_note: "The heroic body chronotope as theorised by Bakhtin addresses the hero's physical feats as time-space markers within adventure narrative, a formulation derived primarily from Greek romance. Its application here is analogical rather than direct: the body is interpreted by divine guardians rather than performing feats. The annotation captures a genuine textual function — the body as a legible cosmic text — but the fit is partial and the confidence is accordingly lowered to 'contested'."
+  ai_generated: true
+  generated_by_model: claude-sonnet-4-6

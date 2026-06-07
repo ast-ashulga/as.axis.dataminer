@@ -1,0 +1,41 @@
+_sisyphus_version: '0.1'
+nas: nms://gilgamesh/tablet-vi/ishtar-proposal
+track: tmi
+annotations:
+- code: TMI-T91
+  label: Refusal of divine lover
+  proposed_tier: reconstructed
+  status: confirmed
+  rationale: "Gilgamesh explicitly and at length refuses the amorous advances of the goddess Ishtar, who proposes marriage and promises him wealth, tribute, and divine favor. His refusal is not merely polite deflection but a sustained rhetorical counter-attack cataloguing Ishtar's past lovers and the harm she brought them. This is the most direct and unambiguous instance of TMI-T91 in the ancient Near Eastern corpus. Both translations render the refusal with full narrative weight: Gilgamesh lists the fates of Tammuz, the shepherd, Ishullanu, the lion, the horse, and others to justify his rejection."
+  evidence_citations:
+  - "Gumilev 1919, Tablet VI: 'Сохрани для себя свои богатства... И, меня полюбив, ты изменишь тоже мой образ!'"
+  - "Dyakonov 1961, Tablet VI: 'Но в жены себе тебя не возьму я!'"
+  - George 2003, SB VI 22–79
+  methodology_fit_warning: false
+  ai_generated: true
+  generated_by_model: claude-sonnet-4-6
+- code: TMI-Q2
+  label: Kind and unkind — contrasting treatment of lovers
+  proposed_tier: contested
+  status: confirmed
+  rationale: "Gilgamesh's enumeration of Ishtar's past lovers functions as an extended catalogue of the 'unkind' treatment meted out to those who accepted or pleased the goddess: Tammuz is condemned to lamentation, the shepherd is turned into a hyena, Ishullanu is transformed into a mole or spider. The motif here operates in inverted form — the 'kind' lovers (those who gave devotion) receive cruel fates, while Gilgamesh, by refusing, implicitly positions himself as the one who escapes this pattern. Application of TMI-Q2 is contested because the framework typically involves a direct narrative comparison between two characters rather than a retrospective catalogue, and the moral valence is complicated by Ishtar's divine status."
+  evidence_citations:
+  - "Gumilev 1919, Tablet VI: 'Любовнику юности первой твоей, Таммузу, / На годы и годы назначила ты стенанья!'"
+  - "Dyakonov 1961, Tablet VI: 'Давай перечислю, с кем ты блудила!'"
+  - George 2003, SB VI 42–79
+  methodology_fit_warning: true
+  methodology_fit_note: TMI-Q2 is designed for narratives structurally built around two contrasting characters; applying it to a rhetorical catalogue within a single speech risks over-extending the framework. The annotation is defensible as a secondary motif embedded in the refusal speech but should not be treated as a primary structural feature of the tablet.
+  ai_generated: true
+  generated_by_model: claude-sonnet-4-6
+- code: TMI-A1335
+  label: Origin of death — mortality as the lot of mortals vs. immortality of gods
+  proposed_tier: contested
+  status: confirmed
+  rationale: "Gilgamesh's refusal implicitly touches on the divine-mortal asymmetry: Ishtar, as an immortal goddess, cannot offer lasting partnership to a mortal, and the fates of her former lovers underscore the danger of transgressing the boundary between human and divine. The passage does not directly theorize the origin of death, but it participates in the broader Gilgamesh thematic complex in which mortal vulnerability is contrasted with divine permanence. The application is contested because TMI-A1335 is more properly a cosmogonic motif; its presence here is thematic rather than structural."
+  evidence_citations:
+  - "Gumilev 1919, Tablet VI: 'Где любовник, которого бы ты всегда любила, / Где герой, приятный тебе и в грядущем?'"
+  - George 2003, SB VI 22–26 (Ishtar's proposal), SB X 322–323 (thematic continuity with tavern-keeper's speech on mortality)
+  methodology_fit_warning: true
+  methodology_fit_note: TMI-A1335 is most precisely applicable to cosmogonic myth segments (notably Tablet X and the Siduri episode). Its application to Tablet VI is an extrapolation from the broader epic theme and should be flagged as a secondary, contested annotation rather than a direct motif match for this passage alone.
+  ai_generated: true
+  generated_by_model: claude-sonnet-4-6

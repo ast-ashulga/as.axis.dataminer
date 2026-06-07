@@ -1,0 +1,16 @@
+_sisyphus_version: '0.1'
+nas: nms://gilgamesh/tablet-iv/cedar-forest-journey
+track: bakhtin
+annotations:
+- code: BAKHTIN-DIVINE
+  label: Divine / Cosmic Chronotope
+  proposed_tier: contested
+  status: confirmed
+  rationale: "Humbaba is framed not merely as a forest guardian but as a cosmic appointment by the god Enlil (Bel): 'Бел его предназначил, предназначил Хумбабу, чей голос, как буря' (Gumilev 1919, Tablet IV). This introduces a mythic-temporal layer in which the Cedar Forest's menace is underwritten by divine decree operating at a different temporal scale from the heroes' journey. The divine frame is present but subordinate — Enlil's appointment of Humbaba is cited rather than dramatised — which makes this a contested application of the divine chronotope. The gods do not convene or speak here; their cosmic time impinges on the narrative only through reported divine intention."
+  evidence_citations:
+  - "Gumilev 1919, Tablet IV: 'Бел его предназначил, предназначил Хумбабу, чей голос, как буря, / Чья гортань, как у бога, чье дыханье, как буря'"
+  - George 2003, SB IV (Enlil's appointment of Humbaba as guardian)
+  methodology_fit_warning: true
+  methodology_fit_note: The divine chronotope is contested here because Enlil's cosmic mandate is reported speech within Enkidu's fearful monologue rather than a direct dramatic enactment of mythic time. The cosmological frame is genuinely present but attenuated; annotators should weigh whether a reported divine decree suffices to activate the chronotope or whether direct divine-council scenes are required. Given this ambiguity, the 'contested' tier is appropriate.
+  ai_generated: true
+  generated_by_model: claude-sonnet-4-6

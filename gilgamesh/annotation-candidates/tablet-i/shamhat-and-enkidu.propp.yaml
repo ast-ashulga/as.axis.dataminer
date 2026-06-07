@@ -1,0 +1,73 @@
+_sisyphus_version: '0.1'
+nas: nms://gilgamesh/tablet-i/shamhat-and-enkidu
+track: propp
+annotations:
+- code: PROPP-2
+  label: Interdiction
+  proposed_tier: reconstructed
+  status: confirmed
+  rationale: "Gilgamesh issues a directive to the hunter with specific instructions: bring the harlot Shamhat, have her expose herself at the watering hole, and thereby lure Enkidu away from the wild animals. This functions as a command structuring the subsequent action, analogous to Propp's interdiction/command issued to an agent. The fit is partial since it is a command to an intermediary rather than a prohibition to the hero, warranting a methodology note."
+  evidence_citations:
+  - "Gumilev 1919, Tablet I: 'Возвратись, мой охотник, и возьми с собою блудницу'"
+  - "Dyakonov 1961, Tablet I: 'Иди, мой охотник, блудницу Шамхат приведи с собою'"
+  methodology_fit_warning: true
+  methodology_fit_note: Propp's interdiction typically addresses the hero directly; here it is a command from Gilgamesh to the hunter-intermediary. The function is present in structural spirit but the addressee is not the primary hero figure, making this a forced mapping.
+  ai_generated: true
+  generated_by_model: claude-sonnet-4-6
+- code: PROPP-6
+  label: Trickery
+  proposed_tier: contested
+  status: confirmed
+  rationale: Shamhat's deliberate exposure of her body at the watering hole constitutes a form of trickery or enticement deployed against Enkidu, who is the 'victim' of civilisation's lure. The plan is premeditated by Gilgamesh and executed by Shamhat precisely to deceive Enkidu's wild nature and draw him away from the steppe animals. This maps reasonably to the villain/agent attempting to deceive or beguile the victim, though Shamhat is not a villain in the moral sense.
+  evidence_citations:
+  - "Gumilev 1919, Tablet I: 'Обнажила груди блудница и лоно открыла, / Не стыдилась она, вдохнула его дыханье'"
+  - "Dyakonov 1961, Tablet I: 'Пусть сорвет она одежду, красы свои откроет'"
+  - George 2003, SB I 182–195
+  methodology_fit_warning: true
+  methodology_fit_note: Shamhat is not a villain in the Proppian sense; she is an agent of civilisation and of Gilgamesh. The 'trickery' here is structural — a planned lure — rather than malicious villainy. The function is defensible as a morphological parallel but the ethical valence is inverted relative to Propp's framework.
+  ai_generated: true
+  generated_by_model: claude-sonnet-4-6
+- code: PROPP-7
+  label: Complicity
+  proposed_tier: contested
+  status: confirmed
+  rationale: Enkidu submits fully to Shamhat's seduction, spending six days and seven nights with her. His submission is the mechanism by which his wild nature is broken and the civilising transformation initiated. This maps to the victim yielding to the deceiver's stratagem, completing the trickery sequence.
+  evidence_citations:
+  - "Gumilev 1919, Tablet I: 'Шесть дней, семь ночей приходил Эабани, забавлялся с блудницей'"
+  - "Dyakonov 1961, Tablet I: 'Шесть дней миновало, семь дней миновало — / Неустанно Энкиду познавал блудницу'"
+  methodology_fit_warning: false
+  ai_generated: true
+  generated_by_model: claude-sonnet-4-6
+- code: PROPP-8
+  label: Villainy / Lack
+  proposed_tier: reconstructed
+  status: confirmed
+  rationale: "After the union with Shamhat, Enkidu finds himself alienated from the animal world — the gazelles flee, the steppe creatures avoid him, and his physical prowess in the wild is diminished. This constitutes a 'lack': Enkidu has lost his original nature and belonging. Simultaneously it marks the initial condition requiring resolution through his integration into human society. Both the 'harm' (loss of wild community) and 'lack' (absence of civilised identity and a companion) sub-functions are operative here."
+  evidence_citations:
+  - "Gumilev 1919, Tablet I: 'Увидали его, Эабани, и умчались газели, / От него отпрянули звери его пустыни. / Устыдился себя Эабани, его тело стало тяжелым'"
+  - "Dyakonov 1961, Tablet I: 'Увидав Энкиду, убежали газели, / Степное зверье избегало его тела'"
+  methodology_fit_warning: false
+  ai_generated: true
+  generated_by_model: claude-sonnet-4-6
+- code: PROPP-9
+  label: Mediation
+  proposed_tier: reconstructed
+  status: confirmed
+  rationale: "Shamhat's speech to the now-transformed Enkidu functions as a mediation: she names the misfortune (his isolation from the human world), presents the alternative (Uruk, Gilgamesh), and effectively dispatches him toward the resolution of the lack. She calls out the hero's potential and frames the mission, which is structurally equivalent to the misfortune becoming known and the hero being called to act."
+  evidence_citations:
+  - "Gumilev 1919, Tablet I: 'Я тебя поведу в Урук высокий, / В дом священный, жилище Иштар и Ану, / Где живет Гильгамеш, совершенный силой'"
+  - "Dyakonov 1961, Tablet I: 'Давай введу тебя в Урук огражденный, / К светлому дому, жилищу Ану'"
+  methodology_fit_warning: false
+  ai_generated: true
+  generated_by_model: claude-sonnet-4-6
+- code: PROPP-10
+  label: Beginning Counter-Action
+  proposed_tier: reconstructed
+  status: confirmed
+  rationale: Enkidu agrees to Shamhat's proposal and expresses his willingness to be led to Uruk and to confront Gilgamesh. His declaration constitutes the hero's decision to act — the moment of counter-action against the state of lack — which Propp identifies as the seeker agreeing or resolving to act. The passage in Gumilev is particularly explicit with Enkidu's first-person consent.
+  evidence_citations:
+  - "Gumilev 1919, Tablet I: 'Я согласен, блудница, веди меня в город, / Где живет Гильгамеш, совершенный силой'"
+  - "Dyakonov 1961, Tablet I: 'Сказала -- ему эти речи приятны, / Его мудрое сердце ищет друга'"
+  methodology_fit_warning: false
+  ai_generated: true
+  generated_by_model: claude-sonnet-4-6

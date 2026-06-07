@@ -1,0 +1,61 @@
+_sisyphus_version: '0.1'
+nas: nms://gilgamesh/tablet-vi/enkidus-curse
+track: propp
+annotations:
+- code: PROPP-3
+  label: Violation
+  proposed_tier: contested
+  status: confirmed
+  rationale: Enkidu's act of tearing out the Bull of Heaven's member and hurling it at Ishtar, accompanied by his explicit verbal threat, constitutes a transgression against a divine figure. This violates the implicit cosmic prohibition against insulting or defiling the gods, and it is this act — rather than merely the killing of the Bull — that precipitates the divine council's fatal sentence against Enkidu. The violation here is directed at a deity rather than a parental interdiction, which makes the Propp mapping strained but defensible by analogy.
+  evidence_citations:
+  - Dyakonov 1961, Tablet VI
+  - George 2003, SB VI 155–160
+  methodology_fit_warning: true
+  methodology_fit_note: Propp's PROPP-3 presupposes a prior explicit interdiction (PROPP-2) addressed to the hero; no such prior prohibition is articulated in this immediate passage. The 'violation' here is reconstructed from the broader narrative logic (gods' later condemnation of Enkidu) rather than from a direct interdiction-violation pair. Confidence is therefore contested.
+  ai_generated: true
+  generated_by_model: claude-sonnet-4-6
+- code: PROPP-8
+  label: Villainy / Lack
+  proposed_tier: contested
+  status: confirmed
+  rationale: "Ishtar's lamentation on the walls of Uruk and her curse upon Gilgamesh constitutes a divine act of harm — an imprecation that sets future catastrophe in motion. Simultaneously, Enkidu's dream at the close of the passage signals the onset of a lack or harm that will be made explicit in Tablet VII: the gods' decree of Enkidu's death. The passage thus frames the functional hinge between triumphant return and impending villainy."
+  evidence_citations:
+  - Dyakonov 1961, Tablet VI
+  - George 2003, SB VI 152–154
+  methodology_fit_warning: true
+  methodology_fit_note: PROPP-8 typically involves a villain acting against the hero community in a concrete narrative move. Ishtar's curse is more of a divine grievance than a structured villainous action in the Proppian sense, and the harm (Enkidu's death) is only fully realized in the next tablet. The annotation is therefore contested, applied to the causal seed rather than a completed function.
+  ai_generated: true
+  generated_by_model: claude-sonnet-4-6
+- code: PROPP-19
+  label: Liquidation
+  proposed_tier: reconstructed
+  status: confirmed
+  rationale: The triumphant procession through the streets of Uruk, the crafting of the Bull's horns as votive offerings to Lugalbanda, the heroes' public glorification, and Gilgamesh's rhetorical proclamation of their excellence all mark the formal liquidation of the initial lack posed by Ishtar's sending of the Bull of Heaven. The threat to Uruk has been eliminated, the Bull's body is ceremonially disposed of, and civic order is restored. This maps well onto PROPP-19 as the moment of resolution before the next narrative complication.
+  evidence_citations:
+  - Dyakonov 1961, Tablet VI
+  - George 2003, SB VI 162–185
+  methodology_fit_warning: false
+  ai_generated: true
+  generated_by_model: claude-sonnet-4-6
+- code: PROPP-20
+  label: Return
+  proposed_tier: reconstructed
+  status: confirmed
+  rationale: After the defeat of the Bull of Heaven, Gilgamesh and Enkidu wash their hands in the Euphrates, embrace, and travel back through the streets of Uruk to the palace. This physical return to the civic and domestic space — culminating in feasting, celebration, and sleep on 'the bed of night' — satisfies the structural requirements of PROPP-20, the hero's return home following the successful completion of a heroic episode.
+  evidence_citations:
+  - Dyakonov 1961, Tablet VI
+  - George 2003, SB VI 178–185
+  methodology_fit_warning: false
+  ai_generated: true
+  generated_by_model: claude-sonnet-4-6
+- code: PROPP-9
+  label: Mediation
+  proposed_tier: contested
+  status: confirmed
+  rationale: Enkidu's dream at the very close of the passage — his waking to interpret it and addressing his companion — functions as the narrative hinge that mediates between the resolved episode (Bull's defeat) and the new misfortune (divine condemnation). The dream mediates the knowledge of impending catastrophe to the hero pair, paralleling PROPP-9's function of making the misfortune known and initiating the next action sequence. However, since the dream's content is not yet revealed in this segment, the annotation is necessarily incomplete.
+  evidence_citations:
+  - Dyakonov 1961, Tablet VI
+  methodology_fit_warning: true
+  methodology_fit_note: PROPP-9 in canonical form involves a dispatcher or herald announcing the misfortune to the hero and calling him to act. Here the mechanism is an ominous dream rather than a social/interpersonal mediation, which is a culturally specific variant that fits only loosely. Confidence is contested due to the truncation of the passage before the dream's content is disclosed.
+  ai_generated: true
+  generated_by_model: claude-sonnet-4-6

@@ -1,0 +1,31 @@
+_sisyphus_version: '0.1'
+_generated_at: '2026-06-06T10:49:55.262139+00:00'
+_pipeline_run_id: phase-c
+fragment:
+  nas: nms://gilgamesh/tablet-x/siduri-and-gilgamesh
+  parent_nas: nms://gilgamesh/tablet-x
+  tradition_id: gilgamesh
+  confidence_tier: reconstructed
+  available_layers:
+  - surface
+  methodology_fit_warning: false
+content:
+- locale: ru
+  layer: surface
+  body: 'Гильгамеш, облачённый в звериные шкуры и несущий на лице следы горя и долгих скитаний, приближается к жилищу Сидури — хозяйки богов, обитающей у берега моря [NAS: nms://gilgamesh/tablet-x/siduri-and-gilgamesh]. Увидев его издали, Сидури принимает странника за разбойника и запирает двери на засов, однако Гильгамеш угрожает выломать их [NAS: nms://gilgamesh/tablet-x/siduri-and-gilgamesh]. В ответ на расспросы хозяйки он раскрывает свою скорбь: гибель Энкиду, которого он оплакивал шесть дней и семь ночей, не предавая земле, породила в нём невыносимый страх смерти [NAS: nms://gilgamesh/tablet-x/siduri-and-gilgamesh]. Сидури произносит знаменитое наставление: боги предназначили смерть людям, удержав жизнь в своих руках, а потому герою следует радоваться земным благам — пиру, чистым одеждам, объятиям супруги и детям [NAS: nms://gilgamesh/tablet-x/siduri-and-gilgamesh]. Тем не менее Гильгамеш настаивает на пути к Утнапишти, и Сидури, по всей видимости, указывает ему на перевозчика Уршанаби как на единственного возможного помощника в пересечении вод смерти [NAS: nms://gilgamesh/tablet-x/siduri-and-gilgamesh].'
+  status: confirmed
+  confidence_tier: reconstructed
+  ai_generated: true
+  reviewed_by:
+  reviewed_at:
+  translation_id:
+  translation_author:
+  translation_year:
+  translation_license:
+  grounding_citations:
+  - nms://gilgamesh/tablet-x/siduri-and-gilgamesh
+  - nms://gilgamesh/tablet-x/siduri-and-gilgamesh
+  - nms://gilgamesh/tablet-x/siduri-and-gilgamesh
+  - nms://gilgamesh/tablet-x/siduri-and-gilgamesh
+  - nms://gilgamesh/tablet-x/siduri-and-gilgamesh
+  generated_by_model: claude-sonnet-4-6

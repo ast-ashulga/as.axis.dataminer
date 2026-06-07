@@ -1,0 +1,30 @@
+_sisyphus_version: '0.1'
+_generated_at: '2026-06-06T10:49:55.312130+00:00'
+_pipeline_run_id: phase-c
+fragment:
+  nas: nms://gilgamesh/tablet-xi/lacuna-end-of-plant-and-return
+  parent_nas: nms://gilgamesh/tablet-xi
+  tradition_id: gilgamesh
+  confidence_tier: reconstructed
+  available_layers:
+  - surface
+  methodology_fit_warning: false
+content:
+- locale: ru
+  layer: surface
+  body: 'Данный фрагмент соответствует лакуне в используемом источнике: текст обрывается в середине наставлений Утнапиштима лодочнику Уршанаби [NAS: nms://gilgamesh/tablet-xi/lacuna-end-of-plant-and-return]. Согласно каноническому тексту Стандартной вавилонской версии, восстанавливаемому по Джорджу (2003), далее следуют эпизоды обнаружения Гильгамешем растения бессмертия на морском дне, его похищения змеёй и скорбного монолога героя [NAS: nms://gilgamesh/tablet-xi/lacuna-end-of-plant-and-return]. Завершение таблички XI, по всей видимости, включало возвращение Гильгамеша в Урук и его созерцание городских стен [NAS: nms://gilgamesh/tablet-xi/lacuna-end-of-plant-and-return]. Таблица XII, повествующая о нисхождении за пуккой, также отсутствует в данном источнике [NAS: nms://gilgamesh/tablet-xi/lacuna-end-of-plant-and-return].'
+  status: confirmed
+  confidence_tier: reconstructed
+  ai_generated: true
+  reviewed_by:
+  reviewed_at:
+  translation_id:
+  translation_author:
+  translation_year:
+  translation_license:
+  grounding_citations:
+  - nms://gilgamesh/tablet-xi/lacuna-end-of-plant-and-return
+  - nms://gilgamesh/tablet-xi/lacuna-end-of-plant-and-return
+  - nms://gilgamesh/tablet-xi/lacuna-end-of-plant-and-return
+  - nms://gilgamesh/tablet-xi/lacuna-end-of-plant-and-return
+  generated_by_model: claude-sonnet-4-6

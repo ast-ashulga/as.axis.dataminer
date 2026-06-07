@@ -1,0 +1,64 @@
+_sisyphus_version: '0.1'
+nas: nms://gilgamesh/tablet-x/waters-of-death
+track: propp
+annotations:
+- code: PROPP-15
+  label: Spatial Translocation
+  proposed_tier: reconstructed
+  status: confirmed
+  rationale: "Gilgamesh has crossed the Waters of Death to reach Utnapishtim, who dwells at the ends of the earth — a realm beyond the mortal world. This passage documents the arrival at that liminal destination, the culmination of a translocation arc. Urshanabi's detailed instructions about using poles and avoiding contact with the Waters of Death are the operative mechanism of this crossing. The journey described — across mountains, seas, and finally the Waters of Death — constitutes the classic Proppian spatial translocation 'to another kingdom.' The methodology fit is moderate: the 'other realm' here is cosmological rather than fairy-tale fantastical, but the structural function is equivalent."
+  evidence_citations:
+  - "Dyakonov 1961, Tablet X: 'Воды смерти рукою не тронь, берегися!'"
+  - "Gumilev 1919, Tablet X: 'Переплыл все пучины моря'"
+  - George 2003, SB X 85–100
+  methodology_fit_warning: false
+  ai_generated: true
+  generated_by_model: claude-sonnet-4-6
+- code: PROPP-9
+  label: Mediation
+  proposed_tier: contested
+  status: confirmed
+  rationale: Gilgamesh's speech to Utnapishtim recounts the death of Enkidu and the terror of mortality that drove him to this quest — articulating the initial misfortune (loss of his companion, confrontation with death) and the lack (immortality or its secret) that set the narrative in motion. While the formal 'calling or dispatching' of the hero already occurred earlier in the epic, this passage functions as a retrospective mediation in which Gilgamesh himself voices the misfortune before the donor-figure Utnapishtim. The fit is slightly forced since this is a restatement rather than initial dispatch, warranting a contested tier.
+  evidence_citations:
+  - "Gumilev 1919, Tablet X: 'Вверг себя в нищету я, болью исполнил члены'"
+  - "Dyakonov 1961, Tablet X: 'Плоть свою я наполнил тоскою'"
+  methodology_fit_warning: true
+  methodology_fit_note: This is a retrospective narration of the misfortune rather than a primary mediation event; the Proppian function is present by implication rather than direct enactment in this segment. The mapping is defensible as a restatement of the misfortune before the key donor-figure, but should be treated as contested.
+  ai_generated: true
+  generated_by_model: claude-sonnet-4-6
+- code: PROPP-12
+  label: First Function of Donor
+  proposed_tier: reconstructed
+  status: confirmed
+  rationale: "Utnapishtim functions here as a donor-figure who tests or interrogates Gilgamesh before any potential provision of the magical agent (the secret of immortality or the plant of life). His questioning — 'Why is your heart troubled, your brow furrowed?' — and his subsequent philosophical discourse on the inevitability of death constitute the donor's initial engagement with the hero. In Proppian morphology, the donor does not immediately provide the agent but first poses a challenge or question; Utnapishtim's extended speech on mortality serves this function. The fit is moderate: Utnapishtim's role is more ambiguous than a classic fairy-tale donor, as he also delivers a thematic lesson rather than a pure test."
+  evidence_citations:
+  - "Gumilev 1919, Tablet X: 'Что случилось с твоею мощью? Взгляд твой зачем опущен?'"
+  - "Dyakonov 1961, Tablet X: 'Почему, Гильгамеш, ты исполнен тоскою?'"
+  - George 2003, SB X 260–322
+  methodology_fit_warning: false
+  ai_generated: true
+  generated_by_model: claude-sonnet-4-6
+- code: PROPP-13
+  label: Hero's Reaction
+  proposed_tier: reconstructed
+  status: confirmed
+  rationale: Gilgamesh responds to Utnapishtim's interrogation with a full account of his suffering and quest, demonstrating his worthiness and sincerity before the donor-figure. This narration of hardship — crossing mountains, seas, hunting wild animals, enduring deprivation — is the hero's reaction to the donor's initial challenge. In Propp's schema, the hero's reaction (whether passing or failing the test) determines whether the magical agent will be granted; here Gilgamesh's honest account of suffering positions him as a genuine seeker.
+  evidence_citations:
+  - "Gumilev 1919, Tablet X: 'Я сказал — я увижу Ут-напиштима, о котором несется слава, / И поднялся я, и прошел все страны'"
+  - "Dyakonov 1961, Tablet X: 'Я скитался долго, обошел все страны, / Я взбирался на трудные горы'"
+  methodology_fit_warning: false
+  ai_generated: true
+  generated_by_model: claude-sonnet-4-6
+- code: PROPP-8
+  label: Villainy / Lack
+  proposed_tier: contested
+  status: confirmed
+  rationale: "Utnapishtim's philosophical speech on universal mortality explicitly articulates the lack that drives the entire epic: immortality is withheld from mortals by divine decree, and the hour of death is unknowable. The speech — 'They have not revealed the time of death, but they have revealed: let the living live!' — names and confirms the foundational lack. However, this is not a new establishment of lack but a re-articulation and philosophical framing of it mid-quest, making the application contested rather than primary."
+  evidence_citations:
+  - "Dyakonov 1961, Tablet X: 'Они смерть и жизнь определили, / Не поведали смертного часа'"
+  - "Gumilev 1919, Tablet X: 'Нет с давнишних пор на земле бессмертья'"
+  - George 2003, SB X 318–322
+  methodology_fit_warning: true
+  methodology_fit_note: The lack of immortality was established much earlier in the epic; this passage reconfirms it philosophically rather than introducing it. The annotation is defensible as a thematic reinforcement of PROPP-8 but is not a primary instantiation of the function, hence contested tier.
+  ai_generated: true
+  generated_by_model: claude-sonnet-4-6

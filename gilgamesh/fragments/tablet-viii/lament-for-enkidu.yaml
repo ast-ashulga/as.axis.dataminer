@@ -1,0 +1,31 @@
+_sisyphus_version: '0.1'
+_generated_at: '2026-06-06T10:49:34.838954+00:00'
+_pipeline_run_id: phase-c
+fragment:
+  nas: nms://gilgamesh/tablet-viii/lament-for-enkidu
+  parent_nas: nms://gilgamesh/tablet-viii
+  tradition_id: gilgamesh
+  confidence_tier: reconstructed
+  available_layers:
+  - surface
+  methodology_fit_warning: false
+content:
+- locale: ru
+  layer: surface
+  body: 'На рассвете восьмой таблицы Гильгамеш обращается с плачем к умершему Энкиду, призывая природу, животных, реки и жителей Урука разделить его скорбь [NAS: nms://gilgamesh/tablet-viii/lament-for-enkidu]. Он перечисляет тех, кто должен оплакивать друга: кедры и кипарисы, дикие звери степи, воды Евфрата, старейшины и женщины Урука, слуги и блудница, умастившая Энкиду [NAS: nms://gilgamesh/tablet-viii/lament-for-enkidu]. Гильгамеш именует Энкиду «младшим братом», «пантерой пустыни» и перечисляет их общие подвиги — победу над Хумбабой и убийство Небесного быка [NAS: nms://gilgamesh/tablet-viii/lament-for-enkidu]. Обнаружив, что сердце друга не бьётся, Гильгамеш в отчаянии бросается на тело, подобно львице, потерявшей детёнышей, рвёт одежду и волосы, снимает с себя царские знаки [NAS: nms://gilgamesh/tablet-viii/lament-for-enkidu]. Таким образом, эпизод представляет развёрнутый ритуальный плач, в котором личная утрата Гильгамеша соединяется с космическим измерением скорби [NAS: nms://gilgamesh/tablet-viii/lament-for-enkidu].'
+  status: confirmed
+  confidence_tier: reconstructed
+  ai_generated: true
+  reviewed_by:
+  reviewed_at:
+  translation_id:
+  translation_author:
+  translation_year:
+  translation_license:
+  grounding_citations:
+  - nms://gilgamesh/tablet-viii/lament-for-enkidu
+  - nms://gilgamesh/tablet-viii/lament-for-enkidu
+  - nms://gilgamesh/tablet-viii/lament-for-enkidu
+  - nms://gilgamesh/tablet-viii/lament-for-enkidu
+  - nms://gilgamesh/tablet-viii/lament-for-enkidu
+  generated_by_model: claude-sonnet-4-6

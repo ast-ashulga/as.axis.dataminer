@@ -1,0 +1,52 @@
+_sisyphus_version: '0.1'
+nas: nms://gilgamesh/tablet-vii/enkidus-lament
+track: bakhtin
+annotations:
+- code: BAKHTIN-THRESHOLD
+  label: Threshold Chronotope
+  proposed_tier: reconstructed
+  status: confirmed
+  rationale: "Enkidu's twelve-day illness and the extended dying process constitute a sustained threshold moment: he is suspended between life and death, neither fully in the world of the living nor yet claimed by the underworld. Normal time is marked obsessively by the counting of days (день четвертый, и пятый, шестой, и седьмой...) yet this enumeration only underscores stasis and the suspension of forward movement. The threshold here is both physical (the sickbed as liminal site) and existential (the boundary between being and non-being). This is among the most paradigmatic threshold chronotopes in ancient epic literature."
+  evidence_citations:
+  - "Gumilev 1919, Tablet VII: 'День четвертый, и пятый, шестой, и седьмой, и восьмой, и девятый, / Всех двенадцать дней оставляет болезнь Эабани в постели'"
+  - George 2003, SB VII 1–14
+  methodology_fit_warning: false
+  ai_generated: true
+  generated_by_model: claude-sonnet-4-6
+- code: BAKHTIN-UNDERWORLD
+  label: Underworld / Netherworld Chronotope
+  proposed_tier: reconstructed
+  status: confirmed
+  rationale: "Enkidu's dream-vision of the House of Dust (Дом праха) is a canonical instantiation of the Underworld chronotope: time is suspended or inverted, the dreamer crosses the boundary of death while still living, and he encounters the dead — former kings, priests, legendary figures such as Etana and Sumuqan — who now exist in a state of diminished, lightless being. The descent is enacted through the dream rather than bodily travel, but this does not diminish the chronotopic force; the spatial markers (дом мрака, жилище Иркаллы, дом, откуда вошедший никогда не выходит) are explicit and structural. Ereshkigal and the tablet-keeper Belet-seri, who reads Enkidu's fate aloud, confirm the underworld's function as a space where cosmic judgment operates outside living time."
+  evidence_citations:
+  - "Dyakonov 1961, Tablet VII: 'Взглянул и увел меня в дом мрака, жилище Иркаллы, / В дом, откуда вошедший никогда не выходит'"
+  - "Dyakonov 1961, Tablet VII: 'В Доме праха, куда вступил я, / Живут жрец и служка... Живет Эрешкигаль, земли царица'"
+  - George 2003, SB VII 155–200
+  methodology_fit_warning: false
+  ai_generated: true
+  generated_by_model: claude-sonnet-4-6
+- code: BAKHTIN-DIVINE
+  label: Divine / Cosmic Chronotope
+  proposed_tier: reconstructed
+  status: confirmed
+  rationale: "Gilgamesh's prayer to the gods and Shamash's response from heaven introduce the Divine chronotope: mythic, cosmological time interrupts and frames the human drama of Enkidu's dying. Shamash's declaration from the sky — that the word of a god cannot be revoked, that the lot once cast cannot be retrieved — articulates a cosmic temporality that stands above and governs human fate. The enumeration of divine figures (Anu, Enlil, Shamash, and then in the underworld Ereshkigal and Anu and Enlil receiving offerings from the dead) further positions the narrative within a layered cosmic order that encompasses both living and dead time."
+  evidence_citations:
+  - "Dyakonov 1961, Tablet VII: 'Пусть, отец богов, будет милостив Ану, / Даже Эллиль да сжалится, смилуется Шамаш'"
+  - "Dyakonov 1961, Tablet VII: 'Услыхал его Шамаш, воззвал к нему с неба: / ...Слово, что сказано, бог не изменит... / Судьба людская проходит,-- ничто не останется в мире!'"
+  - George 2003, SB VII 40–60
+  methodology_fit_warning: false
+  ai_generated: true
+  generated_by_model: claude-sonnet-4-6
+- code: BAKHTIN-HEROIC-BODY
+  label: Heroic Body Chronotope
+  proposed_tier: contested
+  status: confirmed
+  rationale: Enkidu's body in decline and in dream-struggle functions as a site where the narrative's central transformation is inscribed. In his dream, his physical struggle with the bird-man figure — striking, being struck, being seized 'like a vice' (как тисками) and transformed into a bird — enacts the hero's passage from warrior to victim, from the world of physical heroic time to the suspended time of the underworld. This application is contested because Enkidu's body here is not the site of triumphant heroic inscription (the more typical form of the BAKHTIN-HEROIC-BODY chronotope) but rather of its negation and dissolution; the framework's fit is meaningful but requires interpretive extension to cover bodily defeat and metamorphosis as much as bodily achievement.
+  evidence_citations:
+  - "Dyakonov 1961, Tablet VII: 'Он за власы схватил, меня одолел он... Сжал, как тисками, все мое тело'"
+  - "Dyakonov 1961, Tablet VII: 'Он ко мне прикоснулся, превратил меня в птаху, / Крылья, как птичьи, надел мне на плечи'"
+  - "Gumilev 1919, Tablet VII: 'Вот боюсь я борьбы и не выйду в поле'"
+  methodology_fit_warning: true
+  methodology_fit_note: The BAKHTIN-HEROIC-BODY chronotope is more naturally aligned with scenes of heroic achievement and physical triumph. Its application here, to a scene of bodily subjugation, illness, and oneiric transformation, requires acknowledging that the passage inverts rather than instantiates the standard heroic-body pattern. The annotation is still defensible as a negative or inverted instance — Enkidu's body marks the end of his heroic time precisely through its failure — but the contested tier is appropriate.
+  ai_generated: true
+  generated_by_model: claude-sonnet-4-6

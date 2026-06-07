@@ -1,0 +1,52 @@
+_sisyphus_version: '0.1'
+nas: nms://gilgamesh/tablet-xi/lacuna-end-of-plant-and-return
+track: tmi
+annotations:
+- code: TMI-D965.1
+  label: Plant of rejuvenation
+  proposed_tier: reconstructed
+  status: confirmed
+  rationale: The canonical SBV Tablet XI preserves Utnapishtim's instruction to Gilgamesh to retrieve the plant of rejuvenation from the sea floor, and Gilgamesh's subsequent recovery of it. Although the source passage is a lacuna — the text breaks off mid-sentence during Utnapishtim's instructions — the motif is securely attested in the fuller witness and is the direct subject of the interrupted episode. The annotation is therefore reconstructed from the canonical tradition rather than the fragmentary witness itself.
+  evidence_citations:
+  - George 2003, SB XI 280–289 (plant retrieval instructions and execution)
+  - Thompson 1928, Tablet XI (lacuna noted at plant episode)
+  methodology_fit_warning: true
+  methodology_fit_note: 'The source passage is explicitly a lacuna: the text is absent from this witness. Annotating a motif that does not appear in the provided segment but is inferred from the canonical edition raises a significant methodology-fit concern. The annotation is defensible only as a reconstruction from George 2003 and parallel witnesses, not from the passage itself. Scholars should flag this as gap-filling rather than direct textual annotation.'
+  ai_generated: true
+  generated_by_model: claude-sonnet-4-6
+- code: TMI-B176.1
+  label: Serpent steals magic plant
+  proposed_tier: reconstructed
+  status: confirmed
+  rationale: In the canonical SBV tradition, a serpent steals the plant of rejuvenation from Gilgamesh while he sleeps beside a pool, immediately after he has recovered it from the sea. This is among the most structurally significant motifs in the epic's closing movement. The source passage's lacuna covers precisely this episode. The annotation is reconstructed entirely from the George 2003 edition and cannot be grounded in the fragmentary witness provided.
+  evidence_citations:
+  - George 2003, SB XI 305–310 (serpent theft and sloughing of skin)
+  - Thompson 1928, Tablet XI (episode absent from this witness)
+  methodology_fit_warning: true
+  methodology_fit_note: As with TMI-D965.1, this annotation addresses a textual lacuna. The serpent-theft episode is absent from the provided source. Applying the motif code here is legitimate as a scholarly reconstruction indicating what the canonical tradition contains, but it should not be treated as annotation of attested text. The confidence tier 'reconstructed' is the strongest defensible assignment under these conditions.
+  ai_generated: true
+  generated_by_model: claude-sonnet-4-6
+- code: TMI-A1335
+  label: Origin of death
+  proposed_tier: contested
+  status: confirmed
+  rationale: Gilgamesh's lament after the serpent steals the plant — preserved in the canonical SBV Tablet XI — functions thematically as an implicit acknowledgment that immortality is foreclosed to mortals, reinforcing the broader aetiological logic of why humans must die. The motif is contested here because the lament is not a direct aetiological statement but an emotional response; the 'origin of death' framing is an interpretive overlay on narrative grief rather than an explicit mythological declaration. Additionally, the passage is lacunose in this witness.
+  evidence_citations:
+  - George 2003, SB XI 311–322 (Gilgamesh's lament over lost plant)
+  - Thompson 1928, Tablet XI (lament episode absent from this witness)
+  methodology_fit_warning: true
+  methodology_fit_note: "Double methodology-fit concern: (1) the passage is a lacuna in the provided source; (2) TMI-A1335 is an interpretive application rather than a direct narrative match. The aetiological reading of Gilgamesh's lament as 'origin of death' mythology is a scholarly inference and not universally accepted. 'Contested' tier reflects both the textual absence and the interpretive ambiguity."
+  ai_generated: true
+  generated_by_model: claude-sonnet-4-6
+- code: TMI-H1376.3
+  label: Quest for immortality
+  proposed_tier: reconstructed
+  status: confirmed
+  rationale: The plant-retrieval and return-to-Uruk episodes, both absent from this witness due to lacuna, constitute the resolution arc of Gilgamesh's quest for immortality. The quest motif itself is well-established across the full SBV tradition. The annotation documents the motif's structural presence in the canonical narrative at the point where the provided witness breaks off, serving as a reconstruction marker for the absent text.
+  evidence_citations:
+  - 'George 2003, SB XI 266–322 (quest resolution: plant, theft, lament)'
+  - Thompson 1928, Tablet XI (lacuna covers quest resolution)
+  methodology_fit_warning: true
+  methodology_fit_note: The quest motif is unambiguous in the canonical tradition but is not attested in the provided passage due to lacuna. This annotation is a gap-bridging reconstruction and should be clearly distinguished from annotations grounded in extant text. No methodology-fit concern attaches to the motif code itself; the concern is entirely about source availability.
+  ai_generated: true
+  generated_by_model: claude-sonnet-4-6

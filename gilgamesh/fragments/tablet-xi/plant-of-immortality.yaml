@@ -1,0 +1,31 @@
+_sisyphus_version: '0.1'
+_generated_at: '2026-06-06T10:49:55.306928+00:00'
+_pipeline_run_id: phase-c
+fragment:
+  nas: nms://gilgamesh/tablet-xi/plant-of-immortality
+  parent_nas: nms://gilgamesh/tablet-xi
+  tradition_id: gilgamesh
+  confidence_tier: reconstructed
+  available_layers:
+  - surface
+  methodology_fit_warning: false
+content:
+- locale: ru
+  layer: surface
+  body: 'Гильгамеш, привязав к ногам тяжёлые камни, погружается на дно океана и добывает растение вечной молодости, которое, согласно тексту, способно возвращать старику юность [NAS: nms://gilgamesh/tablet-xi/plant-of-immortality]. Герой намеревается доставить его в Урук и разделить с согражданами, называя растение «старик становится юным» [NAS: nms://gilgamesh/tablet-xi/plant-of-immortality]. Однако во время привала у колодца с пресной водой змея, почуяв запах чудесного растения, похищает его, одновременно сбрасывая собственную кожу — деталь, которую текст, по всей видимости, связывает с обретением змеёй способности к обновлению [NAS: nms://gilgamesh/tablet-xi/plant-of-immortality]. Гильгамеш в отчаянии плачет и в горестном монологе, обращённом к лодочнику Уршанаби, сетует на тщетность своих усилий [NAS: nms://gilgamesh/tablet-xi/plant-of-immortality]. Утнапишти, согласно версии Дьяконова, также повелевает Уршанаби омыть и переодеть героя перед возвращением в Урук [NAS: nms://gilgamesh/tablet-xi/plant-of-immortality].'
+  status: confirmed
+  confidence_tier: reconstructed
+  ai_generated: true
+  reviewed_by:
+  reviewed_at:
+  translation_id:
+  translation_author:
+  translation_year:
+  translation_license:
+  grounding_citations:
+  - nms://gilgamesh/tablet-xi/plant-of-immortality
+  - nms://gilgamesh/tablet-xi/plant-of-immortality
+  - nms://gilgamesh/tablet-xi/plant-of-immortality
+  - nms://gilgamesh/tablet-xi/plant-of-immortality
+  - nms://gilgamesh/tablet-xi/plant-of-immortality
+  generated_by_model: claude-sonnet-4-6

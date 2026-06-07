@@ -1,0 +1,52 @@
+_sisyphus_version: '0.1'
+nas: nms://gilgamesh/tablet-xi/utnapishtim-meeting
+track: bakhtin
+annotations:
+- code: BAKHTIN-THRESHOLD
+  label: Threshold Chronotope
+  proposed_tier: reconstructed
+  status: confirmed
+  rationale: "Gilgamesh's encounter with Utnapishtim at the edge of the world constitutes a supreme liminal moment: Gilgamesh has crossed the Waters of Death and arrived at the boundary between mortal existence and immortality. The dialogue itself is suspended at this threshold — Gilgamesh has not yet received the answer to his quest, and the entire exchange hovers between his mortal state and the possibility of transcendence. The repeated insistence that Utnapishtim appears 'just like me' ('таков, как и я' in Dyakonov 1961, Tablet XI) dramatises the crisis of the threshold: the boundary between mortal and immortal is spatially present yet visually invisible."
+  evidence_citations:
+  - "Gumilev 1919, Tablet XI: 'Твой облик не страшен, ты мне подобен'"
+  - "Dyakonov 1961, Tablet XI: 'Не чуден ты ростом - таков, как и я, ты'"
+  - George 2003, SB XI 1–8
+  methodology_fit_warning: false
+  ai_generated: true
+  generated_by_model: claude-sonnet-4-6
+- code: BAKHTIN-DIVINE
+  label: Divine / Cosmic Chronotope
+  proposed_tier: reconstructed
+  status: confirmed
+  rationale: The passage explicitly invokes the 'assembly of the immortals' ('собранье бессмертных' in Gumilev 1919, Tablet XI; 'собранье богов' in Dyakonov 1961, Tablet XI) as the cosmic locus where Utnapishtim was granted eternal life. This is a reference to mythic, cosmological time operating beyond human chronology — the divine council that determines fates. Gilgamesh's question is oriented toward understanding how cosmic-divine time intersected with Utnapishtim's individual biography, marking the passage as a site where human and divine temporal registers collide.
+  evidence_citations:
+  - "Gumilev 1919, Tablet XI: 'добыл жизнь в собранье бессмертных'"
+  - "Dyakonov 1961, Tablet XI: 'в собранье богов был принят и жизнь обрел в нем'"
+  - George 2003, SB XI 7–8
+  methodology_fit_warning: false
+  ai_generated: true
+  generated_by_model: claude-sonnet-4-6
+- code: BAKHTIN-ROAD
+  label: Road / Journey Chronotope
+  proposed_tier: contested
+  status: confirmed
+  rationale: The meeting with Utnapishtim is the culminating encounter of Gilgamesh's long journey — the road chronotope is activated by the fact that this chance-yet-fated meeting at the world's edge is the direct product of that journey's motion through successive spatial-temporal zones. However, this segment itself is purely dialogic and static; the road's momentum has been arrested at the threshold. Applying the road chronotope here is therefore contested, as the journey's logic is present only structurally and retrospectively, not in the immediate textual surface of this passage.
+  evidence_citations:
+  - "Gumilev 1919, Tablet XI: 'Гильгамеш говорит отшельнику Ут-напиштиму'"
+  - George 2003, SB XI 1 (narrative context of the journey's end)
+  methodology_fit_warning: true
+  methodology_fit_note: The road chronotope is structurally implied by the narrative arc leading to this moment but is not directly instantiated in the text of this specific passage. Annotation is defensible as a background chronotope but should not be treated as primary for this segment.
+  ai_generated: true
+  generated_by_model: claude-sonnet-4-6
+- code: BAKHTIN-HEROIC-BODY
+  label: Heroic Body Chronotope
+  proposed_tier: contested
+  status: confirmed
+  rationale: "Gilgamesh's scrutiny of Utnapishtim's physical form — noting that he is not frightening in stature and lies on his back to sleep like any mortal — inverts the heroic body chronotope in an analytically significant way. Rather than the hero's body serving as a marker of extraordinary time-space, here the absence of bodily distinction is itself the narrative crux: immortality has left no corporeal trace. The annotation is contested because the passage describes Utnapishtim's body rather than Gilgamesh's, and the heroic body framework is used here in a deflated, deconstructive mode rather than in its standard affirmative register."
+  evidence_citations:
+  - "Dyakonov 1961, Tablet XI: 'Не чуден ты ростом - таков, как и я, ты'"
+  - "Gumilev 1919, Tablet XI: 'Как все, когда спишь, ты ложишься на спину'"
+  methodology_fit_warning: true
+  methodology_fit_note: The heroic body chronotope is applied here in an inverted/negative mode — the point is that the immortal's body is indistinguishable from the mortal's. This is an interpretively productive but methodologically non-standard application of the framework; confidence is accordingly reduced to 'contested'.
+  ai_generated: true
+  generated_by_model: claude-sonnet-4-6

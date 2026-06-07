@@ -1,0 +1,64 @@
+_sisyphus_version: '0.1'
+nas: nms://gilgamesh/tablet-vi/bull-of-heaven
+track: propp
+annotations:
+- code: PROPP-8
+  label: Villainy / Lack
+  proposed_tier: reconstructed
+  status: confirmed
+  rationale: "Ishtар's dispatch of the Bull of Heaven constitutes an act of villainy directed against the hero Gilgamesh. She petitions Anu to create the Bull specifically as an instrument of harm: 'Мой отец, пусть родится бык небесный, бык небесный, который убьет Гильгамеша' (Gumilev 1919, Tablet VI) / 'Отец, создай Быка мне, чтоб убил Гильгамеша в его жилище' (Dyakonov 1961, Tablet VI). The Bull then kills hundreds of Uruk's citizens and directly threatens Gilgamesh and Enkidu, fulfilling the Proppian function of harm caused by a villain-agent. The methodology fit is moderate: in Propp the villain acts against the hero directly, whereas here the Bull is an intermediary weapon wielded by a divine antagonist, making the mapping slightly indirect."
+  evidence_citations:
+  - Gumilev 1919, Tablet VI
+  - Dyakonov 1961, Tablet VI
+  - George 2003, SB VI 92–100
+  methodology_fit_warning: true
+  methodology_fit_note: The 'villain' here is a goddess using a divine creature as proxy weapon rather than a conventional Proppian villain acting directly. The function is still defensible as villainy-by-agent, but the divine-political context (Ishtар's wounded pride rather than structural opposition to the hero) stretches the Propp frame.
+  ai_generated: true
+  generated_by_model: claude-sonnet-4-6
+- code: PROPP-16
+  label: Struggle
+  proposed_tier: reconstructed
+  status: confirmed
+  rationale: "The combat between the heroes and the Bull of Heaven constitutes a direct struggle between hero and villain-agent. Both translations describe the multi-phase confrontation: Enkidu seizes the Bull by the horns while Gilgamesh strikes the killing blow between the horns and neck: 'Между рогами, меж затылком и шеей / Быка поразил кинжалом' (Dyakonov 1961, Tablet VI) and 'Разрубает быка меж рогами и шеей' (Gumilev 1919, Tablet VI). The graduated nature of the Bull's three exhalations creating successive pits of death before the heroes' coordinated counter-attack maps well to Propp's struggle function."
+  evidence_citations:
+  - Gumilev 1919, Tablet VI
+  - Dyakonov 1961, Tablet VI
+  - George 2003, SB VI 109–133
+  methodology_fit_warning: false
+  ai_generated: true
+  generated_by_model: claude-sonnet-4-6
+- code: PROPP-18
+  label: Victory
+  proposed_tier: reconstructed
+  status: confirmed
+  rationale: "The Bull of Heaven is slain by the joint action of Gilgamesh and Enkidu, constituting a clear victory over the villain-agent. Gumilev renders this: 'Бросил его Эабани, и дух испустил он' (Gumilev 1919, Tablet VI), and Dyakonov confirms: 'Как Быка они убили, ему вырвали сердце, перед Шамашем положили' (Dyakonov 1961, Tablet VI). The dedicatory offering of the Bull's heart to Shamash ritually seals the victory. This is one of the more securely mappable Propp functions in this tablet."
+  evidence_citations:
+  - Gumilev 1919, Tablet VI
+  - Dyakonov 1961, Tablet VI
+  - George 2003, SB VI 133–140
+  methodology_fit_warning: false
+  ai_generated: true
+  generated_by_model: claude-sonnet-4-6
+- code: PROPP-27
+  label: Recognition
+  proposed_tier: contested
+  status: confirmed
+  rationale: "Following the victory, Gilgamesh publicly proclaims his own supremacy before the assembled people of Uruk: 'Кто блистателен среди народа? Кто могуществен среди народа? Гильгамеш блистателен среди народа, Гильгамеш могуществен среди народа!' (Gumilev 1919, Tablet VI). This functions as communal recognition of the hero's identity and deeds. The fit is contested because in Propp, recognition typically follows a period of unrecognised arrival (PROPP-23) by a third party; here the recognition is self-proclaimed and public celebration rather than discovery of a disguised hero."
+  evidence_citations:
+  - Gumilev 1919, Tablet VI
+  methodology_fit_warning: true
+  methodology_fit_note: Self-proclamation as recognition is an inversion of the Proppian model, where a third party identifies the hero. The absence of a preceding PROPP-23 (Unrecognized Arrival) further weakens the morphological sequence. The annotation is defensible as a functional analogue but should be treated as contested.
+  ai_generated: true
+  generated_by_model: claude-sonnet-4-6
+- code: PROPP-30
+  label: Punishment
+  proposed_tier: contested
+  status: confirmed
+  rationale: "Ishtар is humiliated and symbolically punished when Enkidu tears off the Bull's leg and hurls it at her face: 'Вырвал он ногу быка, бросил в лицо богине' (Gumilev 1919, Tablet VI). She then mourns over the severed limb with her cult women — a public ritual of lamentation that also marks her defeat. This constitutes punishment of the villain, though the fit is contested: the punishment is gestural and shaming rather than final or lethal, and Ishtар retains her divine power. Her subsequent role in the death of Enkidu (implied in the passage's closing dream-vision setup) shows the punishment is incomplete."
+  evidence_citations:
+  - Gumilev 1919, Tablet VI
+  - George 2003, SB VI 155–160
+  methodology_fit_warning: true
+  methodology_fit_note: Proppian punishment typically ends the villain's capacity for harm; here Ishtар is shamed but not neutralised. The narrative arc of Tablet VI does not resolve her antagonism, making this a partial and contested application of PROPP-30.
+  ai_generated: true
+  generated_by_model: claude-sonnet-4-6

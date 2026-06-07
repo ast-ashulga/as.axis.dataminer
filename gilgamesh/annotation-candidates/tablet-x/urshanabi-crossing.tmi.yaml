@@ -1,0 +1,66 @@
+_sisyphus_version: '0.1'
+nas: nms://gilgamesh/tablet-x/urshanabi-crossing
+track: tmi
+annotations:
+- code: TMI-H900
+  label: Tasks and quests
+  proposed_tier: reconstructed
+  status: confirmed
+  rationale: "Gilgamesh is on a quest to find Utnapishtim, driven by grief over Enkidu's death and desire for immortality. The encounter with Urshanabi/Ur-Ea represents a threshold condition: before crossing, Gilgamesh must fulfil a practical task — cutting 120 punting poles — as a prerequisite for passage. This task functions structurally as a quest-enabling ordeal imposed by the ferryman."
+  evidence_citations:
+  - "Dyakonov 1961, Tablet X: 'Возьми, Гильгамеш, топор в свою руку, углубися в лес, наруби шестов там'"
+  - "Gumilev 1919, Tablet X: 'Подними, Гильгамеш, свою секиру, в шестьдесят локтей выруби жерди'"
+  - George 2003, SB X 160–175
+  methodology_fit_warning: false
+  ai_generated: true
+  generated_by_model: claude-sonnet-4-6
+- code: TMI-H1376.3
+  label: Quest for immortality
+  proposed_tier: reconstructed
+  status: confirmed
+  rationale: The entire crossing sequence is motivated by Gilgamesh's quest to reach Utnapishtim and learn the secret of eternal life. His repeated declaration of purpose to Urshanabi — 'where is the way to Utnapishtim?' — frames the crossing as a stage in the immortality quest. The Waters of Death that must be navigated mark the liminal boundary between the mortal world and the dwelling of the immortal flood-survivor.
+  evidence_citations:
+  - "Dyakonov 1961, Tablet X: 'Теперь, Уршанаби,- где путь к Утнапишти?'"
+  - "Gumilev 1919, Tablet X: 'Укажи мне дорогу к отшельнику Ут-напиштиму'"
+  - George 2003, SB X 77–79
+  methodology_fit_warning: false
+  ai_generated: true
+  generated_by_model: claude-sonnet-4-6
+- code: TMI-F80
+  label: Journey to land of dead
+  proposed_tier: reconstructed
+  status: confirmed
+  rationale: The Waters of Death (mê mūti) explicitly delimit the passage into a realm beyond mortal geography. Urshanabi warns Gilgamesh not to let his hands touch these waters, which function as a boundary marker for the land of the dead or the beyond. The navigation of this liminal sea in a boat parallels underworld journey motifs across Near Eastern and comparative traditions, making this a strong fit for TMI-F80, though the destination is technically the dwelling of a deified human rather than a proper underworld.
+  evidence_citations:
+  - "Dyakonov 1961, Tablet X: 'И вступил Уршанаби в воды смерти'"
+  - "Gumilev 1919, Tablet X: 'Ур-Эа вступил в воды смерти. Ур-Эа говорит Гильгамешу: Гильгамеш, подвигайся впереди, работай жердью, да не коснутся руки твоей воды смерти!'"
+  - George 2003, SB X 170–178
+  methodology_fit_warning: true
+  methodology_fit_note: The Waters of Death and the realm of Utnapishtim do not map precisely onto standard 'land of the dead' concepts — Utnapishtim dwells at the mouth of the rivers (far-world paradise), not in the underworld proper (Irkalla). TMI-F80 is therefore an approximate fit; TMI-F110 (Journey to earthly paradise) may be equally or more applicable. The annotation is defensible as a liminal death-boundary crossing motif, but the overlap with TMI-F110 should be noted.
+  ai_generated: true
+  generated_by_model: claude-sonnet-4-6
+- code: TMI-F110
+  label: Journey to earthly paradise
+  proposed_tier: contested
+  status: confirmed
+  rationale: Utnapishtim's dwelling place — at the mouth of rivers, beyond the Waters of Death — corresponds to an earthly paradise at the world's edge rather than an infernal realm. Gilgamesh's journey across the sea to reach this remote immortal enclave fits the motif of a hero traveling to a peripheral paradise. The destination is contested between F80 and F110 in scholarship, and the ambiguity of the text supports marking this annotation as contested.
+  evidence_citations:
+  - "Gumilev 1919, Tablet X: 'Из жилища богов сюда я явился, далеким путем от восхода солнца'"
+  - "Dyakonov 1961, Tablet X: 'Если возможно - переправлюсь морем'"
+  - George 2003, SB X 79; cf. George 2003 commentary vol. 1, pp. 498–502 on the geography of Utnapishtim's abode
+  methodology_fit_warning: true
+  methodology_fit_note: The distinction between TMI-F80 and TMI-F110 is genuinely ambiguous for this passage. Utnapishtim's realm combines features of both paradise and a post-mortem beyond. Scholarly consensus (George 2003) treats it as an extra-mundane locus rather than a proper underworld, lending stronger support to F110, but the Waters of Death label introduces F80 resonances that cannot be fully dismissed. Both codes should be retained with appropriate confidence qualifications.
+  ai_generated: true
+  generated_by_model: claude-sonnet-4-6
+- code: TMI-D1840
+  label: Magic invulnerability
+  proposed_tier: contested
+  status: confirmed
+  rationale: "In the Dyakonov translation, the 'idols' (stone things / Brothers of Stone in Gumilev) that Gilgamesh destroys in his fury were described by Urshanabi as protective talismans: 'Идолы те, Гильгамеш, мне оберегом были, чтобы я не прикоснулся к водам смерти.' These stone beings rendered Urshanabi invulnerable to the deadly waters, functioning as a form of magical protection. TMI-D1840 applies in a transferred or object-mediated sense rather than to Gilgamesh's body directly."
+  evidence_citations:
+  - "Dyakonov 1961, Tablet X: 'Идолы те, Гильгамеш, мне оберегом были, чтобы я не прикоснулся к водам смерти'"
+  - George 2003, SB X 92–96 (the stone things / ūrātu)
+  methodology_fit_warning: true
+  methodology_fit_note: TMI-D1840 typically applies to the hero's body being rendered invulnerable, not to protective objects. Here the application is to the ferryman's protective talismans. The fit is partial and the annotation is marked contested accordingly. The 'stone ones' (ūrātu) are philologically obscure and their precise function is debated in scholarship (George 2003, vol. 1, pp. 495–496), adding further methodological caution.
+  ai_generated: true
+  generated_by_model: claude-sonnet-4-6

@@ -1,0 +1,86 @@
+_sisyphus_version: '0.1'
+nas: nms://gilgamesh/tablet-xi/sleep-challenge
+track: propp
+annotations:
+- code: PROPP-25
+  label: Difficult Task
+  proposed_tier: contested
+  status: confirmed
+  rationale: "Ut-napishti challenges Gilgamesh to remain awake for six days and seven nights as a condition implicitly tied to the quest for immortality. This functions structurally as a 'difficult task' set by the donor/threshold figure: if Gilgamesh cannot master sleep, he cannot master death. The challenge is explicitly framed as a test of worthiness ('Who among the gods will bring you into their assembly?'), making it a gating ordeal in Proppian terms. The methodology_fit_warning is noted below, as Ut-napishti occupies an ambiguous role (neither pure donor nor villain) that complicates clean function assignment."
+  evidence_citations:
+  - Gumilev 1919, Tablet XI
+  - Dyakonov 1961, Tablet XI
+  - George 2003, SB XI 209-211
+  methodology_fit_warning: true
+  methodology_fit_note: Ut-napishti is not a canonical donor or villain in strict Proppian terms; he is simultaneously a threshold guardian, a test-setter, and an eventual giver of secret knowledge. The 'difficult task' here is proposed not as a formal ordeal with an expected resolution but as a trap that reveals Gilgamesh's failure. Propp assumes the hero will attempt and ultimately succeed at the task; here Gilgamesh fails, which is structurally atypical. The annotation is defensible as a morphological parallel but the inversion of expected outcome warrants the contested tier.
+  ai_generated: true
+  generated_by_model: claude-sonnet-4-6
+- code: PROPP-26
+  label: Solution
+  proposed_tier: contested
+  status: confirmed
+  rationale: "In strict Proppian morphology PROPP-26 represents successful resolution of the difficult task. Here, however, Gilgamesh demonstrably fails the sleep challenge, falling asleep almost immediately. The 'solution' function is inverted: the bread-loaves serve as irrefutable evidence of failure rather than triumph. One could argue that a partial, negative form of PROPP-26 is present in that the task is definitively resolved — its outcome determined and verified — but this is a forced mapping onto a passage whose narrative logic is failure rather than success."
+  evidence_citations:
+  - Gumilev 1919, Tablet XI
+  - Dyakonov 1961, Tablet XI
+  - George 2003, SB XI 215-230
+  methodology_fit_warning: true
+  methodology_fit_note: The Propp morphology presupposes that the hero resolves the difficult task successfully. Gilgamesh's failure here is a deliberate thematic inversion — mortality is proven through the bread-counting episode — and does not conform to the heroic resolution the framework anticipates. The annotation is contested rather than reconstructed because the mapping requires accepting a negative or ironic instantiation of the function.
+  ai_generated: true
+  generated_by_model: claude-sonnet-4-6
+- code: PROPP-12
+  label: First Function of Donor
+  proposed_tier: reconstructed
+  status: confirmed
+  rationale: "Following the failed sleep challenge, Ut-napishti transitions into a donor role by revealing a secret: the plant of rejuvenation at the bottom of the ocean. This 'sacred word' and 'secret word' (Gumilev 1919: 'тебе, Гильгамеш, я открою тайное слово') constitutes a testing-and-provision sequence characteristic of the donor function. Ut-napishti's provision of the plant's location is conditional on Gilgamesh having already demonstrated his human limits through the sleep test, structurally analogous to the donor testing the hero before granting the magical agent."
+  evidence_citations:
+  - Gumilev 1919, Tablet XI
+  - George 2003, SB XI 266-289
+  methodology_fit_warning: false
+  ai_generated: true
+  generated_by_model: claude-sonnet-4-6
+- code: PROPP-14
+  label: Provision / Receipt of Magical Agent
+  proposed_tier: reconstructed
+  status: confirmed
+  rationale: Ut-napishti discloses the existence and location of the plant of immortality ('Видишь растенье на дне океана') to Gilgamesh, which constitutes the provision of a magical agent. The plant is described with precise characteristics — its thorn-like spine, its oceanic location — giving Gilgamesh actionable knowledge to obtain a supernatural remedy. This is the structural equivalent of PROPP-14, even though physical receipt of the plant is not yet described in this passage segment.
+  evidence_citations:
+  - Gumilev 1919, Tablet XI
+  - George 2003, SB XI 286-291
+  methodology_fit_warning: false
+  ai_generated: true
+  generated_by_model: claude-sonnet-4-6
+- code: PROPP-29
+  label: Transfiguration
+  proposed_tier: reconstructed
+  status: confirmed
+  rationale: "Ut-napishti directs the ferryman Ur-Shanabi (Ur-Ea in Gumilev's transliteration) to lead Gilgamesh to the bath-house, wash his filthy garments, discard his animal skins, and clothe him in a garment that will not wear out until he reaches his city. This is a classic transfiguration sequence: Gilgamesh's degraded, grief-worn appearance ('чьё тело прикрыто грязной одеждой') is replaced with restored dignity and divine-quality clothing. The instruction that 'his wondrous body shall arouse envy in those who look upon it' confirms the intent to restore heroic appearance."
+  evidence_citations:
+  - Gumilev 1919, Tablet XI
+  - George 2003, SB XI 244-260
+  methodology_fit_warning: false
+  ai_generated: true
+  generated_by_model: claude-sonnet-4-6
+- code: PROPP-20
+  label: Return
+  proposed_tier: reconstructed
+  status: confirmed
+  rationale: "The passage describes the beginning of Gilgamesh's return journey: he and Ur-Shanabi board the vessel and push off onto the waves ('судно столкнули на волны они и отплыли'). Ut-napishti's wife also frames this explicitly as a homeward movement ('при его возвращенье'), and the magical garment is granted to last precisely until Gilgamesh reaches his city. The spatial vector is explicitly homeward, satisfying PROPP-20."
+  evidence_citations:
+  - Gumilev 1919, Tablet XI
+  - George 2003, SB XI 240-243
+  methodology_fit_warning: false
+  ai_generated: true
+  generated_by_model: claude-sonnet-4-6
+- code: PROPP-8
+  label: Villainy / Lack
+  proposed_tier: contested
+  status: confirmed
+  rationale: "Gilgamesh's lament — 'Я, чьи радости похититель похитил... в чьей спальне кроется гибель' (Gumilev 1919) and 'Плотью моей овладел Похититель, в моих покоях смерть обитает' (Dyakonov 1961) — reasserts the foundational lack that drives the entire narrative: Enkidu's death and Gilgamesh's confrontation with mortality. This is a rearticulation of PROPP-8 (lack) rather than a new instantiation, functioning as the hero's recognition of his own continued deficiency even after all his travels. Marking this as contested because it is a retrospective restatement of an earlier function rather than a fresh occurrence."
+  evidence_citations:
+  - Gumilev 1919, Tablet XI
+  - Dyakonov 1961, Tablet XI
+  methodology_fit_warning: true
+  methodology_fit_note: Propp's morphology treats PROPP-8 as an initiating move early in the narrative sequence, not a recurring lament midway through. Gilgamesh's words here are a moment of existential despair following the failed sleep test, not a structural villain-action. The annotation is defensible as a thematic reinforcement of the initial lack but is not a canonical instantiation of the function.
+  ai_generated: true
+  generated_by_model: claude-sonnet-4-6

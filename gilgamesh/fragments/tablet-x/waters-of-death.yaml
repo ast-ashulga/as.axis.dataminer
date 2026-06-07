@@ -1,0 +1,31 @@
+_sisyphus_version: '0.1'
+_generated_at: '2026-06-06T10:49:55.282885+00:00'
+_pipeline_run_id: phase-c
+fragment:
+  nas: nms://gilgamesh/tablet-x/waters-of-death
+  parent_nas: nms://gilgamesh/tablet-x
+  tradition_id: gilgamesh
+  confidence_tier: reconstructed
+  available_layers:
+  - surface
+  methodology_fit_warning: false
+content:
+- locale: ru
+  layer: surface
+  body: 'Переправившись через воды смерти, Гильгамеш использует сто двадцать шестов, чтобы не касаться смертоносных вод руками, а когда шесты заканчиваются, поднимает одежду как парус [NAS: nms://gilgamesh/tablet-x/waters-of-death]. Утнапиштим, наблюдая издали, с удивлением замечает незнакомца на судне и не может распознать, кто перед ним [NAS: nms://gilgamesh/tablet-x/waters-of-death]. Гильгамеш обращается к Утнапиштиму и рассказывает о своих странствиях через горы и моря, о лишениях, истлевшей одежде и пропитании дичью [NAS: nms://gilgamesh/tablet-x/waters-of-death]. В ответ Утнапиштим произносит речь о природе смертности: он указывает, что ничто на земле не вечно — ни дома, ни братские узы, ни реки [NAS: nms://gilgamesh/tablet-x/waters-of-death]. Согласно тексту, великие боги Ануннаки вместе с богиней Мамет определяют судьбы людей, устанавливая границу между жизнью и смертью, однако не открывают смертного часа [NAS: nms://gilgamesh/tablet-x/waters-of-death].'
+  status: confirmed
+  confidence_tier: reconstructed
+  ai_generated: true
+  reviewed_by:
+  reviewed_at:
+  translation_id:
+  translation_author:
+  translation_year:
+  translation_license:
+  grounding_citations:
+  - nms://gilgamesh/tablet-x/waters-of-death
+  - nms://gilgamesh/tablet-x/waters-of-death
+  - nms://gilgamesh/tablet-x/waters-of-death
+  - nms://gilgamesh/tablet-x/waters-of-death
+  - nms://gilgamesh/tablet-x/waters-of-death
+  generated_by_model: claude-sonnet-4-6

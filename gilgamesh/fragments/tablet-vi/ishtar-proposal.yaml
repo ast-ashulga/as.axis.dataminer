@@ -1,0 +1,31 @@
+_sisyphus_version: '0.1'
+_generated_at: '2026-06-06T10:49:34.810819+00:00'
+_pipeline_run_id: phase-c
+fragment:
+  nas: nms://gilgamesh/tablet-vi/ishtar-proposal
+  parent_nas: nms://gilgamesh/tablet-vi
+  tradition_id: gilgamesh
+  confidence_tier: reconstructed
+  available_layers:
+  - surface
+  methodology_fit_warning: false
+content:
+- locale: ru
+  layer: surface
+  body: 'После победы над Хумбабой Гильгамеш омывается и облачается в чистые одежды, украшает себя тиарой [NAS: nms://gilgamesh/tablet-vi/ishtar-proposal]. Богиня Иштар, увидев его красоту, предлагает ему стать её супругом, обещая богатую колесницу из ляпис-лазури и золота, покорность царей и процветание стад [NAS: nms://gilgamesh/tablet-vi/ishtar-proposal]. Гильгамеш отвергает предложение богини, уподобляя её любовь буре, смоле и ветхим дверям, неспособным защитить от непогоды [NAS: nms://gilgamesh/tablet-vi/ishtar-proposal]. В обоснование отказа герой перечисляет прежних возлюбленных Иштар: Таммуза, обречённого на вечные стенания; пастуха, превращённого в гиену; льва, коня и садовника Ишуллану, которого богиня, по тексту, обратила в крысу [NAS: nms://gilgamesh/tablet-vi/ishtar-proposal]. Таким образом, отказ Гильгамеша представляет собой редкий в древней литературе случай открытого противостояния смертного и великой богини [NAS: nms://gilgamesh/tablet-vi/ishtar-proposal].'
+  status: confirmed
+  confidence_tier: reconstructed
+  ai_generated: true
+  reviewed_by:
+  reviewed_at:
+  translation_id:
+  translation_author:
+  translation_year:
+  translation_license:
+  grounding_citations:
+  - nms://gilgamesh/tablet-vi/ishtar-proposal
+  - nms://gilgamesh/tablet-vi/ishtar-proposal
+  - nms://gilgamesh/tablet-vi/ishtar-proposal
+  - nms://gilgamesh/tablet-vi/ishtar-proposal
+  - nms://gilgamesh/tablet-vi/ishtar-proposal
+  generated_by_model: claude-sonnet-4-6

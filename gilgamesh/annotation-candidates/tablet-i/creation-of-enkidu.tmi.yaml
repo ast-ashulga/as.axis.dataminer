@@ -1,0 +1,40 @@
+_sisyphus_version: '0.1'
+nas: nms://gilgamesh/tablet-i/creation-of-enkidu
+track: tmi
+annotations:
+- code: TMI-F567.2
+  label: Wild man
+  proposed_tier: reconstructed
+  status: confirmed
+  rationale: 'Enkidu is explicitly depicted as a creature raised apart from civilization, living among animals at the watering hole, eating grass with gazelles, and unknown to human society. Both translations emphasize his animal nature: he is covered in hair or fur, wears no proper clothing, and interacts exclusively with beasts rather than people. This is the archetypal wild-man motif — superhuman in strength yet pre-civilizational in character.'
+  evidence_citations:
+  - "Gumilev 1919, Tablet I: 'Ни земли, ни людей он не знает... Вместе с газелями щиплет травы, Со скотом идет к водопою'"
+  - "Dyakonov 1961, Tablet I: 'Ни людей, ни мира не ведал... Вместе с газелями ест он травы, Вместе со зверьми к водопою теснится'"
+  - George 2003, SB I 105–112
+  methodology_fit_warning: false
+  ai_generated: true
+  generated_by_model: claude-sonnet-4-6
+- code: TMI-H900
+  label: Tasks and quests
+  proposed_tier: contested
+  status: confirmed
+  rationale: The hunter's father and subsequently Gilgamesh are implicitly set on a course of action — to deal with the wild man who disrupts the hunter's trapping work. While not a formal quest assignment in the classical sense, the hunter's journey to Uruk and his petition to Gilgamesh establish the narrative structure of a problem presented that must be resolved, initiating the broader quest-like sequence that leads to the taming of Enkidu. The fit is partial since the quest is not yet explicitly assigned in this segment.
+  evidence_citations:
+  - "Gumilev 1919, Tablet I: 'Найди в блаженном Уруке царя Гильгамеша... Расскажи ему, что ты знаешь, попроси у него совета'"
+  - "Dyakonov 1961, Tablet I: 'Пред лицом Гильгамеша промолвил слово'"
+  methodology_fit_warning: true
+  methodology_fit_note: The TMI-H900 code is broadly defined and risks over-application here; this passage depicts the initiation of a problem-quest sequence rather than a formally assigned task. The annotation is defensible as a preliminary stage of the quest structure but should not be treated as a clean fit.
+  ai_generated: true
+  generated_by_model: claude-sonnet-4-6
+- code: TMI-Q2
+  label: Kind and unkind
+  proposed_tier: contested
+  status: rejected
+  rationale: The passage implicitly contrasts Enkidu's untamed, disruptive behavior (destroying traps, freeing game animals) with the ordered, civilized labor of the hunter. This contrast anticipates the narrative's broader moral architecture whereby Enkidu's transformation into a civilized being is presented as an improvement. However, this motif is only latent in this segment and does not yet resolve into the classic kind/unkind reward-punishment structure.
+  evidence_citations:
+  - "Gumilev 1919, Tablet I: 'Я вырыл ловушки, он их засыпал, Я сети поставил, он их вырвал, Угнал от меня он зверей пустыни'"
+  - "Dyakonov 1961, Tablet I: 'Я вырою ямы -- он их засыплет, Я поставлю ловушки -- он их вырвет'"
+  methodology_fit_warning: true
+  methodology_fit_note: TMI-Q2 is designed for narratives with explicit contrasting outcomes for kind versus unkind characters. Its application here is structurally premature, as the resolution lies beyond this segment. The annotation is marked contested accordingly.
+  ai_generated: true
+  generated_by_model: claude-sonnet-4-6

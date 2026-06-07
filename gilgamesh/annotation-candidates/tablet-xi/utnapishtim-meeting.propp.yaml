@@ -1,0 +1,40 @@
+_sisyphus_version: '0.1'
+nas: nms://gilgamesh/tablet-xi/utnapishtim-meeting
+track: propp
+annotations:
+- code: PROPP-9
+  label: Mediation
+  proposed_tier: contested
+  status: confirmed
+  rationale: "Gilgamesh's direct address to Utnapishtim functions as a moment of mediation in the extended sense: the hero has arrived at the threshold figure who holds the secret to resolving the initial lack (death of Enkidu, fear of mortality). His question — 'how did you attain immortality among the gods?' — makes the misfortune/lack explicit and frames the encounter as the axis on which counter-action turns. However, classical Propp mediation involves a third-party dispatcher, not the hero himself articulating the lack, which makes this mapping contested."
+  evidence_citations:
+  - "Gumilev 1919, Tablet XI: 'Почему ж ты так вознесен, добыл жизнь в собранье бессмертных?'"
+  - "Dyakonov 1961, Tablet XI: 'Скажи, как ты, выжив, в собранье богов был принят и жизнь обрел в нем?'"
+  methodology_fit_warning: true
+  methodology_fit_note: Propp's PROPP-9 presupposes a dispatcher external to the hero who announces the misfortune. Here Gilgamesh himself voices the lack, collapsing seeker, hero, and dispatcher into a single figure. The function is partially present in spirit but structurally displaced; annotation is defensible as the moment the lack is formally named, but the fit is not clean.
+  ai_generated: true
+  generated_by_model: claude-sonnet-4-6
+- code: PROPP-8
+  label: Villainy / Lack
+  proposed_tier: reconstructed
+  status: confirmed
+  rationale: "Gilgamesh's question to Utnapishtim — how did you gain immortal life among the gods? — crystallises the central lack that has driven the second half of the epic: Gilgamesh lacks immortality and, by implication, has lost Enkidu to death. The observation that Utnapishtim appears physically no different from Gilgamesh sharpens this lack: if he is an ordinary man yet immortal, the lack is contingent, not absolute, heightening its narrative urgency. Both translations make this explicit through the contrast between Utnapishtim's ordinary appearance and his extraordinary status."
+  evidence_citations:
+  - "Gumilev 1919, Tablet XI: 'Твой облик не страшен, ты мне подобен [...] Почему ж ты так вознесен, добыл жизнь в собранье бессмертных?'"
+  - "Dyakonov 1961, Tablet XI: 'Не чуден ты ростом - таков, как и я, ты [...] Скажи, как ты, выжив, в собранье богов был принят и жизнь обрел в нем?'"
+  - George 2003, SB XI 1–8
+  methodology_fit_warning: false
+  ai_generated: true
+  generated_by_model: claude-sonnet-4-6
+- code: PROPP-12
+  label: First Function of Donor
+  proposed_tier: contested
+  status: confirmed
+  rationale: "Utnapishtim in this encounter occupies the structural role of donor: he possesses the knowledge (and indirectly the means) the hero needs, and the hero's question initiates the donor-testing sequence. Gilgamesh's opening speech — sizing up Utnapishtim, noting his ordinariness, then posing the key question — constitutes the first move in the hero-donor exchange that will unfold across Tablet XI. This is, however, only the opening of the donor encounter; the full test has not yet been administered, making the annotation prospective rather than completive."
+  evidence_citations:
+  - "Gumilev 1919, Tablet XI: 'О Ут-напиштим, я тебя созерцаю'"
+  - "Dyakonov 1961, Tablet XI: 'Гляжу на тебя я, Утнапишти'"
+  methodology_fit_warning: true
+  methodology_fit_note: Propp's donor function typically involves the donor acting upon the hero (posing a task, issuing a challenge). Here the hero initiates by questioning the donor; the roles are partially inverted. The annotation is defensible as the opening of the donor-sequence but should be understood as the threshold of PROPP-12 rather than its completion.
+  ai_generated: true
+  generated_by_model: claude-sonnet-4-6

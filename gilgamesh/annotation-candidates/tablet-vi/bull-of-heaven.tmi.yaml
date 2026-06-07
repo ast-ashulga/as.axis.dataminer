@@ -1,0 +1,64 @@
+_sisyphus_version: '0.1'
+nas: nms://gilgamesh/tablet-vi/bull-of-heaven
+track: tmi
+annotations:
+- code: TMI-T91
+  label: Refusal of divine lover
+  proposed_tier: reconstructed
+  status: confirmed
+  rationale: "The Tablet VI Bull of Heaven episode is precipitated directly by Gilgamesh's prior rejection of Ishtar's advances (narrated immediately before this passage). Ishtar's fury, her ascent to Anu, and her demand for the Bull are explicitly framed as retribution for this refusal. The passage makes clear that the divine lover's wounded pride is the narrative engine: 'Гильгамеш меня только что проклял' / 'Гильгамеш меня посрамляет' (Gumilev 1919, Tablet VI; Dyakonov 1961, Tablet VI). Although the refusal itself is not re-narrated in this segment, it is the stated causal premise, making TMI-T91 structurally operative here."
+  evidence_citations:
+  - "Gumilev 1919, Tablet VI: 'Гильгамеш рассказал мои преступленья'"
+  - "Dyakonov 1961, Tablet VI: 'Гильгамеш меня посрамляет, Гильгамеш перечислил мои прегрешенья'"
+  - George 2003, SB VI 82–91
+  methodology_fit_warning: false
+  ai_generated: true
+  generated_by_model: claude-sonnet-4-6
+- code: TMI-F10
+  label: Journey to heaven
+  proposed_tier: contested
+  status: confirmed
+  rationale: "Ishtar ascends to heaven (the divine realm of Anu and Antu) to petition for the Bull of Heaven. Both translations explicitly describe this upward journey to the celestial court: 'полетела на небо, Появилась Иштар пред отцом своим Ану' (Gumilev 1919, Tablet VI) and 'поднялась на небо, поднявшись, Иштар пред отцом своим, Ану, плачет' (Dyakonov 1961, Tablet VI). The motif is applied to a divine figure rather than a mortal hero, which is a partial fit; the confidence tier is therefore contested rather than straightforwardly reconstructed."
+  evidence_citations:
+  - "Gumilev 1919, Tablet VI: 'Рассердилась Иштар, полетела на небо, Появилась Иштар пред отцом своим Ану'"
+  - "Dyakonov 1961, Tablet VI: 'Иштар разъярилась, поднялась на небо'"
+  methodology_fit_warning: true
+  methodology_fit_note: TMI-F10 is standardly applied to mortal heroes journeying to a divine realm. Here the traveller is the goddess Ishtar herself, making the directionality (divine figure returning home rather than mortal ascending) a category mismatch. The annotation is nonetheless defensible as a structural parallel to the 'upward journey to celestial court' narrative function, but the fit is imperfect and the tier should be contested.
+  ai_generated: true
+  generated_by_model: claude-sonnet-4-6
+- code: TMI-H900
+  label: Tasks and quests
+  proposed_tier: contested
+  status: confirmed
+  rationale: "Anu imposes a conditional counter-demand on Ishtar before releasing the Bull: she must agree to endure seven years of privation (eating only roots, sleeping on straw, gleaning grain) as the price of her request. This functions structurally as a condition placed upon a petitioner, paralleling the 'task assigned as condition' schema of TMI-H900. Both translations preserve the exchange: 'Можешь ты семь лет отдыхать на соломе...' (Gumilev 1919, Tablet VI) / the implied conditional structure in Dyakonov's version. The motif is applied here to a divine petitioner rather than a mortal hero, which is a mild methodology-fit concern."
+  evidence_citations:
+  - "Gumilev 1919, Tablet VI: 'Можешь ты семь лет отдыхать на соломе, Можешь ты семь лет собирать колосья и семь лет есть одни коренья?'"
+  - George 2003, SB VI 100–106
+  methodology_fit_warning: true
+  methodology_fit_note: TMI-H900 typically frames a mortal hero as the recipient of a task. In this passage, the conditional demand is placed on the goddess Ishtar by her father Anu. The structural function is analogous (condition attached to a boon), but the divine-petitioner context is atypical for this motif code. The annotation is defensible as a structural parallel but should be understood as contested.
+  ai_generated: true
+  generated_by_model: claude-sonnet-4-6
+- code: TMI-A1335
+  label: Origin of death
+  proposed_tier: contested
+  status: confirmed
+  rationale: "Ishtar's threat to 'raise the dead so that they devour the living' and to make 'the living fewer than the dead' (Dyakonov 1961, Tablet VI: 'Подниму я мертвых, чтоб живых пожирали, Станет меньше тогда живых, чем мертвых') gestures toward the mythological boundary between mortality and immortality that is the thematic spine of the entire epic. While this passage does not narrate the origin of death per se, Ishtar's threat to collapse the boundary between the living and dead world is a direct invocation of the mortal/immortal asymmetry that TMI-A1335 encodes. The fit is partial and the tier is therefore contested."
+  evidence_citations:
+  - "Dyakonov 1961, Tablet VI: 'Подниму я мертвых, чтоб живых пожирали, Станет меньше тогда живых, чем мертвых'"
+  - "Gumilev 1919, Tablet VI: 'останется меньше живых, чем мертвых'"
+  methodology_fit_warning: true
+  methodology_fit_note: TMI-A1335 is an etiological motif explaining why humans die. Here it is not an etiological narrative but a rhetorical threat by a goddess. The motif applies only by structural resonance with the living/dead boundary theme, not as a direct instantiation of the origin-of-death narrative type. Annotation is contested and should be read as thematic rather than typological.
+  ai_generated: true
+  generated_by_model: claude-sonnet-4-6
+- code: TMI-Q2
+  label: Kind and unkind
+  proposed_tier: contested
+  status: confirmed
+  rationale: The episode contrasts the impiety and destructive vengeance of Ishtar (the 'unkind' figure who sends mass death upon the citizens of Uruk in retribution for a personal slight) with Gilgamesh and Enkidu's pious act of offering the Bull's heart to Shamash and dedicating its horns to Lugalbanda. This moral contrast — destructive divine pique versus heroic piety — partially maps onto the kind/unkind opposition of TMI-Q2, though the text does not resolve with differential rewards in the classic folktale manner. The fit is partial.
+  evidence_citations:
+  - "Gumilev 1919, Tablet VI: 'Бык небесный, который убьет Гильгамеша' vs. 'К подножию Шамаша его полагает... Своему божеству Лугал-банде он их посвящает'"
+  - "Dyakonov 1961, Tablet VI: 'Вырву ему сердце, положу перед Шамашем'"
+  methodology_fit_warning: true
+  methodology_fit_note: TMI-Q2 is primarily a folktale motif about contrasting treatment of characters and its consequences. The Gilgamesh episode does not follow the classic pattern of two characters tested by the same situation. The contrast here is between divine vindictiveness and heroic piety, which is structurally suggestive but not a clean instantiation of the motif. Tier is contested.
+  ai_generated: true
+  generated_by_model: claude-sonnet-4-6

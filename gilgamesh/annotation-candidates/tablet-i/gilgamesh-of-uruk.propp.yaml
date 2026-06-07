@@ -1,0 +1,42 @@
+_sisyphus_version: '0.1'
+nas: nms://gilgamesh/tablet-i/gilgamesh-of-uruk
+track: propp
+annotations:
+- code: PROPP-8
+  label: Villainy / Lack
+  proposed_tier: contested
+  status: confirmed
+  rationale: "The passage describes Gilgamesh's tyrannical behavior over the people of Uruk — denying sons to fathers, brides to grooms, wives to husbands — which constitutes a state of harm or oppression inflicted upon the community. This functions as the initial 'villainy' or socially recognized 'lack' that sets the narrative in motion. The harm is not caused by an external villain but by the hero himself acting as oppressor, which is an inversion of the typical Propp schema yet functionally analogous. Both Gumilev and Dyakonov renderings confirm this: 'Гильгамеша, не оставит он матери сына, / Не оставит он жениху невесты' (Gumilev 1919, Tablet I) and 'Отцу Гильгамеш не оставит сына! / Днем и ночью буйствует плотью' (Dyakonov 1961, Tablet I)."
+  evidence_citations:
+  - Gumilev 1919, Tablet I
+  - Dyakonov 1961, Tablet I
+  - George 2003, SB I 70–79
+  methodology_fit_warning: true
+  methodology_fit_note: In standard Propp morphology, PROPP-8 villainy is committed by an antagonist against a victim external to the hero. Here the hero himself is the source of harm to his own community, which inverts the typical triadic structure. The mapping is defensible functionally — the harm triggers the plot — but the role conflation (hero-as-villain) is a genuine schema misfit. Annotated as 'contested' rather than defaulting to 'reconstructed' given this structural ambiguity.
+  ai_generated: true
+  generated_by_model: claude-sonnet-4-6
+- code: PROPP-9
+  label: Mediation
+  proposed_tier: reconstructed
+  status: confirmed
+  rationale: "The misfortune (Gilgamesh's oppression) becomes known to the gods when the people's prayers ascend to heaven: 'Мольба их достигла высокого неба, / Небесные боги, владыки Урука, сказали Аруру' (Gumilev 1919, Tablet I). The gods' assembly and their address to Aruru constitutes a divine mediation — the complaint is heard and action is dispatched. This parallels the Propp function where the hero's (or here, the community's) plight is recognized and a corrective response is set in motion, in this case the creation of Enkidu."
+  evidence_citations:
+  - Gumilev 1919, Tablet I
+  - Dyakonov 1961, Tablet I
+  - George 2003, SB I 84–91
+  methodology_fit_warning: false
+  ai_generated: true
+  generated_by_model: claude-sonnet-4-6
+- code: PROPP-10
+  label: Beginning Counter-Action
+  proposed_tier: reconstructed
+  status: confirmed
+  rationale: Aruru's agreement — implicit in the gods' appeal to her and the subsequent narrative of Enkidu's creation — functions as the decision to counter the identified harm. The gods' repeated address 'К Аруру великой они приступают снова' (Gumilev 1919, Tablet I) and 'Теперь создай ему подобье!' (Dyakonov 1961, Tablet I) signals a resolved intent to act, analogous to the Propp moment where the counter-force agrees to engage. Aruru here occupies the role of an empowered agent who accepts the commission.
+  evidence_citations:
+  - Gumilev 1919, Tablet I
+  - Dyakonov 1961, Tablet I
+  - George 2003, SB I 92–95
+  methodology_fit_warning: true
+  methodology_fit_note: The 'seeker' or counter-hero in Propp is normally the protagonist. Here the counter-action is taken by Aruru (a divine creator figure) rather than a human hero, and Enkidu — not yet introduced — is the intended countermeasure. The mapping relies on treating the divine commission as functionally equivalent to the hero's resolve. This is a moderate schema stretch but defensible given the epic's divine-human narrative structure.
+  ai_generated: true
+  generated_by_model: claude-sonnet-4-6

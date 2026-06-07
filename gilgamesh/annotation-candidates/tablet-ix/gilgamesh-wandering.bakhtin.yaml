@@ -1,0 +1,40 @@
+_sisyphus_version: '0.1'
+nas: nms://gilgamesh/tablet-ix/gilgamesh-wandering
+track: bakhtin
+annotations:
+- code: BAKHTIN-ROAD
+  label: Road / Journey Chronotope
+  proposed_tier: reconstructed
+  status: confirmed
+  rationale: "Gilgamesh's flight into the wilderness and his urgent journey toward Utnapishtim fuses time and space through the motion of travel: grief drives him forward, the desert and mountain passes become the medium through which his existential crisis is traversed. The road here is not merely a physical route but the narrative site where fear, prayer, and revelation converge. Both translations emphasize the urgency of movement ('иду поспешно' / 'путь я предпринял'), characteristic of the road chronotope's collapse of inner and outer progression."
+  evidence_citations:
+  - "Gumilev 1919, Tablet IX: 'К мощи Ут-напиштима... Путь я предпринял, иду поспешно'"
+  - "Dyakonov 1961, Tablet IX: 'Под власть Утнапишти... Путь я предпринял, иду поспешно'"
+  - George 2003, SB IX 1–14
+  methodology_fit_warning: false
+  ai_generated: true
+  generated_by_model: claude-sonnet-4-6
+- code: BAKHTIN-THRESHOLD
+  label: Threshold Chronotope
+  proposed_tier: reconstructed
+  status: confirmed
+  rationale: "Gilgamesh's nocturnal arrival at the mountain passes marks a liminal boundary between the human world and the cosmic/underworld geography beyond. His terror at the lions, his prayers to Sin and Ishtar, and the suspension of decisive action (lying down, being frightened by dreams) all signal a crisis-moment at the boundary between life and the unknown. Time is effectively suspended in the night encampment: Gilgamesh is neither fully in the mortal world nor yet in the realm he seeks. The mountain rift (ущелья горные / перевалов горных) functions as a threshold space in the Bakhtinian sense."
+  evidence_citations:
+  - "Gumilev 1919, Tablet IX: 'Ночью пришел я к ущельям горными, Львов я увидел, и вот мне страшно'"
+  - "Dyakonov 1961, Tablet IX: 'Перевалов горных достигнув ночью, Львов я видал, и бывало мне страшно'"
+  - George 2003, SB IX 1–20
+  methodology_fit_warning: false
+  ai_generated: true
+  generated_by_model: claude-sonnet-4-6
+- code: BAKHTIN-DIVINE
+  label: Divine / Cosmic Chronotope
+  proposed_tier: contested
+  status: confirmed
+  rationale: Gilgamesh's prayers to Sin and the assembly of gods, and his invocation of Ishtar, briefly open a cosmological frame within the personal crisis narrative. The appeals gesture toward a divine-time perspective that encompasses and judges human mortality, even if the gods do not respond directly in this segment. The phrase 'к собранью богов мольбы мои вознесутся' (Gumilev) / 'ко всем богам идут мои молитвы' (Dyakonov) explicitly invokes the divine council as an encompassing cosmic register. This application is somewhat attenuated since the gods do not speak here, making it a contested annotation.
+  evidence_citations:
+  - "Gumilev 1919, Tablet IX: 'Голову я подниму, воззову к великому Сину, И к собранью богов мольбы мои вознесутся'"
+  - "Dyakonov 1961, Tablet IX: 'Главу подымая, молюсь я Сину, И ко всем богам идут мои молитвы'"
+  methodology_fit_warning: true
+  methodology_fit_note: The divine chronotope is most robustly applicable when the cosmic-mythic perspective is actively voiced or enacted (e.g., divine council scenes). Here it appears only as the target of human supplication, not as an autonomous narrative voice. The annotation remains defensible as a projected or invoked cosmic frame, but its strength is weaker than in passages where divine deliberation is foregrounded. Tier assessed as 'contested' accordingly.
+  ai_generated: true
+  generated_by_model: claude-sonnet-4-6

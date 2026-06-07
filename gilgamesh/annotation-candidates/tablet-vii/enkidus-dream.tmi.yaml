@@ -1,0 +1,50 @@
+_sisyphus_version: '0.1'
+nas: nms://gilgamesh/tablet-vii/enkidus-dream
+track: tmi
+annotations:
+- code: TMI-D1810
+  label: Magic knowledge through dreams
+  proposed_tier: reconstructed
+  status: confirmed
+  rationale: Enkidu receives prophetic knowledge of his impending death through a dream in which the divine council of Anu, Enlil, and Shamash deliberate over the fates of Gilgamesh and Enkidu. The dream functions as a conduit of divine decree, revealing to the dreamer the gods' judgment before it is enacted in waking reality. This corresponds directly to TMI-D1810's definition of divine or prophetic knowledge conveyed through a dream sequence.
+  evidence_citations:
+  - Gumilev 1919, Tablet VII ('свершается сон, вещавший мне гибель')
+  - "Dyakonov 1961, Tablet VII ('Слушай мой сон, что я видел ночью: Ану, Эллиль и Шамаш меж собой говорили')"
+  - George 2003, SB VII 1–60
+  methodology_fit_warning: false
+  ai_generated: true
+  generated_by_model: claude-sonnet-4-6
+- code: TMI-A1335
+  label: Origin of death
+  proposed_tier: reconstructed
+  status: confirmed
+  rationale: The divine council scene explicitly encodes the mythological principle that mortality is the lot of humans while gods remain exempt. Enlil's decree — 'Пусть умрет Энкиду, но Гильгамеш умереть не должен!' — is not merely a plot decision but a cosmological statement establishing why a mortal companion must die while the semi-divine hero survives. This reflects the broader Mesopotamian mythological framework explaining the boundary between mortal and divine existences, which TMI-A1335 addresses.
+  evidence_citations:
+  - "Dyakonov 1961, Tablet VII ('Эллиль промолвил: Пусть умрет Энкиду, но Гильгамеш умереть не должен!')"
+  - George 2003, SB VII 1–60
+  methodology_fit_warning: false
+  ai_generated: true
+  generated_by_model: claude-sonnet-4-6
+- code: TMI-Q2
+  label: Kind and unkind
+  proposed_tier: contested
+  status: confirmed
+  rationale: The divine council's differential sentencing — Enkidu dies, Gilgamesh is spared — can be read as a form of differential divine judgment, with Shamash interceding on Enkidu's behalf as one who 'ежедневно в их товарищах ты ходишь.' However, TMI-Q2 classically involves contrasting treatment of characters based on their moral conduct toward a testing figure, not divine arbitration among equals. The application is structurally suggestive but not a clean fit; the contrast here is cosmological (mortal vs. semi-divine) rather than moral (kind vs. unkind), making this annotation contested.
+  evidence_citations:
+  - Dyakonov 1961, Tablet VII ('Не твоим ли веленьем убиты Бык и Хумбаба? Должен ли ныне Энкиду умереть безвинно?')
+  methodology_fit_warning: true
+  methodology_fit_note: TMI-Q2 is designed for folk-tale structures of contrasting moral behavior and reward/punishment. Its application to a divine council arbitrating between two co-protagonists on cosmological grounds is a category stretch. The annotation is defensible only at the thematic level of differential divine favor, not at the structural level the motif index anticipates.
+  ai_generated: true
+  generated_by_model: claude-sonnet-4-6
+- code: TMI-F80
+  label: Journey to land of dead
+  proposed_tier: contested
+  status: confirmed
+  rationale: Enkidu's lament — 'неужели сидеть мне с призраком, у могильного входа?' — and his reference to never again seeing his 'любимого брата' evoke anticipatory imagery of the underworld threshold. While no actual journey to the land of the dead occurs in this segment, the 'могильный вход' (entrance to the grave/underworld) is explicitly invoked as Enkidu's imminent destination, gesturing toward the underworld journey motif that is elaborated in Tablet XII. The annotation is contested because the segment describes anticipation and lamentation rather than an enacted descent.
+  evidence_citations:
+  - Dyakonov 1961, Tablet VII ('неужели сидеть мне с призраком, у могильного входа?')
+  - George 2003, SB VII (Enkidu's illness and death sequence)
+  methodology_fit_warning: true
+  methodology_fit_note: TMI-F80 properly applies to enacted journeys to the underworld. Its application here is anticipatory rather than actualized, and should be understood as a proleptic marker pointing forward to Tablet XII's underworld material rather than a direct annotation of this segment's action.
+  ai_generated: true
+  generated_by_model: claude-sonnet-4-6

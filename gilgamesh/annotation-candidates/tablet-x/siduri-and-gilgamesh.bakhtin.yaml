@@ -1,0 +1,65 @@
+_sisyphus_version: '0.1'
+nas: nms://gilgamesh/tablet-x/siduri-and-gilgamesh
+track: bakhtin
+annotations:
+- code: BAKHTIN-ROAD
+  label: Road / Journey Chronotope
+  proposed_tier: reconstructed
+  status: confirmed
+  rationale: "The encounter between Gilgamesh and Siduri is paradigmatically structured by the road chronotope: Gilgamesh arrives at her dwelling as a traveler in motion, his face and body marked by the hardships of a 'dальний путь' (far road/journey). The road is not merely backdrop but the active medium through which the meeting is made possible — Siduri herself interrogates him about his route ('какою дорогой меня достиг ты, реки переплыл, где трудна переправа?'). The encounter generates revelation (Siduri's disclosure of the Waters of Death and Urshanabi) and sets the next stage of the journey, fulfilling the road chronotope's function as a site of meeting and narrative turning."
+  evidence_citations:
+  - "Gumilev 1919, Tablet X: 'С лицом уходящего дальней дорогой лицо его схоже'"
+  - "Dyakonov 1961, Tablet X: 'Идущему дальним путем он лицом подобен'; 'Какою дорогой меня достиг ты, реки переплыл, где трудна переправа?'"
+  - George 2003, SB X 1–21
+  methodology_fit_warning: false
+  ai_generated: true
+  generated_by_model: claude-sonnet-4-6
+- code: BAKHTIN-THRESHOLD
+  label: Threshold Chronotope
+  proposed_tier: reconstructed
+  status: confirmed
+  rationale: "Siduri's tavern-dwelling at the edge of the sea marks a classic threshold space — a liminal boundary between the world of the living and the Waters of Death beyond. The act of door-closing and door-threatening ('ударю я в дверь, разломаю затворы!') literalizes the threshold as a boundary to be negotiated, suspended between admission and exclusion. Gilgamesh is caught at the decisive turning point of his quest: he has not yet crossed to Utnapishtim, but can no longer return to ordinary life. Time itself feels suspended — his journey through wilderness has erased normal temporal markers ('столько долгих лет был я спящим')."
+  evidence_citations:
+  - "Gumilev 1919, Tablet X: 'Увидала его Сабеянка, двери закрыла, / Двери закрыла, заложила засовом'; 'Глубоки воды смерти, заградившие подступы!'"
+  - "Dyakonov 1961, Tablet X: 'Увидав его, хозяйка затворила двери, / Затворила двери, засов заложила'"
+  - George 2003, SB X 6–10
+  methodology_fit_warning: false
+  ai_generated: true
+  generated_by_model: claude-sonnet-4-6
+- code: BAKHTIN-UNDERWORLD
+  label: Underworld / Netherworld Chronotope
+  proposed_tier: reconstructed
+  status: confirmed
+  rationale: The Waters of Death ('воды смерти') named explicitly by Siduri constitute the boundary marker of the underworld chronotope — a domain where time is inverted or suspended and movement through death's boundary is the narrative challenge. Gilgamesh's grief for Enkidu, his refusal to bury him for six days and seven nights, and his terror of death ('устрашился я смерти') all embed the underworld logic within this episode even before the actual crossing. The passage anticipates the spatial-temporal inversion of the Netherworld without yet enacting it, which slightly attenuates the fit but does not negate it.
+  evidence_citations:
+  - "Dyakonov 1961, Tablet X: 'Глубоки воды смерти, что ее преграждают'; 'Шесть дней, семь ночей над ним я плакал, / Не предавая его могиле'"
+  - "Gumilev 1919, Tablet X: 'Глубоки воды смерти, заградившие подступы!'; 'Да увидит мертвый сияние солнца!'"
+  - George 2003, SB X 77–79
+  methodology_fit_warning: true
+  methodology_fit_note: 'The underworld chronotope is anticipated and bordered here rather than fully enacted: Gilgamesh has not yet crossed the Waters of Death. The annotation is defensible as a prospective or liminal instance of the chronotope — the boundary is named, feared, and structurally present — but readers should note this is a threshold-to-the-underworld moment rather than the underworld itself. The methodology remains applicable with this qualification.'
+  ai_generated: true
+  generated_by_model: claude-sonnet-4-6
+- code: BAKHTIN-HEROIC-BODY
+  label: Heroic Body Chronotope
+  proposed_tier: reconstructed
+  status: confirmed
+  rationale: "Gilgamesh's body functions as the primary narrative index of his journey and grief: both translators foreground that his flesh encodes divine origins ('плоть богов таится в его теле') yet is visibly ravaged by suffering ('щеки впали, голова поникла, лицо увяло'). The body simultaneously testifies to heroic past deeds — Humbaba, the Bull of Heaven, the mountain lions — and to the present temporal dislocation caused by mourning and wandering. His animal-skin clothing and dust-covered form are spatial-temporal markers inscribed on the body itself, readable by Siduri from a distance as signs of the road and of crisis."
+  evidence_citations:
+  - "Dyakonov 1961, Tablet X: 'Шкурой одетый, покрытый прахом, / Плоть богов таится в его теле'; 'Почему твои щеки впали, голова поникла, / Печально сердце, лицо увяло'"
+  - "Gumilev 1919, Tablet X: 'Шкурой окутан, тело его — тело бога, / Грудь исполнена скорбью'"
+  - George 2003, SB X 3–8
+  methodology_fit_warning: false
+  ai_generated: true
+  generated_by_model: claude-sonnet-4-6
+- code: BAKHTIN-IDYLL
+  label: Idyllic / Rural Chronotope
+  proposed_tier: contested
+  status: confirmed
+  rationale: "Siduri's counsel to Gilgamesh — eat, drink, celebrate daily, let your wife embrace you, watch your child take your hand — invokes the idyllic chronotope as a normative counterweight to the heroic quest. This is the language of cyclical, bounded, domestic time: daily feasts, clean garments, bodily pleasure, familial bonds. The passage presents this as the proper telos of human life ('только в этом дело человека'), contrasting cyclical everyday time with the impossible linear quest for immortality. However, the idyll is articulated rhetorically as an alternative Gilgamesh refuses, not as a depicted space, which limits the strength of the chronotopic application."
+  evidence_citations:
+  - "Dyakonov 1961, Tablet X: 'Ты же, Гильгамеш, насыщай желудок, / Днем и ночью да будешь ты весел, / Праздник справляй ежедневно... / Гляди, как дитя твою руку держит, / Своими объятьями радуй подругу / Только в этом дело человека!'"
+  - "Gumilev 1919, Tablet X: 'Любуйся ребенком, твою хватающим руку, / Пусть к твоей груди припадет супруга'"
+  methodology_fit_warning: true
+  methodology_fit_note: "The idyllic chronotope appears here as a discursive proposal rather than a spatiotemporally enacted scene. Siduri articulates the idyll as counsel, not as a place or moment Gilgamesh inhabits. This is a contested application: the chronotope is structurally present as an implied alternative world-order, but Bakhtin's framework typically applies to depicted chronotopic zones rather than spoken prescriptions. The annotation is defensible as an ideological or rhetorical invocation of the idyllic chronotope rather than its full realization."
+  ai_generated: true
+  generated_by_model: claude-sonnet-4-6

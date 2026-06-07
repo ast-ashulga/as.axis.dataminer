@@ -1,0 +1,32 @@
+_sisyphus_version: '0.1'
+_generated_at: '2026-06-06T10:49:34.843575+00:00'
+_pipeline_run_id: phase-c
+fragment:
+  nas: nms://gilgamesh/tablet-viii/funeral-rites
+  parent_nas: nms://gilgamesh/tablet-viii
+  tradition_id: gilgamesh
+  confidence_tier: reconstructed
+  available_layers:
+  - surface
+  methodology_fit_warning: false
+content:
+- locale: ru
+  layer: surface
+  body: 'Восьмая таблица эпоса описывает реакцию Гильгамеша на смерть Энкиду и совершение погребальных обрядов [NAS: nms://gilgamesh/tablet-viii/funeral-rites]. Согласно тексту, Гильгамеш на протяжении шести дней и ночей пребывал подле тела друга, отказываясь признать его гибель [NAS: nms://gilgamesh/tablet-viii/funeral-rites]. Жители Урука собираются к герою и указывают на разительную перемену в его облике — опущенный взор, изборождённое морщинами чело и неутихающую скорбь [NAS: nms://gilgamesh/tablet-viii/funeral-rites]. Гильгамеш созывает ремесленников — ваятелей, медников, кузнецов и камнерезов — с целью изготовления статуи Энкиду, которая, судя по тексту, должна была быть выполнена из золота, алебастра и лазури [NAS: nms://gilgamesh/tablet-viii/funeral-rites]. Герой укладывает тело друга на почётном ложе, повелевает народу Урука совершить траурные обряды и сам облачается в рубище и львиную шкуру [NAS: nms://gilgamesh/tablet-viii/funeral-rites]. Текст также сообщает, что Гильгамеш готовит подношение богу Шамашу — сосуды с мёдом и маслом, — а голос с неба, по всей видимости принадлежащий Эллилю, напоминает о неизбежности человеческого удела [NAS: nms://gilgamesh/tablet-viii/funeral-rites].'
+  status: confirmed
+  confidence_tier: reconstructed
+  ai_generated: true
+  reviewed_by:
+  reviewed_at:
+  translation_id:
+  translation_author:
+  translation_year:
+  translation_license:
+  grounding_citations:
+  - nms://gilgamesh/tablet-viii/funeral-rites
+  - nms://gilgamesh/tablet-viii/funeral-rites
+  - nms://gilgamesh/tablet-viii/funeral-rites
+  - nms://gilgamesh/tablet-viii/funeral-rites
+  - nms://gilgamesh/tablet-viii/funeral-rites
+  - nms://gilgamesh/tablet-viii/funeral-rites
+  generated_by_model: claude-sonnet-4-6

@@ -1,0 +1,28 @@
+_sisyphus_version: '0.1'
+nas: nms://gilgamesh/tablet-xi/flood-narrative
+track: bakhtin
+annotations:
+- code: BAKHTIN-ROAD
+  label: Road / Journey Chronotope
+  proposed_tier: contested
+  status: confirmed
+  rationale: "The ark's movement across the floodwaters and eventual grounding on Mount Nisir/Nitzir functions as a compressed journey chronotope: the vessel traverses an undifferentiated space of destruction, and the birds sent out serve as spatial probes, revealing the gradual return of the world. The encounter with Mount Nisir is a 'meeting' in the road-chronotope sense — an unexpected obstacle that structures narrative time. However, this is a contested application because the journey is passive (the ark drifts; Utnapishtim does not navigate intentionally), and the space traversed is a void rather than a road populated with chance encounters."
+  evidence_citations:
+  - "Gumilev 1919, Tablet XI: 'В двенадцати днях пути виднелся остров, К горе Низир приближается судно, Гора Низир от себя не пускает судна'"
+  - "Dyakonov 1961, Tablet XI: 'В двенадцати поприщах поднялся остров. У горы Ницир корабль остановился. Гора Ницир корабль удержала, не дает качаться'"
+  methodology_fit_warning: true
+  methodology_fit_note: The road chronotope is only partially applicable here. The flood-space lacks the defining feature of the road as a site of social encounter and revelation through movement. The annotation is most defensible for the bird-release sequence, where spatial exploration and the crow's non-return function analogously to road-chronotope revelation. The 'contested' tier is appropriate.
+  ai_generated: true
+  generated_by_model: claude-sonnet-4-6
+- code: BAKHTIN-IDYLL
+  label: Idyllic / Rural Chronotope
+  proposed_tier: contested
+  status: confirmed
+  rationale: "The passage contains a brief but structurally significant idyllic moment in the description of the feast held during the ark's construction: 'Я устроил праздник, как в день новогодний' (Gumilev) / 'они пировали, как в день новогодний' (Dyakonov). The new year's feast is an explicit marker of cyclical, communal time — the idyllic chronotope's defining feature. This bounded community moment is ironically framed as the last expression of the old world's cyclical life before its annihilation, which gives it elegiac idyllic resonance. However, this is contested because the idyllic element is vestigial — a single simile rather than a sustained chronotopic mode."
+  evidence_citations:
+  - "Gumilev 1919, Tablet XI: 'Я устроил праздник, как в день новогодний, Открыл кладовые, достал драгоценную мирру'"
+  - "Dyakonov 1961, Tablet XI: 'они пировали, как в день новогодний'"
+  methodology_fit_warning: true
+  methodology_fit_note: "The idyllic chronotope is present only as a fleeting simile embedded within the construction narrative. It is insufficient to sustain a primary chronotopic annotation but is noteworthy as a structural contrast: the last act of cyclical communal time before the rupture of the flood. 'Contested' tier reflects the limited textual footprint."
+  ai_generated: true
+  generated_by_model: claude-sonnet-4-6

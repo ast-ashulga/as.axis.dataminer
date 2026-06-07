@@ -1,0 +1,112 @@
+_sisyphus_version: '0.1'
+nas: nms://gilgamesh/tablet-xi/flood-narrative
+track: propp
+annotations:
+- code: PROPP-6
+  label: Trickery
+  proposed_tier: contested
+  status: confirmed
+  rationale: Ea, bound by the divine oath to conceal the flood plan from mortals, circumvents the prohibition by speaking the secret to a reed wall rather than directly to Utnapishtim. This constitutes a form of divine deception — technically keeping the oath while ensuring the information reaches its intended recipient. The act is structurally analogous to Propp's trickery function in that a party uses an indirect or cunning stratagem to achieve an end while maintaining a false appearance of compliance.
+  evidence_citations:
+  - "Gumilev 1919, Tablet XI: 'Их слова повторил он изгороди тростниковой: «Изгородь, изгородь! Ограда, ограда! Слушай, изгородь!»'"
+  - "Dyakonov 1961, Tablet XI: 'Но хижине он их слово поведал: «Хижина, хижина! Стенка, стенка! Слушай, хижина! Стенка, запомни!»'"
+  - George 2003, SB XI 20–23
+  methodology_fit_warning: true
+  methodology_fit_note: In Propp's morphology, PROPP-6 (Trickery) is normally directed by the villain against the hero/victim. Here the trickery is performed by a protective deity (Ea) against fellow gods, not against the hero. The 'villain' role is distributed across the divine council. This inversion weakens the direct applicability of the function, but the structural element of deliberate deception to achieve a narrative goal is nonetheless present and defensible in a 'reconstructed' reading.
+  ai_generated: true
+  generated_by_model: claude-sonnet-4-6
+- code: PROPP-2
+  label: Interdiction
+  proposed_tier: reconstructed
+  status: confirmed
+  rationale: "Ea issues a series of commands to Utnapishtim: build the ark, abandon wealth, load all living seed, and — critically — issue a deceptive cover story to the populace. These function as prohibitions and directives structurally equivalent to Propp's interdiction: the hero is given a set of instructions he must follow, including the command not to reveal the true reason for his departure to his fellow citizens."
+  evidence_citations:
+  - "Gumilev 1919, Tablet XI: 'Разрушь свой дом, выстрой судно, Оставь богатства, думай о жизни'"
+  - "Dyakonov 1961, Tablet XI: 'Снеси жилище, построй корабль, Покинь изобилье, заботься о жизни, Богатство презри, спасай свою душу!'"
+  methodology_fit_warning: true
+  methodology_fit_note: Propp's PROPP-2 typically involves a prohibition issued to the hero before departure that will later be violated (PROPP-3). Here the interdiction functions more as a divine commission or set of salvation instructions than a prohibition whose violation drives the plot. The sequence is not followed by a clear PROPP-3 violation in this passage. The fit is structurally approximate rather than precise.
+  ai_generated: true
+  generated_by_model: claude-sonnet-4-6
+- code: PROPP-8
+  label: Villainy / Lack
+  proposed_tier: reconstructed
+  status: confirmed
+  rationale: "The flood itself constitutes the primary act of villainy in this narrative segment: the divine council, led by Enlil/Bel, decrees and executes the destruction of humanity. This is the catastrophic harm from which the hero (Utnapishtim) must be saved and which frames the entire embedded narrative recounted to Gilgamesh. The destruction of all humankind is the 'lack' that the survival narrative seeks to address."
+  evidence_citations:
+  - "Gumilev 1919, Tablet XI: 'И сделать потоп подтолкнуло их сердце, богов великих'"
+  - "Dyakonov 1961, Tablet XI: 'Богов великих потоп устроить склонило их сердце'"
+  - George 2003, SB XI 14
+  methodology_fit_warning: true
+  methodology_fit_note: The 'villain' here is a collective divine council and specifically Enlil, a deity rather than a conventional antagonist figure. The villainy is cosmic in scale and is not directed at a single hero-victim in the Proppian sense but at all of humanity. This broadens the function beyond its typical morphological scope. The annotation remains defensible as a macro-structural identification of harm-initiation.
+  ai_generated: true
+  generated_by_model: claude-sonnet-4-6
+- code: PROPP-11
+  label: Departure
+  proposed_tier: reconstructed
+  status: confirmed
+  rationale: Utnapishtim's boarding of the ark and sealing of its doors constitutes his departure from the ordinary world into the extraordinary space of the flood — a liminal translocation that structurally parallels the hero's departure in Propp. He leaves his city, his community, and the terrestrial world, entering the sealed vessel with his family, animals, and craftsmen.
+  evidence_citations:
+  - "Gumilev 1919, Tablet XI: 'В судно вошел и двери захлопнул'"
+  - "Dyakonov 1961, Tablet XI: 'Я вошел на корабль, засмолил его двери'"
+  methodology_fit_warning: false
+  ai_generated: true
+  generated_by_model: claude-sonnet-4-6
+- code: PROPP-16
+  label: Struggle
+  proposed_tier: contested
+  status: confirmed
+  rationale: The flood narrative presents a six-day, six-night cosmic battle between elemental forces of destruction and the survival of the lone vessel. While Utnapishtim does not engage in direct combat, the structural position of the flood's violence — the storm gods, the raging waters, the darkness — occupies the narrative slot of Propp's struggle, with the ark's endurance constituting the hero's side of the contest.
+  evidence_citations:
+  - "Gumilev 1919, Tablet XI: 'Шесть дней, шесть ночей бродят ветер и воды, ураган владеет землею'"
+  - "Dyakonov 1961, Tablet XI: 'Ходит ветер шесть дней, семь ночей, Потопом буря покрывает землю. При наступлении дня седьмого Буря с потопом войну прекратили, Те, что сражались подобно войску'"
+  methodology_fit_warning: true
+  methodology_fit_note: Propp's PROPP-16 requires direct combat between hero and villain. In this passage there is no physical confrontation; the hero passively endures within the ark while cosmic forces rage externally. The text itself uses martial metaphor ('подобно войску' / 'like an army') which invites structural comparison, but the absence of direct agency on the hero's part makes this annotation contested. It maps better as an extended ordeal or trial than a Proppian struggle.
+  ai_generated: true
+  generated_by_model: claude-sonnet-4-6
+- code: PROPP-18
+  label: Victory
+  proposed_tier: contested
+  status: confirmed
+  rationale: "The cessation of the flood on the seventh day, the subsiding of waters, and the grounding of the ark on Mount Nisir marks the structural point of victory: the destructive forces are defeated and the hero's survival is confirmed. The release of the birds and the successful departure of the raven signals that conditions for life have returned."
+  evidence_citations:
+  - "Gumilev 1919, Tablet XI: 'При начале седьмого дня ураган спадает... Море утишилось, ветер улегся, потоп прекратился'"
+  - "Dyakonov 1961, Tablet XI: 'Успокоилось море, утих ураган - потоп прекратился'"
+  methodology_fit_warning: true
+  methodology_fit_note: As with PROPP-16, the absence of direct combat makes PROPP-18 a contested assignment. Victory is achieved not through the hero's active defeat of an opponent but through divine decree and natural cessation. The function is defensible as a structural marker of the transition from crisis to resolution.
+  ai_generated: true
+  generated_by_model: claude-sonnet-4-6
+- code: PROPP-19
+  label: Liquidation
+  proposed_tier: reconstructed
+  status: confirmed
+  rationale: The initial misfortune — the divine decree to destroy humanity — is liquidated through Utnapishtim's survival and the preservation of 'all seed of life' aboard the ark. The post-flood sacrifice and Enlil's subsequent blessing confirm that the crisis has been resolved and a new order established. The continuation of life through the preserved humans, animals, and craftsmen directly addresses the 'lack' created by the flood.
+  evidence_citations:
+  - "Gumilev 1919, Tablet XI: 'Все, что имел нагрузил я, все семя жизни / Заключил я во внутренность судна'"
+  - "Dyakonov 1961, Tablet XI: 'Нагрузил его всем, что имел живой я твари'"
+  methodology_fit_warning: false
+  ai_generated: true
+  generated_by_model: claude-sonnet-4-6
+- code: PROPP-30
+  label: Punishment
+  proposed_tier: contested
+  status: confirmed
+  rationale: Enlil/Bel is publicly rebuked by both Ea and Ninhursag/Ishtar for his disproportionate and unreflective decision to destroy humanity. Ishtar explicitly bars him from the post-flood sacrifice, and Ea delivers a sustained moral indictment of his conduct. While Enlil is not destroyed or exiled, the narrative subjects him to collective divine censure that functions structurally as punishment of the principal villain.
+  evidence_citations:
+  - "Gumilev 1919, Tablet XI: 'Но пусть Бел не подходит к жертве, Потому что он не размыслил, потоп устроил'"
+  - "Dyakonov 1961, Tablet XI: 'Эллиль к этой жертве пусть не подходит, Ибо он, не размыслив, потоп устроил И моих человеков обрек истребленью!'"
+  methodology_fit_warning: true
+  methodology_fit_note: Propp's PROPP-30 typically involves decisive, often physical punishment of the villain. Here Enlil's 'punishment' is symbolic exclusion from sacrifice and verbal rebuke, followed by his partial rehabilitation when he boards the ark and grants immortality to Utnapishtim. The villain is admonished rather than definitively punished, and the narrative arc moves toward reconciliation rather than elimination. This makes the annotation contested.
+  ai_generated: true
+  generated_by_model: claude-sonnet-4-6
+- code: PROPP-31
+  label: Wedding
+  proposed_tier: contested
+  status: confirmed
+  rationale: Enlil's blessing of Utnapishtim and his wife — touching their foreheads, standing between them, elevating them to divine status, and settling them 'at the mouth of rivers, far away' — occupies the structural position of the tale's culminating reward. The bestowal of immortality and a new, exalted dwelling place functions as the hero's final elevation, analogous to Propp's wedding/enthronement function.
+  evidence_citations:
+  - "Gumilev 1919, Tablet XI: 'Прежде Ут-напиштим был смертными, Ныне и он, и жена нам, бессмертным, подобны: Пусть он живет, Ут-напиштим, в устье рек далеко!'"
+  - "Dyakonov 1961, Tablet XI: 'Доселе Утнапишти был человеком, Отныне ж Утнапишти нам, богам, подобен, Пусть живет Утнапишти при устье рек, в отдаленье!'"
+  methodology_fit_warning: true
+  methodology_fit_note: PROPP-31 in its canonical form involves marriage and accession to a throne. Here the 'reward' is deification and spatial relocation rather than a wedding, though Utnapishtim's wife is explicitly included in the elevation. The function maps onto the broad concept of 'final heroic elevation' but diverges from the matrimonial specifics of Propp's formulation. Additionally, this embedded narrative is told retrospectively to Gilgamesh, meaning it does not function as a resolution of the main epic's quest — Gilgamesh cannot replicate Utnapishtim's path. This contextual displacement further complicates the fit.
+  ai_generated: true
+  generated_by_model: claude-sonnet-4-6

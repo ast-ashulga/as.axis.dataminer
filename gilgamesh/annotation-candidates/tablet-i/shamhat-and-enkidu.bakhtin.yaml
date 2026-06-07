@@ -1,0 +1,51 @@
+_sisyphus_version: '0.1'
+nas: nms://gilgamesh/tablet-i/shamhat-and-enkidu
+track: bakhtin
+annotations:
+- code: BAKHTIN-ROAD
+  label: Road / Journey Chronotope
+  proposed_tier: reconstructed
+  status: confirmed
+  rationale: "The hunter and Shamhat travel a direct road to the watering hole over three days, fusing time and space in purposeful motion. The journey is not incidental but structurally necessary: arrival at the road's terminus is the precondition for the fateful encounter with Enkidu. Chance and destiny converge at the journey's end in the classic road-chronotope pattern Bakhtin describes."
+  evidence_citations:
+  - "Gumilev 1919, Tablet I: 'Оба отправились в путь прямою дорогой / И на третьей день подошли к тому полю'"
+  - George 2003, SB I 176–185
+  methodology_fit_warning: false
+  ai_generated: true
+  generated_by_model: claude-sonnet-4-6
+- code: BAKHTIN-THRESHOLD
+  label: Threshold Chronotope
+  proposed_tier: reconstructed
+  status: confirmed
+  rationale: 'The encounter between Shamhat and Enkidu represents one of the most structurally explicit threshold moments in the epic: Enkidu crosses an irreversible boundary from animal to human existence. Time is effectively suspended across the six days and seven nights, and only after this liminal period does Enkidu discover that he cannot return to his former state. Both translations mark the precise moment of rupture — the animals flee, his legs give way — crystallizing the threshold as a point of no return.'
+  evidence_citations:
+  - "Gumilev 1919, Tablet I: 'Устыдился себя Эабани, его тело стало тяжелым, / Останавливались колени, когда он гнался за стадом'"
+  - "Dyakonov 1961, Tablet I: 'Смирился Энкиду,-- ему, как прежде, не бегать! / Но стал он умней, разуменьем глубже'"
+  - George 2003, SB I 194–202
+  methodology_fit_warning: false
+  ai_generated: true
+  generated_by_model: claude-sonnet-4-6
+- code: BAKHTIN-IDYLL
+  label: Idyllic / Rural Chronotope
+  proposed_tier: contested
+  status: confirmed
+  rationale: 'Before the encounter with Shamhat, Enkidu exists within a bounded, cyclical natural world — grazing with gazelles, drinking at the watering hole with the herd, experiencing undifferentiated unity with animals across repeated daily rhythms. This functions as a Bakhtinian idyll: cyclical time tied to nature, with no linear historical progression and a totalized unity of creature and place. However, this idyllic chronotope is immediately and violently disrupted by the threshold event, meaning it functions retrospectively as a lost idyll rather than a sustained one. This contested application is defensible as a structural counterpoint to the threshold.'
+  evidence_citations:
+  - "Gumilev 1919, Tablet I: 'С газелями вместе щиплет травы, / Со скотому идет к водопою, / С водяными тварями веселится сердцем'"
+  - "Dyakonov 1961, Tablet I: 'Степное зверье избегало его тела'"
+  methodology_fit_warning: true
+  methodology_fit_note: The idyllic chronotope is most defensible as the pre-threshold state that is negated rather than as a sustained narrative zone. Bakhtin's idyll typically involves an integrated community over time; Enkidu's animal world approximates this but is pre-cultural and non-communal in the strict sense. The annotation is nonetheless useful as a structural foil to the threshold.
+  ai_generated: true
+  generated_by_model: claude-sonnet-4-6
+- code: BAKHTIN-HEROIC-BODY
+  label: Heroic Body Chronotope
+  proposed_tier: reconstructed
+  status: confirmed
+  rationale: "Enkidu's body is the primary site on which the narrative transformation is inscribed: his physical prowess (running with gazelles, his 'wildness') is the precondition for Shamhat's seduction and Gilgamesh's interest. The weakening of his legs, the heaviness of his limbs, and the flight of the animals are bodily markers that externalize an inner chronotopic shift — the world is reorganized around what his body can and can no longer do. Shamhat's subsequent speech frames Enkidu's body explicitly as godlike, echoed in both translations, establishing the heroic body as a narrative reference point for the journey to Uruk."
+  evidence_citations:
+  - "Gumilev 1919, Tablet I: 'Ты силен и прекрасен, ты — как бог, Эабани'"
+  - "Dyakonov 1961, Tablet I: 'Ты красив, Энкиду, ты богу подобен'"
+  - George 2003, SB I 207–210
+  methodology_fit_warning: false
+  ai_generated: true
+  generated_by_model: claude-sonnet-4-6
