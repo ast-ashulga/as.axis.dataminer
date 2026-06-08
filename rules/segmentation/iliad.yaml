@@ -95,6 +95,7 @@ divisions:
   - name: book-xix
     episodes:
       - reconciliation-with-agamemnon
+      - briseis-lament
       - arming-of-achilles
   - name: book-xx
     episodes:
@@ -125,17 +126,59 @@ divisions:
 # Granularity: episode (default), sub-episode, verse-range, lacuna
 default_granularity: episode
 
-# Signals used to identify division and episode boundaries in raw text
-# TODO: tune for specific translation(s) used (Murray/Wyatt, Lattimore, or Perseus Greek)
+# Signals used to identify division and episode boundaries in raw text.
+#
+# Sources in this pipeline and their heading patterns:
+#   iliad-murray.md (EN, Murray 1924): headings are "## Book I" through "## Book XXIV"
+#     — matched by the "Book " prefix below (substring match on Roman numeral following).
+#   iliad-veresaev.txt (RU, Veresaev): headings are "ПЕСНЬ ПЕРВАЯ" through
+#     "ПЕСНЬ ДВАДЦАТЬ ЧЕТВЕРТАЯ" (uppercase all-caps); matched by "ПЕСНЬ " below.
+#     WARNING: the Veresaev .txt file contains a table of contents at lines 31–148
+#     that lists all 24 ПЕСНЬ headings before the body text begins. Naive substring
+#     matching will double-detect books I–XXIV. The segmentation engine must either
+#     skip the TOC block (lines 1–900 approx.) or de-duplicate by first-occurrence.
+#   iliada-gnedich.pdf (RU, Gnedich 1829): PDF; headings are inferred as "ПЕСНЬ "
+#     (uppercase) followed by ordinal — the standard Russian convention, consistent
+#     with Veresaev. This is an inference from convention, not verified OCR output.
+#     Both "ПЕСНЬ " and "Песнь " are included to cover OCR case variation.
+#   venetus-a-by-zone.md (GRC, Homer Multitext): book markers are backtick-encoded
+#     "{n}.title" lines (e.g. "`1.title` ἰλιάδος ἄλφα"). Only 5 of 24 title entries
+#     are present in the file — the zone format uses folio markers
+#     ("### Venetus A … folio N, recto/verso") as the primary structural signal.
+#     This source is layer_3_original (feature-flagged off for serving); treat its
+#     boundary detection as secondary and do not rely on it for episode segmentation.
+#
+# "Rhapsody " has been removed — it matched none of the actual source files.
 boundary_signals:
-  book: ["Book ", "BOOK ", "Rhapsody "]
+  book:
+    - "## Book "     # Murray 1924 markdown (e.g. "## Book I", "## Book XXIV")
+    - "Book "        # fallback plain-text Murray variant
+    - "ПЕСНЬ "       # Veresaev and Gnedich uppercase (e.g. "ПЕСНЬ ПЕРВАЯ")
+    - "Песнь "       # Gnedich OCR mixed-case variant
   episode_keywords:
-    catalogue-of-ships: ["Boeotians", "ships", "leaders"]
-    embassy-to-achilles: ["Phoenix", "Ajax", "Odysseus", "embassy"]
-    death-of-patroclus: ["Patroclus", "Hector", "struck", "fell"]
-    shield-of-achilles: ["shield", "Hephaestus", "forged", "wrought"]
-    death-of-hector: ["Hector", "Achilles", "spear", "killed"]
-    ransom-of-hector: ["Priam", "ransom", "twelve days"]
+    # Keywords are English-only; they discriminate within an already-segmented book,
+    # not globally. Prefer low-frequency anchors over high-frequency names.
+    catalogue-of-ships: ["Boeotians", "Aulis", "Aspledon"]
+    catalogue-of-trojans: ["Dardanians", "Aeneas", "Priam led"]
+    teichoskopia: ["wall", "aged Priam", "Helen pointed"]
+    doloneia: ["Dolon", "Rhesus", "Thracians"]
+    embassy-to-achilles: ["gifts of appeasement", "Phoenix", "Peleus sent me"]
+    phoenix-speech: ["Meleager", "Aetolians", "Curetes"]
+    deception-of-zeus: ["girdle", "Hypnos", "Sleep", "Poseidon while Zeus"]
+    patroclus-plea: ["armour of Achilles", "terror to the Trojans", "at least let me"]
+    death-of-sarpedon: ["Sarpedon", "Lycians", "Glaucus wept"]
+    death-of-patroclus: ["Euphorbus", "Patroclus fell", "Apollo struck"]
+    achilles-grief: ["Antilochus", "Thetis heard", "wailing of Achilles"]
+    shield-of-achilles: ["Hephaestus wrought", "dancing floor", "city at peace"]
+    ghost-of-patroclus: ["shade of Patroclus", "bury me", "ashes together"]
+    funeral-games: ["Epeius", "boxing", "chariot race"]
+    briseis-lament: ["Briseis", "like golden Aphrodite", "Patroclus lay dead", "kind to me always"]
+    poseidon-rallies-achaeans: ["Poseidon", "Ajax wounded Hector", "stone"]
+    apollo-agenor-ruse: ["Agenor", "Apollo disguised", "gates of the city"]
+    priam-and-achilles: ["Hermes led", "kissed the hands", "wept together"]
+    burial-of-hector: ["twelve days", "lamentation of the Trojans", "gathered wood"]
 
-# Lacuna patterns: rare in the Iliad manuscript tradition; note textual variants instead
-lacuna_markers: ["[lacuna]", "[corrupt]", "[disputed]", "[athetised]"]
+# Lacuna patterns: rare in the Iliad manuscript tradition.
+# The Iliad has no lacunae comparable to Gilgamesh tablet breaks.
+# Note textual variants (athetised lines, Zenodotean recensions) rather than lacunae.
+lacuna_markers: ["[lacuna]", "[corrupt]", "[disputed]", "[athetised]", "[interpolation]"]

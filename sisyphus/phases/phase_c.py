@@ -264,7 +264,7 @@ def _generate_summary(
 
     response = client.messages.create(
         model=model,
-        max_tokens=512,
+        max_tokens=1024,
         system=system,
         messages=[{"role": "user", "content": user_message}],
     )

@@ -259,7 +259,7 @@ Lacuna markers: {', '.join(rules.get('lacuna_markers', ['...', '[broken]']))}
 
 Source text (segment this into episode-level NAS-addressed passages):
 ---
-{text[:50000]}
+{text[:60000]}
 ---
 
 Return a JSON array of segment objects as specified in your instructions.

@@ -1,24 +1,186 @@
-# PLACEHOLDER — fill before M2 (Iliad milestone).
+# Phase D annotation prompt — Iliad (Homer).
 tradition: iliad
 
 tradition_preamble: >
-  TODO: You are annotating the Iliad (Homer). Scholarly authority: West 1998, Murray/Wyatt (Loeb 1999).
-  Cite textual evidence as: "Murray/Wyatt {book}.{line}" e.g. "Murray/Wyatt 1.1".
+  You are annotating the Iliad (Homer). Philological authority is M.L. West's critical
+  edition (Teubner, 1998–2000), which is the current scholarly standard for textual
+  decisions and line numbering. The text in this pipeline is A.T. Murray's 1924
+  translation (public domain); cite line-level textual evidence as "Murray 1924,
+  {book}.{line}" — e.g. "Murray 1924, 1.1" for Book I, line 1. Murray's markdown
+  source uses bracketed line numbers ([1], [8], …) that correspond to standard
+  scholarly Homeric line references. Use these numbers for citation, not page numbers.
+
+  Distinguish two categories of evidence in every annotation:
+  (1) Textual evidence: what the text of the Iliad explicitly states. Cite with
+      "Murray 1924, {book}.{line}".
+  (2) Scholarly commentary: interpretive claims drawn from secondary literature
+      (West 1998, Kirk 1985–1993, Richardson 1993, Janko 1992, Edwards 1991,
+      Macleod 1982). Label these as "West argues..." or "Kirk observes..." — never
+      present scholarly commentary as primary textual fact.
+  Do not source annotation evidence from any copyrighted translation edition.
 
 propp_fit_note: >
-  TODO: Propp functions apply with moderate fit to Iliadic narrative.
-  Aristeia sequences map broadly to functions VIII–XIV (struggle → victory).
-  Embassy and council scenes map to preparation functions I–VII.
-  The Iliad lacks Propp's resolution functions (return, wedding) — note this structural absence.
-  Do not set methodology_fit_warning=true automatically; evaluate per passage.
+  Propp functions apply with POOR-TO-MODERATE fit to the Iliad. Propp derived his
+  morphology from a corpus of Russian wonder tales featuring a single hero on a
+  linear quest toward restoration and reward. The Iliad is structurally incompatible
+  with this paradigm in several respects, and annotation must be explicit about these
+  incompatibilities.
+
+  Core structural problems:
+  (a) The Iliad is a multi-protagonist war epic, not a single-hero quest. Achilles,
+      Agamemnon, Hector, Diomedes, and Patroclus each have claim to heroic centrality
+      in different books. Propp assumes a single hero throughout.
+  (b) The Iliad has no Proppian resolution: Functions PROPP-20 (Return), PROPP-27
+      (Recognition), PROPP-31 (Wedding) are absent. The poem ends with Hector's burial,
+      not with restitution. This structural absence is not a flaw — it is the defining
+      feature of the Iliadic narrative mode.
+  (c) The aristeia (a hero's sequence of extended battlefield excellence) is the
+      Iliad's own compositional unit with no Proppian equivalent. Aristeia share
+      surface features with PROPP-16 (Struggle) and PROPP-18 (Victory) but are
+      episodes within a continuous war, not resolutions of a quest.
+
+  Where Propp functions do apply:
+  - The poem's opening establishes a PROPP-8 (Villainy/Lack) through the seizure of
+    Briseis, which triggers the narrative action.
+  - Embassy scenes (Book IX) map to PROPP-9 (Mediation) and PROPP-10 (Beginning
+    Counter-Action), though Achilles' refusal inverts the expected functional outcome.
+  - Divine arming sequences (Book XVIII–XIX) map usefully to PROPP-14 (Receipt of
+    Magical Agent).
+  - Patroclus's mission (Books XVI) maps to PROPP-11 (Departure) and initiates a
+    sub-sequence ending at PROPP-18 (Victory for the Trojans, inversion of expected
+    polarity).
+
+  Methodology-fit rule: Propp annotations are valid when a specific passage fits a
+  specific function, provided the annotator notes where the Iliadic form diverges.
+  Do NOT set methodology_fit_warning=true as a tradition-wide default — evaluate
+  per passage. DO set methodology_fit_warning=true whenever you write a
+  methodology_fit_note; note and warning always travel together (this is a schema
+  invariant enforced by the validator). Typical triggers for per-passage warnings:
+  when an aristeia is being forced into a single Propp function, when collective
+  divine action is being labelled PROPP-8, or when the absence of return/resolution
+  functions is being treated as a gap to annotate rather than a structural feature
+  to document.
 
 bakhtin_fit_note: >
-  TODO: Bakhtin chronotopes apply well to the Iliad.
-  The battlefield is a threshold chronotope (life/death boundary).
-  Olympian scenes introduce an encounter chronotope (cosmic vs. human time).
-  Homeric similes operate as idyllic chronotopes (peacetime intrusions into war).
+  Bakhtin chronotopes apply with GOOD fit to the Iliad. The framework was developed
+  for the European novel, not for oral epic, and that origin should be acknowledged
+  in any annotation where the formulation strains; see the oral-tradition
+  methodology_fit_concern in rules/tracks/bakhtin.yaml. That concern is the
+  exception, not the rule — for most Iliadic passages, chronotope assignment is
+  straightforward.
+
+  Specific chronotope guidance for the Iliad:
+
+  BAKHTIN-THRESHOLD: The dominant chronotope of battlefield scenes. Every aristeia
+  and killing sequence operates at the threshold between life and death. The threshold
+  is not merely metaphorical here: in the Iliad, the threshold is the actual moment
+  of death, which the poem renders in extraordinary physical detail (the soul departing,
+  the body falling, the name given). Apply to: all battle scenes, supplication scenes
+  at the moment of killing or sparing, Hector outside the Scaean Gate (Book XXII).
+
+  BAKHTIN-DIVINE: Apply to Olympian council scenes and moments where divine and human
+  time interact. The divine chronotope in the Iliad is characterised by the gods
+  watching mortal time from outside it — Zeus weighing fates on the scales (Book VIII,
+  Book XXII), Hephaestus forging the shield (Book XVIII). Do not use BAKHTIN-CASTLE
+  for Olympus; it is not a historical-time-saturated place but a divine-time space.
+
+  BAKHTIN-HEROIC-BODY: A strong fit for aristeia sequences and arming scenes. In the
+  Iliad, the hero's body is the primary site of narrative meaning: Achilles' armour,
+  Hector's body, Patroclus's corpse are all chronotopic objects where identity, time,
+  and social order are inscribed and contested.
+
+  BAKHTIN-IDYLL: Apply specifically to Homeric similes. The extended similes
+  consistently invoke peacetime scenes — ploughing, beekeeping, children building
+  sandcastles, women dyeing wool — that intrude from a different temporal world
+  (pre-war, peacetime, nature's cyclical time) into the battlefield. This is a
+  formally distinct use of the idyllic chronotope: not a sustained idyllic world
+  but a momentary irruption of idyllic time into the threshold.
+
+  BAKHTIN-ROAD: Apply with caution and only where a journey has the road's specific
+  quality of chance encounter and revelation. The embassy to Achilles (Book IX),
+  Priam's night journey to the Greek camp (Book XXIV), and Hermes escorting Priam
+  are genuine road-chronotope passages. Do not apply to military marches.
+
+  Do NOT use "encounter chronotope" as a label — this is not a Bakhtin category in
+  the project's controlled vocabulary (see rules/tracks/bakhtin.yaml). The closest
+  available code for cosmic-vs-human time interactions is BAKHTIN-DIVINE.
+
+  Methodology-fit rule: Set methodology_fit_warning=true and write a
+  methodology_fit_note only when the oral-formulaic nature of the passage — formulaic
+  ring composition, type-scene repetition — genuinely strains the chronotope
+  category. Note and warning always travel together.
 
 tmi_fit_note: >
-  TODO: TMI motif codes are identifiable throughout (divine intervention A182,
-  disguise K1800, recognition H0, hospitality P320).
-  Note when a motif has specifically Greek valence the generic code does not capture.
+  TMI motif codes are identifiable throughout the Iliad. Apply them wherever a
+  specific motif is recognisable, and flag passages where the Greek cultural
+  context gives the motif a specific valence the generic code does not capture.
+
+  Verified codes with Iliadic examples:
+
+  K1811 — Gods (saints) in disguise visit mortals. The most structurally prominent
+  disguise motif in the Iliad. Athene disguises herself as Deiphobos to trick Hector
+  into standing his ground (Book XXII, Murray 1924, 22.226–247); Apollo disguises
+  himself as Asius to rebuke Hector (Book XVII, Murray 1924, 17.582–592); Iris
+  disguises herself as Polites (Book II, Murray 1924, 2.786–807). Apply broadly
+  to divine-disguise interventions.
+
+  K1810 — Deception by disguise (general). Apply to non-divine disguise passages
+  (Doloneia, Book X: Odysseus and Diomedes in enemy territory, night-raid disguise
+  conventions). Use K1811 specifically when the disguised agent is divine.
+
+  A-section divine intervention (gods intervening in human affairs, specifically
+  in battle and on behalf of favoured warriors). The Iliad's divine machinery —
+  gods fighting alongside mortals, deflecting spears, carrying wounded heroes off
+  the field — is the central narrative mechanism of the poem. At minimum, tag these
+  passages with the broadest applicable A-section code; note in evidence_citations
+  the specific book and line. The Venetus A scholia document ancient readers'
+  awareness of the theological problem these scenes raised (Aristarchus's notes on
+  the Theomachies, Books XX–XXI); if annotating a Theomachy passage, note this
+  ancient editorial sensitivity.
+
+  P320-band — Hospitality. Apply to guest-friendship (xenia) scenes. Flag each
+  P320-band annotation with a methodology note: Homeric xenia is a divinely
+  sanctioned reciprocal institution governed by Zeus Xenios. It is not merely
+  social courtesy. The Glaukos-Diomedes exchange (Book VI, Murray 1924, 6.119–236)
+  — in which two warriors discover guest-friendship bonds and exchange armour —
+  is the paradigm case. The generic P320 code does not capture the theological
+  weight of xenia under Zeus Xenios; note this explicitly in every hospitality
+  annotation.
+
+  P310 — Friendship. Apply to the Achilles-Patroclus bond, which the poem frames
+  as the primary relationship motivating the second arc of the narrative. Note that
+  ancient and modern interpreters diverge on the nature of this bond; do not
+  resolve the interpretive question in the annotation, but acknowledge it.
+
+  Motifs without clean TMI codes — note the absence rather than forcing a fit:
+
+  Hiketeia (ritual supplication): The Iliad contains multiple formal supplication
+  scenes — Chryses at the ships (Book I), Thetis before Zeus (Book I), Priam
+  before Achilles (Book XXIV). The supplication follows a specific ritual protocol:
+  the suppliant grasps the knees and sometimes the chin of the one supplicated;
+  the one supplicated is bound by ritual obligation to respond. No single TMI code
+  captures the full force of hiketeia as a ritual institution. Use the closest
+  available code, and add a methodology note: "Homeric hiketeia is a formal
+  ritual act with binding social and religious force; the generic motif code
+  does not capture this institutional dimension."
+
+  Timē-geras honor economy: The seizure of Briseis (Book I) and the entire
+  narrative logic of Achilles' withdrawal operate through the timē/geras
+  framework — honour is made concrete in material tokens (geras); to deprive
+  a warrior of his geras is to reduce his timē. There is no TMI code for
+  this structure. Note its absence and describe the passage in cultural terms
+  rather than forcing a folk-motif code.
+
+  Ransom of the corpse (Book XXIV): Priam's mission to ransom Hector's body is
+  without clear TMI parallel in the Index (the closest — ransom/payment motifs
+  in the Q-section — do not match the specific Greek institution of proper burial
+  as prerequisite for the soul's rest). Note the absence and describe the ritual
+  stakes explicitly.
+
+  Methodology-fit rule: Note and warning always travel together. Set
+  methodology_fit_warning=true whenever you write a methodology_fit_note.
+  TMI annotations do not require warnings by default for the Iliad — the
+  framework is applicable to this tradition's folktale and mythic elements.
+  Warnings are required only when the specifically Greek institutional valence
+  (xenia, hiketeia, timē) makes the generic code actively misleading rather
+  than merely incomplete.

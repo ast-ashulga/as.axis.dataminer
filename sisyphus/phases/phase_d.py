@@ -302,4 +302,5 @@ def _call_annotation_agent(
         raw = re.sub(r"^```[a-z]*\n?", "", raw)
         raw = re.sub(r"\n?```$", "", raw)
 
-    return json.loads(raw)
+    result, _ = json.JSONDecoder().raw_decode(raw)
+    return result
