@@ -230,3 +230,4 @@ __marimo__/
 /sources/gilgamesh/
 /sources/iliad/
 
+.claude/scheduled_tasks.lock
