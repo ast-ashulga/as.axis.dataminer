@@ -1,0 +1,10 @@
+_sisyphus_version: '0.1'
+tradition_id: lacunaepic
+entries:
+- nas: nms://lacunaepic/tablet-i/dream
+  tradition_id: lacunaepic
+  division: tablet-i
+  episode: dream
+  granularity: lacuna
+  confirmed_by: reviewer
+  confirmed_at: '2026-06-01T12:00:00'

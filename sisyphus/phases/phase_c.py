@@ -131,11 +131,12 @@ def run_generate_layer0(
             console.print(f"  Generating: {nas} [{locale}]…")
 
             summary: str | None = None
-            grounding_errors: list[str] = []
+            failure_type: str | None = None
+            failure_msg: str = ""
             max_attempts = 3
             for attempt in range(1, max_attempts + 1):
                 try:
-                    candidate = _generate_summary(
+                    candidate, stop_reason = _generate_summary(
                         client=client,
                         model=model,
                         nas=nas,
@@ -144,39 +145,45 @@ def run_generate_layer0(
                         prompt_config=prompt_config,
                     )
                 except Exception as exc:
-                    error = {
-                        "phase": "C",
-                        "run_id": "phase-c",
-                        "nas": nas,
-                        "error_type": "generation_failure",
-                        "message": str(exc),
-                        "timestamp": datetime.now(UTC).isoformat(),
-                    }
-                    errors.append(error)
-                    total_rejected += 1
+                    failure_type = "generation_failure"
+                    failure_msg = str(exc)
                     console.print(f"  [red]✗ Generation failed for {nas} [{locale}]: {exc}[/red]")
                     break
+
+                # Truncation guard: a summary cut off at max_tokens must never be
+                # accepted as confirmed content. Retry, then flag.
+                if stop_reason == "max_tokens":
+                    failure_type = "truncation_failure"
+                    failure_msg = f"[{locale}] Generation hit max_tokens (truncated) after {attempt} attempt(s)"
+                    if attempt < max_attempts:
+                        console.print(f"  [yellow]↻ Truncation retry {attempt}/{max_attempts - 1}: {nas} [{locale}][/yellow]")
+                        continue
+                    console.print(f"  [red]✗ Truncated (max_tokens) after {max_attempts} attempts: {nas} [{locale}][/red]")
+                    break
+
                 grounding_errors = _validate_grounding(candidate, [nas], grounding_threshold)
                 if not grounding_errors:
                     summary = candidate
+                    failure_type = None
                     break
+                failure_type = "grounding_validation_failure"
+                failure_msg = f"[{locale}] Uncited sentences after {attempt} attempt(s): {grounding_errors}"
                 if attempt < max_attempts:
                     console.print(f"  [yellow]↻ Grounding retry {attempt}/{max_attempts - 1}: {nas} [{locale}][/yellow]")
-            else:
-                # All attempts exhausted
-                error = {
-                    "phase": "C",
-                    "run_id": "phase-c",
-                    "nas": nas,
-                    "error_type": "grounding_validation_failure",
-                    "message": f"[{locale}] Uncited sentences after {max_attempts} attempts: {grounding_errors}",
-                    "timestamp": datetime.now(UTC).isoformat(),
-                }
-                errors.append(error)
-                total_rejected += 1
-                console.print(f"  [red]✗ Grounding failed after {max_attempts} attempts: {nas} [{locale}][/red]")
+                else:
+                    console.print(f"  [red]✗ Grounding failed after {max_attempts} attempts: {nas} [{locale}][/red]")
 
             if summary is None:
+                if failure_type:
+                    errors.append({
+                        "phase": "C",
+                        "run_id": "phase-c",
+                        "nas": nas,
+                        "error_type": failure_type,
+                        "message": failure_msg,
+                        "timestamp": datetime.now(UTC).isoformat(),
+                    })
+                    total_rejected += 1
                 continue
 
             # Extract citations from the summary
@@ -225,7 +232,8 @@ def _generate_summary(
     locale: str,
     passage_texts: list[tuple[str, str]],
     prompt_config: dict,
-) -> str:
+) -> tuple[str, str | None]:
+    """Return (summary_text, stop_reason). stop_reason='max_tokens' means truncated."""
     locale_instruction = {
         "en": "in English",
         "ru": "in Russian",
@@ -264,12 +272,16 @@ def _generate_summary(
 
     response = client.messages.create(
         model=model,
-        max_tokens=1024,
+        # 80–150 words of prose plus a [NAS: …] citation on every sentence runs
+        # well over 1024 tokens, especially in Cyrillic which tokenizes heavier;
+        # 1024 silently truncated summaries mid-sentence. 2048 leaves headroom and
+        # the stop_reason guard below catches any future overrun.
+        max_tokens=2048,
         system=system,
         messages=[{"role": "user", "content": user_message}],
     )
     text_block = next(b for b in response.content if hasattr(b, "text"))
-    return text_block.text.strip()
+    return text_block.text.strip(), response.stop_reason
 
 
 _BARE_NAS_RE = re.compile(r"NAS: nms://[a-z0-9-]+(?:/[a-z0-9-]+){1,3}\]?")
@@ -315,9 +327,25 @@ def _upsert_fragment_file(
     except Exception:
         ms = None
 
+    # Preserve the address of an existing fragment. Several confirmed entries
+    # (an episode and its sub-episodes) can map to the same {division}/{episode}
+    # file; without this, each call would overwrite fragment.nas with the
+    # last-processed entry's address (last-writer-wins), silently re-tagging the
+    # episode fragment to an arbitrary sub-episode. Once a fragment exists, its
+    # address is stable — re-running Phase C never re-tags it.
+    parent_nas = entry.get("parent_nas")
+    if frag_path.exists():
+        try:
+            existing_frag = read_yaml(frag_path).get("fragment", {})
+            if existing_frag.get("nas"):
+                nas = existing_frag["nas"]
+                parent_nas = existing_frag.get("parent_nas", parent_nas)
+        except Exception:
+            pass
+
     frag = FragmentRecord(
         nas=nas,
-        parent_nas=entry.get("parent_nas"),
+        parent_nas=parent_nas,
         tradition_id=tradition,
         confidence_tier=ConfidenceTier.reconstructed,
         available_layers=[Layer.surface],

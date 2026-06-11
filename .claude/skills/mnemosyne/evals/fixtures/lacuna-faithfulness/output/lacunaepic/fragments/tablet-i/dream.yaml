@@ -1,0 +1,12 @@
+_sisyphus_version: '0.1'
+fragment:
+  nas: nms://lacunaepic/tablet-i/dream
+  tradition_id: lacunaepic
+  confidence_tier: reconstructed
+content:
+- locale: en
+  layer: surface
+  body: 'The hero dreams of a collapsing mountain and a great eagle descending, which his companion interprets as an omen of victory [NAS: nms://lacunaepic/tablet-i/dream]. He wakes resolved to continue the journey [NAS: nms://lacunaepic/tablet-i/dream].'
+  status: candidate
+  confidence_tier: inspired
+  ai_generated: true

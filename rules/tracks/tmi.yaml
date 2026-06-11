@@ -73,6 +73,12 @@ representative_motifs:
     label: "Magic knowledge through dreams"
     category: D (Magic)
     description: "Divine or prophetic knowledge conveyed to a hero through a dream sequence."
+  # CULTURAL-EXPERT REVIEW FLAG: In Stith Thompson's Motif-Index, T91 is
+  # "Unequals in love" (lovers of differing rank/caste/species), NOT "refusal of
+  # a divine lover." This entry repurposes the code; the ~21 annotations generated
+  # under it (e.g. the Gilgamesh–Ishtar refusal) therefore carry a non-canonical
+  # label. Relabeling alone is insufficient — the underlying motif identification
+  # should be re-evaluated (correct code or rejection) by the Cultural Expert.
   - code: TMI-T91
     label: "Refusal of divine lover"
     category: T (Sex)

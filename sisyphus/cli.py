@@ -47,6 +47,15 @@ def main(
 def ingest(
     source_file: Annotated[Path, typer.Argument(help="Source file to ingest (PDF, TXT, XML).")],
     manifest: Annotated[Path, typer.Option(help="Manifest YAML describing this source.")],
+    allow_additional_witness: Annotated[
+        bool,
+        typer.Option(
+            "--allow-additional-witness",
+            help="Override the witness-collision guard to ingest a second source into a "
+            "tradition that already has a confirmed NAS skeleton (risks NAS collision; "
+            "multi-witness reconciliation is deferred).",
+        ),
+    ] = False,
 ) -> None:
     """Phase A: Ingest source file, run OCR if needed, write clean text to workspace."""
     from sisyphus.phases.phase_a import run_ingest
@@ -58,7 +67,16 @@ def ingest(
         err_console.print(f"[bold]Manifest not found:[/bold] {manifest}")
         raise typer.Exit(1)
 
-    run_ingest(source_file=source_file, manifest_path=manifest, console=console)
+    try:
+        run_ingest(
+            source_file=source_file,
+            manifest_path=manifest,
+            console=console,
+            allow_additional_witness=allow_additional_witness,
+        )
+    except ValueError as exc:
+        err_console.print(f"[bold red]{exc}[/bold red]")
+        raise typer.Exit(1)
 
 
 # ---------------------------------------------------------------------------

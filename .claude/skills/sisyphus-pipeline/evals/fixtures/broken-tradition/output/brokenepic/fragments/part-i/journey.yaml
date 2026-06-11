@@ -1,0 +1,12 @@
+_sisyphus_version: '0.1'
+fragment:
+  nas: nms://brokenepic/part-i/journey
+  tradition_id: brokenepic
+  confidence_tier: reconstructed
+content:
+- locale: en
+  layer: surface
+  body: 'The hero crosses the river and reaches the mountain [NAS: nms://brokenepic/part-i/journey].'
+  status: confirmed
+  confidence_tier: reconstructed
+  ai_generated: true

@@ -27,6 +27,36 @@ report that consultation was inline rather than delegated.
 
 ---
 
+## Approval Authority
+
+You hold **standing approval authority** over both human gates (`confirm-nas` and
+`review`). When no Hard Invariant restricts the decision, you confirm and approve
+**by default** — you do not halt to wait for a human, and any pipeline step
+(including the `sisyphus-pipeline` skill) should proceed when you have approved
+rather than block. The **Hard Invariants table below is the complete set of
+restrictions** on that authority; outside them, the decision is yours.
+
+Two things this authority is **not**:
+
+1. **Not authority to confirm flawed output.** Approving a gate means you have
+   *verified* the content, not rubber-stamped it. A truncated summary, a summary
+   that narrates content absent from its source witness (a lacuna), a mis-tagged
+   NAS, a malformed motif code, or an annotation whose own rationale calls itself
+   forced must be **rejected**, not confirmed. Your approval is only as good as
+   the verification behind it (see Review Gate Protocol → evaluate, and the
+   faithfulness check).
+2. **Not authority to bypass the process.** Always record decisions by **piping
+   through the CLI** (`confirm-nas` / `review`); **never hand-edit
+   `nas-confirmed.yaml` or `review-decisions.yaml`** — hand-editing skips the
+   schema/enum and is what produced the `confirmd`/`rejectd` action typos. Never
+   flip a feature flag or edit a contract field by hand.
+
+If you genuinely cannot judge a decision (e.g. a borderline scholarly /
+faithfulness question), consult `cultural-domain-expert` — do not guess, and do
+not halt for a human unless a Hard Invariant or an unrecoverable error forces it.
+
+---
+
 ## Invocation
 
 User says: "process iliad" or "run M2 Iliad" or "process mahabharata from scratch".
@@ -302,10 +332,26 @@ print(f"Queue: {len(items)} annotation candidates")
 - Claims match the narrative content of the episode (check the NAS address)
 - Epistemic hedging is used where passages are damaged or contested
 
+**Faithfulness to the source witness (critical — this is where hallucination hides):**
+A summary must describe what *this witness's* segment text actually attests — not
+what the episode contains in the broader tradition. For any segment flagged as a
+lacuna or damaged (NAS contains `lacuna-`, granularity `lacuna`, or the source
+segment says columns/lines are lost), check the summary against the segment text
+in `workspace/<run-id>/segmented/<division>/<episode>.txt`:
+- A faithful lacuna summary *hedges the gap* ("absent from the present witness",
+  "the text breaks off", "scholars reconstruct…").
+- A summary that **narrates events from a column the segment says is lost is a
+  hallucination** (M2 Gilgamesh `tablet-iv/dream-sequence` narrated a dream from a
+  column its own source records as "entirely lost" — it was confirmed in error).
+  Reject it. When unsure whether content is attested in this witness, consult
+  cultural-domain-expert rather than confirming.
+
 **Reject a surface summary if:**
 - Any sentence lacks a NAS citation
+- The body does not end in terminal punctuation or a `[NAS:…]` tag (it is truncated)
 - A translator name appears in the body
 - A factually incorrect claim is made about the episode
+- It narrates content absent from this witness's segment (see Faithfulness above)
 - The framing is anachronistic or applies a modern moral framework without hedging
 
 For borderline quality decisions, consult cultural-domain-expert.
@@ -355,7 +401,10 @@ pipe_content = "\n".join(lines) + "\n"
 ### Step 4 — Post-review verify decisions, then validate
 
 After piping, verify the decisions file to confirm each NAS got the intended action.
-This is the real safety net — validate does not catch confirmed-at-wrong-tier for layer0:
+`sisyphus validate` now enforces these at the directory level (invalid review
+action, summary confirmed at a tier other than `reconstructed`, and truncated
+confirmed bodies all fail validation) — but verify here too, so you catch a bad
+decision *before* it propagates rather than at the final gate:
 
 ```bash
 python3 - <<'PY'
@@ -364,12 +413,17 @@ with open("output/<tradition>/review-decisions.yaml") as f:
     d = yaml.safe_load(f)
 decisions = d.get("decisions", [])
 # Check last N decisions (from this run)
+VALID_ACTIONS = {"confirmed", "rejected", "modified_confirmed", "deferred"}
 for dec in decisions[-$N:]:
     nas = dec.get("nas", "")
     action = dec.get("action", "")
-    tier = dec.get("tier", "")
+    # The tier lives in 'confidence_tier_assigned' — NOT 'tier'. Reading the wrong
+    # key silently returns "" and makes every check below pass; this was a real bug.
+    tier = dec.get("confidence_tier_assigned", "")
     record_type = dec.get("record_type", "")
-    if action == "confirmed" and tier == "documented":
+    if action not in VALID_ACTIONS:
+        print(f"ERROR: {nas} has invalid action '{action}' — typo? (must pipe through the CLI, never hand-edit)")
+    elif action == "confirmed" and tier == "documented":
         print(f"ERROR: {nas} confirmed at 'documented' — AI content cannot be documented")
     elif action == "confirmed" and record_type == "summary" and tier != "reconstructed":
         print(f"WARN: {nas} confirmed at '{tier}' — expected 'reconstructed'")
@@ -449,6 +503,15 @@ for AI-generated content. The output contract is structural: AI cannot produce
 **Grounding failures**: Phase C retries up to 3 times on grounding failures. If a
 fragment fails all 3 retries, it is skipped. Do not try to manually confirm it.
 Note skipped fragments in the final report.
+
+**Phase C summary truncation (M2 Iliad/Gilgamesh)**: `generate-layer0` was capped
+at `max_tokens=1024` — far too small for an 80–150-word summary that carries a
+`[NAS:…]` citation on every sentence, especially in Cyrillic (which tokenizes
+heavier, so `ru` truncated most). 36 summaries shipped cut off mid-sentence and
+the review gate confirmed them because they *had* citations. The cap is now 2048
+with a `stop_reason` guard, and `validate` rejects any truncated confirmed body.
+At review, **a summary that does not end in terminal punctuation or a `[NAS:…]`
+tag is truncated — reject it**, never confirm it.
 
 **Phase D max_tokens**: The annotate command must use `max_tokens=4096` minimum.
 If truncation errors appear, check the config.

@@ -11,7 +11,11 @@ from pathlib import Path
 
 from rich.console import Console
 
-from sisyphus.io.workspace import ingested_dir, ingestion_report_path
+from sisyphus.io.workspace import (
+    ingested_dir,
+    ingestion_report_path,
+    nas_confirmed_path,
+)
 from sisyphus.io.yaml_io import read_yaml, write_yaml
 from sisyphus.schema import IngestionReport
 
@@ -19,16 +23,69 @@ from sisyphus.schema import IngestionReport
 DEFAULT_OCR_THRESHOLD = 0.75
 
 
+def _witness_collision_guard(
+    tradition: str, source_file: Path, allow_additional_witness: bool, console: Console
+) -> None:
+    """Prevent silently ingesting a SECOND witness into a tradition that already
+    has a confirmed NAS skeleton.
+
+    M2 Gilgamesh ingested a Russian witness and the English Thompson 1928 witness
+    into one namespace in two runs; each segmented independently and produced
+    DIVERGENT NAS for the same episodes, which collided into orphan fragments.
+    NAS has no witness dimension and the pipeline does not reconcile across runs,
+    so a second witness must not be ingested until that work exists (deferred
+    behind `multi_witness_reconciliation`). Re-ingesting the SAME source (idempotent
+    re-run) is fine; a DIFFERENT source into a confirmed tradition is the hazard.
+    """
+    confirmed = nas_confirmed_path(tradition)
+    if not confirmed.exists():
+        return
+    try:
+        entries = read_yaml(confirmed).get("entries", [])
+    except Exception:
+        entries = []
+    if not entries:
+        return
+
+    prior_source = ""
+    report_path = ingestion_report_path(tradition)
+    if report_path.exists():
+        try:
+            prior_source = read_yaml(report_path).get("source_file", "") or ""
+        except Exception:
+            prior_source = ""
+
+    same_source = bool(prior_source) and Path(prior_source).resolve() == source_file.resolve()
+    if same_source:
+        return  # idempotent re-ingest of the same witness
+
+    msg = (
+        f"tradition '{tradition}' already has a confirmed NAS skeleton"
+        + (f" (built from '{prior_source}')" if prior_source else "")
+        + f", and you are ingesting a different source ('{source_file}'). If this is a "
+        "different witness/edition, ingesting it here will collide: each run segments "
+        "independently and proposes divergent NAS for the same episodes (the M2 Gilgamesh "
+        "failure). Multi-witness reconciliation is deferred. Re-run with "
+        "allow_additional_witness=True only if you have accepted that risk."
+    )
+    if not allow_additional_witness:
+        raise ValueError("Witness-collision guard: " + msg)
+    console.print(f"[yellow]⚠ Witness-collision guard overridden:[/yellow] {msg}")
+
+
 def run_ingest(
     source_file: Path,
     manifest_path: Path,
     console: Console,
     ocr_threshold: float = DEFAULT_OCR_THRESHOLD,
+    allow_additional_witness: bool = False,
 ) -> str:
     """Run Phase A ingestion. Returns the run_id."""
     manifest = read_yaml(manifest_path)
     source_type = manifest.get("source_type", "")
     tradition = manifest.get("tradition", "unknown")
+
+    _witness_collision_guard(tradition, source_file, allow_additional_witness, console)
 
     run_id = f"run-{tradition}-{datetime.now(UTC).strftime('%Y%m%d-%H%M%S')}"
     out_dir = ingested_dir(run_id)
