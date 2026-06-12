@@ -107,23 +107,38 @@ def load_passage_text(division: str, episode: str) -> str | None:
     return None
 
 
-def load_all_passage_texts(division: str, episode: str) -> list[tuple[str, str]]:
-    """Return all passage texts as (source_label, text) pairs for a division/episode.
+def load_all_passage_texts(division: str, episode: str, nas: str = "") -> list[tuple[str, str]]:
+    """Return all passage texts as (source_label, text) pairs.
 
-    Source label is the translation_id from the run's manifest, falling back to the run_id.
-    Sorted by run path for determinism.
+    When nas is provided, tries the bijective sub-episode path first
+    (segmented/division/episode/sub-episode.txt), falling back to the
+    episode-level path (segmented/division/episode.txt).
+    Source label is the translation_id from the run manifest, falling back to run_id.
     """
     import re as _re
 
-    results = []
-    for txt_path in sorted((_ROOT / "workspace").glob(f"*/segmented/{division}/{episode}.txt")):
-        run_dir = txt_path.parents[2]
-        manifest_file = run_dir / "ingested" / "manifest.yaml"
-        label = run_dir.name
-        if manifest_file.exists():
-            raw = manifest_file.read_text(encoding="utf-8")
-            m = _re.search(r"^translation_id:\s*(.+)$", raw, _re.MULTILINE)
-            if m:
-                label = m.group(1).strip().strip('"').strip("'")
-        results.append((label, txt_path.read_text(encoding="utf-8")))
-    return results
+    def _collect(glob_pat: str) -> list[tuple[str, str]]:
+        results = []
+        for txt_path in sorted((_ROOT / "workspace").glob(f"*/segmented/{glob_pat}")):
+            path_parts = txt_path.parts
+            seg_idx = next(i for i, p in enumerate(path_parts) if p == "segmented")
+            run_dir = Path(*path_parts[:seg_idx])
+            manifest_file = run_dir / "ingested" / "manifest.yaml"
+            label = run_dir.name
+            if manifest_file.exists():
+                raw = manifest_file.read_text(encoding="utf-8")
+                m = _re.search(r"^translation_id:\s*(.+)$", raw, _re.MULTILINE)
+                if m:
+                    label = m.group(1).strip().strip('"').strip("'")
+            results.append((label, txt_path.read_text(encoding="utf-8")))
+        return results
+
+    if nas:
+        nas_parts = nas.split("/")[3:]  # strip "nms:", "", tradition
+        if len(nas_parts) >= 2:
+            nas_glob = str(Path(*nas_parts[:-1]) / f"{nas_parts[-1]}.txt")
+            found = _collect(nas_glob)
+            if found:
+                return found
+
+    return _collect(f"{division}/{episode}.txt")

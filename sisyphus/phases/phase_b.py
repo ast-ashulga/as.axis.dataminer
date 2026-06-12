@@ -192,13 +192,20 @@ def run_segment(
     )
     write_yaml(proposals_path, all_proposals)
 
-    # Write segmented text to workspace
+    # Write segmented text to workspace using bijective NAS paths —
+    # mirrors the nas_to_fragment_path convention so Phase C can resolve
+    # per-sub-episode text without falling back to an episode-level file.
     seg_dir = segmented_dir(run_id)
     seg_dir.mkdir(parents=True, exist_ok=True)
     for seg in segments:
-        division = seg.get("division", "unknown")
-        episode = seg.get("episode", "unknown")
-        out_path = seg_dir / division / f"{episode}.txt"
+        proposed_nas = seg.get("proposed_nas", "")
+        if proposed_nas and NAS_PATTERN.match(proposed_nas):
+            nas_parts = proposed_nas.split("/")[3:]  # strip "nms:", "", tradition
+            out_path = seg_dir / Path(*nas_parts[:-1]) / f"{nas_parts[-1]}.txt"
+        else:
+            division = seg.get("division", "unknown")
+            episode = seg.get("episode", "unknown")
+            out_path = seg_dir / division / f"{episode}.txt"
         out_path.parent.mkdir(parents=True, exist_ok=True)
         if not out_path.exists():
             out_path.write_text(seg.get("passage_text", ""), encoding="utf-8")
@@ -248,6 +255,18 @@ def _call_segmentation_agent(
     )
     nas_prefix = rules.get("nas_prefix", f"nms://{tradition}")
 
+    # Include confirmed NAS so re-runs reuse the same slugs rather than
+    # proposing new ones the text-file paths would then not match.
+    confirmed_slug_hint = ""
+    if confirmed_nas:
+        slugs = sorted(confirmed_nas)
+        confirmed_slug_hint = (
+            "\nAlready-confirmed NAS addresses — reuse these exact slugs for any "
+            "segment covering the same passage:\n"
+            + "\n".join(f"  {s}" for s in slugs)
+            + "\n"
+        )
+
     user_message = f"""Tradition: {tradition}
 NAS prefix: {nas_prefix}
 Manuscript layer: {rules.get('manuscript_layer', '')}
@@ -256,7 +275,7 @@ Divisions and episodes:
 {divisions_yaml}
 
 Lacuna markers: {', '.join(rules.get('lacuna_markers', ['...', '[broken]']))}
-
+{confirmed_slug_hint}
 Source text (segment this into episode-level NAS-addressed passages):
 ---
 {text[:60000]}

@@ -105,8 +105,8 @@ def run_generate_layer0(
         if not division or not episode:
             continue
 
-        # Load all segmented passage texts (deterministic; labelled by translation_id)
-        passage_texts = load_all_passage_texts(division, episode)
+        # Load all segmented passage texts (bijective NAS path first, episode fallback)
+        passage_texts = load_all_passage_texts(division, episode, nas=nas)
 
         # One NAS = one file (bijective). Idempotency is per (NAS, locale).
         frag_path = nas_to_fragment_path(tradition, nas)
