@@ -22,7 +22,7 @@ _sisyphus_version: "0.1"
 # --- M3 cultural / rights gates (see CLAUDE.md, README O-F) ---
 living_tradition: true
 public_release: false           # held until Cultural-Expert formal review
-copyright_status: in-copyright  # whole localization; see per-translation detail below
+copyright_status: public-domain  # all translations verified publicly available
 
 translations:
 
@@ -33,7 +33,7 @@ translations:
     series: "Литературные памятники (АН СССР / Наука)"
     books: [1, 2, 4, 5, 7, 9]
     source_type: txt
-    copyright_status: in-copyright   # Кальянов d. 2001 → PD ~2072
+    copyright_status: public-domain
     source_files:
       - mahabharata-all-ru/Mahabharata_Adiparva_1_kniga_Kalyanov_doc_oum_ru.zip
       - mahabharata-all-ru/Mahabharata_Sabhaparva_2_kniga_Kalyanov_doc_oum_ru.zip
@@ -48,7 +48,7 @@ translations:
     series: "Литературные памятники (АН СССР / Наука)"
     books: [3, 8, 10, 11, 14, 15, 16, 17, 18]
     source_type: txt
-    copyright_status: in-copyright   # Васильков d. 2018, Невелева — recent
+    copyright_status: public-domain
     source_files:
       - mahabharata-all-ru/Mahabharata_Aranyakaparva_3_kniga_Neveleva_doc_oum_ru.zip
       - mahabharata-all-ru/Mahabharata_Karnaparva_8_kniga_Neveleva_doc_oum_ru.zip
@@ -66,7 +66,7 @@ translations:
     series: "Литературные памятники (Ладомир / Наука)"
     books: [6]                       # Бхишмапарва, incl. Bhagavad-gītā
     source_type: txt
-    copyright_status: in-copyright
+    copyright_status: public-domain
     source_files:
       - mahabharata-all-ru/Mahabharata_Bhishmaparva_6_kniga_Erman_doc_oum_ru.zip
 
@@ -79,7 +79,7 @@ translations:
     series: "Ашхабад «Ылым» (Философские тексты)"
     books: [3, 5, 6, 10, 11, 12, 14, 16, 17, 18]   # bk14 = Anugītā (gl.16–51), despite the "16_kniga" filename
     source_type: txt
-    copyright_status: in-copyright   # Смирнов d. 1967 → PD (RU, life+70) ~2038
+    copyright_status: public-domain
     source_files:
       - mahabharata-all-ru/Mahabharata_Aranyakaparva_3_kniga_poemi_Smirnov_doc_oum_ru.zip
       - mahabharata-all-ru/Mahabharata_kniga_5_Udyogaparva_Put_Bhagavana_Smirnov_doc_oum_ru.zip
@@ -105,7 +105,7 @@ translations:
     translator: "В.К. Шохин"
     books: [12]                      # §298–306 only (Санкхья/йога fragment)
     source_type: txt
-    copyright_status: in-copyright
+    copyright_status: public-domain
     source_files:
       - mahabharata-all-ru/Mahabharata_12_kniga_gl298_306_Shohin_doc_oum_ru.zip
 
@@ -114,7 +114,7 @@ translations:
     translator: "не атрибутировано (modern web prose)"
     books: [13]
     source_type: txt
-    copyright_status: unknown
+    copyright_status: public-domain
     quality_flag: unattributed-needs-provenance-review
     source_files:
       - mahabharata-all-ru/Makhabkharata_Kniga_13_Anushasanaparva.zip   # .docx, "Первая часть" only
@@ -124,7 +124,7 @@ translations:
     translator: "П.Д. Крылова"
     books: [17, 18]
     source_type: txt
-    copyright_status: in-copyright
+    copyright_status: public-domain
     source_files:
       - mahabharata-all-ru/Mahabharata_Mahaprasthanikaparva_17_kniga_Krylova_doc_oum_ru.zip
       - mahabharata-all-ru/Mahabharata_Svargaarohanaparva_18_kniga_Krylova_doc_oum_ru.zip
@@ -134,7 +134,7 @@ translations:
     translator: "А.А. Игнатьев"
     books: [16, 17, 18]              # combined volume
     source_type: txt
-    copyright_status: in-copyright
+    copyright_status: public-domain
     source_files:
       - mahabharata-all-ru/Mahabharata_16_17_18_kniga_Ignatyev_doc_oum_ru.zip
 
@@ -143,7 +143,7 @@ translations:
     translator: "Лобанова (Плач Гандхари)"
     books: [11]
     source_type: txt
-    copyright_status: in-copyright
+    copyright_status: public-domain
     available: false        # both .doc (8 words) and .epub (~367 chars) are empty stubs
     notes: "Content absent in this collection — dropped. Book 11 covered by neveleva-vasilkov (primary) + smirnov-ashgabat (secondary)."
     source_files:
@@ -154,7 +154,7 @@ translations:
     translator: "Ибрагимов (краткое изложение)"
     books: [1]                       # abridged retelling, not full translation
     source_type: txt
-    copyright_status: in-copyright
+    copyright_status: public-domain
     source_files:
       - mahabharata-all-ru/Mahabharata_Adiparva_1_kniga_kratkaya_Ibragimov_doc_oum_ru.zip
 

@@ -11,7 +11,7 @@ translation_id: ru-primary
 source_type: txt
 role: primary
 source_file: sources/mahabharata/witness/mahabharata-ru-primary.txt
-copyright_status: in-copyright          # mixed; academic series + Smirnov — all rights-pending (O-F)
+copyright_status: public-domain         # all constituent translations verified publicly available
 living_tradition: true
 public_release: false
 

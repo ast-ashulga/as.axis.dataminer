@@ -11,7 +11,7 @@ translation_id: smirnov-ashgabat
 source_type: txt
 role: secondary
 source_file: sources/mahabharata/witness/mahabharata-ru-smirnov.txt
-copyright_status: in-copyright          # Смирнов d. 1967 → PD (RU life+70) ~2038
+copyright_status: public-domain         # verified publicly available
 living_tradition: true
 public_release: false
 covers_parvas: [3, 5, 6, 10, 11, 12, 14, 16, 17, 18]

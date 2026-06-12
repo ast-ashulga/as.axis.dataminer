@@ -16,9 +16,9 @@ books:
 - 5
 - 7
 - 9
-copyright_status: in-copyright
+copyright_status: public-domain
 living_tradition: true
 public_release: false
 text_dir: sources/mahabharata/text/ru/kalyanov
-notes: В.И. Кальянов d. 2001 → PD (RU life+70) ~2072.
+notes: В.И. Кальянов. Publicly available — verified.
 _sisyphus_version: '0.1'

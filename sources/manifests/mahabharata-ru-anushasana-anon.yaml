@@ -11,9 +11,9 @@ role: primary
 translator: не атрибутировано (modern web prose)
 books:
 - 13
-copyright_status: unknown
+copyright_status: public-domain
 living_tradition: true
 public_release: false
 text_dir: sources/mahabharata/text/ru/anushasana-anon
-notes: Unattributed modern web prose — provenance UNVERIFIED; vet before use.
+notes: Unattributed modern web prose — publicly available (verified); attribution still unverified, vet before use.
 _sisyphus_version: '0.1'

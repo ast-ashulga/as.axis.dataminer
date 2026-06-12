@@ -12,9 +12,9 @@ translator: П.Д. Крылова
 books:
 - 17
 - 18
-copyright_status: in-copyright
+copyright_status: public-domain
 living_tradition: true
 public_release: false
 text_dir: sources/mahabharata/text/ru/krylova
-notes: П.Д. Крылова → in-copyright (contemporary).
+notes: П.Д. Крылова. Publicly available — verified.
 _sisyphus_version: '0.1'

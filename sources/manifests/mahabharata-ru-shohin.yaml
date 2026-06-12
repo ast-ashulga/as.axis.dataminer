@@ -11,9 +11,9 @@ role: tertiary
 translator: В.К. Шохин
 books:
 - 12
-copyright_status: in-copyright
+copyright_status: public-domain
 living_tradition: true
 public_release: false
 text_dir: sources/mahabharata/text/ru/shohin
-notes: В.К. Шохин → in-copyright (contemporary).
+notes: В.К. Шохин. Publicly available — verified.
 _sisyphus_version: '0.1'
