@@ -1,0 +1,27 @@
+# Thin ingest manifest — reused across every .txt under text_dir.
+# Run from repo root:
+#   sisyphus ingest <text_dir>/<book>.txt --manifest sources/manifests/mahabharata-ru-neveleva-vasilkov.yaml
+# Decision context + per-book roles: sources/manifests/mahabharata-ru-localization.yaml
+
+tradition: mahabharata
+locale: ru
+translation_id: neveleva-vasilkov
+source_type: txt
+role: primary
+translator: С.Л. Невелева, Я.В. Васильков
+books:
+- 3
+- 8
+- 10
+- 11
+- 14
+- 15
+- 16
+- 17
+- 18
+copyright_status: in-copyright
+living_tradition: true
+public_release: false
+text_dir: sources/mahabharata/text/ru/neveleva-vasilkov
+notes: С.Л. Невелева, Я.В. Васильков (d. 2018) → PD ~2088.
+_sisyphus_version: '0.1'

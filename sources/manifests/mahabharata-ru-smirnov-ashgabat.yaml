@@ -1,0 +1,28 @@
+# Thin ingest manifest — reused across every .txt under text_dir.
+# Run from repo root:
+#   sisyphus ingest <text_dir>/<book>.txt --manifest sources/manifests/mahabharata-ru-smirnov-ashgabat.yaml
+# Decision context + per-book roles: sources/manifests/mahabharata-ru-localization.yaml
+
+tradition: mahabharata
+locale: ru
+translation_id: smirnov-ashgabat
+source_type: txt
+role: secondary
+translator: Б.Л. Смирнов
+books:
+- 3
+- 5
+- 6
+- 10
+- 11
+- 12
+- 14
+- 16
+- 17
+- 18
+copyright_status: in-copyright
+living_tradition: true
+public_release: false
+text_dir: sources/mahabharata/text/ru/smirnov-ashgabat
+notes: Б.Л. Смирнов d. 1967 → PD (RU life+70) ~2038.
+_sisyphus_version: '0.1'

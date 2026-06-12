@@ -26,11 +26,40 @@ The table below is the authoritative copyright status record per PRD §Appendix 
 
 ## Mahabharata — Milestone 3
 
-| Source | Type | Locale | Copyright | Acquisition |
+`living_tradition: true` — held at `public_release: false` until Cultural-Expert formal
+review. Campbell track blocked at framework level. Per-source manifests:
+`manifest-{locale}-{translation_id}.yaml`; the RU localization decision record (per-book
+primary/secondary roles, coverage gaps) is in `manifest-ru.yaml`.
+
+**Sanskrit original**
+
+| Source | Type | Locale | Copyright | Status |
 |---|---|---|---|---|
-| van Buitenen EN (1973–1978) | Digital PDF | EN | In copyright | Acquire permission (O-F) |
-| GRETIL Sanskrit text | TXT | Sanskrit | Open access | Download from gretil.sub.uni-goettingen.de |
-| Hindi translation (contemporary) | TBD | HI | TBD | Candidate: Gita Press (Gorakhpur) — verify license (O-F) |
+| GRETIL — Tokunaga/Smith (BORI Pune Critical Edition) | TXT (from HTML) | Sanskrit | Public domain (open access) | ✅ Acquired — `text/sa/gretil/` (78,603 verse refs). Layer 3, gated `layer_3_original=false` |
+
+**English**
+
+| Source | Type | Locale | Copyright | Status |
+|---|---|---|---|---|
+| Ganguli 1883–1896 (complete) | Digital PDF | EN | Public domain | ✅ Acquired — `ganguli-en/`. **EN primary** (clean text layer, no OCR) |
+| van Buitenen 1973–1978 | Digital PDF | EN | In copyright | Scholaria/Layer-2 only; incomplete (bks 1–5). Demoted from primary (O-F) |
+
+**Russian** — primary = академическая «Литературные памятники»; secondary = Б.Л. Смирнов (Ashgabat). Role resolved per-book (see `manifests/mahabharata-ru-localization.yaml`).
+
+**RU ingest target:** the per-book files are assembled into single-witness files (one file = one witness, so Phase A's collision guard doesn't fire): `witness/mahabharata-ru-primary.txt` (books 1–18, parva order; manifest `mahabharata-ru-primary.yaml`; Phase-A verified, 1.68 M words) and `witness/mahabharata-ru-smirnov.txt` (partial secondary; defer until multi-witness reconciliation exists).
+
+| Source | Type | Locale | Copyright | Status |
+|---|---|---|---|---|
+| Kalyanov (bks 1,2,4,5,7,9) | TXT | RU | In copyright — d. 2001 → ~2072 | ✅ Acquired (primary). Rights-pending for release (O-F) |
+| Neveleva–Vasilkov (bks 3,8,10,11,14–18) | TXT | RU | In copyright — d. 2018 → ~2088 | ✅ Acquired (primary). Rights-pending (O-F) |
+| Erman (bk 6, incl. Bhagavad-gītā) | TXT | RU | In copyright | ✅ Acquired (primary). Rights-pending (O-F) |
+| Smirnov / Ashgabat (bks 3,5,6,10,11,12,16,17,18) | TXT | RU | In copyright — d. 1967 → ~2038 | ✅ Acquired (**secondary**; primary for bk 12). Rights-pending (O-F) |
+| Shohin / Krylova / Ignatyev / Ibragimov | TXT | RU | In copyright | ✅ Acquired (tertiary; parallel-detection only) |
+| Anushasana bk 13 (unattributed prose) | TXT | RU | Unknown | ⚠️ Acquired — **provenance unverified**, vet before ingestion |
+
+**Known RU coverage gaps:** bk 12 first half (Rājadharma/Āpaddharma, ch. 1–173) has **no Russian translation**; bk 13 only via the unattributed prose file. See `manifest-ru.yaml` `gaps:`.
+
+*Hindi (deferred): Gita Press (Gorakhpur) candidate — verify license (O-F).*
 
 ## File Naming Convention
 

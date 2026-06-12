@@ -138,8 +138,10 @@ celerybeat.pid
 
 # Sisyphus
 .venv/
-workspace/
-output/
+# root transient dirs only — keep nested test/eval fixtures (e.g. under
+# .claude/skills/**/evals/fixtures/**/{workspace,output}/) trackable
+/workspace/
+/output/
 export-*.tar.gz
 sources/*.pdf
 sources/*.txt
@@ -229,5 +231,6 @@ __marimo__/
 
 /sources/gilgamesh/
 /sources/iliad/
+/sources/mahabharata/
 
 .claude/scheduled_tasks.lock

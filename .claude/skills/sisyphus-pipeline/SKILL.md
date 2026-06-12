@@ -59,16 +59,28 @@ Run `sisyphus <command> --help` for exact options. All commands are
 always safe to re-run after a fix or to add a track/locale. Never invent guard
 logic to avoid re-running.
 
-## The two human gates — default: halt and hand back
+## The two human gates — behavior follows the current approval context
 
 `confirm-nas` and `review` are **interactive**: they block on stdin
 (`rich.prompt.Prompt.ask` / `input()`) and have no `--batch`/`--yes`/
-`--non-interactive` flag. They exist on purpose — they are where a human
-scholar makes the judgments the pipeline is structurally forbidden to make
-(promoting a NAS address to canonical; confirming AI candidates). A sub-agent
-running them blind will hang forever waiting for input.
+`--non-interactive` flag. They are where the judgments the pipeline is
+structurally forbidden to make get made (promoting a NAS address to canonical;
+confirming AI candidates). Whether you **proceed through** a gate or **halt and
+hand back** depends on who, in the current context, holds approval authority:
 
-**Default behavior: stop, don't guess.** When you reach a gate:
+- **You are operating as Mnemosyne** (the autonomous operator, invoked via
+  `/mnemosyne` or `.claude/agents/mnemosyne.md`): Mnemosyne holds **standing
+  approval authority** — it may confirm/approve by default when no Hard
+  Invariant restricts the decision. **Proceed through the gate** using the
+  documented piping below, then verify. Do not halt waiting for a human.
+- **A human has authorized an unattended/auto-approve run** ("auto-confirm
+  everything", "drive it end to end, I'll check the export"): **proceed**
+  the same way; the human is the approving authority.
+- **Neither** (a plain agent with no standing authority and no human
+  authorization): **halt and hand back** — running a gate blind would hang, and
+  fabricating an approval nobody granted is the one thing you must not do.
+
+**When you halt:**
 
 1. Run `sisyphus status <tradition>` and summarize exactly what is pending
    (how many NAS proposals, how many Layer 0 / annotation candidates, any
@@ -78,17 +90,23 @@ running them blind will hang forever waiting for input.
    > warning). This is a human gate; please review and confirm with:
    > `sisyphus confirm-nas gilgamesh --reviewer <you>`
    > Once the addresses are confirmed I'll continue with Phase C.
-3. Wait. Do not flip a feature flag, edit YAML by hand, or pipe canned answers
-   to "unblock" yourself — that fabricates a human decision the contract says
-   only a human may make.
+3. Wait. Do not flip a feature flag to "unblock" yourself.
 
-### Opt-in escape hatch: piped-drive (only when the human authorizes it)
+**When you proceed (Mnemosyne or human-authorized) — the rules still bind.**
+Approval *authority* (who may clear a gate) is not approval to confirm *broken*
+output. Even with authority you must: (a) approve only via the documented
+piping through the CLI — **never hand-edit `nas-confirmed.yaml` or
+`review-decisions.yaml`** (hand-editing is what produced the `confirmd`/`rejectd`
+typos and bypassed the schema); (b) reject truncated, hallucinated, or
+mis-tagged content rather than rubber-stamping it; (c) run `validate` after, and
+escalate quality concerns (faithfulness to a damaged source, unusual claims) to
+`cultural-domain-expert`. Never flip a feature flag or edit a contract field
+(`status`/`confidence_tier`/`ai_generated`) by hand under any authority.
 
-If — and only if — the human explicitly authorizes an unattended run ("just
-auto-confirm everything", "drive it end to end, I'll review the export"), you
-may feed answers to the gate over stdin. Make sure they understand this
-auto-accepts AI output without scholar review. Pass `--reviewer` so the gate
-doesn't also prompt for an identifier, then pipe one answer per item:
+### How to proceed: piped-drive
+
+Pass `--reviewer` so the gate doesn't also prompt for an identifier, then pipe
+one answer per item:
 
 ```bash
 # confirm-nas keys: c=confirm  "r <new-nms-addr>"=revise  d=defer  q=quit
@@ -115,11 +133,13 @@ them — surface them instead.
 - **Output-contract values are intentional.** AI-generated content is created
   with `status: candidate`, `confidence_tier: inspired`, `ai_generated: true`.
   AI content can never be `documented`, and `inspired` is never valid on a
-  *confirmed* annotation. If validation complains about these, the fix is a human
-  reject/revise in the `review` gate — not editing the field.
+  *confirmed* annotation. If validation complains about these, the fix is a
+  reject/revise **through the `review` gate** (by whoever holds approval authority
+  — Mnemosyne or a human) — not editing the field.
 - **NAS is propose-only for the pipeline.** Sisyphus proposes addresses matching
-  `^nms://[a-z0-9-]+(/[a-z0-9-]+){1,3}$`; only the human gate promotes one to
-  canonical, after which it is write-once. Never hand-edit `nas-confirmed.yaml`.
+  `^nms://[a-z0-9-]+(/[a-z0-9-]+){1,3}$`; only the `confirm-nas` gate promotes one
+  to canonical (Mnemosyne or human), after which it is write-once. Never hand-edit
+  `nas-confirmed.yaml`.
 - **Phases C–E need confirmed NAS.** If C/D/E "skip all segments", the cause is
   almost always that `confirm-nas` hasn't run (or everything was deferred) — not
   a code bug.

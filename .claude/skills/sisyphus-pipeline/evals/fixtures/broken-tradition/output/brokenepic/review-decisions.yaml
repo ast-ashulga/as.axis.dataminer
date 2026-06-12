@@ -1,0 +1,9 @@
+tradition_id: brokenepic
+decisions:
+- audit_id: a1
+  timestamp: '2026-06-01T12:00:00'
+  reviewer: Mnemosyne
+  action: confirmed
+  record_type: summary
+  nas: nms://brokenepic/part-i/journey
+  confidence_tier_assigned: documented

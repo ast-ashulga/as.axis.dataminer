@@ -1,20 +1,83 @@
-# PLACEHOLDER — fill before M3 (Mahabharata milestone).
-# IMPORTANT: living_tradition = true. public_release = false until Cultural Expert review.
+# Phase B segmentation prompt — Mahabharata (Vyasa, traditionally).
+# Aligns with rules/segmentation/mahabharata.yaml (18 parva slugs, methodology_fit,
+# cultural_sensitivity). LIVING TRADITION — see cultural guardrails below.
 tradition: mahabharata
 
 tradition_preamble: >
-  TODO: The source text is the Mahabharata, a living Sanskrit epic tradition.
-  Primary text: GRETIL Sanskrit corpus; Poona Critical Edition.
-  Reference translation: van Buitenen EN (1973–1978).
-  Divisions follow the 18-parva (book) structure + Harivamsa.
-  Use kebab-case slugs: adi-parva, sabha-parva, vana-parva, etc.
-  NAS prefix: nms://mahabharata
-  CRITICAL: This is scripture for living communities. Apply methodology-fit gate aggressively.
+  The source text is the Mahabharata, the great Sanskrit epic traditionally
+  attributed to Vyasa, transmitted for centuries as an oral-recitational tradition
+  before being fixed in writing. It is scripture and a living tradition for present-day
+  Hindu communities, not a closed historical artifact. The division authority for
+  segmentation is the Poona Critical Edition (Bhandarkar Oriental Research Institute,
+  BORI) — the standard scholarly reconstruction — and its canonical 18-mahaparvan
+  structure.
+
+  The English text in this pipeline is the Kisari Mohan Ganguli translation
+  (1883–1896), the only COMPLETE public-domain English Mahabharata. Do NOT cite or
+  anchor on van Buitenen: that translation is incomplete (books 1–5 only; Fitzgerald
+  later continued book 11 and part of book 12) and remains in copyright; it is
+  demoted to scholaria-only and is not an ingest source. The Sanskrit reference for
+  Layer 3 is the GRETIL BORI critical edition (parva.adhyaya.shloka addressing),
+  currently gated off (layer_3_original flag = false).
+
+  Divisions are the 18 parvas, in narrative order, with these exact kebab-case slugs:
+  adi-parva, sabha-parva, aranyaka-parva, virata-parva, udyoga-parva, bhishma-parva,
+  drona-parva, karna-parva, shalya-parva, sauptika-parva, stri-parva, shanti-parva,
+  anushasana-parva, ashvamedhika-parva, ashramavasika-parva, mausala-parva,
+  mahaprasthanika-parva, svargarohana-parva. NAS prefix: nms://mahabharata.
+
+  Book 3 is aranyaka-parva (BORI Āraṇyakaparvan), NOT vana-parva. Ganguli titles it
+  "Vana Parva"; that label is a boundary signal only, never the slug. The same rule
+  governs every divergence between Ganguli's spelling and the BORI/Sanskrit title:
+  the slug follows BORI, the Ganguli spelling is a detection signal (santi -> shanti,
+  anusasana -> anushasana, aswamedha -> ashvamedhika). The Harivamsa is khila (an
+  appendix), NOT one of the 18 parvas — it is out of scope for this division tree;
+  never propose it as a 19th parva.
+
+  Episodes are the upaparvans (sub-parvans) enumerated in the epic's OWN table of
+  contents — the Parvasamgraha in Adi Parva — not a modern plot outline. Segment to the
+  upaparvan, which is the tradition's native narrative unit. Use the episode slugs given
+  in rules/segmentation/mahabharata.yaml. Upaparvan counts are deliberately uneven (Adi
+  has 19; Mausala, Mahaprasthanika and Svargarohana have one each) — do not force a
+  uniform episode count per parva. Famous embedded units are themselves upaparvans and
+  must be preserved as distinct episodes: the Bhagavadgita (bhagavad-gita, in
+  bhishma-parva), Nala and Damayanti (nalopakhyana), the condensed Ramayana (ramopakhyana),
+  Savitri and Satyavan (pativrata-mahatmya), and the Yaksha-prashna (araneya) — all in
+  aranyaka-parva; the Vidura-niti (prajagara) and the story of Amba (ambopakhyana) in
+  udyoga-parva; and the Anugita (anugita) in ashvamedhika-parva. Ganguli marks sub-units
+  with "SECTION <roman-numeral>" headers; use these as the English textual anchor for
+  episode boundaries, cross-checked against the BORI adhyaya numbering.
 
 epistemic_framing: >
-  TODO: The Mahabharata exists in multiple recensions (Poona Critical Edition, Southern,
-  Northern). Segment against the Critical Edition as canonical base; note major variants.
-  Do NOT treat the text as a closed literary artifact — it is living scripture.
-  Set methodology_fit_warning=true for any Western structural framework applied to
-  dharma-narrative, ritual, or Bhagavad Gita passages.
-  Use granularity=interpolation for passages absent from the Critical Edition.
+  The BORI Critical Edition is a modern scholarly reconstruction over contested Northern
+  and Southern recensions, NOT "the original" Mahabharata. Never present it as the
+  authentic or original text. Verses the CE editors judged secondary are bracketed /
+  asterisked (the "star passages") and recension-specific material is marked; preserve
+  these as scholarly signal, never silently drop them. Use the lacuna/interpolation
+  markers defined in the segmentation rules (granularity=interpolation for material the
+  Critical Edition treats as secondary; granularity=lacuna for genuine gaps).
+
+  Authorship and date must be hedged: authorship is traditionally Vyasa but historically
+  composite and layered; composition spans roughly the centuries around the turn of the
+  era. Do not assert a single author or a precise date as fact.
+
+  The Mahabharata is NOT a single linear folktale. It is a frame-nested epic
+  (Ugrasravas Sauti narrating to the sages, who recounts Vaisampayana's recitation to
+  Janamejaya, within which further narrators are embedded). Episode boundaries must respect
+  this nesting and the upaparvan units; do not flatten nested narration into one timeline.
+
+  Western structural frameworks fit UNEVENLY here. The didactic/dharmaśāstra books —
+  shanti-parva (12: Rajadharma, Apaddharma, Mokshadharma) and anushasana-parva
+  (13: Danadharma) — are treatises on kingship, ethics, and liberation, not narrative; the
+  embedded didactic and riddle units (the Bhagavadgita, the Anugita, the Vidura-niti, the
+  Yaksha-prashna) are likewise non-narrative. Set methodology_fit_warning=true where a
+  framework is applied across these divisions/episodes, and wherever the frame-genre
+  mismatch is epistemically significant. The detailed per-track, per-division warning map
+  lives in the methodology_fit block of rules/segmentation/mahabharata.yaml; segmentation
+  must surface, not contradict, it.
+
+  LIVING TRADITION guardrails (binding): this is scripture for living communities.
+  public_release remains false until formal Cultural-Expert sign-off. Never label the
+  epic, the Bhagavadgita, or any theological content as "myth", "fiction", or "legend".
+  Material touching deities and avataras (especially Krishna), dharmaśāstra, and varna/caste
+  status (e.g. Karna's suta birth) is candidate-only and routes to Cultural-Expert review.

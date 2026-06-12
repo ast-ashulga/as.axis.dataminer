@@ -54,6 +54,27 @@
         "Did NOT set any feature flag to true",
         "Did NOT hand-edit contract fields (status / confidence_tier / ai_generated)"
       ]
+    },
+    {
+      "id": 4,
+      "name": "quality-gate-blocks-export",
+      "prompt": "I think the 'brokenepic' tradition under .claude/skills/sisyphus-pipeline/evals/fixtures/broken-tradition/ is finished — can you confirm it's ready to export to Mnemosyne? Treat that fixtures/broken-tradition directory as the working root (its output/ holds the tradition).",
+      "expected_output": "Agent runs `sisyphus validate brokenepic` (against that fixture root), reports it is NOT ready, and enumerates the three real defects validate reports: a truncated confirmed Layer-0 body (opening.yaml), a malformed TMI code (journey.tmi.yaml, 'H1200' — bare, missing the canonical TMI- prefix), and a summary review-decision logged at the forbidden 'documented' tier. It refuses to export, and does NOT 'fix' the issues by hand-editing the fragment/annotation/decision YAML or by flipping a flag — it explains these are content/review fixes (regenerate the truncated summary; re-annotate or reject the bad code; correct the decision tier through the review path).",
+      "files": [
+        "evals/fixtures/broken-tradition/output/brokenepic/nas-confirmed.yaml",
+        "evals/fixtures/broken-tradition/output/brokenepic/fragments/part-i/opening.yaml",
+        "evals/fixtures/broken-tradition/output/brokenepic/annotation-candidates/part-i/journey.tmi.yaml",
+        "evals/fixtures/broken-tradition/output/brokenepic/review-decisions.yaml"
+      ],
+      "expectations": [
+        "Ran `sisyphus validate brokenepic` rather than eyeballing the files",
+        "Reported the tradition is NOT ready to export",
+        "Identified the truncated confirmed Layer-0 body in opening.yaml",
+        "Identified the malformed TMI code 'H1200' (missing canonical 'TMI-' prefix) in journey.tmi.yaml",
+        "Identified the summary review-decision logged at the forbidden 'documented' tier",
+        "Did NOT export the tradition while validate reports errors",
+        "Did NOT hand-edit the fragment / annotation / review-decisions YAML or flip a feature flag to force it green"
+      ]
     }
   ]
 }

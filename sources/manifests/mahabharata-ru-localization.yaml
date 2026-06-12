@@ -1,0 +1,188 @@
+# Mahabharata — Russian localization source registry (M3)
+#
+# Primary  = академическая серия «Литературные памятники» (АН СССР / Наука, 1950–2009):
+#            Кальянов, Невелева–Васильков, Эрман. The scholarly canon.
+# Secondary = Б.Л. Смирнов, Ашхабад «Ылым» (1955–1972). Literal/philosophical
+#            (буквальный) translation; a coherent single-school alternate.
+# Tertiary  = opportunistic alternates (Крылова, Игнатьев, Лобанова, Ибрагимов, Шохин),
+#            used for parallel detection only — not a designated localization tier.
+#
+# NOTE: role (primary/secondary) is resolved PER BOOK in `coverage` below, NOT globally.
+#       The academic series never translated books 12–13, so Smirnov/others become
+#       primary there. The `role` on each translation entry is its DOMINANT role.
+#
+# All source files live under sources/mahabharata/mahabharata-all-ru/ as .zip/.rar
+# archives of .doc/.docx/.epub. There is no `doc` source_type — each must be
+# converted to plain text (source_type: txt) before Phase A ingest.
+
+tradition: mahabharata
+locale: ru
+_sisyphus_version: "0.1"
+
+# --- M3 cultural / rights gates (see CLAUDE.md, README O-F) ---
+living_tradition: true
+public_release: false           # held until Cultural-Expert formal review
+copyright_status: in-copyright  # whole localization; see per-translation detail below
+
+translations:
+
+  # ============ PRIMARY — академическая «Литературные памятники» ============
+  - translation_id: kalyanov
+    role: primary
+    translator: "В.И. Кальянов"
+    series: "Литературные памятники (АН СССР / Наука)"
+    books: [1, 2, 4, 5, 7, 9]
+    source_type: txt
+    copyright_status: in-copyright   # Кальянов d. 2001 → PD ~2072
+    source_files:
+      - mahabharata-all-ru/Mahabharata_Adiparva_1_kniga_Kalyanov_doc_oum_ru.zip
+      - mahabharata-all-ru/Mahabharata_Sabhaparva_2_kniga_Kalyanov_doc_oum_ru.zip
+      - mahabharata-all-ru/Mahabharata_Virataparva_4_kniga_Kalyanov_doc_oum_ru.zip
+      - mahabharata-all-ru/Mahabharata_Udyogaparva_5_kniga_Kalyanov_doc_oum_ru.zip
+      - mahabharata-all-ru/Mahabharata_Dronaparva_7_kniga_Kalyanov_doc_oum_ru.rar
+      - mahabharata-all-ru/Mahabharata_Shalyaparva_9_kniga_Kalyanov_doc_oum_ru.zip
+
+  - translation_id: neveleva-vasilkov
+    role: primary
+    translator: "С.Л. Невелева, Я.В. Васильков"
+    series: "Литературные памятники (АН СССР / Наука)"
+    books: [3, 8, 10, 11, 14, 15, 16, 17, 18]
+    source_type: txt
+    copyright_status: in-copyright   # Васильков d. 2018, Невелева — recent
+    source_files:
+      - mahabharata-all-ru/Mahabharata_Aranyakaparva_3_kniga_Neveleva_doc_oum_ru.zip
+      - mahabharata-all-ru/Mahabharata_Karnaparva_8_kniga_Neveleva_doc_oum_ru.zip
+      - mahabharata-all-ru/Mahabharata_Sauptikaparva_10_kniga_Neveleva_doc_oum_ru.zip
+      - mahabharata-all-ru/Mahabharata_Striparva_11_kniga_Neveleva_doc_oum_ru.zip
+      - mahabharata-all-ru/Mahabharata_Ashvamedhikaparva_14_kniga_Neveleva_doc_oum_ru.zip
+      - mahabharata-all-ru/Mahabharata_Ashramavasikaparva_15_kniga_Neveleva_doc_oum_ru.rar
+      - mahabharata-all-ru/Mahabharata_Mausalaparva_16_kniga_Neveleva_doc_oum_ru.zip
+      - mahabharata-all-ru/Mahabharata_Mahaprasthanikaparva_17_kniga_Neveleva_doc_oum_ru.zip
+      - mahabharata-all-ru/Mahabharata_Svargaarohanaparva_18_kniga_Neveleva_doc_oum_ru.zip
+
+  - translation_id: erman
+    role: primary
+    translator: "В.Г. Эрман"
+    series: "Литературные памятники (Ладомир / Наука)"
+    books: [6]                       # Бхишмапарва, incl. Bhagavad-gītā
+    source_type: txt
+    copyright_status: in-copyright
+    source_files:
+      - mahabharata-all-ru/Mahabharata_Bhishmaparva_6_kniga_Erman_doc_oum_ru.zip
+
+  # ================ SECONDARY — Б.Л. Смирнов (Ашхабад «Ылым») ================
+  # Secondary for books 3,5,6,10,11,16,17,18; PRIMARY for book 12 (the academic
+  # series never did 12). Anugītā (gl.16–51) is technically book-14 content.
+  - translation_id: smirnov-ashgabat
+    role: secondary
+    translator: "Б.Л. Смирнов"
+    series: "Ашхабад «Ылым» (Философские тексты)"
+    books: [3, 5, 6, 10, 11, 12, 14, 16, 17, 18]   # bk14 = Anugītā (gl.16–51), despite the "16_kniga" filename
+    source_type: txt
+    copyright_status: in-copyright   # Смирнов d. 1967 → PD (RU, life+70) ~2038
+    source_files:
+      - mahabharata-all-ru/Mahabharata_Aranyakaparva_3_kniga_poemi_Smirnov_doc_oum_ru.zip
+      - mahabharata-all-ru/Mahabharata_kniga_5_Udyogaparva_Put_Bhagavana_Smirnov_doc_oum_ru.zip
+      - mahabharata-all-ru/Mahabharata_kniga_6_Bhagavat_gita_Smirnov_doc_oum_ru.zip
+      - mahabharata-all-ru/Mahabharata_kniga_10_gl1_18_Smirnov_doc_oum_ru.zip
+      - mahabharata-all-ru/Mahabharata_11_kniga_Striparva_gl1_27_Smirnov_doc_oum_ru.zip
+      - mahabharata-all-ru/Mahabharata_Mokshadharma_12_kniga_gl174_335_Smirnov_doc_oum_ruzip.zip
+      - mahabharata-all-ru/Mahabharata_Naraniya_12_kniga_gl336_367_Smirnov_doc_oum_ruzip.zip
+      - mahabharata-all-ru/Mahabharata_Mausalaparva_16_kniga_Smirnov_doc_oum_ru.zip
+      - mahabharata-all-ru/Mahabharata_Anugita_16_kniga_gl_16_51_Smirnov_doc_oum_ru.zip
+      - mahabharata-all-ru/Mahabharata_17_kniga_gl_1_3_Smirnov_doc_oum_ru.zip
+      - mahabharata-all-ru/Mahabharata_18_kniga_gl1_5_Smirnov_doc_oum_ru.zip
+    notes: >
+      Distinct philological methodology (буквальный перевод) — high value as a
+      parallel/cross-reference layer, esp. Bhagavad-gītā (bk 6) and Mokshadharma
+      (bk 12). A redundant earlier copy (bolesmir.ru) sits in sources/mahabharata/
+      smirnov-ru/ — prefer these oum.ru files for formatting consistency; the
+      smirnov-ru/ folder can be removed once this is confirmed.
+
+  # ===================== TERTIARY / GAP-FILL (parallel only) =================
+  - translation_id: shohin
+    role: tertiary
+    translator: "В.К. Шохин"
+    books: [12]                      # §298–306 only (Санкхья/йога fragment)
+    source_type: txt
+    copyright_status: in-copyright
+    source_files:
+      - mahabharata-all-ru/Mahabharata_12_kniga_gl298_306_Shohin_doc_oum_ru.zip
+
+  - translation_id: anushasana-anon
+    role: primary                    # the ONLY Russian source for book 13
+    translator: "не атрибутировано (modern web prose)"
+    books: [13]
+    source_type: txt
+    copyright_status: unknown
+    quality_flag: unattributed-needs-provenance-review
+    source_files:
+      - mahabharata-all-ru/Makhabkharata_Kniga_13_Anushasanaparva.zip   # .docx, "Первая часть" only
+
+  - translation_id: krylova
+    role: tertiary
+    translator: "П.Д. Крылова"
+    books: [17, 18]
+    source_type: txt
+    copyright_status: in-copyright
+    source_files:
+      - mahabharata-all-ru/Mahabharata_Mahaprasthanikaparva_17_kniga_Krylova_doc_oum_ru.zip
+      - mahabharata-all-ru/Mahabharata_Svargaarohanaparva_18_kniga_Krylova_doc_oum_ru.zip
+
+  - translation_id: ignatyev
+    role: tertiary
+    translator: "А.А. Игнатьев"
+    books: [16, 17, 18]              # combined volume
+    source_type: txt
+    copyright_status: in-copyright
+    source_files:
+      - mahabharata-all-ru/Mahabharata_16_17_18_kniga_Ignatyev_doc_oum_ru.zip
+
+  - translation_id: lobanova
+    role: tertiary
+    translator: "Лобанова (Плач Гандхари)"
+    books: [11]
+    source_type: txt
+    copyright_status: in-copyright
+    available: false        # both .doc (8 words) and .epub (~367 chars) are empty stubs
+    notes: "Content absent in this collection — dropped. Book 11 covered by neveleva-vasilkov (primary) + smirnov-ashgabat (secondary)."
+    source_files:
+      - mahabharata-all-ru/Mahabharata_11_kniga_Plach_Gandhari_Lobanova_doc_oum_ru.zip
+
+  - translation_id: ibragimov
+    role: tertiary
+    translator: "Ибрагимов (краткое изложение)"
+    books: [1]                       # abridged retelling, not full translation
+    source_type: txt
+    copyright_status: in-copyright
+    source_files:
+      - mahabharata-all-ru/Mahabharata_Adiparva_1_kniga_kratkaya_Ibragimov_doc_oum_ru.zip
+
+# === Per-book resolution: which translation fills each slot ===
+# (tertiary/parallel sources listed under `also`)
+coverage:
+  1:  {primary: kalyanov,           also: [ibragimov]}           # ibragimov = abridged
+  2:  {primary: kalyanov}
+  3:  {primary: neveleva-vasilkov,  secondary: smirnov-ashgabat}
+  4:  {primary: kalyanov}
+  5:  {primary: kalyanov,           secondary: smirnov-ashgabat}
+  6:  {primary: erman,              secondary: smirnov-ashgabat}  # Bhagavad-gītā
+  7:  {primary: kalyanov}
+  8:  {primary: neveleva-vasilkov}
+  9:  {primary: kalyanov}
+  10: {primary: neveleva-vasilkov,  secondary: smirnov-ashgabat}
+  11: {primary: neveleva-vasilkov,  secondary: smirnov-ashgabat}  # lobanova dropped (empty)
+  12: {primary: smirnov-ashgabat,   also: [shohin],  gap: "ch.1–173 (Rājadharma/Āpaddharma) — NO Russian translation"}
+  13: {primary: anushasana-anon,    gap: "non-academic, part 1 only, provenance unverified"}
+  14: {primary: neveleva-vasilkov,  also: [smirnov-ashgabat]}     # smirnov = Anugītā gl.16–51
+  15: {primary: neveleva-vasilkov}
+  16: {primary: neveleva-vasilkov,  secondary: smirnov-ashgabat,  also: [ignatyev]}
+  17: {primary: neveleva-vasilkov,  secondary: smirnov-ashgabat,  also: [krylova, ignatyev]}
+  18: {primary: neveleva-vasilkov,  secondary: smirnov-ashgabat,  also: [krylova, ignatyev]}
+
+# === Known coverage gaps (for M3 / Cultural-Expert review) ===
+gaps:
+  - book: 12
+    issue: "Shantiparva ch.1–173 (Rājadharma, Āpaddharma) has no Russian translation in this set; only the philosophical core (Mokshadharma/Nārāyaṇīya, ch.174–367) exists via Smirnov."
+  - book: 13
+    issue: "Anushasanaparva: only an unattributed modern prose file, part 1 only. Not academic. Provenance must be vetted before ingestion."

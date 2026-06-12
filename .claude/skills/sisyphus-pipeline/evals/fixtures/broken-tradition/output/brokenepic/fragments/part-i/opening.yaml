@@ -1,0 +1,12 @@
+_sisyphus_version: '0.1'
+fragment:
+  nas: nms://brokenepic/part-i/opening
+  tradition_id: brokenepic
+  confidence_tier: reconstructed
+content:
+- locale: en
+  layer: surface
+  body: 'The hero is introduced [NAS: nms://brokenepic/part-i/opening]. He then sets out toward the'
+  status: confirmed
+  confidence_tier: reconstructed
+  ai_generated: true

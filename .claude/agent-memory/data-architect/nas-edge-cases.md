@@ -32,6 +32,18 @@ Oral traditions (Manas, Jangar) require a NAS variant — DEF-02 from PRD archit
 
 ## Translation NAS
 
-A translated Fragment uses the SAME NAS as its source (it's a rendering of the same narrative unit). The `translation_of` FK plus `language` column on `fragments` distinguishes it. Do NOT assign a different NAS to a translation.
+A translated Fragment uses the SAME NAS as its source (it's a rendering of the same narrative unit). The `translation_of` FK plus `language` column on `fragments` distinguishes it. Do NOT assign a different NAS to a translation. (NOTE: this rule describes the Mnemosyne DB. Sisyphus `FragmentRecord` has no `translation_of`/`language` — it has `source_language`, and translation lives on `ContentRecord.translation_id`.)
 
-**How to apply:** Reference when assigning new NAS addresses during content ingestion, when handling localization edge cases, or when a Phase 3 oral tradition is being planned. [[schema-decisions]]
+## Witness collision — NAS has no witness dimension, and the pipeline doesn't converge NAS across runs (M2 Gilgamesh)
+
+The "translation uses the SAME NAS" rule is a DB-level invariant the *pipeline does not enforce across separate ingestion runs*. M2 Gilgamesh ingested two witnesses into one `gilgamesh` namespace in two runs — Russian (Gumilev 1919 / Dyakonov 1961) and English (R. Campbell Thompson 1928). Each run segmented INDEPENDENTLY and proposed DIVERGENT NAS for the same narrative unit (Ninsun's prayer became both `tablet-iii/lacuna-ninsun-prayer-departure` and `tablet-iii/ninsun-prayer`). They never converged on a shared NAS, so the witnesses collided as overlapping/orphan fragments instead of coexisting as locale rows under one NAS.
+
+Three concepts the model conflates/lacks: a **witness/edition** (Thompson 1928 vs Dyakonov 1961 — could be two editions of the *same* language) is NOT a **locale** (en/ru) and NOT `manuscript_layer` (SBV vs OBV). NAS encodes none of them. Different witnesses genuinely attest different text (lacunae, abridgements) — transmission difference is scholarly signal, not noise.
+
+RESOLVED (data-architect position, 2026-06-11): Option C — witness-neutral NAS + `witness_id` attribute, ingest guard active in M1–M3, full reconciliation gated `multi_witness_reconciliation = false`. Full rationale, schema, orphan resolution, and Product/Technical deferrals in [[witness-dimension-decision]].
+
+## Fragment unit is the EPISODE; sub-episodes are addressing-only (M2 Iliad)
+
+The fragment file is `fragments/{division}/{episode}.yaml` — keyed on division+episode only. Confirmed NAS at *sub-episode* depth (`…/{episode}/{sub}`) do NOT each get their own fragment; they collapse to the parent episode file. M2 Iliad confirmed 42 sub-episode leaves but only 73 episode fragments exist; the Phase-C loop's last-writer-wins re-tagged each `fragment.nas` to an arbitrary sub-episode until `_upsert_fragment_file` was fixed to preserve an existing fragment's NAS. Rule: confirming sub-episode NAS does NOT create sub-episode fragments under the current design — keep NAS at episode granularity, or change the fragment-path scheme if sub-episode fragments are truly wanted.
+
+**How to apply:** Reference when assigning new NAS addresses during content ingestion, when handling localization or multi-witness edge cases, when deciding NAS granularity vs fragment granularity, or when a Phase 3 oral tradition is being planned. [[schema-decisions]]

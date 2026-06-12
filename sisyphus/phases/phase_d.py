@@ -38,6 +38,19 @@ from sisyphus.schema import (
 _RULES_DIR = Path(__file__).parent.parent.parent / "rules" / "tracks"
 _PROMPTS_DIR = Path(__file__).parent.parent.parent / "prompts" / "phase-d"
 
+# A bare Thompson section letter + numeric id (e.g. "Q2", "A1335", "H1376.2").
+_BARE_TMI_RE = re.compile(r"^[A-Z]\d[\d.]*$")
+
+
+def _normalize_code(track: str, code: str) -> str:
+    """Canonicalize annotation codes. The TMI agent sometimes omits the track
+    prefix (emitting bare 'Q2' instead of 'TMI-Q2'); normalize to the prefixed
+    form used by rules/tracks/tmi.yaml so codes are consistent across files."""
+    code = (code or "").strip()
+    if track == "tmi" and _BARE_TMI_RE.match(code):
+        return f"TMI-{code}"
+    return code
+
 ANNOTATION_SYSTEM = """\
 You are a structural annotation specialist for the Mnemosyne Engine.
 Annotate the given epic passage using the {track_label} framework.
@@ -187,7 +200,7 @@ def run_annotate(
             for ann in annotations:
                 try:
                     candidate = AnnotationCandidate(
-                        code=ann.get("code", ""),
+                        code=_normalize_code(track, ann.get("code", "")),
                         label=ann.get("label", ""),
                         proposed_tier=ann.get("proposed_tier", "reconstructed"),
                         status=Status.candidate,

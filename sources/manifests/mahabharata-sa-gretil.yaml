@@ -1,0 +1,36 @@
+# Sanskrit original — GRETIL BORI critical edition (Layer 3).
+
+tradition: mahabharata
+locale: sa
+translation_id: gretil-bori
+source_type: txt
+role: original
+layer: 3
+editors: Muneo Tokunaga / John Smith (BORI Pune Critical Edition)
+books:
+- 1
+- 2
+- 3
+- 4
+- 5
+- 6
+- 7
+- 8
+- 9
+- 10
+- 11
+- 12
+- 13
+- 14
+- 15
+- 16
+- 17
+- 18
+copyright_status: public-domain
+living_tradition: true
+public_release: false
+source_file: sources/mahabharata/text/sa/gretil/mbh1-18.txt
+notes: "Machine-readable transliterated BORI critical edition (78,603 verse refs).
+  Layer 3, gated layer_3_original=false. Converted from gretil-sanskrit/MBH1-18U.HTM.
+  NOTE: file begins with GRETIL's transliteration legend (trim before segment 1)."
+_sisyphus_version: '0.1'

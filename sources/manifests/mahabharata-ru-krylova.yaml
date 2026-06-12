@@ -1,0 +1,20 @@
+# Thin ingest manifest — reused across every .txt under text_dir.
+# Run from repo root:
+#   sisyphus ingest <text_dir>/<book>.txt --manifest sources/manifests/mahabharata-ru-krylova.yaml
+# Decision context + per-book roles: sources/manifests/mahabharata-ru-localization.yaml
+
+tradition: mahabharata
+locale: ru
+translation_id: krylova
+source_type: txt
+role: tertiary
+translator: П.Д. Крылова
+books:
+- 17
+- 18
+copyright_status: in-copyright
+living_tradition: true
+public_release: false
+text_dir: sources/mahabharata/text/ru/krylova
+notes: П.Д. Крылова → in-copyright (contemporary).
+_sisyphus_version: '0.1'
