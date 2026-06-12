@@ -19,10 +19,10 @@ from sisyphus import llm
 
 from sisyphus.flags import get_flag
 from sisyphus.io.workspace import (
-    annotation_candidates_dir,
     annotation_report_path,
     load_all_passage_texts,
     nas_confirmed_path,
+    nas_to_annotation_path,
     pipeline_errors_path,
 )
 from sisyphus.io.yaml_io import read_yaml, write_yaml
@@ -147,9 +147,8 @@ def run_annotate(
             if not division or not episode:
                 continue
 
-            cand_path = (
-                annotation_candidates_dir(tradition, division) / f"{episode}.{track}.yaml"
-            )
+            # One NAS+track = one file (bijective).
+            cand_path = nas_to_annotation_path(tradition, nas, track)
 
             # Idempotency: skip if file already exists and has candidates
             if cand_path.exists():
@@ -158,7 +157,7 @@ def run_annotate(
                     console.print(f"  [dim]Skip (exists):[/dim] {nas} [{track}]")
                     continue
 
-            passage_texts = load_all_passage_texts(division, episode)
+            passage_texts = load_all_passage_texts(division, episode, nas=nas)
             if len(passage_texts) == 1:
                 passage_text: str | None = passage_texts[0][1]
             elif passage_texts:

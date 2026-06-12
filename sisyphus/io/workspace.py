@@ -33,6 +33,16 @@ def annotation_candidates_dir(tradition: str, division: str) -> Path:
     return output_dir(tradition) / "annotation-candidates" / division
 
 
+def nas_to_annotation_path(tradition: str, nas: str, track: str) -> Path:
+    """Return the annotation candidate file path for a NAS address and track (bijective).
+
+    nms://tradition/division/episode       → annotation-candidates/division/episode.{track}.yaml
+    nms://tradition/division/episode/sub   → annotation-candidates/division/episode/sub.{track}.yaml
+    """
+    parts = nas.split("/")[3:]  # strip "nms:", "", tradition
+    return output_dir(tradition) / "annotation-candidates" / Path(*parts[:-1]) / f"{parts[-1]}.{track}.yaml"
+
+
 def artifacts_dir(tradition: str, division: str) -> Path:
     return output_dir(tradition) / "artifacts" / division
 
