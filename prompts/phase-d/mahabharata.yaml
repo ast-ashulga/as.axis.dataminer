@@ -1,29 +1,149 @@
-# PLACEHOLDER — fill before M3 (Mahabharata milestone).
-# IMPORTANT: living_tradition = true. Set methodology_fit_warning aggressively.
+# Phase D annotation prompt — Mahabharata (Vyasa, traditionally).
+# Methodology notes MUST agree with the methodology_fit block in
+# rules/segmentation/mahabharata.yaml. LIVING TRADITION — annotations are candidate-only
+# and require Cultural-Expert sign-off before any public release.
 tradition: mahabharata
 
 tradition_preamble: >
-  TODO: You are annotating the Mahabharata (living tradition). Primary reference:
-  van Buitenen EN (1973–1978); Poona Critical Edition.
-  Cite textual evidence as: "van Buitenen {volume}, {parva} {chapter}.{verse}".
-  CRITICAL: All annotations for this tradition require Cultural Expert review before release.
+  You are annotating the Mahabharata, the great Sanskrit epic traditionally attributed to
+  Vyasa, and scripture for living communities. The division/structural authority is the
+  Poona Critical Edition (Bhandarkar Oriental Research Institute, BORI) and its canonical
+  18-mahaparvan structure. The English text in this pipeline is the complete public-domain
+  Kisari Mohan Ganguli translation (1883–1896). Do NOT source annotation evidence from van
+  Buitenen or any copyrighted translation edition: van Buitenen is incomplete (books 1–5;
+  Fitzgerald continued book 11 and part of 12) and in copyright, demoted to scholaria-only.
+
+  Distinguish two categories of evidence in every annotation:
+  (1) Textual evidence: what the text of the Mahabharata explicitly states. The REQUIRED
+      PRIMARY citation is the Ganguli SECTION marker — the in-pipeline text's own
+      reference — in the form "Ganguli {parva} SECTION {roman}", where parva is the book
+      number 1–18 and Ganguli marks sub-units as "SECTION <roman-numeral>"; e.g.
+      "Ganguli 6 SECTION XXV". Cite ONLY markers you can actually read in the source text
+      in front of you. Do NOT invent or estimate adhyaya/shloka numbers.
+
+      BORI critical-edition references in the form "BORI {parva}.{adhyaya}.{shloka}" (e.g.
+      "BORI 6.23.1") are an OPTIONAL secondary cross-reference, permitted ONLY once Layer 3
+      (the GRETIL BORI Sanskrit) is ungated and the verse can be located in it. CRITICAL:
+      Ganguli (1883–1896) translated the vulgate (Calcutta/Bombay, with Nilakantha), NOT
+      the BORI Critical Edition, which renumbered and excised verses decades later — so
+      Ganguli SECTION numbers do NOT correspond to BORI adhyaya/shloka numbers (e.g. the
+      Bhagavadgita is Ganguli Bhishma SECTION XXV but BORI 6.23). Therefore, while Layer 3
+      is gated off, you have only the English text: never emit a BORI parva.adhyaya.shloka
+      citation you cannot verify in the Sanskrit — a fabricated shloka reference is a
+      grounding failure, not a citation.
+  (2) Scholarly commentary: interpretive claims drawn from secondary literature
+      (e.g. Hiltebeitel, Sukthankar's BORI Prolegomena, Brockington, Fitzgerald's
+      scholarly apparatus, van Buitenen's introductions as secondary scholarship only).
+      Label these as "Hiltebeitel argues..." or "Sukthankar observes..." — never present
+      scholarly commentary as primary textual fact, and never quote a copyrighted
+      translation as the text.
+
+  The BORI Critical Edition is a modern reconstruction over contested Northern and Southern
+  recensions, NOT "the original"; where an annotated passage sits on a recension-variant or
+  a CE star (asterisked, editorially secondary) verse, note it. NEVER label the epic, the
+  Bhagavadgita, or any theological content as myth or fiction. Annotations touching deities
+  and avataras (especially Krishna), dharmaśāstra, and varna/caste status are candidate-only
+  and route to Cultural-Expert review before public release.
 
 propp_fit_note: >
-  TODO: Propp functions map POORLY to the Mahabharata. The text is non-linear,
-  polyphonic, and structured by dharmic logic, not morphological plot sequence.
-  Set methodology_fit_warning=true on ALL Propp annotations for this tradition.
-  Your rationale must explicitly acknowledge the Western folk-narrative framework
-  being applied to a dharmic epic and explain why the annotation is defensible (if it is).
+  Propp functions apply with POOR fit to the Mahabharata, and the methodology_fit block in
+  rules/segmentation/mahabharata.yaml sets Propp global_warning=true for this tradition.
+  Propp derived his 31 functions and 7 roles from a corpus of Russian wonder tales: a
+  single hero on a single linear quest toward restoration and reward. The Mahabharata
+  violates this at the root and the annotation must be explicit about why.
+
+  Core structural problems:
+  (a) The epic is frame-nested (Ugrasravas Sauti -> Vaisampayana -> Sanjaya/Bhishma/Krishna
+      and further embedded narrators), not a single unbroken move. Propp assumes one linear
+      sequence; mapping it flattens the nesting.
+  (b) It is deliberately polycentric — Yudhishthira, Arjuna, Bhima, Krishna, Karna, Bhishma,
+      Duryodhana all hold narrative and ethical centrality at different points. Propp assumes
+      one hero and a stable hero/villain axis.
+  (c) Its governing logic is dharmic (the contested, situational nature of dharma itself),
+      not the morphological restoration of an initial lack.
+
+  HARD STRAIN — fire methodology_fit_warning on the ENTIRE division (every episode within
+  it) for the dharmaśāstra books, because they have no quest morphology to map at all:
+    - shanti-parva (12): Rajadharma (rajadharma-anushasana), Apaddharma, Mokshadharma —
+      treatises on kingship, conduct in distress, and liberation.
+    - anushasana-parva (13): Danadharma — the discourse on gift-giving and dharma.
+  Also fire methodology_fit_warning on the embedded didactic and riddle units, which are
+  not folktale moves: bhagavad-gita, anugita, prajagara (Vidura-niti), sanatsujata, and
+  araneya (the Yaksha-prashna is a riddle-catechism, not a quest), and on the nested
+  didactic cycle markandeya-samasya.
+
+  LEAST strained (Propp annotations are defensible per-passage here, with divergences
+  noted): adi-parva, virata-parva, drona-parva, karna-parva — the dynastic and martial
+  narrative. Even here, evaluate per passage and note where the Mahabharata form diverges
+  (e.g. there is no Proppian wedding/return resolution closing the epic; it ends in
+  renunciation and ascent).
+
+  Methodology-fit rule: note and warning ALWAYS travel together (schema invariant — the
+  validator rejects a methodology_fit_note without methodology_fit_warning=true, and
+  vice-versa). For this tradition the rules set Propp global_warning=true, so treat a
+  warning as the default and justify any annotation you nonetheless assert. Typical
+  triggers for an unavoidable warning: forcing a Propp role onto Krishna or a deity,
+  labelling collective divine action as PROPP-8, or annotating a dharmaśāstra/didactic
+  passage with quest morphology at all.
 
 bakhtin_fit_note: >
-  TODO: Bakhtin chronotopes require significant adaptation for Sanskrit narrative time
-  (cosmic yugas, divine lifespans disrupt Western chronotope categories).
-  The forest (aranya) and assembly hall (sabha) are culturally specific chronotopes —
-  note where they do not map cleanly to Bakhtin's typology.
-  Set methodology_fit_warning=true for chronotope applications to ritual or dharma passages.
+  Bakhtin chronotopes apply with GOOD fit to the NARRATIVE portions of the Mahabharata and
+  STRAIN on its cyclic/cosmic dharmic time. The framework was developed for the European
+  novel, not Sanskrit epic; acknowledge that origin where the formulation strains.
+
+  Good fit — assign chronotopes straightforwardly here:
+  - The forest-exile idyll: aranyaka-parva (the Pandavas' years in the Kamyaka and
+    Dvaita forests) is a textbook idyllic/pastoral chronotope interrupted by intrusions.
+  - The court/assembly (sabha): sabha-parva and virata-parva (disguise at Virata's court)
+    operate in the court chronotope, where status, recognition, and concealment are staged.
+  - The road: mahaprasthanika-parva (the great final journey) is a road chronotope of
+    departure and successive falling-away.
+  - The battlefield/threshold: the war books extend the battlefield/threshold chronotope
+    (bhishma-parva excluding the Gita, and likewise drona-parva, karna-parva, shalya-parva)
+    operate at the threshold of life and death. (The rules' bakhtin.fits_well enumerates
+    aranyaka/virata/mahaprasthanika/bhishma; the war books are a consistent extension of
+    the same battlefield chronotope, not a divergence — they appear in no warn list.)
+
+  Strain — fire methodology_fit_warning where cyclic/cosmic dharmic time resists the
+  event-time of chronotope:
+    - the whole of shanti-parva and anushasana-parva (dharmic/cosmic time, not narrated
+      event-time);
+    - bhagavad-gita (suspends narrative time entirely for a-temporal discourse on the
+      battlefield) and mokshadharma.
+  The forest (aranya) and assembly hall (sabha) are culturally specific Sanskrit settings;
+  where they do not map cleanly onto a Bakhtin category, note the divergence rather than
+  forcing the label.
+
+  Methodology-fit rule: note and warning always travel together. Set
+  methodology_fit_warning=true and write a methodology_fit_note whenever the dharmic/cosmic
+  time of a passage genuinely strains the chronotope category (per the strain list above);
+  for the clearly narrative chronotopes, a warning is not required by default.
 
 tmi_fit_note: >
-  TODO: TMI motif codes apply where folktale or mythic elements are recognisable
-  (shape-shifting, divine parentage, boons and curses, svayamvara).
-  Note when a motif has a specifically South Asian valence the generic code does not capture.
-  Never annotate Bhagavad Gita passages without a methodology_fit_warning.
+  TMI (Thompson Motif Index) codes have the LOWEST structural strain of the three tracks
+  here — the Index is a catalogue, not a narrative grammar — but the HIGHEST cultural-
+  flattening risk. TMI was built from European folktale corpora; applying it to living
+  Sanskrit scripture risks miscategorizing theology and dharma as folklore and asserting
+  false cross-tradition equivalence. TMI annotations for this tradition are CANDIDATE-ONLY.
+
+  Apply codes where a genuine folktale/mythic motif is recognizable — divine births and
+  boons, curses (shapa), shape-shifting, the svayamvara, magical weapons (astras),
+  disguise (e.g. the Pandavas at Virata's court), the test/riddle (the Yaksha-prashna).
+  In every case, flag where the motif carries a specifically South Asian / dharmic valence
+  the generic code does not capture (e.g. a boon/curse operates within karmic and dharmic
+  causality, not generic folk magic; a svayamvara is a dharmically governed institution,
+  not merely a "bride-choosing" motif). Note that valence explicitly.
+
+  Hard constraints for TMI on this tradition:
+    - NEVER apply a "trickster" code (or any reductive folk code) to Krishna or to any
+      deity/avatara. Krishna's actions are theologically framed within the tradition;
+      a trickster tag is an exoticizing miscategorization, not an annotation.
+    - Do NOT auto-apply TMI codes to the dharmaśāstra of shanti-parva and anushasana-parva,
+      or to bhagavad-gita / anugita / mokshadharma — these are doctrine, not tale-stock.
+      If a code is nonetheless asserted near them, a methodology_fit_warning is mandatory.
+
+  Methodology-fit rule: note and warning always travel together (schema invariant). Set
+  methodology_fit_warning=true whenever you write a methodology_fit_note. A warning is
+  REQUIRED whenever a motif tag touches a deity, an avatara, or a dharmic/theological
+  teaching, or whenever the South Asian institutional valence makes the generic code
+  actively misleading rather than merely incomplete.

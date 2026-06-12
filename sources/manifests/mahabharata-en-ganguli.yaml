@@ -1,0 +1,35 @@
+# EN primary — complete, public domain.
+
+tradition: mahabharata
+locale: en
+translation_id: ganguli-1883
+source_type: digital-pdf
+role: primary
+translator: Kisari Mohan Ganguli
+books:
+- 1
+- 2
+- 3
+- 4
+- 5
+- 6
+- 7
+- 8
+- 9
+- 10
+- 11
+- 12
+- 13
+- 14
+- 15
+- 16
+- 17
+- 18
+copyright_status: public-domain
+living_tradition: true
+public_release: false
+source_file: sources/mahabharata/ganguli-en/ganguli-1883-mahabharata.pdf
+notes: Only complete public-domain English Mahabharata (1883–1896). Clean text 
+  layer (pymupdf; no OCR). Replaces van Buitenen as EN primary (van Buitenen 
+  incomplete, in copyright).
+_sisyphus_version: '0.1'

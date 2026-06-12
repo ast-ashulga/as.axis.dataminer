@@ -1,0 +1,19 @@
+# Thin ingest manifest — reused across every .txt under text_dir.
+# Run from repo root:
+#   sisyphus ingest <text_dir>/<book>.txt --manifest sources/manifests/mahabharata-ru-ibragimov.yaml
+# Decision context + per-book roles: sources/manifests/mahabharata-ru-localization.yaml
+
+tradition: mahabharata
+locale: ru
+translation_id: ibragimov
+source_type: txt
+role: tertiary
+translator: Ибрагимов (краткое изложение)
+books:
+- 1
+copyright_status: in-copyright
+living_tradition: true
+public_release: false
+text_dir: sources/mahabharata/text/ru/ibragimov
+notes: Ибрагимов (abridged retelling) → in-copyright.
+_sisyphus_version: '0.1'

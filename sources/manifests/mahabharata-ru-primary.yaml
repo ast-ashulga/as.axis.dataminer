@@ -1,0 +1,46 @@
+# RU PRIMARY witness — the single ingestable Russian source for Mahabharata.
+# Books 1–18 assembled in parva order from the per-book primary translations
+# (one file = one witness, so Phase A's witness-collision guard does not fire).
+# Per-book provenance is in the ⚠/Перевод headers inside the file and the map below.
+# Run: sisyphus ingest sources/mahabharata/witness/mahabharata-ru-primary.txt \
+#        --manifest sources/manifests/mahabharata-ru-primary.yaml
+
+tradition: mahabharata
+locale: ru
+translation_id: ru-primary
+source_type: txt
+role: primary
+source_file: sources/mahabharata/witness/mahabharata-ru-primary.txt
+copyright_status: in-copyright          # mixed; academic series + Smirnov — all rights-pending (O-F)
+living_tradition: true
+public_release: false
+
+# Per-parva translator composition (académic «Литературные памятники» where it exists):
+book_translators:
+  "1-adi": Кальянов
+  "2-sabha": Кальянов
+  "3-aranyaka": Невелева-Васильков
+  "4-virata": Кальянов
+  "5-udyoga": Кальянов
+  "6-bhishma": Эрман
+  "7-drona": Кальянов
+  "8-karna": Невелева-Васильков
+  "9-shalya": Кальянов
+  "10-sauptika": Невелева-Васильков
+  "11-stri": Невелева-Васильков
+  "12-shanti": Смирнов (Мокшадхарма+Нараяния ONLY — gl.1-173 missing in RU)
+  "13-anushasana": unattributed (partial, provenance unverified)
+  "14-ashvamedhika": Невелева-Васильков
+  "15-ashramavasika": Невелева-Васильков
+  "16-mausala": Невелева-Васильков
+  "17-mahaprasthanika": Невелева-Васильков
+  "18-svargarohana": Невелева-Васильков
+
+coverage_gaps:
+  - "Book 12 (shanti-parva) gl.1-173 (Rajadharma/Apaddharma) — no Russian translation"
+  - "Book 13 (anushasana-parva) — unattributed partial prose; vet before public release"
+notes: >
+  Composite primary RU witness. Decision record: mahabharata-ru-localization.yaml.
+  Secondary (Smirnov, partial) witness: mahabharata-ru-smirnov.yaml — defer until
+  multi-witness reconciliation exists.
+_sisyphus_version: "0.1"

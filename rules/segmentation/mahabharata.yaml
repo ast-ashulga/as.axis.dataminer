@@ -1,145 +1,440 @@
 # Segmentation rules for the Mahabharata.
 # NAS taxonomy follows fragment-graph-design.md §1.
-# PLACEHOLDER — requires Cultural Expert review before M3.
-# IMPORTANT: living_tradition = true. Do not release output without formal Cultural Expert sign-off.
+#
+# LIVING TRADITION. living_tradition = true.
+# Output MUST NOT be released publicly without formal Cultural-Expert sign-off
+# (see cultural_sensitivity block below and CLAUDE.md "Cultural Sensitivity").
+#
+# Reviewed & authored by Cultural & Domain Expert — replaces prior placeholder.
+#
+# ----------------------------------------------------------------------------
+# CANONICAL STRUCTURE
+# ----------------------------------------------------------------------------
+# Base text / division authority: Poona Critical Edition (BORI), the 18-mahaparvan
+#   structure. Divisions = the 18 parvas. Episodes = the upaparvans (sub-parvans)
+#   enumerated in the epic's OWN table of contents (the Parvasamgraha / Anukramanika
+#   in Adi Parva 2). These are the tradition's native narrative units — NOT a
+#   Western-imposed plot arc.
+#
+# EN primary translation: Kisari Mohan Ganguli (1883–1896), COMPLETE, public domain
+#   (Project Gutenberg / sacred-texts.com). This is the only complete public-domain
+#   English Mahabharata. NOTE: van Buitenen (the prior placeholder's cited source)
+#   is INCOMPLETE (books 1–5 only; Fitzgerald continued 11 + part of 12) and in
+#   copyright — demoted to scholaria-only, never an ingest source.
+#
+# RU primary: academic «Литературные памятники» series (Kalyanov; Neveleva–Vasilkov;
+#   Erman bk 6). KNOWN RU COVERAGE GAPS (encode in manifest, do not fabricate):
+#     - Book 12 (Shanti): first half — Rajadharma + Apaddharma (the rajadharma-anushasana
+#       and apaddharma upaparvans) — has NO Russian translation. Only the philosophical
+#       core, Mokshadharma incl. Narayaniya (Smirnov), exists in RU.
+#     - Book 13 (Anushasana): RU is an unattributed partial prose rendering, not the
+#       academic series. Flag confidence accordingly.
+#
+# Sanskrit original: GRETIL BORI critical edition (Layer 3; layer_3_original flag =
+#   false until post-M2).
+#
+# ----------------------------------------------------------------------------
+# SLUG / TRANSLITERATION CONVENTION (applies to ALL division + episode slugs)
+# ----------------------------------------------------------------------------
+# NAS regex: ^nms://[a-z0-9-]+(/[a-z0-9-]+){1,3}$  -> lowercase, hyphen-separated,
+#   ASCII only, NO underscores, NO diacritics.
+# Romanization rule (apply uniformly so matching never silently breaks):
+#   ś, ṣ, sh -> "sh"      (śānti -> shanti)
+#   ṛ -> "ri"            c -> "ch"        ñ -> "n"
+#   drop all macrons/dots (ā->a, ī->i, ū->u, ṇ->n, ṭ->t, ḍ->d, ṃ/ṁ->m, ḥ->dropped)
+#   join compound words with a single hyphen (rajadharma-anushasana).
+# CONVENTION FOR DIVERGENT SOURCE SPELLINGS:
+#   slug follows the BORI/Sanskrit title; the Ganguli spelling (e.g. "Vana",
+#   "Santi", "Anusasana", "Aswamedha") is recorded ONLY as a boundary_signal,
+#   never as the slug. Book 3 is therefore aranyaka-parva (BORI Āraṇyakaparvan),
+#   not vana-parva.
+
 tradition: mahabharata
 nas_prefix: "nms://mahabharata"
 
-# Base text: Poona Critical Edition (Bhandarkar Oriental Research Institute).
-# Reference translation: van Buitenen EN (1973–1978), volumes 1–3.
-# Sanskrit GRETIL corpus for Layer 3 (layer_3_original flag = false until post-M2).
-
-divisions:
-  - name: adi-parva
-    episodes:
-      - origins-and-cosmology
-      - birth-of-bhishma
-      - bhishmas-vow
-      - birth-of-karna
-      - education-at-dronas
-      - tournament-at-hastinapura
-      - lac-house-conspiracy
-      - birth-of-draupadi
-      - draupadi-svayamvara
-      - pandavas-revealed
-  - name: sabha-parva
-    episodes:
-      - indraprastha-founding
-      - maya-builds-the-hall
-      - rajasuya-sacrifice
-      - dice-game-first
-      - draupadi-disrobing
-      - second-dice-game
-      - exile-announced
-  - name: vana-parva
-    episodes:
-      - forest-exile-begins
-      - draupadi-and-dharma
-      - arjunas-quest-for-weapons
-      - arjuna-and-indra
-      - arjuna-and-shiva
-      - nala-and-damayanti
-      - yaksha-questions
-      - karna-and-indra
-  - name: virata-parva
-    episodes:
-      - disguises-at-viratas-court
-      - kichaka-episode
-      - cattle-raid
-      - arjuna-reveals-himself
-  - name: udyoga-parva
-    episodes:
-      - war-preparations
-      - krishnas-peace-mission
-      - krishna-at-hastinapura
-      - sanjaya-returns
-      - karnas-birth-secret
-      - karnas-conversation-with-krishna
-  - name: bhishma-parva
-    episodes:
-      - armies-arrayed
-      - bhagavad-gita
-      - day-one-battle
-      - days-two-to-nine
-      - day-ten-bhishma-falls
-  - name: drona-parva
-    episodes:
-      - drona-as-commander
-      - abhimanyu-in-chakravyuha
-      - death-of-abhimanyu
-      - arjunas-oath
-      - death-of-jayadratha
-      - night-battle
-      - death-of-drona
-  - name: karna-parva
-    episodes:
-      - karna-as-commander
-      - duel-karna-arjuna
-      - death-of-karna
-  - name: shalya-parva
-    episodes:
-      - shalya-as-commander
-      - death-of-shalya
-      - duel-bhima-duryodhana
-      - end-of-war
-  - name: sauptika-parva
-    episodes:
-      - ashvattamas-night-raid
-      - ashvattamas-curse
-  - name: stri-parva
-    episodes:
-      - gandhari-laments
-      - dhritarashtra-laments
-      - women-at-battlefield
-  - name: shanti-parva
-    episodes:
-      - bhishmas-teachings-rajadharma
-      - bhishmas-teachings-moksha
-      - bhishmas-teachings-on-krishna
-  - name: anushasana-parva
-    episodes:
-      - bhishma-on-dharma
-      - dana-dharma
-      - bhishmas-death
-  - name: ashvamedhika-parva
-    episodes:
-      - horse-sacrifice
-      - arjunas-campaign
-      - anugita
-  - name: ashramavasika-parva
-    episodes:
-      - dhritarashtra-retires
-      - pandavas-visit-forest
-      - death-in-forest-fire
-  - name: mausala-parva
-    episodes:
-      - destruction-of-yadavas
-      - krishnas-death
-      - balarama-departs
-  - name: mahaprasthanika-parva
-    episodes:
-      - pandavas-great-journey
-      - deaths-on-the-journey
-  - name: svargarohana-parva
-    episodes:
-      - yudhishthira-in-hell
-      - pandavas-ascend-to-heaven
-
-# Granularity: episode (default), sub-episode, verse-range, lacuna, interpolation
+# Granularity ladder: division (parva) -> episode (upaparvan) -> sub-episode ->
+#   verse-range -> lacuna / interpolation.
 default_granularity: episode
 
-# Signals used to identify parva and episode boundaries in raw text
-# TODO: tune for specific translation and GRETIL corpus structure before M3
-boundary_signals:
-  parva: ["Parva", "PARVA", "Book "]
-  episode_keywords:
-    bhagavad-gita: ["Gita", "Arjuna", "Krishna", "yoga", "dharma", "battlefield"]
-    draupadi-disrobing: ["Draupadi", "disrobe", "Duhshasana", "Bhima"]
-    dice-game-first: ["dice", "Shakuni", "Yudhishthira", "lost"]
-    death-of-abhimanyu: ["Abhimanyu", "chakravyuha", "surrounded"]
-    bhishmas-death: ["Bhishma", "bed of arrows", "sun", "uttarayana"]
-    krishnas-death: ["Krishna", "hunter", "arrow", "foot"]
+# ----------------------------------------------------------------------------
+# DIVISIONS (18 parvas, narrative order) and EPISODES (upaparvans).
+# Each episode is a canonical upaparvan from the Parvasamgraha. Upaparvan counts
+# are UNEVEN by nature (Adi has many; the final three books have one each) — this
+# is faithful, do not force uniformity.
+# Embedded famous units are upaparvans in their own right and are flagged inline.
+# ----------------------------------------------------------------------------
+divisions:
 
-# Lacuna and interpolation markers
-# The Poona CE marks interpolations with brackets; Southern/Northern recension additions
-lacuna_markers: ["[CE lacuna]", "[interpolation]", "[Southern recension]", "[Northern recension]", "[corrupt]"]
+  # --- 1 -------------------------------------------------------------------
+  - name: adi-parva                       # BORI 1 · Ganguli "Adi Parva"
+    title_sanskrit: Adiparvan
+    episodes:
+      - anukramanika                       # the epic's own table of contents
+      - sangraha                           # the contents-summary of all 18 books
+      - paushya
+      - pauloma
+      - astika                             # churning of the ocean; the snake sacrifice
+      - adivamshavatarana
+      - sambhava                           # genealogy; births of Bhishma, Karna, the princes
+      - jatugriha                          # the lac house (Ganguli "house of lac")
+      - hidimba-vadha
+      - baka-vadha
+      - chaitraratha
+      - draupadi-svayamvara
+      - vaivahika                          # marriage of Draupadi
+      - viduragamana
+      - rajyalabha
+      - arjuna-vanavasa
+      - subhadra-harana                    # Arjuna abducts/weds Subhadra
+      - harana-harika
+      - khandava-daha                      # burning of the Khandava forest
+
+  # --- 2 -------------------------------------------------------------------
+  - name: sabha-parva                     # BORI 2 · Ganguli "Sabha Parva"
+    title_sanskrit: Sabhaparvan
+    episodes:
+      - sabhakriya                         # Maya builds the assembly hall
+      - lokapala-sabhakhyana
+      - rajasuyarambha
+      - jarasandha-vadha
+      - digvijaya                          # the four conquests of the quarters
+      - rajasuyika                         # the Rajasuya sacrifice
+      - arghyaharana
+      - shishupala-vadha
+      - dyuta                              # the dice game
+      - anudyuta                           # the second dice game; Draupadi's humiliation
+
+  # --- 3 -------------------------------------------------------------------
+  # 21 upaparvans (BORI). Ordered per the Parvasamgraha / Wikipedia per-parva ToC,
+  # cross-checked against Ganguli SECTION breaks. Embedded tales: Nala, the Ramayana
+  # digest (Ramopakhyana), Savitri (Pativrata-mahatmya), and the Yaksha-prashna (Araneya).
+  - name: aranyaka-parva                  # BORI 3 (Āraṇyakaparvan) · Ganguli "Vana Parva"
+    title_sanskrit: Aranyakaparvan
+    episodes:
+      - aranyaka                           # ch 1–10   · exile to the forest begins
+      - kirmira-vadha                      # ch 11     · slaying of the demon Kirmira
+      - arjunabhigamana                    # ch 12–37  · Arjuna departs to win celestial weapons
+      - kairata                            # ch 38–41  · EMBEDDED: Arjuna & Shiva (the Kirata/hunter); Pashupata weapon
+      - indralokagamana                    # ch 42–51  · Arjuna in Indra's heaven; Urvashi's curse
+      - nalopakhyana                       # ch 52–79  · EMBEDDED TALE: Nala and Damayanti
+      - tirtha-yatra                       # ch 80–157 · the pilgrimage to the sacred fords
+      - yaksha-yuddha                      # ch 158–164· Bhima slays the demon; the brothers reunite
+      - nivata-kavacha-yuddha              # ch 165–175· Arjuna recounts his battles with the Nivatakavachas
+      - ajagara                            # ch 176–181· the python (Nahusha) and Yudhishthira's riddles
+      - markandeya-samasya                 # ch 182–231· Markandeya's discourses; the yugas; incl. Ramopakhyana cycle
+      - draupadi-satyabhama-samvada        # ch 232–234· dialogue of Draupadi and Satyabhama
+      - ghosha-yatra                       # ch 235–256· the cattle-station expedition; Duryodhana captured
+      - mriga-svapnodbhava                 # ch 257    · the dream of the deer
+      - vrihi-drounika                     # ch 258–260· the measure-of-rice / the ascetic's hospitality
+      - draupadi-harana                    # ch 261–270· Jayadratha's abduction of Draupadi
+      - jayadratha-vimokshana              # ch 271    · the release of Jayadratha
+      - ramopakhyana                       # ch 272–291· EMBEDDED TALE: the condensed Ramayana (story of Rama)
+      - pativrata-mahatmya                 # ch 292–298· EMBEDDED TALE: Savitri and Satyavan
+      - kundala-aharana                    # ch 299–309· Karna surrenders his earrings & armour to Indra
+      - araneya                            # ch 310–324· EMBEDDED: the Yaksha-prashna (the Yaksha's questions)
+
+  # --- 4 -------------------------------------------------------------------
+  - name: virata-parva                    # BORI 4 · Ganguli "Virata Parva"
+    title_sanskrit: Virataparvan
+    episodes:
+      - pandava-pravesha                   # the Pandavas enter Virata's court in disguise
+      - kichaka-vadha                      # the Kichaka episode
+      - go-harana                          # the cattle raid; Arjuna reveals himself
+      - vaivahika-virata                   # Abhimanyu weds Uttara
+
+  # --- 5 -------------------------------------------------------------------
+  # 10 upaparvans (BORI), ordered per the Wikipedia per-parva ToC. Krishna's
+  # revelation to Karna falls WITHIN bhagavat-yana (no separate upaparvan).
+  - name: udyoga-parva                    # BORI 5 · Ganguli "Udyoga Parva"
+    title_sanskrit: Udyogaparvan
+    episodes:
+      - sainyodyoga                        # ch 1–19   · mustering of the armies
+      - sanjaya-yana                       # ch 20–32  · Sanjaya's embassy; his return to Dhritarashtra
+      - prajagara                          # ch 33–40  · EMBEDDED: the Vidura-niti (counsel to the sleepless king)
+      - sanatsujata                        # ch 41–46  · EMBEDDED: the Sanatsujatiya (philosophical discourse)
+      - yanasandhi                         # ch 47–73  · the council on war and peace
+      - bhagavat-yana                      # ch 74–150 · Krishna's peace embassy; incl. Karna's birth-secret revealed
+      - sainya-niryana                     # ch 151–159· the marching-out of the armies
+      - ulukabhigamana                     # ch 160–164· Uluka's insulting message to the Pandavas
+      - rathatiratha-sankhyana             # ch 165–172· the reckoning of the warriors (rathas/atirathas)
+      - ambopakhyana                       # ch 173–199· EMBEDDED TALE: the story of Amba (the Shikhandi back-story)
+
+  # --- 6 -------------------------------------------------------------------
+  - name: bhishma-parva                   # BORI 6 · Ganguli "Bhishma Parva"
+    title_sanskrit: Bhishmaparvan
+    episodes:
+      - jambukhanda-vinirmana              # cosmography of the earth
+      - bhumi                              # the geography/island discourse
+      - bhagavad-gita                      # EMBEDDED SCRIPTURE: the Bhagavadgita (independently
+                                           #   worshipped; requires Cultural-Expert sign-off — see below)
+      - bhishma-vadha                      # the ten days of battle; Bhishma falls on the bed of arrows
+
+  # --- 7 -------------------------------------------------------------------
+  - name: drona-parva                     # BORI 7 · Ganguli "Drona Parva"
+    title_sanskrit: Dronaparvan
+    episodes:
+      - dronabhisheka                      # Drona installed as commander
+      - samshaptaka-vadha
+      - abhimanyu-vadha                    # the chakravyuha; the death of Abhimanyu
+      - pratijna                           # Arjuna's vow to slay Jayadratha
+      - jayadratha-vadha
+      - ghatotkacha-vadha                  # the night battle; Karna's shakti spent on Ghatotkacha
+      - drona-vadha                        # the death of Drona ("Ashvatthama is dead")
+      - narayanastra-mokshana
+
+  # --- 8 -------------------------------------------------------------------
+  - name: karna-parva                     # BORI 8 · Ganguli "Karna Parva"
+    title_sanskrit: Karnaparvan
+    episodes:
+      - karna-senapatya                    # Karna made commander; the great duels
+      - karna-vadha                        # the death of Karna
+
+  # --- 9 -------------------------------------------------------------------
+  - name: shalya-parva                    # BORI 9 · Ganguli "Shalya Parva"
+    title_sanskrit: Shalyaparvan
+    episodes:
+      - shalya-vadha                       # Shalya commands and falls
+      - hrada-pravesha                     # Duryodhana hides in the lake
+      - gada-yuddha                        # the mace-duel of Bhima and Duryodhana
+      - sarasvata                          # Balarama's pilgrimage along the Sarasvati
+
+  # --- 10 ------------------------------------------------------------------
+  - name: sauptika-parva                  # BORI 10 · Ganguli "Sauptika Parva"
+    title_sanskrit: Sauptikaparvan
+    episodes:
+      - sauptika                           # Ashvatthama's night raid on the sleeping camp
+      - aishika                            # the Aishika weapon; Ashvatthama's curse
+
+  # --- 11 ------------------------------------------------------------------
+  - name: stri-parva                      # BORI 11 · Ganguli "Stri Parva"
+    title_sanskrit: Striparvan
+    episodes:
+      - jalapradanika                      # the women come to the battlefield; water-offerings
+      - stri-vilapa                        # the lament of the women; Gandhari's curse on Krishna
+
+  # --- 12 ------------------------------------------------------------------
+  # DIDACTIC BOOK (dharmaśāstra, not folktale narrative). See methodology_fit below.
+  - name: shanti-parva                    # BORI 12 · Ganguli "Santi Parva"
+    title_sanskrit: Shantiparvan
+    episodes:
+      - rajadharma-anushasana              # the duties of kings (NO Russian translation — RU gap)
+      - apaddharma                         # conduct in times of distress (NO Russian translation — RU gap)
+      - mokshadharma                       # the path to liberation; incl. the Narayaniya (RU: Smirnov)
+
+  # --- 13 ------------------------------------------------------------------
+  # DIDACTIC BOOK (dharmaśāstra). See methodology_fit below.
+  - name: anushasana-parva                # BORI 13 · Ganguli "Anusasana Parva"
+    title_sanskrit: Anushasanaparvan
+    episodes:
+      - dana-dharma                        # the discourse on gift-giving and dharma (RU: partial, unattributed)
+      - bhishma-svargarohana               # the passing of Bhishma; his ascent
+
+  # --- 14 ------------------------------------------------------------------
+  - name: ashvamedhika-parva              # BORI 14 · Ganguli "Aswamedha Parva"
+    title_sanskrit: Ashvamedhikaparvan
+    episodes:
+      - ashvamedhika                       # the horse sacrifice; Arjuna's world-conquest campaign
+      - anugita                            # EMBEDDED DISCOURSE: the Anugita (Krishna's "later song")
+
+  # --- 15 ------------------------------------------------------------------
+  - name: ashramavasika-parva             # BORI 15 · Ganguli "Asramavasika Parva"
+    title_sanskrit: Ashramavasikaparvan
+    episodes:
+      - ashramavasa                        # Dhritarashtra, Gandhari, Kunti retire to the hermitage
+      - putradarshana                      # Vyasa raises the war-dead for a night
+      - naradagamana                       # Narada reports the forest fire; their deaths
+
+  # --- 16 ------------------------------------------------------------------
+  - name: mausala-parva                   # BORI 16 · Ganguli "Mausala Parva"
+    title_sanskrit: Mausalaparvan
+    episodes:
+      - mausala                            # the iron-club destruction of the Yadavas; Krishna's death
+
+  # --- 17 ------------------------------------------------------------------
+  - name: mahaprasthanika-parva           # BORI 17 · Ganguli "Mahaprasthanika Parva"
+    title_sanskrit: Mahaprasthanikaparvan
+    episodes:
+      - mahaprasthanika                    # the great journey; the Pandavas fall one by one
+
+  # --- 18 ------------------------------------------------------------------
+  - name: svargarohana-parva              # BORI 18 · Ganguli "Svargarohanika Parva"
+    title_sanskrit: Svargarohanaparvan
+    episodes:
+      - svargarohana                       # Yudhishthira's final test; the ascent to heaven
+
+# NOTE on the Harivamsa: BORI treats the Harivamsa (khila / appendix, sub-parvans
+# 99–100) as a SUPPLEMENT, not one of the 18 parvas. It is OUT OF SCOPE for the
+# 18-parva division tree. If ingested later, address it under a separate khila
+# branch, never as nms://mahabharata/<a 19th parva>.
+
+# ----------------------------------------------------------------------------
+# BOUNDARY SIGNALS
+# Keys are the new upaparvan slugs (the old placeholder keyed off invented plot
+# slugs that no longer exist). parva-level signals include Ganguli's divergent
+# spellings so detection survives the BORI-vs-Ganguli title gap.
+# ----------------------------------------------------------------------------
+boundary_signals:
+  parva:
+    - "PARVA"
+    - "Parva"
+    - "SECTION"          # Ganguli marks upaparvan/chapter breaks as "SECTION <roman>"
+    # Ganguli divergent book titles -> still map to the BORI slug:
+    - "Vana Parva"       # => aranyaka-parva
+    - "Santi Parva"      # => shanti-parva
+    - "Anusasana Parva"  # => anushasana-parva
+    - "Aswamedha Parva"  # => ashvamedhika-parva
+    - "Asramavasika Parva"
+    - "Svargarohanika Parva"
+  episode_keywords:
+    bhagavad-gita:        ["Bhagavad", "Gita", "Sanjaya said", "Dhritarashtra said", "Arjuna", "yoga", "Kurukshetra"]
+    nalopakhyana:         ["Nala", "Damayanti", "Brihadaswa", "swan", "Nishadha"]
+    araneya:              ["Yaksha", "crane", "lake", "questions", "Dharma", "Yudhishthira answered"]
+    sanatsujata:          ["Sanatsujata", "death", "Vidura"]
+    prajagara:            ["Vidura said", "sleepless", "wakeful"]
+    anugita:              ["Anugita", "Arjuna said", "thou didst say", "again declare"]
+    rajadharma-anushasana: ["Bhishma said", "duties of a king", "rajadharma", "kingship"]
+    mokshadharma:         ["emancipation", "moksha", "Narayana", "Narayaniya", "Self"]
+    dana-dharma:          ["gift", "dana", "merit of giving"]
+    abhimanyu-vadha:      ["Abhimanyu", "chakravyuha", "array", "surrounded"]
+    drona-vadha:          ["Drona", "Ashvatthama", "the elephant", "laid down his weapons"]
+    karna-vadha:          ["Karna", "wheel", "Salya", "Anjalika"]
+    gada-yuddha:          ["mace", "Duryodhana", "thigh", "Bhima struck"]
+    sauptika:             ["sleeping", "night", "Ashvatthama", "camp", "Sauptika"]
+    mausala:              ["iron", "club", "Yadavas", "Eraka grass", "hunter", "Jara"]
+
+# ----------------------------------------------------------------------------
+# LACUNA / INTERPOLATION MARKERS
+# The BORI Critical Edition is a RECONSTRUCTION over contested Northern & Southern
+# recensions. Verses the CE editors judged interpolated are placed in an apparatus
+# / bracketed and marked with a star (the "star passages"). Preserve, never silently
+# drop — recension variance is scholarly signal, not noise.
+# ----------------------------------------------------------------------------
+lacuna_markers:
+  - "[CE lacuna]"
+  - "[interpolation]"
+  - "[star passage]"        # BORI CE asterisked (editorially-secondary) verses
+  - "[Southern recension]"
+  - "[Northern recension]"
+  - "[corrupt]"
+
+# ----------------------------------------------------------------------------
+# METHODOLOGY-FIT ASSESSMENT  (drives Phase B methodology_fit_warning)
+# Campbell is blocked at framework level (campbell_track flag = false) — not assessed.
+# ----------------------------------------------------------------------------
+methodology_fit:
+
+  propp:
+    # Propp's 31 functions + 7 roles presuppose a SINGLE LINEAR folktale quest
+    # (villainy -> dispatch -> struggle -> return). The Mahabharata violates this
+    # at the root, so warnings must fire broadly.
+    global_warning: true
+    global_note: >
+      The Mahabharata is a frame-nested epic (Ugrasravas Sauti -> Vaisampayana ->
+      internal narrators), not a single linear folktale. Propp's morphology assumes
+      one unbroken move with one hero/villain axis; mapping it here flattens nested
+      narration and a deliberately polycentric cast. Treat all Propp role
+      assignments as candidate-only and route to Cultural-Expert review.
+    warn_on_divisions:        # fire methodology_fit_warning across the WHOLE division
+      - shanti-parva          # dharmaśāstra (Rajadharma/Apaddharma/Mokshadharma): a
+                              #   treatise on kingship & liberation has NO quest morphology.
+                              #   Propp has nothing to map. HARD STRAIN — warn on every episode.
+      - anushasana-parva      # dharmaśāstra (Danadharma): same — didactic, not narrative.
+    warn_on_episodes:         # embedded didactic / riddle units inside narrative books
+      - bhagavad-gita         # philosophical dialogue, not a folktale move
+      - sanatsujata
+      - prajagara             # Vidura-niti — political-ethical counsel
+      - anugita
+      - araneya               # the Yaksha-prashna is a riddle-catechism, not a quest
+      - markandeya-samasya    # nested didactic cycle
+    fits_reasonably:          # the martial / dynastic narrative books are the LEAST strained
+      - adi-parva
+      - virata-parva
+      - drona-parva
+      - karna-parva
+
+  bakhtin:
+    # Chronotope analysis fits the NARRATIVE chronotopes well but strains on the
+    # cyclic/cosmic time of the didactic frame.
+    global_warning: false
+    fits_well:
+      - aranyaka-parva        # the "forest exile" idyllic chronotope is textbook Bakhtin
+      - virata-parva          # the court / disguise chronotope
+      - mahaprasthanika-parva # "the road" chronotope
+      - bhishma-parva         # the battlefield chronotope (excl. the Gita episode)
+    warn_on_divisions:
+      - shanti-parva          # cyclic/cosmic dharmic time resists the event-time of chronotope
+      - anushasana-parva
+    warn_on_episodes:
+      - bhagavad-gita         # suspends narrative time entirely — a-temporal discourse
+      - mokshadharma
+
+  tmi:
+    # Thompson Motif Index strains LEAST structurally (it is a catalogue, not a
+    # narrative grammar) but carries the HIGHEST cultural-flattening risk.
+    global_warning: false
+    risk_note: >
+      TMI was built from European folktale corpora. Cataloguing Mahabharata content
+      as "folk motifs" risks (a) miscategorising living theology/dharma as folklore,
+      and (b) false cross-tradition equivalence (e.g. tagging Krishna's acts as
+      generic "trickster" or "deity-in-disguise" motifs). Permitted as a candidate
+      index ONLY; any motif tag touching a deity, an avatara, or a dharmic teaching
+      must carry methodology_fit_warning and reach Cultural-Expert review before
+      public release. Do NOT auto-apply TMI tags to shanti-parva / anushasana-parva
+      (these are doctrine, not tale-stock).
+    warn_on_divisions:
+      - shanti-parva
+      - anushasana-parva
+    warn_on_episodes:
+      - bhagavad-gita
+      - anugita
+      - mokshadharma
+
+# ----------------------------------------------------------------------------
+# CULTURAL SENSITIVITY  (living_tradition = true)  — BINDING ON ALL PHASES
+# ----------------------------------------------------------------------------
+cultural_sensitivity:
+  living_tradition: true
+  public_release: false        # gated until formal Cultural-Expert sign-off (per manifest)
+
+  hard_constraints:            # the pipeline MUST NOT do these
+    - >
+      Do NOT label the Mahabharata, the Bhagavadgita, or any theological content as
+      "myth", "fiction", or "legend" in Layer 0. Attribute to the text/tradition
+      ("the epic narrates…", "in the tradition…"), never adjudicate truth-claims.
+    - >
+      Do NOT present the BORI Critical Edition as "the original" or "the authentic"
+      Mahabharata. It is a modern scholarly reconstruction over contested Northern
+      and Southern recensions. Layer 0 must say so where provenance is asserted.
+    - >
+      Do NOT let Propp role-labels (e.g. Krishna as "donor"/"helper", Duryodhana as
+      "villain") reach public output unreviewed. Reducing living deities and revered
+      figures to folktale functions is the primary exoticization risk for this
+      tradition.
+    - >
+      Do NOT editorialize varna/caste content (Karna's suta birth-status, the
+      Rajadharma duties-by-class material). Describe what the text states; do not
+      endorse, condemn, or modernize it. This material requires human review.
+
+  requires_cultural_expert_signoff:   # candidate-only until a human signs off
+    - bhagavad-gita        # independently worshipped scripture; highest scrutiny
+    - anugita
+    - shanti-parva         # all episodes — dharmaśāstra / kingship doctrine
+    - anushasana-parva     # all episodes — dharma / caste / gift-giving doctrine
+    - mokshadharma         # incl. the Narayaniya (Vaishnava theology)
+
+  hedging_required:        # Layer 0 must hedge / attribute, not assert
+    - "any claim about authorship (traditionally Vyasa; historically composite, layered)"
+    - "any claim about date (composition spans roughly the centuries around the turn of the era)"
+    - "any claim ranking recensions or declaring a 'correct' version"
+    - "any theological or doctrinal proposition (attribute to the tradition/speaker)"
+
+  notes:
+    - >
+      NAS promotion: per the output contract, Sisyphus PROPOSES these slugs; only the
+      Cultural Expert promotes them to canonical. The Sanskrit upaparvan boundaries are
+      stable, but confirm before promotion — upaparvan enumeration varies slightly
+      between printings of the Parvasamgraha (esp. Adi and Aranyaka).
+    - >
+      RU coverage gaps (Shanti first half; Anushasana partial) must be encoded as
+      explicit coverage metadata, NOT machine-translated to fill the hole. A visible
+      gap is honest; a fabricated RU rendering of dharmaśāstra is a misrepresentation.

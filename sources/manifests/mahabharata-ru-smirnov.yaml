@@ -1,0 +1,21 @@
+# RU SECONDARY witness — B.L. Smirnov (Ashgabat), partial (philosophical spine).
+# Covers parvas 3,5,6,10,11,12,14,16,17,18 only. NOT a complete witness.
+# DEFER ingestion until multi-witness reconciliation exists (Phase A's collision
+# guard blocks a second witness once the RU primary has a confirmed NAS skeleton;
+# would require --allow-additional-witness, and reconciliation is incomplete).
+# Bhagavad-gita (bk6) and Mokshadharma (bk12) are the highest-value cross-references.
+
+tradition: mahabharata
+locale: ru
+translation_id: smirnov-ashgabat
+source_type: txt
+role: secondary
+source_file: sources/mahabharata/witness/mahabharata-ru-smirnov.txt
+copyright_status: in-copyright          # Смирнов d. 1967 → PD (RU life+70) ~2038
+living_tradition: true
+public_release: false
+covers_parvas: [3, 5, 6, 10, 11, 12, 14, 16, 17, 18]
+notes: >
+  Literal (буквальный) philosophical translation. Distinct methodology — high value
+  as a parallel/cross-reference layer. Decision record: mahabharata-ru-localization.yaml.
+_sisyphus_version: "0.1"
