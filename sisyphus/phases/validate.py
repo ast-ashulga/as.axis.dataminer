@@ -18,6 +18,7 @@ from rich.table import Table
 
 from sisyphus.io.workspace import (
     nas_confirmed_path,
+    nas_to_fragment_path,
     output_dir,
 )
 from sisyphus.io.yaml_io import read_yaml
@@ -79,7 +80,17 @@ def run_validate(tradition: str, console: Console) -> list[str]:
             if frag_nas:
                 fragment_nas.add(frag_nas)
 
-    # 3. Annotation candidate files
+    # 3. NAS coverage — every confirmed NAS must have a fragment file
+    missing_fragments: list[str] = []
+    for entry in (confirmed_data.get("entries", []) if confirmed_path.exists() else []):
+        nas = entry.get("nas", "")
+        if not _valid_nas(nas):
+            continue
+        if not nas_to_fragment_path(tradition, nas).exists():
+            missing_fragments.append(nas)
+            errors.append(f"No fragment file for confirmed NAS '{nas}'")
+
+    # 4. Annotation candidate files
     ann_root = out / "annotation-candidates"
     ann_files: list = []
     ann_candidate_count = 0
@@ -130,6 +141,10 @@ def run_validate(tradition: str, console: Console) -> list[str]:
 
     table.add_row("Confirmed NAS entries", str(len(confirmed_nas)))
     table.add_row("Fragment files checked", str(len(frag_files)))
+    table.add_row(
+        "Missing fragment coverage",
+        f"[red]{len(missing_fragments)}[/red]" if missing_fragments else "[green]0[/green]",
+    )
     table.add_row("Annotation files checked", str(len(ann_files)))
     table.add_row("Unreviewed candidates", str(total_candidates))
     table.add_row("Errors", f"[red]{len(errors)}[/red]" if errors else "[green]0[/green]")

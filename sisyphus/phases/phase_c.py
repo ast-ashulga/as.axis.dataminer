@@ -16,9 +16,9 @@ from rich.console import Console
 from sisyphus import llm
 
 from sisyphus.io.workspace import (
-    fragments_dir,
     load_all_passage_texts,
     nas_confirmed_path,
+    nas_to_fragment_path,
     pipeline_errors_path,
 )
 from sisyphus.io.yaml_io import read_yaml, write_yaml
@@ -108,23 +108,23 @@ def run_generate_layer0(
         # Load all segmented passage texts (deterministic; labelled by translation_id)
         passage_texts = load_all_passage_texts(division, episode)
 
-        frag_path = fragments_dir(tradition, division) / f"{episode}.yaml"
+        # One NAS = one file (bijective). Idempotency is per (NAS, locale).
+        frag_path = nas_to_fragment_path(tradition, nas)
         existing_content: list[dict] = []
-        existing_frag_data: dict = {}
 
         if frag_path.exists():
             existing_frag_data = read_yaml(frag_path)
             existing_content = existing_frag_data.get("content", [])
 
+        existing_locales = {
+            c.get("locale")
+            for c in existing_content
+            if c.get("layer") == "surface" and c.get("status") in ("candidate", "confirmed")
+        }
+
         for locale in locales:
-            # Idempotency: skip if a surface summary for this locale already exists as candidate+
-            already_exists = any(
-                c.get("layer") == "surface"
-                and c.get("locale") == locale
-                and c.get("status") in ("candidate", "confirmed")
-                for c in existing_content
-            )
-            if already_exists:
+            # Idempotency: a surface record for this (NAS, locale) is already in the file.
+            if locale in existing_locales:
                 console.print(f"  [dim]Skip (exists):[/dim] {nas} [{locale}]")
                 continue
 
@@ -209,8 +209,6 @@ def run_generate_layer0(
             frag_path=frag_path,
             nas=nas,
             tradition=tradition,
-            division=division,
-            episode=episode,
             entry=entry,
             content=existing_content,
         )
@@ -316,8 +314,6 @@ def _upsert_fragment_file(
     frag_path: Path,
     nas: str,
     tradition: str,
-    division: str,
-    episode: str,
     entry: dict,
     content: list[dict],
 ) -> None:
@@ -327,21 +323,7 @@ def _upsert_fragment_file(
     except Exception:
         ms = None
 
-    # Preserve the address of an existing fragment. Several confirmed entries
-    # (an episode and its sub-episodes) can map to the same {division}/{episode}
-    # file; without this, each call would overwrite fragment.nas with the
-    # last-processed entry's address (last-writer-wins), silently re-tagging the
-    # episode fragment to an arbitrary sub-episode. Once a fragment exists, its
-    # address is stable — re-running Phase C never re-tags it.
     parent_nas = entry.get("parent_nas")
-    if frag_path.exists():
-        try:
-            existing_frag = read_yaml(frag_path).get("fragment", {})
-            if existing_frag.get("nas"):
-                nas = existing_frag["nas"]
-                parent_nas = existing_frag.get("parent_nas", parent_nas)
-        except Exception:
-            pass
 
     frag = FragmentRecord(
         nas=nas,

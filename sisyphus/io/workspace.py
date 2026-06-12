@@ -19,6 +19,16 @@ def fragments_dir(tradition: str, division: str) -> Path:
     return output_dir(tradition) / "fragments" / division
 
 
+def nas_to_fragment_path(tradition: str, nas: str) -> Path:
+    """Return the fragment file path for a NAS address (bijective: one NAS = one file).
+
+    nms://tradition/division/episode      → fragments/division/episode.yaml
+    nms://tradition/division/episode/sub  → fragments/division/episode/sub.yaml
+    """
+    parts = nas.split("/")[3:]  # strip "nms:", "", "tradition"
+    return output_dir(tradition) / "fragments" / Path(*parts[:-1]) / f"{parts[-1]}.yaml"
+
+
 def annotation_candidates_dir(tradition: str, division: str) -> Path:
     return output_dir(tradition) / "annotation-candidates" / division
 

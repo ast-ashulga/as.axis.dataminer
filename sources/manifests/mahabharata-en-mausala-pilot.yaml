@@ -1,0 +1,22 @@
+# EN PILOT witness — Mausala Parva (Book 16) only, for the smoke-test run.
+# A single short parva that exercises the full A–E pipeline + both gates cheaply.
+# Cleaned from the Ganguli PDF (sacred-texts/holybooks navigation chrome stripped,
+# anchored at the parva incipit). Run:
+#   sisyphus ingest sources/mahabharata/witness/mahabharata-en-mausala-pilot.txt \
+#     --manifest sources/manifests/mahabharata-en-mausala-pilot.yaml
+
+tradition: mahabharata
+locale: en
+translation_id: ganguli-1883
+source_type: txt
+role: primary
+scope: pilot                # Book 16 (mausala-parva) ONLY — not the full epic
+source_file: sources/mahabharata/witness/mahabharata-en-mausala-pilot.txt
+copyright_status: public-domain
+living_tradition: true
+public_release: false
+notes: >
+  Pilot smoke-test slice: Mausala Parva (destruction of the Yadavas, Krishna's death).
+  Full EN Ganguli + RU primary witnesses remain available for the real run.
+  NAS addresses will land under nms://mahabharata/mausala-parva/…
+_sisyphus_version: "0.1"

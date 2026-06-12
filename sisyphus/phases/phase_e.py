@@ -16,7 +16,7 @@ import openai
 from rich.console import Console
 
 from sisyphus.flags import get_flag
-from sisyphus.io.workspace import embeddings_dir, fragments_dir, nas_confirmed_path
+from sisyphus.io.workspace import embeddings_dir, nas_confirmed_path, nas_to_fragment_path
 from sisyphus.io.yaml_io import read_yaml, write_json, read_json
 from sisyphus.schema import EmbeddingRecord, Layer, Status
 
@@ -70,7 +70,7 @@ def run_embed(
         if not division or not episode:
             continue
 
-        frag_path = fragments_dir(tradition, division) / f"{episode}.yaml"
+        frag_path = nas_to_fragment_path(tradition, nas)
         if not frag_path.exists():
             continue
 
