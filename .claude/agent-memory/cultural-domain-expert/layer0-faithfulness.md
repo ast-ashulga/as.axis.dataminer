@@ -16,3 +16,12 @@ A Layer 0 surface summary must describe what **the specific source witness's seg
 ## Witness ≠ tradition content
 
 Different witnesses of one epic attest different text — lacunae, abridgements, variant lines. That transmission difference is scholarly signal to preserve, not smooth over. A summary should never "fill in" from a richer witness what the witness-of-record omits. See [[witness-collision]] for the structural namespace problem this exposed.
+
+## Phase-D annotation evidence: external critical editions are not a grounding anchor (2026-06 Gilgamesh ruling)
+
+Same faithfulness principle applies to Phase D annotation `evidence_citations`, not just Layer 0. Gilgamesh re-run: 449 annotations; 132 cited ONLY "George 2003, SB {tablet} {line}" with no Thompson (in-pipeline witness) passage text. **Ruling:**
+- Citing a non-pipeline critical edition (George 2003, copyrighted) as SOLE evidence = ungrounded. George's SB *line-numbering* is the legitimate locator standard (West-for-Homer), but the *numbering* ≠ a witness anchor, and importing George's *content/reconstruction* also breaches the public-domain-only constraint. The discriminating test: does the annotation cite Thompson passage text that actually supports the claim? If only George supports it → reject.
+- The 55 George-only annotations on **lacuna fragments** (e.g. "SB VI 82–180 reconstructed Bull-of-Heaven arc", "SB VIII fragmentary Column V") are the SAME class as the tablet-iv dream-sequence bug — annotating reconstructed content onto passages the witness records as lost. **Reject outright.**
+- Disposition: confirm Thompson-anchored (spot-check none are lacuna); reject-from-confirmation + re-annotate-against-Thompson the George-only non-lacuna (content may be in Thompson, but cannot confirm the model read it); reject outright the George-only lacuna.
+
+**Policy (governs all traditions):** in-pipeline witness citation REQUIRED as primary evidence; external critical edition (George SB / West line no. / BORI) permitted ONLY as a parenthetical secondary pointer appended to a witness citation — never standalone, never as the content, never on a lacuna. This mirrors the Mahabharata phase-d fix (Ganguli SECTION required primary; BORI optional secondary, gated). The Iliad phase-d already scopes West to "scholarly commentary" (structurally stronger); Gilgamesh phase-d named George as top-level scholarly_authority with only a soft "not as a default" — that softness is what the model exploited. Harden to an enforced grounding rule.

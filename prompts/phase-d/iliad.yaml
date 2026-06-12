@@ -17,6 +17,12 @@ tradition_preamble: >
       (West 1998, Kirk 1985–1993, Richardson 1993, Janko 1992, Edwards 1991,
       Macleod 1982). Label these as "West argues..." or "Kirk observes..." — never
       present scholarly commentary as primary textual fact.
+      A standard-edition line number (West 1998) may be APPENDED to a "Murray 1924,
+      {book}.{line}" citation as a parenthetical locator, but must never REPLACE it:
+      the in-pipeline witness (Murray 1924) is the required primary textual evidence,
+      and an annotation with no Murray anchor is rejected by the grounding validator.
+      Where the text at a passage is athetised or uncertain, hedge per epistemic_framing;
+      do not annotate reconstructed or athetised content as if witnessed.
   Do not source annotation evidence from any copyrighted translation edition.
 
 propp_fit_note: >

@@ -131,7 +131,9 @@ def run_segment(
 
     client = llm.make_client(provider)
     try:
-        segments = _call_segmentation_agent(client, full_text, rules, tradition, model, prompt_config)
+        segments = _call_segmentation_agent(
+            client, full_text, rules, tradition, model, prompt_config, confirmed_nas
+        )
     except Exception as exc:
         console.print(f"[red]Segmentation agent failed: {exc}[/red]")
         console.print("[yellow]Writing empty proposals file — re-run when API is available.[/yellow]")
@@ -232,6 +234,14 @@ def run_segment(
     )
 
 
+# Max source chars fed to one segmentation call. The agent echoes each segment's
+# full passage_text back in its JSON, so this bounds OUTPUT size (max_tokens=80000),
+# not just input context. ~200K chars ≈ ~50K output tokens — safe headroom, and
+# covers a full single-witness epic like Gilgamesh (~128K) in one pass. Texts larger
+# than this (e.g. the full Iliad) still need deliberate division-level chunking.
+_MAX_SEGMENT_CHARS = 200_000
+
+
 def _call_segmentation_agent(
     client: anthropic.Anthropic,
     text: str,
@@ -239,7 +249,9 @@ def _call_segmentation_agent(
     tradition: str,
     model: str,
     prompt_config: dict,
+    confirmed_nas: set[str] | None = None,
 ) -> list[dict]:
+    confirmed_nas = confirmed_nas or set()
 
     system = SEGMENTATION_SYSTEM_PROMPT
     tradition_preamble = prompt_config.get("tradition_preamble", "")
@@ -278,7 +290,7 @@ Lacuna markers: {', '.join(rules.get('lacuna_markers', ['...', '[broken]']))}
 {confirmed_slug_hint}
 Source text (segment this into episode-level NAS-addressed passages):
 ---
-{text[:60000]}
+{text[:_MAX_SEGMENT_CHARS]}
 ---
 
 Return a JSON array of segment objects as specified in your instructions.

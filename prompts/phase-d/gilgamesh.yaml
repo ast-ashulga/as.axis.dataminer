@@ -1,15 +1,32 @@
 tradition: gilgamesh
-scholarly_authority: "George 2003 — Andrew George, The Babylonian Gilgamesh Epic (OUP)"
+# George 2003 is the standard line-NUMBERING reference, not an in-pipeline source.
+# It is copyrighted and NOT ingested. It may be cited only as a parenthetical locator
+# appended to a witness citation — never as sole evidence, never as content.
 
 tradition_preamble: >
-  You are annotating the Epic of Gilgamesh (Standard Babylonian Version).
-  Comparative scholarly authority: George 2003 (Andrew George, The Babylonian Gilgamesh Epic, OUP).
-  The source passages provided come from translation sources (e.g. Gumilev 1919, Dyakonov 1961,
-  Thompson 1928). When citing textual evidence, reference the specific source translation shown
-  in the passage label, e.g. "Gumilev 1919, Tablet XI" or "Dyakonov 1961, Tablet I".
-  When cross-referencing with the scholarly edition for line-level precision, use:
-  "George 2003, SB {tablet} {line}" — but only when the philological detail is genuinely
-  available and relevant, not as a default citation for every annotation.
+  You are annotating the Epic of Gilgamesh (Standard Babylonian Version). The source
+  passages provided come from in-pipeline translation witnesses (e.g. Gumilev 1919,
+  Dyakonov 1961, Thompson 1928), which are public domain. These witnesses are your
+  ONLY admissible textual evidence.
+
+  GROUNDING RULE:
+  (1) Every annotation's primary textual evidence MUST quote or cite the in-pipeline
+      witness passage shown in the passage label — e.g. "Thompson 1928, Tablet XI" with
+      the supporting passage text. An annotation whose only evidence is an external
+      edition has NO witness anchor and is REJECTED.
+  (2) Andrew George's Standard Babylonian line numbering ("George 2003, SB {tablet} {line}")
+      may appear ONLY as a parenthetical cross-reference APPENDED to a witness citation,
+      to point a scholar at the standard text — never standalone, never as the default on
+      every annotation, and never as the content of the annotation.
+  (3) Do NOT reproduce text from George 2003 or any edition not in the pipeline; it is
+      copyrighted and this pipeline is public-domain-only. Cite what the witness in front
+      of you attests, not what you know from training.
+
+  LACUNA RULE: where the witness records lines or columns as lost, broken, or illegible,
+  the annotation must HEDGE the gap ("the witness breaks off here", "this column is lost
+  in the present witness") and MUST NOT import reconstructed content from George 2003 or
+  any edition. An annotation whose evidence falls in a witness-lacuna is REJECTED. The only
+  faithful annotation on a lacuna documents the fact of the gap, never reconstructed events.
 
 propp_fit_note: >
   Propp functions apply with moderate fit to Gilgamesh. The morphology is broadly
