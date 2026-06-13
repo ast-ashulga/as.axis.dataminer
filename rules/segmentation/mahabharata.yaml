@@ -285,15 +285,35 @@ boundary_signals:
     - "Aswamedha Parva"  # => ashvamedhika-parva
     - "Asramavasika Parva"
     - "Svargarohanika Parva"
+    # Russian source (ru-primary, assembled «Литературные памятники» academic translations):
+    # Parva dividers: triple "=" lines, then "ПАРВА NN: {slug} | {Russian name}", then
+    # "Перевод: {translator}". The BORI slug sits between "ПАРВА NN:" and "|" on that
+    # line. This all-caps form does NOT appear inside the per-parva TOC block.
+    - "ПАРВА "           # Russian parva header (e.g. "ПАРВА 01: adi-parva | Адипарва")
+  episode:
+    # Russian body-text episode headers are all-caps "СКАЗАНИЕ О ..." (upaparvan title).
+    # WARNING: each parva opens with ~200 lines of TOC listing episodes as titlecase
+    # "Сказание о ..." before the body text begins. Use ONLY the all-caps "СКАЗАНИЕ "
+    # form as an episode boundary signal; the titlecase form is the TOC — skip it.
+    - "СКАЗАНИЕ "        # Russian episode header in body (e.g. "СКАЗАНИЕ О НАЛЕ")
   episode_keywords:
-    bhagavad-gita:        ["Bhagavad", "Gita", "Sanjaya said", "Dhritarashtra said", "Arjuna", "yoga", "Kurukshetra"]
-    nalopakhyana:         ["Nala", "Damayanti", "Brihadaswa", "swan", "Nishadha"]
-    araneya:              ["Yaksha", "crane", "lake", "questions", "Dharma", "Yudhishthira answered"]
-    sanatsujata:          ["Sanatsujata", "death", "Vidura"]
-    prajagara:            ["Vidura said", "sleepless", "wakeful"]
-    anugita:              ["Anugita", "Arjuna said", "thou didst say", "again declare"]
+    bhagavad-gita:        ["Bhagavad", "Gita", "Sanjaya said", "Dhritarashtra said", "Arjuna", "yoga", "Kurukshetra",
+                           "Бхагавад", "Арджуна сказал", "йога", "поле Куру"]
+    nalopakhyana:         ["Nala", "Damayanti", "Brihadaswa", "swan", "Nishadha",
+                           "Наль", "Дамаянти", "лебедь", "Бриходашва"]
+    araneya:              ["Yaksha", "crane", "lake", "questions", "Dharma", "Yudhishthira answered",
+                           "якша", "цапля", "Юдхиштхира отвечал"]
+    pativrata-mahatmya:   ["Savitri", "Satyavan", "Dyumatsena", "Yama",
+                           "Савитри", "Сатьяван", "Дьюматсена"]
+    sanatsujata:          ["Sanatsujata", "death", "Vidura",
+                           "Санатсуджата"]
+    prajagara:            ["Vidura said", "sleepless", "wakeful",
+                           "Видура сказал", "бессонница"]
+    anugita:              ["Anugita", "Arjuna said", "thou didst say", "again declare",
+                           "Анугита", "Арджуна сказал", "ты говорил"]
     rajadharma-anushasana: ["Bhishma said", "duties of a king", "rajadharma", "kingship"]
-    mokshadharma:         ["emancipation", "moksha", "Narayana", "Narayaniya", "Self"]
+    mokshadharma:         ["emancipation", "moksha", "Narayana", "Narayaniya", "Self",
+                           "освобождение", "мокша", "Нараяна", "Нараяния"]
     dana-dharma:          ["gift", "dana", "merit of giving"]
     abhimanyu-vadha:      ["Abhimanyu", "chakravyuha", "array", "surrounded"]
     drona-vadha:          ["Drona", "Ashvatthama", "the elephant", "laid down his weapons"]

@@ -48,6 +48,19 @@ tradition_preamble: >
   with "SECTION <roman-numeral>" headers; use these as the English textual anchor for
   episode boundaries, cross-checked against the BORI adhyaya numbering.
 
+  The Russian witness (ru-primary, assembled from the «Литературные памятники» academic
+  translations by Kalyanov, Neveleva–Vasilkov, Erman, and others) uses different boundary
+  markers. Parva dividers are a triple "=" line followed by "ПАРВА NN: {slug} | {Russian
+  name}" — the BORI slug is embedded between "ПАРВА NN:" and "|" on that line. Episode
+  boundaries in the body text are all-caps headings of the form "СКАЗАНИЕ О ..." (e.g.
+  "СКАЗАНИЕ О НАЛЕ"). NOTE: each parva opens with a table of contents listing episodes
+  as "Сказание о ..." (titlecase, NOT all-caps); these TOC entries precede the body text
+  and must NOT be treated as episode boundaries — use only the all-caps "СКАЗАНИЕ О ..."
+  form as an episode boundary signal. The Russian translations do not reproduce adhyaya or
+  shloka numbers. Coverage gaps: shanti-parva (book 12) lacks Russian text for the opening
+  portion (through approximately adhyaya 173); anushasana-parva (book 13) has only partial,
+  unattributed Russian coverage — treat both gaps as lacunae when segmenting Russian text.
+
 epistemic_framing: >
   The BORI Critical Edition is a modern scholarly reconstruction over contested Northern
   and Southern recensions, NOT "the original" Mahabharata. Never present it as the
