@@ -2,28 +2,33 @@
 tradition: iliad
 
 tradition_preamble: >
-  You are annotating the Iliad (Homer). Philological authority is M.L. West's critical
-  edition (Teubner, 1998–2000), which is the current scholarly standard for textual
-  decisions and line numbering. The text in this pipeline is A.T. Murray's 1924
-  translation (public domain); cite line-level textual evidence as "Murray 1924,
-  {book}.{line}" — e.g. "Murray 1924, 1.1" for Book I, line 1. Murray's markdown
-  source uses bracketed line numbers ([1], [8], …) that correspond to standard
-  scholarly Homeric line references. Use these numbers for citation, not page numbers.
+  You are annotating the Iliad (Homer). The source passages provided come from an
+  in-pipeline translation witness identified in each passage label — e.g. Gnedich 1829
+  (Russian, public domain) or Murray 1924 (English, public domain). That witness, and
+  only that witness, is your admissible textual evidence.
 
-  Distinguish two categories of evidence in every annotation:
-  (1) Textual evidence: what the text of the Iliad explicitly states. Cite with
-      "Murray 1924, {book}.{line}".
-  (2) Scholarly commentary: interpretive claims drawn from secondary literature
-      (West 1998, Kirk 1985–1993, Richardson 1993, Janko 1992, Edwards 1991,
-      Macleod 1982). Label these as "West argues..." or "Kirk observes..." — never
-      present scholarly commentary as primary textual fact.
-      A standard-edition line number (West 1998) may be APPENDED to a "Murray 1924,
-      {book}.{line}" citation as a parenthetical locator, but must never REPLACE it:
-      the in-pipeline witness (Murray 1924) is the required primary textual evidence,
-      and an annotation with no Murray anchor is rejected by the grounding validator.
-      Where the text at a passage is athetised or uncertain, hedge per epistemic_framing;
-      do not annotate reconstructed or athetised content as if witnessed.
-  Do not source annotation evidence from any copyrighted translation edition.
+  GROUNDING RULE (witness-anchored):
+  (1) Every annotation's primary textual evidence MUST quote or cite the in-pipeline
+      witness passage shown in the passage label — quote its actual words in the
+      witness's own language, and cite it as "<Witness> <book>.<line>", e.g.
+      "Gnedich 1829, 1.1" or "Murray 1924, 1.1". An annotation whose only evidence is
+      an edition NOT shown in the pipeline has no witness anchor and is REJECTED.
+  (2) Multiple witness translations may be provided for the same passage (e.g.
+      murray-1924 and gnedich-1829, each labelled). Cite whichever provided passage you
+      quote and attribute it correctly. NEVER reproduce text from memory of an edition
+      that was not provided in the passage labels — cite what the witnesses in front of
+      you attest, not what you know from training.
+  (3) M.L. West's critical edition (Teubner, 1998–2000) is the standard line-NUMBERING
+      reference. A West line number may be APPENDED to the witness citation as a
+      parenthetical locator (e.g. "Gnedich 1829, 1.1 (cf. West Il. 1.1)") — never
+      standalone, never as the content of the annotation.
+  (4) Scholarly commentary (West, Kirk 1985–1993, Richardson 1993, Janko 1992,
+      Edwards 1991, Macleod 1982) is secondary: label it "West argues…"/"Kirk
+      observes…", never as primary textual fact.
+
+  ATHETISED/UNCERTAIN: where the witness marks lines as athetised or spurious, or the
+  text is uncertain, hedge per epistemic_framing; do not annotate reconstructed or
+  athetised content as if witnessed.
 
 propp_fit_note: >
   Propp functions apply with POOR-TO-MODERATE fit to the Iliad. Propp derived his
@@ -137,9 +142,12 @@ tmi_fit_note: >
   A-section divine intervention (gods intervening in human affairs, specifically
   in battle and on behalf of favoured warriors). The Iliad's divine machinery —
   gods fighting alongside mortals, deflecting spears, carrying wounded heroes off
-  the field — is the central narrative mechanism of the poem. At minimum, tag these
-  passages with the broadest applicable A-section code; note in evidence_citations
-  the specific book and line. The Venetus A scholia document ancient readers'
+  the field — is the central narrative mechanism of the poem. Tag these passages
+  with a SPECIFIC, well-formed A-section motif code (e.g. A185 "deity cares for
+  mortal", A189.x, A485 "god of war") — every code must be a real TMI number, never
+  a band placeholder like "A-section". If no specific A-code applies, note the gap in
+  methodology_fit_note and omit the annotation rather than emitting a malformed code.
+  Note the specific book and line in evidence_citations. The Venetus A scholia document ancient readers'
   awareness of the theological problem these scenes raised (Aristarchus's notes on
   the Theomachies, Books XX–XXI); if annotating a Theomachy passage, note this
   ancient editorial sensitivity.
