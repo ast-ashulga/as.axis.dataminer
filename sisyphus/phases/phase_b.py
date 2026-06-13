@@ -126,16 +126,38 @@ def run_segment(
         for p in existing_data.get("proposals", []):
             existing_proposals[p.get("proposed_nas", "")] = p
 
-    # Call AI agent to segment the text
-    console.print(f"  Calling {model} to segment text ({len(full_text)} chars)…")
+    # Call AI agent to segment the text. Long sources are chunked into overlapping
+    # windows and segmented in sequence; each call sees the NAS proposed so far so the
+    # model continues numbering and does not re-segment overlapping material.
+    chunks = _chunk_text(full_text)
+    suffix = f", {len(chunks)} chunks" if len(chunks) > 1 else ""
+    console.print(f"  Calling {model} to segment text ({len(full_text)} chars{suffix})…")
 
     client = llm.make_client(provider)
-    try:
-        segments = _call_segmentation_agent(client, full_text, rules, tradition, model, prompt_config)
-    except Exception as exc:
-        console.print(f"[red]Segmentation agent failed: {exc}[/red]")
-        console.print("[yellow]Writing empty proposals file — re-run when API is available.[/yellow]")
-        segments = []
+    segments: list[dict] = []
+    proposed_seen: set[str] = set()
+    hint_nas = set(confirmed_nas)  # confirmed NAS + everything proposed in earlier chunks
+    for i, chunk in enumerate(chunks):
+        try:
+            chunk_segs = _call_segmentation_agent(
+                client, chunk, rules, tradition, model, prompt_config,
+                hint_nas, chunk_index=i, chunk_total=len(chunks),
+            )
+        except Exception as exc:
+            console.print(
+                f"[red]Segmentation chunk {i + 1}/{len(chunks)} failed: {exc}[/red]"
+            )
+            chunk_segs = []
+        for s in chunk_segs:
+            nas = s.get("proposed_nas", "")
+            if nas and nas in proposed_seen:
+                continue  # already segmented in an earlier (overlapping) chunk
+            if nas:
+                proposed_seen.add(nas)
+                hint_nas.add(nas)
+            segments.append(s)
+    if not segments:
+        console.print("[yellow]No segments produced — writing empty proposals file.[/yellow]")
 
     # Build proposals, checking collisions and idempotency
     proposals: list[NASProposal] = []
@@ -232,6 +254,40 @@ def run_segment(
     )
 
 
+# Per-call source budget. The agent echoes each segment's full passage_text back in
+# its JSON, so this bounds OUTPUT size (max_tokens=80000), not just input context.
+# Long sources are split into overlapping windows segmented in sequence (see
+# _chunk_text + the run_segment loop) so the whole text is covered — e.g. the full
+# Iliad (~980K chars) becomes ~8 windows; Gilgamesh (~128K) stays a single window.
+_CHUNK_CHARS = 140_000        # ~35K tokens in, ~35K echoed out — safe under max_tokens
+_CHUNK_OVERLAP = 10_000       # tail re-shown to the next window so seam episodes stay whole
+_MAX_SEGMENT_CHARS = 200_000  # hard per-call ceiling (chunk size stays well under this)
+
+
+def _chunk_text(
+    text: str, budget: int = _CHUNK_CHARS, overlap: int = _CHUNK_OVERLAP
+) -> list[str]:
+    """Split text into sequential windows <= budget chars, breaking at paragraph
+    boundaries, carrying `overlap` chars into the next window so an episode that
+    straddles a seam is fully visible in one of the two windows. Short texts return
+    a single window (no behavior change)."""
+    if len(text) <= budget:
+        return [text]
+    chunks: list[str] = []
+    start, n = 0, len(text)
+    while start < n:
+        end = min(start + budget, n)
+        if end < n:
+            nl = text.rfind("\n\n", start + budget - 20_000, end)
+            if nl > start:
+                end = nl
+        chunks.append(text[start:end])
+        if end >= n:
+            break
+        start = max(end - overlap, start + 1)
+    return chunks
+
+
 def _call_segmentation_agent(
     client: anthropic.Anthropic,
     text: str,
@@ -239,7 +295,11 @@ def _call_segmentation_agent(
     tradition: str,
     model: str,
     prompt_config: dict,
+    confirmed_nas: set[str] | None = None,
+    chunk_index: int = 0,
+    chunk_total: int = 1,
 ) -> list[dict]:
+    confirmed_nas = confirmed_nas or set()
 
     system = SEGMENTATION_SYSTEM_PROMPT
     tradition_preamble = prompt_config.get("tradition_preamble", "")
@@ -255,16 +315,26 @@ def _call_segmentation_agent(
     )
     nas_prefix = rules.get("nas_prefix", f"nms://{tradition}")
 
-    # Include confirmed NAS so re-runs reuse the same slugs rather than
-    # proposing new ones the text-file paths would then not match.
+    # Pass the NAS proposed/confirmed so far so the model reuses exact slugs and,
+    # across chunks, does NOT re-segment passages already covered (segment only new).
     confirmed_slug_hint = ""
     if confirmed_nas:
         slugs = sorted(confirmed_nas)
         confirmed_slug_hint = (
-            "\nAlready-confirmed NAS addresses — reuse these exact slugs for any "
-            "segment covering the same passage:\n"
+            "\nNAS addresses already proposed or confirmed for passages covered so far. "
+            "REUSE the exact slug if you segment the same passage, and do NOT emit a new "
+            "segment for any passage these already cover — segment only NEW material:\n"
             + "\n".join(f"  {s}" for s in slugs)
             + "\n"
+        )
+
+    chunk_note = ""
+    if chunk_total > 1:
+        chunk_note = (
+            f"\nNOTE: this is chunk {chunk_index + 1} of {chunk_total} of a long source. "
+            "It overlaps the adjacent chunks, so the text may begin and/or end mid-episode. "
+            "Segment only complete episodes visible here; skip any passage already covered "
+            "by the NAS list above.\n"
         )
 
     user_message = f"""Tradition: {tradition}
@@ -275,10 +345,10 @@ Divisions and episodes:
 {divisions_yaml}
 
 Lacuna markers: {', '.join(rules.get('lacuna_markers', ['...', '[broken]']))}
-{confirmed_slug_hint}
+{confirmed_slug_hint}{chunk_note}
 Source text (segment this into episode-level NAS-addressed passages):
 ---
-{text[:60000]}
+{text[:_MAX_SEGMENT_CHARS]}
 ---
 
 Return a JSON array of segment objects as specified in your instructions.
@@ -306,4 +376,14 @@ Return a JSON array of segment objects as specified in your instructions.
         raw = re.sub(r"^```[a-z]*\n?", "", raw)
         raw = re.sub(r"\n?```$", "", raw)
 
-    return json.loads(raw)
+    # Parse the first complete JSON array, tolerating any prose the model appends
+    # after it (plain json.loads raises "Extra data" on trailing content).
+    start = raw.find("[")
+    if start == -1:
+        raise ValueError(f"No JSON array in segmentation response: {raw[:200]!r}")
+    try:
+        obj, _ = json.JSONDecoder().raw_decode(raw, start)
+        return obj
+    except json.JSONDecodeError:
+        end = raw.rfind("]")
+        return json.loads(raw[start : end + 1])
