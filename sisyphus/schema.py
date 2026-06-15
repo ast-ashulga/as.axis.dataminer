@@ -575,3 +575,54 @@ class BakhtinProfilesFile(BaseModel):
     _sisyphus_version: ClassVar[str] = "0.1"
     tradition: str
     entries: dict[str, BakhtinProfile] = Field(default_factory=dict)
+
+
+# ---------------------------------------------------------------------------
+# Constellation candidates (Phase constellate — cross-tradition Meridian artifacts)
+# ---------------------------------------------------------------------------
+
+
+class ConstellationMember(BaseModel):
+    """One fragment participating in a constellation candidate."""
+
+    nas: NASAddress
+    tradition: str
+
+
+class ConstellationEdge(BaseModel):
+    """Pairwise similarity edge between two fragments from different traditions."""
+
+    member_a: NASAddress
+    member_b: NASAddress
+    tradition_a: str
+    tradition_b: str
+    tmi_jaccard_leaf: float = Field(ge=0.0, le=1.0)
+    tmi_jaccard_branch: float = Field(ge=0.0, le=1.0)
+    tmi_jaccard_root: float = Field(ge=0.0, le=1.0)
+    propp_overlap: float = Field(ge=0.0, le=1.0)
+    chronotope_match: bool
+    qualifying_dimensions: int = Field(ge=0, le=3)
+
+
+class ConstellationCandidate(BaseModel):
+    """N-way structural convergence across ≥2 traditions. Status is always candidate —
+    scholar confirmation happens in the Mnemosyne app, not in Sisyphus."""
+
+    candidate_id: str              # C-NNNN, deterministic across re-runs
+    status: Literal["candidate"] = "candidate"
+    members: list[ConstellationMember]
+    tradition_count: int
+    edges: list[ConstellationEdge]
+    dimensional_agreement: Literal["very_high", "high", "moderate"]
+    primary_dimension: str         # dimension with highest mean score across edges
+    methodology_fit_note: str | None = None
+
+
+class ConstellationCandidatesFile(BaseModel):
+    """output/derived/constellation-candidates.yaml — cross-tradition, not per-tradition."""
+
+    _sisyphus_version: ClassVar[str] = "0.1"
+    traditions_included: list[str]
+    total_fragments_compared: int
+    total_edges_evaluated: int
+    candidates: list[ConstellationCandidate] = Field(default_factory=list)

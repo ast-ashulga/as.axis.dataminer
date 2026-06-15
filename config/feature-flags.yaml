@@ -13,3 +13,8 @@ campbell_track: false
 # Derive phase: structured Meridian export artifacts from confirmed annotations
 # Deferred until output format is stable and validated against all three traditions
 derived_exports: false
+
+# Constellate phase: cross-tradition constellation candidate generation
+# Requires derived_exports to have been run for each tradition first.
+# Same toggle pattern as derived_exports: set true, run, revert; never commit true.
+constellation_candidates: true

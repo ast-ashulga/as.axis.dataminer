@@ -82,6 +82,15 @@ def parallels_dir(tradition: str) -> Path:
     return output_dir(tradition) / "parallels"
 
 
+def shared_derived_dir() -> Path:
+    """Cross-tradition derived artifacts (constellation candidates, etc.)."""
+    return _ROOT / "output" / "derived"
+
+
+def constellation_candidates_path() -> Path:
+    return shared_derived_dir() / "constellation-candidates.yaml"
+
+
 def pipeline_reports_dir(tradition: str) -> Path:
     return output_dir(tradition) / "pipeline-reports"
 

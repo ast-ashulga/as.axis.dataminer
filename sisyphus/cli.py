@@ -209,6 +209,67 @@ def derive(
 
 
 # ---------------------------------------------------------------------------
+# constellate
+# ---------------------------------------------------------------------------
+
+
+@app.command()
+def constellate(
+    traditions: Annotated[
+        str,
+        typer.Option(
+            help="Comma-separated tradition IDs to compare (default: auto-discover all "
+            "traditions with derived artifacts)."
+        ),
+    ] = "",
+    tmi_leaf_threshold: Annotated[
+        float,
+        typer.Option(help="Minimum TMI leaf-level Jaccard to count the TMI dimension as qualifying."),
+    ] = 0.1,
+    tmi_branch_threshold: Annotated[
+        float,
+        typer.Option(help="Minimum TMI branch-level Jaccard to count the TMI dimension as qualifying."),
+    ] = 0.25,
+    propp_threshold: Annotated[
+        float,
+        typer.Option(help="Minimum Propp overlap score (0.0 = any shared code qualifies)."),
+    ] = 0.0,
+    min_dimensions: Annotated[
+        int,
+        typer.Option(help="Minimum qualifying dimensions (out of 3) for a pair to form an edge."),
+    ] = 3,
+    tmi_stop_frequency: Annotated[
+        float,
+        typer.Option(
+            help="TMI codes present in more than this fraction of all fragments are excluded "
+            "from Jaccard computation (they are too ubiquitous to discriminate traditions). "
+            "Default 0.3 filters codes appearing in >30% of the corpus."
+        ),
+    ] = 0.3,
+) -> None:
+    """Generate cross-tradition constellation candidates from derived artifacts.
+
+    Reads TMI sets, Propp sequences, and Bakhtin profiles from all traditions'
+    derived directories, compares every cross-tradition fragment pair, and writes
+    output/derived/constellation-candidates.yaml.
+
+    Requires feature flag 'constellation_candidates' to be true.
+    Run 'sisyphus derive <tradition>' for each tradition first.
+    """
+    from sisyphus.phases.constellate import run_constellate
+
+    run_constellate(
+        tradition_filter=traditions,
+        tmi_leaf_threshold=tmi_leaf_threshold,
+        tmi_branch_threshold=tmi_branch_threshold,
+        propp_threshold=propp_threshold,
+        min_dimensions=min_dimensions,
+        tmi_stop_frequency=tmi_stop_frequency,
+        console=console,
+    )
+
+
+# ---------------------------------------------------------------------------
 # review (scholar review queue)
 # ---------------------------------------------------------------------------
 

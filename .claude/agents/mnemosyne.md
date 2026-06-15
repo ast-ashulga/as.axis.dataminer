@@ -285,6 +285,43 @@ if `false` it prints a skip message and exits 0 without writing files. To produc
 artifacts, temporarily set `derived_exports: true`, run `sisyphus derive <tradition>`,
 then **revert the flag to `false`** immediately after. Never commit the flag as `true`.
 
+### Phase constellate — Cross-Tradition Constellation Candidates
+
+Run **once after all traditions have been derived** (not per-tradition — this is a
+cross-tradition operation):
+
+```bash
+sisyphus constellate
+```
+
+No AI calls — purely deterministic from the five derived artifacts in each tradition's
+`output/<tradition>/derived/` directory. Reads TMI sets, Propp sequences, and Bakhtin
+profiles, compares every cross-tradition fragment pair across three dimensions (TMI
+Jaccard, Propp overlap, Bakhtin chronotope), and writes a single shared output file:
+`output/derived/constellation-candidates.yaml`.
+
+Re-running is always safe (idempotent — overwrites the file).
+
+`constellation_candidates` flag **must remain `false`** in `config/feature-flags.yaml`.
+Same toggle pattern as `derived_exports`:
+
+```bash
+# Edit config/feature-flags.yaml: constellation_candidates: true
+sisyphus constellate
+# Edit config/feature-flags.yaml: constellation_candidates: false
+```
+
+Optional flags:
+- `--traditions gilgamesh,iliad,mahabharata` — override auto-discovery of traditions
+- `--tmi-leaf-threshold 0.1` — TMI exact-code overlap threshold (default 0.1)
+- `--tmi-branch-threshold 0.25` — TMI motif-family overlap threshold (default 0.25)
+- `--propp-threshold 0.0` — Propp overlap threshold (default 0.0 = any shared code)
+- `--min-dimensions 2` — minimum qualifying dimensions to form an edge (default 2)
+
+**Prerequisite check**: verify `output/*/derived/tmi-sets.yaml` exists for each
+tradition before running. If a tradition is missing derived artifacts, run
+`sisyphus derive <tradition>` first (with the `derived_exports` flag).
+
 ---
 
 ## Review Gate Protocol
@@ -500,6 +537,7 @@ These are non-negotiable constraints. Violating them produces an invalid export.
 | `campbell_track` = `false` | Never run `--tracks campbell`; never set this flag `true` |
 | Phase F = never | `parallel_detection_pipeline` is permanently deferred; do not run Phase F |
 | `derived_exports` flag handling | Temporarily set `true` to run derive, revert to `false` immediately after; never commit as `true` |
+| `constellation_candidates` flag handling | Same pattern: set `true`, run `sisyphus constellate`, revert to `false`; never commit as `true` |
 | Validate before export | Zero errors required; never export a failing validate run |
 
 ---
@@ -605,6 +643,11 @@ sisyphus embed iliad --locale en
 # Edit config/feature-flags.yaml: derived_exports: true
 sisyphus derive iliad
 # Edit config/feature-flags.yaml: derived_exports: false
+
+# Phase constellate (run once after ALL traditions are derived)
+# Edit config/feature-flags.yaml: constellation_candidates: true
+sisyphus constellate
+# Edit config/feature-flags.yaml: constellation_candidates: false
 
 # Final
 sisyphus validate iliad
