@@ -484,3 +484,94 @@ class EmbeddingRecord(BaseModel):
     dimension: int
     vector: list[float]
     content_hash: str  # sha256 of the body text, for idempotency
+
+
+# ---------------------------------------------------------------------------
+# Derived export models (Phase derive — Meridian structured artifacts)
+# ---------------------------------------------------------------------------
+
+
+class ProppSequenceEntry(BaseModel):
+    """Ordered sequence of confirmed Propp function codes for one division."""
+
+    division: str
+    episodes: list[str]
+    sequence: list[str]
+    episode_count: int
+    annotated_episode_count: int
+    gaps: list[str]
+
+
+class ProppSequencesFile(BaseModel):
+    """output/{tradition}/derived/propp-sequences.yaml"""
+
+    _sisyphus_version: ClassVar[str] = "0.1"
+    tradition: str
+    divisions: list[ProppSequenceEntry] = Field(default_factory=list)
+
+
+class ChronotopeSequenceEntry(BaseModel):
+    """Ordered sequence of dominant Bakhtin chronotope codes for one division."""
+
+    division: str
+    episodes: list[str]
+    sequence: list[str | None]
+    episode_count: int
+    annotated_episode_count: int
+
+
+class ChronotopeSequencesFile(BaseModel):
+    """output/{tradition}/derived/chronotope-sequences.yaml"""
+
+    _sisyphus_version: ClassVar[str] = "0.1"
+    tradition: str
+    divisions: list[ChronotopeSequenceEntry] = Field(default_factory=list)
+
+
+class TMISetsFile(BaseModel):
+    """output/{tradition}/derived/tmi-sets.yaml — confirmed TMI code set per fragment."""
+
+    _sisyphus_version: ClassVar[str] = "0.1"
+    tradition: str
+    entries: dict[str, list[str]] = Field(default_factory=dict)
+
+
+class TMIFrequencyVectorFile(BaseModel):
+    """output/{tradition}/derived/tmi-frequency-vector.yaml — per-tradition TMI frequency."""
+
+    _sisyphus_version: ClassVar[str] = "0.1"
+    tradition: str
+    total_fragments: int
+    total_annotated_fragments: int
+    vector: dict[str, int] = Field(default_factory=dict)
+
+
+class BakhtinProfile(BaseModel):
+    """Structured interpretive profile for one fragment derived from confirmed Bakhtin annotations.
+
+    Phase 0 finding: all Bakhtin codes in this pipeline are chronotope types
+    (e.g. BAKHTIN-DIVINE, BAKHTIN-THRESHOLD). Polyphony/carnivalesque/heteroglossia
+    are not derivable from the current code taxonomy — they remain None (Path B).
+    """
+
+    chronotope_type: str | None
+    polyphony: float | None
+    carnivalesque: float | None
+    heteroglossia: str | None
+    raw_codes: list[str]
+    source_annotation_count: int
+
+    @field_validator("polyphony", "carnivalesque", mode="before")
+    @classmethod
+    def validate_float_range(cls, v: float | None) -> float | None:
+        if v is not None and not (0.0 <= v <= 1.0):
+            raise ValueError("must be in range [0.0, 1.0]")
+        return v
+
+
+class BakhtinProfilesFile(BaseModel):
+    """output/{tradition}/derived/bakhtin-profiles.yaml"""
+
+    _sisyphus_version: ClassVar[str] = "0.1"
+    tradition: str
+    entries: dict[str, BakhtinProfile] = Field(default_factory=dict)

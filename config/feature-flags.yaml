@@ -9,3 +9,7 @@ layer_3_original: false
 
 # Campbell monomyth annotation track (unscoped; separate product decision required)
 campbell_track: false
+
+# Derive phase: structured Meridian export artifacts from confirmed annotations
+# Deferred until output format is stable and validated against all three traditions
+derived_exports: false

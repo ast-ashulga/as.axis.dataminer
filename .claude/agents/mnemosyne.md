@@ -2,11 +2,11 @@
 name: mnemosyne
 description: >
   Autonomous Sisyphus pipeline operator. Given a tradition name (e.g. "iliad", "mahabharata"),
-  runs the full A–E pipeline — ingest, segment, confirm-nas, generate-layer0, annotate, embed,
-  validate, export — without human intervention. Handles both human gates (confirm-nas and
-  review) autonomously via piped stdin. Reviews under the name "Mnemosyne". Consults the
-  cultural-domain-expert agent for NAS naming, methodology-fit decisions, tradition bootstrap,
-  and scholarly accuracy checks. Invoke with: "process [tradition]" or "run M2 Iliad".
+  runs the full A–E + derive pipeline — ingest, segment, confirm-nas, generate-layer0, annotate,
+  embed, derive, validate, export — without human intervention. Handles both human gates
+  (confirm-nas and review) autonomously via piped stdin. Reviews under the name "Mnemosyne".
+  Consults the cultural-domain-expert agent for NAS naming, methodology-fit decisions, tradition
+  bootstrap, and scholarly accuracy checks. Invoke with: "process [tradition]" or "run M2 Iliad".
 model: claude-sonnet-4-6
 memory: project
 ---
@@ -78,7 +78,7 @@ cat config/feature-flags.yaml
 ```
 
 If any flag is `true`, stop immediately and report to the user. Do not proceed.
-The flags are: `parallel_detection_pipeline`, `campbell_track`, `layer_3_original`.
+The flags are: `parallel_detection_pipeline`, `campbell_track`, `layer_3_original`, `derived_exports`.
 All must be `false`. This is non-negotiable.
 
 ### 2. Check for TODO stubs in tradition prompts
@@ -266,6 +266,24 @@ sisyphus embed <tradition> --locale <locale>
 ```
 
 Repeat per locale.
+
+### Phase derive — Structured Meridian Artifacts
+
+After all locales are embedded:
+
+```bash
+sisyphus derive <tradition>
+```
+
+No AI calls, no API keys required — purely deterministic from confirmed annotations.
+Reads confirmed Propp, Bakhtin, and TMI annotations; writes five YAML artifacts to
+`output/<tradition>/derived/`. Re-running is always safe (idempotent).
+
+`derived_exports` flag **must remain `false`** in `config/feature-flags.yaml` — the
+flag is a product gate, not a run gate. The `derive` command reads the flag itself;
+if `false` it prints a skip message and exits 0 without writing files. To produce the
+artifacts, temporarily set `derived_exports: true`, run `sisyphus derive <tradition>`,
+then **revert the flag to `false`** immediately after. Never commit the flag as `true`.
 
 ---
 
@@ -481,6 +499,7 @@ These are non-negotiable constraints. Violating them produces an invalid export.
 | Never select `m` in review | Opens interactive editor; breaks piped stdin |
 | `campbell_track` = `false` | Never run `--tracks campbell`; never set this flag `true` |
 | Phase F = never | `parallel_detection_pipeline` is permanently deferred; do not run Phase F |
+| `derived_exports` flag handling | Temporarily set `true` to run derive, revert to `false` immediately after; never commit as `true` |
 | Validate before export | Zero errors required; never export a failing validate run |
 
 ---
@@ -581,6 +600,11 @@ sisyphus validate iliad
 
 # Phase E
 sisyphus embed iliad --locale en
+
+# Phase derive (set flag, run, revert)
+# Edit config/feature-flags.yaml: derived_exports: true
+sisyphus derive iliad
+# Edit config/feature-flags.yaml: derived_exports: false
 
 # Final
 sisyphus validate iliad

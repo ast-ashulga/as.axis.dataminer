@@ -126,4 +126,33 @@ def _show_tradition_status(tradition: str, console: Console) -> None:
     else:
         table.add_row("Phase E — Embeddings", "[dim]not run[/dim]")
 
+    # Derive
+    derived_dir = out / "derived"
+    _DERIVED_FILES = [
+        "propp-sequences.yaml",
+        "chronotope-sequences.yaml",
+        "tmi-sets.yaml",
+        "tmi-frequency-vector.yaml",
+        "bakhtin-profiles.yaml",
+    ]
+    if derived_dir.exists():
+        present = [f for f in _DERIVED_FILES if (derived_dir / f).exists()]
+        propp_coverage = ""
+        propp_path = derived_dir / "propp-sequences.yaml"
+        if propp_path.exists():
+            try:
+                pd = read_yaml(propp_path)
+                total = sum(d.get("episode_count", 0) for d in pd.get("divisions", []))
+                annotated = sum(d.get("annotated_episode_count", 0) for d in pd.get("divisions", []))
+                pct = f"{annotated}/{total} Propp-annotated" if total else ""
+                propp_coverage = f" ({pct})" if pct else ""
+            except Exception:
+                pass
+        table.add_row(
+            "Derive — Meridian",
+            f"{len(present)}/{len(_DERIVED_FILES)} artifacts{propp_coverage}",
+        )
+    else:
+        table.add_row("Derive — Meridian", "[dim]not run[/dim]")
+
     console.print(table)

@@ -2,8 +2,8 @@
 name: mnemosyne
 description: >-
   Invoke Mnemosyne — the autonomous Sisyphus pipeline operator — from the main
-  session context. Runs any epic tradition through the full A–E pipeline
-  (ingest → segment → confirm-nas → generate-layer0 → annotate → embed →
+  session context. Runs any epic tradition through the full A–E + derive pipeline
+  (ingest → segment → confirm-nas → generate-layer0 → annotate → embed → derive →
   validate → export) without human intervention. Gates handled via piped stdin.
   Reviews under the name "Mnemosyne". Spawns cultural-domain-expert for
   scholarly decisions. Preferred over the agent picker because the main session

@@ -190,6 +190,25 @@ def embed(
 
 
 # ---------------------------------------------------------------------------
+# derive
+# ---------------------------------------------------------------------------
+
+
+@app.command()
+def derive(
+    tradition: Annotated[str, typer.Argument(help="Tradition identifier (e.g. iliad).")],
+) -> None:
+    """Derive structured Meridian artifacts from confirmed annotations.
+
+    Must be run after 'annotate' and before 'export'.
+    Requires feature flag 'derived_exports' to be true.
+    """
+    from sisyphus.phases.derive import run_derive
+
+    run_derive(tradition=tradition, console=console)
+
+
+# ---------------------------------------------------------------------------
 # review (scholar review queue)
 # ---------------------------------------------------------------------------
 

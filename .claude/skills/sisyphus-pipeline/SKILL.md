@@ -5,15 +5,15 @@ description: >-
   pipeline that turns raw source texts into Mnemosyne-ready YAML). Use this
   whenever the task involves running, sequencing, or debugging Sisyphus
   pipeline phases — `sisyphus ingest / segment / confirm-nas / generate-layer0
-  / annotate / embed / review / validate / export / status` — or mentions
-  ingesting a source, segmenting a tradition, proposing or confirming NAS
-  addresses, generating Layer 0 summaries, Propp/Bakhtin/TMI annotation tracks,
-  embeddings, the scholar review queue, or exporting a tradition (gilgamesh,
-  iliad, mahabharata) for the Fragment Graph. Trigger it even when the user
-  only names a phase or a tradition ("segment gilgamesh", "why is export
-  blocked", "run the next pipeline step") without saying "Sisyphus". Built for
-  sub-agents driving the pipeline unattended, and equally for answering a
-  human's "how do I use this?" questions.
+  / annotate / embed / derive / review / validate / export / status` — or
+  mentions ingesting a source, segmenting a tradition, proposing or confirming
+  NAS addresses, generating Layer 0 summaries, Propp/Bakhtin/TMI annotation
+  tracks, embeddings, the scholar review queue, Meridian derived artifacts, or
+  exporting a tradition (gilgamesh, iliad, mahabharata) for the Fragment Graph.
+  Trigger it even when the user only names a phase or a tradition ("segment
+  gilgamesh", "why is export blocked", "run the next pipeline step") without
+  saying "Sisyphus". Built for sub-agents driving the pipeline unattended, and
+  equally for answering a human's "how do I use this?" questions.
 ---
 
 # Sisyphus pipeline
@@ -37,8 +37,8 @@ The whole pipeline is two automated stretches separated by human gates. Memorize
 this — it is the single most important thing in this skill:
 
 ```
-  ingest (A) ─→ segment (B) ─→ ❚ confirm-nas ❚ ─→ generate-layer0 (C) ─→ annotate (D) ─→ ❚ review ❚ ─→ embed (E) ─→ validate ─→ export
-   drive          drive          HUMAN GATE        drive                   drive            HUMAN GATE      drive         drive        drive
+  ingest (A) ─→ segment (B) ─→ ❚ confirm-nas ❚ ─→ generate-layer0 (C) ─→ annotate (D) ─→ ❚ review ❚ ─→ embed (E) ─→ derive ─→ validate ─→ export
+   drive          drive          HUMAN GATE        drive                   drive            HUMAN GATE      drive         drive     drive        drive
 ```
 
 | Command | Phase | Drive it? | Notes |
@@ -50,6 +50,7 @@ this — it is the single most important thing in this skill:
 | `annotate <t>` | D | ✅ drive | tracks: `propp,bakhtin,tmi` |
 | `review` | — | ⛔ **HALT** | interactive; human CONFIRM/REJECT/MODIFY/DEFER |
 | `embed <t>` | E | ✅ drive | only embeds `confirmed` records; deterministic |
+| `derive <t>` | derive | ✅ drive | deterministic; requires `derived_exports: true` flag; revert flag after |
 | `validate <t>` | — | ✅ drive | read-only integrity check; exit 1 on errors |
 | `export <t>` | — | ✅ drive | blocked if anything unreviewed or invalid |
 | `status [t]` | — | ✅ drive | read-only; safe anytime, run it often |
@@ -127,9 +128,11 @@ These look like bugs to a helpful agent; they are deliberate. Do not work around
 them — surface them instead.
 
 - **All feature flags default `false` and stay `false`.** `config/feature-flags.yaml`
-  holds `parallel_detection_pipeline`, `layer_3_original`, `campbell_track`.
-  Never set one to `true` to unblock work. If a task seems to need Phase F or the
-  `campbell` track, that's a blocked product decision — say so and stop.
+  holds `parallel_detection_pipeline`, `layer_3_original`, `campbell_track`, `derived_exports`.
+  Never set one to `true` to unblock work, with one exception: `derived_exports` may be
+  temporarily set `true` to run `sisyphus derive`, but must be reverted to `false` immediately
+  after — never commit it `true`. If a task seems to need Phase F or the `campbell` track,
+  that's a blocked product decision — say so and stop.
 - **Output-contract values are intentional.** AI-generated content is created
   with `status: candidate`, `confidence_tier: inspired`, `ai_generated: true`.
   AI content can never be `documented`, and `inspired` is never valid on a
@@ -174,6 +177,8 @@ sisyphus generate-layer0 gilgamesh --locale en
 sisyphus annotate gilgamesh --tracks propp,bakhtin,tmi
 # ❚ HALT → hand back for: sisyphus review --tradition gilgamesh
 sisyphus embed gilgamesh --locale en              # needs OPENAI_API_KEY
+# derive: set derived_exports: true, run, revert flag to false
+sisyphus derive gilgamesh                          # deterministic; no API keys needed
 sisyphus validate gilgamesh                        # fix every error before export
 sisyphus export gilgamesh --format yaml            # blocked until review queue empty + valid
 ```

@@ -8,6 +8,7 @@ _DEFAULTS: dict[str, bool] = {
     "parallel_detection_pipeline": False,
     "layer_3_original": False,
     "campbell_track": False,
+    "derived_exports": False,
 }
 
 _FLAGS_PATH = Path(__file__).parent.parent / "config" / "feature-flags.yaml"

@@ -65,6 +65,7 @@ Six phases (A–F). Phase F is permanently feature-flagged `false` until post-M2
 | C — Surface Summary (Layer 0) | Summary writer | Layer 0 review queue |
 | D — Structural Annotation | Annotation specialist per track | Annotation review queue |
 | E — Vector Embedding | Deterministic embedding worker | None |
+| **derive — Structured Artifacts** | **Deterministic derivation from confirmed annotations** | **None** |
 | F — Parallel Detection | **Deferred** (`parallel_detection_pipeline = false`) | — |
 
 Active annotation tracks in Phase 1: `propp`, `bakhtin`, `tmi`. Campbell is unscoped.
@@ -78,6 +79,7 @@ sisyphus confirm-nas <tradition>
 sisyphus generate-layer0 <tradition> [--locale en,ru] [--model claude-sonnet-4-6]
 sisyphus annotate <tradition> [--tracks propp,bakhtin,tmi] [--model claude-sonnet-4-6]
 sisyphus embed <tradition> [--locale en,ru] [--model text-embedding-3-small]
+sisyphus derive <tradition>
 sisyphus review [--tradition gilgamesh] [--type annotation|layer0|parallel] [--locale en]
 sisyphus validate <tradition>
 sisyphus export <tradition> [--format yaml|json|sql]
@@ -105,6 +107,7 @@ All feature flags are defined in `config/feature-flags.yaml` and all default to 
 - `parallel_detection_pipeline` — Phase F; deferred post-M2
 - `layer_3_original` — Layer 3 original-language fragments; ingested but not served
 - `campbell_track` — Campbell monomyth annotations; blocked by D-01 decision
+- `derived_exports` — derive phase (Meridian structured artifacts); deferred until output format is stable
 
 ## Output Directory Structure
 
@@ -120,6 +123,12 @@ output/{tradition}/
   parallels/{parallel-id}.yaml
   embeddings/{division}/{episode}.{locale}.{layer}[.{translation_id}].{model}.json          # episode-granularity NAS
   embeddings/{division}/{episode}/{sub-episode}.{locale}.{layer}[.{translation_id}].{model}.json  # sub-episode NAS
+  derived/
+    propp-sequences.yaml
+    chronotope-sequences.yaml
+    tmi-sets.yaml
+    tmi-frequency-vector.yaml
+    bakhtin-profiles.yaml
   pipeline-reports/
     ingestion-report.yaml
     segmentation-report.yaml
