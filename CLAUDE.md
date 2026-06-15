@@ -118,7 +118,8 @@ output/{tradition}/
   annotation-candidates/{division}/{episode}.{track}.yaml
   artifacts/{division}/{episode}.artifacts.yaml
   parallels/{parallel-id}.yaml
-  embeddings/{division}/{episode}.{locale}.{layer}[.{translation_id}].{model}.json
+  embeddings/{division}/{episode}.{locale}.{layer}[.{translation_id}].{model}.json          # episode-granularity NAS
+  embeddings/{division}/{episode}/{sub-episode}.{locale}.{layer}[.{translation_id}].{model}.json  # sub-episode NAS
   pipeline-reports/
     ingestion-report.yaml
     segmentation-report.yaml

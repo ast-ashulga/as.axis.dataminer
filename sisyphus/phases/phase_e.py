@@ -16,7 +16,7 @@ import openai
 from rich.console import Console
 
 from sisyphus.flags import get_flag
-from sisyphus.io.workspace import embeddings_dir, nas_confirmed_path, nas_to_fragment_path
+from sisyphus.io.workspace import nas_confirmed_path, nas_to_embedding_path, nas_to_fragment_path
 from sisyphus.io.yaml_io import read_yaml, write_json, read_json
 from sisyphus.schema import EmbeddingRecord, Layer, Status
 
@@ -64,10 +64,8 @@ def run_embed(
 
     for entry in entries:
         nas = entry.get("nas", "")
-        division = entry.get("division", "")
-        episode = entry.get("episode", "")
 
-        if not division or not episode:
+        if not nas:
             continue
 
         frag_path = nas_to_fragment_path(tradition, nas)
@@ -103,13 +101,12 @@ def run_embed(
 
             content_hash = hashlib.sha256(body.encode("utf-8")).hexdigest()
 
-            # Build output path
-            emb_dir = embeddings_dir(tradition, division)
-            filename_parts = [episode, locale, layer_str]
-            if translation_id:
-                filename_parts.append(translation_id)
-            filename_parts.append(model)
-            emb_path = emb_dir / f"{'.' .join(filename_parts)}.json"
+            # Build output path — NAS-derived (bijective: one NAS = one file per locale/layer/model).
+            # Using (division, episode) would collide for sub-episode granularity NAS where
+            # multiple sub-episodes share the same parent episode slug.
+            emb_path = nas_to_embedding_path(
+                tradition, nas, locale, layer_str, model, translation_id
+            )
 
             # Idempotency: check if this content hash + model is already embedded
             if emb_path.exists():

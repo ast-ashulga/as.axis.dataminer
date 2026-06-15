@@ -51,6 +51,33 @@ def embeddings_dir(tradition: str, division: str) -> Path:
     return output_dir(tradition) / "embeddings" / division
 
 
+def nas_to_embedding_path(
+    tradition: str,
+    nas: str,
+    locale: str,
+    layer_str: str,
+    model: str,
+    translation_id: str | None = None,
+) -> Path:
+    """Return the embedding file path for a NAS address (bijective: one NAS = one file).
+
+    Episode-granularity:
+      nms://gilgamesh/tablet-1/gilgamesh-of-uruk
+        → embeddings/tablet-1/gilgamesh-of-uruk.{locale}.{layer}.{model}.json
+
+    Sub-episode granularity:
+      nms://mahabharata/mausala-parva/mausala/section-1-curse-of-the-rishis
+        → embeddings/mausala-parva/mausala/section-1-curse-of-the-rishis.{locale}.{layer}.{model}.json
+    """
+    parts = nas.split("/")[3:]  # strip "nms:", "", "tradition"
+    emb_dir = output_dir(tradition) / "embeddings" / Path(*parts[:-1])
+    filename_parts = [parts[-1], locale, layer_str]
+    if translation_id:
+        filename_parts.append(translation_id)
+    filename_parts.append(model)
+    return emb_dir / f"{'.'.join(filename_parts)}.json"
+
+
 def parallels_dir(tradition: str) -> Path:
     return output_dir(tradition) / "parallels"
 

@@ -27,7 +27,7 @@ books:
 - 18
 copyright_status: public-domain
 living_tradition: true
-public_release: false
+public_release: true
 source_file: sources/mahabharata/ganguli-en/ganguli-1883-mahabharata.pdf
 notes: Only complete public-domain English Mahabharata (1883–1896). Clean text 
   layer (pymupdf; no OCR). Replaces van Buitenen as EN primary (van Buitenen 

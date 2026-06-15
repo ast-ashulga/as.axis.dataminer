@@ -263,6 +263,47 @@ def _format_framework(rules: dict, track: str) -> str:
     return "\n".join(lines) or "(no framework definitions loaded)"
 
 
+def _parse_json_array(client: anthropic.Anthropic, model: str, raw: str) -> list[dict]:
+    """Parse a JSON array from model output, with a self-repair retry on failure."""
+    start = raw.find("[")
+    if start == -1:
+        raise ValueError(f"No JSON array in annotation response: {raw[:200]!r}")
+
+    # Attempt 1: raw_decode from the array start (tolerates trailing prose).
+    try:
+        result, _ = json.JSONDecoder().raw_decode(raw, start)
+        return result
+    except json.JSONDecodeError:
+        pass
+
+    # Attempt 2: slice to last ']' (handles minor trailing garbage).
+    end = raw.rfind("]")
+    try:
+        return json.loads(raw[start : end + 1])
+    except json.JSONDecodeError as exc:
+        broken = raw[start : end + 1]
+
+    # Attempt 3: ask the model to repair the malformed JSON it returned.
+    repair_response = client.messages.create(
+        model=model,
+        max_tokens=8192,
+        system=(
+            "You are a JSON repair assistant. "
+            "The following JSON array is malformed. "
+            "Return ONLY the corrected, valid JSON array — no prose, no markdown fences."
+        ),
+        messages=[{"role": "user", "content": broken}],
+    )
+    repair_block = next((b for b in repair_response.content if hasattr(b, "text")), None)
+    if repair_block is None:
+        raise ValueError(f"Repair attempt returned no text block. Original error: {exc}")
+    repaired = repair_block.text.strip()
+    if repaired.startswith("```"):
+        repaired = re.sub(r"^```[a-z]*\n?", "", repaired)
+        repaired = re.sub(r"\n?```$", "", repaired)
+    return json.loads(repaired)
+
+
 def _call_annotation_agent(
     client: anthropic.Anthropic,
     model: str,
@@ -303,16 +344,18 @@ def _call_annotation_agent(
 
     response = client.messages.create(
         model=model,
-        max_tokens=4096,
+        max_tokens=8192,
         system=system,
         messages=[{"role": "user", "content": user_message}],
     )
 
-    text_block = next(b for b in response.content if hasattr(b, "text"))
+    text_block = next((b for b in response.content if hasattr(b, "text")), None)
+    if text_block is None:
+        block_types = [type(b).__name__ for b in response.content]
+        raise RuntimeError(f"No text block in response (got: {block_types}).")
     raw = text_block.text.strip()
     if raw.startswith("```"):
         raw = re.sub(r"^```[a-z]*\n?", "", raw)
         raw = re.sub(r"\n?```$", "", raw)
 
-    result, _ = json.JSONDecoder().raw_decode(raw)
-    return result
+    return _parse_json_array(client, model, raw)

@@ -57,11 +57,13 @@ Output ONLY a JSON array of segment objects. Each object must have:
   "proposed_nas": "nms://gilgamesh/tablet-xi/flood-narrative",
   "parent_nas": "nms://gilgamesh/tablet-xi",
   "granularity": "episode",
-  "passage_text": "...",
+  "passage_opening": "<verbatim first 80 characters of this passage as it appears in the source>",
   "methodology_fit_warning": false,
   "methodology_fit_note": null
 }
 
+passage_opening must be the exact first 80 characters of the passage verbatim — copied
+directly from the source text, not paraphrased. It is used to locate the passage boundary.
 granularity must be one of: episode, sub-episode, verse-range, lacuna.
 Do not include any text outside the JSON array.
 """
@@ -126,28 +128,43 @@ def run_segment(
         for p in existing_data.get("proposals", []):
             existing_proposals[p.get("proposed_nas", "")] = p
 
+    # Detect second-witness: confirmed NAS exist but no segmented files for this run yet.
+    # Second-witness hint semantics differ: "map to existing NAS slugs" (emit all segments)
+    # vs first-witness hint: "skip covered passages" (emit only new material per chunk).
+    seg_dir = segmented_dir(run_id)
+    is_second_witness = bool(confirmed_nas) and not seg_dir.exists()
+
     # Call AI agent to segment the text. Long sources are chunked into overlapping
     # windows and segmented in sequence; each call sees the NAS proposed so far so the
     # model continues numbering and does not re-segment overlapping material.
+    # The agent returns only passage_opening (80 chars) per segment — not full text.
+    # passage_text is extracted programmatically after each chunk via marker search.
     chunks = _chunk_text(full_text)
     suffix = f", {len(chunks)} chunks" if len(chunks) > 1 else ""
-    console.print(f"  Calling {model} to segment text ({len(full_text)} chars{suffix})…")
+    second_witness_note = " [second-witness: mapping to existing NAS]" if is_second_witness else ""
+    console.print(f"  Segmenting {len(full_text)} chars{suffix}{second_witness_note}")
 
     client = llm.make_client(provider)
     segments: list[dict] = []
     proposed_seen: set[str] = set()
     hint_nas = set(confirmed_nas)  # confirmed NAS + everything proposed in earlier chunks
     for i, chunk in enumerate(chunks):
+        import time as _time
+        _t0 = _time.monotonic()
         try:
             chunk_segs = _call_segmentation_agent(
                 client, chunk, rules, tradition, model, prompt_config,
                 hint_nas, chunk_index=i, chunk_total=len(chunks),
+                is_second_witness=is_second_witness,
             )
+            # Extract passage_text from the chunk using passage_opening markers
+            chunk_segs = _extract_passages_by_openings(chunk, chunk_segs)
         except Exception as exc:
             console.print(
-                f"[red]Segmentation chunk {i + 1}/{len(chunks)} failed: {exc}[/red]"
+                f"[red]  chunk {i + 1}/{len(chunks)} failed: {exc}[/red]"
             )
             chunk_segs = []
+        new_in_chunk = 0
         for s in chunk_segs:
             nas = s.get("proposed_nas", "")
             if nas and nas in proposed_seen:
@@ -156,6 +173,13 @@ def run_segment(
                 proposed_seen.add(nas)
                 hint_nas.add(nas)
             segments.append(s)
+            new_in_chunk += 1
+        elapsed = _time.monotonic() - _t0
+        console.print(
+            f"  [dim]chunk {i + 1}/{len(chunks)}[/dim]  "
+            f"+{new_in_chunk} episodes  "
+            f"({elapsed:.0f}s)  total={len(segments)}"
+        )
     if not segments:
         console.print("[yellow]No segments produced — writing empty proposals file.[/yellow]")
 
@@ -217,7 +241,6 @@ def run_segment(
     # Write segmented text to workspace using bijective NAS paths —
     # mirrors the nas_to_fragment_path convention so Phase C can resolve
     # per-sub-episode text without falling back to an episode-level file.
-    seg_dir = segmented_dir(run_id)
     seg_dir.mkdir(parents=True, exist_ok=True)
     for seg in segments:
         proposed_nas = seg.get("proposed_nas", "")
@@ -254,14 +277,13 @@ def run_segment(
     )
 
 
-# Per-call source budget. The agent echoes each segment's full passage_text back in
-# its JSON, so this bounds OUTPUT size (max_tokens=80000), not just input context.
-# Long sources are split into overlapping windows segmented in sequence (see
-# _chunk_text + the run_segment loop) so the whole text is covered — e.g. the full
-# Iliad (~980K chars) becomes ~8 windows; Gilgamesh (~128K) stays a single window.
-_CHUNK_CHARS = 140_000        # ~35K tokens in, ~35K echoed out — safe under max_tokens
-_CHUNK_OVERLAP = 10_000       # tail re-shown to the next window so seam episodes stay whole
-_MAX_SEGMENT_CHARS = 200_000  # hard per-call ceiling (chunk size stays well under this)
+# Per-call source budget. The agent returns only passage_opening (80 chars) per segment,
+# not the full passage_text — so output tokens per call are tiny (~20 tokens/episode).
+# passage_text is then extracted programmatically by locating the opening marker in the
+# source chunk. This allows small chunks processed quickly (each call completes in ~15s).
+_CHUNK_CHARS = 40_000         # ~10K tokens in; output is ~300 tokens even for 20 episodes
+_CHUNK_OVERLAP = 3_000        # tail overlap so seam episodes stay whole across chunks
+_MAX_SEGMENT_CHARS = 50_000   # hard per-call ceiling
 
 
 def _chunk_text(
@@ -298,6 +320,7 @@ def _call_segmentation_agent(
     confirmed_nas: set[str] | None = None,
     chunk_index: int = 0,
     chunk_total: int = 1,
+    is_second_witness: bool = False,
 ) -> list[dict]:
     confirmed_nas = confirmed_nas or set()
 
@@ -315,18 +338,31 @@ def _call_segmentation_agent(
     )
     nas_prefix = rules.get("nas_prefix", f"nms://{tradition}")
 
-    # Pass the NAS proposed/confirmed so far so the model reuses exact slugs and,
-    # across chunks, does NOT re-segment passages already covered (segment only new).
+    # Confirmed-slug hint semantics differ between first-witness and second-witness runs:
+    #   First-witness (same text, multi-chunk): "skip covered passages, only emit NEW material"
+    #   Second-witness (new translation aligned to existing skeleton): "map every episode to
+    #     its existing NAS slug — emit ALL segments, reusing exact slugs from the list below"
     confirmed_slug_hint = ""
     if confirmed_nas:
         slugs = sorted(confirmed_nas)
-        confirmed_slug_hint = (
-            "\nNAS addresses already proposed or confirmed for passages covered so far. "
-            "REUSE the exact slug if you segment the same passage, and do NOT emit a new "
-            "segment for any passage these already cover — segment only NEW material:\n"
-            + "\n".join(f"  {s}" for s in slugs)
-            + "\n"
-        )
+        if is_second_witness:
+            confirmed_slug_hint = (
+                "\nThis is a second-witness segmentation run: the NAS skeleton already exists "
+                "from a previous translation. Your task is to MAP every episode in this new "
+                "translation to the corresponding NAS address in the list below — emit a segment "
+                "for EVERY episode you find, using the EXACT matching slug. Do not invent new "
+                "slugs; do not skip episodes that appear in this list:\n"
+                + "\n".join(f"  {s}" for s in slugs)
+                + "\n"
+            )
+        else:
+            confirmed_slug_hint = (
+                "\nNAS addresses already proposed or confirmed for passages covered so far. "
+                "REUSE the exact slug if you segment the same passage, and do NOT emit a new "
+                "segment for any passage these already cover — segment only NEW material:\n"
+                + "\n".join(f"  {s}" for s in slugs)
+                + "\n"
+            )
 
     chunk_note = ""
     if chunk_total > 1:
@@ -356,7 +392,7 @@ Return a JSON array of segment objects as specified in your instructions.
 
     with client.messages.stream(
         model=model,
-        max_tokens=80000,
+        max_tokens=8000,
         system=system,
         messages=[{"role": "user", "content": user_message}],
     ) as stream:
@@ -387,3 +423,52 @@ Return a JSON array of segment objects as specified in your instructions.
     except json.JSONDecodeError:
         end = raw.rfind("]")
         return json.loads(raw[start : end + 1])
+
+
+def _extract_passages_by_openings(chunk: str, segments: list[dict]) -> list[dict]:
+    """Locate each segment's passage in the chunk using its passage_opening marker,
+    then extract passage_text as the span from one opening to the next.
+
+    The LLM returns only a short verbatim opening string per segment (not the full
+    passage_text) to keep output tokens minimal. This function reconstructs the full
+    passage_text from the source chunk, preserving the existing downstream contract.
+    """
+    if not segments:
+        return segments
+
+    # Find each opening's position in the chunk
+    positioned: list[tuple[int, dict]] = []
+    for seg in segments:
+        opening = (seg.get("passage_opening") or "").strip()
+        pos = -1
+        if opening:
+            # Try progressively shorter prefixes to handle minor whitespace differences
+            for length in (80, 60, 40, 20):
+                probe = opening[:length]
+                p = chunk.find(probe)
+                if p != -1:
+                    pos = p
+                    break
+        positioned.append((pos, seg))
+
+    # Sort by position; unlocated segments (pos=-1) go to the end
+    positioned.sort(key=lambda x: (x[0] == -1, x[0]))
+
+    # Extract passage_text as the span from this opening to the next located opening
+    result = []
+    located = [(p, s) for p, s in positioned if p != -1]
+    unlocated = [s for p, s in positioned if p == -1]
+
+    for idx, (pos, seg) in enumerate(located):
+        next_pos = located[idx + 1][0] if idx + 1 < len(located) else len(chunk)
+        seg = dict(seg)
+        seg["passage_text"] = chunk[pos:next_pos].strip()
+        result.append(seg)
+
+    # Unlocated segments get an empty passage_text (logged as a warning by the caller)
+    for seg in unlocated:
+        seg = dict(seg)
+        seg.setdefault("passage_text", "")
+        result.append(seg)
+
+    return result

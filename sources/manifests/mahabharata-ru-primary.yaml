@@ -13,7 +13,7 @@ role: primary
 source_file: sources/mahabharata/witness/mahabharata-ru-primary.txt
 copyright_status: public-domain         # all constituent translations verified publicly available
 living_tradition: true
-public_release: false
+public_release: true
 
 # Per-parva translator composition (académic «Литературные памятники» where it exists):
 book_translators:
