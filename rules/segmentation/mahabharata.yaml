@@ -323,6 +323,32 @@ boundary_signals:
     mausala:              ["iron", "club", "Yadavas", "Eraka grass", "hunter", "Jara"]
 
 # ----------------------------------------------------------------------------
+# BACK-MATTER EXCLUSION SIGNALS  (WS-4 failure mode — see cultural-domain-expert
+# memory: mahabharata_ru_backmatter_failure.md)
+# Литературные Памятники volumes (Kalyanov, Neveleva-Vasilkov, Erman, Smirnov)
+# bundle translator essays, glossaries, and indices inside the same text file.
+# Segments whose FIRST non-empty line matches any of these patterns are paratext,
+# NOT narrative episodes — exclude them from the segmented output entirely.
+# ----------------------------------------------------------------------------
+back_matter_signals:
+  # Russian Литературные Памятники back-matter headers (case-sensitive all-caps / titlecase):
+  - "ПРИЛОЖЕНИЕ"            # Appendix (Erman's critical essays etc.)
+  - "Приложение"
+  - "КОММЕНТАРИИ"           # Commentary notes
+  - "Комментарии"
+  - "ПРИМЕЧАНИЯ"            # Footnotes / end-notes section
+  - "Примечания"
+  - "УКАЗАТЕЛЬ"             # Index (personal names, places)
+  - "Указатель"
+  - "СЛОВАРЬ"               # Glossary / dictionary section
+  - "Словарь"
+  # Alphabetical glossary pattern: a section whose second non-empty line matches
+  # the pattern "<CAPS WORD> —" (e.g. "МАГАДХА —", "МАДРЫ —") is a gazetteer entry,
+  # not a narrative unit — exclude.
+  # Any proposed segment < 1 KB that is immediately followed by a segment > 40 KB
+  # in the SAME episode directory → flag for re-segmentation, skip Layer 0 generation.
+
+# ----------------------------------------------------------------------------
 # LACUNA / INTERPOLATION MARKERS
 # The BORI Critical Edition is a RECONSTRUCTION over contested Northern & Southern
 # recensions. Verses the CE editors judged interpolated are placed in an apparatus
@@ -414,7 +440,7 @@ methodology_fit:
 # ----------------------------------------------------------------------------
 cultural_sensitivity:
   living_tradition: true
-  public_release: false        # gated until formal Cultural-Expert sign-off (per manifest)
+  public_release: true         # Cultural Expert formal sign-off received 2026-06-15
 
   hard_constraints:            # the pipeline MUST NOT do these
     - >

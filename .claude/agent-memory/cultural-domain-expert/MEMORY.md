@@ -6,3 +6,4 @@
 - [Witness collision](witness-collision.md) — M2 Gilgamesh: two witnesses (Russian + Thompson) collided into divergent NAS; open Product/schema decision (P6)
 - [Mahabharata coverage](mahabharata_coverage.md) — M3: EN=Ganguli (NOT van Buitenen), RU gaps in bk12-13, BORI slug convention (book 3 = aranyaka-parva)
 - [Mahabharata methodology-fit](mahabharata_methodology_fit.md) — Propp hard-fails on Shanti/Anushasana dharmaśāstra; TMI flattening risk; where warnings fire
+- [Mahabharata RU back-matter failure](mahabharata_ru_backmatter_failure.md) — Phase B sweeps Литературные Памятники scholarly apparatus into segments; ghost episodes + truncated narrative; fix: add negative boundary signals to segmentation rules
