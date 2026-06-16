@@ -14,7 +14,7 @@ Raw materials (PDF/TXT/images) + Metadata manifest (YAML)
   → PostgreSQL Fragment Graph
 ```
 
-**Status**: Implementation complete (M1 Gilgamesh). The authoritative requirements are in `PRD.md`.
+**Status**: Implementation complete (M1–M3: Gilgamesh, Iliad, Mahabharata). All three traditions fully processed. The authoritative requirements are in `PRD.md`.
 
 ## Development
 
@@ -80,6 +80,7 @@ sisyphus generate-layer0 <tradition> [--locale en,ru] [--model claude-sonnet-4-6
 sisyphus annotate <tradition> [--tracks propp,bakhtin,tmi] [--model claude-sonnet-4-6]
 sisyphus embed <tradition> [--locale en,ru] [--model text-embedding-3-small]
 sisyphus derive <tradition>
+sisyphus constellate [--traditions gilgamesh,iliad,mahabharata]   # gated by constellation_candidates flag
 sisyphus review [--tradition gilgamesh] [--type annotation|layer0|parallel] [--locale en]
 sisyphus validate <tradition>
 sisyphus export <tradition> [--format yaml|json|sql]
@@ -107,7 +108,8 @@ All feature flags are defined in `config/feature-flags.yaml` and all default to 
 - `parallel_detection_pipeline` — Phase F; deferred post-M2
 - `layer_3_original` — Layer 3 original-language fragments; ingested but not served
 - `campbell_track` — Campbell monomyth annotations; blocked by D-01 decision
-- `derived_exports` — derive phase (Meridian structured artifacts); deferred until output format is stable
+- `derived_exports` — gates `sisyphus derive` CLI (per-tradition derived artifacts); deferred until output format is stable
+- `constellation_candidates` — gates `sisyphus constellate` CLI (cross-tradition constellation detection); deferred until Louvain upgrade in app layer
 
 ## Output Directory Structure
 
@@ -129,6 +131,8 @@ output/{tradition}/
     tmi-sets.yaml
     tmi-frequency-vector.yaml
     bakhtin-profiles.yaml
+output/derived/
+  constellation-candidates.yaml   # cross-tradition; ConstellationCandidate has oversized: bool (true when members > MAX_CLUSTER_SIZE=20)
   pipeline-reports/
     ingestion-report.yaml
     segmentation-report.yaml
