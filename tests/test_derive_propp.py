@@ -238,3 +238,19 @@ class TestChronotopeSequences:
         )
         result = build_chronotope_sequences("t", episodes)
         assert result.divisions[0].sequence == ["BAKHTIN-DIVINE"]
+
+    def test_dimension_code_higher_tier_does_not_corrupt_sequence(self, monkeypatch):
+        """A dimension code with a higher tier than the chronotope must not appear in sequence."""
+        episodes = _make_episodes("nms://t/div-a/ep-1")
+
+        def fake_load(tradition, nas, track):
+            return [
+                _ann("BAKHTIN-DIVINE", tier="contested"),
+                _ann("BAKHTIN-POLYPHONY-HIGH", tier="documented"),  # higher tier, must be ignored
+            ]
+
+        monkeypatch.setattr(
+            "sisyphus.derive.propp.load_confirmed_annotations", fake_load
+        )
+        result = build_chronotope_sequences("t", episodes)
+        assert result.divisions[0].sequence == ["BAKHTIN-DIVINE"]

@@ -92,6 +92,7 @@ def run_annotate(
     model: str,
     console: Console,
     provider: str | None = None,
+    force: bool = False,
 ) -> None:
     # Guard: campbell_track must be false
     if "campbell" in tracks and not get_flag("campbell_track"):
@@ -150,12 +151,24 @@ def run_annotate(
             # One NAS+track = one file (bijective).
             cand_path = nas_to_annotation_path(tradition, nas, track)
 
-            # Idempotency: skip if file already exists and has candidates
+            # Idempotency: skip if file already exists and has candidates.
+            # --force bypasses the skip but preserves confirmed annotations.
+            # In force mode, a _force_processed flag in the file marks episodes that
+            # have been processed (even if the LLM returned 0 new candidates), so that
+            # repeated force runs make progress through the full episode list.
+            preserved_confirmed: list[dict] = []
             if cand_path.exists():
                 existing = read_yaml(cand_path)
                 if existing.get("annotations"):
-                    console.print(f"  [dim]Skip (exists):[/dim] {nas} [{track}]")
-                    continue
+                    if not force:
+                        console.print(f"  [dim]Skip (exists):[/dim] {nas} [{track}]")
+                        continue
+                    if existing.get("_force_processed"):
+                        console.print(f"  [dim]Skip (force, processed):[/dim] {nas}")
+                        continue
+                    preserved_confirmed = [
+                        a for a in existing["annotations"] if a.get("status") == "confirmed"
+                    ]
 
             passage_texts = load_all_passage_texts(division, episode, nas=nas)
             if len(passage_texts) == 1:
@@ -216,14 +229,22 @@ def run_annotate(
                 except Exception as exc:
                     console.print(f"    [yellow]⚠[/yellow] Invalid annotation skipped: {exc}")
 
-            ann_file = {
+            # Merge: confirmed annotations first (preserved), then new candidates.
+            # Dedup: if a confirmed annotation already covers a code, skip the new candidate for it.
+            confirmed_codes = {a["code"] for a in preserved_confirmed}
+            new_candidates = [a for a in validated if a["code"] not in confirmed_codes]
+            merged = preserved_confirmed + new_candidates
+
+            ann_file: dict = {
                 "_sisyphus_version": "0.1",
                 "nas": nas,
                 "track": track,
-                "annotations": validated,
+                "annotations": merged,
             }
+            if force:
+                ann_file["_force_processed"] = True
             write_yaml(cand_path, ann_file)
-            track_counts[track] += len(validated)
+            track_counts[track] += len(new_candidates)
 
     # Write annotation report
     report = AnnotationReport(
@@ -253,13 +274,19 @@ def _load_track_rules(track: str) -> dict:
 def _format_framework(rules: dict, track: str) -> str:
     """Format track definitions for the prompt."""
     lines: list[str] = []
-    key = (
-        "functions" if track == "propp"
-        else "chronotopes" if track == "bakhtin"
-        else "representative_motifs"
-    )
-    for item in rules.get(key, []):
-        lines.append(f"  {item.get('code')}: {item.get('label')} — {item.get('description', '')}")
+    if track == "propp":
+        keys = ["functions"]
+    elif track == "bakhtin":
+        # Include all code families: chronotopes + dimension families added in Gap 6.
+        keys = ["chronotopes", "polyphony", "carnivalesque", "heteroglossia"]
+    else:
+        keys = ["representative_motifs"]
+    for key in keys:
+        section = rules.get(key, [])
+        if section and track == "bakhtin" and key != "chronotopes":
+            lines.append(f"\n{key.capitalize()} codes:")
+        for item in section:
+            lines.append(f"  {item.get('code')}: {item.get('label')} — {item.get('description', '')}")
     return "\n".join(lines) or "(no framework definitions loaded)"
 
 

@@ -26,6 +26,39 @@ chronotopes:
     label: "Heroic Body Chronotope"
     description: "The hero's body as a site where the narrative of the world is inscribed; physical feats as time-space markers."
 
+polyphony:
+  - code: BAKHTIN-POLYPHONY-LOW
+    label: "Low Polyphony (0.2)"
+    description: "Predominantly single authoritative voice; monologic narration dominates; no significant internal dialogism."
+  - code: BAKHTIN-POLYPHONY-MEDIUM
+    label: "Medium Polyphony (0.5)"
+    description: "Multiple voices present but one is dominant; some internal dialogism visible."
+  - code: BAKHTIN-POLYPHONY-HIGH
+    label: "High Polyphony (0.9)"
+    description: "Several voices carry equal narrative authority; no single perspective dominates."
+
+carnivalesque:
+  - code: BAKHTIN-CARNIVALESQUE-ABSENT
+    label: "Carnivalesque Absent (0.0)"
+    description: "No inversion of hierarchy or social order; serious, monologic register throughout."
+  - code: BAKHTIN-CARNIVALESQUE-PRESENT
+    label: "Carnivalesque Present (0.7)"
+    description: "Discernible inversion of social or cosmic order; laughter, transgression, or grotesque body present."
+  - code: BAKHTIN-CARNIVALESQUE-DOMINANT
+    label: "Carnivalesque Dominant (0.95)"
+    description: "The episode's register is primarily carnivalesque; hierarchies are overturned as the central narrative act."
+
+heteroglossia:
+  - code: BAKHTIN-HETEROGLOSSIA-MONOGLOSSIC
+    label: "Monoglossic"
+    description: "Single authoritative language or register; no meaningful internal tension between social languages."
+  - code: BAKHTIN-HETEROGLOSSIA-HETEROGLOSSIC
+    label: "Heteroglossic"
+    description: "Multiple social languages or registers in dialogue; no single register fully dominates."
+  - code: BAKHTIN-HETEROGLOSSIA-PLURIVALENT
+    label: "Plurivalent"
+    description: "Maximal heteroglossia; irresolvable tension between voices or registers; the episode cannot be reduced to a single ideological standpoint."
+
 methodology_fit_concerns:
   - pattern: "living_tradition"
     note: "Bakhtin's chronotope framework was developed in the context of the European novel. Applying it to living religious texts requires acknowledgment of the category transfer."

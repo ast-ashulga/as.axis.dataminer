@@ -5,7 +5,7 @@ from __future__ import annotations
 import pytest
 from pydantic import ValidationError
 
-from sisyphus.derive.bakhtin import build_bakhtin_profiles
+from sisyphus.derive.bakhtin import BAKHTIN_CODE_MAP, build_bakhtin_profiles
 from sisyphus.schema import BakhtinProfile
 
 
@@ -102,8 +102,8 @@ class TestBakhtinProfiles:
         profile = result.entries["nms://t/div-a/ep-1"]
         assert profile.chronotope_type == "BAKHTIN-DIVINE"
 
-    def test_path_b_numeric_fields_are_null(self, monkeypatch):
-        """polyphony, carnivalesque, heteroglossia are always None (Path B)."""
+    def test_numeric_fields_null_when_only_chronotope_codes(self, monkeypatch):
+        """polyphony, carnivalesque, heteroglossia are None when only chronotope codes are present."""
         episodes = _make_episodes("nms://t/div-a/ep-1")
 
         def fake_load(tradition, nas, track):
@@ -117,6 +117,107 @@ class TestBakhtinProfiles:
         assert profile.polyphony is None
         assert profile.carnivalesque is None
         assert profile.heteroglossia is None
+
+    def test_polyphony_extracted_from_code(self, monkeypatch):
+        """BAKHTIN-POLYPHONY-HIGH maps to polyphony=0.9."""
+        episodes = _make_episodes("nms://t/div-a/ep-1")
+
+        def fake_load(tradition, nas, track):
+            return [_ann("BAKHTIN-THRESHOLD"), _ann("BAKHTIN-POLYPHONY-HIGH")]
+
+        monkeypatch.setattr(
+            "sisyphus.derive.bakhtin.load_confirmed_annotations", fake_load
+        )
+        result = build_bakhtin_profiles("t", episodes)
+        profile = result.entries["nms://t/div-a/ep-1"]
+        assert profile.chronotope_type == "BAKHTIN-THRESHOLD"
+        assert profile.polyphony == 0.9
+        assert profile.carnivalesque is None
+        assert profile.heteroglossia is None
+
+    def test_carnivalesque_extracted_from_code(self, monkeypatch):
+        """BAKHTIN-CARNIVALESQUE-PRESENT maps to carnivalesque=0.7."""
+        episodes = _make_episodes("nms://t/div-a/ep-1")
+
+        def fake_load(tradition, nas, track):
+            return [_ann("BAKHTIN-CARNIVALESQUE-PRESENT")]
+
+        monkeypatch.setattr(
+            "sisyphus.derive.bakhtin.load_confirmed_annotations", fake_load
+        )
+        result = build_bakhtin_profiles("t", episodes)
+        profile = result.entries["nms://t/div-a/ep-1"]
+        assert profile.carnivalesque == pytest.approx(0.7)
+
+    def test_heteroglossia_extracted_from_code(self, monkeypatch):
+        """BAKHTIN-HETEROGLOSSIA-PLURIVALENT maps to heteroglossia='plurivalent'."""
+        episodes = _make_episodes("nms://t/div-a/ep-1")
+
+        def fake_load(tradition, nas, track):
+            return [_ann("BAKHTIN-HETEROGLOSSIA-PLURIVALENT")]
+
+        monkeypatch.setattr(
+            "sisyphus.derive.bakhtin.load_confirmed_annotations", fake_load
+        )
+        result = build_bakhtin_profiles("t", episodes)
+        profile = result.entries["nms://t/div-a/ep-1"]
+        assert profile.heteroglossia == "plurivalent"
+
+    def test_first_polyphony_code_wins(self, monkeypatch):
+        """When multiple polyphony codes are present, the first in sorted order wins."""
+        episodes = _make_episodes("nms://t/div-a/ep-1")
+
+        def fake_load(tradition, nas, track):
+            # Both HIGH and LOW — sorted: HIGH comes before LOW alphabetically
+            return [_ann("BAKHTIN-POLYPHONY-HIGH"), _ann("BAKHTIN-POLYPHONY-LOW")]
+
+        monkeypatch.setattr(
+            "sisyphus.derive.bakhtin.load_confirmed_annotations", fake_load
+        )
+        result = build_bakhtin_profiles("t", episodes)
+        profile = result.entries["nms://t/div-a/ep-1"]
+        # raw_codes are sorted; BAKHTIN-POLYPHONY-HIGH < BAKHTIN-POLYPHONY-LOW alphabetically
+        assert profile.polyphony == 0.9
+
+    def test_all_dimensions_populated(self, monkeypatch):
+        """Chronotope + all three dimension codes produce a fully populated profile."""
+        episodes = _make_episodes("nms://t/div-a/ep-1")
+
+        def fake_load(tradition, nas, track):
+            return [
+                _ann("BAKHTIN-ROAD"),
+                _ann("BAKHTIN-POLYPHONY-MEDIUM"),
+                _ann("BAKHTIN-CARNIVALESQUE-ABSENT"),
+                _ann("BAKHTIN-HETEROGLOSSIA-MONOGLOSSIC"),
+            ]
+
+        monkeypatch.setattr(
+            "sisyphus.derive.bakhtin.load_confirmed_annotations", fake_load
+        )
+        result = build_bakhtin_profiles("t", episodes)
+        profile = result.entries["nms://t/div-a/ep-1"]
+        assert profile.chronotope_type == "BAKHTIN-ROAD"
+        assert profile.polyphony == pytest.approx(0.5)
+        assert profile.carnivalesque == pytest.approx(0.0)
+        assert profile.heteroglossia == "monoglossic"
+
+    def test_dimension_code_higher_tier_does_not_corrupt_chronotope_type(self, monkeypatch):
+        """A dimension code with a higher confidence tier must not become chronotope_type."""
+        episodes = _make_episodes("nms://t/div-a/ep-1")
+
+        def fake_load(tradition, nas, track):
+            return [
+                _ann("BAKHTIN-ROAD", tier="contested"),
+                _ann("BAKHTIN-POLYPHONY-HIGH", tier="documented"),  # higher tier than chronotope
+            ]
+
+        monkeypatch.setattr(
+            "sisyphus.derive.bakhtin.load_confirmed_annotations", fake_load
+        )
+        result = build_bakhtin_profiles("t", episodes)
+        profile = result.entries["nms://t/div-a/ep-1"]
+        assert profile.chronotope_type == "BAKHTIN-ROAD"
+        assert profile.polyphony == pytest.approx(0.9)
 
     def test_source_annotation_count(self, monkeypatch):
         """source_annotation_count reflects number of confirmed annotations."""
@@ -134,6 +235,25 @@ class TestBakhtinProfiles:
         )
         result = build_bakhtin_profiles("t", episodes)
         assert result.entries["nms://t/div-a/ep-1"].source_annotation_count == 3
+
+
+class TestBakhtinCodeMap:
+    def test_all_codes_map_to_known_fields(self):
+        """Every BAKHTIN_CODE_MAP entry targets a known BakhtinProfile field."""
+        valid_fields = {"polyphony", "carnivalesque", "heteroglossia"}
+        for code, mapping in BAKHTIN_CODE_MAP.items():
+            for field in mapping:
+                assert field in valid_fields, f"{code} maps to unknown field {field!r}"
+
+    def test_polyphony_values_in_range(self):
+        for code, mapping in BAKHTIN_CODE_MAP.items():
+            if "polyphony" in mapping:
+                assert 0.0 <= mapping["polyphony"] <= 1.0, f"{code} polyphony out of range"
+
+    def test_carnivalesque_values_in_range(self):
+        for code, mapping in BAKHTIN_CODE_MAP.items():
+            if "carnivalesque" in mapping:
+                assert 0.0 <= mapping["carnivalesque"] <= 1.0, f"{code} carnivalesque out of range"
 
 
 class TestBakhtinProfileSchema:

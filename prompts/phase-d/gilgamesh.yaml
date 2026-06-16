@@ -43,6 +43,26 @@ bakhtin_fit_note: >
   the city of Uruk, the Cedar Forest, and the Waters of Death are distinct
   spatial-temporal zones with clear chronotopic character.
   The threshold chronotope is especially prominent at underworld crossings and gates.
+
+  In addition to a chronotope code, you may assign AT MOST ONE code from each of the
+  following families when clear textual evidence from the in-pipeline witness supports it.
+  Omit the family entirely if evidence is ambiguous.
+
+  POLYPHONY — degree to which multiple narrative voices carry equal authority:
+    BAKHTIN-POLYPHONY-LOW (monologic; single authoritative narrator)
+    BAKHTIN-POLYPHONY-MEDIUM (multiple voices, one dominant)
+    BAKHTIN-POLYPHONY-HIGH (several voices, no single perspective dominates)
+
+  CARNIVALESQUE — degree of hierarchy inversion and transgression:
+    BAKHTIN-CARNIVALESQUE-ABSENT (serious, monologic register)
+    BAKHTIN-CARNIVALESQUE-PRESENT (discernible inversion; laughter or grotesque present)
+    BAKHTIN-CARNIVALESQUE-DOMINANT (overturning of hierarchy is the central act)
+
+  HETEROGLOSSIA — tension between social languages or registers:
+    BAKHTIN-HETEROGLOSSIA-MONOGLOSSIC (single authoritative register)
+    BAKHTIN-HETEROGLOSSIA-HETEROGLOSSIC (multiple registers in dialogue)
+    BAKHTIN-HETEROGLOSSIA-PLURIVALENT (irresolvable tension; cannot reduce to one standpoint)
+
   IMPORTANT: whenever you write a methodology_fit_note, you MUST also set
   methodology_fit_warning=true in the same annotation object.
 

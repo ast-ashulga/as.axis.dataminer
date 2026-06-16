@@ -185,14 +185,17 @@ class TestAnnotationInvariants:
         ))
         assert ann.status == Status.confirmed
 
-    def test_methodology_note_requires_warning(self):
-        with pytest.raises(ValidationError, match="methodology_fit_warning"):
-            AnnotationCandidate(
-                **self._valid_candidate_annotation(
-                    methodology_fit_warning=False,
-                    methodology_fit_note="Framework mismatch",
-                )
+    def test_methodology_note_auto_sets_warning(self):
+        # When a methodology_fit_note is provided without methodology_fit_warning,
+        # the schema auto-coerces by setting the flag — it does not raise.
+        ann = AnnotationCandidate(
+            **self._valid_candidate_annotation(
+                methodology_fit_warning=False,
+                methodology_fit_note="Framework mismatch",
             )
+        )
+        assert ann.methodology_fit_warning is True
+        assert ann.methodology_fit_note == "Framework mismatch"
 
     def test_methodology_note_with_warning_valid(self):
         ann = AnnotationCandidate(

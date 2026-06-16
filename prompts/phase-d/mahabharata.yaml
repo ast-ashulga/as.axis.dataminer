@@ -119,6 +119,25 @@ bakhtin_fit_note: >
   time of a passage genuinely strains the chronotope category (per the strain list above);
   for the clearly narrative chronotopes, a warning is not required by default.
 
+  In addition to a chronotope code, you may assign AT MOST ONE code from each of the
+  following families when clear textual evidence from the in-pipeline witness supports it.
+  Omit the family entirely if evidence is ambiguous.
+
+  POLYPHONY — degree to which multiple narrative voices carry equal authority:
+    BAKHTIN-POLYPHONY-LOW (monologic; single authoritative narrator)
+    BAKHTIN-POLYPHONY-MEDIUM (multiple voices, one dominant)
+    BAKHTIN-POLYPHONY-HIGH (several voices, no single perspective dominates)
+
+  CARNIVALESQUE — degree of hierarchy inversion and transgression:
+    BAKHTIN-CARNIVALESQUE-ABSENT (serious, monologic register)
+    BAKHTIN-CARNIVALESQUE-PRESENT (discernible inversion; laughter or grotesque present)
+    BAKHTIN-CARNIVALESQUE-DOMINANT (overturning of hierarchy is the central act)
+
+  HETEROGLOSSIA — tension between social languages or registers:
+    BAKHTIN-HETEROGLOSSIA-MONOGLOSSIC (single authoritative register)
+    BAKHTIN-HETEROGLOSSIA-HETEROGLOSSIC (multiple registers in dialogue)
+    BAKHTIN-HETEROGLOSSIA-PLURIVALENT (irresolvable tension; cannot reduce to one standpoint)
+
 tmi_fit_note: >
   TMI (Thompson Motif Index) codes have the LOWEST structural strain of the three tracks
   here — the Index is a catalogue, not a narrative grammar — but the HIGHEST cultural-

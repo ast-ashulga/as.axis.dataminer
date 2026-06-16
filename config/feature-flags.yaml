@@ -17,4 +17,4 @@ derived_exports: false
 # Constellate phase: cross-tradition constellation candidate generation
 # Requires derived_exports to have been run for each tradition first.
 # Same toggle pattern as derived_exports: set true, run, revert; never commit true.
-constellation_candidates: true
+constellation_candidates: false

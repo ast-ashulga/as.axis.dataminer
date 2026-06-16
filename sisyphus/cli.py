@@ -9,7 +9,10 @@ from pathlib import Path
 from typing import Annotated, Optional
 
 import typer
+from dotenv import load_dotenv
 from rich.console import Console
+
+load_dotenv()
 
 from sisyphus import __version__, llm
 
@@ -156,6 +159,7 @@ def annotate(
     ] = "propp,bakhtin,tmi",
     model: Annotated[Optional[str], typer.Option(help="Model name (overrides config).")] = None,
     provider: Annotated[Optional[str], typer.Option(help="LLM provider: anthropic | ollama.")] = None,
+    force: Annotated[bool, typer.Option(help="Re-run even when annotation files exist. Preserves confirmed annotations.")] = False,
 ) -> None:
     """Phase D: Generate structural annotation candidates for active tracks."""
     active_tracks = [t.strip() for t in tracks.split(",") if t.strip()]
@@ -168,6 +172,7 @@ def annotate(
         model=llm.resolve_model("annotate", model),
         console=console,
         provider=provider,
+        force=force,
     )
 
 

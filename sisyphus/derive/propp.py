@@ -4,6 +4,7 @@ from __future__ import annotations
 
 from itertools import groupby
 
+from sisyphus.derive.bakhtin import BAKHTIN_DIMENSION_CODES
 from sisyphus.derive.utils import best_annotation, load_confirmed_annotations
 from sisyphus.schema import (
     ChronotopeSequenceEntry,
@@ -70,7 +71,8 @@ def build_chronotope_sequences(
 
         for nas in ep_list:
             anns = load_confirmed_annotations(tradition, nas, "bakhtin")
-            best = best_annotation(anns)
+            chronotope_anns = [a for a in anns if a["code"] not in BAKHTIN_DIMENSION_CODES]
+            best = best_annotation(chronotope_anns)
             if best:
                 sequence.append(best["code"])
                 annotated += 1

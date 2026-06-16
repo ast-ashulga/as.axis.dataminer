@@ -186,7 +186,7 @@ class TestBuildConstellationCandidates:
         )
         monkeypatch.setattr(
             "sisyphus.derive.constellations._methodology_fit_note",
-            lambda traditions: None,
+            lambda traditions, fragment_warnings=None: None,
         )
 
     def test_clear_pair_produces_one_candidate(self, monkeypatch):
@@ -336,6 +336,69 @@ class TestBuildConstellationCandidates:
         assert len(raw["candidates"]) == 1
         assert raw["candidates"][0]["candidate_id"] == "C-0001"
         assert raw["candidates"][0]["status"] == "candidate"
+
+    def test_lacuna_fragments_excluded(self, monkeypatch):
+        """NAS addresses containing '/lacuna' must not appear in constellation members."""
+        from sisyphus.derive.constellations import _FragmentData
+
+        fragments = {
+            "tradition-a": [
+                _FragmentData("nms://tradition-a/div-i/flood", "tradition-a",
+                              tmi_codes=["TMI-A1010"], propp_codes=["PROPP-8"],
+                              chronotope_type="BAKHTIN-DIVINE"),
+                _FragmentData("nms://tradition-a/div-i/lacuna-gap", "tradition-a",
+                              tmi_codes=["TMI-A1010"], propp_codes=["PROPP-8"],
+                              chronotope_type="BAKHTIN-DIVINE"),
+            ],
+            "tradition-b": [
+                _FragmentData("nms://tradition-b/div-i/flood", "tradition-b",
+                              tmi_codes=["TMI-A1010"], propp_codes=["PROPP-8"],
+                              chronotope_type="BAKHTIN-DIVINE"),
+            ],
+        }
+        self._patch_fragments(monkeypatch, fragments)
+
+        result = build_constellation_candidates(
+            ["tradition-a", "tradition-b"], min_dimensions=2
+        )
+        all_member_nas = {m.nas for c in result.candidates for m in c.members}
+        assert not any("/lacuna" in nas for nas in all_member_nas), (
+            "Lacuna NAS should be excluded from constellation members"
+        )
+
+    def test_methodology_fit_note_from_annotation_warnings(self, monkeypatch):
+        """methodology_fit_note is populated when member annotations carry methodology_fit_warning."""
+        from sisyphus.derive.constellations import _FragmentData, _methodology_fit_note
+
+        # _methodology_fit_note is NOT patched here — we test it directly.
+        # We verify that passing fragment_warnings produces a non-null note.
+        traditions = ["tradition-a", "tradition-b"]
+        fragment_warnings = {
+            "nms://tradition-a/div-i/ep-1": ["propp"],
+        }
+
+        # Patch manifest_path so living_tradition check doesn't fail on missing files
+        monkeypatch.setattr(
+            "sisyphus.derive.constellations.manifest_path",
+            lambda t: type("FakePath", (), {"exists": lambda self: False})(),
+        )
+
+        note = _methodology_fit_note(traditions, fragment_warnings)
+        assert note is not None
+        assert "nms://tradition-a/div-i/ep-1" in note
+        assert "propp" in note
+
+    def test_methodology_fit_note_null_when_no_warnings(self, monkeypatch):
+        """methodology_fit_note is None when no living traditions and no annotation warnings."""
+        from sisyphus.derive.constellations import _methodology_fit_note
+
+        monkeypatch.setattr(
+            "sisyphus.derive.constellations.manifest_path",
+            lambda t: type("FakePath", (), {"exists": lambda self: False})(),
+        )
+
+        note = _methodology_fit_note(["trad-a", "trad-b"], {})
+        assert note is None
 
     def test_flag_off_skips(self, monkeypatch):
         """constellate phase prints a skip message when the flag is false."""

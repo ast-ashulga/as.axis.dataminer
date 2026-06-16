@@ -20,6 +20,7 @@ import re
 from dataclasses import dataclass, field
 from pathlib import Path
 
+from sisyphus.derive.utils import load_confirmed_annotations
 from sisyphus.io.workspace import manifest_path, output_dir
 from sisyphus.io.yaml_io import read_yaml
 from sisyphus.schema import (
@@ -163,6 +164,7 @@ class _FragmentData:
     tmi_codes: list[str] = field(default_factory=list)
     propp_codes: list[str] = field(default_factory=list)
     chronotope_type: str | None = None
+    methodology_fit_warnings: list[str] = field(default_factory=list)
 
 
 def _load_tradition_fragments(tradition: str) -> list[_FragmentData]:
@@ -197,6 +199,19 @@ def _load_tradition_fragments(tradition: str) -> list[_FragmentData]:
             bakhtin_by_nas[nas] = ct
 
     all_nas = sorted(set(tmi_entries) | set(propp_by_nas) | set(bakhtin_by_nas))
+
+    # Collect annotation-level methodology_fit_warning flags per fragment.
+    # A track is included if any confirmed annotation carries the warning.
+    mf_warnings_by_nas: dict[str, list[str]] = {}
+    for nas in all_nas:
+        warn_tracks = []
+        for track in ("propp", "bakhtin", "tmi"):
+            anns = load_confirmed_annotations(tradition, nas, track)
+            if any(a.get("methodology_fit_warning") for a in anns):
+                warn_tracks.append(track)
+        if warn_tracks:
+            mf_warnings_by_nas[nas] = warn_tracks
+
     return [
         _FragmentData(
             nas=nas,
@@ -204,6 +219,7 @@ def _load_tradition_fragments(tradition: str) -> list[_FragmentData]:
             tmi_codes=tmi_entries.get(nas, []),
             propp_codes=propp_by_nas.get(nas, []),
             chronotope_type=bakhtin_by_nas.get(nas),
+            methodology_fit_warnings=mf_warnings_by_nas.get(nas, []),
         )
         for nas in all_nas
     ]
@@ -266,8 +282,20 @@ def _primary_dimension(edges: list[ConstellationEdge]) -> str:
     return max(scores, key=lambda k: scores[k])
 
 
-def _methodology_fit_note(traditions: list[str]) -> str | None:
-    """Return a warning note if any member tradition has living_tradition=true."""
+def _methodology_fit_note(
+    traditions: list[str],
+    fragment_warnings: dict[str, list[str]] | None = None,
+) -> str | None:
+    """Return a warning note for methodology concerns in constellation members.
+
+    Checks two sources:
+    - Tradition manifests with living_tradition=true.
+    - Individual confirmed annotations with methodology_fit_warning=true (passed
+      as fragment_warnings: {nas: [track, ...]}).
+    """
+    parts: list[str] = []
+
+    # Living-tradition check (manifest level)
     living = []
     for t in traditions:
         mp = manifest_path(t)
@@ -275,15 +303,25 @@ def _methodology_fit_note(traditions: list[str]) -> str | None:
             raw = read_yaml(mp)
             if raw.get("living_tradition"):
                 living.append(t)
-    if not living:
-        return None
-    plural = len(living) > 1
-    return (
-        f"Methodology-fit review required: "
-        f"{', '.join(living)} {'are living traditions' if plural else 'is a living tradition'}. "
-        "Constellation edges involving living traditions require cultural expert review "
-        "before scholar confirmation in the Mnemosyne app."
-    )
+    if living:
+        plural = len(living) > 1
+        parts.append(
+            f"Methodology-fit review required: "
+            f"{', '.join(living)} {'are living traditions' if plural else 'is a living tradition'}. "
+            "Constellation edges involving living traditions require cultural expert review "
+            "before scholar confirmation in the Mnemosyne app."
+        )
+
+    # Annotation-level methodology_fit_warning flags
+    if fragment_warnings:
+        for nas, tracks in sorted(fragment_warnings.items()):
+            track_str = ", ".join(tracks)
+            parts.append(
+                f"Methodology-fit warnings in {track_str} annotations for {nas}. "
+                "These edges require methodological review in the Mnemosyne scholar confirmation flow."
+            )
+
+    return " ".join(parts) if parts else None
 
 
 # ---------------------------------------------------------------------------
@@ -330,6 +368,9 @@ def build_constellation_candidates(
     all_fragments: list[_FragmentData] = []
     for t in traditions:
         all_fragments.extend(_load_tradition_fragments(t))
+
+    # Exclude lacuna fragments — their annotations are inferred, not attested.
+    all_fragments = [f for f in all_fragments if "/lacuna" not in f.nas]
 
     frag_by_nas: dict[str, _FragmentData] = {f.nas: f for f in all_fragments}
     total_fragments = len(all_fragments)
@@ -400,6 +441,11 @@ def build_constellation_candidates(
             for nas in sorted(member_nas_list)
         ]
 
+        member_fragment_warnings = {
+            frag_by_nas[nas].nas: frag_by_nas[nas].methodology_fit_warnings
+            for nas in member_nas_list
+            if frag_by_nas[nas].methodology_fit_warnings
+        }
         candidates.append(
             ConstellationCandidate(
                 candidate_id="",   # filled after sorting
@@ -409,7 +455,9 @@ def build_constellation_candidates(
                 edges=component_edges,
                 dimensional_agreement=_classify_agreement(component_edges),
                 primary_dimension=_primary_dimension(component_edges),
-                methodology_fit_note=_methodology_fit_note(member_traditions),
+                methodology_fit_note=_methodology_fit_note(
+                    member_traditions, member_fragment_warnings
+                ),
             )
         )
 
