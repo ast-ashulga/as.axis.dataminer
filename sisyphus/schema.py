@@ -613,6 +613,7 @@ class ConstellationCandidate(BaseModel):
 
     candidate_id: str              # C-NNNN, deterministic across re-runs
     status: Literal["candidate"] = "candidate"
+    oversized: bool = False        # True when member_count > MAX_CLUSTER_SIZE — grouping artifact, not a real constellation; Louvain (app A4) is the fix
     members: list[ConstellationMember]
     tradition_count: int
     edges: list[ConstellationEdge]

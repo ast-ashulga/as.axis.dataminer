@@ -153,7 +153,13 @@ def chronotope_match(type_a: str | None, type_b: str | None) -> bool:
 
 
 # Polyphony delta below this threshold counts as a qualifying dimension.
-BAKHTIN_POLYPHONY_DELTA_THRESHOLD: float = 0.3
+BAKHTIN_POLYPHONY_DELTA_THRESHOLD: float = 0.15
+
+# Candidates with more members than this are flagged oversized=True.
+# Transitive closure union-find produces mega-clusters when the annotation graph
+# is dense; the flag surfaces this to the app layer without altering the data.
+# Louvain community detection (app A4) is the structural fix.
+MAX_CLUSTER_SIZE: int = 20
 
 _TIER_SEVERITY: dict[str, int] = {
     "documented": 0,
@@ -489,6 +495,7 @@ def build_constellation_candidates(
             ConstellationCandidate(
                 candidate_id="",   # filled after sorting
                 status="candidate",
+                oversized=len(members) > MAX_CLUSTER_SIZE,
                 members=members,
                 tradition_count=len(member_traditions),
                 edges=component_edges,

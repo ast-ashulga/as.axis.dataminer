@@ -434,7 +434,7 @@ class TestBakhtinPolyphonyDelta:
         )
 
     def test_polyphony_delta_qualifies_when_below_threshold(self, monkeypatch):
-        """Polyphony delta 0.2 (< 0.3 threshold) adds a qualifying dimension."""
+        """Polyphony delta 0.1 (< 0.15 threshold) adds a qualifying dimension."""
         from sisyphus.derive.constellations import _FragmentData
 
         fragments = {
@@ -446,7 +446,7 @@ class TestBakhtinPolyphonyDelta:
             "trad-b": [_FragmentData(
                 "nms://trad-b/d/ep", "trad-b",
                 tmi_codes=["TMI-A1010"], propp_codes=["PROPP-8"],
-                chronotope_type=None, polyphony=0.7,
+                chronotope_type=None, polyphony=0.6,
             )],
         }
         self._patch_fragments(monkeypatch, fragments)
@@ -457,8 +457,8 @@ class TestBakhtinPolyphonyDelta:
         assert len(result.candidates) == 1
         edge = result.candidates[0].edges[0]
         assert edge.bakhtin_profile_available is True
-        assert abs(edge.bakhtin_polyphony_delta - 0.2) < 1e-9
-        # TMI qualifies + Propp qualifies + polyphony_ok (0.2 < 0.3) → qualifying = 3
+        assert abs(edge.bakhtin_polyphony_delta - 0.1) < 1e-9
+        # TMI qualifies + Propp qualifies + polyphony_ok (0.1 < 0.15) → qualifying = 3
         assert edge.qualifying_dimensions == 3
 
     def test_polyphony_delta_does_not_qualify_when_at_or_above_threshold(self, monkeypatch):
@@ -540,3 +540,71 @@ class TestBakhtinPolyphonyDelta:
         edge = result.candidates[0].edges[0]
         assert edge.bakhtin_profile_available is False
         assert edge.bakhtin_polyphony_delta is None
+
+
+# ---------------------------------------------------------------------------
+# MAX_CLUSTER_SIZE — oversized flag
+# ---------------------------------------------------------------------------
+
+
+class TestOversizedFlag:
+    """Candidates exceeding MAX_CLUSTER_SIZE are flagged oversized=True."""
+
+    def _patch_fragments(self, monkeypatch, fragments_by_tradition: dict):
+        def fake_load(tradition: str):
+            return fragments_by_tradition.get(tradition, [])
+
+        monkeypatch.setattr(
+            "sisyphus.derive.constellations._load_tradition_fragments", fake_load
+        )
+        monkeypatch.setattr(
+            "sisyphus.derive.constellations._methodology_fit_note",
+            lambda fragment_notes=None: None,
+        )
+
+    def test_small_cluster_not_oversized(self, monkeypatch):
+        """A 2-member candidate is not flagged oversized."""
+        from sisyphus.derive.constellations import _FragmentData
+
+        fragments = {
+            "trad-a": [_FragmentData("nms://trad-a/d/ep", "trad-a",
+                                     tmi_codes=["TMI-A1010"], propp_codes=["PROPP-8"],
+                                     chronotope_type="BAKHTIN-DIVINE")],
+            "trad-b": [_FragmentData("nms://trad-b/d/ep", "trad-b",
+                                     tmi_codes=["TMI-A1010"], propp_codes=["PROPP-8"],
+                                     chronotope_type="BAKHTIN-DIVINE")],
+        }
+        self._patch_fragments(monkeypatch, fragments)
+
+        result = build_constellation_candidates(["trad-a", "trad-b"], min_dimensions=2)
+        assert len(result.candidates) == 1
+        assert result.candidates[0].oversized is False
+
+    def test_large_cluster_flagged_oversized(self, monkeypatch):
+        """A candidate exceeding MAX_CLUSTER_SIZE members is flagged oversized=True."""
+        from sisyphus.derive.constellations import MAX_CLUSTER_SIZE, _FragmentData
+
+        # Build MAX_CLUSTER_SIZE + 1 fragments across two traditions, all sharing
+        # one TMI code and one Propp code so they form a single mega-cluster.
+        n = MAX_CLUSTER_SIZE + 1
+        half = n // 2 + 1
+        frags_a = [
+            _FragmentData(f"nms://trad-a/d/ep-{i}", "trad-a",
+                          tmi_codes=["TMI-A1010"], propp_codes=["PROPP-8"],
+                          chronotope_type="BAKHTIN-DIVINE")
+            for i in range(half)
+        ]
+        frags_b = [
+            _FragmentData(f"nms://trad-b/d/ep-{i}", "trad-b",
+                          tmi_codes=["TMI-A1010"], propp_codes=["PROPP-8"],
+                          chronotope_type="BAKHTIN-DIVINE")
+            for i in range(half)
+        ]
+        fragments = {"trad-a": frags_a, "trad-b": frags_b}
+        self._patch_fragments(monkeypatch, fragments)
+
+        result = build_constellation_candidates(["trad-a", "trad-b"], min_dimensions=2)
+        assert len(result.candidates) == 1
+        cand = result.candidates[0]
+        assert len(cand.members) > MAX_CLUSTER_SIZE
+        assert cand.oversized is True
