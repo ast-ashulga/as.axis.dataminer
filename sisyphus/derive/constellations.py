@@ -21,7 +21,7 @@ from dataclasses import dataclass, field
 from pathlib import Path
 
 from sisyphus.derive.utils import load_confirmed_annotations
-from sisyphus.io.workspace import manifest_path, output_dir
+from sisyphus.io.workspace import output_dir
 from sisyphus.io.yaml_io import read_yaml
 from sisyphus.schema import (
     ConstellationCandidate,
@@ -152,6 +152,29 @@ def chronotope_match(type_a: str | None, type_b: str | None) -> bool:
     return type_a is not None and type_b is not None and type_a == type_b
 
 
+# Polyphony delta below this threshold counts as a qualifying dimension.
+BAKHTIN_POLYPHONY_DELTA_THRESHOLD: float = 0.3
+
+_TIER_SEVERITY: dict[str, int] = {
+    "documented": 0,
+    "reconstructed": 1,
+    "contested": 2,
+    "inspired": 3,
+}
+
+
+def _most_severe_methodology_note(anns: list[dict]) -> str | None:
+    """Return methodology_fit_note from the highest-severity annotation (contested > reconstructed)."""
+    candidates = [
+        a for a in anns
+        if a.get("methodology_fit_warning") and a.get("methodology_fit_note")
+    ]
+    if not candidates:
+        return None
+    best = max(candidates, key=lambda a: _TIER_SEVERITY.get(a.get("proposed_tier", ""), 0))
+    return best["methodology_fit_note"]
+
+
 # ---------------------------------------------------------------------------
 # Derived data loader
 # ---------------------------------------------------------------------------
@@ -164,7 +187,9 @@ class _FragmentData:
     tmi_codes: list[str] = field(default_factory=list)
     propp_codes: list[str] = field(default_factory=list)
     chronotope_type: str | None = None
-    methodology_fit_warnings: list[str] = field(default_factory=list)
+    polyphony: float | None = None
+    carnivalesque: float | None = None
+    methodology_fit_notes: dict[str, str | None] = field(default_factory=dict)
 
 
 def _load_tradition_fragments(tradition: str) -> list[_FragmentData]:
@@ -189,40 +214,48 @@ def _load_tradition_fragments(tradition: str) -> list[_FragmentData]:
             for nas, code in zip(div.get("episodes", []), div.get("sequence", [])):
                 propp_by_nas.setdefault(nas, []).append(code or "")
 
-    # Bakhtin profiles: NAS → chronotope_type or None
-    bakhtin_by_nas: dict[str, str | None] = {}
+    # Bakhtin profiles: NAS → (chronotope_type, polyphony, carnivalesque)
+    bakhtin_by_nas: dict[str, tuple[str | None, float | None, float | None]] = {}
     bakhtin_path = derived / "bakhtin-profiles.yaml"
     if bakhtin_path.exists():
         raw = read_yaml(bakhtin_path)
         for nas, profile in raw.get("entries", {}).items():
-            ct = profile.get("chronotope_type") if isinstance(profile, dict) else None
-            bakhtin_by_nas[nas] = ct
+            if isinstance(profile, dict):
+                ct = profile.get("chronotope_type")
+                poly = profile.get("polyphony")
+                carn = profile.get("carnivalesque")
+            else:
+                ct, poly, carn = None, None, None
+            bakhtin_by_nas[nas] = (ct, poly, carn)
 
     all_nas = sorted(set(tmi_entries) | set(propp_by_nas) | set(bakhtin_by_nas))
 
-    # Collect annotation-level methodology_fit_warning flags per fragment.
-    # A track is included if any confirmed annotation carries the warning.
-    mf_warnings_by_nas: dict[str, list[str]] = {}
+    # Collect annotation-level methodology_fit_warning notes per fragment.
+    # For each track with warnings, extract the most severe annotation's note text.
+    mf_notes_by_nas: dict[str, dict[str, str | None]] = {}
     for nas in all_nas:
-        warn_tracks = []
+        notes: dict[str, str | None] = {}
         for track in ("propp", "bakhtin", "tmi"):
             anns = load_confirmed_annotations(tradition, nas, track)
             if any(a.get("methodology_fit_warning") for a in anns):
-                warn_tracks.append(track)
-        if warn_tracks:
-            mf_warnings_by_nas[nas] = warn_tracks
+                notes[track] = _most_severe_methodology_note(anns)
+        if notes:
+            mf_notes_by_nas[nas] = notes
 
-    return [
-        _FragmentData(
+    frags: list[_FragmentData] = []
+    for nas in all_nas:
+        bt = bakhtin_by_nas.get(nas, (None, None, None))
+        frags.append(_FragmentData(
             nas=nas,
             tradition=tradition,
             tmi_codes=tmi_entries.get(nas, []),
             propp_codes=propp_by_nas.get(nas, []),
-            chronotope_type=bakhtin_by_nas.get(nas),
-            methodology_fit_warnings=mf_warnings_by_nas.get(nas, []),
-        )
-        for nas in all_nas
-    ]
+            chronotope_type=bt[0],
+            polyphony=bt[1],
+            carnivalesque=bt[2],
+            methodology_fit_notes=mf_notes_by_nas.get(nas, {}),
+        ))
+    return frags
 
 
 # ---------------------------------------------------------------------------
@@ -283,45 +316,30 @@ def _primary_dimension(edges: list[ConstellationEdge]) -> str:
 
 
 def _methodology_fit_note(
-    traditions: list[str],
-    fragment_warnings: dict[str, list[str]] | None = None,
+    fragment_notes: dict[str, dict[str, str | None]] | None = None,
 ) -> str | None:
-    """Return a warning note for methodology concerns in constellation members.
+    """Return structured methodology-fit notes for constellation members.
 
-    Checks two sources:
-    - Tradition manifests with living_tradition=true.
-    - Individual confirmed annotations with methodology_fit_warning=true (passed
-      as fragment_warnings: {nas: [track, ...]}).
+    fragment_notes: {nas: {track: note_text_or_None}} — only members whose
+    confirmed annotations carry methodology_fit_warning=true. Returns None
+    when no warnings exist. Total output is capped at 800 characters.
     """
-    parts: list[str] = []
+    if not fragment_notes:
+        return None
 
-    # Living-tradition check (manifest level)
-    living = []
-    for t in traditions:
-        mp = manifest_path(t)
-        if mp.exists():
-            raw = read_yaml(mp)
-            if raw.get("living_tradition"):
-                living.append(t)
-    if living:
-        plural = len(living) > 1
-        parts.append(
-            f"Methodology-fit review required: "
-            f"{', '.join(living)} {'are living traditions' if plural else 'is a living tradition'}. "
-            "Constellation edges involving living traditions require cultural expert review "
-            "before scholar confirmation in the Mnemosyne app."
-        )
+    lines: list[str] = []
+    for nas in sorted(fragment_notes):
+        for track in sorted(fragment_notes[nas]):
+            note_text = fragment_notes[nas][track] or "methodology fit concern noted"
+            lines.append(f"{nas} [{track}]: {note_text}")
 
-    # Annotation-level methodology_fit_warning flags
-    if fragment_warnings:
-        for nas, tracks in sorted(fragment_warnings.items()):
-            track_str = ", ".join(tracks)
-            parts.append(
-                f"Methodology-fit warnings in {track_str} annotations for {nas}. "
-                "These edges require methodological review in the Mnemosyne scholar confirmation flow."
-            )
+    if not lines:
+        return None
 
-    return " ".join(parts) if parts else None
+    result = "\n".join(lines)
+    if len(result) > 800:
+        result = result[:797] + "…"
+    return result
 
 
 # ---------------------------------------------------------------------------
@@ -391,12 +409,30 @@ def build_constellation_candidates(
             po     = propp_overlap(fa.propp_codes, fb.propp_codes)
             cm     = chronotope_match(fa.chronotope_type, fb.chronotope_type)
 
-            # TMI counts as one dimension: qualifies if leaf OR branch meets threshold
-            tmi_ok   = leaf >= tmi_leaf_threshold or branch >= tmi_branch_threshold
-            propp_ok = po > propp_threshold
-            bakhtin_ok = cm
+            # Bakhtin numeric profile dimensions
+            bakhtin_profile_available = (
+                fa.polyphony is not None and fb.polyphony is not None
+            )
+            bakhtin_polyphony_delta = (
+                round(abs(fa.polyphony - fb.polyphony), 4)  # type: ignore[operator]
+                if bakhtin_profile_available else None
+            )
+            bakhtin_carnivalesque_delta = (
+                round(abs(fa.carnivalesque - fb.carnivalesque), 4)  # type: ignore[operator]
+                if (fa.carnivalesque is not None and fb.carnivalesque is not None)
+                else None
+            )
 
-            qualifying = sum([tmi_ok, propp_ok, bakhtin_ok])
+            # TMI counts as one dimension: qualifies if leaf OR branch meets threshold
+            tmi_ok        = leaf >= tmi_leaf_threshold or branch >= tmi_branch_threshold
+            propp_ok      = po > propp_threshold
+            bakhtin_ok    = cm
+            polyphony_ok  = (
+                bakhtin_profile_available
+                and bakhtin_polyphony_delta < BAKHTIN_POLYPHONY_DELTA_THRESHOLD  # type: ignore[operator]
+            )
+
+            qualifying = sum([tmi_ok, propp_ok, bakhtin_ok, polyphony_ok])
             if qualifying < min_dimensions:
                 continue
 
@@ -412,6 +448,9 @@ def build_constellation_candidates(
                     propp_overlap=round(po, 4),
                     chronotope_match=cm,
                     qualifying_dimensions=qualifying,
+                    bakhtin_profile_available=bakhtin_profile_available,
+                    bakhtin_polyphony_delta=bakhtin_polyphony_delta,
+                    bakhtin_carnivalesque_delta=bakhtin_carnivalesque_delta,
                 )
             )
 
@@ -441,10 +480,10 @@ def build_constellation_candidates(
             for nas in sorted(member_nas_list)
         ]
 
-        member_fragment_warnings = {
-            frag_by_nas[nas].nas: frag_by_nas[nas].methodology_fit_warnings
+        member_fragment_notes = {
+            frag_by_nas[nas].nas: frag_by_nas[nas].methodology_fit_notes
             for nas in member_nas_list
-            if frag_by_nas[nas].methodology_fit_warnings
+            if frag_by_nas[nas].methodology_fit_notes
         }
         candidates.append(
             ConstellationCandidate(
@@ -455,9 +494,7 @@ def build_constellation_candidates(
                 edges=component_edges,
                 dimensional_agreement=_classify_agreement(component_edges),
                 primary_dimension=_primary_dimension(component_edges),
-                methodology_fit_note=_methodology_fit_note(
-                    member_traditions, member_fragment_warnings
-                ),
+                methodology_fit_note=_methodology_fit_note(member_fragment_notes),
             )
         )
 

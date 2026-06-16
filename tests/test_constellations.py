@@ -186,7 +186,7 @@ class TestBuildConstellationCandidates:
         )
         monkeypatch.setattr(
             "sisyphus.derive.constellations._methodology_fit_note",
-            lambda traditions, fragment_warnings=None: None,
+            lambda fragment_notes=None: None,
         )
 
     def test_clear_pair_produces_one_candidate(self, monkeypatch):
@@ -368,37 +368,26 @@ class TestBuildConstellationCandidates:
 
     def test_methodology_fit_note_from_annotation_warnings(self, monkeypatch):
         """methodology_fit_note is populated when member annotations carry methodology_fit_warning."""
-        from sisyphus.derive.constellations import _FragmentData, _methodology_fit_note
+        from sisyphus.derive.constellations import _methodology_fit_note
 
-        # _methodology_fit_note is NOT patched here — we test it directly.
-        # We verify that passing fragment_warnings produces a non-null note.
-        traditions = ["tradition-a", "tradition-b"]
-        fragment_warnings = {
-            "nms://tradition-a/div-i/ep-1": ["propp"],
+        fragment_notes = {
+            "nms://tradition-a/div-i/ep-1": {
+                "propp": "Function applied to non-hero agent — framework stretch.",
+            },
         }
 
-        # Patch manifest_path so living_tradition check doesn't fail on missing files
-        monkeypatch.setattr(
-            "sisyphus.derive.constellations.manifest_path",
-            lambda t: type("FakePath", (), {"exists": lambda self: False})(),
-        )
-
-        note = _methodology_fit_note(traditions, fragment_warnings)
+        note = _methodology_fit_note(fragment_notes)
         assert note is not None
         assert "nms://tradition-a/div-i/ep-1" in note
         assert "propp" in note
+        assert "framework stretch" in note
 
     def test_methodology_fit_note_null_when_no_warnings(self, monkeypatch):
-        """methodology_fit_note is None when no living traditions and no annotation warnings."""
+        """methodology_fit_note is None when no annotation warnings."""
         from sisyphus.derive.constellations import _methodology_fit_note
 
-        monkeypatch.setattr(
-            "sisyphus.derive.constellations.manifest_path",
-            lambda t: type("FakePath", (), {"exists": lambda self: False})(),
-        )
-
-        note = _methodology_fit_note(["trad-a", "trad-b"], {})
-        assert note is None
+        assert _methodology_fit_note({}) is None
+        assert _methodology_fit_note(None) is None
 
     def test_flag_off_skips(self, monkeypatch):
         """constellate phase prints a skip message when the flag is false."""
@@ -422,3 +411,132 @@ class TestBuildConstellationCandidates:
         output = buf.getvalue()
         assert "constellation_candidates flag is false" in output
         assert "skipping" in output
+
+
+# ---------------------------------------------------------------------------
+# S3 — Bakhtin polyphony delta dimension
+# ---------------------------------------------------------------------------
+
+
+class TestBakhtinPolyphonyDelta:
+    """Bakhtin numeric profile fields in constellation edge scoring (S3)."""
+
+    def _patch_fragments(self, monkeypatch, fragments_by_tradition: dict):
+        def fake_load(tradition: str):
+            return fragments_by_tradition.get(tradition, [])
+
+        monkeypatch.setattr(
+            "sisyphus.derive.constellations._load_tradition_fragments", fake_load
+        )
+        monkeypatch.setattr(
+            "sisyphus.derive.constellations._methodology_fit_note",
+            lambda fragment_notes=None: None,
+        )
+
+    def test_polyphony_delta_qualifies_when_below_threshold(self, monkeypatch):
+        """Polyphony delta 0.2 (< 0.3 threshold) adds a qualifying dimension."""
+        from sisyphus.derive.constellations import _FragmentData
+
+        fragments = {
+            "trad-a": [_FragmentData(
+                "nms://trad-a/d/ep", "trad-a",
+                tmi_codes=["TMI-A1010"], propp_codes=["PROPP-8"],
+                chronotope_type=None, polyphony=0.5,
+            )],
+            "trad-b": [_FragmentData(
+                "nms://trad-b/d/ep", "trad-b",
+                tmi_codes=["TMI-A1010"], propp_codes=["PROPP-8"],
+                chronotope_type=None, polyphony=0.7,
+            )],
+        }
+        self._patch_fragments(monkeypatch, fragments)
+
+        result = build_constellation_candidates(
+            ["trad-a", "trad-b"], min_dimensions=2
+        )
+        assert len(result.candidates) == 1
+        edge = result.candidates[0].edges[0]
+        assert edge.bakhtin_profile_available is True
+        assert abs(edge.bakhtin_polyphony_delta - 0.2) < 1e-9
+        # TMI qualifies + Propp qualifies + polyphony_ok (0.2 < 0.3) → qualifying = 3
+        assert edge.qualifying_dimensions == 3
+
+    def test_polyphony_delta_does_not_qualify_when_at_or_above_threshold(self, monkeypatch):
+        """Polyphony delta 0.4 (>= 0.3 threshold) does not add a qualifying dimension."""
+        from sisyphus.derive.constellations import _FragmentData
+
+        fragments = {
+            "trad-a": [_FragmentData(
+                "nms://trad-a/d/ep", "trad-a",
+                tmi_codes=["TMI-A1010"], propp_codes=["PROPP-8"],
+                chronotope_type=None, polyphony=0.5,
+            )],
+            "trad-b": [_FragmentData(
+                "nms://trad-b/d/ep", "trad-b",
+                tmi_codes=["TMI-A1010"], propp_codes=["PROPP-8"],
+                chronotope_type=None, polyphony=0.9,
+            )],
+        }
+        self._patch_fragments(monkeypatch, fragments)
+
+        result = build_constellation_candidates(
+            ["trad-a", "trad-b"], min_dimensions=2
+        )
+        assert len(result.candidates) == 1
+        edge = result.candidates[0].edges[0]
+        assert edge.bakhtin_profile_available is True
+        assert abs(edge.bakhtin_polyphony_delta - 0.4) < 1e-9
+        # TMI qualifies + Propp qualifies, polyphony_ok = False → qualifying = 2
+        assert edge.qualifying_dimensions == 2
+
+    def test_carnivalesque_delta_computed_when_available(self, monkeypatch):
+        """carnivalesque_delta is computed when both members have non-null carnivalesque."""
+        from sisyphus.derive.constellations import _FragmentData
+
+        fragments = {
+            "trad-a": [_FragmentData(
+                "nms://trad-a/d/ep", "trad-a",
+                tmi_codes=["TMI-A1010"], propp_codes=["PROPP-8"],
+                chronotope_type=None, polyphony=0.5, carnivalesque=0.0,
+            )],
+            "trad-b": [_FragmentData(
+                "nms://trad-b/d/ep", "trad-b",
+                tmi_codes=["TMI-A1010"], propp_codes=["PROPP-8"],
+                chronotope_type=None, polyphony=0.7, carnivalesque=0.7,
+            )],
+        }
+        self._patch_fragments(monkeypatch, fragments)
+
+        result = build_constellation_candidates(
+            ["trad-a", "trad-b"], min_dimensions=2
+        )
+        assert len(result.candidates) == 1
+        edge = result.candidates[0].edges[0]
+        assert edge.bakhtin_carnivalesque_delta is not None
+        assert abs(edge.bakhtin_carnivalesque_delta - 0.7) < 1e-9
+
+    def test_bakhtin_profile_unavailable_when_polyphony_missing(self, monkeypatch):
+        """bakhtin_profile_available is False when either member lacks polyphony."""
+        from sisyphus.derive.constellations import _FragmentData
+
+        fragments = {
+            "trad-a": [_FragmentData(
+                "nms://trad-a/d/ep", "trad-a",
+                tmi_codes=["TMI-A1010"], propp_codes=["PROPP-8"],
+                chronotope_type=None, polyphony=0.5,
+            )],
+            "trad-b": [_FragmentData(
+                "nms://trad-b/d/ep", "trad-b",
+                tmi_codes=["TMI-A1010"], propp_codes=["PROPP-8"],
+                chronotope_type=None, polyphony=None,  # missing
+            )],
+        }
+        self._patch_fragments(monkeypatch, fragments)
+
+        result = build_constellation_candidates(
+            ["trad-a", "trad-b"], min_dimensions=1
+        )
+        assert len(result.candidates) == 1
+        edge = result.candidates[0].edges[0]
+        assert edge.bakhtin_profile_available is False
+        assert edge.bakhtin_polyphony_delta is None

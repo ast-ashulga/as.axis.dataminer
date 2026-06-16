@@ -601,7 +601,10 @@ class ConstellationEdge(BaseModel):
     tmi_jaccard_root: float = Field(ge=0.0, le=1.0)
     propp_overlap: float = Field(ge=0.0, le=1.0)
     chronotope_match: bool
-    qualifying_dimensions: int = Field(ge=0, le=3)
+    qualifying_dimensions: int = Field(ge=0, le=4)
+    bakhtin_profile_available: bool = False
+    bakhtin_polyphony_delta: float | None = None
+    bakhtin_carnivalesque_delta: float | None = None
 
 
 class ConstellationCandidate(BaseModel):
