@@ -13,7 +13,7 @@ role: secondary
 source_file: sources/mahabharata/witness/mahabharata-ru-smirnov.txt
 copyright_status: public-domain         # verified publicly available
 living_tradition: true
-public_release: false
+public_release: true
 covers_parvas: [3, 5, 6, 10, 11, 12, 14, 16, 17, 18]
 notes: >
   Literal (буквальный) philosophical translation. Distinct methodology — high value

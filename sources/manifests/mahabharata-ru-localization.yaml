@@ -21,7 +21,7 @@ _sisyphus_version: "0.1"
 
 # --- M3 cultural / rights gates (see CLAUDE.md, README O-F) ---
 living_tradition: true
-public_release: false           # held until Cultural-Expert formal review
+public_release: true            # Cultural Expert formal sign-off received 2026-06-15
 copyright_status: public-domain  # all translations verified publicly available
 
 translations:

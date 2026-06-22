@@ -28,7 +28,7 @@ books:
 - 18
 copyright_status: public-domain
 living_tradition: true
-public_release: false
+public_release: true
 source_file: sources/mahabharata/text/sa/gretil/mbh1-18.txt
 notes: "Machine-readable transliterated BORI critical edition (78,603 verse refs).
   Layer 3, gated layer_3_original=false. Converted from gretil-sanskrit/MBH1-18U.HTM.

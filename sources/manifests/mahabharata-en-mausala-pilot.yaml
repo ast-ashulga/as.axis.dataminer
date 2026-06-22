@@ -14,7 +14,7 @@ scope: pilot                # Book 16 (mausala-parva) ONLY — not the full epic
 source_file: sources/mahabharata/witness/mahabharata-en-mausala-pilot.txt
 copyright_status: public-domain
 living_tradition: true
-public_release: false
+public_release: true
 notes: >
   Pilot smoke-test slice: Mausala Parva (destruction of the Yadavas, Krishna's death).
   Full EN Ganguli + RU primary witnesses remain available for the real run.

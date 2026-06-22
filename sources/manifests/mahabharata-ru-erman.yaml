@@ -13,7 +13,7 @@ books:
 - 6
 copyright_status: public-domain
 living_tradition: true
-public_release: false
+public_release: true
 text_dir: sources/mahabharata/text/ru/erman
 notes: В.Г. Эрман. Publicly available — verified.
 _sisyphus_version: '0.1'

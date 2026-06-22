@@ -13,7 +13,7 @@ books:
 - 1
 copyright_status: public-domain
 living_tradition: true
-public_release: false
+public_release: true
 text_dir: sources/mahabharata/text/ru/ibragimov
 notes: Ибрагимов (abridged retelling). Publicly available — verified.
 _sisyphus_version: '0.1'
