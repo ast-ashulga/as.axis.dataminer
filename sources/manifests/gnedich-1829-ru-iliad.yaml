@@ -1,0 +1,28 @@
+# Witness manifest for generate-translated phase.
+# Usage:
+#   sisyphus generate-translated iliad \
+#     --run-id <run-id-from-second-witness-segment> \
+#     --translation-id gnedich-1829-ru \
+#     --author "Nikolai Ivanovich Gnedich" \
+#     --year 1829 \
+#     --locale ru \
+#     --license public-domain \
+#     --source-file "sources/iliad/iliada-gnedich.pdf"
+
+tradition: iliad
+source_type: scanned-pdf
+locale: ru
+translation_id: gnedich-1829-ru
+author: Nikolai Ivanovich Gnedich
+year: 1829
+license: public-domain
+copyright_status: public-domain
+source_file: sources/iliad/iliada-gnedich.pdf
+notes: >
+  Николай Иванович Гнедич, «Илиада», 1829.
+  Verse translation into Russian hexameter; the canonical Russian Iliad for two centuries.
+  Gnedich died 1833 → definitively public domain (RU and EU life + 70).
+  The PD witness IS the canonical scholarly standard for RU Iliad —
+  no copyright/displayability conflict (unlike RU Gilgamesh / RU Mahabharata).
+  Use as RU primary Iliad witness.
+_sisyphus_version: "0.1"

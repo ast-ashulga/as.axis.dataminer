@@ -1,0 +1,31 @@
+# Witness manifest for generate-translated phase.
+# Usage:
+#   sisyphus generate-translated iliad \
+#     --run-id <run-id-from-second-witness-segment> \
+#     --translation-id murray-1924-en \
+#     --author "Arthur Taber Murray" \
+#     --year 1924 \
+#     --locale en \
+#     --license public-domain \
+#     --source-file "sources/iliad/iliad-murray.md"
+
+tradition: iliad
+source_type: txt
+locale: en
+translation_id: murray-1924-en
+author: Arthur Taber Murray
+year: 1924
+license: public-domain
+copyright_status: public-domain
+source_file: sources/iliad/iliad-murray.md
+notes: >
+  A.T. Murray, "The Iliad", Loeb Classical Library Nos. 170-171.
+  Harvard University Press, Vol. 1 (Books I-XII) 1924, Vol. 2 (Books XIII-XXIV) 1925.
+  Literal prose translation; preserves Greek name forms (not Latinized).
+  Murray died 1946 → public domain (US life + 70 years = 2016+).
+  NOTE: the 1999 Wyatt revision of this Loeb remains under copyright.
+  Use only the original 1924/1925 Murray text.
+  Selected as EN primary Iliad witness (cultural-domain-expert review 2026-06-22)
+  in place of Lang/Leaf/Myers 1882 — equivalent scholarly properties, already on disk.
+  Do NOT use Heumann 2021 (not PD — see manifest-heumann-en.yaml).
+_sisyphus_version: "0.1"

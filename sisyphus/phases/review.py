@@ -129,7 +129,14 @@ def run_review(
 def _build_queue(tradition: str, record_type: str, locale: str) -> list[dict]:
     items: list[dict] = []
 
-    if not record_type or record_type == "layer0":
+    # "layer0" and "witness" are content review types:
+    #   "layer0"  → restrict to surface layer only
+    #   "witness" → restrict to non-surface layers (translated, original, etc.)
+    #   omitted   → include all content layers
+    _content_types = {"layer0", "witness"}
+    want_content = not record_type or record_type in _content_types
+
+    if want_content:
         frag_root = output_dir(tradition) / "fragments"
         if frag_root.exists():
             for frag_path in frag_root.glob("**/*.yaml"):
@@ -138,20 +145,28 @@ def _build_queue(tradition: str, record_type: str, locale: str) -> list[dict]:
                 for content in data.get("content", []):
                     if content.get("status") != "candidate":
                         continue
-                    if content.get("layer") != "surface":
+                    content_layer = content.get("layer", "")
+                    if record_type == "layer0" and content_layer != "surface":
+                        continue
+                    if record_type == "witness" and content_layer == "surface":
                         continue
                     if locale and content.get("locale") != locale:
                         continue
                     items.append({
-                        "type": "layer0",
+                        "type": "layer0" if content_layer == "surface" else "witness",
                         "nas": nas,
                         "locale": content.get("locale"),
-                        "layer": content.get("layer"),
+                        "layer": content_layer,
+                        "translation_id": content.get("translation_id"),
                         "body": content.get("body", ""),
                         "confidence_tier": content.get("confidence_tier"),
                         "ai_generated": content.get("ai_generated"),
                         "file_path": str(frag_path),
-                        "content_key": {"locale": content.get("locale"), "layer": "surface"},
+                        "content_key": {
+                            "locale": content.get("locale"),
+                            "layer": content_layer,
+                            "translation_id": content.get("translation_id"),
+                        },
                     })
 
     if not record_type or record_type == "annotation":
@@ -186,10 +201,14 @@ def _display_item(console: Console, item: dict, i: int, total: int) -> None:
     record_type = item.get("type", "")
     nas = item.get("nas", "")
 
-    if record_type == "layer0":
-        title = f"Layer 0 Summary — {nas} [{item.get('locale')}]"
+    if record_type in ("layer0", "witness"):
+        layer_label = item.get("layer", "surface")
+        tid = item.get("translation_id") or ""
+        tid_note = f" | translation_id: {tid}" if tid else ""
+        title = f"Layer {layer_label} — {nas} [{item.get('locale')}{tid_note}]"
         body = (
             f"[dim]NAS:[/dim] {nas}\n"
+            f"[dim]Layer:[/dim] {layer_label}  [dim]Locale:[/dim] {item.get('locale')}\n"
             f"[dim]Tier proposed:[/dim] {item.get('confidence_tier')}\n"
             f"[dim]AI-generated:[/dim] {item.get('ai_generated')}\n\n"
             f"{item.get('body', '')}"
@@ -241,7 +260,12 @@ def _make_decision(
         "code": item.get("code"),
         "confidence_tier_assigned": tier,
         "review_note": note or None,
+        # Layer and translation_id are informational extras (not in ReviewDecision schema
+        # but preserved here for the audit trail written by _save_decisions)
     }
+    if item.get("type") == "witness":
+        decision["layer"] = item.get("layer")
+        decision["translation_id"] = item.get("translation_id")
     return decision
 
 
@@ -253,11 +277,15 @@ def _apply_decision(item: dict, status: Status, tier: str | None) -> None:
 
     data = read_yaml(file_path)
 
-    if item.get("type") == "layer0":
+    if item.get("type") in ("layer0", "witness"):
+        target_layer = item.get("layer", "surface")
+        target_locale = item.get("locale")
+        target_tid = item.get("translation_id")
         for content in data.get("content", []):
             if (
-                content.get("locale") == item.get("locale")
-                and content.get("layer") == "surface"
+                content.get("locale") == target_locale
+                and content.get("layer") == target_layer
+                and content.get("translation_id") == target_tid
                 and content.get("status") == "candidate"
             ):
                 content["status"] = status.value

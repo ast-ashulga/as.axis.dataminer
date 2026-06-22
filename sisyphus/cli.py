@@ -147,6 +147,47 @@ def generate_layer0(
 
 
 # ---------------------------------------------------------------------------
+# generate-translated (between C and D — deterministic, no LLM)
+# ---------------------------------------------------------------------------
+
+
+@app.command(name="generate-translated")
+def generate_translated(
+    tradition: Annotated[str, typer.Argument(help="Tradition identifier.")],
+    run_id: Annotated[str, typer.Option(help="Workspace run_id whose segmented/ dir contains the witness text.")],
+    translation_id: Annotated[str, typer.Option(help="Canonical witness ID (e.g. thompson-1928-en).")],
+    author: Annotated[str, typer.Option(help="Translator name.")],
+    year: Annotated[int, typer.Option(help="Publication year.")],
+    locale: Annotated[str, typer.Option(help="ISO locale (e.g. en, ru).")],
+    license: Annotated[str, typer.Option(help="License string (e.g. public-domain).")] = "public-domain",
+    source_file: Annotated[str, typer.Option(help="Original source file path (informational).")] = "",
+    ocr_applied: Annotated[bool, typer.Option(help="Whether OCR was applied during ingestion.")] = False,
+) -> None:
+    """Emit Layer 1 (translated) ContentRecords from a second-witness segmentation run.
+
+    Deterministic, no LLM. Reads segmented passage texts from the workspace run,
+    appends translated ContentRecords to each fragment file, and updates
+    manifest.translations and translation_registry.
+
+    Run after 'sisyphus segment <run_id>' completes for the witness source.
+    """
+    from sisyphus.phases.generate_translated import run_generate_translated
+
+    run_generate_translated(
+        tradition=tradition,
+        translation_id=translation_id,
+        author=author,
+        year=year,
+        locale=locale,
+        license_str=license,
+        run_id=run_id,
+        console=console,
+        source_file=source_file,
+        ocr_applied=ocr_applied,
+    )
+
+
+# ---------------------------------------------------------------------------
 # Phase D — annotate
 # ---------------------------------------------------------------------------
 
@@ -283,7 +324,7 @@ def constellate(
 def review(
     tradition: Annotated[str, typer.Option(help="Filter by tradition.")] = "",
     type: Annotated[
-        str, typer.Option(help="Filter by record type: annotation|layer0|parallel.")
+        str, typer.Option(help="Filter by record type: annotation|layer0|witness|parallel.")
     ] = "",
     locale: Annotated[str, typer.Option(help="Filter by locale (e.g. en).")] = "",
     reviewer: Annotated[str, typer.Option(help="Reviewer identifier (stored in audit log).")] = "",

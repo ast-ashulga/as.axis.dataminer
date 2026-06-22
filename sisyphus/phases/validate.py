@@ -125,7 +125,14 @@ def run_validate(tradition: str, console: Console) -> list[str]:
                     f"(expected one of {sorted(_REVIEW_ACTIONS)})"
                 )
             tier = dec.get("confidence_tier_assigned")
-            if action == "confirmed" and dec.get("record_type") == "summary" \
+            # Surface summaries (layer0) must use 'reconstructed'. Witness records
+            # (translated/original) correctly use 'documented'; exclude them by layer.
+            dec_layer = dec.get("layer")
+            is_surface_summary = (
+                dec.get("record_type") == "summary"
+                and dec_layer in (None, "surface")
+            )
+            if action == "confirmed" and is_surface_summary \
                     and tier not in (None, ConfidenceTier.reconstructed):
                 errors.append(
                     f"review-decisions.yaml[{i}]: summary confirmed at tier '{tier}' "

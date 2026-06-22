@@ -1,0 +1,33 @@
+# Witness manifest for generate-translated phase.
+# Usage:
+#   sisyphus generate-translated mahabharata \
+#     --run-id <run-id-from-second-witness-segment> \
+#     --translation-id ganguli-1883-96-en \
+#     --author "Kisari Mohan Ganguli" \
+#     --year 1883 \
+#     --locale en \
+#     --license public-domain \
+#     --source-file "sources/mahabharata/ganguli-en/ganguli-1883-mahabharata.pdf"
+
+tradition: mahabharata
+source_type: digital-pdf
+locale: en
+translation_id: ganguli-1883-96-en
+author: Kisari Mohan Ganguli
+year: 1883
+license: public-domain
+copyright_status: public-domain
+source_file: sources/mahabharata/ganguli-en/ganguli-1883-mahabharata.pdf
+living_tradition: true
+recension: vulgate
+notes: >
+  Kisari Mohan Ganguli, "The Mahabharata of Krishna-Dwaipayana Vyasa" (1883-1896).
+  18 books; Bombay vulgate recension (not BORI Critical Edition).
+  Only complete public-domain English Mahabharata translation.
+  NAS spine uses traditional sub-book section headings (Anukramanika Parva, Astika Parva,
+  etc.) which are structurally shared by both vulgate and BORI — no recension collision
+  (cultural-domain-expert review C4, 2026-06-22). Segment by section headings, not adhyaya
+  numbers.
+  LIVING TRADITION: public_release gate applies; framing note required for devotional
+  passages (Bhagavad Gita / Bhishma Parva).
+_sisyphus_version: "0.1"

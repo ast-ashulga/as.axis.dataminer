@@ -1,0 +1,28 @@
+# Witness manifest for generate-translated phase.
+# Usage:
+#   sisyphus generate-translated gilgamesh \
+#     --run-id <run-id-from-second-witness-segment> \
+#     --translation-id thompson-1928-en \
+#     --author "R. Campbell Thompson" \
+#     --year 1928 \
+#     --locale en \
+#     --license public-domain \
+#     --source-file "sources/gilgamesh/reginald-campbell-thompson_epic-of-gilgamesh-1928.pdf"
+
+tradition: gilgamesh
+source_type: scanned-pdf
+locale: en
+translation_id: thompson-1928-en
+author: R. Campbell Thompson
+year: 1928
+license: public-domain
+copyright_status: public-domain
+source_file: sources/gilgamesh/reginald-campbell-thompson_epic-of-gilgamesh-1928.pdf
+notes: >
+  R. Campbell Thompson, "The Epic of Gilgamesh: Text, Transliteration, and Notes"
+  (Oxford: Clarendon Press, 1930). Reading translation in verse form from the SBV.
+  Thompson died 1941 → public domain (UK life + 70 = 2011; US 95-year rule = 2026-01-01).
+  NB: Plan item C1 — the 1930 Thompson is a cuneiform/transliteration edition;
+  this manifest covers the 1928 verse translation by the same author.
+  Use as EN primary witness for the Gilgamesh SBV spine.
+_sisyphus_version: "0.1"

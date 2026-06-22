@@ -325,12 +325,29 @@ def _upsert_fragment_file(
 
     parent_nas = entry.get("parent_nas")
 
+    # Derive available_layers from content that is candidate or confirmed — never
+    # hardcode [surface] here because a re-run would silently drop translated/original
+    # layers written by generate-translated or a Layer-3 pass.
+    available_layers: list[Layer] = []
+    seen_layers: set[str] = set()
+    for rec in content:
+        if rec.get("status") in ("candidate", "confirmed"):
+            layer_str = rec.get("layer", "")
+            if layer_str and layer_str not in seen_layers:
+                try:
+                    available_layers.append(Layer(layer_str))
+                    seen_layers.add(layer_str)
+                except ValueError:
+                    pass
+    if not available_layers:
+        available_layers = [Layer.surface]
+
     frag = FragmentRecord(
         nas=nas,
         parent_nas=parent_nas,
         tradition_id=tradition,
         confidence_tier=ConfidenceTier.reconstructed,
-        available_layers=[Layer.surface],
+        available_layers=available_layers,
         manuscript_layer=ms,
     )
     frag_file_data = {
