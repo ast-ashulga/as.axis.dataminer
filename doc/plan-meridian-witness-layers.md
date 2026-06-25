@@ -4,7 +4,30 @@
 
 **Origin:** Raised by the Meridian repo (`as.axis.meridian`) while resolving its open product question **A-11 / PRD OQ#1** (witness/translation display). The Meridian-side resolution plan is `as.axis.meridian/doc/13-witness-display-resolution.md`; this is the Sisyphus half of that two-track decision.
 
-**Status:** Proposed — witness selection vetted by the Meridian-side Product Lead + Cultural Expert reviews (2026-06-22; outcomes folded into Phase 0). Still needs Assyriological + Indological specialist sign-off (see Phase 0) and the Sisyphus task owner to clear action items C1–C4 before generation. Not started.
+**Status:** ✅ **Largely delivered 2026-06-22.** Sisyphus re-exported all three traditions with the `translated` witness layer; Meridian validated it (see "Delivery & open items" below). Two follow-ups remain for Sisyphus (Adi Parva coverage gap; Murray edition-year metadata) and the specialist sign-offs (Assyriological / Indological) still apply.
+
+---
+
+## Delivery & open items (2026-06-22, post-validation)
+
+**Delivered** (`license: public-domain`, manifest `translations` registries populated, all dated 2026-06-22):
+
+| Tradition | Locale | Witness shipped | Coverage | Notes |
+|---|---|---|---|---|
+| gilgamesh | en | `thompson-1928-en` | 34/44 | ✅ corrected per C1 (1928 reading translation, not the 1930 text edition) |
+| gilgamesh | ru | — | — | ✅ Diakonoff correctly deferred (copyright ~2069) |
+| iliad | en | `murray-1924-en` (Loeb) | 69/69 | ⚠️ diverged from the planned `lang-leaf-myers-1882-en` — **accepted** (see O-E note) |
+| iliad | ru | `gnedich-1829-ru` | 55/69 | ✅ matches recommendation |
+| mahabharata | en | `ganguli-1883-96-en` | 18/30 | ⚠️ **Adi Parva gap** (see below) |
+| mahabharata | ru | — | — | ✅ Smirnov correctly deferred (copyright ~2034) |
+
+No `source_text` / `original` (Layer 3) — correctly still gated (`layer_3_original: false`). Witnesses were **not** embedded (Phase E re-run W5 skipped) — embeddings remain 286 surface-only vectors; acceptable for v1.
+
+**O-E resolved (stale):** Murray's Loeb Iliad (vol. 1 **1924** / vol. 2 **1925**) is **US public domain** under the 95-year rule (PD 2020 / 2021) — the O-E "copyright" flag was stale, the same staleness C3 caught for Thompson. Murray is the more scholarly translation, so the divergence from Lang/Leaf/Myers is **accepted as an upgrade**. Lattimore (1951) remains genuinely in copyright if ever revisited.
+
+**Two follow-ups back to Sisyphus:**
+- **S1 — Adi Parva witness gap (Mahabharata).** Only **6/19** Adi Parva fragments carry the Ganguli witness; **every other parva is 100% covered** (bhishma 4/4, drona 4/4, etc.). The 13 uncovered are **not lacunae**, and Ganguli fully translated Adi Parva — so this is a **witness-segmentation/alignment gap specific to Adi Parva** (the structurally complex framing book — the C4 vulgate-vs-spine reconciliation risk, realized). Re-run witness alignment for Adi Parva.
+- **S2 — Murray edition-year metadata.** Iliad books **13–24** are Murray's **1925** vol. 2 but are all labeled `translation_year: 1924`. Both volumes are PD so there's no rights impact — edition-year precision only. Fix to 1925 for books 13–24 if a re-export happens.
 
 ---
 
