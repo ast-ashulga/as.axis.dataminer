@@ -1,17 +1,45 @@
-# PLACEHOLDER — fill before M2 (Iliad milestone).
 tradition: iliad
 
 tradition_preamble: >
-  TODO: The source text is the Iliad, Homer's Greek epic (c. 8th century BCE,
-  oral-formulaic tradition). Scholarly authority: West 1998 (Perseus), Murray/Wyatt (Loeb 1999).
-  Divisions follow the traditional 24-book (rhapsody) structure.
-  Use kebab-case slugs: book-i, book-ii, …, book-xxiv.
-  Episode slugs should follow narrative logic (aristeia, council, catalogue) not line counts.
-  NAS prefix: nms://iliad
+  The source text is the Iliad, Homer's ancient Greek epic (c. 8th century BCE),
+  composed in an oral-formulaic tradition and transmitted through a rich manuscript
+  lineage. The oldest and most authoritative complete manuscript is Venetus A
+  (Marcianus Graecus 454, 10th century CE), which preserves both the text and the
+  Alexandrian scholia recording the editorial judgments of Zenodotus, Aristophanes
+  of Byzantium, and Aristarchus. The scholarly standard for textual decisions is
+  M.L. West's critical edition (Teubner, 1998–2000).
+
+  Texts in this pipeline:
+    EN: A.T. Murray 1924 Loeb Classical Library translation (public domain). Note:
+        the Wyatt 1999 Loeb revision is under copyright and is NOT in this pipeline;
+        all Murray citations refer to the 1924 original only.
+    RU: Nikolai Ivanovich Gnedich 1829 (public domain, scanned-PDF, OCR with lang=rus).
+
+  The text is organised into 24 books (rhapsodies), identified in Venetus A by Greek
+  letters Alpha–Omega. Use kebab-case Roman-numeral slugs: book-i, book-ii, …, book-xxiv.
+  Episode slugs follow narrative logic (aristeia, council, assembly, supplication,
+  divine encounter), not line counts. NAS prefix: nms://iliad
 
 epistemic_framing: >
-  TODO: Book divisions are ancient but not authorial; episode boundaries should follow
-  narrative logic, not mechanically follow book ends.
-  Lacunae are rare in manuscript tradition — note textual variants and athetised lines instead.
-  Western structural frameworks apply with moderate fit.
-  Set methodology_fit_warning=true where framework-genre mismatch is epistemically significant.
+  Book divisions are ancient but not authorial. Episode boundaries must follow narrative
+  logic — the opening and close of a distinct narrative action — not mechanically
+  coincide with book boundaries. A book may contain two or three episodes; an episode
+  may occasionally span a book seam (rare but possible).
+
+  The Iliad text is exceptionally well preserved. There are no lacunae comparable to
+  Gilgamesh tablet breaks. Use granularity=lacuna only for genuinely absent text. Do not
+  use granularity=lacuna for athetised lines — those are contested, not absent. Use the
+  markers defined in the rules YAML ([athetised], [disputed], [interpolation]) in
+  methodology_fit_note where relevant, and set granularity=episode.
+
+  Oral-formulaic epithets ("swift-footed Achilles", "grey-eyed Athene", "wide-ruling
+  Agamemnon") and type-scenes (arming, assembly, battle aristeia, supplication) are
+  structural features of the oral-formulaic tradition, not translator choices. Always
+  frame them as properties of the ancient text, never as properties of any translation.
+
+  Western structural frameworks (Propp, Bakhtin, TMI) apply with moderate fit to the
+  Iliad. Set methodology_fit_warning=true only where the framework-genre mismatch is
+  epistemically significant — not as a blanket precaution. The agonistic world of
+  timē/kleos/geras is the poem's logic, not a moral deficiency; frameworks that
+  presuppose linear folktale structure (Propp) should be applied with care to the
+  non-linear, multi-strand Iliadic battle narrative.

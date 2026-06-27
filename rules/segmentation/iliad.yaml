@@ -3,6 +3,7 @@
 # PLACEHOLDER — episode list is scholarly standard; boundary_signals need tuning for M2.
 tradition: iliad
 nas_prefix: "nms://iliad"
+manuscript_layer: transmitted
 
 divisions:
   - name: book-i
@@ -122,6 +123,35 @@ divisions:
       - ransom-of-hector
       - priam-and-achilles
       - burial-of-hector
+
+# Sub-episode addressing: only for episodes listed here. The LLM must NOT subdivide
+# any episode not present in this map. parent_nas = 3-segment episode address;
+# episode field = sub-episode slug (last segment of the 4-segment NAS).
+#
+# NOTE — FUTURE INTENT, NOT YET ACTIVE:
+# The Iliad confirmed NAS skeleton is episode-level (75+ entries, all granularity=episode).
+# Because is_second_witness fires for any fresh Iliad run (confirmed_nas is populated),
+# sub-episode proposals are blocked by alignment mode until a "sub-episode extension run"
+# mode is implemented (task: doc/task-sub-episode-extension.md). These entries document
+# INTENDED sub-episode addressing for two structurally complex episodes; they are rendered
+# in the segmentation agent's user message but are dead letter until the extension run
+# mode exists. See doc/task-sub-episode-extension.md for full impact analysis.
+sub_episodes:
+  shield-of-achilles:
+    - city-at-peace
+    - city-at-war
+    - ploughing
+    - vintage
+    - dancing-floor
+  funeral-games:
+    - chariot-race
+    - boxing
+    - wrestling
+    - foot-race
+    - armed-duel
+    - discus
+    - archery
+    - javelin
 
 # Granularity: episode (default), sub-episode, verse-range, lacuna
 default_granularity: episode

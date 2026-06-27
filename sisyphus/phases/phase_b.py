@@ -41,9 +41,15 @@ Your task is to divide a source text into bounded-passage segments following the
 scholarly division boundaries defined in the segmentation rules you are given.
 
 For each segment you must:
-1. Identify the division (e.g. "tablet-i") and episode (e.g. "creation-of-enkidu").
+1. Identify the division (e.g. "book-i") and episode (e.g. "opening-episode").
 2. Propose a canonical NAS address following the rules: nms://{tradition}/{division}/{episode}
-   Sub-episode or verse-range addresses (4-segment) are valid where finer addressing is warranted.
+   Sub-episode addresses (4-segment) are ONLY valid for episodes explicitly listed with
+   sub-episodes in the segmentation rules you receive. For all other episodes use episode
+   granularity. For a sub-episode NAS: parent_nas = the 3-segment episode address (e.g.
+   nms://tradition/book-i/opening-episode); episode field = the sub-episode slug only
+   (the last path segment of the 4-segment NAS).
+   Verse-range addresses (4-segment) are valid only when the rules define no sub-episodes
+   for the passage and the source provides explicit line numbers spanning more than 200 lines.
    Lacunae must be addressed: nms://{tradition}/{division}/{episode}/lacuna-{descriptor}
 3. Identify whether any passage is a documented gap (lacuna) and address it as a unit.
 4. Evaluate the methodology-fit gate: does applying Propp, Bakhtin, or TMI to this segment
@@ -52,10 +58,10 @@ For each segment you must:
 
 Output ONLY a JSON array of segment objects. Each object must have:
 {
-  "division": "tablet-xi",
-  "episode": "flood-narrative",
-  "proposed_nas": "nms://gilgamesh/tablet-xi/flood-narrative",
-  "parent_nas": "nms://gilgamesh/tablet-xi",
+  "division": "book-i",
+  "episode": "opening-episode",
+  "proposed_nas": "nms://tradition/book-i/opening-episode",
+  "parent_nas": "nms://tradition/book-i",
   "granularity": "episode",
   "passage_opening": "<verbatim first 80 characters of this passage as it appears in the source>",
   "methodology_fit_warning": false,
@@ -325,6 +331,15 @@ def _call_segmentation_agent(
     confirmed_nas = confirmed_nas or set()
 
     system = SEGMENTATION_SYSTEM_PROMPT
+    if is_second_witness:
+        system += (
+            "\n\nALIGNMENT MODE — NAS skeleton already confirmed.\n"
+            "Do NOT propose new NAS addresses. Your only task is to locate each confirmed\n"
+            "NAS address in this text and emit the matching segment. Every segment MUST\n"
+            "use the exact slug from the confirmed list you will receive. Invent nothing;\n"
+            "skip nothing on the confirmed list.\n"
+            "Set methodology_fit_warning=false and methodology_fit_note=null for all segments."
+        )
     tradition_preamble = prompt_config.get("tradition_preamble", "")
     if tradition_preamble:
         system += f"\n\nTradition context:\n{tradition_preamble}"
@@ -332,10 +347,15 @@ def _call_segmentation_agent(
     if epistemic_framing:
         system += f"\n\nEpistemic framing:\n{epistemic_framing}"
 
-    divisions_yaml = "\n".join(
-        f"- {d['name']}: {', '.join(d['episodes'])}"
-        for d in rules.get("divisions", [])
-    )
+    sub_episodes_map = rules.get("sub_episodes", {})
+    divisions_lines = []
+    for d in rules.get("divisions", []):
+        divisions_lines.append(f"- {d['name']}: {', '.join(d['episodes'])}")
+        for ep in d["episodes"]:
+            subs = sub_episodes_map.get(ep)
+            if subs:
+                divisions_lines.append(f"  {ep} sub-episodes: {', '.join(subs)}")
+    divisions_yaml = "\n".join(divisions_lines)
     nas_prefix = rules.get("nas_prefix", f"nms://{tradition}")
 
     # Confirmed-slug hint semantics differ between first-witness and second-witness runs:
