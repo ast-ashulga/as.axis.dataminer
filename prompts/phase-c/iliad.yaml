@@ -69,5 +69,19 @@ grounding_requirement: >
   Note: the Wyatt revision of Murray (Loeb 1999) is under copyright and is not in this
   pipeline. All Murray citations refer to the 1924 original. Do not conflate them.
 
+sub_episode_notes:
+  # Javelin contest (Book XXIII.884–897): the event is NOT contested.
+  # Achilles awards Agamemnon the prize unthrown, in public deference after the quarrel.
+  # The summary MUST make this explicit: describe it as an act of honour-restoration,
+  # not as an athletic competition. Saying "the javelin contest" without noting the
+  # deference inverts the episode's meaning. The prize-setting formula is present;
+  # this is a self-contained ~14-line closing vignette that inverts the Book I quarrel.
+  funeral-games/javelin: >
+    This sub-episode is an uncontested award, not a javelin throw.
+    Achilles awards Agamemnon the prize publicly and unthrown, inverting the
+    Book I quarrel (mēnis origin) as an act of honour-restoration (timē).
+    Do not describe it as a competitive event. Describe the act of deference,
+    its social stakes, and its structural role closing the Funeral Games.
+
 layer: surface
 target_length_words: 80-150

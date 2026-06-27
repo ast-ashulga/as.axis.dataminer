@@ -144,6 +144,12 @@ def run_annotate(
             nas = entry.get("nas", "")
             division = entry.get("division", "")
             episode = entry.get("episode", "")
+            entry_granularity = entry.get("granularity", "episode")
+
+            # Propp morphology applies to complete episode narratives, not sub-episodes.
+            if track == "propp" and entry_granularity == "sub-episode":
+                console.print(f"  [dim]Skip (Propp excluded for sub-episode):[/dim] {nas}")
+                continue
 
             if not division or not episode:
                 continue

@@ -1,11 +1,10 @@
 ---
 name: iliad-nas-granularity-mistag
-description: death-of-sarpedon entry in Iliad confirmed NAS is mis-tagged granularity=sub-episode but is actually a 3-segment episode
+description: death-of-sarpedon granularity mis-tag FIXED (2026-06-27) — now granularity=episode
 metadata:
   type: project
 ---
 
-`output/iliad/nas-confirmed.yaml` contains a granularity mis-tag (spotted 2026-06-27, unverified-fixed): the entry `nms://iliad/book-xvi/death-of-sarpedon` carries `granularity: sub-episode` but is a 3-segment NAS with `parent_nas: nms://iliad/book-xvi` (a division, not an episode). It should be `granularity: episode` like every other entry in that skeleton.
+**FIXED 2026-06-27.** `output/iliad/nas-confirmed.yaml` previously carried `granularity: sub-episode` on the entry `nms://iliad/book-xvi/death-of-sarpedon`, which is a 3-segment NAS (episode, not sub-episode). Corrected to `granularity: episode` — now consistent with the full skeleton. The validate depth-4 orphan check (OD-8) now enforces this invariant: any depth-4 NAS missing a confirmed parent is a hard error.
 
-**Why it matters:** the `granularity` field is already mis-populated in an episode-only skeleton, so any future sub-episode extension run would compound the inconsistency. Flag/fix this before adding any 4-segment entries.
-**How to apply:** Before reviewing or recommending a sub-episode extension run for the Iliad, confirm this entry has been corrected (re-read the file — it may already be fixed). Related: [[sub-episode-nas-criterion]].
+**How to apply:** This is resolved. If a future run re-introduces a 3-segment NAS with `granularity: sub-episode`, `sisyphus validate` will NOT catch it (validate checks depth by counting NAS parts, not by reading the granularity label). The mismatch is a data-quality issue; check the granularity field value matches the NAS depth when reviewing confirm-nas output. Related: [[sub-episode-nas-criterion]].

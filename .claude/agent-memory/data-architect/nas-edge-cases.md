@@ -42,8 +42,16 @@ Three concepts the model conflates/lacks: a **witness/edition** (Thompson 1928 v
 
 RESOLVED (data-architect position, 2026-06-11): Option C — witness-neutral NAS + `witness_id` attribute, ingest guard active in M1–M3, full reconciliation gated `multi_witness_reconciliation = false`. Full rationale, schema, orphan resolution, and Product/Technical deferrals in [[witness-dimension-decision]].
 
-## Fragment unit is the EPISODE; sub-episodes are addressing-only (M2 Iliad)
+## Fragment paths are bijective: one NAS = one file (depth-agnostic)
 
-The fragment file is `fragments/{division}/{episode}.yaml` — keyed on division+episode only. Confirmed NAS at *sub-episode* depth (`…/{episode}/{sub}`) do NOT each get their own fragment; they collapse to the parent episode file. M2 Iliad confirmed 42 sub-episode leaves but only 73 episode fragments exist; the Phase-C loop's last-writer-wins re-tagged each `fragment.nas` to an arbitrary sub-episode until `_upsert_fragment_file` was fixed to preserve an existing fragment's NAS. Rule: confirming sub-episode NAS does NOT create sub-episode fragments under the current design — keep NAS at episode granularity, or change the fragment-path scheme if sub-episode fragments are truly wanted.
+`nas_to_fragment_path(tradition, nas)` is depth-agnostic:
+- 3-segment `nms://iliad/book-xxiii/funeral-games` → `fragments/book-xxiii/funeral-games.yaml`
+- 4-segment `nms://iliad/book-xxiii/funeral-games/boxing` → `fragments/book-xxiii/funeral-games/boxing.yaml`
+
+Sub-episode NAS confirmed via the Phase B extension run (`sisyphus segment --sub-episodes`) each receive their own fragment file. `FragmentRecord.granularity` (default `None`, emitted only when non-episode to preserve existing-file byte stability) carries the granularity label. Phase C, E, and validate all use `nas_to_fragment_path` — sub-episode files are nested under the parent episode directory automatically.
+
+OD-8 orphan-free guarantee: every confirmed depth-4 NAS must have its 3-segment parent in `nas-confirmed.yaml`. `validate` enforces this as a hard error.
+
+Propp is excluded for sub-episode granularity entries — Propp morphology applies to complete episode narratives, not sub-units.
 
 **How to apply:** Reference when assigning new NAS addresses during content ingestion, when handling localization or multi-witness edge cases, when deciding NAS granularity vs fragment granularity, or when a Phase 3 oral tradition is being planned. [[schema-decisions]]

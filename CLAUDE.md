@@ -75,6 +75,7 @@ Active annotation tracks in Phase 1: `propp`, `bakhtin`, `tmi`. Campbell is unsc
 ```bash
 sisyphus ingest <source-file> --manifest <manifest.yaml>
 sisyphus segment <run-id> [--tradition gilgamesh] [--model claude-opus-4-8] [--provider anthropic|ollama]
+sisyphus segment <run-id> --tradition iliad --sub-episodes nms://iliad/book-xxiii/funeral-games   # extension run; requires sub_episode_extension flag
 sisyphus confirm-nas <tradition>
 sisyphus generate-layer0 <tradition> [--locale en,ru] [--model claude-sonnet-4-6]
 sisyphus annotate <tradition> [--tracks propp,bakhtin,tmi] [--model claude-sonnet-4-6]
@@ -98,7 +99,11 @@ The output contract is the product. Any change that breaks it is a breaking chan
 - `ai_generated: true` must be set on all AI-generated content
 - AI-generated content cannot be assigned `documented` — the pipeline is structurally incapable of producing `documented` + `confirmed`
 - `inspired` is not a valid tier for confirmed annotation records (speculative annotations must be rejected, not confirmed)
-- NAS addresses must match: `^nms://[a-z0-9-]+(/[a-z0-9-]+){1,3}$`
+- NAS addresses must match: `^nms://[a-z0-9-]+(/[a-z0-9-]+){1,3}$` (2–4 path segments)
+- 4-segment (sub-episode) NAS: every confirmed depth-4 NAS must have its 3-segment parent in `nas-confirmed.yaml` (OD-8 orphan-free guarantee); validate enforces this as a hard error
+- `granularity` on `FragmentRecord` and `EmbeddingRecord` uses `None` default (not `"episode"`) — with `exclude_none=True` this keeps existing episode files byte-stable
+- Propp annotations are excluded for sub-episode granularity entries (Propp morphology applies to complete episode narratives)
+- Sub-episode extension is structurally blocked for living traditions (`living_tradition=true`); the gate is a hard REFUSE, not a warning
 - Sisyphus proposes NAS addresses; it cannot confirm them. Only the Cultural Expert promotes a proposed NAS to canonical. Once promoted, the address is write-once
 
 ## Feature Flags
@@ -110,6 +115,7 @@ All feature flags are defined in `config/feature-flags.yaml` and all default to 
 - `campbell_track` — Campbell monomyth annotations; blocked by D-01 decision
 - `derived_exports` — gates `sisyphus derive` CLI (per-tradition derived artifacts); deferred until output format is stable
 - `constellation_candidates` — gates `sisyphus constellate` CLI (cross-tradition constellation detection); deferred until Louvain upgrade in app layer
+- `sub_episode_extension` — gates `sisyphus segment --sub-episodes` (Phase B extension run proposing 4-segment child NAS for confirmed parent episodes); blocked for living traditions regardless of flag
 
 ## Output Directory Structure
 

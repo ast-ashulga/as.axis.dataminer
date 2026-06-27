@@ -32,10 +32,15 @@ def test_iliad_rules_has_sub_episodes():
     from sisyphus.io.yaml_io import read_yaml
     rules = read_yaml(_ROOT / "rules" / "segmentation" / "iliad.yaml")
     assert "sub_episodes" in rules, "sub_episodes block missing from iliad rules"
-    assert "shield-of-achilles" in rules["sub_episodes"]
+    # Shield of Achilles deferred (OD-1): removed from sub_episodes map
+    assert "shield-of-achilles" not in rules["sub_episodes"], (
+        "shield-of-achilles must not be in sub_episodes (deferred OD-1)"
+    )
     assert "funeral-games" in rules["sub_episodes"]
-    assert len(rules["sub_episodes"]["shield-of-achilles"]) >= 3
     assert len(rules["sub_episodes"]["funeral-games"]) >= 4
+    # iron-throw replaces the incorrect 'discus' slug (σόλος is an iron mass)
+    assert "iron-throw" in rules["sub_episodes"]["funeral-games"]
+    assert "discus" not in rules["sub_episodes"]["funeral-games"]
 
 
 def test_iliad_rules_sub_episode_slugs_are_kebab_case():

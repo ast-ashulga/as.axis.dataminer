@@ -64,6 +64,8 @@ def run_embed(
 
     for entry in entries:
         nas = entry.get("nas", "")
+        entry_granularity = entry.get("granularity")
+        emb_granularity = entry_granularity if entry_granularity and entry_granularity != "episode" else None
 
         if not nas:
             continue
@@ -140,8 +142,9 @@ def run_embed(
                 dimension=len(vector),
                 vector=vector,
                 content_hash=content_hash,
+                granularity=emb_granularity,
             )
-            write_json(emb_path, record_out.model_dump(mode="python"))
+            write_json(emb_path, record_out.model_dump(mode="python", exclude_none=True))
             total_generated += 1
 
     console.print(

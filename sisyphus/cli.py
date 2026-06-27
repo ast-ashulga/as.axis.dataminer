@@ -93,12 +93,29 @@ def segment(
     tradition: Annotated[str, typer.Option(help="Tradition identifier (e.g. gilgamesh).")] = "",
     model: Annotated[Optional[str], typer.Option(help="Model name (overrides config).")] = None,
     provider: Annotated[Optional[str], typer.Option(help="LLM provider: anthropic | ollama.")] = None,
+    sub_episodes: Annotated[
+        Optional[str],
+        typer.Option(
+            "--sub-episodes",
+            help=(
+                "Extension run: comma-separated confirmed parent episode NAS addresses to propose "
+                "4-segment sub-episode children for. Requires sub_episode_extension flag."
+            ),
+        ),
+    ] = None,
 ) -> None:
     """Phase B: Segment ingested text into episodes and propose NAS addresses."""
     from sisyphus.phases.phase_b import run_segment
 
     resolved_model = llm.resolve_model("segment", model)
-    run_segment(run_id=run_id, tradition=tradition, model=resolved_model, console=console, provider=provider)
+    run_segment(
+        run_id=run_id,
+        tradition=tradition,
+        model=resolved_model,
+        console=console,
+        provider=provider,
+        sub_episodes=sub_episodes,
+    )
 
 
 # ---------------------------------------------------------------------------

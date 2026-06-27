@@ -18,3 +18,7 @@ derived_exports: false
 # Requires derived_exports to have been run for each tradition first.
 # Same toggle pattern as derived_exports: set true, run, revert; never commit true.
 constellation_candidates: false
+
+# Phase B extension run: propose 4-segment sub-episode NAS for named confirmed parent episodes.
+# Gates the --sub-episodes CLI option on `sisyphus segment`. Never commit true.
+sub_episode_extension: false

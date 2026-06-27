@@ -149,6 +149,7 @@ class FragmentRecord(BaseModel):
     available_layers: list[Layer] = Field(default_factory=list)
     source_language: str | None = None  # ISO 639-3
     manuscript_layer: ManuscriptLayer | None = None
+    granularity: Literal["episode", "sub-episode", "verse-range", "lacuna"] | None = None
 
     # Methodology-fit gate (Phase B)
     methodology_fit_warning: bool = False
@@ -484,6 +485,7 @@ class EmbeddingRecord(BaseModel):
     dimension: int
     vector: list[float]
     content_hash: str  # sha256 of the body text, for idempotency
+    granularity: Literal["episode", "sub-episode", "verse-range", "lacuna"] | None = None
 
 
 # ---------------------------------------------------------------------------

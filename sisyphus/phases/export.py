@@ -18,6 +18,8 @@ from sisyphus.io.workspace import _ROOT
 from sisyphus.io.yaml_io import read_yaml, write_yaml
 from sisyphus.phases.validate import run_validate
 
+_RULES_DIR = Path(__file__).parent.parent.parent / "rules" / "segmentation"
+
 
 def run_export(tradition: str, format: str, console: Console) -> None:
     out = output_dir(tradition)
@@ -60,6 +62,14 @@ def run_export(tradition: str, format: str, console: Console) -> None:
 
     mdata["checksums"] = checksums
     mdata["export_timestamp"] = datetime.now(UTC).isoformat()
+
+    # Propagate living_tradition from segmentation rules into the manifest (OD-5).
+    rules_path = _RULES_DIR / f"{tradition}.yaml"
+    if rules_path.exists():
+        tradition_rules = read_yaml(rules_path)
+        if tradition_rules.get("cultural_sensitivity", {}).get("living_tradition"):
+            mdata["living_tradition"] = True
+
     write_yaml(manifest_path, mdata)
 
     # Create archive

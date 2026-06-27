@@ -80,7 +80,8 @@ def run_validate(tradition: str, console: Console) -> list[str]:
             if frag_nas:
                 fragment_nas.add(frag_nas)
 
-    # 3. NAS coverage — every confirmed NAS must have a fragment file
+    # 3. NAS coverage — every confirmed NAS must have a fragment file;
+    #    every depth-4 NAS must have its 3-segment parent in confirmed_nas (OD-8 orphan-free).
     missing_fragments: list[str] = []
     for entry in (confirmed_data.get("entries", []) if confirmed_path.exists() else []):
         nas = entry.get("nas", "")
@@ -89,6 +90,15 @@ def run_validate(tradition: str, console: Console) -> list[str]:
         if not nas_to_fragment_path(tradition, nas).exists():
             missing_fragments.append(nas)
             errors.append(f"No fragment file for confirmed NAS '{nas}'")
+        # depth-4 check: nms://{t}/{div}/{ep}/{sub} has 6 parts after split("/")
+        nas_parts = nas.split("/")
+        if len(nas_parts) == 6:  # ["nms:", "", tradition, division, episode, sub-episode]
+            parent_nas = "/".join(nas_parts[:5])
+            if parent_nas not in confirmed_nas:
+                errors.append(
+                    f"Depth-4 NAS '{nas}' has no confirmed parent '{parent_nas}' "
+                    "(OD-8 orphan-free guarantee violated)"
+                )
 
     # 4. Annotation candidate files
     ann_root = out / "annotation-candidates"

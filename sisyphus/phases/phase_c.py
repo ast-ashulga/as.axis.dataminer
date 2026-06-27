@@ -342,6 +342,9 @@ def _upsert_fragment_file(
     if not available_layers:
         available_layers = [Layer.surface]
 
+    g = entry.get("granularity")
+    frag_granularity = g if g and g != "episode" else None
+
     frag = FragmentRecord(
         nas=nas,
         parent_nas=parent_nas,
@@ -349,6 +352,7 @@ def _upsert_fragment_file(
         confidence_tier=ConfidenceTier.reconstructed,
         available_layers=available_layers,
         manuscript_layer=ms,
+        granularity=frag_granularity,
     )
     frag_file_data = {
         "_sisyphus_version": "0.1",

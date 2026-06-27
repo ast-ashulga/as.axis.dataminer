@@ -16,6 +16,7 @@ import anthropic
 from rich.console import Console
 
 from sisyphus import llm
+from sisyphus.flags import get_flag
 
 from sisyphus.io.workspace import (
     ingested_dir,
@@ -81,8 +82,14 @@ def run_segment(
     model: str,
     console: Console,
     provider: str | None = None,
+    sub_episodes: str | None = None,
 ) -> None:
-    """Run Phase B segmentation against an ingested run."""
+    """Run Phase B segmentation against an ingested run.
+
+    When sub_episodes is provided (comma-separated confirmed parent NAS), runs in extension mode:
+    proposes 4-segment sub-episode children for the named confirmed parents.
+    Requires the sub_episode_extension feature flag.
+    """
     # Resolve tradition from workspace manifest if not provided
     workspace = ingested_dir(run_id)
     if not workspace.exists():
@@ -102,6 +109,24 @@ def run_segment(
         return
 
     rules = read_yaml(rules_path)
+
+    is_extension = bool(sub_episodes)
+
+    if is_extension:
+        if not get_flag("sub_episode_extension"):
+            console.print(
+                "[red]--sub-episodes requires the 'sub_episode_extension' feature flag. "
+                "Set sub_episode_extension: true in config/feature-flags.yaml and retry.[/red]"
+            )
+            return
+
+        if rules.get("cultural_sensitivity", {}).get("living_tradition", False):
+            console.print(
+                "[red]REFUSED: Sub-episode extension is structurally blocked for living traditions. "
+                "The subdivision of a living tradition's episodes requires specialist scholarly "
+                "review and cannot be automated. Contact the Cultural Expert.[/red]"
+            )
+            return
 
     # Load tradition-specific prompt config (optional; falls back gracefully)
     prompt_config: dict = {}
@@ -126,6 +151,32 @@ def run_segment(
         for entry in confirmed_data.get("entries", []):
             confirmed_nas.add(entry.get("nas", ""))
 
+    # Extension mode: validate all requested parent NAS are confirmed (OD-8).
+    parent_nas_list: list[str] = []
+    if is_extension:
+        parent_nas_list = [s.strip() for s in (sub_episodes or "").split(",") if s.strip()]
+        missing_parents = [n for n in parent_nas_list if n not in confirmed_nas]
+        if missing_parents:
+            console.print(
+                f"[red]Extension run aborted: parent NAS not in confirmed set: "
+                f"{missing_parents}\n"
+                "Run 'sisyphus confirm-nas' first, or check the NAS spelling.[/red]"
+            )
+            return
+
+        # Guard against re-extension: warn when a parent already has confirmed depth-4 children.
+        already_extended = [
+            n for n in parent_nas_list
+            if any(c.startswith(n + "/") for c in confirmed_nas)
+        ]
+        if already_extended:
+            console.print(
+                f"[yellow]⚠[/yellow] These parent episodes already have confirmed sub-episodes: "
+                f"{already_extended}\n"
+                "  Re-running will add new candidate proposals; existing confirmed entries are "
+                "unaffected. Proceeding."
+            )
+
     # Load existing proposals for idempotency
     proposals_path = nas_proposals_path(tradition)
     existing_proposals: dict[str, dict] = {}
@@ -135,57 +186,108 @@ def run_segment(
             existing_proposals[p.get("proposed_nas", "")] = p
 
     # Detect second-witness: confirmed NAS exist but no segmented files for this run yet.
-    # Second-witness hint semantics differ: "map to existing NAS slugs" (emit all segments)
-    # vs first-witness hint: "skip covered passages" (emit only new material per chunk).
+    # Extension runs are NOT second-witness — they propose new NAS (sub-episodes), not
+    # mapping an existing skeleton onto a new translation.
     seg_dir = segmented_dir(run_id)
-    is_second_witness = bool(confirmed_nas) and not seg_dir.exists()
+    is_second_witness = bool(confirmed_nas) and not seg_dir.exists() and not is_extension
 
     # Call AI agent to segment the text. Long sources are chunked into overlapping
     # windows and segmented in sequence; each call sees the NAS proposed so far so the
     # model continues numbering and does not re-segment overlapping material.
     # The agent returns only passage_opening (80 chars) per segment — not full text.
     # passage_text is extracted programmatically after each chunk via marker search.
-    chunks = _chunk_text(full_text)
-    suffix = f", {len(chunks)} chunks" if len(chunks) > 1 else ""
-    second_witness_note = " [second-witness: mapping to existing NAS]" if is_second_witness else ""
-    console.print(f"  Segmenting {len(full_text)} chars{suffix}{second_witness_note}")
-
     client = llm.make_client(provider)
     segments: list[dict] = []
     proposed_seen: set[str] = set()
-    hint_nas = set(confirmed_nas)  # confirmed NAS + everything proposed in earlier chunks
-    for i, chunk in enumerate(chunks):
-        import time as _time
-        _t0 = _time.monotonic()
-        try:
-            chunk_segs = _call_segmentation_agent(
-                client, chunk, rules, tradition, model, prompt_config,
-                hint_nas, chunk_index=i, chunk_total=len(chunks),
-                is_second_witness=is_second_witness,
-            )
-            # Extract passage_text from the chunk using passage_opening markers
-            chunk_segs = _extract_passages_by_openings(chunk, chunk_segs)
-        except Exception as exc:
-            console.print(
-                f"[red]  chunk {i + 1}/{len(chunks)} failed: {exc}[/red]"
-            )
-            chunk_segs = []
-        new_in_chunk = 0
-        for s in chunk_segs:
-            nas = s.get("proposed_nas", "")
-            if nas and nas in proposed_seen:
-                continue  # already segmented in an earlier (overlapping) chunk
-            if nas:
-                proposed_seen.add(nas)
-                hint_nas.add(nas)
-            segments.append(s)
-            new_in_chunk += 1
-        elapsed = _time.monotonic() - _t0
+
+    if is_extension:
+        # Extension mode: feed each parent episode's text to the agent separately.
+        # Load passage text from the workspace segment directory (written by an earlier run).
+        # Fall back to the full source if the segment file is missing.
         console.print(
-            f"  [dim]chunk {i + 1}/{len(chunks)}[/dim]  "
-            f"+{new_in_chunk} episodes  "
-            f"({elapsed:.0f}s)  total={len(segments)}"
+            f"  Extension run: proposing sub-episodes for {len(parent_nas_list)} parent(s): "
+            f"{parent_nas_list}"
         )
+        for parent_nas in parent_nas_list:
+            nas_parts = parent_nas.split("/")[3:]  # strip nms:, "", tradition
+            seg_txt_path = seg_dir / Path(*nas_parts[:-1]) / f"{nas_parts[-1]}.txt"
+            if seg_txt_path.exists():
+                parent_text = seg_txt_path.read_text(encoding="utf-8")
+            else:
+                console.print(
+                    f"  [yellow]⚠[/yellow] Segment file not found for {parent_nas}, "
+                    "falling back to full source text."
+                )
+                parent_text = full_text
+
+            import time as _time
+            _t0 = _time.monotonic()
+            try:
+                parent_segs = _call_segmentation_agent(
+                    client, parent_text, rules, tradition, model, prompt_config,
+                    hint_nas=set(confirmed_nas),
+                    chunk_index=0, chunk_total=1,
+                    is_second_witness=False,
+                    extension_parent=parent_nas,
+                )
+                parent_segs = _extract_passages_by_openings(parent_text, parent_segs)
+            except Exception as exc:
+                console.print(f"[red]  Extension failed for {parent_nas}: {exc}[/red]")
+                parent_segs = []
+
+            new_count = 0
+            for s in parent_segs:
+                nas = s.get("proposed_nas", "")
+                if nas and nas in proposed_seen:
+                    continue
+                if nas:
+                    proposed_seen.add(nas)
+                segments.append(s)
+                new_count += 1
+            elapsed = _time.monotonic() - _t0
+            console.print(
+                f"  [dim]extension[/dim] {parent_nas}  +{new_count} sub-episodes  ({elapsed:.0f}s)"
+            )
+    else:
+        hint_nas = set(confirmed_nas)  # confirmed NAS + everything proposed in earlier chunks
+        chunks = _chunk_text(full_text)
+        suffix = f", {len(chunks)} chunks" if len(chunks) > 1 else ""
+        second_witness_note = " [second-witness: mapping to existing NAS]" if is_second_witness else ""
+        console.print(f"  Segmenting {len(full_text)} chars{suffix}{second_witness_note}")
+
+        for i, chunk in enumerate(chunks):
+            import time as _time
+            _t0 = _time.monotonic()
+            try:
+                chunk_segs = _call_segmentation_agent(
+                    client, chunk, rules, tradition, model, prompt_config,
+                    hint_nas, chunk_index=i, chunk_total=len(chunks),
+                    is_second_witness=is_second_witness,
+                )
+                # Extract passage_text from the chunk using passage_opening markers
+                chunk_segs = _extract_passages_by_openings(chunk, chunk_segs)
+            except Exception as exc:
+                console.print(
+                    f"[red]  chunk {i + 1}/{len(chunks)} failed: {exc}[/red]"
+                )
+                chunk_segs = []
+            new_in_chunk = 0
+            for s in chunk_segs:
+                nas = s.get("proposed_nas", "")
+                if nas and nas in proposed_seen:
+                    continue  # already segmented in an earlier (overlapping) chunk
+                if nas:
+                    proposed_seen.add(nas)
+                    hint_nas.add(nas)
+                segments.append(s)
+                new_in_chunk += 1
+            elapsed = _time.monotonic() - _t0
+            console.print(
+                f"  [dim]chunk {i + 1}/{len(chunks)}[/dim]  "
+                f"+{new_in_chunk} episodes  "
+                f"({elapsed:.0f}s)  total={len(segments)}"
+            )
+
     if not segments:
         console.print("[yellow]No segments produced — writing empty proposals file.[/yellow]")
 
@@ -327,6 +429,7 @@ def _call_segmentation_agent(
     chunk_index: int = 0,
     chunk_total: int = 1,
     is_second_witness: bool = False,
+    extension_parent: str | None = None,
 ) -> list[dict]:
     confirmed_nas = confirmed_nas or set()
 
@@ -339,6 +442,19 @@ def _call_segmentation_agent(
             "use the exact slug from the confirmed list you will receive. Invent nothing;\n"
             "skip nothing on the confirmed list.\n"
             "Set methodology_fit_warning=false and methodology_fit_note=null for all segments."
+        )
+    if extension_parent:
+        system += (
+            f"\n\nEXTENSION MODE — sub-episode proposals only.\n"
+            f"Parent episode: {extension_parent}\n"
+            "You are given only the text of this one parent episode. Your task is to subdivide "
+            "it into the sub-episode segments listed in the rules for this episode. "
+            "Propose ONLY 4-segment NAS addresses (parent/sub-episode). "
+            "Do NOT propose any 3-segment episode-level addresses. "
+            "Set parent_nas to the exact parent NAS above for every segment. "
+            "granularity must be 'sub-episode' for every segment. "
+            "Set methodology_fit_warning=false and methodology_fit_note=null unless the "
+            "subdivision itself raises a cultural concern."
         )
     tradition_preamble = prompt_config.get("tradition_preamble", "")
     if tradition_preamble:
