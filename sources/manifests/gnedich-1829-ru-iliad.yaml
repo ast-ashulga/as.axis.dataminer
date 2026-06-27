@@ -12,6 +12,8 @@
 tradition: iliad
 source_type: scanned-pdf
 locale: ru
+ocr:
+  lang: rus
 translation_id: gnedich-1829-ru
 author: Nikolai Ivanovich Gnedich
 year: 1829

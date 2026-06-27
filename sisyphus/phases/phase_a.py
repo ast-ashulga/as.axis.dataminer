@@ -99,8 +99,9 @@ def run_ingest(
         source_type=source_type,
     )
 
+    ocr_lang = manifest.get("ocr", {}).get("lang", "eng")
     if source_type == "scanned-pdf":
-        _ingest_scanned_pdf(source_file, out_dir, report, ocr_threshold, console)
+        _ingest_scanned_pdf(source_file, out_dir, report, ocr_threshold, console, ocr_lang)
     elif source_type == "digital-pdf":
         _ingest_digital_pdf(source_file, out_dir, report, console)
     elif source_type in ("tei-xml", "oracc-atf"):
@@ -180,6 +181,7 @@ def _ingest_scanned_pdf(
     report: IngestionReport,
     ocr_threshold: float,
     console: Console,
+    ocr_lang: str = "eng",
 ) -> None:
     report.ocr_applied = True
     try:
@@ -212,7 +214,7 @@ def _ingest_scanned_pdf(
         img = Image.open(io.BytesIO(pix.tobytes("png")))
 
         # Run Tesseract with confidence data
-        data = pytesseract.image_to_data(img, output_type=pytesseract.Output.DICT)
+        data = pytesseract.image_to_data(img, lang=ocr_lang, output_type=pytesseract.Output.DICT)
         conf_values = [c for c in data["conf"] if c != -1]
         page_conf = (sum(conf_values) / len(conf_values) / 100.0) if conf_values else 0.0
         confidences.append(page_conf)
@@ -220,7 +222,7 @@ def _ingest_scanned_pdf(
         if page_conf < ocr_threshold:
             report.flagged_pages.append(page_num)
 
-        text = pytesseract.image_to_string(img)
+        text = pytesseract.image_to_string(img, lang=ocr_lang)
         report.word_count += len(text.split())
         all_text.append(f"[PAGE {page_num}]\n{text}")
 
