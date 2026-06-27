@@ -35,6 +35,11 @@ _PROMPTS_DIR = Path(__file__).parent.parent.parent / "prompts" / "phase-c"
 _NAS_CITATION_RE = re.compile(r"\[NAS: (nms://[a-z0-9-]+(?:/[a-z0-9-]+){1,3})\]")
 _SENTENCE_RE = re.compile(r"[A-ZА-ЯЁ][^.!?]*[.!?]")
 
+
+def _clean_citations(raw: list[str], self_nas: str) -> list[str]:
+    """Deduplicate citations and strip self-references."""
+    return list(dict.fromkeys(c for c in raw if c != self_nas))
+
 LAYER0_SYSTEM = """\
 You are a scholarly summary writer for the Mnemosyne Engine.
 Generate a concise Layer 0 (surface-level) summary of the given epic passage.
@@ -186,8 +191,8 @@ def run_generate_layer0(
                     total_rejected += 1
                 continue
 
-            # Extract citations from the summary
-            citations = _NAS_CITATION_RE.findall(summary)
+            # Extract citations from the summary; strip self-references and deduplicate
+            citations = _clean_citations(_NAS_CITATION_RE.findall(summary), nas)
 
             content_record = ContentRecord(
                 locale=locale,

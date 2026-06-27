@@ -141,6 +141,19 @@ class TestAIContentInvariants:
         )
         assert record.status == Status.confirmed
 
+    def test_grounding_citations_deduped_by_schema_validator(self):
+        record = ContentRecord(**self._valid_ai_surface_record(
+            grounding_citations=[
+                "nms://gilgamesh/tablet-xi/flood-narrative",
+                "nms://gilgamesh/tablet-xi/flood-narrative",
+                "nms://gilgamesh/tablet-xi/cedar-forest",
+            ]
+        ))
+        assert record.grounding_citations == [
+            "nms://gilgamesh/tablet-xi/flood-narrative",
+            "nms://gilgamesh/tablet-xi/cedar-forest",
+        ]
+
 
 # ---------------------------------------------------------------------------
 # Annotation invariants

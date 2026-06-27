@@ -128,9 +128,10 @@ class ContentRecord(BaseModel):
     @field_validator("grounding_citations", mode="before")
     @classmethod
     def validate_citations(cls, v: list) -> list:
-        for cite in v:
+        seen = dict.fromkeys(v)  # dedup, preserve first-occurrence order
+        for cite in seen:
             validate_nas(cite)
-        return v
+        return list(seen)
 
 
 # ---------------------------------------------------------------------------
