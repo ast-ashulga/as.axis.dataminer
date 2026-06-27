@@ -18,3 +18,8 @@ derived_exports: false
 # Requires derived_exports to have been run for each tradition first.
 # Same toggle pattern as derived_exports: set true, run, revert; never commit true.
 constellation_candidates: false
+
+# Derive-taxonomy phase: source-grounded taxonomy generation.
+# Derives segmentation rules from actual source text via Phase A structure scan + LLM.
+# Set true to run 'sisyphus derive-taxonomy <tradition>'. Revert after each run.
+taxonomy_derivation: false

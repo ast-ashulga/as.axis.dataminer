@@ -236,6 +236,67 @@ def embed(
 
 
 # ---------------------------------------------------------------------------
+# derive-taxonomy
+# ---------------------------------------------------------------------------
+
+
+@app.command(name="derive-taxonomy")
+def derive_taxonomy(
+    tradition: Annotated[str, typer.Argument(help="Tradition identifier (e.g. iliad).")],
+    model: Annotated[Optional[str], typer.Option(help="Model name (overrides config).")] = None,
+    provider: Annotated[Optional[str], typer.Option(help="LLM provider: anthropic | ollama.")] = None,
+) -> None:
+    """Derive source-grounded segmentation taxonomy from ingested text.
+
+    Reads structure-draft.yaml files produced by Phase A, calls the LLM to infer
+    episode slugs from actual source text, and writes:
+      rules/segmentation/{tradition}.generated.yaml  (DRAFT — not active)
+      output/{tradition}/taxonomy-audit.yaml          (diff vs confirmed NAS)
+
+    Requires feature flag 'taxonomy_derivation' to be true.
+    Run 'sisyphus promote-taxonomy <tradition>' to activate the generated taxonomy.
+    """
+    from sisyphus.phases.derive_taxonomy import run_derive_taxonomy
+
+    run_derive_taxonomy(
+        tradition=tradition,
+        model=llm.resolve_model("segment", model),
+        console=console,
+        provider=provider,
+    )
+
+
+# ---------------------------------------------------------------------------
+# promote-taxonomy
+# ---------------------------------------------------------------------------
+
+
+@app.command(name="promote-taxonomy")
+def promote_taxonomy(
+    tradition: Annotated[str, typer.Argument(help="Tradition identifier (e.g. iliad).")],
+    force: Annotated[
+        bool,
+        typer.Option(
+            "--force",
+            help="Override taxonomy-audit diff check (Cultural Expert acknowledgment). "
+            "Required if taxonomy-audit.yaml status is has_diffs.",
+        ),
+    ] = False,
+) -> None:
+    """Promote generated taxonomy to active segmentation rules.
+
+    Reads taxonomy-audit.yaml. Blocked if audit status=has_diffs unless --force is set.
+    Copies rules/segmentation/{tradition}.generated.yaml → {tradition}.yaml.
+    Phase B will then use the source-grounded taxonomy.
+    """
+    from sisyphus.phases.promote_taxonomy import run_promote_taxonomy
+
+    success = run_promote_taxonomy(tradition=tradition, force=force, console=console)
+    if not success:
+        raise typer.Exit(1)
+
+
+# ---------------------------------------------------------------------------
 # derive
 # ---------------------------------------------------------------------------
 

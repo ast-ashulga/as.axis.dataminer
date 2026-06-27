@@ -9,6 +9,8 @@ _DEFAULTS: dict[str, bool] = {
     "layer_3_original": False,
     "campbell_track": False,
     "derived_exports": False,
+    "constellation_candidates": False,
+    "taxonomy_derivation": False,
 }
 
 _FLAGS_PATH = Path(__file__).parent.parent / "config" / "feature-flags.yaml"

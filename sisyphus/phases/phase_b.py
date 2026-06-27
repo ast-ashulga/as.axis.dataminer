@@ -96,10 +96,21 @@ def run_segment(
             tradition = manifest.get("tradition", "unknown")
 
     rules_path = _RULES_DIR / f"{tradition}.yaml"
+    generated_path = _RULES_DIR / f"{tradition}.generated.yaml"
     if not rules_path.exists():
-        console.print(f"[yellow]⚠[/yellow] No segmentation rules found for '{tradition}'. "
-                      f"Expected: {rules_path}")
-        return
+        if generated_path.exists():
+            console.print(
+                f"[yellow]⚠ Using generated (unconfirmed) taxonomy for '{tradition}'.[/yellow] "
+                f"Run 'sisyphus promote-taxonomy {tradition}' to make it active."
+            )
+            rules_path = generated_path
+        else:
+            console.print(
+                f"[yellow]⚠[/yellow] No segmentation rules found for '{tradition}'. "
+                f"Run 'sisyphus derive-taxonomy {tradition}' to generate taxonomy, "
+                f"or create {rules_path} manually."
+            )
+            return
 
     rules = read_yaml(rules_path)
 

@@ -145,6 +145,16 @@ def review_queue_path(tradition: str) -> Path:
     return pipeline_reports_dir(tradition) / "review-queue.yaml"
 
 
+def structure_draft_path(run_id: str) -> Path:
+    """workspace/{run-id}/ingested/structure-draft.yaml — Phase A structure scan output."""
+    return ingested_dir(run_id) / "structure-draft.yaml"
+
+
+def taxonomy_audit_path(tradition: str) -> Path:
+    """output/{tradition}/taxonomy-audit.yaml — diff report for Cultural Expert."""
+    return output_dir(tradition) / "taxonomy-audit.yaml"
+
+
 def load_passage_text(division: str, episode: str) -> str | None:
     """Return segmented passage text for a division/episode, or None if not yet segmented."""
     candidates = list((_ROOT / "workspace").glob(f"*/segmented/{division}/{episode}.txt"))

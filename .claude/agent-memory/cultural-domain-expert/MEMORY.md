@@ -9,3 +9,4 @@
 - [Mahabharata RU back-matter failure](mahabharata_ru_backmatter_failure.md) — Phase B sweeps Литературные Памятники scholarly apparatus into segments; ghost episodes + truncated narrative; fix: add negative boundary signals to segmentation rules
 - [Mahabharata public-release sign-off](mahabharata_public_release_signoff.md) — Cultural-Expert sign-off ALREADY given 2026-06-15; public_release=true/lifted; no pending Gita/Anugita review queue
 - [Sub-episode living-tradition ruling](sub-episode-living-tradition-ruling.md) — 4-segment NAS BLOCKED at framework level for living traditions (write-once asymmetry); discriminator insufficient; Iliad clean
+- [Taxonomy audit review role](taxonomy-audit-review.md) — CDE consulted when Mnemosyne calls promote-taxonomy --force; evaluate slug_divergence/missing/new diffs; recommend promote/re-derive/block
