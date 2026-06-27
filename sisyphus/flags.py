@@ -11,6 +11,7 @@ _DEFAULTS: dict[str, bool] = {
     "derived_exports": False,
     "constellation_candidates": False,
     "sub_episode_extension": False,
+    "taxonomy_derivation": False,
 }
 
 _FLAGS_PATH = Path(__file__).parent.parent / "config" / "feature-flags.yaml"

@@ -632,3 +632,53 @@ class ConstellationCandidatesFile(BaseModel):
     total_fragments_compared: int
     total_edges_evaluated: int
     candidates: list[ConstellationCandidate] = Field(default_factory=list)
+
+
+# ---------------------------------------------------------------------------
+# Taxonomy derivation models (Phase derive-taxonomy)
+# ---------------------------------------------------------------------------
+
+
+class StructureDivision(BaseModel):
+    """One division detected during Phase A structure scan."""
+
+    heading_text: str
+    slug_candidate: str
+    char_start: int
+    char_end: int
+    confidence: float = Field(ge=0.0, le=1.0)
+
+
+class StructureDraft(BaseModel):
+    """workspace/{run-id}/ingested/structure-draft.yaml — deterministic scan output."""
+
+    _sisyphus_version: ClassVar[str] = "0.1"
+    run_id: str
+    tradition: str
+    source_type: str
+    toc_detected: bool = False
+    toc_char_end: int = 0
+    generated_at: str
+    divisions: list[StructureDivision] = Field(default_factory=list)
+
+
+class TaxonomyAuditDiff(BaseModel):
+    """One diff entry in taxonomy-audit.yaml."""
+
+    type: Literal["missing_in_source", "new_in_source", "slug_divergence"]
+    confirmed_nas: NASAddress | None = None
+    candidate_nas: NASAddress | None = None
+    derived_nas: NASAddress | None = None
+    note: str = ""
+
+
+class TaxonomyAudit(BaseModel):
+    """output/{tradition}/taxonomy-audit.yaml — diff report for Cultural Expert."""
+
+    _sisyphus_version: ClassVar[str] = "0.1"
+    tradition: str
+    audited_at: str
+    confirmed_count: int = 0
+    derived_count: int = 0
+    status: Literal["clean", "has_diffs"] = "clean"
+    diffs: list[TaxonomyAuditDiff] = Field(default_factory=list)

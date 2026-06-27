@@ -78,8 +78,11 @@ cat config/feature-flags.yaml
 ```
 
 If any flag is `true`, stop immediately and report to the user. Do not proceed.
-The flags are: `parallel_detection_pipeline`, `campbell_track`, `layer_3_original`, `derived_exports`.
-All must be `false`. This is non-negotiable.
+The flags are: `parallel_detection_pipeline`, `campbell_track`, `layer_3_original`,
+`derived_exports`, `taxonomy_derivation`, `constellation_candidates`.
+All must be `false` at pipeline start. This is non-negotiable.
+(`taxonomy_derivation`, `derived_exports`, and `constellation_candidates` are temporarily toggled
+to `true` only for the duration of their respective commands, then immediately reverted.)
 
 ### 2. Check for TODO stubs in tradition prompts
 
@@ -150,6 +153,62 @@ sisyphus ingest <source-file> --manifest <manifest.yaml>
 ```
 
 Success: ingestion report written to `output/<tradition>/pipeline-reports/ingestion-report.yaml`.
+Phase A also writes `workspace/<run-id>/ingested/structure-draft.yaml` — a deterministic
+heading scan of the source text used by the taxonomy derivation step.
+
+### Taxonomy Derivation (between A and B)
+
+Run **after Phase A** and **before Phase B**. Requires `taxonomy_derivation` flag to be `true`
+(temporarily — revert after, like `derived_exports`).
+
+```bash
+# Edit config/feature-flags.yaml: taxonomy_derivation: true
+sisyphus derive-taxonomy <tradition> [--model claude-sonnet-4-6]
+# Edit config/feature-flags.yaml: taxonomy_derivation: false
+```
+
+Success: `rules/segmentation/<tradition>.generated.yaml` and
+`output/<tradition>/taxonomy-audit.yaml` are written.
+
+Check the audit status:
+```bash
+python3 -c "
+import yaml
+with open('output/<tradition>/taxonomy-audit.yaml') as f:
+    d = yaml.safe_load(f)
+print(d['status'], '—', len(d.get('diffs', [])), 'diffs')
+for diff in d.get('diffs', []):
+    print(' ', diff['type'], diff.get('confirmed_nas') or diff.get('derived_nas'))
+"
+```
+
+If status is `clean`: promote immediately.
+If status is `has_diffs`: evaluate each diff. Consult cultural-domain-expert if any
+diff touches tradition-significant division or episode naming. Then decide: either
+fix the source (re-derive) or promote with `--force`.
+
+For `promote-taxonomy --force`, always consult cultural-domain-expert first:
+```
+Agent(
+  subagent_type="cultural-domain-expert",
+  prompt="Taxonomy audit for [tradition] has diffs (see output/<tradition>/taxonomy-audit.yaml).
+  Review each diff (missing_in_source, new_in_source, slug_divergence). Confirm whether
+  the generated taxonomy is accurate to the source text structure and whether the diffs
+  represent errors in the confirmed NAS, gaps in the source scan, or acceptable divergence.
+  Provide a clear recommendation: promote as-is (force), re-derive, or block."
+)
+```
+
+```bash
+sisyphus promote-taxonomy <tradition>          # exits 1 if audit has_diffs
+sisyphus promote-taxonomy <tradition> --force  # override — requires cultural-domain-expert sign-off
+```
+
+Success: `rules/segmentation/<tradition>.yaml` now matches the source-grounded taxonomy.
+Phase B will use this taxonomy for segment boundaries.
+
+Skip this step if `rules/segmentation/<tradition>.yaml` already exists and matches the
+source (idempotency: re-derive and re-promote only when source has changed).
 
 ### Phase B — Segment
 
@@ -159,6 +218,8 @@ sisyphus segment <run-id> [--tradition <tradition>]
 
 Success: `output/<tradition>/nas-proposals.yaml` exists with proposed NAS addresses.
 Note any methodology-fit warnings in the segmentation report.
+If no `rules/segmentation/<tradition>.yaml` exists, Phase B falls back to
+`<tradition>.generated.yaml` with a warning — always promote before segment if possible.
 
 ---
 
@@ -538,6 +599,8 @@ These are non-negotiable constraints. Violating them produces an invalid export.
 | Phase F = never | `parallel_detection_pipeline` is permanently deferred; do not run Phase F |
 | `derived_exports` flag handling | Temporarily set `true` to run derive, revert to `false` immediately after; never commit as `true` |
 | `constellation_candidates` flag handling | Same pattern: set `true`, run `sisyphus constellate`, revert to `false`; never commit as `true` |
+| `taxonomy_derivation` flag handling | Same pattern: set `true`, run `sisyphus derive-taxonomy`, revert to `false`; never commit as `true` |
+| `promote-taxonomy --force` requires CDE sign-off | Never force-promote a taxonomy with diffs without consulting cultural-domain-expert first |
 | Validate before export | Zero errors required; never export a failing validate run |
 
 ---
@@ -612,6 +675,15 @@ grep -r "TODO" prompts/phase-c/iliad.yaml prompts/phase-d/iliad.yaml
 
 # Phase A (if source files ready)
 sisyphus ingest sources/iliad/murray-1924.txt --manifest sources/iliad/manifest.yaml
+# → writes workspace/<run-id>/ingested/structure-draft.yaml
+
+# Taxonomy Derivation (A → B bridge)
+# Edit config/feature-flags.yaml: taxonomy_derivation: true
+sisyphus derive-taxonomy iliad --model claude-sonnet-4-6
+# Edit config/feature-flags.yaml: taxonomy_derivation: false
+# → check output/iliad/taxonomy-audit.yaml status
+# → if has_diffs: consult cultural-domain-expert; then promote --force if approved
+sisyphus promote-taxonomy iliad   # or: sisyphus promote-taxonomy iliad --force
 
 # Phase B
 sisyphus segment <run-id> --tradition iliad

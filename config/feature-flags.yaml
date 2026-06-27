@@ -22,3 +22,8 @@ constellation_candidates: false
 # Phase B extension run: propose 4-segment sub-episode NAS for named confirmed parent episodes.
 # Gates the --sub-episodes CLI option on `sisyphus segment`. Never commit true.
 sub_episode_extension: false
+
+# Derive-taxonomy phase: source-grounded taxonomy generation.
+# Derives segmentation rules from actual source text via Phase A structure scan + LLM.
+# Set true to run 'sisyphus derive-taxonomy <tradition>'. Revert after each run.
+taxonomy_derivation: false
