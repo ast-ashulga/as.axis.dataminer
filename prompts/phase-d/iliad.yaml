@@ -210,6 +210,34 @@ tmi_fit_note: >
   as prerequisite for the soul's rest). Note the absence and describe the ritual
   stakes explicitly.
 
+  TMI-D1840 — Magic object renders person invulnerable. Apply ONLY when the
+  text explicitly describes supernaturally conferred invulnerability: divine
+  armour forged specifically for supernatural protection (Hephaestus-forged
+  armour for Achilles, Book XVIII), Styx-dipping, immortalizing ointment, or
+  a god explicitly granting bodily invulnerability. Do NOT apply when armour,
+  technique, or physical skill prevents injury in battle or contest — that is
+  standard heroic combat. Test: would a mortal blacksmith's breastplate,
+  properly fitted, provide the same protection? If yes, do not use D1840.
+  The distinction is the source of the protection (supernatural gift vs.
+  normal equipment/skill), not its degree.
+
+  TMI-Q2 — Kind and unkind. This is a MORAL CONTRAST code from folk-narrative:
+  virtue rewarded, vice punished, through divine or narrative judgment of moral
+  character. Do NOT apply to:
+  (a) Athletic or agonistic contests where the contrast is between physical
+      capacity — stronger/faster/more skilled — not moral virtue. Differential
+      prize-distribution in the funeral games operates through the timē/geras
+      honor economy, not moral desert. Forcing Q2 onto an agonistic outcome
+      misrepresents both the Greek social logic and the code's own scope.
+  (b) Timē/geras prize distributions where prizes reflect rank and martial
+      merit. The Iliadic honor economy has no TMI equivalent (note the gap
+      explicitly rather than forcing Q2).
+  TMI-Q2 may apply where divine intervention explicitly sanctions or punishes
+  on a piety/impiety axis (e.g. Apollo withholding the bird from Teucer who
+  failed to vow a hecatomb — this has a partial Q2 fit, though the Greek
+  institutional logic of votive obligation exceeds the generic code). Always
+  flag with methodology_fit_warning=true when applying Q2 to the Iliad.
+
   Methodology-fit rule: Note and warning always travel together. Set
   methodology_fit_warning=true whenever you write a methodology_fit_note.
   TMI annotations do not require warnings by default for the Iliad — the
