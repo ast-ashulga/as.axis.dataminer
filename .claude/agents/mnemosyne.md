@@ -79,10 +79,12 @@ cat config/feature-flags.yaml
 
 If any flag is `true`, stop immediately and report to the user. Do not proceed.
 The flags are: `parallel_detection_pipeline`, `campbell_track`, `layer_3_original`,
-`derived_exports`, `taxonomy_derivation`, `constellation_candidates`.
+`derived_exports`, `taxonomy_derivation`, `constellation_candidates`, `sub_episode_extension`.
 All must be `false` at pipeline start. This is non-negotiable.
 (`taxonomy_derivation`, `derived_exports`, and `constellation_candidates` are temporarily toggled
-to `true` only for the duration of their respective commands, then immediately reverted.)
+to `true` only for the duration of their respective commands, then immediately reverted.
+`sub_episode_extension` follows the same pattern — set `true` only for the extension run, then
+revert; never commit as `true`.)
 
 ### 2. Check for TODO stubs in tradition prompts
 
@@ -221,6 +223,29 @@ Note any methodology-fit warnings in the segmentation report.
 If no `rules/segmentation/<tradition>.yaml` exists, Phase B falls back to
 `<tradition>.generated.yaml` with a warning — always promote before segment if possible.
 
+#### Phase B — Sub-Episode Extension Run (Iliad only, gated)
+
+After the 3-segment episode NAS are confirmed, the extension run proposes 4-segment child NAS
+for specific parent episodes (currently: `nms://iliad/book-xxiii/funeral-games`). This is
+**separate** from the standard Phase B segment run and is only enabled for Iliad.
+
+```bash
+# Enable the flag (temporary — revert immediately after)
+# Edit config/feature-flags.yaml: sub_episode_extension: true
+sisyphus segment <run-id> --tradition iliad \
+  --sub-episodes nms://iliad/book-xxiii/funeral-games
+# Edit config/feature-flags.yaml: sub_episode_extension: false
+```
+
+Hard gates (the CLI enforces these — no workaround):
+- **Living traditions are framework-blocked**: the command refuses with HARD REFUSE for any
+  tradition with `living_tradition: true` (Mahabharata). Do not attempt to enable or override.
+- **Parent must be confirmed**: every parent NAS in `--sub-episodes` must appear in
+  `nas-confirmed.yaml` or the run aborts. Run standard Phase B + Gate 1 first.
+
+After the extension run, go through **Gate 1 (confirm-nas)** again for the new proposals.
+The 4-segment NAS evaluation has additional requirements — see Gate 1 below.
+
 ---
 
 ## Gate 1: confirm-nas
@@ -249,6 +274,17 @@ Check:
 - Division/episode names are lowercase, hyphen-separated, no underscores
 - Episode names reflect narrative content, not translator labels or modern editorial headings
 - No collision with already-confirmed NAS addresses in `nas-confirmed.yaml`
+
+**For 4-segment (sub-episode) NAS proposals** (extension run output):
+- Depth-4 format: `nms://{tradition}/{division}/{episode}/{sub-episode}`
+- Every 4-segment proposal's parent (the 3-segment prefix) must already be confirmed
+- `granularity` must be `sub-episode` on every proposed child
+- The `methodology_fit_note` must carry **provenance** — which native transition formula in the
+  source text marks this unit boundary (e.g. "prize-setting formula" for Iliad funeral games).
+  Reject any 4-segment proposal whose `methodology_fit_note` is absent or generic.
+- Consult cultural-domain-expert for sub-episode naming if the native formula is ambiguous.
+- After confirming 4-segment NAS, run `sisyphus validate <tradition>` — the OD-8 orphan check
+  will hard-block if any confirmed depth-4 NAS lacks its 3-segment parent.
 
 For new traditions or non-obvious naming: consult cultural-domain-expert:
 ```
@@ -313,6 +349,11 @@ sisyphus annotate <tradition> --tracks propp,bakhtin,tmi
 ```
 
 `--tracks campbell` is NEVER added — `campbell_track` flag is permanently `false`.
+
+**Propp exclusion for sub-episodes**: Phase D automatically skips the `propp` track for any
+confirmed entry with `granularity: sub-episode`. This is enforced in the code — you do not need
+to filter `--tracks` manually. The pipeline emits `bakhtin` and `tmi` annotations for sub-episode
+entries; `propp` morphology applies to complete episode narratives only.
 
 ### Gate 2b: review — annotations
 
@@ -600,8 +641,12 @@ These are non-negotiable constraints. Violating them produces an invalid export.
 | `derived_exports` flag handling | Temporarily set `true` to run derive, revert to `false` immediately after; never commit as `true` |
 | `constellation_candidates` flag handling | Same pattern: set `true`, run `sisyphus constellate`, revert to `false`; never commit as `true` |
 | `taxonomy_derivation` flag handling | Same pattern: set `true`, run `sisyphus derive-taxonomy`, revert to `false`; never commit as `true` |
+| `sub_episode_extension` flag handling | Same pattern: set `true`, run `sisyphus segment --sub-episodes`, revert to `false`; never commit as `true` |
 | `promote-taxonomy --force` requires CDE sign-off | Never force-promote a taxonomy with diffs without consulting cultural-domain-expert first |
 | Validate before export | Zero errors required; never export a failing validate run |
+| Sub-episode = living-tradition hard block | `--sub-episodes` on any `living_tradition: true` tradition is a hard REFUSE; do not attempt to override |
+| Propp excluded at sub-episode granularity | Phase D auto-skips propp for sub-episode entries; never hand-add propp to a sub-episode annotation |
+| Sub-episode `methodology_fit_note` requires provenance | Must name the native formula marking the unit; reject any 4-segment proposal without it |
 
 ---
 
@@ -688,28 +733,45 @@ sisyphus promote-taxonomy iliad   # or: sisyphus promote-taxonomy iliad --force
 # Phase B
 sisyphus segment <run-id> --tradition iliad
 
-# Gate 1: confirm-nas iliad
+# Gate 1: confirm-nas iliad (3-segment episodes)
 # → pre-count proposals, evaluate NAS naming with cultural-domain-expert
 # → pipe decisions
 
 sisyphus validate iliad  # after gate 1
 
-# Phase C (en locale)
-sisyphus generate-layer0 iliad --locale en
+# Phase B — Sub-episode extension run (Iliad Funeral Games)
+# Edit config/feature-flags.yaml: sub_episode_extension: true
+sisyphus segment <run-id> --tradition iliad \
+  --sub-episodes nms://iliad/book-xxiii/funeral-games
+# Edit config/feature-flags.yaml: sub_episode_extension: false
 
-# Gate 2a: review layer0 en
+# Gate 1 (again): confirm-nas iliad (4-segment sub-episodes)
+# → evaluate each proposal: format, granularity=sub-episode, methodology_fit_note with provenance
+# → consult cultural-domain-expert for slug naming if ambiguous
+# → pipe decisions
+
+sisyphus validate iliad  # after sub-episode gate 1 (OD-8 orphan check)
+
+# Phase C (en locale — and ru if sub-episodes are confirmed, per OD-4)
+sisyphus generate-layer0 iliad --locale en
+# sisyphus generate-layer0 iliad --locale ru  # required for sub-episode pilot parity
+
+# Gate 2a: review layer0 en (and ru if run)
 # → pre-count, evaluate, pipe Mnemosyne + decisions
+# → javelin sub-episode: summary must read "deference, not contest" (Achilles awards
+#   Agamemnon the prize unthrown — any summary narrating a javelin throw is wrong)
 sisyphus validate iliad
 
-# Phase D
+# Phase D (propp auto-excluded for sub-episode entries by the pipeline)
 sisyphus annotate iliad --tracks propp,bakhtin,tmi
 
 # Gate 2b: review annotations
 # → pre-count, evaluate, pipe decisions
 sisyphus validate iliad
 
-# Phase E
+# Phase E (both locales if sub-episodes are confirmed, per OD-4)
 sisyphus embed iliad --locale en
+# sisyphus embed iliad --locale ru  # required for sub-episode pilot release gate
 
 # Phase derive (set flag, run, revert)
 # Edit config/feature-flags.yaml: derived_exports: true

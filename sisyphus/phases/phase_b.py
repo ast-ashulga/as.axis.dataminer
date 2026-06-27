@@ -236,7 +236,7 @@ def run_segment(
             try:
                 parent_segs = _call_segmentation_agent(
                     client, parent_text, rules, tradition, model, prompt_config,
-                    hint_nas=set(confirmed_nas),
+                    confirmed_nas=set(confirmed_nas),
                     chunk_index=0, chunk_total=1,
                     is_second_witness=False,
                     extension_parent=parent_nas,
