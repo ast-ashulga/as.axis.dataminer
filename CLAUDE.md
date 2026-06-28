@@ -178,6 +178,19 @@ workspace/{run-id}/           # transient; one dir per pipeline run
 output/{tradition}/           # versioned output; handoff to Mnemosyne
 ```
 
+## Telegram Notifications
+
+All notifications go to the same Telegram group (`-1003842301085`), but different topics:
+
+| Topic | thread_id | URL | Use when |
+|---|---|---|---|
+| Sisyphus (this project) | `273` | https://t.me/c/3842301085/273 | Pipeline runs, commits, errors — anything Sisyphus-specific |
+| General Claude | `280` | https://t.me/c/3842301085/280 | Cross-project / multi-agent announcements |
+
+**Default for this repo**: use `chat_id: "-1003842301085"` and `reply_to: 273`.
+
+Use `mcp__plugin_telegram_telegram__reply` with `chat_id: "-1003842301085"` and `reply_to: 273`.
+
 ## Cross-References
 
 - Fragment Graph schema: `./doc/fragment-graph/fragment-graph-design.md`
