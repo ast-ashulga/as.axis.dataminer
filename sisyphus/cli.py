@@ -205,6 +205,25 @@ def generate_translated(
 
 
 # ---------------------------------------------------------------------------
+# clean-translated (retroactive in-place fix for PDF-sourced translated bodies)
+# ---------------------------------------------------------------------------
+
+
+@app.command(name="clean-translated")
+def clean_translated(
+    tradition: Annotated[str, typer.Argument(help="Tradition identifier.")],
+) -> None:
+    """Strip [PAGE N] markers and standalone OCR number lines from existing translated records.
+
+    In-place, workspace-independent. Run once per tradition after generate-translated
+    was run on a PDF-sourced witness. Then re-run embed + validate + export.
+    """
+    from sisyphus.phases.generate_translated import run_clean_translated
+
+    run_clean_translated(tradition=tradition, console=console)
+
+
+# ---------------------------------------------------------------------------
 # Phase D — annotate
 # ---------------------------------------------------------------------------
 

@@ -13,6 +13,7 @@ Also populates:
 
 from __future__ import annotations
 
+import re
 from datetime import UTC, datetime
 from pathlib import Path
 
@@ -33,6 +34,57 @@ from sisyphus.schema import (
 )
 
 _ROOT = Path(__file__).parent.parent.parent
+
+
+def _clean_translated_text(text: str) -> str:
+    """Strip Phase A provenance markers and standalone OCR number lines from translation text.
+
+    Removes [PAGE N] markers inserted by phase_a ingestion and bare integer lines
+    (page numbers and verse line numbers from scanned/digital PDF sources).
+    Collapses runs of 3+ blank lines to 2.
+    """
+    lines = text.split("\n")
+    cleaned = []
+    for line in lines:
+        stripped = line.strip()
+        if re.fullmatch(r"\[PAGE \d+\]", stripped):
+            continue
+        if re.fullmatch(r"\d{1,5}", stripped):
+            continue
+        cleaned.append(line)
+    result = re.sub(r"\n{3,}", "\n\n", "\n".join(cleaned))
+    return result.strip()
+
+
+def run_clean_translated(tradition: str, console: Console) -> None:
+    """In-place clean [PAGE N] and standalone OCR number lines from existing translated records.
+
+    Workspace-independent: walks output/{tradition}/fragments/ directly.
+    Run once after generate-translated produced dirty output from a PDF source,
+    then re-run embed + validate + export.
+    """
+    fragments_root = _ROOT / "output" / tradition / "fragments"
+    if not fragments_root.exists():
+        console.print(f"[red]No fragments directory found for '{tradition}'.[/red]")
+        return
+
+    changed = 0
+    for frag_path in sorted(fragments_root.rglob("*.yaml")):
+        data = read_yaml(frag_path)
+        records = data.get("content", [])
+        dirty = False
+        for rec in records:
+            if rec.get("layer") == "translated" and rec.get("body"):
+                cleaned = _clean_translated_text(rec["body"])
+                if cleaned != rec["body"]:
+                    rec["body"] = cleaned
+                    dirty = True
+        if dirty:
+            write_yaml(frag_path, data)
+            changed += 1
+            console.print(f"  [green]✓[/green] {frag_path.relative_to(_ROOT)}")
+
+    console.print(f"\n[green]Done.[/green] Cleaned {changed} fragment files for '{tradition}'.")
 
 
 def run_generate_translated(
@@ -119,6 +171,8 @@ def run_generate_translated(
 
         # Find the passage text for this NAS in the segmented workspace
         passage_text = _find_passage_text(seg_dir, nas, division, episode)
+        if passage_text:
+            passage_text = _clean_translated_text(passage_text)
         if not passage_text:
             total_missing += 1
             console.print(
