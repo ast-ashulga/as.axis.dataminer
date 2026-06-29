@@ -91,6 +91,16 @@ def constellation_candidates_path() -> Path:
     return shared_derived_dir() / "constellation-candidates.yaml"
 
 
+def parallel_edges_path() -> Path:
+    """output/derived/parallel-edges.yaml — cross-tradition Phase F output."""
+    return shared_derived_dir() / "parallel-edges.yaml"
+
+
+def parallel_detection_report_path() -> Path:
+    """output/derived/parallel-detection-report.yaml — Phase F summary statistics."""
+    return shared_derived_dir() / "parallel-detection-report.yaml"
+
+
 def pipeline_reports_dir(tradition: str) -> Path:
     return output_dir(tradition) / "pipeline-reports"
 

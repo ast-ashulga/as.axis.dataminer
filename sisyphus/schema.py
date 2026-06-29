@@ -636,6 +636,54 @@ class ConstellationCandidatesFile(BaseModel):
 
 
 # ---------------------------------------------------------------------------
+# Parallel detection (Phase F — pairwise cross-tradition parallels with O-D score)
+# ---------------------------------------------------------------------------
+
+
+class ParallelDimension(BaseModel):
+    """One dimension's contribution to a parallel detection score."""
+
+    dimension: str  # "tmi" | "propp" | "chronotope" | "polyphony" | "text_embedding_cosine"
+    score: float
+    qualifying: bool
+
+
+class ParallelRecord(BaseModel):
+    """Pairwise cross-tradition parallel — one fragment pair with an O-D detection score.
+
+    Status is always 'candidate' — scholar confirmation happens in the Meridian app,
+    not in Sisyphus. Phase F does not enter the Sisyphus review queue.
+    """
+
+    parallel_id: str  # P-NNNN, sequential, assigned after sorting by (member_a, member_b)
+    status: Literal["candidate"] = "candidate"
+    member_a: NASAddress
+    member_b: NASAddress
+    tradition_a: str
+    tradition_b: str
+    dimensions: list[ParallelDimension]
+    framework_match_count: int  # count of qualifying STRUCTURAL dimensions (max 4)
+    max_frameworks: int = 4  # tmi + propp + chronotope + polyphony
+    cosine_similarity: float = Field(ge=0.0, le=1.0)
+    parallel_score: float = Field(ge=0.0, le=1.0)
+    meets_threshold: bool
+    methodology_fit_note: str | None = None  # carried from the structural edge if present
+
+
+class ParallelEdgesFile(BaseModel):
+    """output/derived/parallel-edges.yaml — cross-tradition, single file."""
+
+    _sisyphus_version: ClassVar[str] = "0.1"
+    traditions_included: list[str]
+    total_pairs_evaluated: int
+    threshold: float
+    locale: str  # which locale's embeddings were used
+    embedding_model: str
+    generated_at: datetime
+    parallels: list[ParallelRecord] = Field(default_factory=list)
+
+
+# ---------------------------------------------------------------------------
 # Taxonomy derivation models (Phase derive-taxonomy)
 # ---------------------------------------------------------------------------
 

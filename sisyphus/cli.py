@@ -413,6 +413,49 @@ def constellate(
 
 
 # ---------------------------------------------------------------------------
+# Phase F — detect-parallels
+# ---------------------------------------------------------------------------
+
+
+@app.command(name="detect-parallels")
+def detect_parallels(
+    traditions: Annotated[
+        str,
+        typer.Option(
+            help="Comma-separated tradition IDs to compare (default: auto-discover all "
+            "traditions with Phase E embeddings)."
+        ),
+    ] = "",
+    threshold: Annotated[
+        float,
+        typer.Option(
+            help="parallel_score >= threshold marks meets_threshold (O-D baseline 0.65)."
+        ),
+    ] = 0.65,
+    locale: Annotated[str, typer.Option(help="Locale whose surface embeddings to use.")] = "en",
+) -> None:
+    """Phase F: Detect pairwise cross-tradition parallels with the O-D composite score.
+
+    Reads constellation-candidates.yaml (structural edges) and Phase E surface
+    embeddings, computes parallel_score = 0.5*(framework_match_count/4) + 0.5*cosine
+    for every cross-tradition fragment pair, and writes:
+      output/derived/parallel-edges.yaml
+      output/derived/parallel-detection-report.yaml
+
+    Requires feature flag 'parallel_detection_pipeline' to be true.
+    Run 'sisyphus constellate' and 'sisyphus embed <tradition>' first.
+    """
+    from sisyphus.phases.phase_f import run_detect_parallels
+
+    run_detect_parallels(
+        tradition_filter=traditions,
+        threshold=threshold,
+        locale=locale,
+        console=console,
+    )
+
+
+# ---------------------------------------------------------------------------
 # review (scholar review queue)
 # ---------------------------------------------------------------------------
 
